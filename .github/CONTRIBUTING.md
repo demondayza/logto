@@ -25,7 +25,7 @@ Thanks for your interest in contributing to Logto. We respect the time of commun
 
 We ensure Logto runs correctly with core unit tests, integration tests, and bug bash meetings. However, there's still a chance of missing or getting wrong on something.
 
-If something doesn't work as expected, search in [Issues](https://github.com/logto-io/logto/issues) to see if someone has reported the issue.
+If something doesn't work as expected, search in [Issues](https://github.com/demondayza/logto/issues) to see if someone has reported the issue.
 
 - If an issue already exists, comment to say you're willing to take it.
 - If not, create one before continuing. It'll be great to let other people know you found it and will fix it.
@@ -34,7 +34,7 @@ Usually, we'll confirm the details in the issue thread, and you can work on the 
 
 > **Warning**
 > 
-> Do not report a security issue directly in the public GitHub Issues, since someone may take advantage of it before the fix. Send an email to [security@logto.io](mailto:security@logto.io) instead.
+> Do not report a security issue directly in the public GitHub Issues, since someone may take advantage of it before the fix. Send an email to [support@myeyes.com](mailto:support@myeyes.com) instead.
 
 ### Connectors
 
@@ -42,9 +42,9 @@ Connector is the standard way in Logto to connect third-party services like SMS,
 
 > **Note**
 >
-> You can find all official connectors [here](https://github.com/logto-io/logto/tree/master/packages/connectors).
+> You can find all official connectors [here](https://github.com/demondayza/logto/tree/master/packages/connectors).
 
-Before starting the work, join our [Discord channel](https://discord.gg/cyWnux4cH6) or [email us](mailto:contact@logto.io) to double-check if there's an ongoing project for your desired connector. We'll confirm with you your need and the status quo.
+Before starting the work, join our [Discord channel](https://discord.gg/cyWnux4cH6) or [email us](mailto:support@myeyes.com) to double-check if there's an ongoing project for your desired connector. We'll confirm with you your need and the status quo.
 
 You can read this [documentation](https://docs.logto.io/docs/recipes/create-your-connector/) which describes how to implement and test a connector through concrete examples.
 
@@ -52,7 +52,7 @@ You can read this [documentation](https://docs.logto.io/docs/recipes/create-your
 
 If you find some feature is related to customer identity and doesn't belong to a specific connector, then most likely, it's a core feature.
 
-Since Logto is still in the early stage, it may already be in [our roadmap](https://silverhand.notion.site/Logto-Public-Roadmap-d6a1ad19039946b7b1139811aed82dcc). You can also join our [Discord channel](https://discord.gg/vRvwuwgpVX) or [email us](mailto:contact@logto.io) to get the details.
+Since Logto is still in the early stage, it may already be in [our roadmap](https://silverhand.notion.site/Logto-Public-Roadmap-d6a1ad19039946b7b1139811aed82dcc). You can also join our [Discord channel](https://discord.gg/vRvwuwgpVX) or [email us](mailto:support@myeyes.com) to get the details.
 
 The concept of feature varies by the situation, so we'll work with you to figure out the best way to contribute before starting.
 
@@ -70,7 +70,7 @@ You'll need these installed to proceed:
 
 ### Clone and install dependencies
 
-Clone the repo https://github.com/logto-io/logto in the way you like, then execute the command below in the project root:
+Clone the repo https://github.com/demondayza/logto in the way you like, then execute the command below in the project root:
 
 ```bash
 pnpm i && pnpm prepack
@@ -94,7 +94,7 @@ If you are upgrading your dev environment from an older version, or facing the `
 
 Run `pnpm alteration deploy` and start Logto again. See [Database alteration](https://docs.logto.io/docs/tutorials/using-cli/database-alteration) for reference of this command.
 
-If you are developing something with database alterations, see [packages/schemas/alteration](https://github.com/logto-io/logto/tree/master/packages/schemas/alterations) to learn more.
+If you are developing something with database alterations, see [packages/schemas/alteration](https://github.com/demondayza/logto/tree/master/packages/schemas/alterations) to learn more.
 
 ### Add connectors (optional)
 
@@ -120,7 +120,7 @@ By default, Logto runs in `http://localhost:3001`, which will redirect you to th
 
 **I updated some code, but it doesn't work.**
 
-Please [report a bug](https://github.com/logto-io/logto/issues/new/choose) in issues.
+Please [report a bug](https://github.com/demondayza/logto/issues) in issues.
 
 ## Commit and create pull request
 

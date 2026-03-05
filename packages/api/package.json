@@ -3,7 +3,7 @@
   "version": "1.37.1",
   "description": "Logto API types and clients.",
   "author": "Silverhand Inc. <contact@silverhand.io>",
-  "homepage": "https://github.com/logto-io/logto#readme",
+  "homepage": "https://github.com/demondayza/logto#readme",
   "license": "MPL-2.0",
   "type": "module",
   "publishConfig": {
@@ -21,10 +21,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/logto-io/logto.git"
+    "url": "git+https://github.com/demondayza/logto.git"
   },
   "bugs": {
-    "url": "https://github.com/logto-io/logto/issues"
+    "url": "https://github.com/demondayza/logto/issues"
   },
   "scripts": {
     "precommit": "lint-staged",

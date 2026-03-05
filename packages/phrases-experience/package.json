@@ -3,7 +3,7 @@
   "version": "1.12.2",
   "description": "Logto shared phrases (i18n) for experience.",
   "author": "Silverhand Inc. <contact@silverhand.io>",
-  "homepage": "https://github.com/logto-io/logto#readme",
+  "homepage": "https://github.com/demondayza/logto#readme",
   "license": "MPL-2.0",
   "type": "module",
   "main": "lib/index.js",
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/logto-io/logto.git"
+    "url": "git+https://github.com/demondayza/logto.git"
   },
   "scripts": {
     "precommit": "lint-staged",
@@ -30,7 +30,7 @@
     "prepack": "pnpm build"
   },
   "bugs": {
-    "url": "https://github.com/logto-io/logto/issues"
+    "url": "https://github.com/demondayza/logto/issues"
   },
   "dependencies": {
     "@logto/core-kit": "workspace:^",
