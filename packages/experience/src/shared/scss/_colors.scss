@@ -36,11 +36,11 @@
   --color-success-80: #83da85;
   --color-success-90: #9fe79f;
 
-  --color-brand-30: #4300da;
-  --color-brand-40: #5d34f2;
-  --color-brand-50: #7958ff;
-  --color-brand-60: #9b80f9;
-  --color-brand-70: #af9eff;
+  --color-brand-30: #003d7a;
+  --color-brand-40: #0a6ebd;
+  --color-brand-50: #2384d1;
+  --color-brand-60: #4aa0e3;
+  --color-brand-70: #73b8ee;
 
   --color-alert-60: #ca8000;
   --color-alert-70: #eb9918;
@@ -103,9 +103,9 @@
   --color-overlay-danger-pressed: rgba(186, 27, 27, 12%); // 12% --color-danger-40
   --color-overlay-danger-focused: rgba(186, 27, 27, 16%); // 16% --color-danger-40
   // Note: System brand color. May be overwritten dynamically by js
-  --color-overlay-brand-hover: rgba(93, 52, 242, 8%); // 8% --color-brand-default
-  --color-overlay-brand-pressed: rgba(93, 52, 242, 12%); // 12% --color-brand-default
-  --color-overlay-brand-focused: rgba(93, 52, 242, 16%); // 16% --color-brand-default
+  --color-overlay-brand-hover: rgba(10, 110, 189, 8%); // 8% --color-brand-default
+  --color-overlay-brand-pressed: rgba(10, 110, 189, 12%); // 12% --color-brand-default
+  --color-overlay-brand-focused: rgba(10, 110, 189, 16%); // 16% --color-brand-default
 
   --color-surface: var(--color-neutral-99);
 }
@@ -139,23 +139,23 @@
   --color-success-80: #116d26;
   --color-success-90: #005314;
 
-  --color-brand-30: #e6deff;
-  --color-brand-40: #cabeff;
-  --color-brand-50: #af9eff;
-  --color-brand-60: #6137f6;
-  --color-brand-70: #7958ff;
+  --color-brand-30: #d2e8fc;
+  --color-brand-40: #a3d2f6;
+  --color-brand-50: #73b8ee;
+  --color-brand-60: #2384d1;
+  --color-brand-70: #0a6ebd;
 
   --color-surface: var(--color-neutral-99);
   --color-surface-2:
-    linear-gradient(0deg, rgba(202, 190, 255, 8%), rgba(202, 190, 255, 8%)),
+    linear-gradient(0deg, rgba(163, 210, 246, 8%), rgba(163, 210, 246, 8%)),
     linear-gradient(0deg, rgba(196, 199, 199, 2%), rgba(196, 199, 199, 2%)),
     #191c1d;
   --color-surface-3:
-    linear-gradient(0deg, rgba(202, 190, 255, 11%), rgba(202, 190, 255, 11%)),
+    linear-gradient(0deg, rgba(163, 210, 246, 11%), rgba(163, 210, 246, 11%)),
     linear-gradient(0deg, rgba(196, 199, 199, 2%), rgba(196, 199, 199, 2%)),
     #191c1d;
   --color-surface-4:
-    linear-gradient(0deg, rgba(202, 190, 255, 14%), rgba(202, 190, 255, 14%)),
+    linear-gradient(0deg, rgba(163, 210, 246, 14%), rgba(163, 210, 246, 14%)),
     linear-gradient(0deg, rgba(196, 199, 199, 2%), rgba(196, 199, 199, 2%)),
     #191c1d;
 
@@ -184,7 +184,7 @@
   --color-bg-body: var(--color-surface);
   --color-bg-body-overlay: var(--color-surface-2);
   --color-bg-layer-1:
-    linear-gradient(0deg, rgba(202, 190, 255, 8%), rgba(202, 190, 255, 8%)),
+    linear-gradient(0deg, rgba(163, 210, 246, 8%), rgba(163, 210, 246, 8%)),
     linear-gradient(0deg, rgba(196, 199, 199, 2%), rgba(196, 199, 199, 2%)),
     #191c1d;
   --color-bg-layer-2: var(--color-surface-4);
@@ -224,7 +224,7 @@
   --color-overlay-danger-pressed: rgba(221, 55, 48, 12%); // 12% --color-danger-40
   --color-overlay-danger-focused: rgba(221, 55, 48, 16%); // 16% --color-danger-40
   // Note: System brand color. May be overwritten dynamically by js
-  --color-overlay-brand-hover: rgba(202, 190, 255, 8%); // 8% --color-brand-40
-  --color-overlay-brand-pressed: rgba(202, 190, 255, 12%); // 12% --color-brand-40
-  --color-overlay-brand-focused: rgba(202, 190, 255, 16%); // 16% --color-brand-40
+  --color-overlay-brand-hover: rgba(163, 210, 246, 8%); // 8% --color-brand-40
+  --color-overlay-brand-pressed: rgba(163, 210, 246, 12%); // 12% --color-brand-40
+  --color-overlay-brand-focused: rgba(163, 210, 246, 16%); // 16% --color-brand-40
 }

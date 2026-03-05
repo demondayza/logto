@@ -2,17 +2,17 @@
   // tonal palettes
   --color-all-0: #000;
   --color-all-100: #fff;
-  --color-primary-10: #190064;
-  --color-primary-20: #2d009d;
-  --color-primary-30: #4300da;
-  --color-primary-40: #5d34f2;
-  --color-primary-50: #7958ff;
-  --color-primary-60: #947dff;
-  --color-primary-70: #af9eff;
-  --color-primary-80: #cabeff;
-  --color-primary-90: #e6deff;
-  --color-primary-95: #f5eeff;
-  --color-primary-99: #fffbff;
+  --color-primary-10: #001b31;
+  --color-primary-20: #003359;
+  --color-primary-30: #004c84;
+  --color-primary-40: #0a6ebd;
+  --color-primary-50: #2588d6;
+  --color-primary-60: #4aa1e6;
+  --color-primary-70: #74baf1;
+  --color-primary-80: #a2d4f8;
+  --color-primary-90: #d0eafc;
+  --color-primary-95: #e8f5fe;
+  --color-primary-99: #f6fbff;
   --color-secondary-10: #201c00;
   --color-secondary-20: #373100;
   --color-secondary-30: #4f4700;
@@ -118,11 +118,11 @@
   --color-background: var(--color-neutral-99);
   --color-on-background: var(--color-neutral-10);
   --color-surface: var(--color-neutral-99);
-  --color-surface-1: #ecebf6; // Neutral-99 + 2% Neutral-Variant-50 + 5% Primary-40
-  --color-surface-2: #e8e6f6; // Neutral-99 + 2% Neutral-Variant-50 + 8% Primary-40
-  --color-surface-3: #e3e0f6; // Neutral-99 + 2% Neutral-Variant-50 + 11% Primary-40
-  --color-surface-4: #dfdaf5; // Neutral-99 + 2% Neutral-Variant-50 + 14% Primary-40
-  --color-surface-5: #dcd6f5; // Neutral-99 + 2% Neutral-Variant-50 + 16% Primary-40
+  --color-surface-1: #e9eef3; // Neutral-99 + 2% Neutral-Variant-50 + 5% Primary-40
+  --color-surface-2: #e2eaf1; // Neutral-99 + 2% Neutral-Variant-50 + 8% Primary-40
+  --color-surface-3: #dae6ef; // Neutral-99 + 2% Neutral-Variant-50 + 11% Primary-40
+  --color-surface-4: #d3e2ed; // Neutral-99 + 2% Neutral-Variant-50 + 14% Primary-40
+  --color-surface-5: #cfdfec; // Neutral-99 + 2% Neutral-Variant-50 + 16% Primary-40
   --color-on-surface: var(--color-neutral-10);
   --color-surface-variant: var(--color-neutral-variant-90);
   --color-on-surface-variant: var(--color-neutral-variant-30);
@@ -153,10 +153,10 @@
   --color-hover: rgba(25, 28, 29, 8%); // 8% Neutral-10
   --color-pressed: rgba(25, 28, 29, 12%); // 12% Neutral-10
   --color-focused: rgba(25, 28, 29, 16%); // 16% Neutral-10
-  --color-hover-variant: rgba(93, 52, 242, 8%); // 8% Primary-40
-  --color-pressed-variant: rgba(93, 52, 242, 12%); // 12% Primary-40
-  --color-focused-variant: rgba(93, 52, 242, 16%); // 16% Primary-40
-  --color-env-tag-development: rgba(93, 52, 242, 15%);
+  --color-hover-variant: rgba(10, 110, 189, 8%); // 8% Primary-40
+  --color-pressed-variant: rgba(10, 110, 189, 12%); // 12% Primary-40
+  --color-focused-variant: rgba(10, 110, 189, 16%); // 16% Primary-40
+  --color-env-tag-development: rgba(10, 110, 189, 15%);
   --color-env-tag-staging: rgba(255, 185, 90, 35%);
   --color-env-tag-production: rgba(131, 218, 133, 35%);
   --color-specific-icon-bg: #f3effa;
@@ -166,9 +166,9 @@
   --color-specific-focused-inside: var(--color-primary-30);
   --color-specific-focused-outside: var(--color-primary-40);
   --color-specific-button-icon: rgba(255, 255, 255, 70%); // 70% static white
-  --color-overlay-primary-hover: rgba(93, 52, 242, 8%); // 8% Primary-40
-  --color-overlay-primary-pressed: rgba(93, 52, 242, 12%); // 12% Primary-40
-  --color-function-n-overlay-primary-focused: rgba(93, 52, 242, 16%); // 16% Primary-40
+  --color-overlay-primary-hover: rgba(10, 110, 189, 8%); // 8% Primary-40
+  --color-overlay-primary-pressed: rgba(10, 110, 189, 12%); // 12% Primary-40
+  --color-function-n-overlay-primary-focused: rgba(10, 110, 189, 16%); // 16% Primary-40
   --color-overlay-danger-hover: rgba(186, 27, 27, 8%); // 8% Error-40
   --color-overlay-dark-bg-hover: rgba(255, 255, 255, 12%); // 12% static white
   --color-overlay-dark-bg-pressed: rgba(255, 255, 255, 18%); // 18% static white
@@ -226,17 +226,17 @@
   // tonal palettes
   --color-all-0: #fff;
   --color-all-100: #000;
-  --color-primary-10: #fffbff;
-  --color-primary-20: #f5eeff;
-  --color-primary-30: #e6deff;
-  --color-primary-40: #cabeff;
-  --color-primary-50: #af9eff;
-  --color-primary-60: #947dff;
-  --color-primary-70: #7958ff;
-  --color-primary-80: #5d34f2;
-  --color-primary-90: #4300da;
-  --color-primary-95: #2d009d;
-  --color-primary-99: #190064;
+  --color-primary-10: #f6fbff;
+  --color-primary-20: #e8f5fe;
+  --color-primary-30: #d0eafc;
+  --color-primary-40: #a2d4f8;
+  --color-primary-50: #74baf1;
+  --color-primary-60: #4aa1e6;
+  --color-primary-70: #2588d6;
+  --color-primary-80: #0a6ebd;
+  --color-primary-90: #004c84;
+  --color-primary-95: #003359;
+  --color-primary-99: #001b31;
   --color-secondary-10: #fffbf7;
   --color-secondary-20: #fff480;
   --color-secondary-30: #f4e560;
@@ -342,11 +342,11 @@
   --color-background: var(--color-neutral-99);
   --color-on-background: var(--color-neutral-10);
   --color-surface: var(--color-neutral-99);
-  --color-surface-1: #25272b; // Neutral-99 + 2% Neutral-40 + 5% Primary-80
-  --color-surface-2: #2a2c32; // Neutral-99 + 2% Neutral-40 + 8% Primary-80
-  --color-surface-3: #2f3039; // Neutral-99 + 2% Neutral-40 + 11% Primary-80
-  --color-surface-4: #34353f; // Neutral-99 + 2% Neutral-40 + 14% Primary-80
-  --color-surface-5: #383844; // Neutral-99 + 2% Neutral-40 + 16% Primary-80
+  --color-surface-1: #1c2428; // Neutral-99 + 2% Neutral-40 + 5% Primary-80
+  --color-surface-2: #1b262d; // Neutral-99 + 2% Neutral-40 + 8% Primary-80
+  --color-surface-3: #1b2832; // Neutral-99 + 2% Neutral-40 + 11% Primary-80
+  --color-surface-4: #1a2b37; // Neutral-99 + 2% Neutral-40 + 14% Primary-80
+  --color-surface-5: #1a2d3a; // Neutral-99 + 2% Neutral-40 + 16% Primary-80
   --color-on-surface: var(--color-neutral-10);
   --color-surface-variant: var(--color-neutral-variant-90);
   --color-on-surface-variant: var(--color-neutral-variant-40);
@@ -377,10 +377,10 @@
   --color-hover: rgba(247, 248, 248, 8%); // 8% Neutral-10
   --color-pressed: rgba(247, 248, 248, 12%); // 12% Neutral-10
   --color-focused: rgba(247, 248, 248, 16%); // 16% Neutral-10
-  --color-hover-variant: rgba(202, 190, 255, 8%); // 8% Primary-40
-  --color-pressed-variant: rgba(202, 190, 255, 12%); // 12% Primary-40
-  --color-focused-variant: rgba(202, 190, 255, 16%); // 16% Primary-40
-  --color-env-tag-development: rgba(202, 190, 255, 32%);
+  --color-hover-variant: rgba(162, 212, 248, 8%); // 8% Primary-40
+  --color-pressed-variant: rgba(162, 212, 248, 12%); // 12% Primary-40
+  --color-focused-variant: rgba(162, 212, 248, 16%); // 16% Primary-40
+  --color-env-tag-development: rgba(162, 212, 248, 32%);
   --color-env-tag-staging: rgba(235, 153, 24, 36%);
   --color-env-tag-production: rgba(104, 190, 108, 36%);
   --color-specific-icon-bg: rgba(247, 248, 248, 12%);
@@ -388,11 +388,11 @@
   --color-specific-unselected-disabled: var(--color-hover); // 8% Neutral-10
   --color-specific-selected-disabled: var(--color-primary-80);
   --color-specific-focused-inside: var(--color-primary-40);
-  --color-specific-focused-outside: rgba(#cabeff, 32%); // 32% Primary-40
+  --color-specific-focused-outside: rgba(#a2d4f8, 32%); // 32% Primary-40
   --color-specific-button-icon: rgba(255, 255, 255, 60%); // 60% static white
-  --color-overlay-primary-hover: rgba(202, 190, 255, 8%); // 8% Primary-40
-  --color-overlay-primary-pressed: rgba(202, 190, 255, 12%); // 12% Primary-40
-  --color-function-n-overlay-primary-focused: rgba(202, 190, 255, 16%); // 16% Primary-40
+  --color-overlay-primary-hover: rgba(162, 212, 248, 8%); // 8% Primary-40
+  --color-overlay-primary-pressed: rgba(162, 212, 248, 12%); // 12% Primary-40
+  --color-function-n-overlay-primary-focused: rgba(162, 212, 248, 16%); // 16% Primary-40
   --color-overlay-danger-hover: rgba(186, 27, 27, 8%); // 8% Error-40
   --color-overlay-dark-bg-hover: rgba(255, 255, 255, 12%); // 12% static white
   --color-overlay-dark-bg-pressed: rgba(255, 255, 255, 18%); // 18% static white
@@ -426,7 +426,7 @@
   --color-bg-body: var(--color-surface);
   --color-bg-body-overlay: var(--color-surface-2);
   --color-bg-layer-1:
-    linear-gradient(0deg, rgba(202, 190, 255, 8%), rgba(202, 190, 255, 8%)),
+    linear-gradient(0deg, rgba(162, 212, 248, 8%), rgba(162, 212, 248, 8%)),
     linear-gradient(0deg, rgba(196, 199, 199, 2%), rgba(196, 199, 199, 2%)),
     #191c1d;
   --color-bg-layer-2: var(--color-surface-4);

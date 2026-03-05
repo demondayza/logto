@@ -34,13 +34,14 @@ const expectPatchResponseStatus = async (
 
 describe('branding', () => {
   describe('logoUrl', () => {
-    test.each(['http://silverhand.com/silverhand.png', 'https://logto.dev/logto.jpg'])(
-      '%p should success',
-      async (logoUrl) => {
-        const signInExperience = { branding: { ...mockBranding, logoUrl } };
-        await expectPatchResponseStatus(signInExperience, 200);
-      }
-    );
+    test.each([
+      'http://silverhand.com/silverhand.png',
+      'https://logto.dev/logto.jpg',
+      '/logo-light.svg',
+    ])('%p should success', async (logoUrl) => {
+      const signInExperience = { branding: { ...mockBranding, logoUrl } };
+      await expectPatchResponseStatus(signInExperience, 200);
+    });
 
     test.each([null, '', 'invalid'])('%p should fail', async (logoUrl) => {
       const signInExperience = { branding: { ...mockBranding, logoUrl } };

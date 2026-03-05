@@ -23,12 +23,18 @@ export const themeToLogoKey = Object.freeze({
   [Theme.Dark]: 'darkLogoUrl',
 } satisfies Record<Theme, keyof Branding>);
 
+// Allow either absolute URLs or root-relative paths for self-hosted assets.
+const brandingAssetUrlGuard = z
+  .string()
+  .url()
+  .or(z.string().regex(/^\/\S+$/));
+
 export const brandingGuard = z
   .object({
-    logoUrl: z.string().url(),
-    darkLogoUrl: z.string().url(),
-    favicon: z.string().url(),
-    darkFavicon: z.string().url(),
+    logoUrl: brandingAssetUrlGuard,
+    darkLogoUrl: brandingAssetUrlGuard,
+    favicon: brandingAssetUrlGuard,
+    darkFavicon: brandingAssetUrlGuard,
   })
   .partial();
 

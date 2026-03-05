@@ -19,7 +19,7 @@ const IframeModal = ({ className, title = '', href = '', onClose }: ModalProps) 
   const [isLoaded, setIsLoaded] = useState(false);
   const loadingBarRef = useRef<LoadingBarRef>(null);
 
-  const brandingColor = document.body.style.getPropertyValue('--color-brand-default') || '#5d34f2';
+  const brandingColor = document.body.style.getPropertyValue('--color-brand-default') || '#0A6EBD';
 
   return (
     <ReactModal
