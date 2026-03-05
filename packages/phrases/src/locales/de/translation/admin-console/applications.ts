@@ -2,8 +2,8 @@ const applications = {
   page_title: 'Anwendungen',
   title: 'Anwendungen',
   subtitle:
-    'Richte eine native, single-page-, Machine-to-Machine- oder herkömmliche Anwendung ein, die Logto zur Authentifizierung nutzt.',
-  subtitle_with_app_type: 'Richte Logto-Authentifizierung für deine {{name}}-Anwendung ein',
+    'Richte eine native, single-page-, Machine-to-Machine- oder herkömmliche Anwendung ein, die MyEyesID zur Authentifizierung nutzt.',
+  subtitle_with_app_type: 'Richte MyEyesID-Authentifizierung für deine {{name}}-Anwendung ein',
   create: 'Anwendung erstellen',
   create_third_party: 'Erstelle eine Drittanbieteranwendung',
   create_thrid_party_modal_title: 'Erstelle eine Drittanbieter-App ({{type}})',
@@ -43,7 +43,7 @@ const applications = {
     },
     protected: {
       title: 'Geschützte App',
-      subtitle: 'Eine von Logto geschützte App',
+      subtitle: 'Eine von MyEyesID geschützte App',
       description: 'N/A',
     },
     saml: {
@@ -59,14 +59,14 @@ const applications = {
   },
   placeholder_title: 'Wähle einen Anwendungstyp, um fortzufahren',
   placeholder_description:
-    'Logto verwendet eine Anwendungs-Entität für OIDC, um Aufgaben wie die Identifizierung deiner Apps, das Management der Anmeldung und die Erstellung von Prüfprotokollen zu erleichtern.',
+    'MyEyesID verwendet eine Anwendungs-Entität für OIDC, um Aufgaben wie die Identifizierung deiner Apps, das Management der Anmeldung und die Erstellung von Prüfprotokollen zu erleichtern.',
   third_party_application_placeholder_description:
-    'Verwende Logto als Identity Provider, um OAuth-Autorisierung für Drittanbieterdienste bereitzustellen. \n Beinhaltet einen vorgebauten Benutzerzustimmungsbildschirm für den Ressourcenzugriff. <a>Mehr erfahren</a>',
+    'Verwende MyEyesID als Identity Provider, um OAuth-Autorisierung für Drittanbieterdienste bereitzustellen. \n Beinhaltet einen vorgebauten Benutzerzustimmungsbildschirm für den Ressourcenzugriff. <a>Mehr erfahren</a>',
   guide: {
     third_party: {
       title: 'Integriere eine Drittanbieteranwendung',
       description:
-        'Verwende Logto als Identity Provider, um OAuth-Autorisierung für Drittanbieterdienste bereitzustellen. Beinhaltet einen vorgefertigten Benutzerzustimmungsbildschirm für sicheren Ressourcenzugriff. <a>Mehr erfahren</a>',
+        'Verwende MyEyesID als Identity Provider, um OAuth-Autorisierung für Drittanbieterdienste bereitzustellen. Beinhaltet einen vorgefertigten Benutzerzustimmungsbildschirm für sicheren Ressourcenzugriff. <a>Mehr erfahren</a>',
     },
   },
 };

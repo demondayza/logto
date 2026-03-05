@@ -21,7 +21,7 @@ export const defaultDatabaseUrl = 'postgresql://localhost:5432/logto';
 export const getDatabaseUrlFromConfig = async () =>
   (await getCliConfigWithPrompt({
     key: ConfigKey.DatabaseUrl,
-    readableKey: 'Logto database URL',
+    readableKey: 'MyEyesID database URL',
     defaultValue: defaultDatabaseUrl,
   })) ?? '';
 

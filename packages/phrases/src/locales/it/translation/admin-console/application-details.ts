@@ -4,10 +4,10 @@ const application_details = {
   check_guide: 'Verifica guida',
   settings: 'Impostazioni',
   settings_description:
-    "Un'applicazione è un software o un servizio registrato che può accedere alle informazioni dell'utente o agire per suo conto. Le applicazioni aiutano Logto a riconoscere chi sta richiedendo cosa e gestiscono l'accesso e le autorizzazioni. Compila i campi obbligatori per l'autenticazione.",
+    "Un'applicazione è un software o un servizio registrato che può accedere alle informazioni dell'utente o agire per suo conto. Le applicazioni aiutano MyEyesID a riconoscere chi sta richiedendo cosa e gestiscono l'accesso e le autorizzazioni. Compila i campi obbligatori per l'autenticazione.",
   integration: 'Integrazione',
   integration_description:
-    "Implementa con i lavoratori sicuri di Logto, supportati dalla rete perimetrale di Cloudflare per prestazioni di prim'ordine e avviamenti istantanei in tutto il mondo a 0 ms.",
+    "Implementa con i lavoratori sicuri di MyEyesID, supportati dalla rete perimetrale di Cloudflare per prestazioni di prim'ordine e avviamenti istantanei in tutto il mondo a 0 ms.",
   service_configuration: 'Configurazione del servizio',
   service_configuration_description: 'Completa le configurazioni necessarie nel tuo servizio.',
   session: 'Sessione',
@@ -30,10 +30,10 @@ const application_details = {
     "L'endpoint per effettuare l'autenticazione e l'autorizzazione. Viene utilizzato per la connessione OpenID <a>autenticazione</a>.",
   show_endpoint_details: 'Mostra dettagli endpoint',
   hide_endpoint_details: 'Nascondi dettagli endpoint',
-  logto_endpoint: 'Endpoint Logto',
+  logto_endpoint: 'Endpoint MyEyesID',
   application_id: 'ID App',
   application_id_tip:
-    'L\'identificatore univoco dell\'applicazione generato normalmente da Logto. Sta anche per "<a>client_id</a>" in OpenID Connect.',
+    'L\'identificatore univoco dell\'applicazione generato normalmente da MyEyesID. Sta anche per "<a>client_id</a>" in OpenID Connect.',
   application_secret: 'Secret App',
   application_secret_other: "Segreti dell'app",
   redirect_uri: 'URI di reindirizzamento',
@@ -62,15 +62,15 @@ const application_details = {
     "Abilita o disabilita l'accesso all'API di gestione. Una volta abilitato, puoi utilizzare i token di accesso per chiamare l'API di gestione a nome di questa applicazione.",
   always_issue_refresh_token: 'Rilascia sempre il token di aggiornamento',
   always_issue_refresh_token_label:
-    'Abilitando questa configurazione, Logto potrà rilasciare sempre token di aggiornamento, anche se `prompt=consent` non viene presentata nella richiesta di autenticazione. Tuttavia, questa pratica è scoraggiata a meno che non sia necessaria, in quanto non è compatibile con OpenID Connect e potrebbe potenzialmente causare problemi.',
+    'Abilitando questa configurazione, MyEyesID potrà rilasciare sempre token di aggiornamento, anche se `prompt=consent` non viene presentata nella richiesta di autenticazione. Tuttavia, questa pratica è scoraggiata a meno che non sia necessaria, in quanto non è compatibile con OpenID Connect e potrebbe potenzialmente causare problemi.',
   refresh_token_ttl: 'Tempo di vita del token di aggiornamento in giorni',
   refresh_token_ttl_tip:
     'La durata per cui un token di aggiornamento può essere utilizzato per richiedere nuovi access token prima che scada e diventa non valido, le richieste di token estenderanno il TTL del token di aggiornamento a questo valore.',
   rotate_refresh_token: 'Ruota token di aggiornamento',
   rotate_refresh_token_label:
-    'Quando abilitato, Logto emetterà un nuovo token di aggiornamento per le richieste di token quando è passato il 70% del Tempo di vita (TTL) originale o sono soddisfatte determinate condizioni. <a>Ulteriori informazioni</a>',
+    'Quando abilitato, MyEyesID emetterà un nuovo token di aggiornamento per le richieste di token quando è passato il 70% del Tempo di vita (TTL) originale o sono soddisfatte determinate condizioni. <a>Ulteriori informazioni</a>',
   rotate_refresh_token_label_for_public_clients:
-    'Quando abilitato, Logto emetterà un nuovo token di aggiornamento per ogni richiesta di token. <a>Ulteriori informazioni</a>',
+    'Quando abilitato, MyEyesID emetterà un nuovo token di aggiornamento per ogni richiesta di token. <a>Ulteriori informazioni</a>',
   backchannel_logout: 'Logout backchannel',
   backchannel_logout_description:
     'Configura l’endpoint di logout backchannel OpenID Connect e se la sessione è richiesta per questa applicazione.',
@@ -92,7 +92,7 @@ const application_details = {
   application_deleted: "L'applicazione {{name}} è stata eliminata con successo",
   redirect_uri_required: 'Devi inserire almeno un URI di reindirizzamento',
   app_domain_description_1:
-    'Sentiti libero di utilizzare il tuo dominio con {{domain}} alimentato da Logto, che è permanentemente valido.',
+    'Sentiti libero di utilizzare il tuo dominio con {{domain}} alimentato da MyEyesID, che è permanentemente valido.',
   app_domain_description_2:
     'Sentiti libero di utilizzare il tuo dominio <domain>{{domain}}</domain> che è permanentemente valido.',
   custom_rules: 'Regole di autenticazione personalizzate',
@@ -108,7 +108,7 @@ const application_details = {
   protect_origin_server_description:
     "Assicurati di proteggere il tuo server di origine dall'accesso diretto. Fai riferimento alla guida per ulteriori <a>istruzioni dettagliate</a>.",
   third_party_settings_description:
-    "Integra applicazioni di terze parti con Logto come tuo Identity Provider (IdP) utilizzando OIDC / OAuth 2.0, con uno schermo di consenso per l'autorizzazione dell'utente.",
+    "Integra applicazioni di terze parti con MyEyesID come tuo Identity Provider (IdP) utilizzando OIDC / OAuth 2.0, con uno schermo di consenso per l'autorizzazione dell'utente.",
   session_duration: 'Durata della sessione (giorni)',
   try_it: 'Provalo',
   no_organization_placeholder: 'Nessuna organizzazione trovata. <a>Vai alle organizzazioni</a>',
@@ -160,7 +160,7 @@ const application_details = {
     user_data_permission_description_tips:
       'Puoi modificare la descrizione delle autorizzazioni dei dati personali degli utenti tramite "Esperienza di accesso > Contenuto > Gestisci lingue".',
     permission_description_tips:
-      "Quando Logto viene utilizzato come Provider di Identità (IdP) per l'autenticazione nelle app di terze parti e agli utenti viene chiesta l'autorizzazione, questa descrizione appare sullo schermo del consenso.",
+      "Quando MyEyesID viene utilizzato come Provider di Identità (IdP) per l'autenticazione nelle app di terze parti e agli utenti viene chiesta l'autorizzazione, questa descrizione appare sullo schermo del consenso.",
     user_title: 'Utente',
     user_description:
       "Seleziona le autorizzazioni richieste dall'applicazione di terze parti per accedere a tipi specifici di dati utente.",
@@ -251,11 +251,11 @@ const application_details = {
     title: 'Formato Name ID',
     description: 'Seleziona il formato Name ID del SAML IdP.',
     persistent: 'Persistente',
-    persistent_description: "Usa l'ID utente Logto come Name ID",
+    persistent_description: "Usa l'ID utente MyEyesID come Name ID",
     transient: 'Transitorio',
     transient_description: 'Usa un ID utente una tantum come Name ID',
     unspecified: 'Non specificato',
-    unspecified_description: "Usa l'ID utente Logto come Name ID",
+    unspecified_description: "Usa l'ID utente MyEyesID come Name ID",
     email_address: 'Indirizzo email',
     email_address_description: "Usa l'indirizzo email come Name ID",
   },
@@ -279,8 +279,8 @@ const application_details = {
     name: 'Mappatura degli attributi',
     title: 'Mappatura degli attributi di base',
     description:
-      'Aggiungi mappature di attributi per sincronizzare il profilo utente da Logto alla tua applicazione.',
-    col_logto_claims: 'Valore di Logto',
+      'Aggiungi mappature di attributi per sincronizzare il profilo utente da MyEyesID alla tua applicazione.',
+    col_logto_claims: 'Valore di MyEyesID',
     col_sp_claims: 'Nome valore della tua applicazione',
     add_button: 'Aggiungi un altro',
   },

@@ -1,7 +1,7 @@
 const get_started = {
   page_title: 'Rozpocznij',
   title: 'Coś do odkrycia, aby pomóc ci odnieść sukces',
-  subtitle: 'Kilka rzeczy, które możesz zrobić, aby szybko uzyskać wartość Logto',
+  subtitle: 'Kilka rzeczy, które możesz zrobić, aby szybko uzyskać wartość MyEyesID',
   develop: {
     title: 'Develop: Zajmie to 5 minut, aby zintegrować swoją aplikację',
     title_cloud: 'Develop: Bezpiecznie zintegruj swoją aplikację w kilka minut',
@@ -12,7 +12,7 @@ const get_started = {
     title: 'Customize: Dostarcz świetne doświadczenie logowania',
     preview: {
       title: 'Sprawdź podgląd na żywo doświadczenia logowania, które właśnie spersonalizowałeś',
-      subtitle: 'Wypróbuj teraz Logto, aby zobaczyć, jak działa',
+      subtitle: 'Wypróbuj teraz MyEyesID, aby zobaczyć, jak działa',
     },
     connector: {
       title: 'Dodaj więcej konektorów, aby obsługiwać różne metody logowania społecznego',

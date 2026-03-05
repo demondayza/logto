@@ -9,7 +9,7 @@ const api_resource_details = {
   management_api_settings_description:
     'Logto Management API to kompleksowa kolekcja interfejsów API, które umożliwiają administratorom zarządzanie szerokim zakresem zadań związanych z tożsamością, egzekwowanie polityk bezpieczeństwa oraz przestrzeganie przepisów i standardów.',
   management_api_notice:
-    'Ta API reprezentuje jednostkę Logto i nie może być modyfikowana ani usuwana. Utwórz aplikację maszyna-do-maszyny, aby wywołać Logto Management API. <a>Dowiedz się więcej</a>',
+    'Ta API reprezentuje jednostkę MyEyesID i nie może być modyfikowana ani usuwana. Utwórz aplikację maszyna-do-maszyny, aby wywołać Logto Management API. <a>Dowiedz się więcej</a>',
   token_expiration_time_in_seconds: 'Czas wygaśnięcia tokenu (w sekundach)',
   token_expiration_time_in_seconds_placeholder: 'Wprowadź czas wygaśnięcia tokenu',
   delete_description:

@@ -15,7 +15,7 @@ const connectors = {
   connector_type: 'Typ',
   placeholder_title: 'Łącznik społecznościowy',
   placeholder_description:
-    'Logto dostarczył wiele powszechnie używanych łączników społecznościowych, tymczasem możesz utworzyć własne z wykorzystaniem standardowych protokołów.',
+    'MyEyesID dostarczył wiele powszechnie używanych łączników społecznościowych, tymczasem możesz utworzyć własne z wykorzystaniem standardowych protokołów.',
   save_and_done: 'Zapisz i zakończ',
   type: {
     email: 'Łącznik e-mail',
@@ -45,7 +45,7 @@ const connectors = {
     target_tip_standard:
       'Wartość „Nazwy dostawcy tożsamości” może być unikalnym ciągiem identyfikującym, który odróżnia Twoje tożsamości społecznościowe. Po utworzeniu łącznika nie możesz go zmienić.',
     target_tooltip:
-      '„Nazwa dostawcy tożsamości” w łącznikach społecznościowych Logto odnosi się do "źródła" Twoich tożsamości społecznościowych. W projektowaniu Logto nie akceptujemy tych samych „Nazw dostawców tożsamości” konkretnej platformy, aby uniknąć konfliktów. Powinieneś bardzo uważać przed dodaniem łącznika, ponieważ NIE MOŻESZ zmienić jego wartości po utworzeniu. <a>Dowiedz się więcej</a>',
+      '„Nazwa dostawcy tożsamości” w łącznikach społecznościowych MyEyesID odnosi się do "źródła" Twoich tożsamości społecznościowych. W projektowaniu MyEyesID nie akceptujemy tych samych „Nazw dostawców tożsamości” konkretnej platformy, aby uniknąć konfliktów. Powinieneś bardzo uważać przed dodaniem łącznika, ponieważ NIE MOŻESZ zmienić jego wartości po utworzeniu. <a>Dowiedz się więcej</a>',
     target_conflict:
       'Wprowadzona nazwa IdP pasuje do istniejącego łącznika <span>nazwa</span>. Użycie tej samej nazwy IdP może spowodować nieoczekiwane zachowanie logowania, gdzie użytkownicy mogą uzyskać dostęp do tego samego konta za pośrednictwem dwóch różnych łączników.',
     target_conflict_line2:
@@ -67,7 +67,7 @@ const connectors = {
     callback_uri_description:
       'URI przekierowania to miejsce, do którego użytkownicy są kierowani po autoryzacji społecznościowej. Dodaj ten adres URI do konfiguracji swojego IdP.',
     callback_uri_custom_domain_description:
-      'Jeśli używasz w Logto wielu <a>domen niestandardowych</a>, dodaj wszystkie odpowiadające im adresy URI zwrotu do IdP, aby logowanie społecznościowe działało w każdej domenie.\n\nDomyślna domena Logto (*.logto.app) jest zawsze ważna - uwzględnij ją tylko wtedy, gdy chcesz obsługiwać logowania także w tej domenie.',
+      'Jeśli używasz w MyEyesID wielu <a>domen niestandardowych</a>, dodaj wszystkie odpowiadające im adresy URI zwrotu do IdP, aby logowanie społecznościowe działało w każdej domenie.\n\nDomyślna domena MyEyesID (*.logto.app) jest zawsze ważna - uwzględnij ją tylko wtedy, gdy chcesz obsługiwać logowania także w tej domenie.',
     acs_url: 'Assertion consumer service URL',
   },
   platform: {

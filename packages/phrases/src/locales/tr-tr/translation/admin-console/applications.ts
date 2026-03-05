@@ -2,8 +2,8 @@ const applications = {
   page_title: 'Uygulamalar',
   title: 'Uygulamalar',
   subtitle:
-    'Kimlik doğrulaması için Logtoyu kullanmak üzere mobil, tek sayfa, machine to machine veya geleneksel bir uygulama ayarlayınız',
-  subtitle_with_app_type: 'Logto Doğrulamasını {{name}} uygulamanız için yapılandırın',
+    'Kimlik doğrulaması için MyEyesIDyu kullanmak üzere mobil, tek sayfa, machine to machine veya geleneksel bir uygulama ayarlayınız',
+  subtitle_with_app_type: 'MyEyesID Doğrulamasını {{name}} uygulamanız için yapılandırın',
   create: 'Uygulama oluştur',
   create_third_party: 'Üçüncü taraf uygulama oluştur',
   create_thrid_party_modal_title: 'Üçüncü taraf uygulaması oluştur ({{type}})',
@@ -43,7 +43,7 @@ const applications = {
     },
     protected: {
       title: 'Korunan Uygulama',
-      subtitle: 'Logto tarafından korunan bir uygulama',
+      subtitle: 'MyEyesID tarafından korunan bir uygulama',
       description: 'N/A',
     },
     saml: {
@@ -59,14 +59,14 @@ const applications = {
   },
   placeholder_title: 'Devam etmek için bir uygulama tipi seçin',
   placeholder_description:
-    'Logto, uygulamanızı tanımlamaya, oturum açmayı yönetmeye ve denetim kayıtları oluşturmaya yardımcı olmak için OIDC için bir uygulama varlığı kullanır.',
+    'MyEyesID, uygulamanızı tanımlamaya, oturum açmayı yönetmeye ve denetim kayıtları oluşturmaya yardımcı olmak için OIDC için bir uygulama varlığı kullanır.',
   third_party_application_placeholder_description:
-    'Üçüncü taraf hizmetlere OAuth yetkilendirmesi sağlamak için Logtoyu bir Kimlik Sağlayıcı olarak kullanın. \n Kaynak erişimi için önceden oluşturulmuş bir kullanıcı onay ekranı içerir. <a>Daha fazla bilgi edinin</a>',
+    'Üçüncü taraf hizmetlere OAuth yetkilendirmesi sağlamak için MyEyesIDyu bir Kimlik Sağlayıcı olarak kullanın. \n Kaynak erişimi için önceden oluşturulmuş bir kullanıcı onay ekranı içerir. <a>Daha fazla bilgi edinin</a>',
   guide: {
     third_party: {
       title: 'Üçüncü taraf uygulamayı entegre et',
       description:
-        "Üçüncü taraf hizmetlere OAuth yetkilendirmesi sağlamak için Logto'yu Kimlik Sağlayıcınız olarak kullanın. Güvenli kaynak erişimi için önceden oluşturulmuş bir kullanıcı onay ekranı içerir. <a>Daha fazla bilgi</a>",
+        "Üçüncü taraf hizmetlere OAuth yetkilendirmesi sağlamak için MyEyesID'yu Kimlik Sağlayıcınız olarak kullanın. Güvenli kaynak erişimi için önceden oluşturulmuş bir kullanıcı onay ekranı içerir. <a>Daha fazla bilgi</a>",
     },
   },
 };

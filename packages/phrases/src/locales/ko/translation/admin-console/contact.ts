@@ -17,7 +17,7 @@ const contact = {
     button: '보내기',
   },
   reserve: {
-    title: 'Logto 팀과의 시간을 예약하세요',
+    title: 'MyEyesID 팀과의 시간을 예약하세요',
     description: '빠르게 대화를 위해 세션 예약',
     button: '예약하기',
   },

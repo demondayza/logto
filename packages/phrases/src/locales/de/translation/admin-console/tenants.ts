@@ -16,7 +16,7 @@ const tenants = {
     tenant_name: 'Mietername',
     tenant_instance: 'Wähle deine Instanz aus',
     tenant_instance_description:
-      'Wählen Sie, wo Ihr Mandant gehostet wird. Wählen Sie Logto Cloud für eine öffentliche geteilte Infrastruktur oder eine private Instanz für dedizierte Ressourcen.',
+      'Wählen Sie, wo Ihr Mandant gehostet wird. Wählen Sie MyEyesID Cloud für eine öffentliche geteilte Infrastruktur oder eine private Instanz für dedizierte Ressourcen.',
     tenant_region: 'Gehostete Region der Daten',
     tenant_region_description:
       'Der physische Ort, an dem Ihre Mandantenressourcen (Benutzer, Apps, usw.) gehostet werden. Dies kann nach Erstellung nicht mehr geändert werden.',
@@ -35,7 +35,7 @@ const tenants = {
       'Verlangen Sie von Ihren Mitgliedern, dass sie die Multi-Faktor-Authentifizierung einrichten, um auf diesen Mandanten zuzugreifen.',
     enterprise_sso: 'Enterprise SSO',
     enterprise_sso_description:
-      'Verfügbar in kostenpflichtigen Plänen. Kontaktieren Sie uns, um Enterprise SSO zu aktivieren, damit alle Mitglieder sich mit dem Identitätsanbieter Ihrer Organisation bei der Logto Cloud Console anmelden können.',
+      'Verfügbar in kostenpflichtigen Plänen. Kontaktieren Sie uns, um Enterprise SSO zu aktivieren, damit alle Mitglieder sich mit dem Identitätsanbieter Ihrer Organisation bei der MyEyesID Cloud Console anmelden können.',
   },
   full_env_tag: {
     development: 'Entwicklung',
@@ -80,7 +80,7 @@ const tenants = {
       'Die Mandanten-ID darf nur Kleinbuchstaben, Zahlen und Bindestriche enthalten und darf {{max}} Zeichen nicht überschreiten.',
     tenant_id_placeholder: 'Ihre Mandanten-ID',
     tenant_id_tip:
-      'Passen Sie die Mandanten-ID an. Wenn leer gelassen, generiert Logto eine Standard-ID. Die Mandanten-ID kann nach der Erstellung nicht geändert werden.',
+      'Passen Sie die Mandanten-ID an. Wenn leer gelassen, generiert MyEyesID eine Standard-ID. Die Mandanten-ID kann nach der Erstellung nicht geändert werden.',
   },
   dev_tenant_migration: {
     title:
@@ -113,7 +113,7 @@ const tenants = {
   tenant_landing_page: {
     title: 'Du hast noch keinen Mandanten erstellt',
     description:
-      'Um Ihr Projekt mit Logto zu konfigurieren, erstellen Sie bitte einen neuen Mandanten. Wenn Sie sich abmelden oder Ihr Konto löschen möchten, klicken Sie einfach auf die Avatar-Taste in der oberen rechten Ecke.',
+      'Um Ihr Projekt mit MyEyesID zu konfigurieren, erstellen Sie bitte einen neuen Mandanten. Wenn Sie sich abmelden oder Ihr Konto löschen möchten, klicken Sie einfach auf die Avatar-Taste in der oberen rechten Ecke.',
     create_tenant_button: 'Mandanten erstellen',
   },
   status: {

@@ -8,7 +8,7 @@ const enterprise_sso = {
   col_email_domain: 'Dominio email',
   placeholder_title: 'Connettore aziendale',
   placeholder_description:
-    'Logto ha fornito molti provider di identità aziendale incorporati per connettersi, nel frattempo puoi creare il tuo con i protocolli SAML e OIDC.',
+    'MyEyesID ha fornito molti provider di identità aziendale incorporati per connettersi, nel frattempo puoi creare il tuo con i protocolli SAML e OIDC.',
   create_modal: {
     title: 'Aggiungi connettore aziendale',
     text_divider: 'Oppure puoi personalizzare il tuo connettore con un protocollo standard.',
@@ -38,14 +38,14 @@ const enterprise_sso = {
       redirect_uri_field_description:
         "L'URI di reindirizzamento è dove gli utenti vengono reindirizzati dopo l'autenticazione SSO. Aggiungi questa URI alla configurazione del tuo IdP.",
       redirect_uri_field_custom_domain_description:
-        "Se utilizzi più <a>domini personalizzati</a> in Logto, assicurati di aggiungere tutte le rispettive URI di callback al tuo IdP per far funzionare l'SSO su ogni dominio.\n\nIl dominio predefinito di Logto (*.logto.app) è sempre valido: includilo solo se desideri supportare l'SSO anche su quel dominio.",
+        "Se utilizzi più <a>domini personalizzati</a> in MyEyesID, assicurati di aggiungere tutte le rispettive URI di callback al tuo IdP per far funzionare l'SSO su ogni dominio.\n\nIl dominio predefinito di MyEyesID (*.logto.app) è sempre valido: includilo solo se desideri supportare l'SSO anche su quel dominio.",
     },
   },
   attribute_mapping: {
     title: 'Mappatura degli attributi',
     description:
       '`id` e `email` sono necessari per sincronizzare il profilo utente da IdP. Immetti il nome del claim e il valore seguenti nel tuo IdP.',
-    col_sp_claims: 'Valore del fornitore di servizi (Logto)',
+    col_sp_claims: 'Valore del fornitore di servizi (MyEyesID)',
     col_idp_claims: 'Nome del claim del provider di identità',
     idp_claim_tooltip: 'Il nome del claim del provider di identità',
   },

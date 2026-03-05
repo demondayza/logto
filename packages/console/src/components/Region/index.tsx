@@ -97,7 +97,7 @@ export type InstanceDropdownItemProps = Pick<
  */
 export const publicInstancesDropdownItem: InstanceDropdownItemProps = {
   name: 'logto',
-  displayName: 'Logto Cloud (Public)',
+  displayName: 'MyEyesID Cloud (Public)',
   country: 'LOGTO',
   tags: Object.values(TenantTag),
 };

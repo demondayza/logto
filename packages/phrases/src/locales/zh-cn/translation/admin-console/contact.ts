@@ -17,7 +17,7 @@ const contact = {
     button: '发送',
   },
   reserve: {
-    title: '与 Logto 团队预定时间',
+    title: '与 MyEyesID 团队预定时间',
     description: '快速预定一次在线聊天',
     button: '预定',
   },

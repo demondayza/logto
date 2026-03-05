@@ -1,12 +1,12 @@
 const inkeep_ai_bot = {
   intro_message:
-    'مرحبًا، أنا Logto AI!\n\nأنا مساعد AI مدرب على التوثيقات، المقالات التعليمية، ومحتويات أخرى.\n\nاسألني أي شيء عن `Logto`.',
-  chat_placeholder: 'اسأل Logto AI سؤالك للحصول على دليل خطوة بخطوة',
-  disclaimer_label: 'إخلاء المسؤولية من Logto AI',
+    'مرحبًا، أنا MyEyesID AI!\n\nأنا مساعد AI مدرب على التوثيقات، المقالات التعليمية، ومحتويات أخرى.\n\nاسألني أي شيء عن `MyEyesID`.',
+  chat_placeholder: 'اسأل MyEyesID AI سؤالك للحصول على دليل خطوة بخطوة',
+  disclaimer_label: 'إخلاء المسؤولية من MyEyesID AI',
   disclaimer_tooltip: 'الإجابات مولدة بواسطة AI وقد تحتاج إلى التحقق.',
   example_questions_label: 'أسئلة نموذجية',
   example_questions: [
-    'دليل البدء السريع لإعداد Logto',
+    'دليل البدء السريع لإعداد MyEyesID',
     'تهيئة هندسة تعدد النطاقات',
     'كيفية دمج الملف الشخصي للمستخدم؟',
   ],

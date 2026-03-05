@@ -16,7 +16,7 @@ const tenants = {
     tenant_name: 'Nome do Inquilino',
     tenant_instance: 'Selecione a sua instância',
     tenant_instance_description:
-      'Selecione onde o seu inquilino será hospedado. Escolha Logto Cloud para infraestrutura pública compartilhada ou uma instância privada para recursos dedicados.',
+      'Selecione onde o seu inquilino será hospedado. Escolha MyEyesID Cloud para infraestrutura pública compartilhada ou uma instância privada para recursos dedicados.',
     tenant_region: 'Região de hospedagem',
     tenant_region_description:
       'A localização física onde os recursos do seu inquilino (utilizadores, aplicações, etc.) estão hospedados. Isto não pode ser alterado após a criação.',
@@ -35,7 +35,7 @@ const tenants = {
       'Exija que os seus membros configurem a autenticação multifator para aceder a este inquilino.',
     enterprise_sso: 'Enterprise SSO',
     enterprise_sso_description:
-      'Disponível em planos pagos. Contacte-nos para ativar o Enterprise SSO para que todos os membros possam iniciar sessão na consola Logto Cloud usando o fornecedor de identidade da sua organização.',
+      'Disponível em planos pagos. Contacte-nos para ativar o Enterprise SSO para que todos os membros possam iniciar sessão na consola MyEyesID Cloud usando o fornecedor de identidade da sua organização.',
   },
   full_env_tag: {
     development: 'Desenvolvimento',
@@ -79,7 +79,7 @@ const tenants = {
       'O ID do inquilino pode conter apenas letras minúsculas, números e hífens, e não deve exceder {{max}} caracteres.',
     tenant_id_placeholder: 'O seu ID de inquilino',
     tenant_id_tip:
-      'Personalize o ID do inquilino. Se deixado em branco, o Logto irá gerar um ID predefinido. O ID do inquilino não pode ser alterado após a criação.',
+      'Personalize o ID do inquilino. Se deixado em branco, o MyEyesID irá gerar um ID predefinido. O ID do inquilino não pode ser alterado após a criação.',
   },
   dev_tenant_migration: {
     title:
@@ -112,7 +112,7 @@ const tenants = {
   tenant_landing_page: {
     title: 'Ainda não criou um inquilino',
     description:
-      'Para começar a configurar o seu projeto com o Logto, crie um novo inquilino. Se precisar de fazer logout ou excluir a sua conta, basta clicar no botão avatar no canto superior direito.',
+      'Para começar a configurar o seu projeto com o MyEyesID, crie um novo inquilino. Se precisar de fazer logout ou excluir a sua conta, basta clicar no botão avatar no canto superior direito.',
     create_tenant_button: 'Criar inquilino',
   },
   status: {

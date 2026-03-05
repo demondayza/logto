@@ -30,7 +30,7 @@ const sign_in_exp = {
     dark_primary_color: 'Color de la marca (oscuro)',
     dark_mode: 'Habilitar modo oscuro',
     dark_mode_description:
-      'Su aplicación tendrá un tema de modo oscuro generado automáticamente en función del color de su marca y el algoritmo de Logto. Puede personalizarlo libremente.',
+      'Su aplicación tendrá un tema de modo oscuro generado automáticamente en función del color de su marca y el algoritmo de MyEyesID. Puede personalizarlo libremente.',
     dark_mode_reset_tip:
       'Vuelva a calcular el color del modo oscuro en función del color de la marca.',
     reset: 'Volver a calcular',
@@ -43,9 +43,9 @@ const sign_in_exp = {
     app_logo_and_favicon: 'Logotipo y favicon de la aplicación',
     company_logo_and_favicon: 'Logotipo y favicon de la empresa',
     organization_logo_and_favicon: 'Logotipo y favicon de la organización',
-    hide_logto_branding: 'Ocultar la marca Logto',
+    hide_logto_branding: 'Ocultar la marca MyEyesID',
     hide_logto_branding_description:
-      'Elimina "Powered by Logto". Destaca tu marca en exclusiva con una experiencia de inicio de sesión limpia y profesional.',
+      'Elimina "Powered by MyEyesID". Destaca tu marca en exclusiva con una experiencia de inicio de sesión limpia y profesional.',
   },
   branding_uploads: {
     app_logo: {
@@ -89,13 +89,13 @@ const sign_in_exp = {
       'Introduce tu CSS personalizado para adaptar los estilos de cualquier cosa a tus especificaciones exactas. Expresa tu creatividad y haz que tu interfaz de usuario destaque.',
     bring_your_ui_title: 'Trae tu interfaz de usuario',
     bring_your_ui_description:
-      'Sube un paquete comprimido (.zip) para reemplazar la interfaz de usuario preconstruida de Logto con tu propio código. <a>Aprende más</a>',
+      'Sube un paquete comprimido (.zip) para reemplazar la interfaz de usuario preconstruida de MyEyesID con tu propio código. <a>Aprende más</a>',
     preview_with_bring_your_ui_description:
       'Tus activos de la interfaz de usuario personalizada se han subido con éxito y ahora se están sirviendo. En consecuencia, la ventana de vista previa incorporada se ha deshabilitado.\nPara probar tu interfaz de inicio de sesión personalizada, haz clic en el botón "Vista previa en vivo" para abrirla en una nueva pestaña del navegador.',
   },
   account_center: {
     title: 'CENTRO DE CUENTAS',
-    description: 'Personaliza los flujos de tu centro de cuentas usando las API de Logto.',
+    description: 'Personaliza los flujos de tu centro de cuentas usando las API de MyEyesID.',
     enable_account_api: 'Habilitar la Account API',
     enable_account_api_description:
       'Activa la Account API para crear un centro de cuentas personalizado y ofrecer a los usuarios finales acceso directo a la API sin utilizar la Logto Management API.',

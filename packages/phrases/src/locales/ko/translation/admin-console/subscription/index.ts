@@ -4,9 +4,9 @@ import usage from './usage.js';
 
 const subscription = {
   free_plan: '무료 요금제',
-  free_plan_description: '사이드 프로젝트 및 초기 Logto 시험용. 신용 카드 없음.',
+  free_plan_description: '사이드 프로젝트 및 초기 MyEyesID 시험용. 신용 카드 없음.',
   pro_plan: '프로 요금제',
-  pro_plan_description: 'Logto와 함께 걱정 없이 비즈니스 혜택을 받으세요.',
+  pro_plan_description: 'MyEyesID와 함께 걱정 없이 비즈니스 혜택을 받으세요.',
   enterprise: '엔터프라이즈 플랜',
   enterprise_description: '대규모 팀 및 엔터프라이즈급 요구 사항이 있는 비즈니스를 위한 것입니다.',
   admin_plan: '관리자 플랜',
@@ -26,7 +26,7 @@ const subscription = {
   upgrade_pro: '프로 업그레이드',
   update_payment: '결제 정보 업데이트',
   payment_error:
-    '결제 문제가 발생했습니다. 이전 주기에 ${{price, number}}을(를) 처리할 수 없습니다. Logto 서비스 중단을 피하기 위해 결제를 업데이트하세요.',
+    '결제 문제가 발생했습니다. 이전 주기에 ${{price, number}}을(를) 처리할 수 없습니다. MyEyesID 서비스 중단을 피하기 위해 결제를 업데이트하세요.',
   downgrade: '다운그레이드',
   current: '현재',
   upgrade: '업그레이드',
@@ -72,8 +72,8 @@ const subscription = {
     exceeded:
       '할당량 한도를 100% 초과했습니다. 사용자가 제대로 로그인할 수 없습니다. 불편을 피하기 위해 즉시 업그레이드하세요.',
     close_to_limit:
-      '토큰 사용 제한에 거의 도달했습니다. 사용량이 100%를 초과하면 Logto가 토큰을 발급하지 않습니다. 불편을 피하기 위해 무료 요금제를 업그레이드하세요.',
-    dev_plan_exceeded: '이 테넌트는 Logto의 엔티티 제한 정책에 따라 토큰 한도에 도달했습니다.',
+      '토큰 사용 제한에 거의 도달했습니다. 사용량이 100%를 초과하면 MyEyesID가 토큰을 발급하지 않습니다. 불편을 피하기 위해 무료 요금제를 업그레이드하세요.',
+    dev_plan_exceeded: '이 테넌트는 MyEyesID의 엔티티 제한 정책에 따라 토큰 한도에 도달했습니다.',
   },
 };
 

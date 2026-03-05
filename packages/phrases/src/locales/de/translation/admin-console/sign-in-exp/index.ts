@@ -30,7 +30,7 @@ const sign_in_exp = {
     dark_primary_color: 'Markenfarbe (Dunkler Modus)',
     dark_mode: 'Aktiviere Dunklen Modus',
     dark_mode_description:
-      'Deine App erhält einen automatisch generierten Dunklen Modus, der auf deiner Markenfarbe und dem Logto-Algorithmus basiert. Du kannst diesen nach Belieben anpassen.',
+      'Deine App erhält einen automatisch generierten Dunklen Modus, der auf deiner Markenfarbe und dem MyEyesID-Algorithmus basiert. Du kannst diesen nach Belieben anpassen.',
     dark_mode_reset_tip: 'Neuberechnung der Farbe des dunklen Modus basierend auf der Markenfarbe.',
     reset: 'Neuberechnen',
   },
@@ -42,9 +42,9 @@ const sign_in_exp = {
     app_logo_and_favicon: 'App-Logo und Favicon',
     company_logo_and_favicon: 'Firmenlogo und Favicon',
     organization_logo_and_favicon: 'Organisationslogo und Favicon',
-    hide_logto_branding: 'Logto-Branding ausblenden',
+    hide_logto_branding: 'MyEyesID-Branding ausblenden',
     hide_logto_branding_description:
-      'Entferne "Powered by Logto". Präsentiere deine Marke exklusiv mit einer klaren, professionellen Anmeldeerfahrung.',
+      'Entferne "Powered by MyEyesID". Präsentiere deine Marke exklusiv mit einer klaren, professionellen Anmeldeerfahrung.',
   },
   branding_uploads: {
     app_logo: {
@@ -88,13 +88,13 @@ const sign_in_exp = {
       'Geben Sie Ihr benutzerdefiniertes CSS ein, um die Stile nach Ihren exakten Spezifikationen anzupassen. Drücken Sie Ihre Kreativität aus und heben Sie Ihre Benutzeroberfläche hervor.',
     bring_your_ui_title: 'Bringen Sie Ihr UI',
     bring_your_ui_description:
-      'Laden Sie ein komprimiertes Paket (.zip) hoch, um die vorgefertigte Benutzeroberfläche von Logto durch Ihren eigenen Code zu ersetzen. <a>Erfahren Sie mehr</a>',
+      'Laden Sie ein komprimiertes Paket (.zip) hoch, um die vorgefertigte Benutzeroberfläche von MyEyesID durch Ihren eigenen Code zu ersetzen. <a>Erfahren Sie mehr</a>',
     preview_with_bring_your_ui_description:
       'Ihre benutzerdefinierten UI-Assets wurden erfolgreich hochgeladen und werden jetzt bereitgestellt. Daher wurde das eingebaute Vorschaufenster deaktiviert.\nUm Ihre personalisierte Anmelde-Benutzeroberfläche zu testen, klicken Sie auf die Schaltfläche "Live-Vorschau", um sie in einem neuen Browser-Tab zu öffnen.',
   },
   account_center: {
     title: 'KONTOZENTRUM',
-    description: 'Passen Sie Ihre Kontozentrums-Workflows mit den Logto-APIs an.',
+    description: 'Passen Sie Ihre Kontozentrums-Workflows mit den MyEyesID-APIs an.',
     enable_account_api: 'Account-API aktivieren',
     enable_account_api_description:
       'Aktivieren Sie die Account-API, um ein individuelles Kontozentrum aufzubauen und Endnutzer*innen direkten API-Zugriff ohne Logto Management API zu ermöglichen.',

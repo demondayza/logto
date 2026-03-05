@@ -20,7 +20,7 @@ const connector_details = {
   test_sms_placeholder: '+86 131 1234 5678',
   test_message_sent: '測試訊息已傳送',
   test_sender_description:
-    'Logto 使用「通用」模板進行測試。如果您的連結器正確配置，您將收到一條訊息。',
+    'MyEyesID 使用「通用」模板進行測試。如果您的連結器正確配置，您將收到一條訊息。',
   options_change_email: '更換郵件連結器',
   options_change_sms: '更換短信連結器',
   connector_deleted: '成功刪除連結器',
@@ -35,7 +35,7 @@ const connector_details = {
   logto_email: {
     total_email_sent: '總發送郵件數：{{value, number}}',
     total_email_sent_tip:
-      '在 Logto 中，使用 SendGrid 進行安全、穩定的內建郵件發送。完全免費使用。<a>了解更多</a>',
+      '在 MyEyesID 中，使用 SendGrid 進行安全、穩定的內建郵件發送。完全免費使用。<a>了解更多</a>',
     email_template_title: '郵件模板',
     template_description:
       '內置郵件使用默認模板實現無縫交付驗證郵件。無需配置，您可以自定義基本品牌信息。',
@@ -51,7 +51,7 @@ const connector_details = {
     email_logo_field: '郵件標誌',
     email_logo_tip: '在郵件頂部顯示您的品牌標誌。請在淺色模式和深色模式下使用相同的圖片。',
     urls_not_allowed: '不允許使用 URL',
-    test_notes: 'Logto 使用「通用」模板進行測試。',
+    test_notes: 'MyEyesID 使用「通用」模板進行測試。',
   },
   google_one_tap: {
     title: 'Google 一鍵登入',

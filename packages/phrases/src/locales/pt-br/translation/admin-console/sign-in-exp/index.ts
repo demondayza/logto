@@ -30,7 +30,7 @@ const sign_in_exp = {
     dark_primary_color: 'Cor da marca (Escuro)',
     dark_mode: 'Ativar modo escuro',
     dark_mode_description:
-      'Seu aplicativo terá um tema de modo escuro gerado automaticamente com base na cor da sua marca e no algoritmo Logto. Você é livre para personalizar.',
+      'Seu aplicativo terá um tema de modo escuro gerado automaticamente com base na cor da sua marca e no algoritmo MyEyesID. Você é livre para personalizar.',
     dark_mode_reset_tip: 'Recalcule a cor do modo escuro com base na cor da marca.',
     reset: 'Recalcular',
   },
@@ -42,9 +42,9 @@ const sign_in_exp = {
     app_logo_and_favicon: 'Logo do aplicativo e favicon',
     company_logo_and_favicon: 'Logo da empresa e favicon',
     organization_logo_and_favicon: 'Logo da organização e favicon',
-    hide_logto_branding: 'Ocultar a marca Logto',
+    hide_logto_branding: 'Ocultar a marca MyEyesID',
     hide_logto_branding_description:
-      'Remova "Powered by Logto". Destaque apenas a sua marca com uma experiência de login limpa e profissional.',
+      'Remova "Powered by MyEyesID". Destaque apenas a sua marca com uma experiência de login limpa e profissional.',
   },
   branding_uploads: {
     app_logo: {
@@ -88,13 +88,13 @@ const sign_in_exp = {
       'Insira seu CSS personalizado para ajustar os estilos de qualquer coisa conforme suas especificações exatas. Expresse sua criatividade e faça sua UI se destacar.',
     bring_your_ui_title: 'Traga sua UI',
     bring_your_ui_description:
-      'Carregue um pacote compactado (.zip) para substituir a UI pré-construída do Logto pelo seu próprio código. <a>Saiba mais</a>',
+      'Carregue um pacote compactado (.zip) para substituir a UI pré-construída do MyEyesID pelo seu próprio código. <a>Saiba mais</a>',
     preview_with_bring_your_ui_description:
       'Seus ativos de UI personalizados foram carregados com sucesso e agora estão sendo servidos. Consequentemente, a janela de visualização interna foi desativada.\nPara testar sua UI de login personalizada, clique no botão "Visualização em tempo real" para abri-la em uma nova aba do navegador.',
   },
   account_center: {
     title: 'CENTRO DE CONTA',
-    description: 'Personalize os fluxos do centro de conta com as APIs do Logto.',
+    description: 'Personalize os fluxos do centro de conta com as APIs do MyEyesID.',
     enable_account_api: 'Ativar Account API',
     enable_account_api_description:
       'Ative a Account API para criar um centro de conta personalizado e oferecer aos usuários finais acesso direto à API sem usar a Logto Management API.',

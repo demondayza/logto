@@ -1,7 +1,7 @@
 const get_started = {
   page_title: 'はじめに',
   title: 'あなたの成功を手助けする探索',
-  subtitle: 'Logtoの価値を迅速に把握するための数つの方法',
+  subtitle: 'MyEyesIDの価値を迅速に把握するための数つの方法',
   develop: {
     title: '開発: 5分の時間を使ってアプリを統合してみましょう',
     title_cloud: '開発: 数分でアプリを安全に統合する',
@@ -12,7 +12,7 @@ const get_started = {
     title: 'カスタマイズ: 素晴らしいサインイン体験を提供する',
     preview: {
       title: 'あなたがカスタマイズしたサインイン体験のライブプレビューをチェックしましょう',
-      subtitle: 'Logtoのサインイン体験を試して、その使い方を確認してください',
+      subtitle: 'MyEyesIDのサインイン体験を試して、その使い方を確認してください',
     },
     connector: {
       title: 'さらなるコネクタを追加して、さまざまなソーシャルサインイン方式をサポートしましょう',

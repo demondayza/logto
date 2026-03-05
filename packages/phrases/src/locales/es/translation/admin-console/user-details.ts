@@ -140,11 +140,11 @@ const user_details = {
   sessions: {
     title: 'Sesiones',
     description:
-      'Gestiona las sesiones mantenidas por el Servidor de Autorización de Logto. Revocar una sesión de Logto aquí evita el consentimiento automático en futuras solicitudes de autorización.',
+      'Gestiona las sesiones mantenidas por el Servidor de Autorización de MyEyesID. Revocar una sesión de MyEyesID aquí evita el consentimiento automático en futuras solicitudes de autorización.',
     field_name: 'Sesiones',
     multiple_signed_in: 'Este usuario ha iniciado sesión en múltiples dispositivos o navegadores.',
     not_found:
-      'No se encontraron sesiones activas de Logto. El usuario no ha iniciado sesión actualmente en ningún dispositivo.',
+      'No se encontraron sesiones activas de MyEyesID. El usuario no ha iniciado sesión actualmente en ningún dispositivo.',
     name_column: 'Nombre',
     session_id_column: 'ID de sesión',
     location_column: 'Ubicación',

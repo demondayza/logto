@@ -9,7 +9,7 @@ const add: CommandModule<
   { packages?: string[]; path?: string; official: boolean; cloud: boolean }
 > = {
   command: ['add [packages...]', 'a', 'install', 'i'],
-  describe: 'Add specific Logto connectors',
+  describe: 'Add specific MyEyesID connectors',
   builder: (yargs) =>
     yargs
       .positional('packages', {
@@ -27,7 +27,7 @@ const add: CommandModule<
           "If it's true, the specified package names will be ignored.",
       })
       .option('cloud', {
-        describe: 'Add additional connectors for Logto Cloud',
+        describe: 'Add additional connectors for MyEyesID Cloud',
         type: 'boolean',
         default: false,
         hidden: true,
@@ -49,7 +49,7 @@ const add: CommandModule<
       await addConnectors(instancePath, packageNames);
     }
 
-    consoleLog.info('Restart your Logto instance to get the changes reflected.');
+    consoleLog.info('Restart your MyEyesID instance to get the changes reflected.');
   },
 };
 

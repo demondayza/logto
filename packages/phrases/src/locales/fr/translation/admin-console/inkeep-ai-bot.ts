@@ -1,12 +1,12 @@
 const inkeep_ai_bot = {
   intro_message:
-    "Salut, je suis Logto AI!\n\nJe suis un assistant IA formé sur la documentation, les articles d'aide, et d'autres contenus.\n\nPose-moi toutes tes questions sur `Logto`.",
-  chat_placeholder: 'Posez votre question à Logto AI pour obtenir un guide étape par étape',
-  disclaimer_label: 'Avertissement Logto AI',
+    "Salut, je suis MyEyesID AI!\n\nJe suis un assistant IA formé sur la documentation, les articles d'aide, et d'autres contenus.\n\nPose-moi toutes tes questions sur `MyEyesID`.",
+  chat_placeholder: 'Posez votre question à MyEyesID AI pour obtenir un guide étape par étape',
+  disclaimer_label: 'Avertissement MyEyesID AI',
   disclaimer_tooltip: "Les réponses sont générées par l'IA et peuvent nécessiter une vérification.",
   example_questions_label: 'Exemples de questions',
   example_questions: [
-    'Guide de démarrage rapide pour la configuration de Logto',
+    'Guide de démarrage rapide pour la configuration de MyEyesID',
     "Configurer l'architecture multi-locataire",
     'Comment intégrer le profil utilisateur?',
   ],

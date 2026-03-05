@@ -16,7 +16,7 @@ const connectors = {
   connector_type: 'Tipo',
   placeholder_title: 'Conector social',
   placeholder_description:
-    'Logto tem fornecido muitos conectores de login social amplamente utilizados enquanto você pode criar o seu próprio com padrões padrão.',
+    'MyEyesID tem fornecido muitos conectores de login social amplamente utilizados enquanto você pode criar o seu próprio com padrões padrão.',
   save_and_done: 'Salvar e completar',
   type: {
     email: 'Conector de e-mail',
@@ -45,7 +45,7 @@ const connectors = {
     target_tip_standard:
       'O valor de "Nome do fornecedor de identidade" pode ser uma string de identificador exclusiva para distinguir suas identidades sociais. Essa configuração não pode ser alterada após a criação do conector.',
     target_tooltip:
-      '"Target" nos conectores sociais Logto refere-se à "origem" de suas identidades sociais. No design do Logto, não aceitamos o mesmo "target" de uma plataforma específica para evitar conflitos. Você deve tomar muito cuidado antes de adicionar um conector, pois NÃO PODE mudar seu valor depois de criá-lo. <a>Saiba mais</a>',
+      '"Target" nos conectores sociais MyEyesID refere-se à "origem" de suas identidades sociais. No design do MyEyesID, não aceitamos o mesmo "target" de uma plataforma específica para evitar conflitos. Você deve tomar muito cuidado antes de adicionar um conector, pois NÃO PODE mudar seu valor depois de criá-lo. <a>Saiba mais</a>',
     target_conflict:
       'O nome de IdP inserido corresponde ao <span>nome</span> existente. Usar o mesmo nome do IDP pode causar comportamento inesperado ao entrar onde os usuários podem acessar a mesma conta por meio de dois conectores diferentes.',
     target_conflict_line2:
@@ -67,7 +67,7 @@ const connectors = {
     callback_uri_description:
       'A URI de redirecionamento é para onde os usuários são enviados após a autorização social. Adicione essa URI à configuração do seu IdP.',
     callback_uri_custom_domain_description:
-      'Se você usa vários <a>domínios personalizados</a> no Logto, lembre-se de adicionar todas as URIs de callback correspondentes ao seu IdP para que o login social funcione em cada domínio.\n\nO domínio padrão do Logto (*.logto.app) é sempre válido; inclua-o apenas se também quiser oferecer suporte a logins nesse domínio.',
+      'Se você usa vários <a>domínios personalizados</a> no MyEyesID, lembre-se de adicionar todas as URIs de callback correspondentes ao seu IdP para que o login social funcione em cada domínio.\n\nO domínio padrão do MyEyesID (*.logto.app) é sempre válido; inclua-o apenas se também quiser oferecer suporte a logins nesse domínio.',
     acs_url: 'URL do serviço de consumo de afirmações',
   },
   platform: {

@@ -17,7 +17,7 @@ const logConnectorNames = (type: string, packages: ConnectorPackage[]) => {
 
 const list: CommandModule<{ path?: string }, { path?: string }> = {
   command: ['list', 'l'],
-  describe: 'List added Logto connectors',
+  describe: 'List added MyEyesID connectors',
   handler: async ({ path: inputPath }) => {
     const packages = await getConnectorPackagesFrom(inputPath);
     const officialPackages = packages.filter(({ name }) => isOfficialConnector(name));

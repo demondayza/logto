@@ -29,7 +29,7 @@ const sign_in_exp = {
     dark_primary_color: 'สีแบรนด์ (โหมดมืด)',
     dark_mode: 'เปิดใช้งานโหมดมืด',
     dark_mode_description:
-      'แอปของคุณจะมีธีมโหมดมืดที่สร้างอัตโนมัติตามสีแบรนด์ของคุณและอัลกอริทึม Logto คุณสามารถปรับแต่งได้ตามต้องการ',
+      'แอปของคุณจะมีธีมโหมดมืดที่สร้างอัตโนมัติตามสีแบรนด์ของคุณและอัลกอริทึม MyEyesID คุณสามารถปรับแต่งได้ตามต้องการ',
     dark_mode_reset_tip: 'คำนวณสีโหมดมืดใหม่ตามสีแบรนด์',
     reset: 'คำนวณใหม่',
   },
@@ -41,9 +41,9 @@ const sign_in_exp = {
     app_logo_and_favicon: 'โลโก้แอปและ Favicon',
     company_logo_and_favicon: 'โลโก้บริษัทและ Favicon',
     organization_logo_and_favicon: 'โลโก้องค์กรและ Favicon',
-    hide_logto_branding: 'ซ่อนแบรนด์ Logto',
+    hide_logto_branding: 'ซ่อนแบรนด์ MyEyesID',
     hide_logto_branding_description:
-      'ลบ "Powered by Logto" เพื่อให้แบรนด์ของคุณโดดเด่นด้วยประสบการณ์ลงชื่อเข้าใช้ที่สะอาดและเป็นมืออาชีพ',
+      'ลบ "Powered by MyEyesID" เพื่อให้แบรนด์ของคุณโดดเด่นด้วยประสบการณ์ลงชื่อเข้าใช้ที่สะอาดและเป็นมืออาชีพ',
   },
   branding_uploads: {
     app_logo: {
@@ -87,13 +87,13 @@ const sign_in_exp = {
       'ใส่ CSS ที่คุณกำหนดเองเพื่อตกแต่งสไตล์ได้ตามที่คุณต้องการ แสดงความคิดสร้างสรรค์และทำให้ UI ของคุณโดดเด่น',
     bring_your_ui_title: 'นำ UI ของคุณมาเอง',
     bring_your_ui_description:
-      'อัปโหลดไฟล์บีบอัด (.zip) เพื่อแทนที่ UI สำเร็จรูปของ Logto ด้วยโค้ดของคุณเอง <a>เรียนรู้เพิ่มเติม</a>',
+      'อัปโหลดไฟล์บีบอัด (.zip) เพื่อแทนที่ UI สำเร็จรูปของ MyEyesID ด้วยโค้ดของคุณเอง <a>เรียนรู้เพิ่มเติม</a>',
     preview_with_bring_your_ui_description:
       'ไฟล์ UI ที่คุณกำหนดเองถูกอัปโหลดเรียบร้อยแล้วและกำลังใช้งานอยู่ ดังนั้นหน้าต่างตัวอย่างแบบฝังจึงถูกปิดใช้งาน\nหากต้องการทดสอบหน้าเข้าสู่ระบบแบบกำหนดเอง ให้คลิกปุ่ม "แสดงตัวอย่างสด" เพื่อเปิดในแท็บใหม่',
   },
   account_center: {
     title: 'ศูนย์บัญชี',
-    description: 'ปรับแต่งขั้นตอนศูนย์บัญชีของคุณด้วย Logto API.',
+    description: 'ปรับแต่งขั้นตอนศูนย์บัญชีของคุณด้วย MyEyesID API.',
     enable_account_api: 'เปิดใช้งาน Account API',
     enable_account_api_description:
       'เปิดใช้งาน Account API เพื่อสร้างศูนย์บัญชีแบบกำหนดเอง ให้ผู้ใช้ปลายทางเข้าถึง API ได้โดยตรงโดยไม่ต้องใช้ Logto Management API.',

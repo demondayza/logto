@@ -21,7 +21,7 @@ const connector_details = {
   test_sms_placeholder: '+1 555-123-4567',
   test_message_sent: 'ส่งข้อความทดสอบแล้ว',
   test_sender_description:
-    'Logto ใช้แม่แบบ "Generic" สำหรับการทดสอบ คุณจะได้รับข้อความหากตัวเชื่อมต่อของคุณตั้งค่าอย่างถูกต้อง',
+    'MyEyesID ใช้แม่แบบ "Generic" สำหรับการทดสอบ คุณจะได้รับข้อความหากตัวเชื่อมต่อของคุณตั้งค่าอย่างถูกต้อง',
   options_change_email: 'เปลี่ยนตัวเชื่อมต่ออีเมล',
   options_change_sms: 'เปลี่ยนตัวเชื่อมต่อ SMS',
   connector_deleted: 'ลบตัวเชื่อมต่อเรียบร้อยแล้ว',
@@ -37,7 +37,7 @@ const connector_details = {
   logto_email: {
     total_email_sent: 'อีเมลที่ส่งทั้งหมด: {{value, number}}',
     total_email_sent_tip:
-      'Logto ใช้ SendGrid เพื่อความปลอดภัยและเสถียรภาพในการส่งอีเมลที่ติดตั้งมาในตัว ใช้งานได้ฟรี <a>เรียนรู้เพิ่มเติม</a>',
+      'MyEyesID ใช้ SendGrid เพื่อความปลอดภัยและเสถียรภาพในการส่งอีเมลที่ติดตั้งมาในตัว ใช้งานได้ฟรี <a>เรียนรู้เพิ่มเติม</a>',
     email_template_title: 'แม่แบบอีเมล',
     template_description:
       'อีเมลในตัวจะใช้แม่แบบเริ่มต้นเพื่อส่งอีเมลยืนยันอย่างราบรื่น ไม่ต้องกำหนดค่าใด ๆ และคุณสามารถปรับแต่งข้อมูลแบรนด์พื้นฐานได้',
@@ -55,7 +55,7 @@ const connector_details = {
     email_logo_field: 'โลโก้อีเมล',
     email_logo_tip: 'แสดงโลโก้แบรนด์ของคุณที่ด้านบนของอีเมล ใช้ภาพเดียวกันกับโหมดสว่างและโหมดมืด',
     urls_not_allowed: 'ไม่อนุญาตให้ใส่ URL',
-    test_notes: 'Logto ใช้แม่แบบ “Generic” สำหรับการทดสอบ',
+    test_notes: 'MyEyesID ใช้แม่แบบ “Generic” สำหรับการทดสอบ',
   },
   google_one_tap: {
     title: 'Google One Tap',

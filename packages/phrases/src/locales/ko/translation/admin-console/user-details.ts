@@ -133,11 +133,11 @@ const user_details = {
   sessions: {
     title: '세션',
     description:
-      'Logto 인증 서버에 의해 유지되는 세션을 관리합니다. 여기서 Logto 세션을 해지하면 자동 동의가 미래의 인증 요청에서 방지됩니다.',
+      'MyEyesID 인증 서버에 의해 유지되는 세션을 관리합니다. 여기서 MyEyesID 세션을 해지하면 자동 동의가 미래의 인증 요청에서 방지됩니다.',
     field_name: '세션',
     multiple_signed_in: '이 사용자는 여러 기기나 브라우저에 로그인했습니다.',
     not_found:
-      '활성 Logto 세션을 찾을 수 없습니다. 사용자가 현재 어떤 장치에서도 로그인되어 있지 않습니다.',
+      '활성 MyEyesID 세션을 찾을 수 없습니다. 사용자가 현재 어떤 장치에서도 로그인되어 있지 않습니다.',
     name_column: '이름',
     session_id_column: '세션 ID',
     location_column: '위치',

@@ -8,13 +8,13 @@ import remove from './remove.js';
 
 const connector: CommandModule = {
   command: ['connector', 'c', 'connectors'],
-  describe: 'Command for Logto connectors',
+  describe: 'Command for MyEyesID connectors',
   builder: (yargs) =>
     yargs
       .option('path', {
         alias: 'p',
         type: 'string',
-        describe: 'The path to your Logto instance directory',
+        describe: 'The path to your MyEyesID instance directory',
       })
       .command(add)
       .command(list)

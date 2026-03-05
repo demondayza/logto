@@ -16,7 +16,7 @@ const connectors = {
   connector_type: 'Typ',
   placeholder_title: 'Social-Connector',
   placeholder_description:
-    'Logto hat viele weit verbreitete Social-Sign-In-Connectoren bereitgestellt. Inzwischen können Sie mit Standardprotokollen Ihre eigenen erstellen.',
+    'MyEyesID hat viele weit verbreitete Social-Sign-In-Connectoren bereitgestellt. Inzwischen können Sie mit Standardprotokollen Ihre eigenen erstellen.',
   save_and_done: 'Speichern und fertigstellen',
   type: {
     email: 'E-Mail-Connector',
@@ -46,7 +46,7 @@ const connectors = {
     target_tip_standard:
       'Der Wert von "IdP-Name" kann eine eindeutige Kennung sein, um Ihre Social-Identitäten zu unterscheiden. Diese Einstellung kann nach der Erstellung des Connectors nicht mehr geändert werden.',
     target_tooltip:
-      '„Target“ in Logto-Social-Connectors bezieht sich auf die „Quelle“ Ihrer Social-Identitäten. Im Logto-Design akzeptieren wir nicht dasselbe „Target“ einer bestimmten Plattform, um Konflikte zu vermeiden. Sie sollten sehr vorsichtig sein, bevor Sie einen Connector hinzufügen, da Sie seinen Wert NICHT ändern können, sobald Sie ihn erstellt haben. <a>Erfahren Sie mehr</a>',
+      '„Target“ in MyEyesID-Social-Connectors bezieht sich auf die „Quelle“ Ihrer Social-Identitäten. Im MyEyesID-Design akzeptieren wir nicht dasselbe „Target“ einer bestimmten Plattform, um Konflikte zu vermeiden. Sie sollten sehr vorsichtig sein, bevor Sie einen Connector hinzufügen, da Sie seinen Wert NICHT ändern können, sobald Sie ihn erstellt haben. <a>Erfahren Sie mehr</a>',
     target_conflict:
       'Der eingegebene IdP-Name stimmt mit dem vorhandenen <span>Namen</span> überein. Die Verwendung desselben IdP-Namens kann ein unerwartetes Anmeldeverhalten verursachen, bei dem Benutzer über zwei verschiedene Connectoren auf dasselbe Konto zugreifen können.',
     target_conflict_line2:
@@ -68,7 +68,7 @@ const connectors = {
     callback_uri_description:
       'Die Redirect-URI ist die Adresse, zu der Benutzer nach der Social-Autorisierung zurückgeleitet werden. Fügen Sie diese URI zur Konfiguration Ihres IdP hinzu.',
     callback_uri_custom_domain_description:
-      'Wenn Sie in Logto mehrere <a>benutzerdefinierte Domains</a> verwenden, fügen Sie alle entsprechenden Callback-URIs zu Ihrem IdP hinzu, damit Social Login in jeder Domain funktioniert.\n\nDie standardmäßige Logto-Domain (*.logto.app) ist immer gültig - fügen Sie sie nur hinzu, wenn Sie auch Anmeldungen unter dieser Domain unterstützen möchten.',
+      'Wenn Sie in MyEyesID mehrere <a>benutzerdefinierte Domains</a> verwenden, fügen Sie alle entsprechenden Callback-URIs zu Ihrem IdP hinzu, damit Social Login in jeder Domain funktioniert.\n\nDie standardmäßige MyEyesID-Domain (*.logto.app) ist immer gültig - fügen Sie sie nur hinzu, wenn Sie auch Anmeldungen unter dieser Domain unterstützen möchten.',
     acs_url: 'Assertion Consumer Service URL',
   },
   platform: {

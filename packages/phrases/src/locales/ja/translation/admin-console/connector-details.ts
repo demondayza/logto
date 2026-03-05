@@ -21,7 +21,7 @@ const connector_details = {
   test_sms_placeholder: '+1 555-123-4567',
   test_message_sent: 'テストメッセージが送信されました',
   test_sender_description:
-    'Logto はテストのために「共通」テンプレートを使用しています。コネクタが正しく構成されている場合、メッセージを受信します。',
+    'MyEyesID はテストのために「共通」テンプレートを使用しています。コネクタが正しく構成されている場合、メッセージを受信します。',
   options_change_email: 'メールコネクタの変更',
   options_change_sms: 'SMS コネクタの変更',
   connector_deleted: 'コネクタが正常に削除されました',
@@ -37,7 +37,7 @@ const connector_details = {
   logto_email: {
     total_email_sent: '総送信数: {{value, number}}',
     total_email_sent_tip:
-      'Logto はセキュアかつ安定した組み込みメールのために SendGrid を利用しています。完全に無料です。<a>詳細を見る</a>',
+      'MyEyesID はセキュアかつ安定した組み込みメールのために SendGrid を利用しています。完全に無料です。<a>詳細を見る</a>',
     email_template_title: 'メールテンプレート',
     template_description:
       '組み込みのメールは、シームレスな認証メールの配信のためにデフォルトのテンプレートを使用します。設定は必要ありません。基本的なブランド情報をカスタマイズできます。',
@@ -56,7 +56,7 @@ const connector_details = {
     email_logo_tip:
       'メールの上部にブランドロゴを表示します。ライトモードとダークモードの両方で同じ画像を使用します。',
     urls_not_allowed: 'URLは許可されません',
-    test_notes: 'Logto はテストのために「共通」テンプレートを使用しています。',
+    test_notes: 'MyEyesID はテストのために「共通」テンプレートを使用しています。',
   },
   google_one_tap: {
     title: 'Google ワンタップ',

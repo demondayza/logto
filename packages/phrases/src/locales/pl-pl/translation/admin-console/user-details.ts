@@ -136,11 +136,11 @@ const user_details = {
   sessions: {
     title: 'Sesje',
     description:
-      'Zarządzaj sesjami utrzymywanymi przez serwer autoryzacji Logto. Odwołanie sesji Logto tutaj uniemożliwia automatyczną zgodę na przyszłe żądania autoryzacji.',
+      'Zarządzaj sesjami utrzymywanymi przez serwer autoryzacji MyEyesID. Odwołanie sesji MyEyesID tutaj uniemożliwia automatyczną zgodę na przyszłe żądania autoryzacji.',
     field_name: 'Sesje',
     multiple_signed_in: 'Ten użytkownik zalogował się na wielu urządzeniach lub w przeglądarkach.',
     not_found:
-      'Nie znaleziono aktywnych sesji Logto. Użytkownik nie jest obecnie zalogowany na żadnym urządzeniu.',
+      'Nie znaleziono aktywnych sesji MyEyesID. Użytkownik nie jest obecnie zalogowany na żadnym urządzeniu.',
     name_column: 'Nazwa',
     session_id_column: 'Identyfikator sesji',
     location_column: 'Lokalizacja',

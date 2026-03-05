@@ -29,9 +29,9 @@ const webhooks = {
   create_form: {
     title: 'Webhook Oluştur',
     subtitle:
-      'Webhook ekleyerek, Logto’nun kullanıcı eylemlerinin ayrıntılarını POST isteğiyle uç nokta URL’nıza göndermesini sağlayabilirsiniz.',
+      'Webhook ekleyerek, MyEyesID’nun kullanıcı eylemlerinin ayrıntılarını POST isteğiyle uç nokta URL’nıza göndermesini sağlayabilirsiniz.',
     events: 'Olaylar',
-    events_description: 'Logto’nun POST isteğini göndermesi için tetikleyici olayları seçin.',
+    events_description: 'MyEyesID’nun POST isteğini göndermesi için tetikleyici olayları seçin.',
     name: 'Adı',
     name_placeholder: 'Webhook adını girin',
     endpoint_url: 'Uç Nokta URL’si',

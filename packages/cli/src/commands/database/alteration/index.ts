@@ -142,7 +142,7 @@ const alteration: CommandModule<unknown, { action: string; target?: string }> = 
         demandOption: true,
       })
       .positional('target', {
-        describe: 'The target Logto version for alteration',
+        describe: 'The target MyEyesID version for alteration',
         type: 'string',
       }),
 

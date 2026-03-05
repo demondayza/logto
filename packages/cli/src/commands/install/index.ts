@@ -65,29 +65,29 @@ const install: CommandModule<
   }
 > = {
   command: ['init', 'i', 'install'],
-  describe: 'Download and run the latest Logto release',
+  describe: 'Download and run the latest MyEyesID release',
   builder: (yargs) =>
     yargs.options({
       p: {
         alias: 'path',
-        describe: 'Path of Logto, must be a non-existing path',
+        describe: 'Path of MyEyesID, must be a non-existing path',
         type: 'string',
       },
       ss: {
         alias: 'skip-seed',
-        describe: 'Skip Logto database seeding',
+        describe: 'Skip MyEyesID database seeding',
         type: 'boolean',
         default: false,
       },
       cloud: {
-        describe: 'Init Logto for cloud',
+        describe: 'Init MyEyesID for cloud',
         type: 'boolean',
         hidden: true,
         default: false,
       },
       du: {
         alias: 'download-url',
-        describe: 'URL for downloading Logto, can be a local path to tar.',
+        describe: 'URL for downloading MyEyesID, can be a local path to tar.',
         type: 'string',
         hidden: true,
       },

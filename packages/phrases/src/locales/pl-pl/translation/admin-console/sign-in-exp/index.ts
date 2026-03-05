@@ -30,7 +30,7 @@ const sign_in_exp = {
     dark_primary_color: 'Kolor marki (ciemny)',
     dark_mode: 'Włącz tryb ciemny',
     dark_mode_description:
-      'Twoja aplikacja będzie miała automatycznie wygenerowany szablon trybu ciemnego na podstawie koloru marki i algorytmu Logto. Możesz go swobodnie dostosować.',
+      'Twoja aplikacja będzie miała automatycznie wygenerowany szablon trybu ciemnego na podstawie koloru marki i algorytmu MyEyesID. Możesz go swobodnie dostosować.',
     dark_mode_reset_tip: 'Przelicz kolor trybu ciemnego na podstawie koloru marki.',
     reset: 'Przelicz',
   },
@@ -42,9 +42,9 @@ const sign_in_exp = {
     app_logo_and_favicon: 'Logo aplikacji i favicon',
     company_logo_and_favicon: 'Logo firmy i favicon',
     organization_logo_and_favicon: 'Logo organizacji i favicon',
-    hide_logto_branding: 'Ukryj branding Logto',
+    hide_logto_branding: 'Ukryj branding MyEyesID',
     hide_logto_branding_description:
-      'Usuń napis "Powered by Logto". Zaprezentuj wyłącznie swoją markę w czystym i profesjonalnym procesie logowania.',
+      'Usuń napis "Powered by MyEyesID". Zaprezentuj wyłącznie swoją markę w czystym i profesjonalnym procesie logowania.',
   },
   branding_uploads: {
     app_logo: {
@@ -88,13 +88,13 @@ const sign_in_exp = {
       'Wpisz swój niestandardowy CSS, aby dostosować style wszystkiego do swoich specyfikacji. Wyraź swoją kreatywność i spraw, by Twój interfejs użytkownika był wyjątkowy.',
     bring_your_ui_title: 'Przynieś swój interfejs użytkownika',
     bring_your_ui_description:
-      'Prześlij skompresowany pakiet (.zip), aby zastąpić predefiniowany interfejs użytkownika Logto swoim własnym kodem. <a>Dowiedz się więcej</a>',
+      'Prześlij skompresowany pakiet (.zip), aby zastąpić predefiniowany interfejs użytkownika MyEyesID swoim własnym kodem. <a>Dowiedz się więcej</a>',
     preview_with_bring_your_ui_description:
       'Twoje niestandardowe zasoby interfejsu użytkownika zostały pomyślnie przesłane i są teraz dostępne. W rezultacie wbudowane okno podglądu zostało wyłączone.\nAby przetestować swoje spersonalizowane UI logowania, kliknij przycisk "Podgląd na żywo", aby otworzyć go w nowej karcie przeglądarki.',
   },
   account_center: {
     title: 'CENTRUM KONTA',
-    description: 'Dostosuj przepływy centrum konta z wykorzystaniem interfejsów API Logto.',
+    description: 'Dostosuj przepływy centrum konta z wykorzystaniem interfejsów API MyEyesID.',
     enable_account_api: 'Włącz Account API',
     enable_account_api_description:
       'Włącz Account API, aby zbudować własne centrum konta i zapewnić użytkownikom końcowym bezpośredni dostęp do API bez użycia Logto Management API.',

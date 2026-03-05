@@ -18,12 +18,12 @@ void yargs(hideBin(process.argv))
   })
   .option('db', {
     alias: ['db-url', 'database-url'],
-    describe: 'The Postgres URL to Logto database',
+    describe: 'The Postgres URL to MyEyesID database',
     type: 'string',
   })
   .option('version', {
     alias: 'v',
-    describe: 'Print Logto CLI version',
+    describe: 'Print MyEyesID CLI version',
     type: 'boolean',
     global: false,
   })

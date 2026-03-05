@@ -8,7 +8,7 @@ const enterprise_sso = {
   col_email_domain: '이메일 도메인',
   placeholder_title: '기업 커넥터',
   placeholder_description:
-    'Logto는 많은 기본 제공 기업 신원 공급자를 제공했으며, 동시에 SAML 및 OIDC 프로토콜을 사용하여 사용자 지정할 수 있습니다.',
+    'MyEyesID는 많은 기본 제공 기업 신원 공급자를 제공했으며, 동시에 SAML 및 OIDC 프로토콜을 사용하여 사용자 지정할 수 있습니다.',
   create_modal: {
     title: '기업 커넥터 추가',
     text_divider: '또는 표준 프로토콜을 사용하여 커넥터를 사용자 정의할 수 있습니다.',
@@ -38,14 +38,14 @@ const enterprise_sso = {
       redirect_uri_field_description:
         '리디렉션 URI는 SSO 인증 이후 사용자가 다시 이동하는 위치입니다. 이 URI를 IdP 구성에 추가하세요.',
       redirect_uri_field_custom_domain_description:
-        'Logto에서 여러 <a>사용자 지정 도메인</a>을 사용하는 경우 각 도메인에서 SSO가 동작하도록 모든 해당 콜백 URI를 IdP에 반드시 추가하세요.\n\n기본 Logto 도메인 (*.logto.app)은 항상 유효하므로 해당 도메인에서 SSO를 지원하려는 경우에만 포함하세요.',
+        'MyEyesID에서 여러 <a>사용자 지정 도메인</a>을 사용하는 경우 각 도메인에서 SSO가 동작하도록 모든 해당 콜백 URI를 IdP에 반드시 추가하세요.\n\n기본 MyEyesID 도메인 (*.logto.app)은 항상 유효하므로 해당 도메인에서 SSO를 지원하려는 경우에만 포함하세요.',
     },
   },
   attribute_mapping: {
     title: '속성 매핑',
     description:
       '`id` 및 `이메일`은 IdP에서 사용자 프로필을 동기화하는 데 필요합니다. IdP에 다음 클레임 이름과 값을 입력합니다.',
-    col_sp_claims: '서비스 제공자 (Logto)의 값',
+    col_sp_claims: '서비스 제공자 (MyEyesID)의 값',
     col_idp_claims: '신원 공급자의 클레임 이름',
     idp_claim_tooltip: '신원 공급자의 클레임 이름',
   },

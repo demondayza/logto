@@ -17,7 +17,7 @@ const contact = {
     button: '發送',
   },
   reserve: {
-    title: '與 Logto 團隊預定時間',
+    title: '與 MyEyesID 團隊預定時間',
     description: '快速預定一個會話內容',
     button: '預定',
   },

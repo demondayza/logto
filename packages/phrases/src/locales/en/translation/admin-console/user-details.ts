@@ -136,10 +136,11 @@ const user_details = {
   sessions: {
     title: 'Sessions',
     description:
-      'Manage sessions maintained by the Logto Authorization Server. Revoking a Logto session here prevents automatic consent on future authorization requests.',
+      'Manage sessions maintained by the MyEyesID Authorization Server. Revoking a MyEyesID session here prevents automatic consent on future authorization requests.',
     field_name: 'Sessions',
     multiple_signed_in: 'This user has signed into multiple devices or browsers.',
-    not_found: 'No active Logto sessions found. The user is not currently signed in on any device.',
+    not_found:
+      'No active MyEyesID sessions found. The user is not currently signed in on any device.',
     name_column: 'Name',
     session_id_column: 'Session ID',
     location_column: 'Location',

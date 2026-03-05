@@ -30,7 +30,7 @@ const sign_in_exp = {
     dark_primary_color: 'ブランドカラー（ダーク）',
     dark_mode: 'ダークモードを有効にする',
     dark_mode_description:
-      'あなたのアプリは、ブランドカラーと Logto アルゴリズムに基づいて自動生成されたダークモードのテーマを持っています。自由にカスタマイズしてください。',
+      'あなたのアプリは、ブランドカラーと MyEyesID アルゴリズムに基づいて自動生成されたダークモードのテーマを持っています。自由にカスタマイズしてください。',
     dark_mode_reset_tip: 'ブランドカラーに基づいてダークモードの色を再計算します。',
     reset: 'リセット',
   },
@@ -42,9 +42,9 @@ const sign_in_exp = {
     app_logo_and_favicon: 'アプリロゴとファビコン',
     company_logo_and_favicon: '企業ロゴとファビコン',
     organization_logo_and_favicon: '組織のロゴとファビコン',
-    hide_logto_branding: 'Logtoのブランディングを非表示にする',
+    hide_logto_branding: 'MyEyesIDのブランディングを非表示にする',
     hide_logto_branding_description:
-      '「Powered by Logto」を削除します。クリーンでプロフェッショナルなサインイン体験で自社ブランドだけを際立たせましょう。',
+      '「Powered by MyEyesID」を削除します。クリーンでプロフェッショナルなサインイン体験で自社ブランドだけを際立たせましょう。',
   },
   branding_uploads: {
     app_logo: {
@@ -88,16 +88,16 @@ const sign_in_exp = {
       'カスタム CSS を入力して、あらゆるスタイルを精確に調整してください。創造性を発揮して、あなたの UI を際立たせましょう。',
     bring_your_ui_title: 'あなたの UI を持参',
     bring_your_ui_description:
-      '圧縮パッケージ (.zip) をアップロードして、Logto のビルトイン UI を独自のコードで置き換えます。<a>詳しくはこちら</a>',
+      '圧縮パッケージ (.zip) をアップロードして、MyEyesID のビルトイン UI を独自のコードで置き換えます。<a>詳しくはこちら</a>',
     preview_with_bring_your_ui_description:
       'カスタム UI のアセットは正常にアップロードされ、現在提供されています。したがって、組み込みのプレビューウィンドウは無効になりました。\nパーソナライズされたサインイン UI をテストするには、「ライブプレビュー」ボタンをクリックして新しいブラウザタブで開きます。',
   },
   account_center: {
     title: 'アカウントセンター',
-    description: 'Logto API を使用してアカウントセンターのフローをカスタマイズします。',
+    description: 'MyEyesID API を使用してアカウントセンターのフローをカスタマイズします。',
     enable_account_api: 'Account API を有効化',
     enable_account_api_description:
-      'Account API を有効化してカスタムのアカウントセンターを構築し、Logto 管理 API を使わずにエンドユーザーへ直接 API へのアクセスを提供します。',
+      'Account API を有効化してカスタムのアカウントセンターを構築し、MyEyesID 管理 API を使わずにエンドユーザーへ直接 API へのアクセスを提供します。',
     field_options: {
       off: 'オフ',
       edit: '編集',

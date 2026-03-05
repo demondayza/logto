@@ -8,7 +8,7 @@ const enterprise_sso = {
   col_email_domain: 'E-posta etki alanı',
   placeholder_title: 'Kurumsal bağlayıcı',
   placeholder_description:
-    'Logto, birçok yerleşik kurumsal kimlik sağlayıcı sağlamıştır, aynı zamanda SAML ve OIDC protokolleri ile kendi sahip olduğunuzu oluşturabilirsiniz.',
+    'MyEyesID, birçok yerleşik kurumsal kimlik sağlayıcı sağlamıştır, aynı zamanda SAML ve OIDC protokolleri ile kendi sahip olduğunuzu oluşturabilirsiniz.',
   create_modal: {
     title: 'Kurumsal bağlayıcı ekle',
     text_divider: 'Ya da standart bir protokol ile bağlayıcınızı özelleştirebilirsiniz.',
@@ -38,14 +38,14 @@ const enterprise_sso = {
       redirect_uri_field_description:
         "Yeniden yönlendirme URI'si, SSO kimlik doğrulamasından sonra kullanıcıların yönlendirildiği yerdir. Bu URI'yi IdP yapılandırmanıza ekleyin.",
       redirect_uri_field_custom_domain_description:
-        "Logto'da birden fazla <a>özel alan adı</a> kullanıyorsanız, SSO'nun her alan adında çalışması için ilgili tüm geri dönüş URI'lerini IdP'nize eklediğinizden emin olun.\n\nVarsayılan Logto alan adı (*.logto.app) her zaman geçerlidir; yalnızca o alan adı altında SSO'yu desteklemek istiyorsanız ekleyin.",
+        "MyEyesID'da birden fazla <a>özel alan adı</a> kullanıyorsanız, SSO'nun her alan adında çalışması için ilgili tüm geri dönüş URI'lerini IdP'nize eklediğinizden emin olun.\n\nVarsayılan MyEyesID alan adı (*.logto.app) her zaman geçerlidir; yalnızca o alan adı altında SSO'yu desteklemek istiyorsanız ekleyin.",
     },
   },
   attribute_mapping: {
     title: 'Özellik eşlemeleri',
     description:
       "`id` ve `email`, kullanıcı profilini IdP'den senkronize etmek için gereklidir. IdP'nizde aşağıdaki talep adı ve değeri girin.",
-    col_sp_claims: 'Hizmet sağlayıcı değeri (Logto)',
+    col_sp_claims: 'Hizmet sağlayıcı değeri (MyEyesID)',
     col_idp_claims: 'Kimlik sağlayıcı talep adı',
     idp_claim_tooltip: 'Kimlik sağlayıcı talep adı',
   },

@@ -9,7 +9,7 @@ const api_resource_details = {
   management_api_settings_description:
     'Logto Management API - это комплексный набор API, который дает администраторам возможность управлять широким спектром задач, связанных с идентификацией, обеспечивать политику безопасности и соблюдать требования и стандарты.',
   management_api_notice:
-    "Bu API, Logto varlığını temsil eder ve değiştirilemez veya silinemez. Logto yönetim API'sini çağırmak için makineden makineye bir uygulama oluşturun. <a>Daha fazla bilgi edinin</a>",
+    "Bu API, MyEyesID varlığını temsil eder ve değiştirilemez veya silinemez. MyEyesID yönetim API'sini çağırmak için makineden makineye bir uygulama oluşturun. <a>Daha fazla bilgi edinin</a>",
   token_expiration_time_in_seconds: 'Время истечения токена (в секундах)',
   token_expiration_time_in_seconds_placeholder: 'Введите время истечения вашего токена',
   delete_description:

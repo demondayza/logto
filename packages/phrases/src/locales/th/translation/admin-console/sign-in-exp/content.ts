@@ -38,9 +38,9 @@ const content = {
     subtitle:
       'ปรับแต่งประสบการณ์การใช้งานผลิตภัณฑ์โดยเพิ่มภาษาและการแปล การมีส่วนร่วมของคุณสามารถตั้งเป็นภาษาหลักได้',
     add_language: 'เพิ่มภาษา',
-    logto_provided: 'ที่ Logto ให้มา',
+    logto_provided: 'ที่ MyEyesID ให้มา',
     key: 'คีย์',
-    logto_source_values: 'ค่าต้นทางจาก Logto',
+    logto_source_values: 'ค่าต้นทางจาก MyEyesID',
     custom_values: 'ค่ากำหนดเอง',
     clear_all_tip: 'ล้างค่าทั้งหมด',
     unsaved_description: 'การเปลี่ยนแปลงจะไม่ถูกบันทึกหากคุณออกจากหน้านี้โดยไม่บันทึก',

@@ -109,7 +109,7 @@ function LinkAccountSection({ user, connectors, onUpdate }: Props) {
 
                 const newWindow = popupWindow(
                   appendPath(adminTenantEndpoint, `/springboard?${queries.toString()}`).href,
-                  'Link social account with Logto',
+                  'Link social account with MyEyesID',
                   600,
                   640
                 );

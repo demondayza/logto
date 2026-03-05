@@ -17,7 +17,7 @@ const contact = {
     button: 'أرسل',
   },
   reserve: {
-    title: 'احجز وقتك مع فريق Logto',
+    title: 'احجز وقتك مع فريق MyEyesID',
     description: 'احجز جلسة للدردشة المباشرة بسرعة',
     button: 'احجز',
   },

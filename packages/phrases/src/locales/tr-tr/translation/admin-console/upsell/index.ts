@@ -9,7 +9,7 @@ const upsell = {
   create_tenant: {
     title: 'Kiracı planınızı seçin',
     description:
-      'Logto, büyüyen şirketler için tasarlanmış yenilikçi ve uygun fiyatlı fiyatlandırma seçenekleri sunar. <a>Daha fazla bilgi edinin</a>',
+      'MyEyesID, büyüyen şirketler için tasarlanmış yenilikçi ve uygun fiyatlı fiyatlandırma seçenekleri sunar. <a>Daha fazla bilgi edinin</a>',
     base_price: 'Temel Fiyat',
     monthly_price: '{{value, number}}/ay',
     view_all_features: 'Tüm özellikleri görüntüle',
@@ -22,18 +22,18 @@ const upsell = {
   mau_exceeded_modal: {
     title: 'MAU sınırı aşıldı. Planınızı yükseltin.',
     notification:
-      'Mevcut MAU, <planName/> sınırını aştı. Logto hizmetinin askıya alınmasını önlemek için premium plana hemen yükseltin.',
+      'Mevcut MAU, <planName/> sınırını aştı. MyEyesID hizmetinin askıya alınmasını önlemek için premium plana hemen yükseltin.',
     update_plan: 'Planı Güncelle',
   },
   token_exceeded_modal: {
     title: 'Jeton kullanımı sınırı aştı. Planınızı yükseltin.',
     notification:
-      'Belirtilen jeton kullanım sınırınızı <planName/> aştınız. Kullanıcılar Logto hizmetine düzgün bir şekilde erişemeyecektir. Herhangi bir aksaklık yaşamamak için lütfen planınızı premium seviyeye hızlıca yükseltin.',
+      'Belirtilen jeton kullanım sınırınızı <planName/> aştınız. Kullanıcılar MyEyesID hizmetine düzgün bir şekilde erişemeyecektir. Herhangi bir aksaklık yaşamamak için lütfen planınızı premium seviyeye hızlıca yükseltin.',
   },
   payment_overdue_modal: {
     title: 'Fatura ödemesi gecikti',
     notification:
-      'Oops! Kiracı <span>{{name}}</span> faturasının ödemesi başarısız oldu. Logto hizmetinin askıya alınmaması için faturayı zamanında ödeyin.',
+      'Oops! Kiracı <span>{{name}}</span> faturasının ödemesi başarısız oldu. MyEyesID hizmetinin askıya alınmaması için faturayı zamanında ödeyin.',
     unpaid_bills: 'Ödenmemiş faturalar',
     update_payment: 'Ödemeyi Güncelle',
   },
@@ -44,7 +44,7 @@ const upsell = {
     tenant_member: 'kiracı üyesi',
   },
   charge_notification_for_quota_limit:
-    '{{item}} kota sınırını aştınız. Logto, kota sınırınızın ötesindeki kullanım için ücret ekleyecektir. Yeni ek paket fiyatlandırma tasarımı gününüzde başlayacaktır. <a>Daha fazla bilgi</a>',
+    '{{item}} kota sınırını aştınız. MyEyesID, kota sınırınızın ötesindeki kullanım için ücret ekleyecektir. Yeni ek paket fiyatlandırma tasarımı gününüzde başlayacaktır. <a>Daha fazla bilgi</a>',
   paywall,
   featured_plan_content,
   add_on,

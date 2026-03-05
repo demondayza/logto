@@ -9,7 +9,7 @@ import { getConnectorPackagesFrom } from './utils.js';
 
 const remove: CommandModule<{ path?: string }, { path?: string; packages?: string[] }> = {
   command: ['remove [packages...]', 'rm', 'delete'],
-  describe: 'Remove existing Logto connectors',
+  describe: 'Remove existing MyEyesID connectors',
   builder: (yargs) =>
     yargs.positional('packages', {
       describe: 'The connector package names to remove',
@@ -31,7 +31,7 @@ const remove: CommandModule<{ path?: string }, { path?: string; packages?: strin
       consoleLog.fatal(
         `Cannot remove ${notFoundPackageNames
           .map((name) => chalk.green(name))
-          .join(', ')}: not found in your Logto instance directory`
+          .join(', ')}: not found in your MyEyesID instance directory`
       );
     }
 

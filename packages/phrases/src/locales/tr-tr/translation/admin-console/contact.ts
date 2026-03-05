@@ -18,7 +18,7 @@ const contact = {
     button: 'Send',
   },
   reserve: {
-    title: 'Logto ekibiyle zaman ayırın',
+    title: 'MyEyesID ekibiyle zaman ayırın',
     description: 'Hızlı bir görüşme için oturum ayırın',
     button: 'Programa al',
   },

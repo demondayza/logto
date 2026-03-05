@@ -42,9 +42,9 @@ const sign_in_exp = {
     app_logo_and_favicon: 'Uygulama logosu ve favicon',
     company_logo_and_favicon: 'Şirket logosu ve favicon',
     organization_logo_and_favicon: 'Organizasyon logosu ve favicon',
-    hide_logto_branding: 'Logto markasını gizle',
+    hide_logto_branding: 'MyEyesID markasını gizle',
     hide_logto_branding_description:
-      '"Powered by Logto" ibaresini kaldırın. Temiz ve profesyonel bir oturum açma deneyimiyle yalnızca kendi markanızı öne çıkarın.',
+      '"Powered by MyEyesID" ibaresini kaldırın. Temiz ve profesyonel bir oturum açma deneyimiyle yalnızca kendi markanızı öne çıkarın.',
   },
   branding_uploads: {
     app_logo: {
@@ -88,13 +88,13 @@ const sign_in_exp = {
       "Tam olarak istediğiniz özelliklere göre stilleri uyarlamak için özelleştirilmiş CSS'inizi girin. Yaratıcılığınızı ifade edin ve UI'nizi öne çıkarın.",
     bring_your_ui_title: "UI'nizi Getirin",
     bring_your_ui_description:
-      "Logto'nun önceden oluşturulmuş UI'sini kendi kodunuzla değiştirmek için sıkıştırılmış bir paket (.zip) yükleyin. <a>Daha fazla bilgi edinin</a>",
+      "MyEyesID'nun önceden oluşturulmuş UI'sini kendi kodunuzla değiştirmek için sıkıştırılmış bir paket (.zip) yükleyin. <a>Daha fazla bilgi edinin</a>",
     preview_with_bring_your_ui_description:
       'Özelleştirilmiş UI varlıklarınız başarıyla yüklendi ve şimdi sunuluyor. Sonuç olarak, yerleşik önizleme penceresi devre dışı bırakıldı.\nKişiselleştirilmiş oturum açma UI\'nizi test etmek için "Canlı Önizleme" düğmesine tıklayarak yeni bir tarayıcı sekmesinde açın.',
   },
   account_center: {
     title: 'HESAP MERKEZİ',
-    description: "Hesap merkezi akışlarını Logto API'leriyle özelleştirin.",
+    description: "Hesap merkezi akışlarını MyEyesID API'leriyle özelleştirin.",
     enable_account_api: "Account API'yi etkinleştir",
     enable_account_api_description:
       "Account API'yi etkinleştirerek özel bir hesap merkezi oluşturun ve Logto Management API'sini kullanmadan son kullanıcılara doğrudan API erişimi sağlayın.",

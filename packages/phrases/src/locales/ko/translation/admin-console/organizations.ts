@@ -51,7 +51,7 @@ const organizations = {
       section_3: {
         title: '조직 역할에 API 권한을 할당할 수 있나요?',
         description:
-          '네, 조직 역할에 API 권한을 할당할 수 있습니다. Logto는 조직 역할에 효과적으로 API 권한을 관리할 수 있는 유연성을 제공합니다.',
+          '네, 조직 역할에 API 권한을 할당할 수 있습니다. MyEyesID는 조직 역할에 효과적으로 API 권한을 관리할 수 있는 유연성을 제공합니다.',
       },
       section_4: {
         title: '일러스트로 상호 연결 방식 확인하기',

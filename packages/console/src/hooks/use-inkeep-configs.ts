@@ -103,7 +103,7 @@ const useInkeepConfigs = () => {
         baseSettings: {
           apiKey: inkeepApiKey,
           primaryBrandColor: theme === 'dark' ? '#7958ff' : '#5d34f2',
-          organizationDisplayName: 'Logto',
+          organizationDisplayName: 'MyEyesID',
           colorMode: {
             sync: {
               target: document.documentElement,
@@ -132,7 +132,7 @@ const useInkeepConfigs = () => {
         },
         aiChatSettings: {
           aiAssistantAvatar: theme === 'dark' ? logtoAiBotDark : logtoAiBot,
-          aiAssistantName: 'Logto AI',
+          aiAssistantName: 'MyEyesID AI',
           introMessage: t('intro_message'),
           exampleQuestionsLabel: t('example_questions_label'),
           exampleQuestions: t('example_questions', { returnObjects: true }),

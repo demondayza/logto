@@ -21,7 +21,7 @@ const connector_details = {
   test_sms_placeholder: '+1 555-123-4567',
   test_message_sent: 'تم إرسال رسالة الاختبار',
   test_sender_description:
-    'يستخدم Logto القالب "العام" للفحص. ستتلقى رسالة إذا تم تكوين الموصل الخاص بك بشكل صحيح.',
+    'يستخدم MyEyesID القالب "العام" للفحص. ستتلقى رسالة إذا تم تكوين الموصل الخاص بك بشكل صحيح.',
   options_change_email: 'تغيير موصل البريد الإلكتروني',
   options_change_sms: 'تغيير موصل الرسائل القصيرة',
   connector_deleted: 'تم حذف الموصل بنجاح',
@@ -37,7 +37,7 @@ const connector_details = {
   logto_email: {
     total_email_sent: 'إجمالي البريد الإلكتروني المرسل: {{value, number}}',
     total_email_sent_tip:
-      'يستخدم Logto SendGrid للبريد الإلكتروني المدمج الآمن والمستقر. إنه مجاني تمامًا للاستخدام. <a>تعرف على المزيد</a>',
+      'يستخدم MyEyesID SendGrid للبريد الإلكتروني المدمج الآمن والمستقر. إنه مجاني تمامًا للاستخدام. <a>تعرف على المزيد</a>',
     email_template_title: 'قالب البريد الإلكتروني',
     template_description:
       'يستخدم البريد الإلكتروني المدمج قوالب افتراضية لتسليم سلس لرسائل التحقق. لا يلزم أي تكوين ، ويمكنك تخصيص معلومات العلامة التجارية الأساسية.',
@@ -56,7 +56,7 @@ const connector_details = {
     email_logo_tip:
       'عرض شعار العلامة التجارية الخاصة بك في أعلى الرسائل الإلكترونية. استخدم نفس الصورة لكل من وضع الضوء الفاتح ووضع الضوء الداكن.',
     urls_not_allowed: 'غير مسموح بالروابط',
-    test_notes: 'يستخدم Logto القالب "العام" للفحص.',
+    test_notes: 'يستخدم MyEyesID القالب "العام" للفحص.',
   },
   google_one_tap: {
     title: 'Google One Tap',

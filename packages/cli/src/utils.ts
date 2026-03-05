@@ -173,7 +173,7 @@ export function findLastIndex<T>(
 }
 
 const buildPathErrorMessage = (value: string) =>
-  `The path ${chalk.green(value)} does not contain a Logto instance. Please try another.`;
+  `The path ${chalk.green(value)} does not contain a MyEyesID instance. Please try another.`;
 
 const validatePath = async (value: string) => {
   const corePackageJsonPath = path.resolve(path.join(value, coreDirectory, 'package.json'));
@@ -211,7 +211,7 @@ export const inquireInstancePath = async (initialPath?: string, skipCoreCheck?: 
     const { instancePath } = await inquirer.prompt<{ instancePath: string }>(
       {
         name: 'instancePath',
-        message: 'Where is your Logto instance?',
+        message: 'Where is your MyEyesID instance?',
         type: 'input',
         default: defaultPath,
         filter: (value: string) => value.trim(),

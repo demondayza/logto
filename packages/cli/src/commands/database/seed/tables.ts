@@ -288,7 +288,7 @@ export const seedTest = async (connection: DatabaseTransactionConnection, forLeg
   // This check is for older versions (<=v.12.0) that don't have tenant organization initialized.
   if (forLegacy) {
     consoleLog.warn(
-      'Tenant organization is not enabled in legacy Logto versions, skip seeding tenant organization data'
+      'Tenant organization is not enabled in legacy MyEyesID versions, skip seeding tenant organization data'
     );
     return;
   }

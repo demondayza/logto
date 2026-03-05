@@ -67,7 +67,7 @@ const seed: CommandModule<
   builder: (yargs) =>
     yargs
       .option('swe', {
-        describe: 'Skip the seeding process when Logto configs table exists',
+        describe: 'Skip the seeding process when MyEyesID configs table exists',
         alias: 'skip-when-exists',
         type: 'boolean',
       })
@@ -81,7 +81,7 @@ const seed: CommandModule<
       })
       .option('legacy-test-data', {
         describe:
-          'Seed test data only for legacy Logto versions (<=1.12.0), this option conflicts with others',
+          'Seed test data only for legacy MyEyesID versions (<=1.12.0), this option conflicts with others',
         type: 'boolean',
       })
       .option('encrypt-base-role', {

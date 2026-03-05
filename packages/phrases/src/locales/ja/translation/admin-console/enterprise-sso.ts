@@ -8,7 +8,7 @@ const enterprise_sso = {
   col_email_domain: 'メールドメイン',
   placeholder_title: 'エンタープライズコネクター',
   placeholder_description:
-    'Logtoは、多くの組み込みエンタープライズアイデンティティプロバイダーを提供しており、同時にSAMLおよびOIDCプロトコルを使用して独自のプロバイダーを作成できます。',
+    'MyEyesIDは、多くの組み込みエンタープライズアイデンティティプロバイダーを提供しており、同時にSAMLおよびOIDCプロトコルを使用して独自のプロバイダーを作成できます。',
   create_modal: {
     title: 'エンタープライズコネクターを追加',
     text_divider: 'または、標準プロトコルによってカスタマイズされたコネクターを作成できます。',
@@ -38,14 +38,14 @@ const enterprise_sso = {
       redirect_uri_field_description:
         'Redirect URI は、SSO 認証の後にユーザーがリダイレクトされる場所です。この URI を IdP の設定に追加してください。',
       redirect_uri_field_custom_domain_description:
-        'Logto で複数の<a>カスタムドメイン</a>を使用する場合は、すべての対応するコールバック URI を IdP に追加し、各ドメインで SSO が機能するようにしてください。\n\nLogto の既定ドメイン (*.logto.app) は常に有効です。そのドメインで SSO をサポートしたい場合にのみ含めてください。',
+        'MyEyesID で複数の<a>カスタムドメイン</a>を使用する場合は、すべての対応するコールバック URI を IdP に追加し、各ドメインで SSO が機能するようにしてください。\n\nMyEyesID の既定ドメイン (*.logto.app) は常に有効です。そのドメインで SSO をサポートしたい場合にのみ含めてください。',
     },
   },
   attribute_mapping: {
     title: '属性マッピング',
     description:
       'IdPからのユーザープロファイル同期には`id`と`email`が必要です。次にIdPに以下のクレーム名と値を入力します。',
-    col_sp_claims: 'サービスプロバイダー（Logto）の値',
+    col_sp_claims: 'サービスプロバイダー（MyEyesID）の値',
     col_idp_claims: 'アイデンティティプロバイダーのクレーム名',
     idp_claim_tooltip: 'アイデンティティプロバイダーのクレーム名',
   },

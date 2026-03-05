@@ -42,10 +42,10 @@ const paywall = {
   scopes_per_role_other:
     '<planName/>의 {{count, number}}개 역할 당 권한 한도에 도달했습니다. 플랜을 업그레이드하여 추가 역할과 권한을 추가하세요. 도움이 필요하면 <a>문의하기</a>로 연락 주세요.',
   saml_applications_oss:
-    '추가 SAML 앱은 Logto 엔터프라이즈 플랜에서 사용할 수 있습니다. 도움이 필요하면 문의하세요.',
-  logto_pricing_button_text: 'Logto 클라우드 가격',
+    '추가 SAML 앱은 MyEyesID 엔터프라이즈 플랜에서 사용할 수 있습니다. 도움이 필요하면 문의하세요.',
+  logto_pricing_button_text: 'MyEyesID 클라우드 가격',
   saml_applications:
-    '추가 SAML 앱은 Logto 엔터프라이즈 플랜에서 사용할 수 있습니다. 도움이 필요하면 <a>문의하세요</a>.',
+    '추가 SAML 앱은 MyEyesID 엔터프라이즈 플랜에서 사용할 수 있습니다. 도움이 필요하면 <a>문의하세요</a>.',
   saml_applications_add_on:
     '유료 플랜으로 업그레이드하여 SAML 앱 기능을 잠금 해제하세요. 도움이 필요하면 <a>문의하세요</a>.',
   hooks:
@@ -69,7 +69,7 @@ const paywall = {
       '사용자 정의 JWT 기능 및 프리미엄 혜택을 위해 유료 플랜으로 업그레이드하세요. 궁금한 점이 있으면 <a>문의하세요</a>.',
   },
   branding_customization:
-    '플랜을 업그레이드하여 "Logto 브랜딩 숨기기"과 "UI 가져오기" 기능으로 브랜드를 완전히 제어하세요.',
+    '플랜을 업그레이드하여 "MyEyesID 브랜딩 숨기기"과 "UI 가져오기" 기능으로 브랜드를 완전히 제어하세요.',
   bring_your_ui: '사용자 정의 UI 기능과 프리미엄 혜택을 위해 유료 플랜으로 업그레이드하세요.',
   security_features:
     '고급 보안 기능을 Pro 플랜으로 업그레이드하여 잠금 해제하세요. 궁금한 점이 있으면 <a>문의하세요</a>.',

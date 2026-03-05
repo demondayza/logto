@@ -10,9 +10,9 @@ import CustomDomainEndpointNotice from '@/mdx-components/CustomDomainEndpointNot
 
 <Step title="Get started">
 
-This tutorial will show you how to integrate Logto into your [Wordpress](https://wordpress.org) website.
+This tutorial will show you how to integrate MyEyesID into your [WordPress](https://wordpress.org) website.
 
-Follow the official [Wordpress installation guide](https://wordpress.org/support/article/how-to-install-wordpress/) to set up your Wordpress website before proceeding.
+Follow the official [WordPress installation guide](https://wordpress.org/support/article/how-to-install-wordpress/) to set up your WordPress website before proceeding.
 
 </Step>
 
@@ -52,7 +52,7 @@ Now you should be able to see the Logto menu in your WordPress admin panel sideb
 
 The minimum configuration to get started for the plugin is:
 
-- Logto endpoint: <code>{props.endpoint}</code>
+- MyEyesID endpoint: <code>{props.endpoint}</code>
 - App ID: <code>{props.app.id}</code>
 - App secret: <code>{props.secrets[0]?.value ?? props.app.secret}</code>
 
@@ -66,7 +66,7 @@ After filling in the values, click **Save Changes** (scroll down to the bottom o
 
 <Step title="Configure redirect URI">
 
-The redirect URI is the URL to which Logto will redirect users after they have authenticated; and the post sign-out redirect URI is the URL to which Logto will redirect users after they have logged out.
+The redirect URI is the URL to which MyEyesID will redirect users after they have authenticated; and the post sign-out redirect URI is the URL to which MyEyesID will redirect users after they have logged out.
 
 Here's a non-normative sequence diagram to illustrate the sign-in flow:
 
@@ -74,13 +74,13 @@ Here's a non-normative sequence diagram to illustrate the sign-in flow:
 sequenceDiagram
     participant User
     participant WordPress
-    participant Logto
+    participant MyEyesID
 
     User->>WordPress: Visit WordPress login page
-    WordPress->>Logto: Redirect to Logto for authentication
-    Logto->>User: Prompt for authentication
-    User->>Logto: Authenticate
-    Logto->>WordPress: Redirect back to WordPress with authentication data
+    WordPress->>MyEyesID: Redirect to MyEyesID for authentication
+    MyEyesID->>User: Prompt for authentication
+    User->>MyEyesID: Authenticate
+    MyEyesID->>WordPress: Redirect back to WordPress with authentication data
     WordPress->>User: Logged in
 ```
 
@@ -90,18 +90,18 @@ Here's how the sign-out flow looks like in a non-normative sequence diagram:
 sequenceDiagram
     participant User
     participant WordPress
-    participant Logto
+    participant MyEyesID
 
     User->>WordPress: Click "Log out"
-    WordPress->>Logto: Redirect to Logto for sign-out
-    Logto->>Logto: Sign-out successful
-    Logto->>WordPress: Redirect back to WordPress
+    WordPress->>MyEyesID: Redirect to MyEyesID for sign-out
+    MyEyesID->>MyEyesID: Sign-out successful
+    MyEyesID->>WordPress: Redirect back to WordPress
     WordPress->>User: Logged out
 ```
 
 To learn more about why redirect is needed, see [Sign-in experience explained](/concepts/sign-in-experience).
 
-In our case, we need to configure both redirect URIs in your Logto Console.
+In our case, we need to configure both redirect URIs in your MyEyesID Console.
 
 To find the redirect URI, go to the **Logto** > **Settings** page in your WordPress admin panel. You'll see the **Redirect URI** and **Post sign-out redirect URI** fields.
 
@@ -122,15 +122,15 @@ Remember to click **Save**.
 
 <Step title="Checkpoint: Test your WordPress website">
 
-Now you can test your Logto integration in your WordPress website:
+Now you can test your MyEyesID integration in your WordPress website:
 
 1. Open an incognito browser window if needed.
 2. Visit your WordPress website and click the **Log in** link if applicable; or directly visit the login page (e.g., `https://example.com/wp-login.php`).
-3. The page should redirect you to the Logto sign-in page.
+3. The page should redirect you to the MyEyesID sign-in page.
 4. Complete the sign-in or sign-up process.
 5. After successful authentication, you should be redirected back to your WordPress website and logged in automatically.
 6. Click the **Log out** link to log out of your WordPress website.
-7. You should be redirected to the Logto sign-out page, then back to your WordPress website.
+7. You should be redirected to the MyEyesID sign-out page, then back to your WordPress website.
 8. You should be logged out of your WordPress website.
 
 </Step>

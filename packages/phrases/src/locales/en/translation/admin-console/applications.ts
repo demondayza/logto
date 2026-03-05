@@ -2,7 +2,7 @@ const applications = {
   page_title: 'Applications',
   title: 'Applications',
   subtitle: 'Create and manage applications for OIDC authentication.',
-  subtitle_with_app_type: 'Set up Logto authentication for your {{name}} application',
+  subtitle_with_app_type: 'Set up MyEyesID authentication for your {{name}} application',
   create: 'Create application',
   create_third_party: 'Create third-party application',
   create_thrid_party_modal_title: 'Create a third-party app ({{type}})',
@@ -41,7 +41,7 @@ const applications = {
     },
     protected: {
       title: 'Protected App',
-      subtitle: 'An app that is protected by Logto', // Not in use
+      subtitle: 'An app that is protected by MyEyesID', // Not in use
       description: 'N/A', // Not in use
     },
     saml: {
@@ -57,14 +57,14 @@ const applications = {
   },
   placeholder_title: 'Select an application type to continue',
   placeholder_description:
-    'Logto uses an application entity for OIDC to help with tasks such as identifying your apps, managing sign-in, and creating audit logs.',
+    'MyEyesID uses an application entity for OIDC to help with tasks such as identifying your apps, managing sign-in, and creating audit logs.',
   third_party_application_placeholder_description:
-    'Use Logto as an Identity Provider to provide OAuth authorization to third-party services. Includes a prebuilt user consent screen for resource access. <a>Learn more</a>',
+    'Use MyEyesID as an Identity Provider to provide OAuth authorization to third-party services. Includes a prebuilt user consent screen for resource access. <a>Learn more</a>',
   guide: {
     third_party: {
       title: 'Integrate a third-party application',
       description:
-        'Use Logto as your Identity Provider to provide OAuth authorization to third-party services. Includes a prebuilt user consent screen for secure resource access. <a>Learn more</a>',
+        'Use MyEyesID as your Identity Provider to provide OAuth authorization to third-party services. Includes a prebuilt user consent screen for secure resource access. <a>Learn more</a>',
     },
   },
 };

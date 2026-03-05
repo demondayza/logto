@@ -40,9 +40,9 @@ const content = {
     subtitle:
       'Localize a experiência do produto adicionando idiomas e traduções. A sua contribuição pode ser definida como idioma predefinido.',
     add_language: 'Adicionar idioma',
-    logto_provided: 'Fornecido pela Logto',
+    logto_provided: 'Fornecido pela MyEyesID',
     key: 'Chave',
-    logto_source_values: 'Valores de origem da Logto',
+    logto_source_values: 'Valores de origem da MyEyesID',
     custom_values: 'Valores personalizados',
     clear_all_tip: 'Limpar todos os valores',
     unsaved_description: 'As alterações não serão guardadas se sair desta página sem guardar.',

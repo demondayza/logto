@@ -13,7 +13,7 @@ const link: CommandModule<{ path?: string }, { path?: string; cloud: boolean; mo
   builder: (yargs) =>
     yargs
       .option('cloud', {
-        describe: 'Add additional connectors for Logto Cloud',
+        describe: 'Add additional connectors for MyEyesID Cloud',
         type: 'boolean',
         default: false,
         hidden: true,

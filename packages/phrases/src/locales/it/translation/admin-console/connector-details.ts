@@ -21,7 +21,7 @@ const connector_details = {
   test_sms_placeholder: '+1 555-123-4567',
   test_message_sent: 'Messaggio di prova inviato',
   test_sender_description:
-    'Logto utilizza il modello "Generico" per i test. Riceverai un messaggio se il tuo connettore è correttamente configurato.',
+    'MyEyesID utilizza il modello "Generico" per i test. Riceverai un messaggio se il tuo connettore è correttamente configurato.',
   options_change_email: 'Cambia connettore per email',
   options_change_sms: 'Cambia connettore per SMS',
   connector_deleted: 'Il connettore è stato eliminato con successo',
@@ -37,7 +37,7 @@ const connector_details = {
   logto_email: {
     total_email_sent: 'Totale email inviate: {{value, number}}',
     total_email_sent_tip:
-      "Logto utilizza SendGrid per l'invio sicuro ed affidabile delle email integrate. È completamente gratuito da utilizzare. <a>Scopri di più</a>",
+      "MyEyesID utilizza SendGrid per l'invio sicuro ed affidabile delle email integrate. È completamente gratuito da utilizzare. <a>Scopri di più</a>",
     email_template_title: 'Modello email',
     template_description:
       "L'email integrata utilizza modelli predefiniti per la consegna senza soluzione di continuità delle email di verifica. Non è richiesta alcuna configurazione e puoi personalizzare le informazioni di base del marchio.",
@@ -56,7 +56,7 @@ const connector_details = {
     email_logo_tip:
       'Mostra il logo del tuo marchio in cima alle email. Usa la stessa immagine sia per la modalità chiara che per la modalità scura.',
     urls_not_allowed: 'URL non sono ammessi',
-    test_notes: 'Logto utilizza il modello "Generico" per i test.',
+    test_notes: 'MyEyesID utilizza il modello "Generico" per i test.',
   },
   google_one_tap: {
     title: 'Google One Tap',

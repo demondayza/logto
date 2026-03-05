@@ -27,7 +27,7 @@ const sign_in_exp = {
     primary_color: '브랜드 색상',
     dark_primary_color: '브랜드 색상 (다크 모드)',
     dark_mode: '다크 모드 활성화',
-    dark_mode_description: 'Logto 가 브랜드 색상에 알맞게 자동으로 다크 모드 테마를 생성해요.',
+    dark_mode_description: 'MyEyesID 가 브랜드 색상에 알맞게 자동으로 다크 모드 테마를 생성해요.',
     dark_mode_reset_tip: '브랜드 색상에 알맞게 다크 모드 색상',
     reset: '재생성',
   },
@@ -39,9 +39,9 @@ const sign_in_exp = {
     app_logo_and_favicon: '앱 로고 및 파비콘',
     company_logo_and_favicon: '회사 로고 및 파비콘',
     organization_logo_and_favicon: '조직 로고 및 파비콘',
-    hide_logto_branding: 'Logto 브랜딩 숨기기',
+    hide_logto_branding: 'MyEyesID 브랜딩 숨기기',
     hide_logto_branding_description:
-      '"Powered by Logto" 문구를 제거하고 깔끔하고 전문적인 로그인 경험에서 브랜드만 돋보이게 하세요.',
+      '"Powered by MyEyesID" 문구를 제거하고 깔끔하고 전문적인 로그인 경험에서 브랜드만 돋보이게 하세요.',
   },
   branding_uploads: {
     app_logo: {
@@ -85,16 +85,16 @@ const sign_in_exp = {
       '커스텀 CSS 를 입력하여 스타일을 정확한 사양에 맞게 조정하세요. 창의력을 발휘하여 UI 를 돋보이게 만드세요.',
     bring_your_ui_title: 'UI 가져오기',
     bring_your_ui_description:
-      'Logto 가미리 제공하는 UI 를 나만의 코드로 대체하기 위해 압축 패키지 (.zip)를 업로드하세요. <a>더 알아보기</a>',
+      'MyEyesID 가미리 제공하는 UI 를 나만의 코드로 대체하기 위해 압축 패키지 (.zip)를 업로드하세요. <a>더 알아보기</a>',
     preview_with_bring_your_ui_description:
       '커스텀 UI 자산이 성공적으로 업로드되어 현재 제공되고 있습니다. 따라서 기본 제공 미리보기 창이 비활성화되었습니다.\n개인화된 로그인 UI 를 테스트하려면 "실시간 미리보기" 버튼을 클릭하여 새 브라우저 탭에서 엽니다.',
   },
   account_center: {
     title: '계정 센터',
-    description: 'Logto API로 계정 센터 플로우를 사용자 지정하세요.',
+    description: 'MyEyesID API로 계정 센터 플로우를 사용자 지정하세요.',
     enable_account_api: 'Account API 활성화',
     enable_account_api_description:
-      'Account API를 활성화하여 맞춤형 계정 센터를 구축하고, Logto 관리 API 없이도 최종 사용자에게 직접 API 접근을 제공합니다.',
+      'Account API를 활성화하여 맞춤형 계정 센터를 구축하고, MyEyesID 관리 API 없이도 최종 사용자에게 직접 API 접근을 제공합니다.',
     field_options: {
       off: '끄기',
       edit: '편집',

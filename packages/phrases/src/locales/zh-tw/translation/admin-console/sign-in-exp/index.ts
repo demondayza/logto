@@ -27,7 +27,7 @@ const sign_in_exp = {
     dark_primary_color: '品牌顏色 (深色)',
     dark_mode: '開啟深色模式',
     dark_mode_description:
-      '基於品牌顏色和 Logto 的算法，應用將會有一個自動生成的深色模式。當然，你可以自定義和修改。',
+      '基於品牌顏色和 MyEyesID 的算法，應用將會有一個自動生成的深色模式。當然，你可以自定義和修改。',
     dark_mode_reset_tip: '基於品牌顏色，重新生成深色模式顏色。',
     reset: '重新生成',
   },
@@ -39,9 +39,9 @@ const sign_in_exp = {
     app_logo_and_favicon: '應用圖標和 Favicon',
     company_logo_and_favicon: '公司圖標和 Favicon',
     organization_logo_and_favicon: '組織圖標和 Favicon',
-    hide_logto_branding: '隱藏 Logto 品牌',
+    hide_logto_branding: '隱藏 MyEyesID 品牌',
     hide_logto_branding_description:
-      '移除「Powered by Logto」。以乾淨、專業的登入體驗讓你的品牌成為焦點。',
+      '移除「Powered by MyEyesID」。以乾淨、專業的登入體驗讓你的品牌成為焦點。',
   },
   branding_uploads: {
     app_logo: {
@@ -85,16 +85,16 @@ const sign_in_exp = {
       '輸入你的自定義 CSS，以完全符合你的規格定制樣式。展現你的創意，讓你的界面脫穎而出。',
     bring_your_ui_title: '帶上你的界面',
     bring_your_ui_description:
-      '上傳壓縮包 (.zip) 來用你的代碼替換 Logto 的預構建界面。<a>了解更多</a>',
+      '上傳壓縮包 (.zip) 來用你的代碼替換 MyEyesID 的預構建界面。<a>了解更多</a>',
     preview_with_bring_your_ui_description:
       '你的自定義界面資源已成功上傳並正在服務。因此，內置預覽窗口已被禁用。\n若要測試你的個性化登錄界面，請點擊「實時預覽」按鈕在新瀏覽器標籤頁中打開。',
   },
   account_center: {
     title: '帳號中心',
-    description: '使用 Logto API 自訂你的帳號中心流程。',
+    description: '使用 MyEyesID API 自訂你的帳號中心流程。',
     enable_account_api: '啟用 Account API',
     enable_account_api_description:
-      '啟用 Account API，打造自訂帳號中心，讓終端使用者無需使用 Logto 管理 API 也能直接存取 API。',
+      '啟用 Account API，打造自訂帳號中心，讓終端使用者無需使用 MyEyesID 管理 API 也能直接存取 API。',
     field_options: {
       off: '關閉',
       edit: '可編輯',

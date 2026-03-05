@@ -19,7 +19,7 @@ const contact = {
     button: 'Envoyer',
   },
   reserve: {
-    title: "Réservez votre temps avec l'équipe Logto",
+    title: "Réservez votre temps avec l'équipe MyEyesID",
     description: 'Réservez rapidement une session pour un chat en direct',
     button: 'Réserver',
   },

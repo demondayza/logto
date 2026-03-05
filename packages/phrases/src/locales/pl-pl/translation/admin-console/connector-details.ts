@@ -21,7 +21,7 @@ const connector_details = {
   test_sms_placeholder: '+48 123-456-789',
   test_message_sent: 'Wiadomość testowa została wysłana',
   test_sender_description:
-    'Logto używa szablonu "Ogólny" do testów. Otrzymasz wiadomość, jeśli twój konektor jest prawidłowo skonfigurowany.',
+    'MyEyesID używa szablonu "Ogólny" do testów. Otrzymasz wiadomość, jeśli twój konektor jest prawidłowo skonfigurowany.',
   options_change_email: 'Zmień konektor e-mail',
   options_change_sms: 'Zmień konektor SMS',
   connector_deleted: 'Konektor został pomyślnie usunięty',
@@ -37,7 +37,7 @@ const connector_details = {
   logto_email: {
     total_email_sent: 'Wysłano łącznie emaili: {{value, number}}',
     total_email_sent_tip:
-      'Logto wykorzystuje SendGrid do bezpiecznej i stabilnej wysyłki wbudowanych wiadomości e-mail. Jest to całkowicie darmowe do użytku. <a>Więcej informacji</a>',
+      'MyEyesID wykorzystuje SendGrid do bezpiecznej i stabilnej wysyłki wbudowanych wiadomości e-mail. Jest to całkowicie darmowe do użytku. <a>Więcej informacji</a>',
     email_template_title: 'Szablon e-maila',
     template_description:
       'Wbudowany e-mail używa domyślnych szablonów dla bezproblemowej dostawy wiadomości weryfikacyjnych. Nie wymaga to konfiguracji, a podstawowe informacje o marce można dostosować.',
@@ -56,7 +56,7 @@ const connector_details = {
     email_logo_tip:
       'Wyświetl logo swojej marki na górze wiadomości e-mail. Użyj tego samego obrazu zarówno dla trybu jasnego, jak i ciemnego.',
     urls_not_allowed: 'Nie dozwolone adresy URL',
-    test_notes: 'Logto używa szablonu "Ogólny" do testów.',
+    test_notes: 'MyEyesID używa szablonu "Ogólny" do testów.',
   },
   google_one_tap: {
     title: 'Google One Tap',

@@ -134,11 +134,11 @@ const user_details = {
   sessions: {
     title: 'セッション',
     description:
-      'Logto 認可サーバーによって維持されるセッションを管理します。ここで Logto セッションを取り消すと、今後の認可リクエストでの自動同意が防止されます。',
+      'MyEyesID 認可サーバーによって維持されるセッションを管理します。ここで MyEyesID セッションを取り消すと、今後の認可リクエストでの自動同意が防止されます。',
     field_name: 'セッション',
     multiple_signed_in: 'このユーザーは複数のデバイスまたはブラウザにサインインしています。',
     not_found:
-      'アクティブな Logto セッションが見つかりません。ユーザーは現在どのデバイスにもサインインしていません。',
+      'アクティブな MyEyesID セッションが見つかりません。ユーザーは現在どのデバイスにもサインインしていません。',
     name_column: '名前',
     session_id_column: 'セッション ID',
     location_column: '場所',

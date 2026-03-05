@@ -59,7 +59,7 @@ const profile = {
       check_information:
         'Przykro nam, że chcesz usunąć swoje konto. Proszę dokładnie sprawdzić poniższe informacje przed kontynuowaniem.',
       remove_all_data:
-        'Usunięcie konta spowoduje trwałe usunięcie wszystkich danych o Tobie w Logto Cloud. Upewnij się, że masz kopię zapasową ważnych danych przed kontynuowaniem.',
+        'Usunięcie konta spowoduje trwałe usunięcie wszystkich danych o Tobie w MyEyesID Cloud. Upewnij się, że masz kopię zapasową ważnych danych przed kontynuowaniem.',
       confirm_information:
         'Proszę potwierdzić, że powyższe informacje są zgodne z Twoimi oczekiwaniami. Po usunięciu konta nie będziemy mogli go odzyskać.',
       has_admin_role:
@@ -81,7 +81,7 @@ const profile = {
     error_occurred_description: 'Przepraszamy, wystąpił problem podczas usuwania Twojego konta:',
     request_id: 'ID żądania: {{requestId}}',
     try_again_later:
-      'Spróbuj ponownie później. Jeśli problem będzie się powtarzał, skontaktuj się z zespołem Logto, podając ID żądania.',
+      'Spróbuj ponownie później. Jeśli problem będzie się powtarzał, skontaktuj się z zespołem MyEyesID, podając ID żądania.',
     final_confirmation: 'Ostateczne potwierdzenie',
     about_to_start_deletion: 'Zaraz rozpoczniesz proces usuwania i tej operacji nie można cofnąć.',
     permanently_delete: 'Usuń na stałe',

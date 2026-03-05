@@ -8,7 +8,7 @@ const enterprise_sso = {
   col_email_domain: 'Domena e-mail',
   placeholder_title: 'Łącznik przedsiębiorstwa',
   placeholder_description:
-    'Logto dostarczył wiele wbudowanych dostawców tożsamości przedsiębiorstwa do połączenia, w międzyczasie możesz także stworzyć własny za pomocą protokołów SAML i OIDC.',
+    'MyEyesID dostarczył wiele wbudowanych dostawców tożsamości przedsiębiorstwa do połączenia, w międzyczasie możesz także stworzyć własny za pomocą protokołów SAML i OIDC.',
   create_modal: {
     title: 'Dodaj łącznik przedsiębiorstwa',
     text_divider: 'Albo możesz dostosować swój łącznik za pomocą standardowego protokołu.',
@@ -38,14 +38,14 @@ const enterprise_sso = {
       redirect_uri_field_description:
         'URI przekierowania to miejsce, do którego użytkownicy są kierowani po uwierzytelnieniu SSO. Dodaj ten adres URI do konfiguracji swojego IdP.',
       redirect_uri_field_custom_domain_description:
-        'Jeśli używasz w Logto wielu <a>domen niestandardowych</a>, dodaj wszystkie odpowiadające im adresy URI zwrotu do IdP, aby SSO działało w każdej domenie.\n\nDomyślna domena Logto (*.logto.app) jest zawsze ważna – uwzględnij ją tylko wtedy, gdy chcesz obsługiwać SSO także w tej domenie.',
+        'Jeśli używasz w MyEyesID wielu <a>domen niestandardowych</a>, dodaj wszystkie odpowiadające im adresy URI zwrotu do IdP, aby SSO działało w każdej domenie.\n\nDomyślna domena MyEyesID (*.logto.app) jest zawsze ważna – uwzględnij ją tylko wtedy, gdy chcesz obsługiwać SSO także w tej domenie.',
     },
   },
   attribute_mapping: {
     title: 'Wiązanie atrybutów',
     description:
       '`id` i `email` są wymagane do synchronizacji profilu użytkownika z IdP. Wprowadź następującą nazwę i wartość twierdzenia w swoim IdP.',
-    col_sp_claims: 'Wartość dostawcy usług (Logto)',
+    col_sp_claims: 'Wartość dostawcy usług (MyEyesID)',
     col_idp_claims: 'Nazwa twierdzenia dostawcy tożsamości',
     idp_claim_tooltip: 'Nazwa twierdzenia dostawcy tożsamości',
   },

@@ -41,9 +41,9 @@ const paywall = {
   scopes_per_role_other:
     '已達到 <planName/> 的{{count, number}}個角色每個權限限制。升級計劃以添加額外的角色和權限。如需任何幫助，請<a>聯繫我們</a>。',
   saml_applications_oss:
-    '額外的 SAML 應用程式可在 Logto 企業版計劃中使用。如需協助，請與我們聯絡。',
-  logto_pricing_button_text: 'Logto 雲端定價',
-  saml_applications: '額外的 SAML 應用程式可在 Logto 企業版計劃中使用。如需協助，請聯絡我們。',
+    '額外的 SAML 應用程式可在 MyEyesID 企業版計劃中使用。如需協助，請與我們聯絡。',
+  logto_pricing_button_text: 'MyEyesID 雲端定價',
+  saml_applications: '額外的 SAML 應用程式可在 MyEyesID 企業版計劃中使用。如需協助，請聯絡我們。',
   saml_applications_add_on:
     '透過升級到付費計劃解鎖 SAML 應用功能。如需任何協助，歡迎<a>聯絡我們</a>。',
   hooks:
@@ -53,7 +53,7 @@ const paywall = {
   mfa: '升級到付費計劃以解鎖 MFA 以提高安全性。如果需要任何協助，請隨時<a>聯絡我們</a>。',
   organizations: '升級到付費計劃以解鎖組織。如果需要任何協助，請隨時<a>聯繫我們</a>。',
   third_party_apps:
-    '透過升級到付費計劃將 Logto 解鎖為第三方應用程式的 IdP。如需任何協助，歡迎<a>聯繫我們</a>。',
+    '透過升級到付費計劃將 MyEyesID 解鎖為第三方應用程式的 IdP。如需任何協助，歡迎<a>聯繫我們</a>。',
   sso_connectors: '通過升級到付費計劃來解鎖企業 SSO。如需任何協助，歡迎<a>聯繫我們</a>。',
   tenant_members: '通過升級到付費計劃來解鎖合作功能。如需任何協助，歡迎<a>聯繫我們</a>。',
   tenant_members_dev_plan:
@@ -64,7 +64,7 @@ const paywall = {
       '升級至付費計劃以解鎖自訂 JWT 功能和高級福利。如果有任何問題，請隨時<a>聯繫我們</a>。',
   },
   branding_customization:
-    '升級您的方案，使用 "隱藏 Logto 品牌" 與 "帶上你的界面" 功能全面掌控品牌體驗。',
+    '升級您的方案，使用 "隱藏 MyEyesID 品牌" 與 "帶上你的界面" 功能全面掌控品牌體驗。',
   bring_your_ui: '升級到付費計劃以獲得自訂 UI 功能和高級福利。',
   security_features:
     '通過升級到 Pro 計劃解鎖高級安全功能。如果你有任何問題，請隨時<a>聯繫我們</a>。',

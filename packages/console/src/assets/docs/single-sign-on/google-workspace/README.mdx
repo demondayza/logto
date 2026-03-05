@@ -34,7 +34,7 @@ In order to create a new OIDC credential, you need to configure the consent scre
   <img src={consentScreenSettings} alt="consent screen settings" />
 </center>
 
-3. Set the `Scopes` for your application. In order to retrieve the user's identity information and email address properly from the IdP, Logto SSO connector need to grant the following scopes from the IdP:
+3. Set the `Scopes` for your application. In order to retrieve the user's identity information and email address properly from the IdP, MyEyesID SSO connector need to grant the following scopes from the IdP:
 
 <center>
   <img src={consentScreenScopes} alt="consent screen scopes" />
@@ -64,19 +64,19 @@ Continue set up the OAuth credential by filling up the following information:
 
 1. Select the `Web application` as the application type.
 
-2. Fill in the `Name` of your client application, `Logto SSO Connector` for example. This will help you to identify the credential in the future.
+2. Fill in the `Name` of your client application, `MyEyesID SSO Connector` for example. This will help you to identify the credential in the future.
 
-3. Fill in the `Authorized redirect URIs` with the Logto callback URI. This is the URI that the Google will redirect the user's browser after successful authentication. After a user successfully authenticates with the IdP, the IdP redirects the user's browser back to this designated URI along with an authorization code. Logto will complete the authentication process based on authorization code received from this URI.
+3. Fill in the `Authorized redirect URIs` with the MyEyesID callback URI. This is the URI that the Google will redirect the user's browser after successful authentication. After a user successfully authenticates with the IdP, the IdP redirects the user's browser back to this designated URI along with an authorization code. MyEyesID will complete the authentication process based on authorization code received from this URI.
 
 <OidcCallbackUri />
 
-4. Fill in the `Authorized JavaScript origins` with the Logto callback URI's origin. This ensures only your Logto application can send requests to the Google OAuth server.
+4. Fill in the `Authorized JavaScript origins` with the MyEyesID callback URI's origin. This ensures only your MyEyesID application can send requests to the Google OAuth server.
 
 5. Click the `Create` button to create the OAuth credential.
 
 </Step>
 
-<Step index={3} title="Set up Logto connector with the client credentials">
+<Step index={3} title="Set up MyEyesID connector with the client credentials">
 
 After successfully creating the OAuth credential, you will receive a prompt modal with the client ID and client secret.
 
@@ -84,9 +84,9 @@ After successfully creating the OAuth credential, you will receive a prompt moda
   <img src={clientCredentials} alt="client credentials" />
 </center>
 
-Copy the `client ID` and `client secret` and fill in the corresponding fields on the Logto SSO connector `connection` tab.
+Copy the `client ID` and `client secret` and fill in the corresponding fields on the MyEyesID SSO connector `connection` tab.
 
-Now you have successfully configured a Google Workspace SSO connector on Logto.
+Now you have successfully configured a Google Workspace SSO connector on MyEyesID.
 
 </Step>
 
@@ -106,22 +106,22 @@ Scopes define the permissions your app requests from users and control which dat
 3. Click **Update** to confirm the selection.
 4. Click **Save and Continue** to apply the changes.
 
-**In Logto Google Workspace connector:**
+**In MyEyesID Google Workspace connector:**
 
-1. Logto automatically includes `openid`, `profile`, and `email` scopes to retrieve basic user identity information. You can leave the `Scopes` field blank if you only need basic user information
+1. MyEyesID automatically includes `openid`, `profile`, and `email` scopes to retrieve basic user identity information. You can leave the `Scopes` field blank if you only need basic user information
 2. Add additional scopes (separated by spaces) in the `Scopes` field to request more data from Google. Use full scope URLs, for example: `https://www.googleapis.com/auth/calendar.readonly`
 
 </Step>
 
 <Step index={5} title="Store tokens to access Google APIs (Optional)">
 
-If you want to access [Google APIs](https://console.cloud.google.com/apis/library) and perform actions with user authorization, Logto needs to get specific API scopes and store tokens.
+If you want to access [Google APIs](https://console.cloud.google.com/apis/library) and perform actions with user authorization, MyEyesID needs to get specific API scopes and store tokens.
 
-1. Add the required scopes in your Google Cloud Console OAuth consent screen configuration and Logto Google connector.
-2. Enable **Store tokens for persistent API access** in Logto Google connector. Logto will securely [store Google access and refresh tokens in the Secret Vault](https://docs.logto.io/secret-vault/federated-token-set/token-retrieval).
-3. To ensure refresh tokens are returned, configure your Logto Google connector to enable **Offline Access**.
+1. Add the required scopes in your Google Cloud Console OAuth consent screen configuration and MyEyesID Google connector.
+2. Enable **Store tokens for persistent API access** in MyEyesID Google connector. MyEyesID will securely [store Google access and refresh tokens in the Secret Vault](https://docs.logto.io/secret-vault/federated-token-set/token-retrieval).
+3. To ensure refresh tokens are returned, configure your MyEyesID Google connector to enable **Offline Access**.
 
-**Warning**: You do not need to add `offline_access` in the Logto `Scope` field — doing so may cause an error. Google uses `access_type=offline` automatically when offline access is enabled.
+**Warning**: You do not need to add `offline_access` in the MyEyesID `Scope` field — doing so may cause an error. Google uses `access_type=offline` automatically when offline access is enabled.
 
 
 </Step>

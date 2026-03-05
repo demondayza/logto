@@ -21,7 +21,7 @@ const webhook_details = {
     settings_description:
       'Webhookは、特定のイベントが発生すると、POSTリクエストをエンドポイントURLに送信することで、リアルタイムのアップデートを受信できるようにするものです。これにより、新しい情報を受信した後、直ちにアクションを起こすことができます。',
     events: 'イベント',
-    events_description: 'LogtoがPOSTリクエストを送信するトリガーイベントを選択します。',
+    events_description: 'MyEyesIDがPOSTリクエストを送信するトリガーイベントを選択します。',
     name: '名前',
     endpoint_url: 'エンドポイントURL',
     signing_key: '署名キー',

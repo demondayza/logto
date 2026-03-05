@@ -9,7 +9,7 @@ const upsell = {
   create_tenant: {
     title: 'Selecione o seu plano de inquilino',
     description:
-      'O Logto oferece opções competitivas de planos com preços inovadores e acessíveis, especialmente concebidos para empresas em crescimento. <a>Saiba mais</a>',
+      'O MyEyesID oferece opções competitivas de planos com preços inovadores e acessíveis, especialmente concebidos para empresas em crescimento. <a>Saiba mais</a>',
     base_price: 'Preço base',
     monthly_price: '{{value, number}}/mês',
     view_all_features: 'Ver todas as funcionalidades',
@@ -22,18 +22,18 @@ const upsell = {
   mau_exceeded_modal: {
     title: 'MAU excedeu o limite. Atualize o seu plano.',
     notification:
-      'O seu MAU atual excedeu o limite de <planName/>. Por favor, atualize para o plano premium a tempo para evitar a suspensão do serviço do Logto.',
+      'O seu MAU atual excedeu o limite de <planName/>. Por favor, atualize para o plano premium a tempo para evitar a suspensão do serviço do MyEyesID.',
     update_plan: 'Atualizar plano',
   },
   token_exceeded_modal: {
     title: 'Uso de token excedeu o limite. Atualize o seu plano.',
     notification:
-      'Você excedeu o limite de uso de tokens do seu <planName/>. Os usuários não poderão acessar o serviço da Logto corretamente. Por favor, atualize seu plano para premium prontamente para evitar qualquer inconveniente.',
+      'Você excedeu o limite de uso de tokens do seu <planName/>. Os usuários não poderão acessar o serviço da MyEyesID corretamente. Por favor, atualize seu plano para premium prontamente para evitar qualquer inconveniente.',
   },
   payment_overdue_modal: {
     title: 'Pagamento da fatura em atraso',
     notification:
-      'Oops! O pagamento da fatura do inquilino <span>{{name}}</span> falhou. Por favor, pague a fatura prontamente para evitar a suspensão do serviço Logto.',
+      'Oops! O pagamento da fatura do inquilino <span>{{name}}</span> falhou. Por favor, pague a fatura prontamente para evitar a suspensão do serviço MyEyesID.',
     unpaid_bills: 'Faturas não pagas',
     update_payment: 'Atualizar pagamento',
   },
@@ -44,7 +44,7 @@ const upsell = {
     tenant_member: 'membro do inquilino',
   },
   charge_notification_for_quota_limit:
-    'Você ultrapassou o limite de sua cota de {{item}}. O Logto adicionará cobranças pelo uso além do limite da cota. A cobrança começará no dia em que o novo design de preços do complemento for lançado. <a>Saiba mais</a>',
+    'Você ultrapassou o limite de sua cota de {{item}}. O MyEyesID adicionará cobranças pelo uso além do limite da cota. A cobrança começará no dia em que o novo design de preços do complemento for lançado. <a>Saiba mais</a>',
   paywall,
   featured_plan_content,
   add_on,

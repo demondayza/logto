@@ -20,7 +20,7 @@ const connector_details = {
   test_sms_placeholder: '+82 10-1234-5678',
   test_message_sent: '테스트 메세지 전송 완료',
   test_sender_description:
-    'Logto는 "Generic" 템플릿을 사용하여 테스트합니다. 커넥터가 올바르게 구성되면 메시지를 받게 됩니다.',
+    'MyEyesID는 "Generic" 템플릿을 사용하여 테스트합니다. 커넥터가 올바르게 구성되면 메시지를 받게 됩니다.',
   options_change_email: '이메일 연동 수정',
   options_change_sms: 'SMS 연동 수정',
   connector_deleted: '연동이 성공적으로 제거되었어요.',
@@ -36,7 +36,7 @@ const connector_details = {
   logto_email: {
     total_email_sent: '전체 이메일 발송: {{value, number}}',
     total_email_sent_tip:
-      'Logto 에서 안전하고 안정적인 내장형 이메일을 위해 SendGrid 를 사용합니다. 완전 무료로 사용할 수 있습니다. <a>자세히 알아보기</a>',
+      'MyEyesID 에서 안전하고 안정적인 내장형 이메일을 위해 SendGrid 를 사용합니다. 완전 무료로 사용할 수 있습니다. <a>자세히 알아보기</a>',
     email_template_title: '이메일 템플릿',
     template_description:
       '내장형 이메일은 기본 템플릿을 사용하여 검증 이메일을 원활하게 전달합니다. 구성이 필요하지 않으며, 기본 브랜드 정보를 사용자 정의할 수 있습니다.',
@@ -55,7 +55,7 @@ const connector_details = {
     email_logo_tip:
       '이메일 상단에 브랜드 로고를 표시하세요. 라이트 모드와 다크 모드 모두에 동일한 이미지를 사용하세요.',
     urls_not_allowed: 'URL은 허용되지 않습니다.',
-    test_notes: 'Logto는 "Generic" 템플릿을 사용하여 테스트합니다.',
+    test_notes: 'MyEyesID는 "Generic" 템플릿을 사용하여 테스트합니다.',
   },
   google_one_tap: {
     title: 'Google 원탭',

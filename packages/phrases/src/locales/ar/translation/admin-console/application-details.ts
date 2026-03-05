@@ -4,10 +4,10 @@ const application_details = {
   check_guide: 'تحقق من الدليل',
   settings: 'الإعدادات',
   settings_description:
-    '"التطبيق" هو برنامج أو خدمة مسجَّلة يمكنها الوصول إلى معلومات المستخدم أو التصرف نيابةً عنه. تساعد التطبيقات Logto على معرفة من يطلب ماذا، وتتولى إدارة تسجيل الدخول والصلاحيات. املأ الحقول المطلوبة لإتمام المصادقة.',
+    '"التطبيق" هو برنامج أو خدمة مسجَّلة يمكنها الوصول إلى معلومات المستخدم أو التصرف نيابةً عنه. تساعد التطبيقات MyEyesID على معرفة من يطلب ماذا، وتتولى إدارة تسجيل الدخول والصلاحيات. املأ الحقول المطلوبة لإتمام المصادقة.',
   integration: 'التكامل',
   integration_description:
-    'نشر مع العمال الآمنة لـ Logto ، المدعومة بشبكة Cloudflare للأداء على أعلى مستوى وبدء بارد بدون تأخير في جميع أنحاء العالم.',
+    'نشر مع العمال الآمنة لـ MyEyesID ، المدعومة بشبكة Cloudflare للأداء على أعلى مستوى وبدء بارد بدون تأخير في جميع أنحاء العالم.',
   service_configuration: 'تكوين الخدمة',
   service_configuration_description: 'أكمل التكوينات اللازمة في خدمتك.',
   session: 'الجلسة',
@@ -29,10 +29,10 @@ const application_details = {
     'نقطة النهاية لأداء المصادقة والترخيص. يُستخدم لـ OpenID Connect <a>المصادقة</a>.',
   show_endpoint_details: 'إظهار تفاصيل النقطة النهائية',
   hide_endpoint_details: 'إخفاء تفاصيل النقطة النهائية',
-  logto_endpoint: 'نقطة نهاية Logto',
+  logto_endpoint: 'نقطة نهاية MyEyesID',
   application_id: 'معرف التطبيق',
   application_id_tip:
-    'معرف التطبيق الفريد الذي يتم إنشاؤه عادةً بواسطة Logto. يُشير أيضًا إلى "client_id" في OpenID Connect.',
+    'معرف التطبيق الفريد الذي يتم إنشاؤه عادةً بواسطة MyEyesID. يُشير أيضًا إلى "client_id" في OpenID Connect.',
   application_secret: 'سر التطبيق',
   application_secret_other: 'أسرار التطبيق',
   redirect_uri: 'عنوان URI لإعادة التوجيه',
@@ -61,15 +61,15 @@ const application_details = {
     'تمكين أو تعطيل الوصول إلى واجهة برمجة التطبيقات للإدارة. بمجرد التمكين ، يمكنك استخدام رموز الوصول لاستدعاء واجهة برمجة التطبيقات للإدارة نيابة عن هذا التطبيق.',
   always_issue_refresh_token: 'إصدار رمز التحديث دائمًا',
   always_issue_refresh_token_label:
-    'عند التمكين ، ستصدر Logto دائمًا رموز التحديث ، بغض النظر عما إذا تم تقديم "prompt=consent" في طلب المصادقة. ومع ذلك ، يُنصح بعدم استخدام هذه الممارسة إلا إذا كان ضروريًا ، حيث أنها غير متوافقة مع OpenID Connect وقد تسبب مشاكل بالإمكان.',
+    'عند التمكين ، ستصدر MyEyesID دائمًا رموز التحديث ، بغض النظر عما إذا تم تقديم "prompt=consent" في طلب المصادقة. ومع ذلك ، يُنصح بعدم استخدام هذه الممارسة إلا إذا كان ضروريًا ، حيث أنها غير متوافقة مع OpenID Connect وقد تسبب مشاكل بالإمكان.',
   refresh_token_ttl: 'مدة صلاحية رمز التحديث (TTL) بالأيام',
   refresh_token_ttl_tip:
     'المدة التي يمكن فيها استخدام رمز التحديث لطلب رموز وصول جديدة قبل أن ينتهي صلاحيته ويصبح غير صالح. ستمتد طلبات الرموز إلى هذه القيمة.',
   rotate_refresh_token: 'تدوير رمز التحديث',
   rotate_refresh_token_label:
-    'عند التمكين ، سيصدر Logto رمز تحديث جديد لطلبات الرموز عند مرور 70٪ من وقت الحياة الأصلي (TTL) أو تلبية شروط معينة. <a>تعرف على المزيد</a>',
+    'عند التمكين ، سيصدر MyEyesID رمز تحديث جديد لطلبات الرموز عند مرور 70٪ من وقت الحياة الأصلي (TTL) أو تلبية شروط معينة. <a>تعرف على المزيد</a>',
   rotate_refresh_token_label_for_public_clients:
-    'عند التمكين ، سيصدر Logto رمز تحديث جديد لكل طلب رمز. <a>تعرف على المزيد</a>',
+    'عند التمكين ، سيصدر MyEyesID رمز تحديث جديد لكل طلب رمز. <a>تعرف على المزيد</a>',
   backchannel_logout: 'تسجيل الخروج الخلفي',
   backchannel_logout_description:
     'قم بتكوين نقطة نهاية تسجيل الخروج الخلفية لـ OpenID Connect وما إذا كانت الجلسة مطلوبة لهذا التطبيق.',
@@ -90,7 +90,7 @@ const application_details = {
   application_deleted: 'تم حذف التطبيق {{name}} بنجاح',
   redirect_uri_required: 'يجب عليك إدخال عنوان URI لإعادة التوجيه واحد على الأقل',
   app_domain_description_1:
-    'لا تتردد في استخدام نطاقك مع {{domain}} المدعومة بواسطة Logto ، والتي تكون صالحة بشكل دائم.',
+    'لا تتردد في استخدام نطاقك مع {{domain}} المدعومة بواسطة MyEyesID ، والتي تكون صالحة بشكل دائم.',
   app_domain_description_2:
     'لا تتردد في استخدام نطاقك <domain>{{domain}}</domain> الذي يكون صالحًا بشكل دائم.',
   custom_rules: 'قواعد المصادقة المخصصة',
@@ -106,7 +106,7 @@ const application_details = {
   protect_origin_server_description:
     'تأكد من حماية خادم المصدر الخاص بك من الوصول المباشر. راجع الدليل للحصول على <a>تعليمات مفصلة</a> أكثر.',
   third_party_settings_description:
-    'دمج التطبيقات الخارجية مع Logto كموفر الهوية الخاص بك (IdP) باستخدام OIDC / OAuth 2.0، مع شاشة موافقة لترخيص المستخدم.',
+    'دمج التطبيقات الخارجية مع MyEyesID كموفر الهوية الخاص بك (IdP) باستخدام OIDC / OAuth 2.0، مع شاشة موافقة لترخيص المستخدم.',
   session_duration: 'مدة الجلسة (بالأيام)',
   try_it: 'جربها',
   no_organization_placeholder: 'لم يتم العثور على أي منظمة. <a>انتقل إلى المنظمات</a>',
@@ -155,7 +155,7 @@ const application_details = {
     user_data_permission_description_tips:
       'You can modify the description of the personal user data permissions via "Sign-in Experience > Content > Manage Language"',
     permission_description_tips:
-      'When Logto is used as an Identity Provider (IdP) for authentication in third-party apps, and users are asked for authorization, this description appears on the consent screen.',
+      'When MyEyesID is used as an Identity Provider (IdP) for authentication in third-party apps, and users are asked for authorization, this description appears on the consent screen.',
     user_title: 'User',
     user_description:
       'Select the permissions requested by the third-party app for accessing specific user data.',
@@ -245,11 +245,11 @@ const application_details = {
     title: 'تنسيق اسم المعرف',
     description: 'حدد تنسيق اسم المعرف لـ SAML IdP.',
     persistent: 'مستمر',
-    persistent_description: 'استخدام معرف مستخدم Logto كاسم المعرف',
+    persistent_description: 'استخدام معرف مستخدم MyEyesID كاسم المعرف',
     transient: 'مؤقت',
     transient_description: 'استخدام معرف مستخدم مؤقت كاسم المعرف',
     unspecified: 'غير محدد',
-    unspecified_description: 'استخدام معرف مستخدم Logto كاسم المعرف',
+    unspecified_description: 'استخدام معرف مستخدم MyEyesID كاسم المعرف',
     email_address: 'البريد الإلكتروني',
     email_address_description: 'استخدام البريد الإلكتروني كاسم المعرف',
   },
@@ -270,8 +270,8 @@ const application_details = {
   saml_app_attribute_mapping: {
     name: 'تعيينات السمات',
     title: 'تعيينات السمات الأساسية',
-    description: 'أضف تعيينات السمات لمزامنة ملف تعريف المستخدم من Logto إلى تطبيقك.',
-    col_logto_claims: 'قيمة Logto',
+    description: 'أضف تعيينات السمات لمزامنة ملف تعريف المستخدم من MyEyesID إلى تطبيقك.',
+    col_logto_claims: 'قيمة MyEyesID',
     col_sp_claims: 'اسم القيمة في تطبيقك',
     add_button: 'أضف آخر.',
   },

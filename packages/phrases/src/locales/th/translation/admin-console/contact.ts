@@ -18,7 +18,7 @@ const contact = {
     button: 'ส่ง',
   },
   reserve: {
-    title: 'จองเวลาคุยกับทีม Logto',
+    title: 'จองเวลาคุยกับทีม MyEyesID',
     description: 'จองเวลาพูดคุยสดได้อย่างรวดเร็ว',
     button: 'จอง',
   },

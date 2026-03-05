@@ -27,7 +27,7 @@ const validateKey: ValidateKeysFunction = (key) => {
 
 const getConfig: CommandModule<unknown, { key: string }> = {
   command: 'get <key>',
-  describe: 'Get system value of the given key in Logto database',
+  describe: 'Get system value of the given key in MyEyesID database',
   builder: (yargs) =>
     yargs.positional('key', {
       describe: `The key to get from database system table, one of ${validKeysDisplay}`,
@@ -53,7 +53,7 @@ const getConfig: CommandModule<unknown, { key: string }> = {
 
 const setConfig: CommandModule<unknown, { key: string; value: string }> = {
   command: 'set <key> <value>',
-  describe: 'Set config value of the given key in Logto database',
+  describe: 'Set config value of the given key in MyEyesID database',
   builder: (yargs) =>
     yargs
       .positional('key', {
@@ -81,7 +81,7 @@ const setConfig: CommandModule<unknown, { key: string; value: string }> = {
 
 const system: CommandModule = {
   command: ['system'],
-  describe: 'Commands for Logto system config',
+  describe: 'Commands for MyEyesID system config',
   builder: (yargs) => yargs.command(getConfig).command(setConfig).demandCommand(1),
   handler: noop,
 };

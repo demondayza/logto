@@ -42,10 +42,10 @@ const paywall = {
   scopes_per_role_other:
     'Atingiu o limite de {{count, number}} permissões por função de <planName/>. Atualize o plano para adicionar funções e permissões adicionais. Não hesite em <a>Entre em contato conosco</a> se precisar de ajuda.',
   saml_applications_oss:
-    'O aplicativo SAML adicional está disponível com o plano Logto Enterprise. Entre em contato conosco se precisar de assistência.',
-  logto_pricing_button_text: 'Preços do Logto Cloud',
+    'O aplicativo SAML adicional está disponível com o plano MyEyesID Enterprise. Entre em contato conosco se precisar de assistência.',
+  logto_pricing_button_text: 'Preços do MyEyesID Cloud',
   saml_applications:
-    'O aplicativo SAML adicional está disponível com o plano Logto Enterprise. Entre em contato conosco se precisar de assistência.',
+    'O aplicativo SAML adicional está disponível com o plano MyEyesID Enterprise. Entre em contato conosco se precisar de assistência.',
   saml_applications_add_on:
     'Desbloqueie a funcionalidade do app SAML ao atualizar para um plano pago. Para qualquer assistência, não hesite em <a>entrar em contato conosco</a>.',
   hooks:
@@ -56,7 +56,7 @@ const paywall = {
   organizations:
     'Desbloqueie organizações ao fazer upgrade para um plano pago. Não hesite em <a>entrar em contato conosco</a> se precisar de alguma assistência.',
   third_party_apps:
-    'Desbloqueie Logto como provedor de identidade para aplicativos de terceiros, ao fazer upgrade para um plano pago. Para qualquer ajuda, sinta-se à vontade para <a>entrar em contato conosco</a>.',
+    'Desbloqueie MyEyesID como provedor de identidade para aplicativos de terceiros, ao fazer upgrade para um plano pago. Para qualquer ajuda, sinta-se à vontade para <a>entrar em contato conosco</a>.',
   sso_connectors:
     'Desbloqueie SSO corporativo ao fazer upgrade para um plano pago. Para qualquer ajuda, sinta-se à vontade para <a>entrar em contato conosco</a>.',
   tenant_members:
@@ -69,7 +69,7 @@ const paywall = {
       'Atualize para um plano pago para funcionalidades de JWT personalizadas e benefícios premium. Não hesite em <a>entrar em contato conosco</a> se tiver alguma dúvida.',
   },
   branding_customization:
-    'Atualize seu plano para desbloquear controle total da marca com os recursos "Ocultar a marca Logto" e "Traga sua UI".',
+    'Atualize seu plano para desbloquear controle total da marca com os recursos "Ocultar a marca MyEyesID" e "Traga sua UI".',
   bring_your_ui:
     'Atualize para um plano pago para trazer sua funcionalidade de UI personalizada e benefícios premium.',
   security_features:

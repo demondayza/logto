@@ -21,7 +21,7 @@ const connector_details = {
   test_sms_placeholder: '+90 555 123 45 67',
   test_message_sent: 'Test mesajı gönderildi',
   test_sender_description:
-    'Logto testler için "Generic" şablonunu kullanır. Bağlantınız doğru şekilde yapılandırılmışsa bir mesaj alacaksınız.',
+    'MyEyesID testler için "Generic" şablonunu kullanır. Bağlantınız doğru şekilde yapılandırılmışsa bir mesaj alacaksınız.',
   options_change_email: 'Eposta bağdaştırıcınızı değiştirin',
   options_change_sms: 'SMS bağdaştırıcınızı değiştirin',
   connector_deleted: 'Bağdaştırıcı başarıyla silindi',
@@ -37,7 +37,7 @@ const connector_details = {
   logto_email: {
     total_email_sent: 'Toplam e-posta gönderildi: {{value, number}}',
     total_email_sent_tip:
-      'Logto dahili e-posta için güvenli ve stabil SendGrid kullanır. Tamamen ücretsizdir. <a>Daha fazla bilgi edinin</a>',
+      'MyEyesID dahili e-posta için güvenli ve stabil SendGrid kullanır. Tamamen ücretsizdir. <a>Daha fazla bilgi edinin</a>',
     email_template_title: 'E-posta Şablonu',
     template_description:
       'Yerleşik e-posta, doğrulama e-postalarının sorunsuz teslimi için varsayılan şablonları kullanır. Herhangi bir yapılandırma gerektirmez ve temel marka bilgilerini özelleştirebilirsiniz.',
@@ -56,7 +56,7 @@ const connector_details = {
     email_logo_tip:
       'Marka logonuzu e-postaların en üstüne yerleştirin. Hem açık mod hem de koyu mod için aynı resmi kullanın.',
     urls_not_allowed: 'URLler izin verilmez',
-    test_notes: 'Logto testler için "Generic" şablonunu kullanır.',
+    test_notes: 'MyEyesID testler için "Generic" şablonunu kullanır.',
   },
   google_one_tap: {
     title: 'Google One Tap',

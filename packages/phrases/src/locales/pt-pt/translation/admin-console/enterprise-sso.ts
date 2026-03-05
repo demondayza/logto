@@ -8,7 +8,7 @@ const enterprise_sso = {
   col_email_domain: 'Domínio do email',
   placeholder_title: 'Conector empresarial',
   placeholder_description:
-    'Logto disponibilizou muitos provedores de identidade empresarial integrados para conexão, entretanto, você pode criar o seu próprio com os protocolos SAML e OIDC.',
+    'MyEyesID disponibilizou muitos provedores de identidade empresarial integrados para conexão, entretanto, você pode criar o seu próprio com os protocolos SAML e OIDC.',
   create_modal: {
     title: 'Adicionar conector empresarial',
     text_divider: 'Ou você pode personalizar seu conector por um protocolo padrão.',
@@ -38,14 +38,14 @@ const enterprise_sso = {
       redirect_uri_field_description:
         'A URI de redirecionamento é para onde os utilizadores são enviados após a autenticação SSO. Adicione esta URI à configuração do seu IdP.',
       redirect_uri_field_custom_domain_description:
-        'Se utilizar vários <a>domínios personalizados</a> no Logto, certifique-se de adicionar todas as URIs de callback correspondentes ao seu IdP para que o SSO funcione em cada domínio.\n\nO domínio predefinido do Logto (*.logto.app) é sempre válido; inclua-o apenas se também quiser suportar SSO nesse domínio.',
+        'Se utilizar vários <a>domínios personalizados</a> no MyEyesID, certifique-se de adicionar todas as URIs de callback correspondentes ao seu IdP para que o SSO funcione em cada domínio.\n\nO domínio predefinido do MyEyesID (*.logto.app) é sempre válido; inclua-o apenas se também quiser suportar SSO nesse domínio.',
     },
   },
   attribute_mapping: {
     title: 'Mapeamento de atributos',
     description:
       '`id` e `email` são necessários para sincronizar o perfil do utilizador do IdP. Insira o seguinte nome de reivindicação e valor no seu IdP.',
-    col_sp_claims: 'Valor do provedor de serviços (Logto)',
+    col_sp_claims: 'Valor do provedor de serviços (MyEyesID)',
     col_idp_claims: 'Nome da reivindicação do provedor de identidade',
     idp_claim_tooltip: 'O nome da reivindicação do provedor de identidade',
   },

@@ -2,8 +2,8 @@ const applications = {
   page_title: '어플리케이션',
   title: '어플리케이션',
   subtitle:
-    '인증에 Logto를 사용할 모바일, 단일 페이지, Machine-to-Machine 또는 기존 어플리케이션을 설정할 수 있어요.',
-  subtitle_with_app_type: '내 {{name}} 어플리케이션에 대한 Logto 인증 설정',
+    '인증에 MyEyesID를 사용할 모바일, 단일 페이지, Machine-to-Machine 또는 기존 어플리케이션을 설정할 수 있어요.',
+  subtitle_with_app_type: '내 {{name}} 어플리케이션에 대한 MyEyesID 인증 설정',
   create: '어플리케이션 생성',
   create_third_party: '서드파티 어플리케이션 생성',
   create_thrid_party_modal_title: '서드파티 앱 생성 ({{type}})',
@@ -42,7 +42,7 @@ const applications = {
     },
     protected: {
       title: '보호된 앱',
-      subtitle: 'Logto로 보호되는 앱',
+      subtitle: 'MyEyesID로 보호되는 앱',
       description: 'N/A',
     },
     saml: {
@@ -58,14 +58,14 @@ const applications = {
   },
   placeholder_title: '어플리케이션 유형을 선택하여 계속하세요',
   placeholder_description:
-    'Logto는 OIDC용 앱 엔티티를 사용하여 앱 식별, 로그인 관리 및 감사 로그 생성과 같은 작업을 지원합니다.',
+    'MyEyesID는 OIDC용 앱 엔티티를 사용하여 앱 식별, 로그인 관리 및 감사 로그 생성과 같은 작업을 지원합니다.',
   third_party_application_placeholder_description:
-    'Logto를 아이덴티티 제공자로 사용하여 서드파티 서비스에 OAuth 권한 부여를 제공합니다. \n 리소스 접근을 위한 사전 제작된 사용자 동의 화면이 포함되어 있습니다. <a>더 알아보기</a>',
+    'MyEyesID를 아이덴티티 제공자로 사용하여 서드파티 서비스에 OAuth 권한 부여를 제공합니다. \n 리소스 접근을 위한 사전 제작된 사용자 동의 화면이 포함되어 있습니다. <a>더 알아보기</a>',
   guide: {
     third_party: {
       title: '서드파티 어플리케이션 통합',
       description:
-        'Logto를 아이덴티티 제공자로 사용하여 서드파티 서비스에 OAuth 권한 부여를 제공합니다. 안전한 리소스 접근을 위한 사전 제작된 사용자 동의 화면이 포함되어 있습니다. <a>자세히 알아보기</a>',
+        'MyEyesID를 아이덴티티 제공자로 사용하여 서드파티 서비스에 OAuth 권한 부여를 제공합니다. 안전한 리소스 접근을 위한 사전 제작된 사용자 동의 화면이 포함되어 있습니다. <a>자세히 알아보기</a>',
     },
   },
 };

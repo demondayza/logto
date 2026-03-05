@@ -39,14 +39,14 @@ export const validateNodeVersion = () => {
   // break the compatibility.
   if (required.every((version) => version.major > current.major)) {
     consoleLog.fatal(
-      `Logto requires NodeJS ${requiredVersionString}, but ${current.version} found.`
+      `MyEyesID requires NodeJS ${requiredVersionString}, but ${current.version} found.`
     );
   }
 
   // Only warn for incompatible minor/patch versions or higher major versions.
   if (!requiredRange.test(current.version)) {
     consoleLog.warn(
-      `Logto is tested under NodeJS ${requiredVersionString}, but version ${current.version} found.`
+      `MyEyesID is tested under NodeJS ${requiredVersionString}, but version ${current.version} found.`
     );
   }
 };
@@ -66,7 +66,7 @@ export const inquireInstallPath = async (initialPath?: string) => {
   const { instancePath } = await inquirer.prompt<{ instancePath: string }>(
     {
       name: 'instancePath',
-      message: 'Where should we create your Logto instance?',
+      message: 'Where should we create your MyEyesID instance?',
       type: 'input',
       default: defaultPath,
       filter: (value: string) => value.trim(),
@@ -92,7 +92,7 @@ export const validateDatabase = async () => {
 
   const { hasPostgresUrl } = await inquirer.prompt<{ hasPostgresUrl?: boolean }>({
     name: 'hasPostgresUrl',
-    message: `Logto requires PostgreSQL >=${pgRequired.version} but cannot find in the current environment.\n  Do you have a remote PostgreSQL instance ready?`,
+    message: `MyEyesID requires PostgreSQL >=${pgRequired.version} but cannot find in the current environment.\n  Do you have a remote PostgreSQL instance ready?`,
     type: 'confirm',
     when: () => {
       const pgOutput = safeExecSync('postgres --version') ?? '';
@@ -105,7 +105,7 @@ export const validateDatabase = async () => {
   });
 
   if (hasPostgresUrl === false) {
-    consoleLog.fatal('Logto requires a Postgres instance to run.');
+    consoleLog.fatal('MyEyesID requires a Postgres instance to run.');
   }
 };
 
@@ -135,7 +135,7 @@ export const downloadRelease = async (url?: string) => {
   const tarFilePath = path.resolve(os.tmpdir(), './logto.tar.gz');
   const from = await fetchDownloadUrl(url);
 
-  consoleLog.info(`Download Logto from ${from}`);
+  consoleLog.info(`Download MyEyesID from ${from}`);
   consoleLog.info(`Target ${tarFilePath}`);
   await downloadFile(from, tarFilePath);
 
@@ -174,7 +174,7 @@ export const seedDatabase = async (instancePath: string, cloud: boolean) => {
     });
 
     consoleLog.fatal(
-      'Error occurred during seeding your Logto database. Nothing has changed since the seeding process was in a transaction.\n\n' +
+      'Error occurred during seeding your MyEyesID database. Nothing has changed since the seeding process was in a transaction.\n\n' +
         `  To skip the database seeding, append ${chalk.green(
           '--skip-seed'
         )} to the command options.`
@@ -191,7 +191,7 @@ export const createEnv = async (installPath: string, databaseUrl: string) => {
 export const logFinale = (installPath: string) => {
   const startCommand = `cd ${installPath} && npm start`;
   consoleLog.info(
-    `Use the command below to start Logto. Happy hacking!\n\n  ${chalk.green(startCommand)}`
+    `Use the command below to start MyEyesID. Happy hacking!\n\n  ${chalk.green(startCommand)}`
   );
 };
 

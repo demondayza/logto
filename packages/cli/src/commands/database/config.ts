@@ -77,7 +77,7 @@ const validatePrivateKeyType: ValidatePrivateKeyTypeFunction = (key) => {
 
 const getConfig: CommandModule<unknown, { key: string; keys: string[]; tenantId: string }> = {
   command: 'get <key> [keys...]',
-  describe: 'Get config value(s) of the given key(s) in Logto database',
+  describe: 'Get config value(s) of the given key(s) in MyEyesID database',
   builder: (yargs) =>
     yargs
       .positional('key', {
@@ -122,7 +122,7 @@ const getConfig: CommandModule<unknown, { key: string; keys: string[]; tenantId:
 
 const setConfig: CommandModule<unknown, { key: string; value: string; tenantId: string }> = {
   command: 'set <key> <value>',
-  describe: 'Set config value of the given key in Logto database',
+  describe: 'Set config value of the given key in MyEyesID database',
   builder: (yargs) =>
     yargs
       .positional('key', {
@@ -268,7 +268,7 @@ const trimConfig: CommandModule<unknown, { key: string; length: number; tenantId
 
 const config: CommandModule = {
   command: ['config', 'configs'],
-  describe: 'Commands for Logto database config',
+  describe: 'Commands for MyEyesID database config',
   builder: (yargs) =>
     yargs
       .command(getConfig)

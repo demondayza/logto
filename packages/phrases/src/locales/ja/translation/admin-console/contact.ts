@@ -18,7 +18,7 @@ const contact = {
     button: '送信する',
   },
   reserve: {
-    title: 'Logto チームとの会議を予約',
+    title: 'MyEyesID チームとの会議を予約',
     description: 'ライブチャットのためにすぐにセッションを予約する',
     button: '予約する',
   },

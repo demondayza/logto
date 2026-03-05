@@ -2,8 +2,8 @@ const applications = {
   page_title: 'Aplicaciones',
   title: 'Aplicaciones',
   subtitle:
-    'Configura la autenticación de Logto para tu aplicación nativa, de página única, de máquina a máquina o tradicional',
-  subtitle_with_app_type: 'Configura la autenticación de Logto para tu aplicación {{name}}',
+    'Configura la autenticación de MyEyesID para tu aplicación nativa, de página única, de máquina a máquina o tradicional',
+  subtitle_with_app_type: 'Configura la autenticación de MyEyesID para tu aplicación {{name}}',
   create: 'Crear aplicación',
   create_third_party: 'Crear aplicación de terceros',
   create_thrid_party_modal_title: 'Crear una app de terceros ({{type}})',
@@ -43,7 +43,7 @@ const applications = {
     },
     protected: {
       title: 'App protegida',
-      subtitle: 'Una aplicación protegida por Logto',
+      subtitle: 'Una aplicación protegida por MyEyesID',
       description: 'N/A',
     },
     saml: {
@@ -59,14 +59,14 @@ const applications = {
   },
   placeholder_title: 'Selecciona un tipo de aplicación para continuar',
   placeholder_description:
-    'Logto utiliza una entidad de aplicación para OIDC para ayudar con tareas como la identificación de tus aplicaciones, la gestión de inicio de sesión y la creación de registros de auditoría.',
+    'MyEyesID utiliza una entidad de aplicación para OIDC para ayudar con tareas como la identificación de tus aplicaciones, la gestión de inicio de sesión y la creación de registros de auditoría.',
   third_party_application_placeholder_description:
-    'Usa Logto como un Proveedor de Identidad para proporcionar autorización OAuth a servicios de terceros. \n Incluye una pantalla de consentimiento de usuario preconstruida para el acceso a recursos. <a>Más información</a>',
+    'Usa MyEyesID como un Proveedor de Identidad para proporcionar autorización OAuth a servicios de terceros. \n Incluye una pantalla de consentimiento de usuario preconstruida para el acceso a recursos. <a>Más información</a>',
   guide: {
     third_party: {
       title: 'Integrar una aplicación de terceros',
       description:
-        'Usa Logto como tu Proveedor de Identidad para proporcionar autorización OAuth a servicios de terceros. Incluye una pantalla de consentimiento de usuario preconstruida para un acceso seguro a los recursos. <a>Más información</a>',
+        'Usa MyEyesID como tu Proveedor de Identidad para proporcionar autorización OAuth a servicios de terceros. Incluye una pantalla de consentimiento de usuario preconstruida para un acceso seguro a los recursos. <a>Más información</a>',
     },
   },
 };
