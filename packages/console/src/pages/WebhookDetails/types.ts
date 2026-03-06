@@ -1,4 +1,4 @@
-import { type HookResponse, type Hook } from '@logto/schemas';
+import { type HookResponse, type Hook } from '@myeyesid/schemas';
 
 import { type BasicWebhookFormType } from '@/components/BasicWebhookForm';
 

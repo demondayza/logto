@@ -3,7 +3,7 @@ tasks:
     init: docker pull postgres:14-alpine
     command: docker run -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=p0stgr3s postgres:14-alpine
 
-  - name: Logto dev
+  - name: MyEyesID dev
     init: |
       nvm i 18
       nvm use 18
@@ -23,15 +23,15 @@ tasks:
       pnpm start:dev
     env:
       TRUST_PROXY_HEADER: 1
-      DB_URL: postgres://postgres:p0stgr3s@127.0.0.1:5432/logto
+      DB_URL: postgres://postgres:p0stgr3s@127.0.0.1:5432/myeyesid
 
 ports:
-  - name: Logto
-    description: The Logto core service
+  - name: MyEyesID
+    description: The MyEyesID core service
     port: 3001
     visibility: public
   - name: Admin Console
-    description: The Admin Console for Logto core service
+    description: The Admin Console for MyEyesID core service
     port: 3002
     visibility: public
   - name: Postgres

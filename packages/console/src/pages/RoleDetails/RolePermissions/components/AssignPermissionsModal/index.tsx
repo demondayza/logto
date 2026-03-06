@@ -1,4 +1,4 @@
-import type { ScopeResponse, RoleType } from '@logto/schemas';
+import type { ScopeResponse, RoleType } from '@myeyesid/schemas';
 import { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Trans, useTranslation } from 'react-i18next';
@@ -71,7 +71,7 @@ function AssignPermissionsModal({ roleId, roleType, onClose }: Props) {
         title="role_details.permission.assign_title"
         subtitle="role_details.permission.assign_subtitle"
         learnMoreLink={{
-          href: 'https://docs.logto.io/docs/recipes/rbac/manage-permissions-and-roles#manage-role-permissions',
+          href: 'https://docs.myeyesid.io/docs/recipes/rbac/manage-permissions-and-roles#manage-role-permissions',
           targetBlank: 'noopener',
         }}
         size="large"

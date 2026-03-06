@@ -3,7 +3,7 @@ import EmptyState from '@experience/assets/icons/empty-state.svg';
 import Button from '@experience/shared/components/Button';
 import DynamicT from '@experience/shared/components/DynamicT';
 import PageMeta from '@experience/shared/components/PageMeta';
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import type { TFuncKey } from 'i18next';
 import type { AnchorHTMLAttributes } from 'react';
 import { useContext } from 'react';

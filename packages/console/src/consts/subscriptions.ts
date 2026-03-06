@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 
 /**
  * Shared quota limits between the featured plan content in the `CreateTenantModal` and the `PlanComparisonTable`.

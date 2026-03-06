@@ -1,4 +1,4 @@
-import { type Application, type SsoConnectorWithProviderConfig } from '@logto/schemas';
+import { type Application, type SsoConnectorWithProviderConfig } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 

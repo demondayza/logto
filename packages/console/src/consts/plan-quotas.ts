@@ -1,6 +1,6 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 
-import { type LogtoSkuQuota } from '@/types/skus';
+import { type MyEyesIDSkuQuota } from '@/types/skus';
 
 /**
  * Manually add this support quota item to the plan since it will be compared in the downgrade plan notification modal.
@@ -15,7 +15,7 @@ export const ticketSupportResponseTimeMap: Record<string, number> = {
 /**
  * Define the order of quota items in the downgrade plan notification modal and not eligible for downgrade plan modal.
  */
-export const skuQuotaItemOrder: Array<keyof LogtoSkuQuota> = [
+export const skuQuotaItemOrder: Array<keyof MyEyesIDSkuQuota> = [
   'mauLimit',
   'tokenLimit',
   'applicationsLimit',
@@ -40,7 +40,7 @@ export const skuQuotaItemOrder: Array<keyof LogtoSkuQuota> = [
   'ticketSupportResponseTime',
 ];
 
-export const comingSoonSkuQuotaKeys: Array<keyof LogtoSkuQuota> = [];
+export const comingSoonSkuQuotaKeys: Array<keyof MyEyesIDSkuQuota> = [];
 
 /**
  * Quota keys that are hidden in the subscription downgrade notification modal.
@@ -48,7 +48,7 @@ export const comingSoonSkuQuotaKeys: Array<keyof LogtoSkuQuota> = [];
  * @remarks We hide the following quota keys from the downgrade notification modal
  * because they are either add-on features or their quotas vary based on the current plan.
  */
-export const hiddenQuotaDiffUsageKeys: Array<keyof LogtoSkuQuota> = [
+export const hiddenQuotaDiffUsageKeys: Array<keyof MyEyesIDSkuQuota> = [
   'tokenLimit',
   'scopesPerResourceLimit',
   'userRolesLimit',

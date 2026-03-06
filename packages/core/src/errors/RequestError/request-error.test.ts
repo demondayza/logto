@@ -1,4 +1,4 @@
-import type { LogtoErrorI18nKey } from '@logto/phrases';
+import type { MyEyesIDErrorI18nKey } from '@myeyesid/phrases';
 
 import initI18n from '#src/i18n/init.js';
 import { i18next } from '#src/utils/i18n.js';
@@ -10,9 +10,9 @@ describe('RequestError', () => {
     await initI18n();
   });
 
-  it('standard RequestError use LogtoErrorCode', () => {
+  it('standard RequestError use MyEyesIDErrorCode', () => {
     const errorCode = 'auth.unauthorized';
-    const expectMessage = i18next.t<string, LogtoErrorI18nKey>(`errors:${errorCode}`);
+    const expectMessage = i18next.t<string, MyEyesIDErrorI18nKey>(`errors:${errorCode}`);
     const data = { foo: 'foo' };
 
     const newRequestError = new RequestError(errorCode, data);
@@ -30,7 +30,7 @@ describe('RequestError', () => {
 
   it('standard RequestError use RequestErrorMetadata', () => {
     const errorCode = 'auth.unauthorized';
-    const expectMessage = i18next.t<string, LogtoErrorI18nKey>(`errors:${errorCode}`);
+    const expectMessage = i18next.t<string, MyEyesIDErrorI18nKey>(`errors:${errorCode}`);
     const data = { foo: 'foo' };
 
     const newRequestError = new RequestError(
@@ -56,7 +56,7 @@ describe('RequestError', () => {
   it('RequestError with interpolation error message', () => {
     const errorCode = 'entity.create_failed';
     const entityName = 'mockEntity';
-    const expectMessage = i18next.t<string, LogtoErrorI18nKey>(`errors:${errorCode}`, {
+    const expectMessage = i18next.t<string, MyEyesIDErrorI18nKey>(`errors:${errorCode}`, {
       name: entityName,
     });
 

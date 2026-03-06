@@ -1,19 +1,19 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { conditional, trySafe, type Nullable } from '@silverhand/essentials';
 import { ResponseError } from '@withtyped/client';
 import dayjs from 'dayjs';
 
 import { tryReadResponseErrorBody } from '@/cloud/hooks/use-cloud-api';
-import { type LogtoSkuResponse } from '@/cloud/types/router';
+import { type MyEyesIDSkuResponse } from '@/cloud/types/router';
 import { ticketSupportResponseTimeMap } from '@/consts/plan-quotas';
 import { featuredPlanIds, planIdOrder } from '@/consts/subscriptions';
-import { type LogtoSkuQuota } from '@/types/skus';
+import { type MyEyesIDSkuQuota } from '@/types/skus';
 
-const addSupportQuota = (logtoSkuResponse: LogtoSkuResponse) => {
-  const { id, quota } = logtoSkuResponse;
+const addSupportQuota = (myeyesidSkuResponse: MyEyesIDSkuResponse) => {
+  const { id, quota } = myeyesidSkuResponse;
 
   return {
-    ...logtoSkuResponse,
+    ...myeyesidSkuResponse,
     quota: {
       ...quota,
       /**
@@ -25,17 +25,17 @@ const addSupportQuota = (logtoSkuResponse: LogtoSkuResponse) => {
 };
 
 /**
- * Format Logto SKUs responses.
+ * Format MyEyesID SKUs responses.
  *
  * - add support quota to the SKUs.
  * - Sort the SKUs by the order of `featuredPlanIdOrder`.
  */
-export const formatLogtoSkusResponses = (logtoSkus: LogtoSkuResponse[] | undefined) => {
-  if (!logtoSkus) {
+export const formatMyEyesIDSkusResponses = (myeyesidSkus: MyEyesIDSkuResponse[] | undefined) => {
+  if (!myeyesidSkus) {
     return [];
   }
 
-  return logtoSkus.map((logtoSku) => addSupportQuota(logtoSku));
+  return myeyesidSkus.map((myeyesidSku) => addSupportQuota(myeyesidSku));
 };
 
 const getSubscriptionPlanOrderById = (id: string) => {
@@ -74,7 +74,7 @@ export const formatPeriod = ({ periodStart, periodEnd, displayYear }: FormatPeri
 // `parseExceededQuotaLimitError` will be removed soon.
 export const parseExceededSkuQuotaLimitError = async (
   error: unknown
-): Promise<[false] | [true, Array<keyof LogtoSkuQuota>]> => {
+): Promise<[false] | [true, Array<keyof MyEyesIDSkuQuota>]> => {
   if (!(error instanceof ResponseError)) {
     return [false];
   }
@@ -90,7 +90,7 @@ export const parseExceededSkuQuotaLimitError = async (
   const data = match[1];
   const exceededQuota = conditional(
     // eslint-disable-next-line no-restricted-syntax -- trust the type from the server if error message matches
-    data && trySafe(() => JSON.parse(data) as Partial<LogtoSkuQuota>)
+    data && trySafe(() => JSON.parse(data) as Partial<MyEyesIDSkuQuota>)
   );
 
   if (!exceededQuota) {
@@ -98,15 +98,15 @@ export const parseExceededSkuQuotaLimitError = async (
   }
 
   // eslint-disable-next-line no-restricted-syntax
-  return [true, Object.keys(exceededQuota) as Array<keyof LogtoSkuQuota>];
+  return [true, Object.keys(exceededQuota) as Array<keyof MyEyesIDSkuQuota>];
 };
 
 /**
- * Filter the featured plans (public visible) from the Logto SKUs API response.
+ * Filter the featured plans (public visible) from the MyEyesID SKUs API response.
  * and sorted by the order of {@link planIdOrder}.
  */
-export const pickupFeaturedLogtoSkus = (logtoSkus: LogtoSkuResponse[]): LogtoSkuResponse[] =>
-  logtoSkus
+export const pickupFeaturedMyEyesIDSkus = (myeyesidSkus: MyEyesIDSkuResponse[]): MyEyesIDSkuResponse[] =>
+  myeyesidSkus
     .filter(({ id }) => featuredPlanIds.includes(id))
     .slice()
     .sort(

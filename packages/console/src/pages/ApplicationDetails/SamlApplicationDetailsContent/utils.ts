@@ -2,7 +2,7 @@ import {
   BindingType,
   type PatchSamlApplication,
   type SamlApplicationResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { cond, removeUndefinedKeys } from '@silverhand/essentials';
 
 import { type SamlApplicationFormData } from './Settings';

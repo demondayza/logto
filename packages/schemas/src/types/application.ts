@@ -1,4 +1,4 @@
-import { UserScope } from '@logto/core-kit';
+import { UserScope } from '@myeyesid/core-kit';
 import { z } from 'zod';
 
 import {

@@ -2,7 +2,7 @@ import {
   CustomProfileFieldType,
   SupportedDateFormat,
   type CustomProfileField,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 
 import ExtraProfileForm from '.';

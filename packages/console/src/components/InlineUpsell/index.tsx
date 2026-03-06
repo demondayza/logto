@@ -1,4 +1,4 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import classNames from 'classnames';
 import { type TFuncKey } from 'i18next';
 import { Trans, useTranslation } from 'react-i18next';

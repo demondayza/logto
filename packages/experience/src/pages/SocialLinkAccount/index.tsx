@@ -1,4 +1,4 @@
-import { SignInIdentifier, VerificationType } from '@logto/schemas';
+import { SignInIdentifier, VerificationType } from '@myeyesid/schemas';
 import type { TFuncKey } from 'i18next';
 import { useContext } from 'react';
 import { useLocation, useParams } from 'react-router-dom';

@@ -1,6 +1,6 @@
 # SMSAero short message service connector
 
-The official Logto connector for SMSAero short message service.
+The official MyEyesID connector for SMSAero short message service.
 
 **Table of contents**
 
@@ -42,7 +42,7 @@ You can add multiple SMS connector templates for different cases. Here is an exa
 You can enter a phone number and click on "Send" to see whether the settings can work before "Save and Done".
 
 That's it. Don't forget
-to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/sms-connector/enable-SMS-sign-in/).
+to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/sms-connector/enable-SMS-sign-in/).
 
 ### Config types
 

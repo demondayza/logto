@@ -1,5 +1,5 @@
-import { isBuiltInLanguageTag } from '@logto/phrases-experience';
-import { type SignInExperience } from '@logto/schemas';
+import { isBuiltInLanguageTag } from '@myeyesid/phrases-experience';
+import { type SignInExperience } from '@myeyesid/schemas';
 import { conditionalArray } from '@silverhand/essentials';
 import type { i18n } from 'i18next';
 import _i18next from 'i18next';

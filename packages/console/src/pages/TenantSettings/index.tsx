@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { logtoCloud, TenantSettingsTabs } from '@/consts';
+import { myeyesidCloud, TenantSettingsTabs } from '@/consts';
 import { SubscriptionDataContext } from '@/contexts/SubscriptionDataProvider';
 import { TenantsContext } from '@/contexts/TenantsProvider';
 import CardTitle from '@/ds-components/CardTitle';
@@ -27,7 +27,7 @@ function TenantSettings() {
         className={styles.cardTitle}
         title="tenants.title"
         subtitle="tenants.description"
-        learnMoreLink={{ href: logtoCloud }}
+        learnMoreLink={{ href: myeyesidCloud }}
       />
       {isDevTenant && <DevTenantNotification className={styles.notification} />}
       <TabNav className={styles.tabs}>

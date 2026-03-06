@@ -1,5 +1,5 @@
-import { passwordPolicyGuard, type PasswordPolicy } from '@logto/core-kit';
-import { type SignInExperience } from '@logto/schemas';
+import { passwordPolicyGuard, type PasswordPolicy } from '@myeyesid/core-kit';
+import { type SignInExperience } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 

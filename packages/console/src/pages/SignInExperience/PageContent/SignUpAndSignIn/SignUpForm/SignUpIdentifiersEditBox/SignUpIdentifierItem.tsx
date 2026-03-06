@@ -2,7 +2,7 @@ import {
   AlternativeSignUpIdentifier,
   type ConnectorType,
   type SignUpIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 

@@ -1,4 +1,4 @@
-import { MfaFactor } from '@logto/schemas';
+import { MfaFactor } from '@myeyesid/schemas';
 import { t } from 'i18next';
 import { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';

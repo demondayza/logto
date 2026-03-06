@@ -79,17 +79,17 @@ export const buildManagementApiBaseDocument = (
   openapi: '3.0.1',
   servers: [
     {
-      url: EnvSet.values.isCloud ? 'https://[tenant_id].logto.app/' : origin,
-      description: 'Logto endpoint address.',
+      url: EnvSet.values.isCloud ? 'https://[tenant_id].myeyesid.app/' : origin,
+      description: 'MyEyesID endpoint address.',
     },
   ],
   info: {
-    title: 'Logto API references',
+    title: 'MyEyesID API references',
     description:
-      'API references for Logto services.' +
+      'API references for MyEyesID services.' +
       condString(
         EnvSet.values.isCloud &&
-          '\n\nNote: The documentation is for Logto Cloud. If you are using Logto OSS, please refer to the response of `/api/swagger.json` endpoint on your Logto instance.'
+          '\n\nNote: The documentation is for MyEyesID Cloud. If you are using MyEyesID OSS, please refer to the response of `/api/swagger.json` endpoint on your MyEyesID instance.'
       ),
     version: 'Cloud',
   },
@@ -133,17 +133,17 @@ export const buildExperienceApiBaseDocument = (
   openapi: '3.0.1',
   servers: [
     {
-      url: EnvSet.values.isCloud ? 'https://[tenant_id].logto.app/' : origin,
-      description: 'Logto endpoint address.',
+      url: EnvSet.values.isCloud ? 'https://[tenant_id].myeyesid.app/' : origin,
+      description: 'MyEyesID endpoint address.',
     },
   ],
   info: {
-    title: 'Logto experience API references',
+    title: 'MyEyesID experience API references',
     description:
-      'API references for Logto experience interaction.' +
+      'API references for MyEyesID experience interaction.' +
       condString(
         EnvSet.values.isCloud &&
-          '\n\nNote: The documentation is for Logto Cloud. If you are using Logto OSS, please refer to the response of `/api/swagger.json` endpoint on your Logto instance.'
+          '\n\nNote: The documentation is for MyEyesID Cloud. If you are using MyEyesID OSS, please refer to the response of `/api/swagger.json` endpoint on your MyEyesID instance.'
       ),
     version: 'Cloud',
   },
@@ -185,17 +185,17 @@ export const buildUserApiBaseDocument = (
   openapi: '3.0.1',
   servers: [
     {
-      url: EnvSet.values.isCloud ? 'https://[tenant_id].logto.app/' : origin,
-      description: 'Logto endpoint address.',
+      url: EnvSet.values.isCloud ? 'https://[tenant_id].myeyesid.app/' : origin,
+      description: 'MyEyesID endpoint address.',
     },
   ],
   info: {
-    title: 'Logto user API references',
+    title: 'MyEyesID user API references',
     description:
-      'API references for Logto user interaction.' +
+      'API references for MyEyesID user interaction.' +
       condString(
         EnvSet.values.isCloud &&
-          '\n\nNote: The documentation is for Logto Cloud. If you are using Logto OSS, please refer to the response of `/api/swagger.json` endpoint on your Logto instance.'
+          '\n\nNote: The documentation is for MyEyesID Cloud. If you are using MyEyesID OSS, please refer to the response of `/api/swagger.json` endpoint on your MyEyesID instance.'
       ),
     version: 'Cloud',
   },

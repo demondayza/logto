@@ -6,13 +6,13 @@ import {
   skuQuotaItemLimitedPhrasesMap,
 } from '@/consts/quota-item-phrases';
 import DynamicT from '@/ds-components/DynamicT';
-import { type LogtoSkuQuota } from '@/types/skus';
+import { type MyEyesIDSkuQuota } from '@/types/skus';
 
 const quotaItemPhraseKeyPrefix = 'subscription.quota_item';
 
 type Props = {
-  readonly skuQuotaKey: keyof LogtoSkuQuota;
-  readonly skuQuotaValue: LogtoSkuQuota[keyof LogtoSkuQuota];
+  readonly skuQuotaKey: keyof MyEyesIDSkuQuota;
+  readonly skuQuotaValue: MyEyesIDSkuQuota[keyof MyEyesIDSkuQuota];
 };
 
 function SkuQuotaItemPhrase({ skuQuotaKey, skuQuotaValue }: Props) {

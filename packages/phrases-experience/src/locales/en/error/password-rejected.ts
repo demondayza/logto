@@ -1,4 +1,4 @@
-import { type PasswordRejectionCode } from '@logto/core-kit';
+import { type PasswordRejectionCode } from '@myeyesid/core-kit';
 
 type BreakdownKeysToObject<Key extends string> = {
   [K in Key as K extends `${infer A}.${string}` ? A : K]: K extends `${string}.${infer B}`

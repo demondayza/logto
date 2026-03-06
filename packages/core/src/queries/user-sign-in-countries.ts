@@ -1,4 +1,4 @@
-import { type UserSignInCountry, UserSignInCountries } from '@logto/schemas';
+import { type UserSignInCountry, UserSignInCountries } from '@myeyesid/schemas';
 import { type CommonQueryMethods, sql } from '@silverhand/slonik';
 
 import { convertToIdentifiers } from '#src/utils/sql.js';

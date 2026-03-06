@@ -1,6 +1,6 @@
-import { ServiceConnector } from '@logto/connector-kit';
-import { ConnectorType } from '@logto/schemas';
-import type { ConnectorFactoryResponse, ConnectorResponse } from '@logto/schemas';
+import { ServiceConnector } from '@myeyesid/connector-kit';
+import { ConnectorType } from '@myeyesid/schemas';
+import type { ConnectorFactoryResponse, ConnectorResponse } from '@myeyesid/schemas';
 import { condArray, conditional } from '@silverhand/essentials';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';

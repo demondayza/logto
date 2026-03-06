@@ -1,14 +1,14 @@
 import path from 'node:path';
 
-import type { AllConnector, CreateConnector } from '@logto/connector-kit';
-import connectorKitMeta from '@logto/connector-kit/package.json' with { type: 'json' };
+import type { AllConnector, CreateConnector } from '@myeyesid/connector-kit';
+import connectorKitMeta from '@myeyesid/connector-kit/package.json' with { type: 'json' };
 import { satisfies } from 'semver';
 
 import { consoleLog } from '../utils.js';
 
 import { isKeyInObject } from './utils.js';
 
-const connectorKit = '@logto/connector-kit';
+const connectorKit = '@myeyesid/connector-kit';
 const { version: currentVersion } = connectorKitMeta;
 
 const checkConnectorKitVersion = (dependencies: unknown, ignoreVersionMismatch: boolean) => {

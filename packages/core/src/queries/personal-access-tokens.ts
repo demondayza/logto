@@ -1,4 +1,4 @@
-import { type PersonalAccessToken, PersonalAccessTokens } from '@logto/schemas';
+import { type PersonalAccessToken, PersonalAccessTokens } from '@myeyesid/schemas';
 import { type CommonQueryMethods, sql } from '@silverhand/slonik';
 
 import { buildInsertIntoWithPool } from '#src/database/insert-into.js';

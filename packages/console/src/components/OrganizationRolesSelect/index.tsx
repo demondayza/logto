@@ -1,4 +1,4 @@
-import { type OrganizationRole, type RoleType } from '@logto/schemas';
+import { type OrganizationRole, type RoleType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import RoleIcon from '@/assets/icons/organization-role-feature.svg?react';

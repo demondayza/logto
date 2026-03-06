@@ -1,4 +1,4 @@
-import { createMockUtils } from '@logto/shared/esm';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import { Provider } from 'oidc-provider';
 import Sinon from 'sinon';
 
@@ -22,12 +22,12 @@ const {
 
 describe('koaSpaSessionGuard', () => {
   const envBackup = process.env;
-  const provider = new Provider('https://logto.test');
+  const provider = new Provider('https://myeyesid.test');
   const interactionDetails = jest.spyOn(provider, 'interactionDetails');
   const getRowsByKeys = jest.fn().mockResolvedValue({ rows: [] });
   const findDefaultSignInExperience = jest.fn().mockResolvedValue({});
   const queries = new MockQueries({
-    logtoConfigs: { getRowsByKeys },
+    myeyesidConfigs: { getRowsByKeys },
     signInExperiences: { findDefaultSignInExperience },
   });
 
@@ -91,7 +91,7 @@ describe('koaSpaSessionGuard', () => {
         url: `${path}/foo`,
       });
       await koaSpaSessionGuard(provider, queries)(ctx, next);
-      expect(ctx.redirect).toBeCalledWith('https://logto.test/unknown-session');
+      expect(ctx.redirect).toBeCalledWith('https://myeyesid.test/unknown-session');
     });
   }
 

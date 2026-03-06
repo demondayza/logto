@@ -1,4 +1,4 @@
-# @logto/connector-x
+# @myeyesid/connector-x
 
 ## 0.4.1
 
@@ -6,7 +6,7 @@
 
 - Updated dependencies [462e430445]
 - Updated dependencies [7c87ebc068]
-  - @logto/connector-kit@4.7.0
+  - @myeyesid/connector-kit@4.7.0
 
 ## 0.4.0
 
@@ -20,7 +20,7 @@
 
 - Updated dependencies [ad4f9d6abf]
 - Updated dependencies [5da6792d40]
-  - @logto/connector-kit@4.6.0
+  - @myeyesid/connector-kit@4.6.0
 
 ## 0.3.0
 
@@ -35,7 +35,7 @@
 ### Patch Changes
 
 - Updated dependencies [34964af46]
-  - @logto/connector-kit@4.4.0
+  - @myeyesid/connector-kit@4.4.0
 
 ## 0.2.0
 
@@ -46,7 +46,7 @@
 ### Patch Changes
 
 - Updated dependencies [2961d355d]
-  - @logto/connector-kit@4.3.0
+  - @myeyesid/connector-kit@4.3.0
 
 ## 0.1.1
 
@@ -54,7 +54,7 @@
 
 - f67500cb5: update connector logo for light mode and dark mode
 - Updated dependencies [b0135bcd3]
-  - @logto/connector-kit@4.2.0
+  - @myeyesid/connector-kit@4.2.0
 
 ## 0.1.0
 
@@ -65,4 +65,4 @@
 ### Patch Changes
 
 - Updated dependencies [e11e57de8]
-  - @logto/connector-kit@4.1.1
+  - @myeyesid/connector-kit@4.1.1

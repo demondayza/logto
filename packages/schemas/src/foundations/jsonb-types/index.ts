@@ -22,6 +22,6 @@ export {
   type ConfigurableConnectorMetadata,
   jsonGuard,
   jsonObjectGuard,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 export type { Json, JsonObject } from '@withtyped/server';

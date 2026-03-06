@@ -100,7 +100,7 @@ describe('replaceSendMessageHandlebars', () => {
       'Your application name is {{application.name}}, {{ application.customData.foo }}, {{ application.customData.bar }}, {{ application.customData.baz.1 }}';
     const payload = {
       application: {
-        name: 'Logto',
+        name: 'MyEyesID',
         customData: {
           foo: 'foo',
           baz: [1, '2', null],
@@ -108,7 +108,7 @@ describe('replaceSendMessageHandlebars', () => {
       },
     };
     expect(replaceSendMessageHandlebars(template, payload)).toEqual(
-      'Your application name is Logto, foo, , 2'
+      'Your application name is MyEyesID, foo, , 2'
     );
   });
 

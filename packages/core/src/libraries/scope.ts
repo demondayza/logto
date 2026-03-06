@@ -1,4 +1,4 @@
-import type { Scope, ScopeResponse } from '@logto/schemas';
+import type { Scope, ScopeResponse } from '@myeyesid/schemas';
 
 import type Queries from '#src/tenants/Queries.js';
 import assertThat from '#src/utils/assert-that.js';

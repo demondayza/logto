@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 
-import { uploadFileGuard, maxUploadFileSize, adminTenantId } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { uploadFileGuard, maxUploadFileSize, adminTenantId } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import pRetry, { AbortError } from 'p-retry';
 import { object, z } from 'zod';
 

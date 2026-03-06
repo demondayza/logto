@@ -3,7 +3,7 @@
     "/api/users/{userId}/sso-identities/{ssoConnectorId}": {
       "get": {
         "summary": "Retrieve a user's enterprise SSO identity and associated token secret (if token storage is enabled).",
-        "description": "This API retrieves the user's enterprise SSO identity and associated token set record from the Logto Secret Vault. The token set will only be available if token storage is enabled for the corresponding SSO connector.",
+        "description": "This API retrieves the user's enterprise SSO identity and associated token set record from the MyEyesID Secret Vault. The token set will only be available if token storage is enabled for the corresponding SSO connector.",
         "parameters": [
           {
             "in": "query",
@@ -38,7 +38,7 @@
     "/api/users/{userId}/all-identities": {
       "get": {
         "summary": "Retrieve social identities, enterprise SSO identities and associated token secret (if token storage is enabled) for a user.",
-        "description": "This API retrieves all identities (social and enterprise SSO) for a user, along with their associated token set records from the Logto Secret Vault. The token sets will only be available if token storage is enabled for the corresponding identity connector.",
+        "description": "This API retrieves all identities (social and enterprise SSO) for a user, along with their associated token set records from the MyEyesID Secret Vault. The token sets will only be available if token storage is enabled for the corresponding identity connector.",
         "parameters": [
           {
             "in": "query",

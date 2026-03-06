@@ -6,9 +6,9 @@ import {
   type Domain,
   DomainStatus,
   adminTenantId,
-} from '@logto/schemas';
-import { SearchJointMode } from '@logto/schemas';
-import { generateStandardId, ConsoleLog } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { SearchJointMode } from '@myeyesid/schemas';
+import { generateStandardId, ConsoleLog } from '@myeyesid/shared';
 import { removeUndefinedKeys, pick, deduplicate } from '@silverhand/essentials';
 import chalk from 'chalk';
 
@@ -138,11 +138,11 @@ export const createSamlApplicationsLibrary = (queries: Queries) => {
    * // redirectUris becomes ['https://original.example.com']
    *
    * @remarks
-   * For most apps, the redirectUris are typically other domains and are not affected by Logto's custom domain. However, the redirectUris for a SAML app are Logto's endpoints (refer to the design of the SAML app). To prevent the OIDC "Invalid redirect URI" error during redirection, it is necessary to add a corresponding custom domain value to the default redirect URI in the redirectUris (which is automatically added when creating the SAML app) during the redirection process.
+   * For most apps, the redirectUris are typically other domains and are not affected by MyEyesID's custom domain. However, the redirectUris for a SAML app are MyEyesID's endpoints (refer to the design of the SAML app). To prevent the OIDC "Invalid redirect URI" error during redirection, it is necessary to add a corresponding custom domain value to the default redirect URI in the redirectUris (which is automatically added when creating the SAML app) during the redirection process.
    * Therefore, we need to call this method when the custom domain is updated.
    *
    * Ref:
-   * - SAML application: https://github.com/logto-io/rfcs-internal/pull/5
+   * - SAML application: https://github.com/myeyesid-io/rfcs-internal/pull/5
    */
   const syncCustomDomainsToSamlApplicationRedirectUrls = async (
     currentTenantId: string,

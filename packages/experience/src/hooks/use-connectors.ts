@@ -1,4 +1,4 @@
-import { type ExperienceSocialConnector, Theme, type SsoConnectorMetadata } from '@logto/schemas';
+import { type ExperienceSocialConnector, Theme, type SsoConnectorMetadata } from '@myeyesid/schemas';
 import { type Optional } from '@silverhand/essentials';
 import { useCallback, useContext } from 'react';
 

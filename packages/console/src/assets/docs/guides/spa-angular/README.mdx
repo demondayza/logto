@@ -15,7 +15,7 @@ import RedirectUrisWeb, {defaultRedirectUri, defaultPostSignOutUri} from '../../
   subtitle="Install MyEyesID JS core SDK and `angular-auth-oidc-client`"
 >
 
-<NpmLikeInstallation packageName="@logto/js angular-auth-oidc-client" />
+<NpmLikeInstallation packageName="@myeyesid/js angular-auth-oidc-client" />
 
 </Step>
 
@@ -30,7 +30,7 @@ import RedirectUrisWeb, {defaultRedirectUri, defaultPostSignOutUri} from '../../
 In your Angular project, add the auth provider your `app.config.ts`:
 
 <Code className="language-tsx" title="app/app.config.ts">
-    {`import { UserScope, buildAngularAuthConfig } from '@logto/js';
+    {`import { UserScope, buildAngularAuthConfig } from '@myeyesid/js';
 import { provideAuth } from 'angular-auth-oidc-client';
 
 export const appConfig: ApplicationConfig = {
@@ -99,7 +99,7 @@ The `OidcSecurityService` provides a convenient way to subscribe to the authenti
 
 ```ts title="app/app.component.ts"
 import { OidcSecurityService } from 'angular-auth-oidc-client';
-import type { UserInfoResponse } from '@logto/js';
+import type { UserInfoResponse } from '@myeyesid/js';
 
 export class AppComponent implements OnInit {
   isAuthenticated = false;

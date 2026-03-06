@@ -28,13 +28,13 @@ describe('Management API', () => {
 
   describe('getBaseUrl', () => {
     it('should return correct base URL for given tenant ID', () => {
-      expect(getBaseUrl('test-tenant')).toBe('https://test-tenant.logto.app');
+      expect(getBaseUrl('test-tenant')).toBe('https://test-tenant.myeyesid.app');
     });
   });
 
   describe('getManagementApiIndicator', () => {
     it('should return correct management API indicator for given tenant ID', () => {
-      expect(getManagementApiIndicator('test-tenant')).toBe('https://test-tenant.logto.app/api');
+      expect(getManagementApiIndicator('test-tenant')).toBe('https://test-tenant.myeyesid.app/api');
     });
   });
 
@@ -64,15 +64,15 @@ describe('Management API', () => {
       expect(MockClientCredentials).toHaveBeenCalledWith({
         clientId: 'test-client-id',
         clientSecret: 'test-client-secret',
-        tokenEndpoint: 'https://test-tenant.logto.app/oidc/token',
+        tokenEndpoint: 'https://test-tenant.myeyesid.app/oidc/token',
         tokenParams: {
-          resource: 'https://test-tenant.logto.app/api',
+          resource: 'https://test-tenant.myeyesid.app/api',
           scope: allScope,
         },
       });
 
       expect(mockCreateClient).toHaveBeenCalledWith({
-        baseUrl: 'https://test-tenant.logto.app',
+        baseUrl: 'https://test-tenant.myeyesid.app',
       });
 
       expect(result.apiClient).toBe(mockApiClient);
@@ -198,7 +198,7 @@ describe('Management API', () => {
       });
 
       expect(consoleSpy).toHaveBeenCalledWith(
-        `The scope "limited-scope" is not equal to the expected value "${allScope}". This may cause issues with API access. See https://a.logto.io/m2m-mapi to learn more about configuring machine-to-machine access to the Management API.`
+        `The scope "limited-scope" is not equal to the expected value "${allScope}". This may cause issues with API access. See https://a.myeyesid.io/m2m-mapi to learn more about configuring machine-to-machine access to the Management API.`
       );
 
       consoleSpy.mockRestore();
@@ -219,12 +219,12 @@ describe('Management API', () => {
       const getToken = vi.fn().mockResolvedValue('test-token');
 
       const result = createApiClient({
-        baseUrl: 'https://test.logto.app',
+        baseUrl: 'https://test.myeyesid.app',
         getToken,
       });
 
       expect(mockCreateClient).toHaveBeenCalledWith({
-        baseUrl: 'https://test.logto.app',
+        baseUrl: 'https://test.myeyesid.app',
       });
 
       expect(result).toBe(mockApiClient);
@@ -234,7 +234,7 @@ describe('Management API', () => {
       const getToken = vi.fn().mockResolvedValue('test-token');
 
       createApiClient({
-        baseUrl: 'https://test.logto.app',
+        baseUrl: 'https://test.myeyesid.app',
         getToken,
       });
 
@@ -266,7 +266,7 @@ describe('Management API', () => {
       const getToken = vi.fn().mockResolvedValue('test-token');
 
       createApiClient({
-        baseUrl: 'https://test.logto.app',
+        baseUrl: 'https://test.myeyesid.app',
         getToken,
       });
 

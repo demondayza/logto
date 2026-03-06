@@ -1,4 +1,4 @@
-import { UserScope } from '@logto/core-kit';
+import { UserScope } from '@myeyesid/core-kit';
 import {
   applicationSignInExperienceGuard,
   buildBuiltInApplicationDataForTenant,
@@ -8,7 +8,7 @@ import {
   publicApplicationGuard,
   publicUserInfoGuard,
   isBuiltInApplicationId,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, deduplicate } from '@silverhand/essentials';
 import type Router from 'koa-router';
 import { type IRouterParamContext } from 'koa-router';

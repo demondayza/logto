@@ -1,6 +1,6 @@
-import { emailRegEx, phoneInputRegEx, usernameRegEx } from '@logto/core-kit';
-import type { CreateUser, User } from '@logto/schemas';
-import { parsePhoneNumber } from '@logto/shared/universal';
+import { emailRegEx, phoneInputRegEx, usernameRegEx } from '@myeyesid/core-kit';
+import type { CreateUser, User } from '@myeyesid/schemas';
+import { parsePhoneNumber } from '@myeyesid/shared/universal';
 import { conditional } from '@silverhand/essentials';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

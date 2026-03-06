@@ -1,4 +1,4 @@
-import type { AllConnector } from '@logto/connector-kit';
+import type { AllConnector } from '@myeyesid/connector-kit';
 import {
   type Application,
   type ApplicationSignInExperience,
@@ -6,15 +6,15 @@ import {
   Connectors,
   type Organization,
   type User,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type z } from 'zod';
 
-export { ConnectorType } from '@logto/schemas';
+export { ConnectorType } from '@myeyesid/schemas';
 
 /**
  * The connector type with full context.
  */
-export type LogtoConnector<T extends AllConnector = AllConnector> = T & {
+export type MyEyesIDConnector<T extends AllConnector = AllConnector> = T & {
   validateConfig: (config: unknown) => void;
 } & { dbEntry: Connector };
 
@@ -28,7 +28,7 @@ export type ConnectorWellKnown = z.infer<typeof connectorWellKnownGuard>;
 /**
  * The connector type with full context but no sensitive info.
  */
-export type LogtoConnectorWellKnown<T extends AllConnector = AllConnector> = Pick<
+export type MyEyesIDConnectorWellKnown<T extends AllConnector = AllConnector> = Pick<
   T,
   'type' | 'metadata'
 > & {

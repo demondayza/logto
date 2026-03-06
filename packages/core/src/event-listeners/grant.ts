@@ -1,4 +1,4 @@
-import { GrantType, LogResult, token } from '@logto/schemas';
+import { GrantType, LogResult, token } from '@myeyesid/schemas';
 import type { errors, KoaContextWithOIDC } from 'oidc-provider';
 
 import { type WithAppSecretContext } from '#src/middleware/koa-app-secret-transpilation.js';

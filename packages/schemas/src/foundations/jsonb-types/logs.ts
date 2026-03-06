@@ -1,4 +1,4 @@
-import { type PasswordPolicy, passwordPolicyGuard } from '@logto/core-kit';
+import { type PasswordPolicy, passwordPolicyGuard } from '@myeyesid/core-kit';
 import { type DeepPartial } from '@silverhand/essentials';
 import { z } from 'zod';
 

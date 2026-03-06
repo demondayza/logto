@@ -1,4 +1,4 @@
-import type { GetUserSessionsResponse } from '@logto/schemas';
+import type { GetUserSessionsResponse } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';

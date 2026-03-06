@@ -1,4 +1,4 @@
-import { SignInIdentifier, InteractionEvent, ConnectorType } from '@logto/schemas';
+import { SignInIdentifier, InteractionEvent, ConnectorType } from '@myeyesid/schemas';
 
 import { putInteraction } from '#src/api/interaction.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';

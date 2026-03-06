@@ -1,5 +1,5 @@
-import { generateDarkColor } from '@logto/core-kit';
-import { Theme } from '@logto/schemas';
+import { generateDarkColor } from '@myeyesid/core-kit';
+import { Theme } from '@myeyesid/schemas';
 import { useMemo, useCallback } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';

@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 // TODO: refactor this file to reduce LOC
-import { authRequestInfoGuard, SamlApplicationSessions } from '@logto/schemas';
-import { generateStandardId, generateStandardShortId } from '@logto/shared';
+import { authRequestInfoGuard, SamlApplicationSessions } from '@myeyesid/schemas';
+import { generateStandardId, generateStandardShortId } from '@myeyesid/shared';
 import { cond, removeUndefinedKeys, trySafe } from '@silverhand/essentials';
 import { addMinutes } from 'date-fns';
 import { z } from 'zod';

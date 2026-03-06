@@ -1,5 +1,5 @@
-import type { IdTokenClaims } from '@logto/react';
-import type { User } from '@logto/schemas';
+import type { IdTokenClaims } from '@myeyesid/react';
+import type { User } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 

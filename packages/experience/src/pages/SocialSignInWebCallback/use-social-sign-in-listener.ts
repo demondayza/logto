@@ -1,9 +1,9 @@
 import {
   isExternalGoogleOneTap as isExternalGoogleOneTapChecker,
   isGoogleOneTap as isGoogleOneTapChecker,
-} from '@logto/connector-kit';
-import type { RequestErrorBody } from '@logto/schemas';
-import { InteractionEvent, SignInMode, VerificationType, experience } from '@logto/schemas';
+} from '@myeyesid/connector-kit';
+import type { RequestErrorBody } from '@myeyesid/schemas';
+import { InteractionEvent, SignInMode, VerificationType, experience } from '@myeyesid/schemas';
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';

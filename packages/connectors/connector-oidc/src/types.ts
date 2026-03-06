@@ -1,7 +1,7 @@
 import { yes } from '@silverhand/essentials';
 import { z } from 'zod';
 
-import { oauth2ConfigGuard } from '@logto/connector-oauth';
+import { oauth2ConfigGuard } from '@myeyesid/connector-oauth';
 
 const scopeOpenid = 'openid';
 export const delimiter = /[ +]/;
@@ -63,7 +63,7 @@ export type UserProfile = z.infer<typeof userProfileGuard>;
 
 /**
  * We remove `nonce` in `authRequestOptionalConfigGuard` because it should be a randomly generated string,
- * should not be fixed in config and will be generated in Logto core according to `response_type` of authorization request.
+ * should not be fixed in config and will be generated in MyEyesID core according to `response_type` of authorization request.
  */
 export const authRequestOptionalConfigGuard = z
   .object({

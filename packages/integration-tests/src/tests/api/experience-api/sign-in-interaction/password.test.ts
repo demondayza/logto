@@ -1,4 +1,4 @@
-import { InteractionEvent, SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, SignInIdentifier } from '@myeyesid/schemas';
 
 import { deleteUser, getUser } from '#src/api/admin-user.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';

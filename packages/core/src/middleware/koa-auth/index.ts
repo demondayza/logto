@@ -1,4 +1,4 @@
-import { adminTenantId, defaultManagementApi, PredefinedScope } from '@logto/schemas';
+import { adminTenantId, defaultManagementApi, PredefinedScope } from '@myeyesid/schemas';
 import type { Optional } from '@silverhand/essentials';
 import type { JWK } from 'jose';
 import { createLocalJWKSet, jwtVerify } from 'jose';

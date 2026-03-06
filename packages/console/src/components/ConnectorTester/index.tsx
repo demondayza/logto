@@ -1,7 +1,7 @@
-import { ServiceConnector } from '@logto/connector-kit';
-import { emailRegEx, phoneInputRegEx } from '@logto/core-kit';
-import { ConnectorType } from '@logto/schemas';
-import { parsePhoneNumber } from '@logto/shared/universal';
+import { ServiceConnector } from '@myeyesid/connector-kit';
+import { emailRegEx, phoneInputRegEx } from '@myeyesid/core-kit';
+import { ConnectorType } from '@myeyesid/schemas';
+import { parsePhoneNumber } from '@myeyesid/shared/universal';
 import { conditional } from '@silverhand/essentials';
 import { useEffect, useState } from 'react';
 import { useForm, useFormContext } from 'react-hook-form';

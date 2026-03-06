@@ -1,6 +1,6 @@
-import type { LocalePhrase } from '@logto/phrases-experience';
-import resource from '@logto/phrases-experience';
-import type { LanguageInfo } from '@logto/schemas';
+import type { LocalePhrase } from '@myeyesid/phrases-experience';
+import resource from '@myeyesid/phrases-experience';
+import type { LanguageInfo } from '@myeyesid/schemas';
 import { isObject } from '@silverhand/essentials';
 import type { Resource } from 'i18next';
 import i18next from 'i18next';
@@ -15,10 +15,10 @@ const getPhrases = async (language?: string) => {
   const preferredLanguage = language ?? uiLocales;
 
   if (
-    isObject(logtoSsr) &&
-    (!preferredLanguage || logtoSsr.phrases.lng === (language ?? uiLocalesFirst))
+    isObject(myeyesidSsr) &&
+    (!preferredLanguage || myeyesidSsr.phrases.lng === (language ?? uiLocalesFirst))
   ) {
-    return { phrases: logtoSsr.phrases.data, lng: logtoSsr.phrases.lng };
+    return { phrases: myeyesidSsr.phrases.data, lng: myeyesidSsr.phrases.lng };
   }
 
   const detectedLanguage = detectLanguage();
@@ -56,7 +56,7 @@ export const getI18nResource = async (
   }
 };
 
-const storageKey = 'i18nextLogtoUiLng';
+const storageKey = 'i18nextMyEyesIDUiLng';
 
 export const detectLanguage = (languageSettings?: LanguageInfo) => {
   if (languageSettings?.autoDetect === false) {

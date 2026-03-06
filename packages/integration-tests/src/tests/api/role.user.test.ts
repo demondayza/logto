@@ -1,4 +1,4 @@
-import { RoleType } from '@logto/schemas';
+import { RoleType } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import { createUser, updateUser } from '#src/api/index.js';
@@ -37,7 +37,7 @@ describe('roles users', () => {
     const user1 = await createUser({
       username: 'username001',
       name: 'user001',
-      primaryEmail: 'user001@logto.io',
+      primaryEmail: 'user001@myeyesid.io',
     });
 
     // Can not create user with invalid phone number.
@@ -51,14 +51,14 @@ describe('roles users', () => {
       status: 422,
     });
 
-    const user3 = await createUser({ username: 'username3', primaryEmail: 'user3@logto.io' });
+    const user3 = await createUser({ username: 'username3', primaryEmail: 'user3@myeyesid.io' });
     await assignUsersToRole([user1.id, user2.id, user3.id], role.id);
 
     // No assigned users satisfy the search keyword
     await expect(getRoleUsers(role.id, 'not-found')).resolves.toHaveLength(0);
 
     // Get right assigned users with search keyword
-    const assignedUsersWithEmailDomainSuffix = await getRoleUsers(role.id, '@logto.io');
+    const assignedUsersWithEmailDomainSuffix = await getRoleUsers(role.id, '@myeyesid.io');
     expect(assignedUsersWithEmailDomainSuffix).toHaveLength(2);
     expect(assignedUsersWithEmailDomainSuffix.find(({ id }) => id === user2.id)).toBeUndefined();
 

@@ -1,5 +1,5 @@
-import { type PasswordRejectionCode, type PasswordIssue } from '@logto/core-kit';
-import { type RequestErrorBody } from '@logto/schemas';
+import { type PasswordRejectionCode, type PasswordIssue } from '@myeyesid/core-kit';
+import { type RequestErrorBody } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 

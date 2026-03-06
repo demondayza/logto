@@ -1,4 +1,4 @@
-import { ApplicationType } from '@logto/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
 
 import { isCloud } from '@/consts/env';
 
@@ -12,7 +12,7 @@ const metadata: Readonly<GuideMetadata> = Object.freeze({
   isFeatured: !isCloud,
   sample: {
     repo: 'ruby',
-    path: 'logto-sample',
+    path: 'myeyesid-sample',
   },
   fullGuide: 'ruby',
 });

@@ -1,11 +1,11 @@
-import { appInsights } from '@logto/app-insights/node';
-import { ConnectorType, type SendMessagePayload, TemplateType } from '@logto/connector-kit';
+import { appInsights } from '@myeyesid/app-insights/node';
+import { ConnectorType, type SendMessagePayload, TemplateType } from '@myeyesid/connector-kit';
 import {
   OrganizationInvitationStatus,
   type CreateOrganizationInvitation,
   type OrganizationInvitationEntity,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { conditional, type Nullable, removeUndefinedKeys } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

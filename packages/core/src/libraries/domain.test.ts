@@ -1,5 +1,5 @@
-import { DomainStatus } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { DomainStatus } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import {
   mockCloudflareData,

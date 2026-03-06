@@ -1,4 +1,4 @@
-import { type InteractionIdentifier, SignInIdentifier } from '@logto/schemas';
+import { type InteractionIdentifier, SignInIdentifier } from '@myeyesid/schemas';
 
 import { type InteractionProfile } from '../types.js';
 

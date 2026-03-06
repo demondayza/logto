@@ -1,4 +1,4 @@
-import { type SignIn, type ExperienceSocialConnector, AgreeToTermsPolicy } from '@logto/schemas';
+import { type SignIn, type ExperienceSocialConnector, AgreeToTermsPolicy } from '@myeyesid/schemas';
 
 import IdentifierSignInForm from '@/components/IdentifierSignInForm';
 import PasswordSignInForm from '@/components/PasswordSignInForm';

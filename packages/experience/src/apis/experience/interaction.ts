@@ -2,7 +2,7 @@ import {
   type InteractionEvent,
   type IdentificationApiPayload,
   type UpdateProfileApiPayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import api from '../api';
 

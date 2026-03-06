@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import { sql } from '@silverhand/slonik';
 
 import type { AlterationScript } from '../lib/types/alteration.js';
@@ -26,7 +26,7 @@ type Role = {
   description: string;
 };
 
-const cloudApiIndicator = 'https://cloud.logto.io/api';
+const cloudApiIndicator = 'https://cloud.myeyesid.io/api';
 
 const cloudConnectionAppRoleName = 'tenantApplication';
 

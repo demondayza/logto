@@ -1,4 +1,4 @@
-import { ApplicationType } from '@logto/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
 
 import { type GuideMetadata } from '../types';
 
@@ -9,7 +9,7 @@ const metadata: Readonly<GuideMetadata> = Object.freeze({
   furtherReadings: [
     {
       title: 'Authorization and role mapping in WordPress',
-      url: new URL('https://blog.logto.io/integrate-with-wordpress-authorization/'),
+      url: new URL('https://blog.myeyesid.io/integrate-with-wordpress-authorization/'),
     },
   ],
 });

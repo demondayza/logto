@@ -1,4 +1,4 @@
-/* Migrated from @logto/app-insights */
+/* Migrated from @myeyesid/app-insights */
 
 import { trySafe } from '@silverhand/essentials';
 

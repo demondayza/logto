@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useContext } from 'react';
 

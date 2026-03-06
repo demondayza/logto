@@ -6,7 +6,7 @@ import {
   jsonGuard,
   managementApiHooksRegistration,
   type Role,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import { z } from 'zod';
 

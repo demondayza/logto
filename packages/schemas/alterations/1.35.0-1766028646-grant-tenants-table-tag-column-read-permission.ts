@@ -11,12 +11,12 @@ const getDatabaseName = async (pool: CommonQueryMethods) => {
 };
 
 /**
- * Grant read permission to the tag column in the tenants table to the logto_tenant_<databaseName> role.
+ * Grant read permission to the tag column in the tenants table to the myeyesid_tenant_<databaseName> role.
  */
 const alteration: AlterationScript = {
   up: async (pool) => {
     const databaseName = await getDatabaseName(pool);
-    const baseRoleId = sql.identifier([`logto_tenant_${databaseName}`]);
+    const baseRoleId = sql.identifier([`myeyesid_tenant_${databaseName}`]);
 
     await pool.query(sql`
       grant select (tag)
@@ -26,7 +26,7 @@ const alteration: AlterationScript = {
   },
   down: async (pool) => {
     const databaseName = await getDatabaseName(pool);
-    const baseRoleId = sql.identifier([`logto_tenant_${databaseName}`]);
+    const baseRoleId = sql.identifier([`myeyesid_tenant_${databaseName}`]);
 
     await pool.query(sql`
       revoke select (tag)

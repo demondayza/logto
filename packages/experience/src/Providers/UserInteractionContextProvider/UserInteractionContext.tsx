@@ -1,4 +1,4 @@
-import { type SsoConnectorMetadata, type VerificationType } from '@logto/schemas';
+import { type SsoConnectorMetadata, type VerificationType } from '@myeyesid/schemas';
 import { noop } from '@silverhand/essentials';
 import { createContext } from 'react';
 

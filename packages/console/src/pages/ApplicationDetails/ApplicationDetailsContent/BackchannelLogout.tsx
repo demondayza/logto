@@ -1,4 +1,4 @@
-import { type Application } from '@logto/schemas';
+import { type Application } from '@myeyesid/schemas';
 import { useFormContext } from 'react-hook-form';
 import { Trans, useTranslation } from 'react-i18next';
 import { z } from 'zod';

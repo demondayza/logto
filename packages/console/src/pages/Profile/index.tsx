@@ -1,4 +1,4 @@
-import type { ConnectorResponse, SignInExperience } from '@logto/schemas';
+import type { ConnectorResponse, SignInExperience } from '@myeyesid/schemas';
 import ky from 'ky';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';

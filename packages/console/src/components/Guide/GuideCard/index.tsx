@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { type ReactNode, Suspense, useCallback } from 'react';
 

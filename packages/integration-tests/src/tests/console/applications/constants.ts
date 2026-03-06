@@ -1,4 +1,4 @@
-import { ApplicationType } from '@logto/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
 
 export type ApplicationCase = {
   framework: string;

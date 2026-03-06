@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType, ConnectorPlatform } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType, ConnectorPlatform } from '@myeyesid/connector-kit';
 
 export const authorizationEndpoint = 'alipay://'; // This is used to arouse the native Alipay App
 export const alipayEndpoint = 'https://openapi.alipay.com/gateway.do';

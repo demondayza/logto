@@ -1,4 +1,4 @@
-import { pickDefault } from '@logto/shared/esm';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { createContextWithRouteParameters } from '#src/utils/test-utils.js';
 
@@ -27,7 +27,7 @@ describe('koaEmailI18n', () => {
   it('should resolve fr as fr-CA is not a built-in language', async () => {
     const ctx = {
       ...createContextWithRouteParameters({
-        cookies: { _logto: '{ "uiLocales": "fr-CA fr" }' },
+        cookies: { _myeyesid: '{ "uiLocales": "fr-CA fr" }' },
         headers: { 'accept-language': 'fr' },
       }),
       query: { locale: 'fr' },
@@ -41,7 +41,7 @@ describe('koaEmailI18n', () => {
   it('should resolve fr-CA after adding fr-CA as a custom language', async () => {
     const ctx = {
       ...createContextWithRouteParameters({
-        cookies: { _logto: '{ "uiLocales": "fr-CA fr" }' },
+        cookies: { _myeyesid: '{ "uiLocales": "fr-CA fr" }' },
         headers: { 'accept-language': 'fr' },
       }),
       query: {},
@@ -55,7 +55,7 @@ describe('koaEmailI18n', () => {
   it('should resolve fallback language when no match found', async () => {
     const ctx = {
       ...createContextWithRouteParameters({
-        cookies: { _logto: '{ "uiLocales": "de-DE" }' },
+        cookies: { _myeyesid: '{ "uiLocales": "de-DE" }' },
       }),
       query: {},
     };

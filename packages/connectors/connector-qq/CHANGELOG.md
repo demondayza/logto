@@ -1,4 +1,4 @@
-# @logto/connector-qq
+# @myeyesid/connector-qq
 
 ## 1.1.2
 
@@ -6,7 +6,7 @@
 
 - Updated dependencies [462e430445]
 - Updated dependencies [7c87ebc068]
-  - @logto/connector-kit@4.7.0
+  - @myeyesid/connector-kit@4.7.0
 
 ## 1.1.1
 
@@ -14,7 +14,7 @@
 
 - Updated dependencies [ad4f9d6abf]
 - Updated dependencies [5da6792d40]
-  - @logto/connector-kit@4.6.0
+  - @myeyesid/connector-kit@4.6.0
 
 ## 1.1.0
 
@@ -29,7 +29,7 @@
 ### Patch Changes
 
 - Updated dependencies [34964af46]
-  - @logto/connector-kit@4.4.0
+  - @myeyesid/connector-kit@4.4.0
 
 ## 1.0.0
 

@@ -5,7 +5,7 @@
  */
 
 // eslint-disable-next-line unused-imports/no-unused-imports -- For type reference
-import { CustomJwtApiContext } from '@logto/schemas';
+import { CustomJwtApiContext } from '@myeyesid/schemas';
 
 /**
  * @returns {CustomJwtApiContext}

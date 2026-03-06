@@ -2,8 +2,8 @@ import fs from 'node:fs/promises';
 import http2 from 'node:http2';
 import path from 'node:path';
 
-import { appInsights } from '@logto/app-insights/node';
-import { ConsoleLog } from '@logto/shared';
+import { appInsights } from '@myeyesid/app-insights/node';
+import { ConsoleLog } from '@myeyesid/shared';
 import { toTitle, trySafe } from '@silverhand/essentials';
 import chalk from 'chalk';
 import type Koa from 'koa';
@@ -44,7 +44,7 @@ export default async function initApp(app: Koa): Promise<void> {
     })(ctx, next);
 
     // Set the header in the end to avoid other middleware from overwriting it
-    ctx.set('Logto-Core-Request-Id', requestId);
+    ctx.set('MyEyesID-Core-Request-Id', requestId);
   });
 
   app.use(async (ctx, next) => {

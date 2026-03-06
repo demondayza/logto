@@ -1,5 +1,5 @@
-import { PasswordPolicyChecker } from '@logto/core-kit';
-import { type SignInExperience } from '@logto/schemas';
+import { PasswordPolicyChecker } from '@myeyesid/core-kit';
+import { type SignInExperience } from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import { type ChangeEvent } from 'react';
 import { Controller, FormProvider, useForm } from 'react-hook-form';

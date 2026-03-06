@@ -1,4 +1,4 @@
-import type { AllowedUploadMimeType } from '@logto/schemas';
+import type { AllowedUploadMimeType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';

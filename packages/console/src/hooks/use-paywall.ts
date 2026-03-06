@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { useContext, useMemo } from 'react';
 
 import { SubscriptionDataContext } from '@/contexts/SubscriptionDataProvider';

@@ -1,13 +1,13 @@
-import type { ConnectorSession, SocialUserInfo } from '@logto/connector-kit';
+import type { ConnectorSession, SocialUserInfo } from '@myeyesid/connector-kit';
 import {
   connectorSessionGuard,
   GoogleConnector,
   isExternalGoogleOneTap,
   isGoogleOneTap as isGoogleOneTapChecker,
-  logtoGoogleOneTapCookieKey,
-} from '@logto/connector-kit';
-import type { SocialConnectorPayload } from '@logto/schemas';
-import { ConnectorType } from '@logto/schemas';
+  myeyesidGoogleOneTapCookieKey,
+} from '@myeyesid/connector-kit';
+import type { SocialConnectorPayload } from '@myeyesid/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
 import type { Context } from 'koa';
 import type { Provider } from 'oidc-provider';
 import { z } from 'zod';
@@ -23,12 +23,12 @@ export const createSocialAuthorizationUrl = async (
   { provider, connectors }: TenantContext,
   payload: SocialAuthorizationUrlPayload
 ) => {
-  const { getLogtoConnectorById } = connectors;
+  const { getMyEyesIDConnectorById } = connectors;
 
   const { connectorId, state, redirectUri, scope } = payload;
   assertThat(state && redirectUri, 'session.insufficient_info');
 
-  const connector = await getLogtoConnectorById(connectorId);
+  const connector = await getMyEyesIDConnectorById(connectorId);
 
   assertThat(connector.type === ConnectorType.Social, 'connector.unexpected_type');
 
@@ -78,7 +78,7 @@ export const verifySocialIdentity = async (
     if (isExternalGoogleOneTap(connectorData)) {
       assertThat(
         connectorData[GoogleConnector.oneTapParams.credential] ===
-          ctx.cookies.get(logtoGoogleOneTapCookieKey),
+          ctx.cookies.get(myeyesidGoogleOneTapCookieKey),
         'session.google_one_tap.cookie_mismatch'
       );
     } else {

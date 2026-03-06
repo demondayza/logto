@@ -1,4 +1,4 @@
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import {
   goToAdminConsole,
   expectToSaveChanges,
@@ -22,14 +22,14 @@ import {
 await page.setViewport({ width: 1280, height: 720 });
 
 describe('user management', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   beforeAll(async () => {
     await goToAdminConsole();
   });
 
   it('navigates to user management page on clicking sidebar menu', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/users', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/users', myeyesidConsoleUrl).href));
 
     await expect(page).toMatchElement(
       'div[class$=main] div[class$=headline] div[class$=titleEllipsis]',
@@ -61,7 +61,7 @@ describe('user management', () => {
       (element) => element.textContent
     );
     if (userId) {
-      expect(page.url()).toBe(new URL(`console/users/${userId}/settings`, logtoConsoleUrl).href);
+      expect(page.url()).toBe(new URL(`console/users/${userId}/settings`, myeyesidConsoleUrl).href);
     }
     await expect(page).toMatchElement(
       [dcls('main'), dcls('introduction'), dcls('title')].join(' '),
@@ -87,7 +87,7 @@ describe('user management', () => {
   });
 
   it('fails to create user if no identifier is provided', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/users', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/users', myeyesidConsoleUrl).href));
 
     await expect(page).toClick('div[class$=main] div[class$=headline] > button');
     await expect(page).toClick('button[type=submit]');
@@ -97,7 +97,7 @@ describe('user management', () => {
   });
 
   it('fails to create user if any of the identifiers are existed', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/users', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/users', myeyesidConsoleUrl).href));
 
     // Conflicted email
     await expect(page).toClick('div[class$=main] div[class$=headline] > button');

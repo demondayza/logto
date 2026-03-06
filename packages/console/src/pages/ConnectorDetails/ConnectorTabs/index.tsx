@@ -1,5 +1,5 @@
-import { ConnectorType, ConnectorPlatform } from '@logto/schemas';
-import type { ConnectorResponse } from '@logto/schemas';
+import { ConnectorType, ConnectorPlatform } from '@myeyesid/schemas';
+import type { ConnectorResponse } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';

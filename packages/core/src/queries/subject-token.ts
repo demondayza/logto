@@ -1,4 +1,4 @@
-import { type CreateSubjectToken, SubjectTokens } from '@logto/schemas';
+import { type CreateSubjectToken, SubjectTokens } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 
 import { buildFindEntityByIdWithPool } from '#src/database/find-entity-by-id.js';

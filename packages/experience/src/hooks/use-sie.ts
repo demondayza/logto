@@ -1,11 +1,11 @@
-import { PasswordPolicyChecker, passwordPolicyGuard } from '@logto/core-kit';
+import { PasswordPolicyChecker, passwordPolicyGuard } from '@myeyesid/core-kit';
 import {
   AlternativeSignUpIdentifier,
   SignInIdentifier,
   SignInMode,
   type SignUpIdentifier,
   type VerificationCodeSignInIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { condArray } from '@silverhand/essentials';
 import { useContext, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -1,14 +1,14 @@
-import type { SignIn, SignUp, Mfa } from '@logto/schemas';
-import { ConnectorType, SignInIdentifier, MfaFactor } from '@logto/schemas';
+import type { SignIn, SignUp, Mfa } from '@myeyesid/schemas';
+import { ConnectorType, SignInIdentifier, MfaFactor } from '@myeyesid/schemas';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 
 export const validateSignIn = (
   signIn: SignIn,
   signUp: SignUp,
-  enabledConnectors: LogtoConnector[],
+  enabledConnectors: MyEyesIDConnector[],
   mfa?: Mfa
 ) => {
   if (

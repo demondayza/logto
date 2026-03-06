@@ -1,5 +1,5 @@
-import { UserScope } from '@logto/core-kit';
-import { MfaFactor, MfaPolicy } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { MfaFactor, MfaPolicy } from '@myeyesid/schemas';
 
 import { enableAllAccountCenterFields } from '#src/api/account-center.js';
 import { createUserMfaVerification } from '#src/api/admin-user.js';

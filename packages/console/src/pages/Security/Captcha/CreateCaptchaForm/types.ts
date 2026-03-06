@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { type CaptchaType } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { type CaptchaType } from '@myeyesid/schemas';
 
 type FormField = 'siteKey' | 'secretKey' | 'projectId' | 'domain' | 'mode';
 

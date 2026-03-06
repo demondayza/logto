@@ -1,4 +1,4 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import { conditional } from '@silverhand/essentials';
 import {
   type ReactNode,
@@ -84,7 +84,7 @@ type Props = {
   readonly additionalActionButton?: AdditionalActionButton;
   /**
    * Shows additional custom element in the header, next to the "...(More)" button
-   * Example usage (special use case): "Total email sent (count)" in Logto email connector
+   * Example usage (special use case): "Total email sent (count)" in MyEyesID email connector
    */
   readonly additionalCustomElement?: ReactElement<ResponsiveCustomElement>;
   /**

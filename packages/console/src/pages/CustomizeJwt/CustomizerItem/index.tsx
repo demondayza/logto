@@ -1,4 +1,4 @@
-import { LogtoJwtTokenKeyType } from '@logto/schemas';
+import { MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import DeleteIcon from '@/assets/icons/delete.svg?react';
@@ -10,8 +10,8 @@ import { getPagePath } from '@/pages/CustomizeJwt/utils/path';
 import styles from './index.module.scss';
 
 type Props = {
-  readonly tokenType: LogtoJwtTokenKeyType;
-  readonly onDelete: (token: LogtoJwtTokenKeyType) => void;
+  readonly tokenType: MyEyesIDJwtTokenKeyType;
+  readonly onDelete: (token: MyEyesIDJwtTokenKeyType) => void;
 };
 
 function CustomizerItem({ tokenType, onDelete }: Props) {
@@ -24,7 +24,7 @@ function CustomizerItem({ tokenType, onDelete }: Props) {
       <div className={styles.title}>
         {t('jwt_claims.custom_jwt_item', {
           for:
-            tokenType === LogtoJwtTokenKeyType.AccessToken
+            tokenType === MyEyesIDJwtTokenKeyType.AccessToken
               ? t('jwt_claims.user_jwt.for')
               : t('jwt_claims.machine_to_machine_jwt.for'),
         })}

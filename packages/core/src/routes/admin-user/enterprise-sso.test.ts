@@ -1,5 +1,5 @@
-import { type EnterpriseSsoTokenSetSecret, SecretType } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { type EnterpriseSsoTokenSetSecret, SecretType } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { mockUser } from '#src/__mocks__/user.js';
 import { MockTenant } from '#src/test-utils/tenant.js';

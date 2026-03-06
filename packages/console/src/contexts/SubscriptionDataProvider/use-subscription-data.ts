@@ -3,17 +3,17 @@ import { useContext, useEffect, useMemo } from 'react';
 import useSWR from 'swr';
 
 import { useCloudApi } from '@/cloud/hooks/use-cloud-api';
-import { type LogtoSkuResponse, type SubscriptionUsageResponse } from '@/cloud/types/router';
+import { type MyEyesIDSkuResponse, type SubscriptionUsageResponse } from '@/cloud/types/router';
 import {
-  defaultLogtoSku,
+  defaultMyEyesIDSku,
   defaultTenantResponse,
   defaultSubscriptionQuota,
   defaultSubscriptionUsage,
 } from '@/consts';
 import { isCloud } from '@/consts/env';
 import { TenantsContext } from '@/contexts/TenantsProvider';
-import { LogtoSkuType } from '@/types/skus';
-import { formatLogtoSkusResponses } from '@/utils/subscription';
+import { MyEyesIDSkuType } from '@/types/skus';
+import { formatMyEyesIDSkusResponses } from '@/utils/subscription';
 
 import useSubscription from '../../hooks/use-subscription';
 
@@ -43,24 +43,24 @@ const useSubscriptionData: () => SubscriptionContext & { isLoading: boolean } = 
   );
 
   // Fetch tenant specific available SKUs
-  // Unlike the `useLogtoSkus` hook, apart from public available SKUs, this hook also fetches tenant specific private SKUs
+  // Unlike the `useMyEyesIDSkus` hook, apart from public available SKUs, this hook also fetches tenant specific private SKUs
   // For enterprise tenants who have their own private SKUs, and all grandfathered plan tenants,
   // this is the only place to retrieve their current SKU data.
-  const { isLoading: isLogtoSkusLoading, data: fetchedLogtoSkus } = useSWR<
-    LogtoSkuResponse[],
+  const { isLoading: isMyEyesIDSkusLoading, data: fetchedMyEyesIDSkus } = useSWR<
+    MyEyesIDSkuResponse[],
     Error
   >(isCloud && currentTenantId && `/api/tenants/${currentTenantId}/available-skus`, async () =>
     cloudApi.get('/api/tenants/:tenantId/available-skus', {
       params: { tenantId: currentTenantId },
-      search: { type: LogtoSkuType.Basic },
+      search: { type: MyEyesIDSkuType.Basic },
     })
   );
 
-  const logtoSkus = useMemo(() => formatLogtoSkusResponses(fetchedLogtoSkus), [fetchedLogtoSkus]);
+  const myeyesidSkus = useMemo(() => formatMyEyesIDSkusResponses(fetchedMyEyesIDSkus), [fetchedMyEyesIDSkus]);
 
   const currentSku = useMemo(
-    () => logtoSkus.find((logtoSku) => logtoSku.id === currentTenant?.planId) ?? defaultLogtoSku,
-    [currentTenant?.planId, logtoSkus]
+    () => myeyesidSkus.find((myeyesidSku) => myeyesidSku.id === currentTenant?.planId) ?? defaultMyEyesIDSku,
+    [currentTenant?.planId, myeyesidSkus]
   );
 
   useEffect(() => {
@@ -73,8 +73,8 @@ const useSubscriptionData: () => SubscriptionContext & { isLoading: boolean } = 
 
   return useMemo(
     () => ({
-      isLoading: isSubscriptionLoading || isLogtoSkusLoading || isSubscriptionUsageDataLoading,
-      logtoSkus,
+      isLoading: isSubscriptionLoading || isMyEyesIDSkusLoading || isSubscriptionUsageDataLoading,
+      myeyesidSkus,
       currentSku,
       currentSubscription: currentSubscription ?? defaultTenantResponse.subscription,
       onCurrentSubscriptionUpdated: mutateSubscription,
@@ -88,10 +88,10 @@ const useSubscriptionData: () => SubscriptionContext & { isLoading: boolean } = 
     [
       currentSku,
       currentSubscription,
-      isLogtoSkusLoading,
+      isMyEyesIDSkusLoading,
       isSubscriptionLoading,
       isSubscriptionUsageDataLoading,
-      logtoSkus,
+      myeyesidSkus,
       mutateSubscription,
       mutateSubscriptionQuotaAndUsages,
       subscriptionUsageData?.quota,

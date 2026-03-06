@@ -1,5 +1,5 @@
-import type { LogtoErrorCode } from '@logto/phrases';
-import type { RequestErrorBody } from '@logto/schemas';
+import type { MyEyesIDErrorCode } from '@myeyesid/phrases';
+import type { RequestErrorBody } from '@myeyesid/schemas';
 import { HTTPError, TimeoutError } from 'ky';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import useToast from './use-toast';
 
 export type ErrorHandlers = {
-  [key in LogtoErrorCode]?: (error: RequestErrorBody) => void | Promise<void>;
+  [key in MyEyesIDErrorCode]?: (error: RequestErrorBody) => void | Promise<void>;
 } & {
   // Overwrite default global error handle logic
   global?: (error: RequestErrorBody) => void | Promise<void>;
@@ -21,14 +21,14 @@ const useErrorHandler = () => {
     async (error: unknown, errorHandlers?: ErrorHandlers) => {
       if (error instanceof HTTPError) {
         try {
-          const logtoError = await error.response.json<RequestErrorBody>();
+          const myeyesidError = await error.response.json<RequestErrorBody>();
 
-          const { code, message } = logtoError;
+          const { code, message } = myeyesidError;
 
           const handler = errorHandlers?.[code] ?? errorHandlers?.global;
 
           if (handler) {
-            await handler(logtoError);
+            await handler(myeyesidError);
           } else {
             setToast(message);
           }

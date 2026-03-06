@@ -1,6 +1,6 @@
-import type { CreateUser, Role, User } from '@logto/schemas';
-import { RoleType } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import type { CreateUser, Role, User } from '@myeyesid/schemas';
+import { RoleType } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 import { removeUndefinedKeys } from '@silverhand/essentials';
 
 import { mockUser, mockUserList, mockUserListResponse } from '#src/__mocks__/index.js';

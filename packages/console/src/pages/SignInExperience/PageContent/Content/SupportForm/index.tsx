@@ -1,4 +1,4 @@
-import { emailRegEx } from '@logto/core-kit';
+import { emailRegEx } from '@myeyesid/core-kit';
 import { useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

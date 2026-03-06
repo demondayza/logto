@@ -5,7 +5,7 @@ import {
   OrganizationRequiredMfaPolicy,
   SignInIdentifier,
   ConnectorType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { HTTPError, type ResponsePromise } from 'ky';
 
 import {
@@ -54,8 +54,8 @@ describe('admin console sign-in experience', () => {
         organizationRequiredMfaPolicy: OrganizationRequiredMfaPolicy.Mandatory,
       },
       singleSignOnEnabled: true,
-      supportEmail: 'contact@logto.io',
-      supportWebsiteUrl: 'https://logto.io',
+      supportEmail: 'contact@myeyesid.io',
+      supportWebsiteUrl: 'https://myeyesid.io',
       forgotPasswordMethods: [],
     };
 

@@ -1,4 +1,4 @@
-import { type IdTokenConfig } from '@logto/schemas';
+import { type IdTokenConfig } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 

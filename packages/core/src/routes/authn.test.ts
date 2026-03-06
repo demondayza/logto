@@ -1,5 +1,5 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockAdminUserRole } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
@@ -7,7 +7,7 @@ import type Libraries from '#src/tenants/Libraries.js';
 import { createMockProvider } from '#src/test-utils/oidc-provider.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
 
-import { mockConnector, mockMetadata, mockLogtoConnector } from '../__mocks__/connector.js';
+import { mockConnector, mockMetadata, mockMyEyesIDConnector } from '../__mocks__/connector.js';
 
 const { jest } = import.meta;
 const { mockEsmWithActual } = createMockUtils(jest);
@@ -20,11 +20,11 @@ const { verifyBearerTokenFromRequest } = await mockEsmWithActual(
 );
 const validateSamlAssertion = jest.fn();
 
-const mockSamlLogtoConnector = {
+const mockSamlMyEyesIDConnector = {
   dbEntry: { ...mockConnector, connectorId: 'saml', id: 'saml_connector' },
   metadata: { ...mockMetadata, isStandard: true, id: 'saml', target: 'saml' },
   type: ConnectorType.Social,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
   validateSamlAssertion,
 };
 
@@ -38,7 +38,7 @@ const socialsLibraries = {
       });
     }
 
-    return mockSamlLogtoConnector;
+    return mockSamlMyEyesIDConnector;
   }),
 };
 
@@ -85,7 +85,7 @@ describe('authn route for Hasura', () => {
     it('has expected role', async () => {
       const response = await request
         .get('/authn/hasura')
-        .query({ resource: 'https://api.logto.io' })
+        .query({ resource: 'https://api.myeyesid.io' })
         .set(keys.expectedRole, mockExpectedRole);
       expect(response.status).toEqual(200);
       expect(response.body).toEqual({
@@ -97,7 +97,7 @@ describe('authn route for Hasura', () => {
     it('throws 401 if no expected role present', async () => {
       const response = await request
         .get('/authn/hasura')
-        .query({ resource: 'https://api.logto.io' })
+        .query({ resource: 'https://api.myeyesid.io' })
         .set(keys.expectedRole, mockExpectedRole + '1');
       expect(response.status).toEqual(401);
     });
@@ -105,7 +105,7 @@ describe('authn route for Hasura', () => {
     it('falls back to unauthorized role if no expected role present', async () => {
       const response = await request
         .get('/authn/hasura')
-        .query({ resource: 'https://api.logto.io', unauthorizedRole: mockUnauthorizedRole })
+        .query({ resource: 'https://api.myeyesid.io', unauthorizedRole: mockUnauthorizedRole })
         .set(keys.expectedRole, mockExpectedRole + '1');
       expect(response.status).toEqual(200);
       expect(response.body).toEqual({
@@ -129,7 +129,7 @@ describe('authn route for Hasura', () => {
     it('throws 401 if no unauthorized role presents', async () => {
       const response = await request
         .get('/authn/hasura')
-        .query({ resource: 'https://api.logto.io' })
+        .query({ resource: 'https://api.myeyesid.io' })
         .set(keys.expectedRole, mockExpectedRole);
       expect(response.status).toEqual(401);
     });
@@ -137,7 +137,7 @@ describe('authn route for Hasura', () => {
     it('falls back to unauthorized role with user id if no expected resource present', async () => {
       const response = await request
         .get('/authn/hasura')
-        .query({ resource: 'https://api.logto.io', unauthorizedRole: mockUnauthorizedRole })
+        .query({ resource: 'https://api.myeyesid.io', unauthorizedRole: mockUnauthorizedRole })
         .set(keys.expectedRole, mockExpectedRole);
       expect(response.status).toEqual(200);
       expect(response.body).toEqual({
@@ -153,7 +153,7 @@ describe('authn route for Hasura', () => {
 
       const response = await request
         .get('/authn/hasura')
-        .query({ resource: 'https://api.logto.io', unauthorizedRole: mockUnauthorizedRole });
+        .query({ resource: 'https://api.myeyesid.io', unauthorizedRole: mockUnauthorizedRole });
       expect(response.status).toEqual(200);
       expect(response.body).toEqual({
         [keys.hasuraRole]: mockUnauthorizedRole,

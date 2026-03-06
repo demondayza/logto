@@ -1,4 +1,4 @@
-import { SsoProviderName, SsoProviderType } from '@logto/schemas';
+import { SsoProviderName, SsoProviderType } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import camelcaseKeys from 'camelcase-keys';
 import { decodeJwt } from 'jose';
@@ -49,7 +49,7 @@ export class AzureOidcSsoConnector extends OidcConnector implements SingleSignOn
    * @remarks forked from OidcSsoConnector. Override the getUserInfo method's sync user info logic.
    * The email_verified and phone_verified are returned from Azure AD's userinfo endpoint.
    * @see https://learn.microsoft.com/en-us/answers/questions/812672/microsoft-openid-connect-getting-verified-email
-   * It is unsafe to trust the unverified email and phone number in Logto's context. As we are using the verified email and phone number to identify the user.
+   * It is unsafe to trust the unverified email and phone number in MyEyesID's context. As we are using the verified email and phone number to identify the user.
    * Store extra unverified_email and unverified_phone fields in the user SSO identity profile instead.
    */
   // eslint-disable-next-line complexity

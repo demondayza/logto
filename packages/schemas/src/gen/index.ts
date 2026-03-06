@@ -1,4 +1,4 @@
-// LOG-88: Refactor '@logto/schemas' type gen
+// LOG-88: Refactor '@myeyesid/schemas' type gen
 // Consider add the better assert into `essentials` package
 
 import assert from 'node:assert';

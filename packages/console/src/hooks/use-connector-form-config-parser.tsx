@@ -1,4 +1,4 @@
-import type { ConnectorResponse } from '@logto/schemas';
+import type { ConnectorResponse } from '@myeyesid/schemas';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 

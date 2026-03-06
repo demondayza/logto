@@ -1,6 +1,6 @@
-import { ConnectorType } from '@logto/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import {
   expectToClickDetailsPageOption,
   expectUnsavedChangesAlert,
@@ -24,7 +24,7 @@ import {
 await page.setViewport({ width: 1920, height: 1080 });
 
 describe('social connectors', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   beforeAll(async () => {
     await goToAdminConsole();
@@ -32,7 +32,7 @@ describe('social connectors', () => {
 
   it('navigate to social connector page', async () => {
     await expectNavigation(
-      page.goto(appendPathname('/console/connectors/social', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/connectors/social', myeyesidConsoleUrl).href)
     );
 
     await expect(page).toMatchElement(
@@ -46,7 +46,7 @@ describe('social connectors', () => {
       text: 'Social connectors',
     });
 
-    expect(page.url()).toBe(new URL(`console/connectors/social`, logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL(`console/connectors/social`, myeyesidConsoleUrl).href);
   });
 
   it('can open create connector modal from table placeholder', async () => {
@@ -133,7 +133,7 @@ describe('social connectors', () => {
 
       await expectToConfirmConnectorDeletion(
         page,
-        new URL(`console/connectors/social`, logtoConsoleUrl).href
+        new URL(`console/connectors/social`, myeyesidConsoleUrl).href
       );
     }
   );

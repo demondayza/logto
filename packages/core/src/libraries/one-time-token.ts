@@ -1,4 +1,4 @@
-import { OneTimeTokenStatus } from '@logto/schemas';
+import { OneTimeTokenStatus } from '@myeyesid/schemas';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import type Queries from '#src/tenants/Queries.js';

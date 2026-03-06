@@ -1,10 +1,10 @@
-import { isLocalhost, isValidRegEx, validateUriOrigin } from '@logto/core-kit';
+import { isLocalhost, isValidRegEx, validateUriOrigin } from '@myeyesid/core-kit';
 import {
   DomainStatus,
   type Application,
   type CustomDomain as CustomDomainType,
   type SnakeCaseOidcConfig,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useState, useEffect } from 'react';

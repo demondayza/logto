@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { isLanguageTag } from '@logto/language-kit';
+import { isLanguageTag } from '@myeyesid/language-kit';
 import ora from 'ora';
 import { type CommandModule } from 'yargs';
 

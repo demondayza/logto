@@ -1,4 +1,4 @@
-import type { AdminConsoleKey } from '@logto/phrases';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 

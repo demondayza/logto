@@ -1,6 +1,6 @@
-import type { ConnectorConfigFormItem } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType, ConnectorType } from '@logto/connector-kit';
-import { type ConnectorFactoryResponse, type ConnectorResponse } from '@logto/schemas';
+import type { ConnectorConfigFormItem } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType, ConnectorType } from '@myeyesid/connector-kit';
+import { type ConnectorFactoryResponse, type ConnectorResponse } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import { SyncProfileMode, type ConnectorFormType } from '@/types/connector';

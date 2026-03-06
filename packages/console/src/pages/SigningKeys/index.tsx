@@ -1,4 +1,4 @@
-import { LogtoOidcConfigKeyType } from '@logto/schemas';
+import { MyEyesIDOidcConfigKeyType } from '@myeyesid/schemas';
 
 import PageMeta from '@/components/PageMeta';
 import { signingKeysLink } from '@/consts';
@@ -20,8 +20,8 @@ function SigningKeys() {
         learnMoreLink={{ href: getDocumentationUrl(signingKeysLink), targetBlank: 'noopener' }}
         className={styles.header}
       />
-      <SigningKeyFormCard keyType={LogtoOidcConfigKeyType.PrivateKeys} />
-      <SigningKeyFormCard keyType={LogtoOidcConfigKeyType.CookieKeys} />
+      <SigningKeyFormCard keyType={MyEyesIDOidcConfigKeyType.PrivateKeys} />
+      <SigningKeyFormCard keyType={MyEyesIDOidcConfigKeyType.CookieKeys} />
     </div>
   );
 }

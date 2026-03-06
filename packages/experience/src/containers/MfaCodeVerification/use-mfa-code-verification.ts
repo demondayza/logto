@@ -1,4 +1,4 @@
-import { InteractionEvent, type SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, type SignInIdentifier } from '@myeyesid/schemas';
 import { useCallback, useMemo, useState } from 'react';
 
 import { verifyMfaByVerificationCode } from '@/apis/experience';

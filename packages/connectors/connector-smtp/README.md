@@ -2,7 +2,7 @@
 
 # SMTP connector
 
-The official Logto connector for SMTP.
+The official MyEyesID connector for SMTP.
 
 **Table of contents**
 
@@ -25,7 +25,7 @@ SMTP is a transmission protocol that is not exclusive to some specific email ser
 
 We are now offering guides on how to use the SMTP connector to send emails following providers for your better understanding:
 - _Gmail_ is the most popular email service vendor worldwide.
-- _Aliyun direct mail_ and _SendGrid mail_. Some of you might be familiar with these two email service providers because Logto Team provided corresponding connectors; you will likely have a general idea of them.
+- _Aliyun direct mail_ and _SendGrid mail_. Some of you might be familiar with these two email service providers because MyEyesID Team provided corresponding connectors; you will likely have a general idea of them.
 
 We hope you can figure out all other email vendors' setups with the following examples :rocket:
 
@@ -90,7 +90,7 @@ To check "Sender Addresses", you can find the entrance on the left-side navigati
 
 You can type in an email address and click on "Send" to see whether the settings can work before "Save and Done".
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/).
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/).
 
 ### Config types
 

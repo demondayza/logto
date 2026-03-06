@@ -33,8 +33,8 @@ function PlausibleScripts() {
         async
         defer
         data-domain={plausibleDataDomain}
-        data-api="https://akasha.logto.io/placebo/eagan"
-        src="https://akasha.logto.io/placebo/sabaean.manual.js"
+        data-api="https://akasha.myeyesid.io/placebo/eagan"
+        src="https://akasha.myeyesid.io/placebo/sabaean.manual.js"
       />
       <script>{`window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}</script>
     </Helmet>

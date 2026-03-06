@@ -1,9 +1,9 @@
-import { sendMessagePayloadGuard } from '@logto/connector-kit';
+import { sendMessagePayloadGuard } from '@myeyesid/connector-kit';
 import {
   OrganizationInvitationStatus,
   OrganizationInvitations,
   organizationInvitationEntityGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import RequestError from '#src/errors/RequestError/index.js';

@@ -1,4 +1,4 @@
-import { type SignInIdentifier } from '@logto/schemas';
+import { type SignInIdentifier } from '@myeyesid/schemas';
 import { useCallback, useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 

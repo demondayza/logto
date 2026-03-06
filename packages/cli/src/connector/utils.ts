@@ -10,8 +10,8 @@ import type {
   GetCloudServiceClient,
   GetI18nEmailTemplate,
   EmailConnector,
-} from '@logto/connector-kit';
-import { ConnectorError, ConnectorErrorCodes, ConnectorType } from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
+import { ConnectorError, ConnectorErrorCodes, ConnectorType } from '@myeyesid/connector-kit';
 import type { BaseRoutes, Router } from '@withtyped/server';
 
 import { consoleLog } from '../utils.js';

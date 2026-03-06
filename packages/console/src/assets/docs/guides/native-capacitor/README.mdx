@@ -5,8 +5,8 @@ import CustomDomainEndpointNotice from '@/mdx-components/CustomDomainEndpointNot
 import NpmLikeInstallation from '@/mdx-components/NpmLikeInstallation';
 
 import capaticorIos from './assets/capacitor-ios.webp';
-import logtoSignInPage from './assets/logto-sign-in-page.webp';
-import logtoSignOutPage from './assets/logto-sign-out-page.webp';
+import myeyesidSignInPage from './assets/myeyesid-sign-in-page.webp';
+import myeyesidSignOutPage from './assets/myeyesid-sign-out-page.webp';
 import RedirectUrisNative from '../../fragments/_redirect-uris-native.mdx';
 
 export const defaultRedirectUri = 'com.example.app://callback';
@@ -22,7 +22,7 @@ This tutorial is framework-agnostic, so you can use any UI framework you prefer 
 
 First, install MyEyesID Capacitor SDK and its peer dependencies:
 
-<NpmLikeInstallation packageName="@logto/capacitor @capacitor/browser @capacitor/app @capacitor/preferences" />
+<NpmLikeInstallation packageName="@myeyesid/capacitor @capacitor/browser @capacitor/app @capacitor/preferences" />
 
 </Step>
 
@@ -31,9 +31,9 @@ First, install MyEyesID Capacitor SDK and its peer dependencies:
 Add the following code to your Capacitor project:
 
 <Code className="language-ts">
-    {`import LogtoClient from '@logto/capacitor';
+    {`import MyEyesIDClient from '@myeyesid/capacitor';
 
-const logtoClient = new LogtoClient({
+const myeyesidClient = new MyEyesIDClient({
   endpoint: '${props.endpoint}',
   appId: '${props.app.id}',
 });`}
@@ -59,9 +59,9 @@ Remember to click on **Save changes** after updating the redirect URI.
 
 <Code className="language-ts">
     {`const onClick = async () => {
-  await logtoClient.signIn('${props.redirectUris[0] || defaultRedirectUri}');
-  console.log(await logtoClient.isAuthenticated()); // true
-  console.log(await logtoClient.getIdTokenClaims()); // { sub: '...', ... }
+  await myeyesidClient.signIn('${props.redirectUris[0] || defaultRedirectUri}');
+  console.log(await myeyesidClient.isAuthenticated()); // true
+  console.log(await myeyesidClient.getIdTokenClaims()); // { sub: '...', ... }
 };`}
 </Code>
 
@@ -70,14 +70,14 @@ Run the Capacitor app and click the sign-in button. A browser window will open, 
 <center>
   <img
     style={{ border: '1px solid #eaeaea', borderRadius: '16px' }}
-    src={logtoSignInPage}
+    src={myeyesidSignInPage}
     alt="MyEyesID sign-in page"
     width="320"
   />
 </center>
 
 > If the user closes the browser window without completing the authentication flow, the Capacitor
-> app will receive a `LogtoClientError`.
+> app will receive a `MyEyesIDClientError`.
 
 </Step>
 
@@ -87,8 +87,8 @@ Since Capacitor leverages the Safari View Controller on iOS and Chrome Custom Ta
 
 ```ts
 const onClick = async () => {
-  await logtoClient.signOut();
-  console.log(await logtoClient.isAuthenticated()); // false
+  await myeyesidClient.signOut();
+  console.log(await myeyesidClient.isAuthenticated()); // false
 };
 ```
 
@@ -97,7 +97,7 @@ The `signOut` method has an optional parameter for the post sign-out redirect UR
 <center>
   <img
     style={{ border: '1px solid #eaeaea', borderRadius: '16px' }}
-    src={logtoSignOutPage}
+    src={myeyesidSignOutPage}
     alt="MyEyesID sign-out page"
     width="320"
   />
@@ -111,7 +111,7 @@ Ensure that the post sign-out redirect URI redirects to the Capacitor app. Then 
 
 <Code className="language-ts">
     {`const onClick = async () => {
-  await logtoClient.signOut('${props.postLogoutRedirectUris[0] || defaultPostSignOutUri}');
+  await myeyesidClient.signOut('${props.postLogoutRedirectUris[0] || defaultPostSignOutUri}');
 };`}
 </Code>
 

@@ -10,7 +10,7 @@
  */
 /* eslint max-lines: 0 */
 
-import { InteractionEvent, SignInIdentifier, userOnboardingDataKey } from '@logto/schemas';
+import { InteractionEvent, SignInIdentifier, userOnboardingDataKey } from '@myeyesid/schemas';
 import { noop } from '@silverhand/essentials';
 
 import { deleteUser, getUser } from '#src/api/admin-user.js';
@@ -113,7 +113,7 @@ describe('collect user profile', () => {
       await client.updateProfile({
         type: 'extraProfile',
         values: {
-          company: 'Logto Inc.',
+          company: 'MyEyesID Inc.',
           jobTitle: 'Engineer',
         },
       });
@@ -126,7 +126,7 @@ describe('collect user profile', () => {
       // Verify the user has the correct custom data
       const user = await getUser(userId);
       expect(user.customData).toMatchObject({
-        company: 'Logto Inc.',
+        company: 'MyEyesID Inc.',
         jobTitle: 'Engineer',
       });
 
@@ -265,7 +265,7 @@ describe('collect user profile', () => {
       await client.updateProfile({
         type: 'extraProfile',
         values: {
-          company: 'Logto Inc.',
+          company: 'MyEyesID Inc.',
           referralSource: 'GitHub',
         },
       });
@@ -276,7 +276,7 @@ describe('collect user profile', () => {
 
       const user = await getUser(userId);
       expect(user.customData).toMatchObject({
-        company: 'Logto Inc.',
+        company: 'MyEyesID Inc.',
         referralSource: 'GitHub',
       });
 

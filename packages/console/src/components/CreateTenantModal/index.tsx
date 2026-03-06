@@ -1,4 +1,4 @@
-import { Theme, TenantTag } from '@logto/schemas';
+import { Theme, TenantTag } from '@myeyesid/schemas';
 import { useCallback, useMemo, useState } from 'react';
 import { Controller, type ControllerRenderProps, FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

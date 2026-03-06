@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import type http from 'node:http';
 import path from 'node:path';
 
-import { isFileAssetPath, isValidUrl, parseRange } from '@logto/core-kit';
+import { isFileAssetPath, isValidUrl, parseRange } from '@myeyesid/core-kit';
 import { conditional, trySafe } from '@silverhand/essentials';
 import chalk from 'chalk';
 import { createProxyMiddleware, responseInterceptor } from 'http-proxy-middleware';
@@ -12,7 +12,7 @@ import mime from 'mime';
 
 import { consoleLog } from '../../utils.js';
 
-import { type LogtoResponseHandler } from './types.js';
+import { type MyEyesIDResponseHandler } from './types.js';
 
 export const createProxy = (targetUrl: string, onProxyResponse?: OnProxyEvent['proxyRes']) => {
   const hasResponseHandler = Boolean(onProxyResponse);
@@ -104,29 +104,29 @@ export const createStaticFileProxy =
   };
 
 /**
- * Intercept the response from Logto endpoint and replace Logto endpoint URLs in the response with the
+ * Intercept the response from MyEyesID endpoint and replace MyEyesID endpoint URLs in the response with the
  * tunnel service URL. The string replace happens in the following cases:
- * - The response is a redirect response, and the `location` property in response header may contain Logto
+ * - The response is a redirect response, and the `location` property in response header may contain MyEyesID
  *   endpoint URI.
  * - The response body is JSON, which consists of properties such as `**_endpoint` and `redirectTo`. These
- *   properties may contain Logto endpoint URI.
- * - The response is HTML content that contains a form. The form action URL may contain Logto endpoint URI.
+ *   properties may contain MyEyesID endpoint URI.
+ * - The response is HTML content that contains a form. The form action URL may contain MyEyesID endpoint URI.
  *
  * Note: the `issuer` and `jwks_uri` properties in the `/oidc/.well-known` response should not be replaced,
- * even they also contain the Logto endpoint URI.
+ * even they also contain the MyEyesID endpoint URI.
  */
-export const createLogtoResponseHandler = async ({
+export const createMyEyesIDResponseHandler = async ({
   proxyResponse,
   request,
   response,
-  logtoEndpointUrl,
+  myeyesidEndpointUrl,
   tunnelServiceUrl,
   verbose,
-}: LogtoResponseHandler) => {
+}: MyEyesIDResponseHandler) => {
   const { location } = proxyResponse.headers;
   if (location) {
     // eslint-disable-next-line @silverhand/fp/no-mutation
-    proxyResponse.headers.location = location.replace(logtoEndpointUrl.href, tunnelServiceUrl.href);
+    proxyResponse.headers.location = location.replace(myeyesidEndpointUrl.href, tunnelServiceUrl.href);
   }
 
   void responseInterceptor(async (responseBuffer, proxyResponse) => {
@@ -137,7 +137,7 @@ export const createLogtoResponseHandler = async ({
 
     if (proxyResponse.headers['content-type']?.includes('text/html')) {
       return responseBody.replace(
-        `action="${logtoEndpointUrl.href}`,
+        `action="${myeyesidEndpointUrl.href}`,
         `action="${tunnelServiceUrl.href}`
       );
     }
@@ -149,7 +149,7 @@ export const createLogtoResponseHandler = async ({
         const updatedEntries: Array<[string, unknown]> = Object.entries(jsonData).map(
           ([key, value]) => {
             if ((key === 'redirectTo' || key.endsWith('_endpoint')) && typeof value === 'string') {
-              return [key, value.replace(logtoEndpointUrl.href, tunnelServiceUrl.href)];
+              return [key, value.replace(myeyesidEndpointUrl.href, tunnelServiceUrl.href)];
             }
             return [key, value];
           }
@@ -182,13 +182,13 @@ Specify --help for available options`);
 };
 
 /**
- * Check if the request path is a Logto request path.
- * @example isLogtoRequestPath('/oidc/.well-known/openid-configuration') // true
- * @example isLogtoRequestPath('/oidc/auth') // true
- * @example isLogtoRequestPath('/api/interaction/submit') // true
- * @example isLogtoRequestPath('/consent') // true
+ * Check if the request path is a MyEyesID request path.
+ * @example isMyEyesIDRequestPath('/oidc/.well-known/openid-configuration') // true
+ * @example isMyEyesIDRequestPath('/oidc/auth') // true
+ * @example isMyEyesIDRequestPath('/api/interaction/submit') // true
+ * @example isMyEyesIDRequestPath('/consent') // true
  */
-export const isLogtoRequestPath = (requestPath?: string): boolean =>
+export const isMyEyesIDRequestPath = (requestPath?: string): boolean =>
   ['/oidc/', '/api/'].some((path) => requestPath?.startsWith(path)) || requestPath === '/consent';
 
 export const getMimeType = (requestPath: string) => {

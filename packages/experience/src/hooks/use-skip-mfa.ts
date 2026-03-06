@@ -1,4 +1,4 @@
-import { InteractionEvent } from '@logto/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 
 import { skipMfa } from '@/apis/experience';

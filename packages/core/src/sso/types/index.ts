@@ -1,5 +1,5 @@
-import { type I18nPhrases } from '@logto/connector-kit';
-import { type SsoProviderType, type SsoProviderName } from '@logto/schemas';
+import { type I18nPhrases } from '@myeyesid/connector-kit';
+import { type SsoProviderType, type SsoProviderName } from '@myeyesid/schemas';
 
 import { type AzureAdSsoConnector } from '../AzureAdSsoConnector/index.js';
 import { type AzureOidcSsoConnector } from '../AzureOidcSsoConnector/index.js';

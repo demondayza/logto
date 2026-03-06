@@ -1,5 +1,5 @@
-import { InteractionEvent, UsersPasswordEncryptionMethod } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { InteractionEvent, UsersPasswordEncryptionMethod } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';

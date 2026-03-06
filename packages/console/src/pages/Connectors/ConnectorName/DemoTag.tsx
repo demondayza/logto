@@ -1,4 +1,4 @@
-import { ConnectorType } from '@logto/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 import { useTranslation } from 'react-i18next';
 
 import Tag from '@/ds-components/Tag';

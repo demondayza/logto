@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { DomainStatus } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { DomainStatus } from '@myeyesid/schemas';
 
 import DynamicT from '@/ds-components/DynamicT';
 import type { Props as TagProps } from '@/ds-components/Tag';

@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 

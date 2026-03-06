@@ -1,10 +1,10 @@
 # Vonage SMS connector
 
-The official Logto connector for Vonage SMS.
+The official MyEyesID connector for Vonage SMS.
 
 ## Get started
 
-Vonage is a global communications provider, offering robust cloud-based communication services, including SMS (short message service). The Vonage SMS Connector is a plugin provided by the Logto team to enable Logto end-users to register and sign in to their Logto account via SMS verification codes.
+Vonage is a global communications provider, offering robust cloud-based communication services, including SMS (short message service). The Vonage SMS Connector is a plugin provided by the MyEyesID team to enable MyEyesID end-users to register and sign in to their MyEyesID account via SMS verification codes.
 
 ## Set up in Vonage
 
@@ -20,7 +20,7 @@ And you may need to [rant a virtual number](https://developer.vonage.com/en/numb
 
 See the [Vonage SMS API](https://developer.vonage.com/en/messaging/sms/overview) for more information.
 
-## Set up in Logto
+## Set up in MyEyesID
 
 1. **API Key**: Your Vonage API key.
 2. **API Secret**: Your Vonage API secret.

@@ -1,4 +1,4 @@
-import { type EmailTemplateDetails } from '@logto/connector-kit';
+import { type EmailTemplateDetails } from '@myeyesid/connector-kit';
 
 export const mockedParameters = {
   AccessKeyId: 'testid',

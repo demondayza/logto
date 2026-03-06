@@ -1,4 +1,4 @@
-import { type SsrData, logtoCookieKey, logtoUiCookieGuard, ssrPlaceholder } from '@logto/schemas';
+import { type SsrData, myeyesidCookieKey, myeyesidUiCookieGuard, ssrPlaceholder } from '@myeyesid/schemas';
 import { pick, trySafe } from '@silverhand/essentials';
 import type { MiddlewareType } from 'koa';
 
@@ -33,15 +33,15 @@ export default function koaExperienceSsr<StateT, ContextT extends WithI18nContex
       return;
     }
 
-    const logtoUiCookie =
+    const myeyesidUiCookie =
       trySafe(() =>
-        logtoUiCookieGuard.parse(JSON.parse(ctx.cookies.get(logtoCookieKey) ?? '{}'))
+        myeyesidUiCookieGuard.parse(JSON.parse(ctx.cookies.get(myeyesidCookieKey) ?? '{}'))
       ) ?? {};
 
     const [signInExperience, customLanguages] = await Promise.all([
       libraries.signInExperiences.getFullSignInExperience({
         locale: ctx.locale,
-        ...logtoUiCookie,
+        ...myeyesidUiCookie,
       }),
       queries.customPhrases.findAllCustomLanguageTags(),
     ]);
@@ -58,7 +58,7 @@ export default function koaExperienceSsr<StateT, ContextT extends WithI18nContex
       ssrPlaceholder,
       `Object.freeze(${JSON.stringify({
         signInExperience: {
-          ...pick(logtoUiCookie, 'appId', 'organizationId'),
+          ...pick(myeyesidUiCookie, 'appId', 'organizationId'),
           data: signInExperience,
         },
         phrases: { lng: language, data: phrases },

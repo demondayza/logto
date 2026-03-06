@@ -1,4 +1,4 @@
-import type { LanguageTag } from '@logto/language-kit';
+import type { LanguageTag } from '@myeyesid/language-kit';
 import { noop } from '@silverhand/essentials';
 import { createContext, useMemo, useState } from 'react';
 

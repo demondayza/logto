@@ -7,7 +7,7 @@ find the full documentation for it [in our repository](https://github.com/change
 We have a quick list of common questions to get you started engaging with this project in
 [our documentation](https://github.com/changesets/changesets/blob/main/docs/common-questions.md)
 
-## Logto publish flow
+## MyEyesID publish flow
 
 For now, Changesets only supports tagging packages separately, instead of tagging a "release group". There is an [open issue](https://github.com/changesets/changesets/issues/683) that is still hanging in the air.
 
@@ -15,19 +15,19 @@ So, we are using our own "grouping" release strategy in this monorepo:
 
 ### Core
 
-The release group that includes the Logto core service and its schemas and cli, which consists of the following packages:
+The release group that includes the MyEyesID core service and its schemas and cli, which consists of the following packages:
 
-- @logto/core (main)
-- @logto/api
-- @logto/cli
-- @logto/create
-- @logto/schemas
+- @myeyesid/core (main)
+- @myeyesid/api
+- @myeyesid/cli
+- @myeyesid/create
+- @myeyesid/schemas
 
 Their versions will be always in sync, and forms our main release group.
 
 > [!IMPORTANT]
 >
-> The above release group can be found in the `fixed` field of `config.json`. Make sure the `@logto/core` is always on the top of the list.
+> The above release group can be found in the `fixed` field of `config.json`. Make sure the `@myeyesid/core` is always on the top of the list.
 > Otherwise, the `publish.js` script will fail to tag the core package and we'll not be able to find the tag to publish it on GitHub.
 
 ### Others

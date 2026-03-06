@@ -6,7 +6,7 @@ import { authedAdminTenantApi } from './lib/api/api.js';
 // eslint-disable-next-line @silverhand/fp/no-mutation
 globalThis.require = createRequire(import.meta.url);
 
-// We need to update this before tests otherwise Logto will update SignInMode for admin tenant
+// We need to update this before tests otherwise MyEyesID will update SignInMode for admin tenant
 // The update logic should be
 await authedAdminTenantApi.patch('sign-in-exp', {
   json: { signInMode: 'SignInAndRegister' },

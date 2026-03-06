@@ -1,4 +1,4 @@
-import { RecaptchaEnterpriseMode, type CaptchaProvider, type CaptchaType } from '@logto/schemas';
+import { RecaptchaEnterpriseMode, type CaptchaProvider, type CaptchaType } from '@myeyesid/schemas';
 import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,4 @@
-import { ConnectorPlatform } from '@logto/schemas';
+import { ConnectorPlatform } from '@myeyesid/schemas';
 
 import Native from '@/assets/icons/connector-platform-icon-native.svg?react';
 import Universal from '@/assets/icons/connector-platform-icon-universal.svg?react';

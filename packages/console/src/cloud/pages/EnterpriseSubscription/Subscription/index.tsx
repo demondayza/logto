@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 
 import { useCloudApi } from '@/cloud/hooks/use-cloud-api';
-import { type LogtoEnterpriseSubscriptionResponse } from '@/cloud/types/router';
+import { type MyEyesIDEnterpriseSubscriptionResponse } from '@/cloud/types/router';
 import FormCard from '@/components/FormCard';
 import PageMeta from '@/components/PageMeta';
 import CardTitle from '@/ds-components/CardTitle';
@@ -17,16 +17,16 @@ import SubscriptionPlanTable from './SubscriptionPlanTable';
 import styles from './index.module.scss';
 
 function Subscription() {
-  const { logtoEnterpriseId = '' } = useParams();
+  const { myeyesidEnterpriseId = '' } = useParams();
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
 
   const cloudApi = useCloudApi();
 
-  const { data, isLoading } = useSWR<LogtoEnterpriseSubscriptionResponse, ResponseError>(
-    logtoEnterpriseId && `/api/me/logto-enterprises/${logtoEnterpriseId}`,
+  const { data, isLoading } = useSWR<MyEyesIDEnterpriseSubscriptionResponse, ResponseError>(
+    myeyesidEnterpriseId && `/api/me/myeyesid-enterprises/${myeyesidEnterpriseId}`,
     async () =>
-      cloudApi.get(`/api/me/logto-enterprises/:id`, {
-        params: { id: logtoEnterpriseId },
+      cloudApi.get(`/api/me/myeyesid-enterprises/:id`, {
+        params: { id: myeyesidEnterpriseId },
         search: {
           includeSharedQuota: 'true',
           includeSkuItems: 'true',
@@ -67,7 +67,7 @@ function Subscription() {
         )}
         {data?.subscription && (
           <FormField title="subscription.next_bill">
-            <BillInfo cost={upcomingBill} logtoEnterpriseId={logtoEnterpriseId} />
+            <BillInfo cost={upcomingBill} myeyesidEnterpriseId={myeyesidEnterpriseId} />
           </FormField>
         )}
       </FormCard>

@@ -1,5 +1,5 @@
-import { MfaFactor } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { MfaFactor } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import {
   mockUser,
@@ -39,8 +39,8 @@ const {
   verifyWebAuthnAuthentication,
 } = await import('./webauthn.js');
 
-const rpId = 'logto.io';
-const origin = 'https://logto.io';
+const rpId = 'myeyesid.io';
+const origin = 'https://myeyesid.io';
 
 describe('generateWebAuthnRegistrationOptions', () => {
   it('should generate registration options', async () => {

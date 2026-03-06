@@ -1,5 +1,5 @@
-import type { LanguageTag } from '@logto/language-kit';
-import { languages, fallback } from '@logto/language-kit';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import { languages, fallback } from '@myeyesid/language-kit';
 import type { NormalizeKeyPaths } from '@silverhand/essentials';
 import { z } from 'zod';
 

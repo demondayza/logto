@@ -29,7 +29,7 @@ const application_details = {
     'Kimlik doğrulama ve yetkilendirme için bir bitiş noktası. OpenID Connect <a>Authentication</a> için kullanılır.',
   show_endpoint_details: 'Bitiş noktası ayrıntılarını göster',
   hide_endpoint_details: 'Bitiş noktası ayrıntılarını gizle',
-  logto_endpoint: 'MyEyesID bitiş noktası',
+  myeyesid_endpoint: 'MyEyesID bitiş noktası',
   application_id: 'Uygulama IDsi',
   application_id_tip:
     'Genellikle MyEyesID tarafından oluşturulan benzersiz bir uygulama tanımlayıcısıdır. Ayrıca OpenID Connect "client_id" anlamına gelir.',
@@ -38,7 +38,7 @@ const application_details = {
   redirect_uri: 'Yönlendirme URIı',
   redirect_uris: 'Yönlendirme URIları',
   redirect_uri_placeholder: 'https://siteniz.com/uygulama',
-  redirect_uri_placeholder_native: 'io.logto://callback',
+  redirect_uri_placeholder_native: 'io.myeyesid://callback',
   redirect_uri_tip:
     'Kullanıcının oturum açma işlemi tamamlandıktan sonra (başarılı olsa da olmasa da) yönlendirilen bir URI. Daha fazla bilgi için OpenID Connect <a>AuthRequesta</a> bakınız.',
   mixed_redirect_uri_warning:
@@ -274,7 +274,7 @@ const application_details = {
     title: 'Temel özellik eşlemeleri',
     description:
       'MyEyesID kullanıcı profilini uygulamanıza senkronize etmek için özellik eşlemeleri ekleyin.',
-    col_logto_claims: 'MyEyesID değeri',
+    col_myeyesid_claims: 'MyEyesID değeri',
     col_sp_claims: 'Uygulamanızın değer adı',
     add_button: 'Başka bir eklenti',
   },

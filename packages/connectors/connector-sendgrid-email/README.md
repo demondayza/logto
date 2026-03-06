@@ -1,6 +1,6 @@
 # SendGrid email connector
 
-The official Logto connector for SendGrid email service.
+The official MyEyesID connector for SendGrid email service.
 
 **Table of contents**
 
@@ -64,25 +64,25 @@ Here is an example of SendGrid connector template JSON.
 [
     {
         "subject": "<register-template-subject>",
-        "content": "<Logto: Your verification code is {{code}}. (register template)>",
+        "content": "<MyEyesID: Your verification code is {{code}}. (register template)>",
         "usageType": "Register",
         "type": "text/plain"
     },
     {
         "subject": "<sign-in-template-subject>",
-        "content": "<Logto: Your verification code is {{code}}. (sign-in template)>",
+        "content": "<MyEyesID: Your verification code is {{code}}. (sign-in template)>",
         "usageType": "SignIn",
         "type": "text/plain"
     },
     {
         "subject": "<forgot-password-template-subject>",
-        "content": "<Logto: Your verification code is {{code}}. (forgot-password template)>",
+        "content": "<MyEyesID: Your verification code is {{code}}. (forgot-password template)>",
         "usageType": "ForgotPassword",
         "type": "text/plain"
     },
     {
         "subject": "<generic-template-subject>",
-        "content": "<Logto: Your verification code is {{code}}. (generic template)>",
+        "content": "<MyEyesID: Your verification code is {{code}}. (generic template)>",
         "usageType": "Generic",
         "type": "text/plain",
     },
@@ -93,7 +93,7 @@ Here is an example of SendGrid connector template JSON.
 
 You can type in an email address and click on "Send" to see whether the settings can work before "Save and Done".
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/)
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/)
 
 ### Config types
 

@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 
-import { consoleLog } from '@logto/cli/lib/utils.js';
+import { consoleLog } from '@myeyesid/cli/lib/utils.js';
 import {
   userAssetsServiceStatusGuard,
   allowUploadMimeTypes,
@@ -9,8 +9,8 @@ import {
   userAssetsGuard,
   adminTenantId,
   uploadFileGuard,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { format } from 'date-fns';
 import { object } from 'zod';
 

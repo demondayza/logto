@@ -1,24 +1,24 @@
-import { buildRawConnector, defaultConnectorMethods } from '@logto/cli/lib/connector/index.js';
+import { buildRawConnector, defaultConnectorMethods } from '@myeyesid/cli/lib/connector/index.js';
 import type {
   AllConnector,
   ConnectorPlatform,
   EmailConnector,
   GetI18nEmailTemplate,
   SmsConnector,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   validateConfig,
   ServiceConnector,
   ConnectorType,
   TemplateType,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import { type Nullable, conditional, pick, trySafe } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import type Queries from '#src/tenants/Queries.js';
 import assertThat from '#src/utils/assert-that.js';
 import { loadConnectorFactories } from '#src/utils/connectors/index.js';
-import type { LogtoConnector, LogtoConnectorWellKnown } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector, MyEyesIDConnectorWellKnown } from '#src/utils/connectors/types.js';
 
 import { type CloudConnectionLibrary } from './cloud-connection.js';
 
@@ -40,11 +40,11 @@ export const createConnectorLibrary = (
     return connector.config;
   };
 
-  const getLogtoConnectorsWellKnown = async (): Promise<LogtoConnectorWellKnown[]> => {
+  const getMyEyesIDConnectorsWellKnown = async (): Promise<MyEyesIDConnectorWellKnown[]> => {
     const databaseConnectors = await findAllConnectorsWellKnown();
     const connectorFactories = await loadConnectorFactories();
 
-    const logtoConnectors = await Promise.all(
+    const myeyesidConnectors = await Promise.all(
       databaseConnectors.map(async (databaseEntry) => {
         const { metadata, connectorId } = databaseEntry;
         const connectorFactory = connectorFactories.find(
@@ -67,14 +67,14 @@ export const createConnectorLibrary = (
       })
     );
 
-    return logtoConnectors.filter(Boolean);
+    return myeyesidConnectors.filter(Boolean);
   };
 
-  const getLogtoConnectors = async (): Promise<LogtoConnector[]> => {
+  const getMyEyesIDConnectors = async (): Promise<MyEyesIDConnector[]> => {
     const databaseConnectors = await findAllConnectors();
     const connectorFactories = await loadConnectorFactories();
 
-    const logtoConnectors = await Promise.all(
+    const myeyesidConnectors = await Promise.all(
       databaseConnectors.map(async (databaseConnector) => {
         const { id, metadata, connectorId } = databaseConnector;
         const connectorFactory = connectorFactories.find(
@@ -113,11 +113,11 @@ export const createConnectorLibrary = (
       })
     );
 
-    return logtoConnectors.filter(Boolean);
+    return myeyesidConnectors.filter(Boolean);
   };
 
-  const getLogtoConnectorById = async (id: string): Promise<LogtoConnector> => {
-    const connectors = await getLogtoConnectors();
+  const getMyEyesIDConnectorById = async (id: string): Promise<MyEyesIDConnector> => {
+    const connectors = await getMyEyesIDConnectors();
     const pickedConnector = connectors.find(({ dbEntry }) => dbEntry.id === id);
 
     if (!pickedConnector) {
@@ -131,11 +131,11 @@ export const createConnectorLibrary = (
     return pickedConnector;
   };
 
-  const getLogtoConnectorByTargetAndPlatform = async (
+  const getMyEyesIDConnectorByTargetAndPlatform = async (
     target: string,
     platform: Nullable<ConnectorPlatform>
   ) => {
-    const connectors = await getLogtoConnectors();
+    const connectors = await getMyEyesIDConnectors();
 
     return connectors.find(({ type, metadata }) => {
       return (
@@ -148,14 +148,14 @@ export const createConnectorLibrary = (
 
   /** Type of the connector that can send message of the given type. */
   type MappedConnectorType = {
-    [ConnectorType.Email]: LogtoConnector<EmailConnector>;
-    [ConnectorType.Sms]: LogtoConnector<SmsConnector>;
+    [ConnectorType.Email]: MyEyesIDConnector<EmailConnector>;
+    [ConnectorType.Sms]: MyEyesIDConnector<SmsConnector>;
   };
 
   const getMessageConnector = async <Type extends keyof MappedConnectorType>(
     type: Type
   ): Promise<MappedConnectorType[Type]> => {
-    const connectors = await getLogtoConnectors();
+    const connectors = await getMyEyesIDConnectors();
     const connector = connectors.find(
       (connector): connector is MappedConnectorType[Type] => connector.type === type
     );
@@ -212,10 +212,10 @@ export const createConnectorLibrary = (
 
   return {
     getConnectorConfig,
-    getLogtoConnectors,
-    getLogtoConnectorsWellKnown,
-    getLogtoConnectorById,
-    getLogtoConnectorByTargetAndPlatform,
+    getMyEyesIDConnectors,
+    getMyEyesIDConnectorsWellKnown,
+    getMyEyesIDConnectorById,
+    getMyEyesIDConnectorByTargetAndPlatform,
     /**
      * Get the connector that can send message of the given type.
      *

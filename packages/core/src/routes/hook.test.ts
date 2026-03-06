@@ -7,8 +7,8 @@ import {
   type HookConfig,
   type HookEvents,
   type Log,
-} from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+} from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 import { subDays } from 'date-fns';
 
 import {

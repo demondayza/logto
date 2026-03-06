@@ -23,7 +23,7 @@ import {
   Resources,
   Users,
   OrganizationJitRoles,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import { type SearchOptions, buildSearchSql } from '#src/database/utils.js';

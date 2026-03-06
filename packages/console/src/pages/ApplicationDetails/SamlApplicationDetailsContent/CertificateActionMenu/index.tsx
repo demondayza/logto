@@ -1,4 +1,4 @@
-import { type SamlApplicationSecretResponse } from '@logto/schemas';
+import { type SamlApplicationSecretResponse } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 

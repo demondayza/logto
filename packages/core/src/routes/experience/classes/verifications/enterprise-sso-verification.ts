@@ -10,8 +10,8 @@ import {
   type SanitizedEnterpriseSsoVerificationRecordData,
   type EncryptedTokenSet,
   type SecretEnterpriseSsoConnectorRelationPayload,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { conditional } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';
@@ -36,7 +36,7 @@ export {
   type SanitizedEnterpriseSsoVerificationRecordData,
   enterpriseSsoVerificationRecordDataGuard,
   sanitizedEnterpriseSsoVerificationRecordDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export type EnterpriseSsoConnectorTokenSetSecret = {
   encryptedTokenSet: EncryptedTokenSet;

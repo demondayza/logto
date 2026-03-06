@@ -1,4 +1,4 @@
-import type { ApplicationResponse } from '@logto/schemas';
+import type { ApplicationResponse } from '@myeyesid/schemas';
 import Modal from 'react-modal';
 
 import ModalHeader from '@/components/Guide/ModalHeader';

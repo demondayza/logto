@@ -1,5 +1,5 @@
-import { type SsoConnector } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { type SsoConnector } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import { providerNames } from '#src/__mocks__/sso-connectors-mock.js';
 import {

@@ -2,7 +2,7 @@ import {
   type OrganizationRequiredMfaPolicy,
   type MfaPolicy,
   type SignInExperience,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export type MfaConfig = SignInExperience['mfa'];
 export type SignInPrompt = Exclude<MfaPolicy, MfaPolicy.UserControlled | MfaPolicy.Mandatory>;

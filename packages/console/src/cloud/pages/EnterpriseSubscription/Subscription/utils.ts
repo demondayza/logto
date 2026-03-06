@@ -1,7 +1,7 @@
 import { type Nullable } from '@silverhand/essentials';
 import { t } from 'i18next';
 
-import { type LogtoEnterpriseSubscriptionResponse } from '@/cloud/types/router';
+import { type MyEyesIDEnterpriseSubscriptionResponse } from '@/cloud/types/router';
 import {
   CustomUsageKey,
   titleKeyMap,
@@ -26,7 +26,7 @@ const buildUsageKeyTitle = (key: UsageKey): string => {
 const filterUndefined = <T>(item: T | undefined): item is T => item !== undefined;
 
 export const formatTableData = (
-  data: LogtoEnterpriseSubscriptionResponse | undefined
+  data: MyEyesIDEnterpriseSubscriptionResponse | undefined
 ): TableDataItem[] => {
   if (!data) {
     return [];

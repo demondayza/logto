@@ -2,8 +2,8 @@ import {
   type Resource,
   type CreateResource,
   getManagementApiResourceIndicator,
-} from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+} from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 import { type Nullable } from '@silverhand/essentials';
 
 import { mockResource, mockScope } from '#src/__mocks__/index.js';
@@ -77,7 +77,7 @@ describe('resource routes', () => {
 
   it('POST /resources', async () => {
     const name = 'user api';
-    const indicator = 'logto.dev/user';
+    const indicator = 'myeyesid.dev/user';
     const accessTokenTtl = 60;
 
     const response = await resourceRequest
@@ -98,7 +98,7 @@ describe('resource routes', () => {
 
   it('POST /resources should throw with invalid input body', async () => {
     const name = 'user api';
-    const indicator = 'logto.dev/user';
+    const indicator = 'myeyesid.dev/user';
 
     await expect(resourceRequest.post('/resources')).resolves.toHaveProperty('status', 400);
     await expect(resourceRequest.post('/resources').send({ name })).resolves.toHaveProperty(
@@ -132,7 +132,7 @@ describe('resource routes', () => {
 
   it('PATCH /resources/:id', async () => {
     const name = 'user api';
-    const indicator = 'logto.dev/user';
+    const indicator = 'myeyesid.dev/user';
     const accessTokenTtl = 60;
 
     const response = await resourceRequest

@@ -3,10 +3,10 @@ import {
   type GetThirdPartyAccessTokenResponse,
   type UserMfaVerificationResponse,
   type UserProfileResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type KyInstance } from 'ky';
 
-const verificationRecordIdHeader = 'logto-verification-id';
+const verificationRecordIdHeader = 'myeyesid-verification-id';
 
 export const updatePassword = async (
   api: KyInstance,
@@ -130,16 +130,16 @@ export const updateMfaSettings = async (
     })
     .json<{ skipMfaOnSignIn: boolean }>();
 
-export const getMyLogtoConfig = async (api: KyInstance) =>
-  api.get('api/my-account/logto-configs').json<{ mfa: { skipped: boolean } }>();
+export const getMyMyEyesIDConfig = async (api: KyInstance) =>
+  api.get('api/my-account/myeyesid-configs').json<{ mfa: { skipped: boolean } }>();
 
-export const updateMyLogtoConfig = async (
+export const updateMyMyEyesIDConfig = async (
   api: KyInstance,
-  logtoConfig: { mfa: { skipped: boolean } }
+  myeyesidConfig: { mfa: { skipped: boolean } }
 ) =>
   api
-    .patch('api/my-account/logto-configs', {
-      json: logtoConfig,
+    .patch('api/my-account/myeyesid-configs', {
+      json: myeyesidConfig,
     })
     .json<{ mfa: { skipped: boolean } }>();
 

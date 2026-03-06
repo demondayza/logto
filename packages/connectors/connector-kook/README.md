@@ -1,8 +1,8 @@
 # KOOK connector
 
-The official Logto connector for KOOK social sign-in web apps.
+The official MyEyesID connector for KOOK social sign-in web apps.
 
-KOOK 应用社交登录官方 Logto 连接器 [中文文档](#kook-连接器)
+KOOK 应用社交登录官方 MyEyesID 连接器 [中文文档](#kook-连接器)
 
 **Table of contents**
 - [KOOK connector](#kook-connector)
@@ -34,9 +34,9 @@ KOOK connector enables end-users to sign in to your application using their own 
 > ![OAuth2 permission required page](/packages/connectors/connector-kook/docs/oauth2-permission-required-page.png)
 
 1. Go to [KOOK Developer Center (KOOK 开发者中心)](https://developer.kookapp.cn/app/index) and sign in with your KOOK account. You may register a new account if you don't have one.
-2. Click the **Create Application (新建应用)** button to create an application, choose a name for it (Ex: LogtoAuth) and click **Confirm (确定)**
+2. Click the **Create Application (新建应用)** button to create an application, choose a name for it (Ex: MyEyesIDAuth) and click **Confirm (确定)**
 3. Click the application icon you created, and go to **OAuth2** page.
-4. Add the valid redirects (Ex: `${your_logto_origin}/callback/${connector_id}`) in the **Callback URIs (回调地址)** fields. You can find the redirect uri in the logto admin console connector details page.
+4. Add the valid redirects (Ex: `${your_myeyesid_origin}/callback/${connector_id}`) in the **Callback URIs (回调地址)** fields. You can find the redirect uri in the myeyesid admin console connector details page.
 5. Don't forget to check the **get_user_info** scope in the **OAuth2 link builder (OAuth2 链接生成器)**。
 
 ![OAuth2 link builder (OAuth2 链接生成器)](/packages/connectors/connector-kook/docs/oauth2-link-builder.png)
@@ -55,7 +55,7 @@ Fill out the clientId and clientSecret field with Client ID and Client Secret yo
 
 ## Test KOOK connector
 
-That's it. The KOOK connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. The KOOK connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 ## Reference
 
@@ -73,9 +73,9 @@ That's it. The KOOK connector should be available now. Don't forget to [Enable c
 > ![需要授权 OAuth2 权限](/packages/connectors/connector-kook/docs/oauth2-permission-required-page.png)
 
 1. 打开 [KOOK 开发者中心](https://developer.kookapp.cn/app/index) 并登录你的 KOOK 最后。如果你没有注册账号，注册一个！
-2. 点击 **新建应用** 按钮创建一个新的应用，然后给你的应用起一个名字（如：LogtoAuth）然后点击 **确定**。
+2. 点击 **新建应用** 按钮创建一个新的应用，然后给你的应用起一个名字（如：MyEyesIDAuth）然后点击 **确定**。
 3. 点击你刚刚创建的应用的图标，切换到 **OAuth2** 页面。
-4. 在 **回调地址** 一栏填入你的 Callback URI（比如说：`${your_logto_origin}/callback/${connector_id}`）。你可以在 Logto 控制台的连接器详细页找到你的 Callback URI。
+4. 在 **回调地址** 一栏填入你的 Callback URI（比如说：`${your_myeyesid_origin}/callback/${connector_id}`）。你可以在 MyEyesID 控制台的连接器详细页找到你的 Callback URI。
 5. 不要忘记在 **OAuth2 链接生成器** 勾选 **get_user_info** scope。
 
 ![OAuth2 链接生成器](/packages/connectors/connector-kook/docs/oauth2-link-builder.png)
@@ -94,7 +94,7 @@ That's it. The KOOK connector should be available now. Don't forget to [Enable c
 
 ## 测试 KOOK 连接器
 
-大功告成。别忘了 [在登录体验中启用本连接器](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
+大功告成。别忘了 [在登录体验中启用本连接器](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
 
 在 KOOK 连接器启用后，你可以构建并运行你的应用看看是否生效。
 

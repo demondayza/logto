@@ -1,4 +1,4 @@
-import { type Organization } from '@logto/schemas';
+import { type Organization } from '@myeyesid/schemas';
 
 import { authedAdminApi } from './api.js';
 

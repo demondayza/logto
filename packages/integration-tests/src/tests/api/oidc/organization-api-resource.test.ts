@@ -1,5 +1,5 @@
-import { UserScope } from '@logto/core-kit';
-import { InteractionEvent, type Resource } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { InteractionEvent, type Resource } from '@myeyesid/schemas';
 
 import { createResource, deleteResource, deleteUser, putInteraction } from '#src/api/index.js';
 import { createScope, deleteScope } from '#src/api/scope.js';
@@ -15,7 +15,7 @@ describe('get access token for organization API resource', () => {
   const password = generatePassword();
   const testApiResourceInfo: Pick<Resource, 'name' | 'indicator'> = {
     name: 'test-api-resource',
-    indicator: 'https://foo.logto.io/api',
+    indicator: 'https://foo.myeyesid.io/api',
   };
   const scopeName = 'read';
   const scopeName2 = 'read:other';

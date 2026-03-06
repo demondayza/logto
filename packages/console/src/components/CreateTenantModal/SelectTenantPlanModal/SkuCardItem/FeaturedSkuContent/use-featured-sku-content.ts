@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

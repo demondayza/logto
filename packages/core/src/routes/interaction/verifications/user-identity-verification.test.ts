@@ -1,5 +1,5 @@
-import { InteractionEvent } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { InteractionEvent } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
@@ -99,7 +99,7 @@ describe('verifyUserAccount', () => {
         {
           key: 'social',
           connectorId: 'connectorId',
-          userInfo: { id: 'foo', email: 'email@logto.io' },
+          userInfo: { id: 'foo', email: 'email@myeyesid.io' },
         },
       ],
     };
@@ -116,7 +116,7 @@ describe('verifyUserAccount', () => {
 
     expect(findUserByIdentifierMock).toBeCalledWith(tenant, {
       connectorId: 'connectorId',
-      userInfo: { id: 'foo', email: 'email@logto.io' },
+      userInfo: { id: 'foo', email: 'email@myeyesid.io' },
     });
   });
 

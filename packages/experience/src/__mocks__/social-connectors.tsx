@@ -1,4 +1,4 @@
-import { ConnectorPlatform, ConnectorType } from '@logto/connector-kit';
+import { ConnectorPlatform, ConnectorType } from '@myeyesid/connector-kit';
 
 export const socialConnectors = [
   {

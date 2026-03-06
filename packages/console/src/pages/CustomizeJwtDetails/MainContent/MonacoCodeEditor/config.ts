@@ -2,8 +2,8 @@ import { type EditorProps } from '@monaco-editor/react';
 
 import type { IStandaloneThemeData } from './type';
 
-// Logto dark theme extends vs-dark theme
-export const logtoDarkTheme: IStandaloneThemeData = {
+// MyEyesID dark theme extends vs-dark theme
+export const myeyesidDarkTheme: IStandaloneThemeData = {
   base: 'vs-dark',
   inherit: true,
   rules: [],
@@ -12,8 +12,8 @@ export const logtoDarkTheme: IStandaloneThemeData = {
   },
 };
 
-export const logtoLightTheme: IStandaloneThemeData = {
-  ...logtoDarkTheme,
+export const myeyesidLightTheme: IStandaloneThemeData = {
+  ...myeyesidDarkTheme,
   colors: {
     'editor.background': '#181133', // :token/code/code-bg
   },

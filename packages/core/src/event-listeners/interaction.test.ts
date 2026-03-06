@@ -1,4 +1,4 @@
-import type { LogKey } from '@logto/schemas';
+import type { LogKey } from '@myeyesid/schemas';
 import type { PromptDetail } from 'oidc-provider';
 
 import { createMockLogContext } from '#src/test-utils/koa-audit-log.js';

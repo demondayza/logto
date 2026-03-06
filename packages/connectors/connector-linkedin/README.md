@@ -1,6 +1,6 @@
 # LinkedIn connector
 
-The official Logto connector for LinkedIn social sign-in.
+The official MyEyesID connector for LinkedIn social sign-in.
 
 **Table of contents**
 - [LinkedIn connector](#linkedin-connector)
@@ -29,7 +29,7 @@ Complete the form and create the app.
 
 Go to App details page and find "Auth" tab, "OAuth 2.0" section and find the field "Authorized redirect URLs for your app".
 
-In our case, this will be `${your_logto_endpoint}/callback/${connector_id}`. e.g. `https://foo.logto.app/callback/${connector_id}`. The `connector_id` can be found on the top bar of the Logto Admin Console connector details page.
+In our case, this will be `${your_myeyesid_endpoint}/callback/${connector_id}`. e.g. `https://foo.myeyesid.app/callback/${connector_id}`. The `connector_id` can be found on the top bar of the MyEyesID Admin Console connector details page.
 
 **Step 3:** Add the product.
 
@@ -37,7 +37,7 @@ Go to "Products" tab and add the product "Sign In with LinkedIn using OpenID Con
 
 ## Configure your connector
 
-In your Logto connector configuration, fill out the following fields with the values obtained from your App's "Auth" tab, "Application credentials" section:
+In your MyEyesID connector configuration, fill out the following fields with the values obtained from your App's "Auth" tab, "Application credentials" section:
 
 - **clientId:** Your App's Client ID.
 - **clientSecret:** Your App's Primary Client Secret.
@@ -54,7 +54,7 @@ In your Logto connector configuration, fill out the following fields with the va
 
 ## Test LinkedIn connector
 
-That's it! The LinkedIn connector should now be available for end-users to sign in with their LinkedIn accounts. Don't forget to [Enable the connector in the sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it! The LinkedIn connector should now be available for end-users to sign in with their LinkedIn accounts. Don't forget to [Enable the connector in the sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 ## Reference
 

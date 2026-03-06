@@ -1,5 +1,5 @@
-import { type User } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { type User } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import type { Provider } from 'oidc-provider';
 
 import { mockUser } from '#src/__mocks__/user.js';

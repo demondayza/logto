@@ -43,7 +43,7 @@ const paywall = {
     'تم الوصول إلى الحد الأقصى لعدد الأذونات ({{count, number}}) لكل دور في الخطة <planName/>. قم بترقية الخطة لإضافة أدوار وأذونات إضافية. لأي مساعدة، لا تتردد في <a>الاتصال بنا</a>.',
   saml_applications_oss:
     'التطبيق الإضافي لـ SAML متاح مع خطة MyEyesID المؤسسية. اتصل بنا إذا كنت بحاجة إلى مساعدة.',
-  logto_pricing_button_text: 'تسعير MyEyesID Cloud',
+  myeyesid_pricing_button_text: 'تسعير MyEyesID Cloud',
   saml_applications:
     'التطبيق الإضافي لـ SAML متاح مع خطة MyEyesID المؤسسية. اتصل بنا إذا كنت بحاجة إلى مساعدة.',
   saml_applications_add_on:

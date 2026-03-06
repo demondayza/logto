@@ -3,7 +3,7 @@ import {
   ConnectorType,
   SignInIdentifier,
   type SignUp,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { mockAliyunDmConnector, mockAliyunSmsConnector, mockSignUp } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';

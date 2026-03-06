@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { appInsights } from '@logto/app-insights/node';
+import { appInsights } from '@myeyesid/app-insights/node';
 import {
   InteractionEvent,
   InteractionHookEvent,
@@ -8,8 +8,8 @@ import {
   type User,
   userPasskeySignInDataKey,
   userMfaDataKey,
-} from '@logto/schemas';
-import { maskEmail, maskPhone } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { maskEmail, maskPhone } from '@myeyesid/shared';
 import { conditional, trySafe } from '@silverhand/essentials';
 
 import { EnvSet } from '#src/env-set/index.js';
@@ -49,10 +49,10 @@ import {
 import { VerificationRecordsMap } from './verifications/verification-records-map.js';
 
 /**
- * Interaction is a short-lived session session that is initiated when a user starts an interaction flow with the Logto platform.
+ * Interaction is a short-lived session session that is initiated when a user starts an interaction flow with the MyEyesID platform.
  * This class is used to manage all the interaction data and status.
  *
- * @see {@link https://github.com/logto-io/rfcs | Logto RFCs} for more information about RFC 0004.
+ * @see {@link https://github.com/myeyesid-io/rfcs | MyEyesID RFCs} for more information about RFC 0004.
  */
 export default class ExperienceInteraction {
   public readonly signInExperienceValidator: SignInExperienceValidator;
@@ -561,8 +561,8 @@ export default class ExperienceInteraction {
       ),
       ...conditional(
         mfaSkipped && {
-          logtoConfig: {
-            ...user.logtoConfig,
+          myeyesidConfig: {
+            ...user.myeyesidConfig,
             [userMfaDataKey]: {
               skipped: true,
             },
@@ -573,8 +573,8 @@ export default class ExperienceInteraction {
         // Only persist passkey skipped status on sign-in event
         passkeySkipped &&
           this.#interactionEvent === InteractionEvent.SignIn && {
-            logtoConfig: {
-              ...user.logtoConfig,
+            myeyesidConfig: {
+              ...user.myeyesidConfig,
               [userPasskeySignInDataKey]: {
                 skipped: true,
               },

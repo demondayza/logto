@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType, ConnectorPlatform } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType, ConnectorPlatform } from '@myeyesid/connector-kit';
 
 export const codeEndpoint = 'https://passport.feishu.cn/suite/passport/oauth/authorize';
 

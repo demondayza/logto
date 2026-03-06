@@ -1,5 +1,5 @@
-import { NameIdFormat } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { NameIdFormat } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { appendPath } from '@silverhand/essentials';
 import camelCase from 'camelcase';
 
@@ -32,7 +32,7 @@ export const buildSamlAssertionNameId = (
     };
   }
 
-  // For persistent and unspecified formats, we use Logto user ID.
+  // For persistent and unspecified formats, we use MyEyesID user ID.
   if (format === NameIdFormat.Persistent || format === NameIdFormat.Unspecified) {
     return {
       NameIDFormat: format,

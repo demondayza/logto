@@ -1,7 +1,7 @@
-import type { LanguageTag } from '@logto/language-kit';
-import { builtInLanguages } from '@logto/phrases-experience';
-import { CaptchaType, type CreateSignInExperience, type SignInExperience } from '@logto/schemas';
-import { TtlCache } from '@logto/shared';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import { builtInLanguages } from '@myeyesid/phrases-experience';
+import { CaptchaType, type CreateSignInExperience, type SignInExperience } from '@myeyesid/schemas';
+import { TtlCache } from '@myeyesid/shared';
 
 import {
   mockAliyunDmConnector,
@@ -65,7 +65,7 @@ const connectorLibrary = createConnectorLibrary(queries, {
   getClient: jest.fn(),
 });
 
-const getLogtoConnectors = jest.spyOn(connectorLibrary, 'getLogtoConnectors');
+const getMyEyesIDConnectors = jest.spyOn(connectorLibrary, 'getMyEyesIDConnectors');
 
 const { createSignInExperienceLibrary } = await import('./index.js');
 const {
@@ -145,7 +145,7 @@ describe('remove unavailable social connector targets', () => {
       ...mockSignInExperience,
       socialSignInConnectorTargets: mockSocialConnectorTargets,
     });
-    getLogtoConnectors.mockResolvedValueOnce(mockSocialConnectors);
+    getMyEyesIDConnectors.mockResolvedValueOnce(mockSocialConnectors);
     expect(mockSocialConnectorTargets).toEqual([socialTarget01, socialTarget02]);
     await removeUnavailableSocialConnectorTargets();
     expect(updateDefaultSignInExperience).toBeCalledWith({
@@ -157,7 +157,7 @@ describe('remove unavailable social connector targets', () => {
 describe('getFullSignInExperience()', () => {
   it('should return full sign-in experience', async () => {
     findDefaultSignInExperience.mockResolvedValueOnce(mockSignInExperience);
-    getLogtoConnectors.mockResolvedValueOnce(mockSocialConnectors);
+    getMyEyesIDConnectors.mockResolvedValueOnce(mockSocialConnectors);
     mockSsoConnectorLibrary.getAvailableSsoConnectors.mockResolvedValueOnce([
       wellConfiguredSsoConnector,
     ]);
@@ -194,7 +194,7 @@ describe('getFullSignInExperience()', () => {
       ...mockSignInExperience,
       socialSignInConnectorTargets: ['github', 'facebook', 'google'],
     });
-    getLogtoConnectors.mockResolvedValueOnce([mockGoogleConnector, mockGithubConnector]);
+    getMyEyesIDConnectors.mockResolvedValueOnce([mockGoogleConnector, mockGithubConnector]);
     findAllCustomProfileFields.mockResolvedValueOnce(mockCustomProfileFields);
     mockSsoConnectorLibrary.getAvailableSsoConnectors.mockResolvedValueOnce([
       wellConfiguredSsoConnector,
@@ -237,7 +237,7 @@ describe('getFullSignInExperience()', () => {
 
 describe('get sso connectors', () => {
   it('should return empty array if dev feature is disabled', async () => {
-    getLogtoConnectors.mockResolvedValueOnce(mockSocialConnectors);
+    getMyEyesIDConnectors.mockResolvedValueOnce(mockSocialConnectors);
     findDefaultSignInExperience.mockResolvedValueOnce({
       ...mockSignInExperience,
       singleSignOnEnabled: false,
@@ -251,7 +251,7 @@ describe('get sso connectors', () => {
   });
 
   it('should return sso connectors metadata', async () => {
-    getLogtoConnectors.mockResolvedValueOnce(mockSocialConnectors);
+    getMyEyesIDConnectors.mockResolvedValueOnce(mockSocialConnectors);
     findDefaultSignInExperience.mockResolvedValueOnce(mockSignInExperience);
 
     mockSsoConnectorLibrary.getAvailableSsoConnectors.mockResolvedValueOnce([
@@ -273,10 +273,10 @@ describe('get sso connectors', () => {
   });
 
   it('should return displayName if provided', async () => {
-    getLogtoConnectors.mockResolvedValueOnce(mockSocialConnectors);
+    getMyEyesIDConnectors.mockResolvedValueOnce(mockSocialConnectors);
     findDefaultSignInExperience.mockResolvedValueOnce(mockSignInExperience);
 
-    const displayName = 'Logto Connector';
+    const displayName = 'MyEyesID Connector';
 
     mockSsoConnectorLibrary.getAvailableSsoConnectors.mockResolvedValueOnce([
       {
@@ -330,7 +330,7 @@ describe('forgot password methods', () => {
       ...mockSignInExperience,
       forgotPasswordMethods: null, // Test null case
     });
-    getLogtoConnectors.mockResolvedValueOnce([mockAliyunDmConnector, mockAliyunSmsConnector]);
+    getMyEyesIDConnectors.mockResolvedValueOnce([mockAliyunDmConnector, mockAliyunSmsConnector]);
     mockSsoConnectorLibrary.getAvailableSsoConnectors.mockResolvedValueOnce([]);
 
     const fullSignInExperience = await getFullSignInExperience({ locale: 'en' });
@@ -346,7 +346,7 @@ describe('forgot password methods', () => {
       ...mockSignInExperience,
       forgotPasswordMethods: null,
     });
-    getLogtoConnectors.mockResolvedValueOnce([]); // No connectors
+    getMyEyesIDConnectors.mockResolvedValueOnce([]); // No connectors
     mockSsoConnectorLibrary.getAvailableSsoConnectors.mockResolvedValueOnce([]);
 
     const fullSignInExperience = await getFullSignInExperience({ locale: 'en' });

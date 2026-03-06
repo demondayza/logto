@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { useState, useCallback, useMemo } from 'react';
 import type { ChangeEventHandler } from 'react';
 

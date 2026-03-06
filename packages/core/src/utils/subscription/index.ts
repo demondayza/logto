@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 
 import { type CloudConnectionLibrary } from '#src/libraries/cloud-connection.js';

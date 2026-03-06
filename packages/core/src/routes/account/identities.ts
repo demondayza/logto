@@ -1,6 +1,6 @@
-import { appInsights } from '@logto/app-insights/node';
-import { UserScope } from '@logto/core-kit';
-import { VerificationType, AccountCenterControlValue } from '@logto/schemas';
+import { appInsights } from '@myeyesid/app-insights/node';
+import { UserScope } from '@myeyesid/core-kit';
+import { VerificationType, AccountCenterControlValue } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import { z } from 'zod';
 

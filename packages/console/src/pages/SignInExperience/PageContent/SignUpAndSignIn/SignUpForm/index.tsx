@@ -1,4 +1,4 @@
-import { SignInIdentifier, type SignInExperience } from '@logto/schemas';
+import { SignInIdentifier, type SignInExperience } from '@myeyesid/schemas';
 import { useEffect, useMemo } from 'react';
 import { Controller, useFormContext, useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';

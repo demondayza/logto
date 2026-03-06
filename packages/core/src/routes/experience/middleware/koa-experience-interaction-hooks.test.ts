@@ -1,4 +1,4 @@
-import { ConsoleLog } from '@logto/shared';
+import { ConsoleLog } from '@myeyesid/shared';
 import { type ParameterizedContext } from 'koa';
 import { type Provider } from 'oidc-provider';
 

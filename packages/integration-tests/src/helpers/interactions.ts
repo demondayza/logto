@@ -2,8 +2,8 @@ import type {
   EmailPasswordPayload,
   PhonePasswordPayload,
   UsernamePasswordPayload,
-} from '@logto/schemas';
-import { InteractionEvent } from '@logto/schemas';
+} from '@myeyesid/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 
 import {
   createSocialAuthorizationUri,

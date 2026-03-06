@@ -1,4 +1,4 @@
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import {
   expectConfirmModalAndAct,
   expectMainPageWithTitle,
@@ -16,20 +16,20 @@ import { expectToCreateWebhook } from './helpers.js';
 await page.setViewport({ width: 1280, height: 720 });
 
 describe('webhooks', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   beforeAll(async () => {
     await goToAdminConsole();
   });
 
   it('navigates to webhooks page on clicking sidebar menu', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/webhooks', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/webhooks', myeyesidConsoleUrl).href));
 
     await expectMainPageWithTitle(page, 'Webhooks');
   });
 
   it('can create a new webhook', async () => {
-    await page.goto(appendPathname('/console/webhooks', logtoConsoleUrl).href);
+    await page.goto(appendPathname('/console/webhooks', myeyesidConsoleUrl).href);
 
     await expectToCreateWebhook(page);
 
@@ -43,12 +43,12 @@ describe('webhooks', () => {
       (element) => element.textContent
     );
     if (hookId) {
-      expect(page.url()).toBe(new URL(`console/webhooks/${hookId}/settings`, logtoConsoleUrl).href);
+      expect(page.url()).toBe(new URL(`console/webhooks/${hookId}/settings`, myeyesidConsoleUrl).href);
     }
   });
 
   it('fails to create webhook if no event is provided', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/webhooks', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/webhooks', myeyesidConsoleUrl).href));
 
     await expect(page).toClick('div[class$=main] div[class$=headline] > button');
     await expect(page).toFill('input[name=name]', 'hook_name');
@@ -60,7 +60,7 @@ describe('webhooks', () => {
   });
 
   it('can create webhook if endpoint url is an HTTP url', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/webhooks', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/webhooks', myeyesidConsoleUrl).href));
 
     await expect(page).toClick('div[class$=main] div[class$=headline] > button');
     await expect(page).toClick('span[class$=label]', { text: 'PostRegister' });
@@ -74,7 +74,7 @@ describe('webhooks', () => {
   });
 
   it('can update webhook details', async () => {
-    await page.goto(appendPathname('/console/webhooks', logtoConsoleUrl).href);
+    await page.goto(appendPathname('/console/webhooks', myeyesidConsoleUrl).href);
 
     await expectToCreateWebhook(page);
 
@@ -86,7 +86,7 @@ describe('webhooks', () => {
   });
 
   it('can disable or enable a webhook', async () => {
-    await page.goto(appendPathname('/console/webhooks', logtoConsoleUrl).href);
+    await page.goto(appendPathname('/console/webhooks', myeyesidConsoleUrl).href);
     await expectToCreateWebhook(page);
 
     // Disable webhook
@@ -112,7 +112,7 @@ describe('webhooks', () => {
   });
 
   it('can regenerate signing key for a webhook', async () => {
-    await page.goto(appendPathname('/console/webhooks', logtoConsoleUrl).href);
+    await page.goto(appendPathname('/console/webhooks', myeyesidConsoleUrl).href);
     await expectToCreateWebhook(page);
     await expect(page).toClick('button[class$=regenerateButton]');
 

@@ -14,7 +14,7 @@ type DeprecatedAdminConsoleData = {
   furtherReadingsChecked: boolean;
 } & Record<string, unknown>;
 
-type DeprecatedLogtoAdminConsoleConfig = {
+type DeprecatedMyEyesIDAdminConsoleConfig = {
   tenantId: string;
   value: DeprecatedAdminConsoleData;
 };
@@ -29,16 +29,16 @@ type AdminConsoleData = {
   m2mApplicationCreated: boolean;
 } & Record<string, unknown>;
 
-type LogtoAdminConsoleConfig = {
+type MyEyesIDAdminConsoleConfig = {
   tenantId: string;
   value: AdminConsoleData;
 };
 
 const alterAdminConsoleData = async (
-  logtoConfig: DeprecatedLogtoAdminConsoleConfig,
+  myeyesidConfig: DeprecatedMyEyesIDAdminConsoleConfig,
   pool: DatabaseTransactionConnection
 ) => {
-  const { tenantId, value: adminConsoleConfig } = logtoConfig;
+  const { tenantId, value: adminConsoleConfig } = myeyesidConfig;
 
   const {
     demoChecked,
@@ -56,17 +56,17 @@ const alterAdminConsoleData = async (
   };
 
   await pool.query(
-    sql`update logto_configs set value = ${JSON.stringify(
+    sql`update myeyesid_configs set value = ${JSON.stringify(
       newAdminConsoleData
     )} where tenant_id = ${tenantId} and key = ${adminConsoleConfigKey}`
   );
 };
 
 const rollbackAdminConsoleData = async (
-  logtoConfig: LogtoAdminConsoleConfig,
+  myeyesidConfig: MyEyesIDAdminConsoleConfig,
   pool: DatabaseTransactionConnection
 ) => {
-  const { tenantId, value: adminConsoleConfig } = logtoConfig;
+  const { tenantId, value: adminConsoleConfig } = myeyesidConfig;
 
   const {
     livePreviewChecked,
@@ -84,7 +84,7 @@ const rollbackAdminConsoleData = async (
   };
 
   await pool.query(
-    sql`update logto_configs set value = ${JSON.stringify(
+    sql`update myeyesid_configs set value = ${JSON.stringify(
       originAdminConsoleData
     )} where tenant_id = ${tenantId} and key = ${adminConsoleConfigKey}`
   );
@@ -92,14 +92,14 @@ const rollbackAdminConsoleData = async (
 
 const alteration: AlterationScript = {
   up: async (pool) => {
-    const rows = await pool.many<DeprecatedLogtoAdminConsoleConfig>(
-      sql`select * from logto_configs where key = ${adminConsoleConfigKey}`
+    const rows = await pool.many<DeprecatedMyEyesIDAdminConsoleConfig>(
+      sql`select * from myeyesid_configs where key = ${adminConsoleConfigKey}`
     );
     await Promise.all(rows.map(async (row) => alterAdminConsoleData(row, pool)));
   },
   down: async (pool) => {
-    const rows = await pool.many<LogtoAdminConsoleConfig>(
-      sql`select * from logto_configs where key = ${adminConsoleConfigKey}`
+    const rows = await pool.many<MyEyesIDAdminConsoleConfig>(
+      sql`select * from myeyesid_configs where key = ${adminConsoleConfigKey}`
     );
     await Promise.all(rows.map(async (row) => rollbackAdminConsoleData(row, pool)));
   },

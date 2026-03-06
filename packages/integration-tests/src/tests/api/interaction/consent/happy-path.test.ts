@@ -1,5 +1,5 @@
-import { ReservedResource, UserScope } from '@logto/core-kit';
-import { type Application, InteractionEvent, ApplicationType } from '@logto/schemas';
+import { ReservedResource, UserScope } from '@myeyesid/core-kit';
+import { type Application, InteractionEvent, ApplicationType } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 
 import { deleteUser } from '#src/api/admin-user.js';

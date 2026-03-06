@@ -1,4 +1,4 @@
-import { AgreeToTermsPolicy, experience } from '@logto/schemas';
+import { AgreeToTermsPolicy, experience } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 import { Navigate } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
 import { SESv2Client } from '@aws-sdk/client-sesv2';
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 
 import createConnector from './index.js';
 import { mockedConfig, mockGenericI18nEmailTemplate } from './mock.js';
@@ -61,7 +61,7 @@ describe('sendMessage()', () => {
     await connector.sendMessage({
       to: toMail,
       type: TemplateType.OrganizationInvitation,
-      payload: { code: '1234', link: 'https://logto.dev' },
+      payload: { code: '1234', link: 'https://myeyesid.dev' },
     });
     const toExpected = [toMail];
     expect(SESv2Client.prototype.send).toHaveBeenCalledWith(
@@ -74,7 +74,7 @@ describe('sendMessage()', () => {
               Subject: { Data: 'Organization invitation', Charset: 'utf8' },
               Body: {
                 Html: {
-                  Data: 'Your link is https://logto.dev',
+                  Data: 'Your link is https://myeyesid.dev',
                 },
               },
             },
@@ -95,7 +95,7 @@ describe('sendMessage()', () => {
     await connector.sendMessage({
       to: toMail,
       type: TemplateType.Generic,
-      payload: { code: '1234', link: 'https://logto.dev' },
+      payload: { code: '1234', link: 'https://myeyesid.dev' },
     });
     const toExpected = [toMail];
     expect(SESv2Client.prototype.send).toHaveBeenCalledWith(

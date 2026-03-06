@@ -68,7 +68,7 @@ const connectors = {
     callback_uri_description:
       "Yeniden yönlendirme URI'si, sosyal yetkilendirmeden sonra kullanıcıların yönlendirildiği yerdir. Bu URI'yi IdP yapılandırmanıza ekleyin.",
     callback_uri_custom_domain_description:
-      "MyEyesID'da birden fazla <a>özel alan adı</a> kullanıyorsanız, sosyal oturum açmanın her alan adında çalışması için ilgili tüm geri dönüş URI'lerini IdP'nize eklediğinizden emin olun.\n\nVarsayılan MyEyesID alan adı (*.logto.app) her zaman geçerlidir; yalnızca o alan adı altında oturumları desteklemek istiyorsanız ekleyin.",
+      "MyEyesID'da birden fazla <a>özel alan adı</a> kullanıyorsanız, sosyal oturum açmanın her alan adında çalışması için ilgili tüm geri dönüş URI'lerini IdP'nize eklediğinizden emin olun.\n\nVarsayılan MyEyesID alan adı (*.myeyesid.app) her zaman geçerlidir; yalnızca o alan adı altında oturumları desteklemek istiyorsanız ekleyin.",
     acs_url: 'Assertion consumer service URL',
   },
   platform: {

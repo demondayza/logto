@@ -1,4 +1,4 @@
-import { SsoProviderName } from '@logto/schemas';
+import { SsoProviderName } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import {
@@ -92,7 +92,7 @@ describe('post sso-connectors', () => {
         providerName: SsoProviderName.OIDC,
         connectorName: 'test',
         config: {
-          clientId: 'logto.io',
+          clientId: 'myeyesid.io',
         },
       })
     ).rejects.toThrow(HTTPError);

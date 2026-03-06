@@ -1,4 +1,4 @@
-import { generateDarkColor } from '@logto/core-kit';
+import { generateDarkColor } from '@myeyesid/core-kit';
 
 import type { CreateSignInExperience } from '../db-entries/index.js';
 import { SignInMode } from '../db-entries/index.js';
@@ -29,7 +29,7 @@ export const createDefaultSignInExperience = (
       logoUrl: isCloud ? undefined : '/logo-light.svg',
       darkLogoUrl: isCloud ? undefined : '/logo-dark.svg',
     },
-    hideLogtoBranding: false,
+    hideMyEyesIDBranding: false,
     languageInfo: {
       autoDetect: true,
       fallbackLanguage: 'en' as const,

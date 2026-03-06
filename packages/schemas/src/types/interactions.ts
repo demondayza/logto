@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { emailRegEx, numberAndAlphabetRegEx, phoneRegEx, usernameRegEx } from '@logto/core-kit';
+import { emailRegEx, numberAndAlphabetRegEx, phoneRegEx, usernameRegEx } from '@myeyesid/core-kit';
 import { z } from 'zod';
 
 import {
@@ -21,8 +21,8 @@ import {
 } from './verification-code.js';
 
 /**
- * User interaction events defined in Logto RFC 0004.
- * @see {@link https://github.com/logto-io/rfcs | Logto RFCs} for more information.
+ * User interaction events defined in MyEyesID RFC 0004.
+ * @see {@link https://github.com/myeyesid-io/rfcs | MyEyesID RFCs} for more information.
  */
 export enum InteractionEvent {
   SignIn = 'SignIn',

@@ -1,7 +1,7 @@
-import { type SchemaLike } from '@logto/shared/universal';
+import { type SchemaLike } from '@myeyesid/shared/universal';
 import type { ZodObject, ZodType, ZodOptional, ZodTypeAny } from 'zod';
 
-export type { SchemaLike, SchemaValue, SchemaValuePrimitive } from '@logto/shared/universal';
+export type { SchemaLike, SchemaValue, SchemaValuePrimitive } from '@myeyesid/shared/universal';
 
 type ParseOptional<K> = undefined extends K
   ? ZodOptional<ZodType<Exclude<K, undefined>>>

@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 
@@ -10,7 +10,7 @@ const tables: string[] = [
   'connectors',
   'custom_phrases',
   'logs',
-  'logto_configs',
+  'myeyesid_configs',
   'oidc_model_instances',
   'passcodes',
   'resources',
@@ -67,7 +67,7 @@ const alteration: AlterationScript = {
     `);
 
     // Create role and setup privileges
-    const baseRole = `logto_tenant_${database}`;
+    const baseRole = `myeyesid_tenant_${database}`;
     const baseRoleId = getId(baseRole);
 
     // See `_after_all.sql` for comments
@@ -112,7 +112,7 @@ const alteration: AlterationScript = {
     );
 
     // Create database role for default tenant
-    const role = `logto_tenant_${database}_${defaultTenantId}`;
+    const role = `myeyesid_tenant_${database}_${defaultTenantId}`;
     const password = generateStandardId(32);
 
     await pool.query(sql`
@@ -128,8 +128,8 @@ const alteration: AlterationScript = {
   },
   down: async (pool) => {
     const database = await getDatabaseName(pool);
-    const baseRoleId = getId(`logto_tenant_${database}`);
-    const role = `logto_tenant_${database}_${defaultTenantId}`;
+    const baseRoleId = getId(`myeyesid_tenant_${database}`);
+    const role = `myeyesid_tenant_${database}_${defaultTenantId}`;
 
     // Disable RLS
     await Promise.all(

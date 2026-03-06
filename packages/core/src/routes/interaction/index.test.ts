@@ -1,6 +1,6 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { demoAppApplicationId, InteractionEvent } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { demoAppApplicationId, InteractionEvent } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
 import RequestError from '#src/errors/RequestError/index.js';
@@ -8,7 +8,7 @@ import type koaAuditLog from '#src/middleware/koa-audit-log.js';
 import { createMockLogContext } from '#src/test-utils/koa-audit-log.js';
 import { createMockProvider } from '#src/test-utils/oidc-provider.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 import { createRequester } from '#src/utils/test-utils.js';
 
 import { interactionPrefix } from './const.js';
@@ -16,7 +16,7 @@ import { interactionPrefix } from './const.js';
 const { jest } = import.meta;
 const { mockEsmDefault, mockEsmWithActual } = createMockUtils(jest);
 
-const getLogtoConnectorByIdHelper = jest.fn(async (connectorId: string) => {
+const getMyEyesIDConnectorByIdHelper = jest.fn(async (connectorId: string) => {
   const metadata = {
     id: connectorId,
   };
@@ -106,8 +106,8 @@ const tenantContext = new MockTenant(
     },
   },
   {
-    getLogtoConnectorById: async (connectorId: string) => {
-      const connector = await getLogtoConnectorByIdHelper(connectorId);
+    getMyEyesIDConnectorById: async (connectorId: string) => {
+      const connector = await getMyEyesIDConnectorByIdHelper(connectorId);
 
       if (connector.type !== ConnectorType.Social) {
         throw new RequestError({
@@ -117,7 +117,7 @@ const tenantContext = new MockTenant(
       }
 
       // @ts-expect-error
-      return connector as LogtoConnector;
+      return connector as MyEyesIDConnector;
     },
   },
   {
@@ -149,7 +149,7 @@ describe('interaction routes', () => {
     it('should call validations properly', async () => {
       const body = {
         event: InteractionEvent.SignIn,
-        identifier: { email: 'email@logto.io', password: 'password' },
+        identifier: { email: 'email@myeyesid.io', password: 'password' },
         profile: { phone: '1234567890' },
       };
       const response = await sessionRequest.put(path).send(body);
@@ -308,7 +308,7 @@ describe('interaction routes', () => {
 
     it('should update identifiers properly', async () => {
       const body = {
-        email: 'email@logto.io',
+        email: 'email@myeyesid.io',
         verificationCode: 'verificationCode',
       };
       const response = await sessionRequest.patch(path).send(body);
@@ -330,7 +330,7 @@ describe('interaction routes', () => {
 
     it('PUT /interaction/profile', async () => {
       const body = {
-        email: 'email@logto.io',
+        email: 'email@myeyesid.io',
       };
       const response = await sessionRequest.put(path).send(body);
       expect(verifyProfileSettings).toBeCalled();
@@ -341,7 +341,7 @@ describe('interaction routes', () => {
 
     it('PATCH /interaction/profile', async () => {
       const body = {
-        email: 'email@logto.io',
+        email: 'email@myeyesid.io',
       };
       const response = await sessionRequest.patch(path).send(body);
       expect(verifyProfileSettings).toBeCalled();

@@ -3,7 +3,7 @@ import type {
   ConnectorFactoryResponse,
   ConnectorResponse,
   CreateConnector,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type KyInstance } from 'ky';
 
 import { authedAdminApi } from './api.js';

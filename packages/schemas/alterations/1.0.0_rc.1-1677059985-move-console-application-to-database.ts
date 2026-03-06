@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import { sql } from '@silverhand/slonik';
 
 import type { AlterationScript } from '../lib/types/alteration.js';
@@ -19,7 +19,7 @@ const alteration: AlterationScript = {
         'admin-console',
         'Admin Console',
         ${generateStandardId()},
-        'Logto Admin Console.',
+        'MyEyesID Admin Console.',
         'SPA',
         '{ "redirectUris": [], "postLogoutRedirectUris": [] }'::jsonb
       );

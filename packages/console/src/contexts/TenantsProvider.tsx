@@ -1,4 +1,4 @@
-import { adminTenantId, defaultTenantId, TenantTag } from '@logto/schemas';
+import { adminTenantId, defaultTenantId, TenantTag } from '@myeyesid/schemas';
 import { conditionalArray, noop } from '@silverhand/essentials';
 import type { ReactNode } from 'react';
 import { useCallback, useMemo, createContext, useState } from 'react';
@@ -46,7 +46,7 @@ const reservedRoutes: Readonly<string[]> = Object.freeze([
  *
  * @example
  * ```md
- * [Console > Applications](https://cloud.logto.io/to/applications)
+ * [Console > Applications](https://cloud.myeyesid.io/to/applications)
  * ```
  */
 export const reservedTenantIdWildcard = 'to';
@@ -103,9 +103,9 @@ type Props = {
  * also for navigating between tenants.
  *
  * Note it is not practical to use `useSWR()` for tenants context, since fetching tenants
- * requires authentication, and the authentication is managed by the `LogtoProvider` which
+ * requires authentication, and the authentication is managed by the `MyEyesIDProvider` which
  * depends and locates inside the `TenantsProvider`. Thus the fetching tenants action should
- * be done by a component inside the `LogtoProvider`, which `useSWR()` cannot handle.
+ * be done by a component inside the `MyEyesIDProvider`, which `useSWR()` cannot handle.
  */
 function TenantsProvider({ children }: Props) {
   const [tenants, setTenants] = useState(initialTenants);

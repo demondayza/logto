@@ -4,7 +4,7 @@
 
 SAML (Security Assertion Markup Language) is an open standard for exchanging authentication and authorization data between parties, in particular, between an identity provider (IdP) and a service provider (SP). It allows users to authenticate with one system and then access resources in another system without having to re-enter their credentials. SAML is commonly used in enterprise environments and in federation scenarios, where multiple organizations need to share user authentication and authorization information.
 
-Logto serve as a SP and SAML connector help to build bridges between Logto and SAML IdPs, as a result, end-users should be able to take advantage of SAML IdPs to sign in to Logto account.
+MyEyesID serve as a SP and SAML connector help to build bridges between MyEyesID and SAML IdPs, as a result, end-users should be able to take advantage of SAML IdPs to sign in to MyEyesID account.
 
 ## Create social IdP's account and register SAML application (IdP)
 
@@ -14,11 +14,11 @@ Before we kicking off, you can go to a social identity provider which supports S
 
 If your IdP mandate the encryption of SAML assertion and receiving of signed authentication requests, you should generate your private key and corresponding certificate using RSA algorithm. Keep the private key for your SP use and upload the certificate to IdP.
 
-You also need to configure the ACS (Assertion Consumer Service) URL as `${your_logto_origin}/api/authn/saml/${connector_id}` to handle IdP's SAML assertion. Where you can find your `connectorId` at SAML connector's details page in Logto's Admin Console.
+You also need to configure the ACS (Assertion Consumer Service) URL as `${your_myeyesid_origin}/api/authn/saml/${connector_id}` to handle IdP's SAML assertion. Where you can find your `connectorId` at SAML connector's details page in MyEyesID's Admin Console.
 
 > ℹ️ **Note**
 >
-> Per current Logto's design, we only support Redirect-binding for sending authentication request and POST-binding for receiving SAML assertion. Although this sounds not cool, but we believe that the current design can handle most of your use cases. If you have any problems, feel free to reach out!
+> Per current MyEyesID's design, we only support Redirect-binding for sending authentication request and POST-binding for receiving SAML assertion. Although this sounds not cool, but we believe that the current design can handle most of your use cases. If you have any problems, feel free to reach out!
 
 ## Configure SAML connector (SP)
 
@@ -50,11 +50,11 @@ The field is used to place contents from your IdP metadata XML file.
 
 ### Assertion Consumer Service URL `Required`
 
-The assertion consumer service (ACS) URL is the SP's endpoint to receive IdP's SAML Assertion POST requests. As we mentioned in previous part, it is usually configured at IdP settings but some IdP get this value from SAML authentication requests, we hence also add this value as a REQUIRED field. It's value should look like `${your_logto_origin}/api/authn/saml/${connector_id}`.
+The assertion consumer service (ACS) URL is the SP's endpoint to receive IdP's SAML Assertion POST requests. As we mentioned in previous part, it is usually configured at IdP settings but some IdP get this value from SAML authentication requests, we hence also add this value as a REQUIRED field. It's value should look like `${your_myeyesid_origin}/api/authn/saml/${connector_id}`.
 
 ### Signature Algorithm
 
-This should be aligned with the signature algorithms of IdP so that Logto can verify the signature of the SAML assertion. Its value should be either `http://www.w3.org/2000/09/xmldsig#rsa-sha1`, `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256` or `http://www.w3.org/2001/04/xmldsig-more#rsa-sha512` and the default value is `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
+This should be aligned with the signature algorithms of IdP so that MyEyesID can verify the signature of the SAML assertion. Its value should be either `http://www.w3.org/2000/09/xmldsig#rsa-sha1`, `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256` or `http://www.w3.org/2001/04/xmldsig-more#rsa-sha512` and the default value is `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
 
 ### Message Signing Order
 
@@ -110,7 +110,7 @@ If `SAML Assertion Encrypted` is `true`, the corresponding certificate generated
 
 ### Profile Mapping
 
-Logto also provide a `Profile Mapping` field that users can customize the mapping from the social vendors' profiles which are usually not standard. Each `Profile Mapping` keys is Logto's standard user profile field name and corresponding value should be social profiles field name. In current stage, Logto only concern 'id', 'name', 'avatar', 'email' and 'phone' from social profile, only 'id' is REQUIRED and others are optional fields.
+MyEyesID also provide a `Profile Mapping` field that users can customize the mapping from the social vendors' profiles which are usually not standard. Each `Profile Mapping` keys is MyEyesID's standard user profile field name and corresponding value should be social profiles field name. In current stage, MyEyesID only concern 'id', 'name', 'avatar', 'email' and 'phone' from social profile, only 'id' is REQUIRED and others are optional fields.
 
 ### Config types
 

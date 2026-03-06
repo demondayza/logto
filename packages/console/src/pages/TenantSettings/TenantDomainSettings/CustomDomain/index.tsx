@@ -1,4 +1,4 @@
-import { type CustomDomain as CustomDomainType, DomainStatus } from '@logto/schemas';
+import { type CustomDomain as CustomDomainType, DomainStatus } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import ActivationProcess from './ActivationProcess';

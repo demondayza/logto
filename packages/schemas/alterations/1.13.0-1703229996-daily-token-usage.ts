@@ -13,7 +13,7 @@ const getDatabaseName = async (pool: CommonQueryMethods) => {
 };
 
 const enableRls = async (pool: CommonQueryMethods, database: string, table: string) => {
-  const baseRoleId = sql.identifier([`logto_tenant_${database}`]);
+  const baseRoleId = sql.identifier([`myeyesid_tenant_${database}`]);
 
   await pool.query(sql`
     create trigger set_tenant_id before insert on ${sql.identifier([table])}

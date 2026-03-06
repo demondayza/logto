@@ -8,9 +8,9 @@ import { generateStandardId } from './utils/1716643968-id-generation.js';
 const isCi = yes(process.env.CI);
 
 const defaultTenantId = 'default';
-const defaultTenantManagementApiIndicator = `https://${defaultTenantId}.logto.app/api`;
-const roleName = 'Logto Management API access';
-const roleDescription = 'This default role grants access to the Logto management API.';
+const defaultTenantManagementApiIndicator = `https://${defaultTenantId}.myeyesid.app/api`;
+const roleName = 'MyEyesID Management API access';
+const roleDescription = 'This default role grants access to the MyEyesID management API.';
 enum RoleType {
   MachineToMachine = 'MachineToMachine',
 }
@@ -50,7 +50,7 @@ const alteration: AlterationScript = {
       );
     `);
 
-    // Assign Logto Management API permission `all` to the Logto Management API M2M role
+    // Assign MyEyesID Management API permission `all` to the MyEyesID Management API M2M role
     await pool.query(sql`
       insert into roles_scopes (id, role_id, scope_id, tenant_id)
       values (

@@ -1,11 +1,11 @@
 /**
  * @overview This file implements the `token_exchange` grant type. The grant type is used to impersonate
  *
- * @see {@link https://github.com/logto-io/rfcs | Logto RFCs} for more information about RFC 0005.
+ * @see {@link https://github.com/myeyesid-io/rfcs | MyEyesID RFCs} for more information about RFC 0005.
  */
 
-import { buildOrganizationUrn } from '@logto/core-kit';
-import { GrantType } from '@logto/schemas';
+import { buildOrganizationUrn } from '@myeyesid/core-kit';
+import { GrantType } from '@myeyesid/schemas';
 import type { Provider } from 'oidc-provider';
 import { errors } from 'oidc-provider';
 import resolveResource from 'oidc-provider/lib/helpers/resolve_resource.js';

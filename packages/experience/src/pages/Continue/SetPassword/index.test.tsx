@@ -1,9 +1,9 @@
-import { InteractionEvent } from '@logto/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 import { act, waitFor, fireEvent } from '@testing-library/react';
 
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings } from '@/__mocks__/myeyesid';
 import { fulfillProfile } from '@/apis/experience';
 
 import SetPassword from '.';

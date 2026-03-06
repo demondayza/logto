@@ -1,4 +1,4 @@
-import { InteractionEvent, MfaFactor, SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, MfaFactor, SignInIdentifier } from '@myeyesid/schemas';
 import { authenticator } from 'otplib';
 
 import {

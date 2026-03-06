@@ -1,7 +1,7 @@
-import { logtoUiCookieGuard, logtoCookieKey } from '@logto/schemas';
+import { myeyesidUiCookieGuard, myeyesidCookieKey } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import { type Context } from 'koa';
 
-export const getLogtoCookie = (ctx: Context) =>
-  trySafe(() => logtoUiCookieGuard.parse(JSON.parse(ctx.cookies.get(logtoCookieKey) ?? '{}'))) ??
+export const getMyEyesIDCookie = (ctx: Context) =>
+  trySafe(() => myeyesidUiCookieGuard.parse(JSON.parse(ctx.cookies.get(myeyesidCookieKey) ?? '{}'))) ??
   {};

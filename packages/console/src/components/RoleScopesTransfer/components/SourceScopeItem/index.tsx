@@ -1,4 +1,4 @@
-import type { ScopeResponse } from '@logto/schemas';
+import type { ScopeResponse } from '@myeyesid/schemas';
 
 import Checkbox from '@/ds-components/Checkbox';
 import { onKeyDownHandler } from '@/utils/a11y';

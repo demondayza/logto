@@ -1,6 +1,6 @@
-import type { BindMfa, MfaVerification } from '@logto/schemas';
-import { MfaFactor, UsersPasswordEncryptionMethod } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import type { BindMfa, MfaVerification } from '@myeyesid/schemas';
+import { MfaFactor, UsersPasswordEncryptionMethod } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import { encryptPassword } from '#src/utils/password.js';
 

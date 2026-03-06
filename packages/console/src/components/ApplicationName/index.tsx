@@ -1,5 +1,5 @@
-import type { Application } from '@logto/schemas';
-import { adminConsoleApplicationId } from '@logto/schemas';
+import type { Application } from '@myeyesid/schemas';
+import { adminConsoleApplicationId } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';

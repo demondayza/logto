@@ -1,5 +1,5 @@
-import type { LanguageTag } from '@logto/language-kit';
-import { builtInLanguages as builtInUiLanguages } from '@logto/phrases-experience';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import { builtInLanguages as builtInUiLanguages } from '@myeyesid/phrases-experience';
 import { deduplicate } from '@silverhand/essentials';
 import { useCallback, useMemo } from 'react';
 import useSWR from 'swr';

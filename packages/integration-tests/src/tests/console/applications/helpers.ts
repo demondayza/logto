@@ -83,7 +83,7 @@ export const expectToProceedSdkGuide = async (
 
   await expectToOpenNewPage(
     browser,
-    appendPath(new URL('https://github.com/logto-io'), sample.repo, 'tree/HEAD', sample.path).href
+    appendPath(new URL('https://github.com/myeyesid-io'), sample.repo, 'tree/HEAD', sample.path).href
   );
 
   if (!skipFillForm) {

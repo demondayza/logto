@@ -1,4 +1,4 @@
-import type { User, UserSignInCountry } from '@logto/schemas';
+import type { User, UserSignInCountry } from '@myeyesid/schemas';
 
 import { type WithLogContext } from '#src/middleware/koa-audit-log.js';
 import type Queries from '#src/tenants/Queries.js';

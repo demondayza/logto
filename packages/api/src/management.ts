@@ -8,13 +8,13 @@ import { type paths } from './generated-types/management.js';
  */
 export type CreateManagementApiOptions = {
   /**
-   * The client ID for the machine-to-machine application in Logto. This application must be
+   * The client ID for the machine-to-machine application in MyEyesID. This application must be
    * granted access to the Management API.
-   * @see https://a.logto.io/m2m-mapi for more details on configuring machine-to-machine access.
+   * @see https://a.myeyesid.io/m2m-mapi for more details on configuring machine-to-machine access.
    */
   clientId: string;
   /**
-   * The client secret for the machine-to-machine application in Logto.
+   * The client secret for the machine-to-machine application in MyEyesID.
    * This should be kept secure and not exposed in client-side code.
    */
   clientSecret: string;
@@ -50,7 +50,7 @@ export type CreateApiClientOptions = {
  * @param tenantId The tenant ID to construct the base URL.
  * @returns The base URL for the Management API.
  */
-export const getBaseUrl = (tenantId: string) => `https://${tenantId}.logto.app`;
+export const getBaseUrl = (tenantId: string) => `https://${tenantId}.myeyesid.app`;
 
 /**
  * Returns the API indicator for the Management API based on the tenant ID.
@@ -78,10 +78,10 @@ export const allScope = 'all';
  * @returns A configured API client with type-safe methods.
  * @example
  * ```ts
- * import { createApiClient } from '@logto/api/management';
+ * import { createApiClient } from '@myeyesid/api/management';
  *
  * const client = createApiClient({
- *   baseUrl: 'https://my-tenant.logto.app',
+ *   baseUrl: 'https://my-tenant.myeyesid.app',
  *   getToken: async () => getYourToken(),
  * });
  *
@@ -126,9 +126,9 @@ type ManagementApiReturnType = {
  * Creates a Management API client with the specified tenant ID and options.
  *
  * Before using this function, ensure that you have created a machine-to-machine application in
- * Logto and granted it access to the Management API. See the documentation for more details:
+ * MyEyesID and granted it access to the Management API. See the documentation for more details:
  *
- * https://a.logto.io/m2m-mapi
+ * https://a.myeyesid.io/m2m-mapi
  *
  * This function sets up the API client with the necessary authentication using client credentials.
  * It will automatically handle token retrieval and renewal as needed.
@@ -139,9 +139,9 @@ type ManagementApiReturnType = {
  * @returns An object containing the API client and client credentials instance.
  * @example
  * ```ts
- * import { createManagementApi } from '@logto/api/management';
+ * import { createManagementApi } from '@myeyesid/api/management';
  *
- * // Logto Cloud example
+ * // MyEyesID Cloud example
  * const { apiClient, clientCredentials } = createManagementApi('my-tenant-id', {
  *   clientId: 'my-client-id',
  *   clientSecret: 'my-client-secret',
@@ -158,8 +158,8 @@ type ManagementApiReturnType = {
  * const { apiClient, clientCredentials } = createManagementApi('default', {
  *   clientId: 'my-client-id',
  *   clientSecret: 'my-client-secret',
- *   baseUrl: 'https://my-oss-logto-instance.com',
- *   apiIndicator: 'https://default.logto.app/api',
+ *   baseUrl: 'https://my-oss-myeyesid-instance.com',
+ *   apiIndicator: 'https://default.myeyesid.app/api',
  * });
  * ```
  */
@@ -187,7 +187,7 @@ export function createManagementApi(
 
       if (scope !== allScope) {
         console.warn(
-          `The scope "${scope}" is not equal to the expected value "${allScope}". This may cause issues with API access. See https://a.logto.io/m2m-mapi to learn more about configuring machine-to-machine access to the Management API.`
+          `The scope "${scope}" is not equal to the expected value "${allScope}". This may cause issues with API access. See https://a.myeyesid.io/m2m-mapi to learn more about configuring machine-to-machine access to the Management API.`
         );
       }
 

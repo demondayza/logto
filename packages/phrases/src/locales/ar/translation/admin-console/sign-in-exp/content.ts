@@ -38,9 +38,9 @@ const content = {
     subtitle:
       'قم بتعريب تجربة المنتج عن طريق إضافة لغات وترجمات. يمكن تعيين مساهمتك كلغة افتراضية.',
     add_language: 'إضافة لغة',
-    logto_provided: 'توفرها MyEyesID',
+    myeyesid_provided: 'توفرها MyEyesID',
     key: 'مفتاح',
-    logto_source_values: 'قيم المصدر MyEyesID',
+    myeyesid_source_values: 'قيم المصدر MyEyesID',
     custom_values: 'قيم مخصصة',
     clear_all_tip: 'مسح جميع القيم',
     unsaved_description: 'لن يتم حفظ التغييرات إذا غادرت هذه الصفحة دون حفظها.',

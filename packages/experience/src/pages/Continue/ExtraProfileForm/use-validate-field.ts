@@ -1,10 +1,10 @@
-import { isValidUrl } from '@logto/core-kit';
+import { isValidUrl } from '@myeyesid/core-kit';
 import {
   CustomProfileFieldType,
   SupportedDateFormat,
   type FieldPart,
   type CustomProfileFieldBaseConfig,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { format, parse, isValid } from 'date-fns';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -17,7 +17,7 @@ import CustomDomainEndpointNotice from '@/mdx-components/CustomDomainEndpointNot
 
 </Step>
 
-<Step title="Init LogtoClient">
+<Step title="Init MyEyesIDClient">
 
 In this step, we'll add global-level custom code to your Webflow site. Since NPM is not supported in Webflow, we'll use the [jsdelivr.com](https://www.jsdelivr.com/) CDN service to import the MyEyesID SDK.
 
@@ -25,12 +25,12 @@ Open the "Site settings" page, and navigate to the "Custom code" section. Add th
 
 <Code className="language-html">
     {`<script type="module">
-  // Import \`@logto/browser\` SDK from the jsdelivr CDN
-  import LogtoClient from 'https://esm.run/@logto/browser';
+  // Import \`@myeyesid/browser\` SDK from the jsdelivr CDN
+  import MyEyesIDClient from 'https://esm.run/@myeyesid/browser';
 
-  // Assign the \`logtoClient\` instance to window object,
+  // Assign the \`myeyesidClient\` instance to window object,
   // enabling global usage in other pages
-  window.logtoClient = new LogtoClient({
+  window.myeyesidClient = new MyEyesIDClient({
     endpoint: '${props.endpoint}',
     appId: '${props.app.id}',
   });
@@ -65,7 +65,7 @@ Return to your Webflow designer, drag and drop a "Sign in" button to the home pa
 <Code className="language-html">
     {`<script type="module">
   const signInButton = document.getElementById('sign-in');
-  const onClickSignIn = () => logtoClient.signIn('${props.redirectUris[0] ?? 'https://your-awesome-site.webflow.io/callback'}');
+  const onClickSignIn = () => myeyesidClient.signIn('${props.redirectUris[0] ?? 'https://your-awesome-site.webflow.io/callback'}');
   signInButton.addEventListener('click', onClickSignIn);
 </script>`}
 </Code>
@@ -80,7 +80,7 @@ First let's create a "Callback" page in Webflow, and simply put some static text
 <script type="module">
   (async () => {
     // Handle sign-in callback logic by calling the SDK method
-    await logtoClient.handleSignInCallback(window.location.href);
+    await myeyesidClient.handleSignInCallback(window.location.href);
 
     // Redirect back to the home page when the handling is done
     window.location.assign('https://your-awesome-site.webflow.io');
@@ -102,7 +102,7 @@ Return to the Webflow designer, and add a “Sign out” button on your home pag
 
 <Code className="language-js">
     {`const signOutButton = document.getElementById('sign-out');
-const onClickSignOut = () => logtoClient.signOut('${props.postLogoutRedirectUris[0] ?? 'https://your-awesome-site.webflow.io'}');
+const onClickSignOut = () => myeyesidClient.signOut('${props.postLogoutRedirectUris[0] ?? 'https://your-awesome-site.webflow.io'}');
 signOutButton.addEventListener('click', onClickSignOut);`}
 </Code>
 
@@ -110,12 +110,12 @@ signOutButton.addEventListener('click', onClickSignOut);`}
 
 <Step title="Handle authentication status">
 
-In MyEyesID SDK, generally we can use `logtoClient.isAuthenticated()` method to check the authentication status, if the user is signed in, the value will be `true`; otherwise, it will be `false`.
+In MyEyesID SDK, generally we can use `myeyesidClient.isAuthenticated()` method to check the authentication status, if the user is signed in, the value will be `true`; otherwise, it will be `false`.
 
 In your Webflow site, you can also use it to programmatically show and hide the sign-in and sign-out buttons. Apply the following custom code to adjust button CSS accordingly.
 
 ```js
-const isAuthenticated = await logtoClient.isAuthenticated();
+const isAuthenticated = await myeyesidClient.isAuthenticated();
 
 signInButton.style.display = isAuthenticated ? 'none' : 'block';
 signOutButton.style.display = isAuthenticated ? 'block' : 'none';

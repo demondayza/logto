@@ -1,4 +1,4 @@
-import type { AdminConsoleKey } from '@logto/phrases';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
 import type { Nullable } from '@silverhand/essentials';
 import type { ReactElement } from 'react';
 import { cloneElement } from 'react';

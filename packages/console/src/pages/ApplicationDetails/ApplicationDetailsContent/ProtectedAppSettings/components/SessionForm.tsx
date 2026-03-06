@@ -1,4 +1,4 @@
-import { type Application, type SnakeCaseOidcConfig } from '@logto/schemas';
+import { type Application, type SnakeCaseOidcConfig } from '@myeyesid/schemas';
 import { type ChangeEvent } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import useSWRImmutable from 'swr/immutable';

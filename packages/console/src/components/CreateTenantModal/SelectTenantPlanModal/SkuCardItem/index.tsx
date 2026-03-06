@@ -1,10 +1,10 @@
-import { maxFreeTenantLimit, adminTenantId, ReservedPlanId } from '@logto/schemas';
+import { maxFreeTenantLimit, adminTenantId, ReservedPlanId } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useContext, useMemo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg?react';
-import { type LogtoSkuResponse } from '@/cloud/types/router';
+import { type MyEyesIDSkuResponse } from '@/cloud/types/router';
 import PlanDescription from '@/components/PlanDescription';
 import SkuName from '@/components/SkuName';
 import { pricingLink } from '@/consts';
@@ -20,7 +20,7 @@ import FeaturedSkuContent from './FeaturedSkuContent';
 import styles from './index.module.scss';
 
 type Props = {
-  readonly sku: LogtoSkuResponse;
+  readonly sku: MyEyesIDSkuResponse;
   readonly onSelect: () => void;
   readonly buttonProps?: Partial<ButtonProps>;
 };

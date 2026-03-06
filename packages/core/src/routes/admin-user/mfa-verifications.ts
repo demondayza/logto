@@ -1,5 +1,5 @@
-import { MfaFactor, userMfaVerificationResponseGuard } from '@logto/schemas';
-import { getUserDisplayName } from '@logto/shared';
+import { MfaFactor, userMfaVerificationResponseGuard } from '@myeyesid/schemas';
+import { getUserDisplayName } from '@myeyesid/shared';
 import { authenticator } from 'otplib';
 import qrcode from 'qrcode';
 import { object, string, z } from 'zod';

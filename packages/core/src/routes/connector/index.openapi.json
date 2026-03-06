@@ -2,7 +2,7 @@
   "tags": [
     {
       "name": "Connectors",
-      "description": "Connectors are the bridge between Logto and other third-party vendors who provide short message service (SMS), email service, or user information on wildly accepted social media.\n\nTo learn more about connectors, please see [🪛 Configure connectors](https://docs.logto.io/docs/recipes/configure-connectors/)."
+      "description": "Connectors are the bridge between MyEyesID and other third-party vendors who provide short message service (SMS), email service, or user information on wildly accepted social media.\n\nTo learn more about connectors, please see [🪛 Configure connectors](https://docs.myeyesid.io/docs/recipes/configure-connectors/)."
     }
   ],
   "paths": {
@@ -22,7 +22,7 @@
                     "description": "The connector factory ID for creating the connector."
                   },
                   "syncProfile": {
-                    "description": "Whether to sync user profile from the identity provider to Logto at each sign-in. If `false`, the user profile will only be synced when the user is created."
+                    "description": "Whether to sync user profile from the identity provider to MyEyesID at each sign-in. If `false`, the user profile will only be synced when the user is created."
                   },
                   "config": {
                     "description": "The connector config object that will be passed to the connector. The config object should be compatible with the connector factory."
@@ -89,7 +89,7 @@
               "schema": {
                 "properties": {
                   "syncProfile": {
-                    "description": "Whether to sync user profile from the identity provider to Logto at each sign-in. If `false`, the user profile will only be synced when the user is created."
+                    "description": "Whether to sync user profile from the identity provider to MyEyesID at each sign-in. If `false`, the user profile will only be synced when the user is created."
                   },
                   "config": {
                     "description": "The connector config object that will be passed to the connector. The config object should be compatible with the connector factory."

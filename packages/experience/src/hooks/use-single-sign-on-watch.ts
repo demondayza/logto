@@ -3,7 +3,7 @@ import {
   SignInIdentifier,
   experience,
   type SsoConnectorMetadata,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, useContext, useEffect } from 'react';
 
 import SingleSignOnFormModeContext from '@/Providers/SingleSignOnFormModeContextProvider/SingleSignOnFormModeContext';

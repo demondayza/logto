@@ -1,6 +1,6 @@
-import { isLanguageTag } from '@logto/language-kit';
-import { isBuiltInLanguageTag as isPhrasesBuiltInLanguageTag } from '@logto/phrases';
-import { isBuiltInLanguageTag as isPhrasesUiBuiltInLanguageTag } from '@logto/phrases-experience';
+import { isLanguageTag } from '@myeyesid/language-kit';
+import { isBuiltInLanguageTag as isPhrasesBuiltInLanguageTag } from '@myeyesid/phrases';
+import { isBuiltInLanguageTag as isPhrasesUiBuiltInLanguageTag } from '@myeyesid/phrases-experience';
 import type { CommandModule } from 'yargs';
 
 import { createFullTranslation } from './openai.js';
@@ -19,7 +19,7 @@ const create: CommandModule<{ path?: string }, { path?: string; 'language-tag': 
   handler: async ({ path: inputPath, languageTag }) => {
     if (!isLanguageTag(languageTag)) {
       consoleLog.fatal(
-        'Invalid language tag. Run `logto translate list-tags` to see available list.'
+        'Invalid language tag. Run `myeyesid translate list-tags` to see available list.'
       );
     }
 

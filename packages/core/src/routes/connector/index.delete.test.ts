@@ -1,12 +1,12 @@
-import { ConnectorType } from '@logto/schemas';
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+import { ConnectorType } from '@myeyesid/schemas';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockConnector, mockConnectorFactory } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
 import type Queries from '#src/tenants/Queries.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 import { createRequester } from '#src/utils/test-utils.js';
 
 const { jest } = import.meta;
@@ -14,10 +14,10 @@ const { mockEsmWithActual } = createMockUtils(jest);
 
 const removeUnavailableSocialConnectorTargets = jest.fn();
 
-const getLogtoConnectors: jest.MockedFunction<() => Promise<LogtoConnector[]>> = jest.fn();
-const getLogtoConnectorById: jest.MockedFunction<(connectorId: string) => Promise<LogtoConnector>> =
+const getMyEyesIDConnectors: jest.MockedFunction<() => Promise<MyEyesIDConnector[]>> = jest.fn();
+const getMyEyesIDConnectorById: jest.MockedFunction<(connectorId: string) => Promise<MyEyesIDConnector>> =
   jest.fn(async (connectorId: string) => {
-    const connectors = await getLogtoConnectors();
+    const connectors = await getMyEyesIDConnectors();
     const connector = connectors.find(({ dbEntry }) => dbEntry.id === connectorId);
 
     assertThat(
@@ -54,8 +54,8 @@ const tenantContext = new MockTenant(
   undefined,
   { connectors: connectorQueries },
   {
-    getLogtoConnectors,
-    getLogtoConnectorById,
+    getMyEyesIDConnectors,
+    getMyEyesIDConnectorById,
   },
   {
     signInExperiences: { removeUnavailableSocialConnectorTargets },

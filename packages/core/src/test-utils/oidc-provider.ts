@@ -34,7 +34,7 @@ export const createMockProvider = (
 
     originalWarn(...args);
   });
-  const provider = new Provider('https://logto.test');
+  const provider = new Provider('https://myeyesid.test');
 
   warn.mockRestore();
 

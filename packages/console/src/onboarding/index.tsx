@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { useContext, useEffect } from 'react';
 import { Navigate, type RouteObject, useRoutes } from 'react-router-dom';
 

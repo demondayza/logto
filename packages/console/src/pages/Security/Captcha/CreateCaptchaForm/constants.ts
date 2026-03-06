@@ -1,4 +1,4 @@
-import { CaptchaType } from '@logto/schemas';
+import { CaptchaType } from '@myeyesid/schemas';
 
 import recaptchaEnterprise from '@/assets/images/recaptcha.svg?react';
 import turnstile from '@/assets/images/turnstile.svg?react';
@@ -28,7 +28,7 @@ Turnstile is a CAPTCHA service that helps protect your website from spam and abu
 2. Navigate to **Turnstile** > **Add widget**.
 3. Fill out the form with the following details:
    - **Widget name**: Any name you want to give to the widget
-   - **Hostname**: MyEyesID's endpoint domain, e.g. https://[tenant-id].logto.app
+   - **Hostname**: MyEyesID's endpoint domain, e.g. https://[tenant-id].myeyesid.app
    - **Widget Mode**: You can leave as default, or choose the one suits you best
 
 ## Get the site key and secret key

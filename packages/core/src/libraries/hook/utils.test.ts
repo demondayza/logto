@@ -1,5 +1,5 @@
-import { type HookEvent, InteractionHookEvent } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { type HookEvent, InteractionHookEvent } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import ky from 'ky';
 
 const { jest } = import.meta;
@@ -24,7 +24,7 @@ describe('sendWebhookRequest', () => {
     const mockEvent: HookEvent = InteractionHookEvent.PostSignIn;
     const testPayload = generateHookTestPayload(mockHookId, mockEvent);
 
-    const mockUrl = 'https://logto.gg';
+    const mockUrl = 'https://myeyesid.gg';
     const mockSigningKey = 'mockSigningKey';
 
     await sendWebhookRequest({
@@ -38,9 +38,9 @@ describe('sendWebhookRequest', () => {
 
     expect(post).toBeCalledWith(mockUrl, {
       headers: {
-        'user-agent': 'Logto (https://logto.io/)',
+        'user-agent': 'MyEyesID (https://myeyesid.io/)',
         foo: 'bar',
-        'logto-signature-sha-256': mockSignature,
+        'myeyesid-signature-sha-256': mockSignature,
       },
       json: testPayload,
       retry: { limit: 3 },

@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { TenantTag } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { TenantTag } from '@myeyesid/schemas';
 
 import TenantEnvTag from '@/components/TenantEnvTag';
 import Divider from '@/ds-components/Divider';

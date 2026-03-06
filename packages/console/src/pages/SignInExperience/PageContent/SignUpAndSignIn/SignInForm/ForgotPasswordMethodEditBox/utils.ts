@@ -1,5 +1,5 @@
-import type { AdminConsoleKey } from '@logto/phrases';
-import { ForgotPasswordMethod } from '@logto/schemas';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
+import { ForgotPasswordMethod } from '@myeyesid/schemas';
 
 type ForgotPasswordMethodPhrase = {
   [key in ForgotPasswordMethod]: AdminConsoleKey;

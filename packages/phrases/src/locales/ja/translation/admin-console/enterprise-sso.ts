@@ -38,7 +38,7 @@ const enterprise_sso = {
       redirect_uri_field_description:
         'Redirect URI は、SSO 認証の後にユーザーがリダイレクトされる場所です。この URI を IdP の設定に追加してください。',
       redirect_uri_field_custom_domain_description:
-        'MyEyesID で複数の<a>カスタムドメイン</a>を使用する場合は、すべての対応するコールバック URI を IdP に追加し、各ドメインで SSO が機能するようにしてください。\n\nMyEyesID の既定ドメイン (*.logto.app) は常に有効です。そのドメインで SSO をサポートしたい場合にのみ含めてください。',
+        'MyEyesID で複数の<a>カスタムドメイン</a>を使用する場合は、すべての対応するコールバック URI を IdP に追加し、各ドメインで SSO が機能するようにしてください。\n\nMyEyesID の既定ドメイン (*.myeyesid.app) は常に有効です。そのドメインで SSO をサポートしたい場合にのみ含めてください。',
     },
   },
   attribute_mapping: {

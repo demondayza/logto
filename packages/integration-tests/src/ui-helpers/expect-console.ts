@@ -2,7 +2,7 @@ import path from 'node:path';
 
 import { appendPath, condString } from '@silverhand/essentials';
 
-import { consolePassword, consoleUsername, logtoConsoleUrl } from '#src/constants.js';
+import { consolePassword, consoleUsername, myeyesidConsoleUrl } from '#src/constants.js';
 import { cls, dcls, waitFor } from '#src/utils.js';
 
 import ExpectPage, { ExpectPageError } from './expect-page.js';
@@ -32,7 +32,7 @@ export default class ExpectConsole extends ExpectPage {
   constructor(thePage = global.page, options: ExpectConsoleOptions = {}) {
     super(thePage);
     this.options = {
-      endpoint: new URL(logtoConsoleUrl),
+      endpoint: new URL(myeyesidConsoleUrl),
       tenantId: 'console',
       ...options,
     };

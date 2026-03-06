@@ -19,7 +19,7 @@ void yargs(hideBin(process.argv))
   })
   .option('version', {
     alias: 'v',
-    describe: 'Print Logto translate CLI version',
+    describe: 'Print MyEyesID translate CLI version',
     type: 'boolean',
     global: false,
   })
@@ -36,7 +36,7 @@ void yargs(hideBin(process.argv))
   .option('path', {
     alias: 'p',
     type: 'string',
-    describe: 'The path to your Logto instance directory',
+    describe: 'The path to your MyEyesID instance directory',
   })
   .option('skip-core-check', {
     alias: 'sc',

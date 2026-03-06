@@ -1,10 +1,10 @@
-import type { CreateApplication } from '@logto/schemas';
+import type { CreateApplication } from '@myeyesid/schemas';
 import {
   ApplicationType,
   accountCenterApplicationId,
   adminConsoleApplicationId,
   demoAppApplicationId,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { appendPath, tryThat, conditional } from '@silverhand/essentials';
 import { addSeconds } from 'date-fns';
 import type { AdapterFactory, AllClientMetadata } from 'oidc-provider';
@@ -85,8 +85,8 @@ const buildAccountCenterClientMetadata = (envSet: EnvSet): AllClientMetadata => 
  *
  * - @see {@link https://github.com/panva/node-oidc-provider/blob/main/docs/README.md#clients}
  * - client metadata scope must be a valid OP scope, otherwise a invalid metadata error will be thrown. @see{@link https://github.com/panva/node-oidc-provider/blob/main/lib/helpers/client_schema.js#L626}
- * - resource scopes (including Logto organization scopes) are not include in the OP scope, it won't be validate by the client metadata scope as well. @see {@link https://github.com/panva/node-oidc-provider/blob/main/lib/actions/authorization/check_scope.js#L47}
- * - resource scopes (including Logto organization scopes) will be filtered in the resource server's scopes fetching method. @see {@link https://github.com/panva/node-oidc-provider/blob/main/docs/README.md#getresourceserverinfo}
+ * - resource scopes (including MyEyesID organization scopes) are not include in the OP scope, it won't be validate by the client metadata scope as well. @see {@link https://github.com/panva/node-oidc-provider/blob/main/lib/actions/authorization/check_scope.js#L47}
+ * - resource scopes (including MyEyesID organization scopes) will be filtered in the resource server's scopes fetching method. @see {@link https://github.com/panva/node-oidc-provider/blob/main/docs/README.md#getresourceserverinfo}
  *
  * Auth request will be rejected if the requested scopes are not included in the client scope metadata.
  */

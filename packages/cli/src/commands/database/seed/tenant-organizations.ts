@@ -11,7 +11,7 @@ import {
   tenantRoleScopes,
   getTenantOrganizationCreateData,
   Organizations,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import type { DatabaseTransactionConnection } from '@silverhand/slonik';
 
 import { insertInto } from '../../../database.js';

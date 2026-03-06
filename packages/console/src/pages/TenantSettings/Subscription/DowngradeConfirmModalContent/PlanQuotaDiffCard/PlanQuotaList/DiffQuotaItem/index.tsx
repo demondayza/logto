@@ -3,14 +3,14 @@ import classNames from 'classnames';
 
 import DescendArrow from '@/assets/icons/descend-arrow.svg?react';
 import Failed from '@/assets/icons/failed.svg?react';
-import { type LogtoSkuQuota } from '@/types/skus';
+import { type MyEyesIDSkuQuota } from '@/types/skus';
 
 import SkuQuotaItemPhrase from './SkuQuotaItemPhrase';
 import styles from './index.module.scss';
 
 type DiffSkuQuotaItemProps = {
-  readonly quotaKey: keyof LogtoSkuQuota;
-  readonly quotaValue: LogtoSkuQuota[keyof LogtoSkuQuota];
+  readonly quotaKey: keyof MyEyesIDSkuQuota;
+  readonly quotaValue: MyEyesIDSkuQuota[keyof MyEyesIDSkuQuota];
   readonly hasStatusIcon?: boolean;
 };
 

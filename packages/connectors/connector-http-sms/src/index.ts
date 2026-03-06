@@ -6,13 +6,13 @@ import type {
   SendMessageFunction,
   CreateConnector,
   SmsConnector,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
   validateConfig,
   ConnectorType,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import { defaultMetadata } from './constant.js';
 import { httpSmsConfigGuard } from './types.js';

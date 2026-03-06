@@ -1,4 +1,4 @@
-import { OrganizationUserRelations, UsersRoles, userProfileResponseGuard } from '@logto/schemas';
+import { OrganizationUserRelations, UsersRoles, userProfileResponseGuard } from '@myeyesid/schemas';
 import { type Nullable, tryThat } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

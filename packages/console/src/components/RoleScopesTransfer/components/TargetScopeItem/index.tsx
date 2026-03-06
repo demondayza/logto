@@ -1,4 +1,4 @@
-import type { ScopeResponse } from '@logto/schemas';
+import type { ScopeResponse } from '@myeyesid/schemas';
 
 import Close from '@/assets/icons/close.svg?react';
 import IconButton from '@/ds-components/IconButton';

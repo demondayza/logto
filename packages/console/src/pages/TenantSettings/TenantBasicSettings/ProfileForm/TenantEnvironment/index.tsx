@@ -1,11 +1,11 @@
-import { type TenantTag } from '@logto/schemas';
+import { type TenantTag } from '@myeyesid/schemas';
 import { useContext, useState } from 'react';
 
 import RocketIcon from '@/assets/icons/rocket.svg?react';
 import ConvertToProductionModal from '@/components/ConvertToProductionModal';
 import LearnMore from '@/components/LearnMore';
 import TenantEnvTag from '@/components/TenantEnvTag';
-import { logtoCloudTenantSettings } from '@/consts';
+import { myeyesidCloudTenantSettings } from '@/consts';
 import { TenantsContext } from '@/contexts/TenantsProvider';
 import Button from '@/ds-components/Button';
 import DynamicT from '@/ds-components/DynamicT';
@@ -33,7 +33,7 @@ function TenantEnvironment({ tag }: Props) {
                 : 'tenants.settings.production_description'
             }
           />
-          {isDevTenant && <LearnMore href={logtoCloudTenantSettings} />}
+          {isDevTenant && <LearnMore href={myeyesidCloudTenantSettings} />}
         </div>
       </div>
       {isDevTenant && !isDevOnlyRegion(currentTenant?.regionName) && (

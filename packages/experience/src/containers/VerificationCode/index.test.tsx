@@ -1,9 +1,9 @@
-import resource from '@logto/phrases-experience';
+import resource from '@myeyesid/phrases-experience';
 import {
   InteractionEvent,
   SignInIdentifier,
   type VerificationCodeIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { act, fireEvent, waitFor } from '@testing-library/react';
 
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
@@ -44,7 +44,7 @@ jest.mock('@/apis/experience', () => ({
 
 describe('<VerificationCode />', () => {
   const redirectTo = '/redirect';
-  const email = 'foo@logto.io';
+  const email = 'foo@myeyesid.io';
   const phone = '18573333333';
   const originalLocation = window.location;
   const verificationId = '123456';

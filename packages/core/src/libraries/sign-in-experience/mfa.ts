@@ -1,4 +1,4 @@
-import { MfaFactor, SignInIdentifier, type Mfa, type SignIn } from '@logto/schemas';
+import { MfaFactor, SignInIdentifier, type Mfa, type SignIn } from '@myeyesid/schemas';
 
 import assertThat from '#src/utils/assert-that.js';
 

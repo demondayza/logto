@@ -1,4 +1,4 @@
-import { CaptchaType } from '@logto/schemas';
+import { CaptchaType } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import RadioGroup, { Radio } from '@/ds-components/RadioGroup';

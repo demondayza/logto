@@ -1,5 +1,5 @@
-import { builtInLanguageOptions as consoleBuiltInLanguageOptions } from '@logto/phrases';
-import { Theme } from '@logto/schemas';
+import { builtInLanguageOptions as consoleBuiltInLanguageOptions } from '@myeyesid/phrases';
+import { Theme } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -83,7 +83,7 @@ function UserInfo() {
             // In OSS version, there will be a `/console` context path in the URL.
             const profileRouteWithConsoleContext = getUrl('/profile');
 
-            // Open the profile page in a new tab. In Logto Cloud, the profile page is not nested in the tenant independent,
+            // Open the profile page in a new tab. In MyEyesID Cloud, the profile page is not nested in the tenant independent,
             // whereas in OSS version, it is under the `/console` context path.
             window.open(isCloud ? '/profile' : profileRouteWithConsoleContext, '_blank');
           }}

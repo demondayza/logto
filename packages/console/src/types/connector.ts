@@ -1,4 +1,4 @@
-import type { ConnectorResponse, JsonObject } from '@logto/schemas';
+import type { ConnectorResponse, JsonObject } from '@myeyesid/schemas';
 import { type Nullable } from '@silverhand/essentials';
 
 export type ConnectorGroup<T = ConnectorResponse> = Pick<

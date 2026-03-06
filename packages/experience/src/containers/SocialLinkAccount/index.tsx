@@ -1,4 +1,4 @@
-import { SignInIdentifier, SignInMode } from '@logto/schemas';
+import { SignInIdentifier, SignInMode } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import type { TFuncKey } from 'i18next';
 import { useState } from 'react';

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { mockSsoConnectors } from '@/__mocks__/logto';
+import { mockSsoConnectors } from '@/__mocks__/myeyesid';
 
 import useSessionStorage, { StorageKeys } from './use-session-storages';
 

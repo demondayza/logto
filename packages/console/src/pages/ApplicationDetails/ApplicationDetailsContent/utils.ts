@@ -1,4 +1,4 @@
-import { customClientMetadataDefault, type ApplicationResponse } from '@logto/schemas';
+import { customClientMetadataDefault, type ApplicationResponse } from '@myeyesid/schemas';
 import { cond, conditional, type DeepPartial } from '@silverhand/essentials';
 
 import { isJsonObject } from '@/utils/json';

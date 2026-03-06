@@ -18,7 +18,7 @@ export default async function findUserByIdentifier(
 ) {
   const { findUserByEmail, findUserByUsername, findUserByPhone, findUserByIdentity } =
     queries.users;
-  const { getLogtoConnectorById } = connectors;
+  const { getMyEyesIDConnectorById } = connectors;
 
   if ('username' in identity) {
     return findUserByUsername(identity.username);
@@ -35,7 +35,7 @@ export default async function findUserByIdentifier(
   if ('connectorId' in identity) {
     const {
       metadata: { target },
-    } = await getLogtoConnectorById(identity.connectorId);
+    } = await getMyEyesIDConnectorById(identity.connectorId);
 
     return findUserByIdentity(target, identity.userInfo.id);
   }

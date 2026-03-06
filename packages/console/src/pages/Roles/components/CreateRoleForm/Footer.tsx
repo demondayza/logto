@@ -1,4 +1,4 @@
-import { RoleType, type ScopeResponse } from '@logto/schemas';
+import { RoleType, type ScopeResponse } from '@myeyesid/schemas';
 import { useContext } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 

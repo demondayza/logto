@@ -1,4 +1,4 @@
-import { ConnectorType, SignInIdentifier, MfaFactor, MfaPolicy } from '@logto/schemas';
+import { ConnectorType, SignInIdentifier, MfaFactor, MfaPolicy } from '@myeyesid/schemas';
 
 import {
   mockAliyunDmConnector,

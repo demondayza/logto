@@ -1,6 +1,6 @@
-import type { TemplateType } from '@logto/connector-kit';
-import type { Passcode, RequestVerificationCodePayload } from '@logto/schemas';
-import { Passcodes } from '@logto/schemas';
+import type { TemplateType } from '@myeyesid/connector-kit';
+import type { Passcode, RequestVerificationCodePayload } from '@myeyesid/schemas';
+import { Passcodes } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

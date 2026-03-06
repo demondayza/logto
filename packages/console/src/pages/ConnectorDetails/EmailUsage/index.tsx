@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { Trans, useTranslation } from 'react-i18next';
 
 import EmailSentIconDark from '@/assets/icons/email-sent-dark.svg?react';
@@ -29,7 +29,7 @@ function EmailUsage({ usage, isCompact }: Props) {
         usage
       ) : (
         <DynamicT
-          forKey="connector_details.logto_email.total_email_sent"
+          forKey="connector_details.myeyesid_email.total_email_sent"
           interpolation={{ value: usage }}
         />
       )}
@@ -40,7 +40,7 @@ function EmailUsage({ usage, isCompact }: Props) {
               a: (
                 <TextLink
                   href={getDocumentationUrl(
-                    'docs/recipes/configure-connectors/email-connector/configure-logto-email-service'
+                    'docs/recipes/configure-connectors/email-connector/configure-myeyesid-email-service'
                   )}
                   targetBlank="noopener"
                   onClick={closeTipHandler}
@@ -48,7 +48,7 @@ function EmailUsage({ usage, isCompact }: Props) {
               ),
             }}
           >
-            {t('connector_details.logto_email.total_email_sent_tip')}
+            {t('connector_details.myeyesid_email.total_email_sent_tip')}
           </Trans>
         )}
       >

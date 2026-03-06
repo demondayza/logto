@@ -5,8 +5,8 @@
 ### Patch Changes
 
 - Updated dependencies [57b0008ee8]
-  - @logto/core-kit@2.7.1
-  - @logto/phrases-experience@1.12.2
+  - @myeyesid/core-kit@2.7.1
+  - @myeyesid/phrases-experience@1.12.2
 
 ## 1.37.0
 
@@ -16,12 +16,12 @@
 
   Summary
 
-  - Release the Account Center single-page app as a built-in Logto application for end users.
+  - Release the Account Center single-page app as a built-in MyEyesID application for end users.
   - Support profile updates for primary email, phone, username, and password with verification flows.
   - Provide MFA management for TOTP, backup codes (download/regenerate), and passkeys (WebAuthn), including rename and delete actions.
   - Gate sensitive operations behind password/email/phone verification and surface dedicated success screens.
 
-  To learn more about this feature, please refer to the documentation: https://docs.logto.io/end-user-flows/account-settings/by-account-api
+  To learn more about this feature, please refer to the documentation: https://docs.myeyesid.io/end-user-flows/account-settings/by-account-api
 
 - eced1f02d4: add application context to JWT customizer
 
@@ -31,7 +31,7 @@
 
 - Updated dependencies [eced1f02d4]
 - Updated dependencies [b8ca1a40c7]
-  - @logto/phrases@1.26.0
+  - @myeyesid/phrases@1.26.0
 
 ## 1.36.0
 
@@ -62,13 +62,13 @@
 
   ## Background
 
-  Previously, Logto enforced mandatory user identifier collection during both sign-in and sign-up flows. Users were required to provide all identifiers configured as mandatory in the sign-up settings. This behavior applies to all sign-in methods except for enterprise SSO.
+  Previously, MyEyesID enforced mandatory user identifier collection during both sign-in and sign-up flows. Users were required to provide all identifiers configured as mandatory in the sign-up settings. This behavior applies to all sign-in methods except for enterprise SSO.
 
   For example:
 
   1. A new user signs up via a GitHub social connector
   2. The IdP does not provide a verified email address
-  3. Email is configured as a mandatory sign-up identifier in Logto
+  3. Email is configured as a mandatory sign-up identifier in MyEyesID
   4. In this case, the user would be prompted to provide and verify an email address before the account could be successfully created.
 
   ## Problem
@@ -81,16 +81,16 @@
 
   By default, this option is set to `false` to maintain existing behavior. Administrators can enable this option in the sign-in experience settings if they wish to allow users to skip mandatory identifier collection during social sign-in and sign-up.
 
-  On Logto console, this option is represented as a checkbox labeled "Require users to provide missing sign-up identifier" on the sign-in experience configuration page under the "Social sign-in" section. Checked by default.
+  On MyEyesID console, this option is represented as a checkbox labeled "Require users to provide missing sign-up identifier" on the sign-in experience configuration page under the "Social sign-in" section. Checked by default.
 
 - Updated dependencies [7cbe315dde]
 - Updated dependencies [c8b2caec5c]
 - Updated dependencies [317f9744d1]
 - Updated dependencies [ce65b07964]
-  - @logto/phrases@1.25.0
-  - @logto/shared@3.3.1
-  - @logto/core-kit@2.7.0
-  - @logto/phrases-experience@1.12.1
+  - @myeyesid/phrases@1.25.0
+  - @myeyesid/shared@3.3.1
+  - @myeyesid/core-kit@2.7.0
+  - @myeyesid/phrases-experience@1.12.1
 
 ## 1.35.0
 
@@ -113,7 +113,7 @@
 
 - a6858e76cf: update SAML relay state length and improve error handling
 
-  The data type of the `relay_state` column in the `saml_application_sessions` table has been changed from varchar(256) to varchar(512) to accommodate longer Relay State values. For example, when Firebase acts as a Service Provider and initiates a SAML request, the relay state length is approximately 300-400 characters, which previously prevented Firebase from integrating with Logto as an SP before this fix.
+  The data type of the `relay_state` column in the `saml_application_sessions` table has been changed from varchar(256) to varchar(512) to accommodate longer Relay State values. For example, when Firebase acts as a Service Provider and initiates a SAML request, the relay state length is approximately 300-400 characters, which previously prevented Firebase from integrating with MyEyesID as an SP before this fix.
 
   Additionally, we have updated the error handling logic in the APIs related to the SAML authentication flow to make error messages more straightforward.
 
@@ -123,8 +123,8 @@
 - Updated dependencies [d551f5ccc3]
 - Updated dependencies [7c87ebc068]
 - Updated dependencies [116dcf5e7d]
-  - @logto/phrases@1.24.0
-  - @logto/connector-kit@4.7.0
+  - @myeyesid/phrases@1.24.0
+  - @myeyesid/connector-kit@4.7.0
 
 ## 1.34.0
 
@@ -141,14 +141,14 @@
   Now set the OIDC grant TTL to 180 days so refresh tokens can live for their configured duration, also expand the refresh token TTL up to 180 days.
 
 - Updated dependencies [c3266a917a]
-  - @logto/phrases@1.23.0
+  - @myeyesid/phrases@1.23.0
 
 ## 1.33.0
 
 ### Patch Changes
 
 - Updated dependencies [47dbdd8332]
-  - @logto/phrases@1.22.0
+  - @myeyesid/phrases@1.22.0
 
 ## 1.32.0
 
@@ -156,11 +156,11 @@
 
 - ad4f9d6abf: add support to the OIDC standard authentication parameter `ui_locales`
 
-  We are now supporting the standard OIDC `ui_locales` auth parameter to customize the language of the authentication pages. You can pass the `ui_locales` parameter in the `signIn` method via the `extraParams` option in all Logto SDKs.
+  We are now supporting the standard OIDC `ui_locales` auth parameter to customize the language of the authentication pages. You can pass the `ui_locales` parameter in the `signIn` method via the `extraParams` option in all MyEyesID SDKs.
 
   ### What it does
 
-  - Determines the UI language of the Logto-hosted sign-in experience at runtime. Logto picks the first language tag in `ui_locales` that is supported in your tenant's language library.
+  - Determines the UI language of the MyEyesID-hosted sign-in experience at runtime. MyEyesID picks the first language tag in `ui_locales` that is supported in your tenant's language library.
   - Affects email localization for messages triggered by the interaction (e.g., verification code emails).
   - Exposes the original value to email templates as a variable `uiLocales`, allowing you to include it in the email subject/content if needed.
 
@@ -169,7 +169,7 @@
   If you want to display the sign-in page in French (Canada), you can do it like this:
 
   ```ts
-  await logtoClient.signIn({
+  await myeyesidClient.signIn({
     redirectUri: "https://your.app/callback",
     extraParams: {
       ui_locales: "fr-CA fr en",
@@ -177,7 +177,7 @@
   });
   ```
 
-  Refer to the [documentation](https://docs.logto.io/end-user-flows/authentication-parameters/ui-locales) for more details.
+  Refer to the [documentation](https://docs.myeyesid.io/end-user-flows/authentication-parameters/ui-locales) for more details.
 
 - 1fb8593659: add email/phone MFA via verification codes
 
@@ -189,7 +189,7 @@
   - Update Console to configure these factors and surface guidance/conflict warnings.
   - Support customizing forgot password methods in Sign-in Experience (related).
 
-  To learn more about this feature, please refer to the documentation: https://docs.logto.io/end-user-flows/mfa
+  To learn more about this feature, please refer to the documentation: https://docs.myeyesid.io/end-user-flows/mfa
 
 - 0ef4260e34: unify branding customization options between applications and organizations
 
@@ -209,9 +209,9 @@
 - Updated dependencies [147f257503]
 - Updated dependencies [1fb8593659]
 - Updated dependencies [0ef4260e34]
-  - @logto/connector-kit@4.6.0
-  - @logto/phrases-experience@1.12.0
-  - @logto/phrases@1.21.0
+  - @myeyesid/connector-kit@4.6.0
+  - @myeyesid/phrases-experience@1.12.0
+  - @myeyesid/phrases@1.21.0
 
 ## 1.31.0
 
@@ -232,21 +232,21 @@
   3. Test by signing up a new user in the demo app; a "Tell us about yourself" step will appear with your fields.
   4. Registration completes only after all required fields are filled.
 
-  Check out our [docs](https://docs.logto.io/end-user-flows/collect-user-profile) for more details.
+  Check out our [docs](https://docs.myeyesid.io/end-user-flows/collect-user-profile) for more details.
 
 ### Patch Changes
 
 - Updated dependencies [8ae82d585e]
-  - @logto/phrases-experience@1.11.0
-  - @logto/phrases@1.20.0
+  - @myeyesid/phrases-experience@1.11.0
+  - @myeyesid/phrases@1.20.0
 
 ## 1.30.1
 
 ### Patch Changes
 
 - Updated dependencies [4cc321dbb]
-  - @logto/core-kit@2.6.1
-  - @logto/phrases-experience@1.10.1
+  - @myeyesid/core-kit@2.6.1
+  - @myeyesid/phrases-experience@1.10.1
 
 ## 1.30.0
 
@@ -259,27 +259,27 @@
   - Affected endpoints:
     - `POST /api/verifications/social`
 
-- 0343699d7: feat: introduce Logto Secret Vault and federated token set storage
+- 0343699d7: feat: introduce MyEyesID Secret Vault and federated token set storage
 
-  This update introduces the new [Secret vault](https://docs.logto.io/secret-vault/) feature in Logto.
+  This update introduces the new [Secret vault](https://docs.myeyesid.io/secret-vault/) feature in MyEyesID.
 
   The Secret Vault is designed to securely store sensitive user data — such as access tokens, API keys, passcodes, and other confidential information. These secrets are typically used to access third-party services on behalf of users, making secure storage essential.
 
-  With this release, federated token set storage support is added to both social and enterprise SSO connectors. When enabled, Logto will securely store the token set issued by the provider after a successful user authentication. Applications can then retrieve the access token later to access third-party APIs without requiring the user to reauthenticate.
+  With this release, federated token set storage support is added to both social and enterprise SSO connectors. When enabled, MyEyesID will securely store the token set issued by the provider after a successful user authentication. Applications can then retrieve the access token later to access third-party APIs without requiring the user to reauthenticate.
 
   Supported connectors include:
 
   - **Social connectors**: GitHub, Google, Facebook, Standard OAuth 2.0, and Standard OIDC.
   - **Enterprise SSO connectors**: All OIDC-based SSO connectors.
 
-  1. Enable the token storage as needed for social and enterprise SSO connectors in the Logto Console or via the Logto Management API.
-  2. Once enabled, Logto will automatically store the token set issued by the provider after a successful user authentication.
-  3. After the token set is stored, you can retrieve the access token via the Logto Account API for the user. This allows your application to access third-party APIs without requiring the user to reauthenticate.
+  1. Enable the token storage as needed for social and enterprise SSO connectors in the MyEyesID Console or via the MyEyesID Management API.
+  2. Once enabled, MyEyesID will automatically store the token set issued by the provider after a successful user authentication.
+  3. After the token set is stored, you can retrieve the access token via the MyEyesID Account API for the user. This allows your application to access third-party APIs without requiring the user to reauthenticate.
 
-  For more details, please check the [Federated token set storage](https://docs.logto.io/secret-vault/federated-token-set) documentation.
+  For more details, please check the [Federated token set storage](https://docs.myeyesid.io/secret-vault/federated-token-set) documentation.
 
   Note:
-  For OSS users, to enable the Secret Vault feature, you must set the `SECRET_VAULT_KEK` environment variable to a valid base64 enabled secret key. This key is used to encrypt and decrypt the secrets stored in the vault. For more information, please refer to the [configuration variables](https://docs.logto.io/concepts/core-service/configuration#variables) documentation.
+  For OSS users, to enable the Secret Vault feature, you must set the `SECRET_VAULT_KEK` environment variable to a valid base64 enabled secret key. This key is used to encrypt and decrypt the secrets stored in the vault. For more information, please refer to the [configuration variables](https://docs.myeyesid.io/concepts/core-service/configuration#variables) documentation.
 
 ### Patch Changes
 
@@ -291,7 +291,7 @@
 
   ### Root cause
 
-  Logto applies Row Level Security (RLS) on all tables to isolate tenant data access. When joining the `users` table with `organization_user_relations`, the actual user data becomes inaccessible to the current tenant due to RLS restrictions, causing user data to return `null` and triggering 500 server errors.
+  MyEyesID applies Row Level Security (RLS) on all tables to isolate tenant data access. When joining the `users` table with `organization_user_relations`, the actual user data becomes inaccessible to the current tenant due to RLS restrictions, causing user data to return `null` and triggering 500 server errors.
 
   ### Solution
 
@@ -302,7 +302,7 @@
   As a result, the account API will be enabled by default, allowing users to access and manage their accounts. To control the visibility and accessibility of individual fields, use the `fields` property. By default, all fields are inaccessible; you can selectively enable them as needed.
 
 - Updated dependencies [34964af46]
-  - @logto/connector-kit@4.4.0
+  - @myeyesid/connector-kit@4.4.0
 
 ## 1.29.0
 
@@ -314,7 +314,7 @@
 
 - db77aad7a: feat: introduced new `oidc_session_extensions` table
 
-  This change introduces a new table named `oidc_session_extensions` to the Logto database schema. This table is designed to store additional user session-related data for OpenID Connect (OIDC) sessions, allowing for more flexible and extensible session management.
+  This change introduces a new table named `oidc_session_extensions` to the MyEyesID database schema. This table is designed to store additional user session-related data for OpenID Connect (OIDC) sessions, allowing for more flexible and extensible session management.
 
 - a9324332a: change user password_encrypted length to 256
 
@@ -327,16 +327,16 @@
   1. Bind a WebAuthn passkey to the user's account through your website.
   2. Manage the passkeys in the user's account.
 
-  We implemented [Related Origin Requests](https://passkeys.dev/docs/advanced/related-origins/) so that you can manage the WebAuthn passkeys in your website which has a different domain from the Logto's sign-in page.
+  We implemented [Related Origin Requests](https://passkeys.dev/docs/advanced/related-origins/) so that you can manage the WebAuthn passkeys in your website which has a different domain from the MyEyesID's sign-in page.
 
-  To learn more, checkout the [documentation](https://docs.logto.io/end-user-flows/account-settings/by-account-api).
+  To learn more, checkout the [documentation](https://docs.myeyesid.io/end-user-flows/account-settings/by-account-api).
 
 ## 1.28.0
 
 ### Patch Changes
 
 - Updated dependencies [35bbc4399]
-  - @logto/shared@3.3.0
+  - @myeyesid/shared@3.3.0
 
 ## 1.27.0
 
@@ -344,7 +344,7 @@
 
 - e69ea0373: feat: add new `sentinelPolicy` field to the `signInExperience` settings
 
-  We have introduced a new field, `sentinelPolicy`, in the `signInExperience` settings. This field allows customization of lockout settings for identifiers in your Logto application. By default, it is set to an empty object, which means the default lockout policy will apply. The properties of the new field are as follows:
+  We have introduced a new field, `sentinelPolicy`, in the `signInExperience` settings. This field allows customization of lockout settings for identifiers in your MyEyesID application. By default, it is set to an empty object, which means the default lockout policy will apply. The properties of the new field are as follows:
 
   ```ts
   type SentinelPolicy = {
@@ -383,12 +383,12 @@
 - Updated dependencies [2961d355d]
 - Updated dependencies [0a76f3389]
 - Updated dependencies [e69ea0373]
-  - @logto/connector-kit@4.3.0
-  - @logto/language-kit@1.2.0
-  - @logto/phrases-experience@1.10.0
-  - @logto/core-kit@2.6.0
-  - @logto/phrases@1.19.0
-  - @logto/shared@3.2.0
+  - @myeyesid/connector-kit@4.3.0
+  - @myeyesid/language-kit@1.2.0
+  - @myeyesid/phrases-experience@1.10.0
+  - @myeyesid/core-kit@2.6.0
+  - @myeyesid/phrases@1.19.0
+  - @myeyesid/shared@3.2.0
 
 ## 1.26.0
 
@@ -466,8 +466,8 @@
 
   ### Sign-in experience settings
 
-  - `@logto/core`: Update the `/api/sign-in-experience` endpoint to support the new `secondaryIdentifiers` field in the sign-up settings.
-  - `@logto/console`: Replace the sign-up identifier single selector with a multi-selector to support multiple sign-up identifiers. The order of the identifiers can be rearranged by dragging and dropping the items in the list. The first item in the list will be considered the primary identifier and stored in the `signUp.identifiers` field, while the rest will be stored in the `signUp.secondaryIdentifiers` field.
+  - `@myeyesid/core`: Update the `/api/sign-in-experience` endpoint to support the new `secondaryIdentifiers` field in the sign-up settings.
+  - `@myeyesid/console`: Replace the sign-up identifier single selector with a multi-selector to support multiple sign-up identifiers. The order of the identifiers can be rearranged by dragging and dropping the items in the list. The first item in the list will be considered the primary identifier and stored in the `signUp.identifiers` field, while the rest will be stored in the `signUp.secondaryIdentifiers` field.
 
   ### End-user experience
 
@@ -489,7 +489,7 @@
 ### Patch Changes
 
 - Updated dependencies [5da01bc47]
-  - @logto/language-kit@1.1.3
+  - @myeyesid/language-kit@1.1.3
 
 ## 1.25.0
 
@@ -530,7 +530,7 @@
 ### Patch Changes
 
 - Updated dependencies [b0135bcd3]
-  - @logto/connector-kit@4.2.0
+  - @myeyesid/connector-kit@4.2.0
 
 ## 1.24.1
 
@@ -540,19 +540,19 @@
 - Updated dependencies [0b785ee0d]
 - Updated dependencies [5086f4bd2]
 - Updated dependencies [e11e57de8]
-  - @logto/phrases@1.18.0
-  - @logto/connector-kit@4.1.1
-  - @logto/language-kit@1.1.1
-  - @logto/core-kit@2.5.4
-  - @logto/shared@3.1.4
-  - @logto/phrases-experience@1.9.1
+  - @myeyesid/phrases@1.18.0
+  - @myeyesid/connector-kit@4.1.1
+  - @myeyesid/language-kit@1.1.1
+  - @myeyesid/core-kit@2.5.4
+  - @myeyesid/shared@3.1.4
+  - @myeyesid/phrases-experience@1.9.1
 
 ## 1.24.0
 
 ### Patch Changes
 
 - Updated dependencies [1337669e1]
-  - @logto/phrases@1.17.0
+  - @myeyesid/phrases@1.17.0
 
 ## 1.23.1
 
@@ -579,8 +579,8 @@
 
 - Updated dependencies [f1b1d9e95]
 - Updated dependencies [239b81e31]
-  - @logto/phrases@1.16.0
-  - @logto/core-kit@2.5.2
+  - @myeyesid/phrases@1.16.0
+  - @myeyesid/core-kit@2.5.2
 
 ## 1.22.0
 
@@ -590,7 +590,7 @@
 
   Added support email and website info to the error pages of the experience app. E.g. when a user tries to access a page that doesn't exist, or when the social session is not found in a social callback page. This will help users to contact support easily when they encounter an error.
 
-  You may configure the support email and website info in the sign-in experience settings page in the Logto console or through the management API.
+  You may configure the support email and website info in the sign-in experience settings page in the MyEyesID console or through the management API.
 
 - 7ebef18e3: add account api
 
@@ -599,17 +599,17 @@
   1. Direct access: The Account API empowers end users to directly access and manage their own account profile without requiring the relay of Management API.
   2. User profile and identities management: Users can fully manage their profiles and security settings, including the ability to update identity information like email, phone, and password, as well as manage social connections. MFA and SSO support are coming soon.
   3. Global access control: Admin has full, global control over access settings, can customize each fields.
-  4. Seamless authorization: Authorizing is easier than ever! Simply use `client.getAccessToken()` to obtain an opaque access token for OP (Logto), and attach it to the Authorization header as `Bearer <access_token>`.
+  4. Seamless authorization: Authorizing is easier than ever! Simply use `client.getAccessToken()` to obtain an opaque access token for OP (MyEyesID), and attach it to the Authorization header as `Bearer <access_token>`.
 
   ## Get started
 
   > ![Note]
-  > Go to the [Logto Docs](https://bump.sh/logto/doc/logto-user-api) to find full API reference.
+  > Go to the [MyEyesID Docs](https://bump.sh/myeyesid/doc/myeyesid-user-api) to find full API reference.
 
   1. Use `/api/account-center` endpoint to enable the feature, for security reason, it is disabled by default. And set fields permission for each field.
   2. Use `client.getAccessToken()` to get the access token.
   3. Attach the access token to the Authorization header of your request, and start interacting with the Account API directly from the frontend.
-  4. You may need to setup `logto-verification-id` header as an additional verification for some requests related to identity verification.
+  4. You may need to setup `myeyesid-verification-id` header as an additional verification for some requests related to identity verification.
 
   ## What you can do with Account API
 
@@ -622,7 +622,7 @@
 
 - 640425414: add unknown session redirect url in the sign-in experience settings
 
-  In certain cases, Logto may be unable to properly identify a user’s authentication session when they land on the sign-in page. This can happen if the session has expired, if the user bookmarks the sign-in URL for future access, or if they directly share the sign-in link. By default, an "unknown session" 404 error is displayed.
+  In certain cases, MyEyesID may be unable to properly identify a user’s authentication session when they land on the sign-in page. This can happen if the session has expired, if the user bookmarks the sign-in URL for future access, or if they directly share the sign-in link. By default, an "unknown session" 404 error is displayed.
 
   To improve user experience, we have added a new `unknownSessionRedirectUrl` field in the sign-in experience settings.You can configure this field to redirect users to a custom URL when an unknown session is detected. This will help users to easily navigate to your client application or website and reinitiate the authentication process automatically.
 
@@ -632,9 +632,9 @@
 - Updated dependencies [640425414]
 - Updated dependencies [7ebef18e3]
 - Updated dependencies [640425414]
-  - @logto/phrases@1.15.0
-  - @logto/phrases-experience@1.9.0
-  - @logto/connector-kit@4.1.0
+  - @myeyesid/phrases@1.15.0
+  - @myeyesid/phrases-experience@1.9.0
+  - @myeyesid/connector-kit@4.1.0
 
 ## 1.21.0
 
@@ -642,8 +642,8 @@
 
 - Updated dependencies [bc2a0ac03]
 - Updated dependencies [3c993d59c]
-  - @logto/shared@3.1.2
-  - @logto/phrases@1.14.1
+  - @myeyesid/shared@3.1.2
+  - @myeyesid/phrases@1.14.1
 
 ## 1.20.0
 
@@ -661,7 +661,7 @@
   2. `resource`: OPTIONAL. The resource indicator, the same as other token requests.
   3. `scope`: OPTIONAL. The requested scopes, the same as other token requests.
   4. `subject_token`: REQUIRED. The user's PAT.
-  5. `subject_token_type`: REQUIRED. The type of the security token provided in the `subject_token` parameter. The value of this parameter must be `urn:logto:token-type:personal_access_token`.
+  5. `subject_token_type`: REQUIRED. The type of the security token provided in the `subject_token` parameter. The value of this parameter must be `urn:myeyesid:token-type:personal_access_token`.
   6. `client_id`: REQUIRED. The client identifier of the client application that is making the request, the returned access token will contain this client_id claim.
 
   And the response will be a JSON object with the following properties:
@@ -693,8 +693,8 @@
 - Updated dependencies [f150a67d5]
 - Updated dependencies [e0326c96c]
 - Updated dependencies [53060c203]
-  - @logto/phrases@1.14.0
-  - @logto/phrases-experience@1.8.0
+  - @myeyesid/phrases@1.14.0
+  - @myeyesid/phrases-experience@1.8.0
 
 ## 1.19.0
 
@@ -710,7 +710,7 @@
 
 - d203c8d2f: support experience data server-side rendering
 
-  Logto now injects the sign-in experience settings and phrases into the `index.html` file for better first-screen performance. The experience app will still fetch the settings and phrases from the server if:
+  MyEyesID now injects the sign-in experience settings and phrases into the `index.html` file for better first-screen performance. The experience app will still fetch the settings and phrases from the server if:
 
   - The server didn't inject the settings and phrases.
   - The parameters in the URL are different from server-rendered data.
@@ -719,7 +719,7 @@
 
   Now secure apps (machine-to-machine, traditional web, Protected) can have multiple app secrets with expiration. This allows for secret rotation and provides an even safer experience.
 
-  To manage your application secrets, go to Logto Console -> Applications -> Application Details -> Endpoints & Credentials.
+  To manage your application secrets, go to MyEyesID Console -> Applications -> Application Details -> Endpoints & Credentials.
 
   We've also added a set of Management APIs (`/api/applications/{id}/secrets`) for this purpose.
 
@@ -748,16 +748,16 @@
 
   Now it's able to set light and dark logos for organizations. You can upload the logos in the organization settings page.
 
-  Also, it's possible to override the sign-in experience logo from an organization. Simply add the `organization_id` parameter to the authentication request. In most Logto SDKs, it can be done by using the `extraParams` field in the `signIn` method.
+  Also, it's possible to override the sign-in experience logo from an organization. Simply add the `organization_id` parameter to the authentication request. In most MyEyesID SDKs, it can be done by using the `extraParams` field in the `signIn` method.
 
   For example, in the JavaScript SDK:
 
   ```ts
-  import LogtoClient from "@logto/client";
+  import MyEyesIDClient from "@myeyesid/client";
 
-  const logtoClient = new LogtoClient(/* your configuration */);
+  const myeyesidClient = new MyEyesIDClient(/* your configuration */);
 
-  logtoClient.signIn({
+  myeyesidClient.signIn({
     redirectUri: "https://your-app.com/callback",
     extraParams: {
       organization_id: "<organization-id>",
@@ -772,7 +772,7 @@
 - Updated dependencies [3a839f6d6]
 - Updated dependencies [b91ec0cd6]
 - Updated dependencies [b188bb161]
-  - @logto/phrases@1.13.0
+  - @myeyesid/phrases@1.13.0
 
 ## 1.18.0
 
@@ -800,7 +800,7 @@
   - `/api/organizations/{id}/applications/{applicationId}` to manage a specific machine-to-machine app in an organization.
   - `/api/applications/{id}/organizations` to view the associated organizations of a machine-to-machine app.
 
-- 061a30a87: support agree to terms polices for Logto’s sign-in experiences
+- 061a30a87: support agree to terms polices for MyEyesID’s sign-in experiences
 
   - Automatic: Users automatically agree to terms by continuing to use the service
   - ManualRegistrationOnly: Users must agree to terms by checking a box during registration, and don't need to agree when signing in
@@ -824,48 +824,48 @@
 
   This applies to organizations that have the same email domain configured.
 
-  To enable this feature, you can add email domain via the Management API or the Logto Console:
+  To enable this feature, you can add email domain via the Management API or the MyEyesID Console:
 
   - We added the following new endpoints to the Management API:
     - `GET /organizations/{organizationId}/jit/email-domains`
     - `POST /organizations/{organizationId}/jit/email-domains`
     - `PUT /organizations/{organizationId}/jit/email-domains`
     - `DELETE /organizations/{organizationId}/jit/email-domains/{emailDomain}`
-  - In the Logto Console, you can manage email domains in the organization details page -> "Just-in-time provisioning" section.
+  - In the MyEyesID Console, you can manage email domains in the organization details page -> "Just-in-time provisioning" section.
 
   ### SSO connectors
 
   New or existing users signing in through enterprise SSO for the first time will automatically join organizations that have just-in-time provisioning configured for the SSO connector.
 
-  To enable this feature, you can add SSO connectors via the Management API or the Logto Console:
+  To enable this feature, you can add SSO connectors via the Management API or the MyEyesID Console:
 
   - We added the following new endpoints to the Management API:
     - `GET /organizations/{organizationId}/jit/sso-connectors`
     - `POST /organizations/{organizationId}/jit/sso-connectors`
     - `PUT /organizations/{organizationId}/jit/sso-connectors`
     - `DELETE /organizations/{organizationId}/jit/sso-connectors/{ssoConnectorId}`
-  - In the Logto Console, you can manage SSO connectors in the organization details page -> "Just-in-time provisioning" section.
+  - In the MyEyesID Console, you can manage SSO connectors in the organization details page -> "Just-in-time provisioning" section.
 
   ### Default organization roles
 
   You can also configure the default roles for users provisioned via this feature. The default roles will be assigned to the user when they are provisioned.
 
-  To enable this feature, you can set the default roles via the Management API or the Logto Console:
+  To enable this feature, you can set the default roles via the Management API or the MyEyesID Console:
 
   - We added the following new endpoints to the Management API:
     - `GET /organizations/{organizationId}/jit/roles`
     - `POST /organizations/{organizationId}/jit/roles`
     - `PUT /organizations/{organizationId}/jit/roles`
     - `DELETE /organizations/{organizationId}/jit/roles/{organizationRoleId}`
-  - In the Logto Console, you can manage default roles in the organization details page -> "Just-in-time provisioning" section.
+  - In the MyEyesID Console, you can manage default roles in the organization details page -> "Just-in-time provisioning" section.
 
 - b50ba0b7e: enable backchannel logout support
 
   Enable the support of [OpenID Connect Back-Channel Logout 1.0](https://openid.net/specs/openid-connect-backchannel-1_0.html).
 
-  To register for backchannel logout, navigate to the application details page in the Logto Console and locate the "Backchannel logout" section. Enter the backchannel logout URL of your RP and click "Save".
+  To register for backchannel logout, navigate to the application details page in the MyEyesID Console and locate the "Backchannel logout" section. Enter the backchannel logout URL of your RP and click "Save".
 
-  You can also enable session requirements for backchannel logout. When enabled, Logto will include the `sid` claim in the logout token.
+  You can also enable session requirements for backchannel logout. When enabled, MyEyesID will include the `sid` claim in the logout token.
 
   For programmatic registration, you can set the `backchannelLogoutUri` and `backchannelLogoutSessionRequired` properties in the application `oidcClientMetadata` object.
 
@@ -891,9 +891,9 @@
 - Updated dependencies [efa884c40]
 - Updated dependencies [b50ba0b7e]
 - Updated dependencies [d81e13d21]
-  - @logto/connector-kit@4.0.0
-  - @logto/phrases@1.12.0
-  - @logto/phrases-experience@1.7.0
+  - @myeyesid/connector-kit@4.0.0
+  - @myeyesid/phrases@1.12.0
+  - @myeyesid/phrases-experience@1.7.0
 
 ## 1.17.0
 
@@ -981,8 +981,8 @@
 - Updated dependencies [e04d9523a]
 - Updated dependencies [0c70d65c7]
 - Updated dependencies [76fd33b7e]
-  - @logto/phrases@1.11.0
-  - @logto/core-kit@2.5.0
+  - @myeyesid/phrases@1.11.0
+  - @myeyesid/core-kit@2.5.0
 
 ## 1.16.0
 
@@ -1005,8 +1005,8 @@
 - Updated dependencies [5b03030de]
 - Updated dependencies [21bb35b12]
 - Updated dependencies [3486b12e8]
-  - @logto/phrases@1.10.1
-  - @logto/shared@3.1.1
+  - @myeyesid/phrases@1.10.1
+  - @myeyesid/shared@3.1.1
 
 ## 1.15.0
 
@@ -1025,7 +1025,7 @@
 
 - 2cbc591ff: add oidc params variables and types
 
-  - Add `ExtraParamsKey` enum for all possible OIDC extra parameters that Logto supports.
+  - Add `ExtraParamsKey` enum for all possible OIDC extra parameters that MyEyesID supports.
   - Add `FirstScreen` enum for the `first_screen` parameter.
   - Add `extraParamsObjectGuard` guard and `ExtraParamsObject` type for shaping the extra parameters object in the OIDC authentication request.
 
@@ -1060,11 +1060,11 @@
 - Updated dependencies [cc01acbd0]
 - Updated dependencies [57d97a4df]
 - Updated dependencies [2c10c2423]
-  - @logto/phrases@1.10.0
-  - @logto/connector-kit@3.0.0
-  - @logto/core-kit@2.4.0
-  - @logto/phrases-experience@1.6.1
-  - @logto/shared@3.1.0
+  - @myeyesid/phrases@1.10.0
+  - @myeyesid/connector-kit@3.0.0
+  - @myeyesid/core-kit@2.4.0
+  - @myeyesid/phrases-experience@1.6.1
+  - @myeyesid/shared@3.1.0
 
 ## 1.14.0
 
@@ -1077,9 +1077,9 @@
 - a2ce0be46: add tenant role enum and scope enum
 - 31e60811d: use Node 20 LTS for engine requirement.
 
-  Note: We mark it as minor because Logto is shipping with Docker image and it's not a breaking change for users.
+  Note: We mark it as minor because MyEyesID is shipping with Docker image and it's not a breaking change for users.
 
-- 32df9acde: update Logto application schemas to support the new third-party application feature (Logto as IdP)
+- 32df9acde: update MyEyesID application schemas to support the new third-party application feature (MyEyesID as IdP)
 
   - Applications table alteration. Add new column `is_third_party` to indicate if the application is a third-party application.
   - Create new table `application_user_consent_resource_scopes` to store the enabled user consent resource scopes for the third-party application.
@@ -1099,12 +1099,12 @@
 - Updated dependencies [570a4ea9e]
 - Updated dependencies [570a4ea9e]
 - Updated dependencies [6befe6014]
-  - @logto/shared@3.1.0
-  - @logto/connector-kit@2.1.0
-  - @logto/language-kit@1.1.0
-  - @logto/phrases-experience@1.6.0
-  - @logto/core-kit@2.3.0
-  - @logto/phrases@1.9.0
+  - @myeyesid/shared@3.1.0
+  - @myeyesid/connector-kit@2.1.0
+  - @myeyesid/language-kit@1.1.0
+  - @myeyesid/phrases-experience@1.6.0
+  - @myeyesid/core-kit@2.3.0
+  - @myeyesid/phrases@1.9.0
 
 ## 1.12.0
 
@@ -1124,9 +1124,9 @@
 - Updated dependencies [becf59169]
 - Updated dependencies [b4f702a86]
 - Updated dependencies [9a7b19e49]
-  - @logto/phrases@1.8.0
-  - @logto/core-kit@2.2.1
-  - @logto/phrases-experience@1.5.0
+  - @myeyesid/phrases@1.8.0
+  - @myeyesid/core-kit@2.2.1
+  - @myeyesid/phrases-experience@1.5.0
 
 ## 1.11.0
 
@@ -1134,7 +1134,7 @@
 
 - 6727f629d: feature: introduce multi-factor authentication
 
-  We're excited to announce that Logto now supports multi-factor authentication (MFA) for your sign-in experience. Navigate to the "Multi-factor auth" tab to configure how you want to secure your users' accounts.
+  We're excited to announce that MyEyesID now supports multi-factor authentication (MFA) for your sign-in experience. Navigate to the "Multi-factor auth" tab to configure how you want to secure your users' accounts.
 
   In this release, we introduce the following MFA methods:
 
@@ -1147,8 +1147,8 @@
 ### Patch Changes
 
 - Updated dependencies [6727f629d]
-  - @logto/phrases@1.7.0
-  - @logto/phrases-experience@1.4.0
+  - @myeyesid/phrases@1.7.0
+  - @myeyesid/phrases-experience@1.4.0
 
 ## 1.10.1
 
@@ -1157,16 +1157,16 @@
 - 46d0d4c0b: convert private signing key type from string to JSON object, in order to provide additional information such as key ID and creation timestamp.
 - Updated dependencies [87df417d1]
 - Updated dependencies [d24aaedf5]
-  - @logto/phrases@1.6.0
-  - @logto/connector-kit@2.0.0
-  - @logto/shared@3.0.0
+  - @myeyesid/phrases@1.6.0
+  - @myeyesid/connector-kit@2.0.0
+  - @myeyesid/shared@3.0.0
 
 ## 1.10.0
 
 ### Patch Changes
 
 - Updated dependencies [2c340d379]
-  - @logto/core-kit@2.2.0
+  - @myeyesid/core-kit@2.2.0
 
 ## 1.9.2
 
@@ -1174,23 +1174,23 @@
 
 - 18181f892: standardize id and secret generators
 
-  - Remove `buildIdGenerator` export from `@logto/shared`
-  - Add `generateStandardSecret` and `generateStandardShortId` exports to `@logto/shared`
-  - Align comment and implementation of `buildIdGenerator` in `@logto/shared`
+  - Remove `buildIdGenerator` export from `@myeyesid/shared`
+  - Add `generateStandardSecret` and `generateStandardShortId` exports to `@myeyesid/shared`
+  - Align comment and implementation of `buildIdGenerator` in `@myeyesid/shared`
     - The comment stated the function will include uppercase letters by default, but it did not; Now it does.
   - Use `generateStandardSecret` for all secret generation
 
 - Updated dependencies [18181f892]
-  - @logto/shared@3.0.0
-  - @logto/core-kit@2.1.2
+  - @myeyesid/shared@3.0.0
+  - @myeyesid/core-kit@2.1.2
 
 ## 1.9.1
 
 ### Patch Changes
 
 - Updated dependencies [6f5a0acad]
-  - @logto/phrases-experience@1.3.1
-  - @logto/core-kit@2.1.1
+  - @myeyesid/phrases-experience@1.3.1
+  - @myeyesid/core-kit@2.1.1
 
 ## 1.9.0
 
@@ -1210,7 +1210,7 @@
     - User information (default: `true`)
     - Custom words (default: `[]`)
 
-  If you are an existing Logto Cloud user or upgrading from a previous version, to ensure a smooth experience, we'll keep the original policy as much as possible:
+  If you are an existing MyEyesID Cloud user or upgrading from a previous version, to ensure a smooth experience, we'll keep the original policy as much as possible:
 
   > The original password policy requires a minimum length of 8 and at least 2 character types (letters, numbers, and symbols).
 
@@ -1225,7 +1225,7 @@
 
   If you want to change the policy, you can do it:
 
-  - Logto Console -> Sign-in experience -> Password policy.
+  - MyEyesID Console -> Sign-in experience -> Password policy.
   - Update `passwordPolicy` property in the sign-in experience via Management API.
 
   ### Side effects
@@ -1249,10 +1249,10 @@
 - Updated dependencies [f8408fa77]
 - Updated dependencies [f6723d5e2]
 - Updated dependencies [310698b0d]
-  - @logto/phrases@1.5.0
-  - @logto/phrases-experience@1.3.0
-  - @logto/core-kit@2.1.0
-  - @logto/shared@2.0.1
+  - @myeyesid/phrases@1.5.0
+  - @myeyesid/phrases-experience@1.3.0
+  - @myeyesid/core-kit@2.1.0
+  - @myeyesid/shared@2.0.1
 
 ## 1.8.0
 
@@ -1280,8 +1280,8 @@
 
 - Updated dependencies [e9c2c9a6d]
 - Updated dependencies [ecbecd8e4]
-  - @logto/core-kit@2.0.1
-  - @logto/phrases@1.4.1
+  - @myeyesid/core-kit@2.0.1
+  - @myeyesid/phrases@1.4.1
 
 ## 1.5.0
 
@@ -1301,7 +1301,7 @@
   ## Updates
 
   - schemas: add `name`, `events`, `signingKey`, and `enabled` fields to the `hook` schema
-  - core: change the `user-agent` value from `Logto (https://logto.io)` to `Logto (https://logto.io/)` in the webhook request headers
+  - core: change the `user-agent` value from `MyEyesID (https://myeyesid.io)` to `MyEyesID (https://myeyesid.io/)` in the webhook request headers
   - core: deprecate `event` field in all hook-related APIs, use `events` instead
   - core: deprecate `retries` field in the `HookConfig` for all hook-related APIs, now it will fallback to `3` if not specified and will be removed in the future
   - core: add new APIs for webhook management
@@ -1327,7 +1327,7 @@
 - Updated dependencies [268dc50e7]
 - Updated dependencies [fa0dbafe8]
 - Updated dependencies [497d5b526]
-  - @logto/phrases@1.4.0
+  - @myeyesid/phrases@1.4.0
 
 ## 1.4.0
 
@@ -1340,7 +1340,7 @@
 ### Patch Changes
 
 - Updated dependencies [5d6720805]
-  - @logto/phrases@1.3.0
+  - @myeyesid/phrases@1.3.0
 
 ## 1.3.1
 
@@ -1350,7 +1350,7 @@
 
 - beb6ebad5: ## Add min length 1 type guard for all string typed db schema fields
 
-  Update the `@logto/schemas` zod guard generation method to include a min length of 1 for all the required string typed db fields.
+  Update the `@myeyesid/schemas` zod guard generation method to include a min length of 1 for all the required string typed db fields.
 
 ## 1.2.3
 
@@ -1369,11 +1369,11 @@
 - Updated dependencies [c5eb3a2ba]
 - Updated dependencies [5553425fc]
 - Updated dependencies [30033421c]
-  - @logto/phrases@1.2.0
-  - @logto/phrases-ui@1.2.0
-  - @logto/shared@2.0.0
-  - @logto/core-kit@2.0.0
-  - @logto/connector-kit@1.1.1
+  - @myeyesid/phrases@1.2.0
+  - @myeyesid/phrases-ui@1.2.0
+  - @myeyesid/shared@2.0.0
+  - @myeyesid/core-kit@2.0.0
+  - @myeyesid/connector-kit@1.1.1
 
 ## 1.1.0
 
@@ -1384,8 +1384,8 @@
 - Updated dependencies [f3d60a516]
 - Updated dependencies [5c50957a9]
 - Updated dependencies [e9e8a6e11]
-  - @logto/phrases@1.1.0
-  - @logto/phrases-ui@1.1.0
+  - @myeyesid/phrases@1.1.0
+  - @myeyesid/phrases-ui@1.1.0
 
 ## 1.0.7
 
@@ -1407,9 +1407,9 @@
 
   ## 💥 BREAKING CHANGES 💥
 
-  Logto was using a single port to serve both normal users and admins, as well as the web console. While we continuously maintain a high level of security, it’ll still be great to decouple these components into two separate parts to keep data isolated and provide a flexible infrastructure.
+  MyEyesID was using a single port to serve both normal users and admins, as well as the web console. While we continuously maintain a high level of security, it’ll still be great to decouple these components into two separate parts to keep data isolated and provide a flexible infrastructure.
 
-  From this version, Logto now listens to two ports by default, one for normal users (`3001`), and one for admins (`3002`).
+  From this version, MyEyesID now listens to two ports by default, one for normal users (`3001`), and one for admins (`3002`).
 
   - Nothing changed for normal users. No adaption is needed.
   - For admin users:
@@ -1418,7 +1418,7 @@
     - You can specify a custom endpoint for admins by setting the environment variable `ADMIN_ENDPOINT`. For example, `ADMIN_ENDPOINT=https://admin.your-domain.com`.
     - You can now completely disable admin endpoints by setting `ADMIN_DISABLE_LOCALHOST=1` and leaving `ADMIN_ENDPOINT` unset.
     - Admin Console and admin user data are not accessible via normal user endpoints, including `localhost` and `ENDPOINT` from the environment.
-    - Admin Console no longer displays audit logs of admin users. However, these logs still exist in the database, and Logto still inserts admin user logs. There is just no convenient interface to inspect them.
+    - Admin Console no longer displays audit logs of admin users. However, these logs still exist in the database, and MyEyesID still inserts admin user logs. There is just no convenient interface to inspect them.
     - Due to the data isolation, the numbers on the dashboard may slightly decrease (admins are excluded).
 
   If you are upgrading from a previous version, simply run the database alteration command as usual, and we'll take care of the rest.
@@ -1435,7 +1435,7 @@
   - core: removed `GET /settings` and `PATCH /settings` API
   - core: added `GET /configs/admin-console` and `PATCH /configs/admin-console` API
     - `/configs/*` APIs are config/key-specific now. they may have different logic per key
-  - cli: change valid `logto db config` keys by removing `alterationState` and adding `adminConsole` since:
+  - cli: change valid `myeyesid db config` keys by removing `alterationState` and adding `adminConsole` since:
     - OIDC configs and admin console configs are tenant-level configs (the concept of "tenant" can be ignored until we officially announce it)
     - alteration state is still a system-wide config
 
@@ -1445,13 +1445,13 @@
 - f41fd3f05: Replace `passcode` naming convention in the interaction APIs and main flow ui with `verificationCode`.
 - 343b1090f: ### Add dynamic favicon and html title
 
-  - Add the favicon field in the sign-in-experience branding settings. Users would be able to upload their own favicon. Use local logto icon as a fallback
+  - Add the favicon field in the sign-in-experience branding settings. Users would be able to upload their own favicon. Use local myeyesid icon as a fallback
 
   - Set different html title for different pages.
     - sign-in
     - register
     - forgot-password
-    - logto
+    - myeyesid
 
 - 343b1090f: Allow admin tenant admin to create tenants without limitation
 - 343b1090f: ### Add privacy policy url
@@ -1473,11 +1473,11 @@
 
   - Refactored Interaction APIs and Audit logs
 
-- 343b1090f: ### Add custom content sign-in-experience settings to allow insert custom static html content to the logto sign-in pages
+- 343b1090f: ### Add custom content sign-in-experience settings to allow insert custom static html content to the myeyesid sign-in pages
 
   - feat: combine with the custom css, give the user the ability to further customize the sign-in pages
 
-- f41fd3f05: Replace the `sms` naming convention using `phone` cross logto codebase. Including Sign-in Experience types, API paths, API payload and internal variable names.
+- f41fd3f05: Replace the `sms` naming convention using `phone` cross myeyesid codebase. Including Sign-in Experience types, API paths, API payload and internal variable names.
 
 ### Patch Changes
 
@@ -1488,7 +1488,7 @@
   - cli!: remove `oidc` option for `database seed` command as it's unused
   - cli: add hidden `--cloud` option for `database seed` command to init cloud data
   - cli, cloud: appending Redirect URIs to Admin Console will deduplicate values before update
-  - move `UrlSet` and `GlobalValues` to `@logto/shared`
+  - move `UrlSet` and `GlobalValues` to `@myeyesid/shared`
 
 - 7fb689b73: Fix version lifecycle script
 - 2d45cc3e6: Update alteration script names after versioning
@@ -1508,10 +1508,10 @@
 - Updated dependencies [1c9160112]
 - Updated dependencies [343b1090f]
 - Updated dependencies [1c9160112]
-  - @logto/phrases-ui@1.0.0
-  - @logto/phrases@1.0.0
-  - @logto/connector-kit@1.1.0
-  - @logto/core-kit@1.1.0
+  - @myeyesid/phrases-ui@1.0.0
+  - @myeyesid/phrases@1.0.0
+  - @myeyesid/connector-kit@1.1.0
+  - @myeyesid/core-kit@1.1.0
 
 ## 1.0.0-rc.1
 
@@ -1521,9 +1521,9 @@
 
   ## 💥 BREAKING CHANGES 💥
 
-  Logto was using a single port to serve both normal users and admins, as well as the web console. While we continuously maintain a high level of security, it’ll still be great to decouple these components into two separate parts to keep data isolated and provide a flexible infrastructure.
+  MyEyesID was using a single port to serve both normal users and admins, as well as the web console. While we continuously maintain a high level of security, it’ll still be great to decouple these components into two separate parts to keep data isolated and provide a flexible infrastructure.
 
-  From this version, Logto now listens to two ports by default, one for normal users (`3001`), and one for admins (`3002`).
+  From this version, MyEyesID now listens to two ports by default, one for normal users (`3001`), and one for admins (`3002`).
 
   - Nothing changed for normal users. No adaption is needed.
   - For admin users:
@@ -1532,7 +1532,7 @@
     - You can specify a custom endpoint for admins by setting the environment variable `ADMIN_ENDPOINT`. For example, `ADMIN_ENDPOINT=https://admin.your-domain.com`.
     - You can now completely disable admin endpoints by setting `ADMIN_DISABLE_LOCALHOST=1` and leaving `ADMIN_ENDPOINT` unset.
     - Admin Console and admin user data are not accessible via normal user endpoints, including `localhost` and `ENDPOINT` from the environment.
-    - Admin Console no longer displays audit logs of admin users. However, these logs still exist in the database, and Logto still inserts admin user logs. There is just no convenient interface to inspect them.
+    - Admin Console no longer displays audit logs of admin users. However, these logs still exist in the database, and MyEyesID still inserts admin user logs. There is just no convenient interface to inspect them.
     - Due to the data isolation, the numbers on the dashboard may slightly decrease (admins are excluded).
 
   If you are upgrading from a previous version, simply run the database alteration command as usual, and we'll take care of the rest.
@@ -1546,8 +1546,8 @@
 - Updated dependencies [c12717412]
 - Updated dependencies [c12717412]
 - Updated dependencies [c12717412]
-  - @logto/phrases@1.0.0-rc.1
-  - @logto/phrases-ui@1.0.0-rc.1
+  - @myeyesid/phrases@1.0.0-rc.1
+  - @myeyesid/phrases-ui@1.0.0-rc.1
 
 ## 1.0.0-rc.0
 
@@ -1560,14 +1560,14 @@
   - core: removed `GET /settings` and `PATCH /settings` API
   - core: added `GET /configs/admin-console` and `PATCH /configs/admin-console` API
     - `/configs/*` APIs are config/key-specific now. they may have different logic per key
-  - cli: change valid `logto db config` keys by removing `alterationState` and adding `adminConsole` since:
+  - cli: change valid `myeyesid db config` keys by removing `alterationState` and adding `adminConsole` since:
     - OIDC configs and admin console configs are tenant-level configs (the concept of "tenant" can be ignored until we officially announce it)
     - alteration state is still a system-wide config
 
 ### Minor Changes
 
 - f41fd3f0: Replace `passcode` naming convention in the interaction APIs and main flow ui with `verificationCode`.
-- f41fd3f0: Replace the `sms` naming convention using `phone` cross logto codebase. Including Sign-in Experience types, API paths, API payload and internal variable names.
+- f41fd3f0: Replace the `sms` naming convention using `phone` cross myeyesid codebase. Including Sign-in Experience types, API paths, API payload and internal variable names.
 
 ## 1.0.0-beta.18
 
@@ -1596,8 +1596,8 @@
 
 - Updated dependencies [1c916011]
 - Updated dependencies [1c916011]
-  - @logto/phrases@1.0.0-beta.17
-  - @logto/phrases-ui@1.0.0-beta.17
+  - @myeyesid/phrases@1.0.0-beta.17
+  - @myeyesid/phrases-ui@1.0.0-beta.17
 
 ## 1.0.0-beta.16
 
@@ -1605,7 +1605,7 @@
 
 - 38970fb8: Fix a Sign-in experience bug that may block some users to sign in.
 - Updated dependencies [38970fb8]
-  - @logto/phrases@1.0.0-beta.16
+  - @myeyesid/phrases@1.0.0-beta.16
 
 ## 1.0.0-beta.15
 
@@ -1624,181 +1624,181 @@
 ### Patch Changes
 
 - Updated dependencies [68f2d56a]
-  - @logto/phrases@1.0.0-beta.13
-  - @logto/phrases-ui@1.0.0-beta.13
+  - @myeyesid/phrases@1.0.0-beta.13
+  - @myeyesid/phrases-ui@1.0.0-beta.13
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.0.0-beta.12](https://github.com/logto-io/logto/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2022-10-19)
+## [1.0.0-beta.12](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2022-10-19)
 
 ### Bug Fixes
 
-- add tables to schemas files ([582f3d6](https://github.com/logto-io/logto/commit/582f3d615862c3d8b2c00d8e60a3617429d48e30))
-- handle versioning when no `next-*.ts` found ([#2202](https://github.com/logto-io/logto/issues/2202)) ([61336df](https://github.com/logto-io/logto/commit/61336dfbc833c96ddce88be5082b82a30527ee73))
-- make packages public ([e24fd04](https://github.com/logto-io/logto/commit/e24fd0479bc20c92bd38b5e214abe441404ce496))
+- add tables to schemas files ([582f3d6](https://github.com/myeyesid-io/myeyesid/commit/582f3d615862c3d8b2c00d8e60a3617429d48e30))
+- handle versioning when no `next-*.ts` found ([#2202](https://github.com/myeyesid-io/myeyesid/issues/2202)) ([61336df](https://github.com/myeyesid-io/myeyesid/commit/61336dfbc833c96ddce88be5082b82a30527ee73))
+- make packages public ([e24fd04](https://github.com/myeyesid-io/myeyesid/commit/e24fd0479bc20c92bd38b5e214abe441404ce496))
 
-## [1.0.0-beta.11](https://github.com/logto-io/logto/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2022-10-19)
+## [1.0.0-beta.11](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2022-10-19)
 
 ### Features
 
-- **cli:** `db alteration deploy` command ([a5280a2](https://github.com/logto-io/logto/commit/a5280a2afd3d5822e78d1f115ab6f6fdbb993261))
-- **cli:** `db seed oidc` command ([911117a](https://github.com/logto-io/logto/commit/911117a785fd43ea03473f42835f2680cccca7be))
-- **cli:** get/set db config key ([0eff1e3](https://github.com/logto-io/logto/commit/0eff1e3591129802f3e9b3286652ef6fc8619cf5))
+- **cli:** `db alteration deploy` command ([a5280a2](https://github.com/myeyesid-io/myeyesid/commit/a5280a2afd3d5822e78d1f115ab6f6fdbb993261))
+- **cli:** `db seed oidc` command ([911117a](https://github.com/myeyesid-io/myeyesid/commit/911117a785fd43ea03473f42835f2680cccca7be))
+- **cli:** get/set db config key ([0eff1e3](https://github.com/myeyesid-io/myeyesid/commit/0eff1e3591129802f3e9b3286652ef6fc8619cf5))
 
 ### Bug Fixes
 
-- add redirectURI validation on frontend & backend ([#1874](https://github.com/logto-io/logto/issues/1874)) ([4b0970b](https://github.com/logto-io/logto/commit/4b0970b6d8c6647a6e68bf27fe3db3aeb635768e))
-- alteration script in dev ([9ebb3dd](https://github.com/logto-io/logto/commit/9ebb3ddfd963f6459ea332dbe1384058f77b453b))
+- add redirectURI validation on frontend & backend ([#1874](https://github.com/myeyesid-io/myeyesid/issues/1874)) ([4b0970b](https://github.com/myeyesid-io/myeyesid/commit/4b0970b6d8c6647a6e68bf27fe3db3aeb635768e))
+- alteration script in dev ([9ebb3dd](https://github.com/myeyesid-io/myeyesid/commit/9ebb3ddfd963f6459ea332dbe1384058f77b453b))
 
-## [1.0.0-beta.10](https://github.com/logto-io/logto/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2022-09-28)
+## [1.0.0-beta.10](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2022-09-28)
 
 ### Features
 
-- **core,schemas:** add phrases schema and GET /custom-phrases/:languageKey route ([#1905](https://github.com/logto-io/logto/issues/1905)) ([7242aa8](https://github.com/logto-io/logto/commit/7242aa8c2bbb70c51e9b00dd5e3aff595c3c2eff))
-- **core,schemas:** migration deploy cli ([#1966](https://github.com/logto-io/logto/issues/1966)) ([7cc2f4d](https://github.com/logto-io/logto/commit/7cc2f4d14219145e562cebef41ebb3963083cc89))
-- **core,schemas:** use timestamp to version migrations ([bb4bfd3](https://github.com/logto-io/logto/commit/bb4bfd3d41fdd415f68e6e13f0d4a7e8a0093933))
-- **core:** add POST /session/forgot-password/{email,sms}/send-passcode ([#1963](https://github.com/logto-io/logto/issues/1963)) ([af2600d](https://github.com/logto-io/logto/commit/af2600d828bf315ce57de5813168571e7042d8de))
-- **core:** add POST /session/forgot-password/{email,sms}/verify-passcode ([#1968](https://github.com/logto-io/logto/issues/1968)) ([1ea39f3](https://github.com/logto-io/logto/commit/1ea39f346367d9f300be7281a65e689bf198a65c))
-- **core:** add POST /session/forgot-password/reset ([#1972](https://github.com/logto-io/logto/issues/1972)) ([acdc86c](https://github.com/logto-io/logto/commit/acdc86c8560d30a89eccb6b0f6892221ea1bc5e0))
-- **core:** machine to machine apps ([cd9c697](https://github.com/logto-io/logto/commit/cd9c6978a35d9fc3a571c7bd56c972939c49a9b5))
-- **schemas:** add logto configs table ([#1940](https://github.com/logto-io/logto/issues/1940)) ([577ca48](https://github.com/logto-io/logto/commit/577ca48c072ed511550e339f2d6d1ee25cedeeac))
+- **core,schemas:** add phrases schema and GET /custom-phrases/:languageKey route ([#1905](https://github.com/myeyesid-io/myeyesid/issues/1905)) ([7242aa8](https://github.com/myeyesid-io/myeyesid/commit/7242aa8c2bbb70c51e9b00dd5e3aff595c3c2eff))
+- **core,schemas:** migration deploy cli ([#1966](https://github.com/myeyesid-io/myeyesid/issues/1966)) ([7cc2f4d](https://github.com/myeyesid-io/myeyesid/commit/7cc2f4d14219145e562cebef41ebb3963083cc89))
+- **core,schemas:** use timestamp to version migrations ([bb4bfd3](https://github.com/myeyesid-io/myeyesid/commit/bb4bfd3d41fdd415f68e6e13f0d4a7e8a0093933))
+- **core:** add POST /session/forgot-password/{email,sms}/send-passcode ([#1963](https://github.com/myeyesid-io/myeyesid/issues/1963)) ([af2600d](https://github.com/myeyesid-io/myeyesid/commit/af2600d828bf315ce57de5813168571e7042d8de))
+- **core:** add POST /session/forgot-password/{email,sms}/verify-passcode ([#1968](https://github.com/myeyesid-io/myeyesid/issues/1968)) ([1ea39f3](https://github.com/myeyesid-io/myeyesid/commit/1ea39f346367d9f300be7281a65e689bf198a65c))
+- **core:** add POST /session/forgot-password/reset ([#1972](https://github.com/myeyesid-io/myeyesid/issues/1972)) ([acdc86c](https://github.com/myeyesid-io/myeyesid/commit/acdc86c8560d30a89eccb6b0f6892221ea1bc5e0))
+- **core:** machine to machine apps ([cd9c697](https://github.com/myeyesid-io/myeyesid/commit/cd9c6978a35d9fc3a571c7bd56c972939c49a9b5))
+- **schemas:** add myeyesid configs table ([#1940](https://github.com/myeyesid-io/myeyesid/issues/1940)) ([577ca48](https://github.com/myeyesid-io/myeyesid/commit/577ca48c072ed511550e339f2d6d1ee25cedeeac))
 
 ### Bug Fixes
 
-- bump react sdk and essentials toolkit to support CJK characters in idToken ([2f92b43](https://github.com/logto-io/logto/commit/2f92b438644bd330fa4b8cd3698d9129ecbae282))
-- **core,schemas:** move alteration types into schemas src ([#2005](https://github.com/logto-io/logto/issues/2005)) ([10c1be6](https://github.com/logto-io/logto/commit/10c1be6eb76e1cb94746aee632a421aea8d4c211))
+- bump react sdk and essentials toolkit to support CJK characters in idToken ([2f92b43](https://github.com/myeyesid-io/myeyesid/commit/2f92b438644bd330fa4b8cd3698d9129ecbae282))
+- **core,schemas:** move alteration types into schemas src ([#2005](https://github.com/myeyesid-io/myeyesid/issues/2005)) ([10c1be6](https://github.com/myeyesid-io/myeyesid/commit/10c1be6eb76e1cb94746aee632a421aea8d4c211))
 
-## [1.0.0-beta.9](https://github.com/logto-io/logto/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2022-09-07)
+## [1.0.0-beta.9](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2022-09-07)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-## [1.0.0-beta.8](https://github.com/logto-io/logto/compare/v1.0.0-beta.6...v1.0.0-beta.8) (2022-09-01)
+## [1.0.0-beta.8](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.6...v1.0.0-beta.8) (2022-09-01)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-## [1.0.0-beta.6](https://github.com/logto-io/logto/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2022-08-30)
+## [1.0.0-beta.6](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2022-08-30)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-## [1.0.0-beta.5](https://github.com/logto-io/logto/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2022-08-19)
+## [1.0.0-beta.5](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2022-08-19)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-## [1.0.0-beta.4](https://github.com/logto-io/logto/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2022-08-11)
-
-### Features
-
-- **core,schemas:** add application secret ([#1715](https://github.com/logto-io/logto/issues/1715)) ([543ee04](https://github.com/logto-io/logto/commit/543ee04f53f81b41b0669f0ac5773fc67d500c0c))
-- **schemas:** guard string max length ([#1737](https://github.com/logto-io/logto/issues/1737)) ([cdf210d](https://github.com/logto-io/logto/commit/cdf210df100c4105eb095f693b7cb31a005d62b8))
-
-## [1.0.0-beta.3](https://github.com/logto-io/logto/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2022-08-01)
-
-**Note:** Version bump only for package @logto/schemas
-
-## [1.0.0-beta.2](https://github.com/logto-io/logto/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-07-25)
-
-**Note:** Version bump only for package @logto/schemas
-
-## [1.0.0-beta.1](https://github.com/logto-io/logto/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2022-07-19)
+## [1.0.0-beta.4](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2022-08-11)
 
 ### Features
 
-- **core:** add response guard ([#1542](https://github.com/logto-io/logto/issues/1542)) ([6c39790](https://github.com/logto-io/logto/commit/6c397901805b01613df71eecaa06d3d84d0b606a))
+- **core,schemas:** add application secret ([#1715](https://github.com/myeyesid-io/myeyesid/issues/1715)) ([543ee04](https://github.com/myeyesid-io/myeyesid/commit/543ee04f53f81b41b0669f0ac5773fc67d500c0c))
+- **schemas:** guard string max length ([#1737](https://github.com/myeyesid-io/myeyesid/issues/1737)) ([cdf210d](https://github.com/myeyesid-io/myeyesid/commit/cdf210df100c4105eb095f693b7cb31a005d62b8))
 
-## [1.0.0-beta.0](https://github.com/logto-io/logto/compare/v1.0.0-alpha.4...v1.0.0-beta.0) (2022-07-14)
+## [1.0.0-beta.3](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2022-08-01)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-## [1.0.0-alpha.4](https://github.com/logto-io/logto/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-07-08)
+## [1.0.0-beta.2](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-07-25)
+
+**Note:** Version bump only for package @myeyesid/schemas
+
+## [1.0.0-beta.1](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2022-07-19)
 
 ### Features
 
-- expose zod error ([#1474](https://github.com/logto-io/logto/issues/1474)) ([81b63f0](https://github.com/logto-io/logto/commit/81b63f07bb412abf1f2b42059bac2ffcfc86272c))
+- **core:** add response guard ([#1542](https://github.com/myeyesid-io/myeyesid/issues/1542)) ([6c39790](https://github.com/myeyesid-io/myeyesid/commit/6c397901805b01613df71eecaa06d3d84d0b606a))
 
-## [1.0.0-alpha.3](https://github.com/logto-io/logto/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-07-07)
+## [1.0.0-beta.0](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-alpha.4...v1.0.0-beta.0) (2022-07-14)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-## [1.0.0-alpha.2](https://github.com/logto-io/logto/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-07-07)
+## [1.0.0-alpha.4](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-07-08)
+
+### Features
+
+- expose zod error ([#1474](https://github.com/myeyesid-io/myeyesid/issues/1474)) ([81b63f0](https://github.com/myeyesid-io/myeyesid/commit/81b63f07bb412abf1f2b42059bac2ffcfc86272c))
+
+## [1.0.0-alpha.3](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-07-07)
+
+**Note:** Version bump only for package @myeyesid/schemas
+
+## [1.0.0-alpha.2](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-07-07)
 
 ### Bug Fixes
 
-- **ui:** dark mode seed ([#1426](https://github.com/logto-io/logto/issues/1426)) ([be73dbf](https://github.com/logto-io/logto/commit/be73dbf4ef14cf49779775dd95848ba73904a4b2))
+- **ui:** dark mode seed ([#1426](https://github.com/myeyesid-io/myeyesid/issues/1426)) ([be73dbf](https://github.com/myeyesid-io/myeyesid/commit/be73dbf4ef14cf49779775dd95848ba73904a4b2))
 
-## [1.0.0-alpha.1](https://github.com/logto-io/logto/compare/v1.0.0-alpha.0...v1.0.0-alpha.1) (2022-07-05)
+## [1.0.0-alpha.1](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-alpha.0...v1.0.0-alpha.1) (2022-07-05)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-## [1.0.0-alpha.0](https://github.com/logto-io/logto/compare/v0.1.2-alpha.5...v1.0.0-alpha.0) (2022-07-04)
+## [1.0.0-alpha.0](https://github.com/myeyesid-io/myeyesid/compare/v0.1.2-alpha.5...v1.0.0-alpha.0) (2022-07-04)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-### [0.1.2-alpha.5](https://github.com/logto-io/logto/compare/v0.1.2-alpha.4...v0.1.2-alpha.5) (2022-07-03)
+### [0.1.2-alpha.5](https://github.com/myeyesid-io/myeyesid/compare/v0.1.2-alpha.4...v0.1.2-alpha.5) (2022-07-03)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-### [0.1.2-alpha.4](https://github.com/logto-io/logto/compare/v0.1.2-alpha.3...v0.1.2-alpha.4) (2022-07-03)
+### [0.1.2-alpha.4](https://github.com/myeyesid-io/myeyesid/compare/v0.1.2-alpha.3...v0.1.2-alpha.4) (2022-07-03)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-### [0.1.2-alpha.3](https://github.com/logto-io/logto/compare/v0.1.2-alpha.2...v0.1.2-alpha.3) (2022-07-03)
+### [0.1.2-alpha.3](https://github.com/myeyesid-io/myeyesid/compare/v0.1.2-alpha.2...v0.1.2-alpha.3) (2022-07-03)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-### [0.1.2-alpha.2](https://github.com/logto-io/schemas/compare/v0.1.2-alpha.1...v0.1.2-alpha.2) (2022-07-02)
+### [0.1.2-alpha.2](https://github.com/myeyesid-io/schemas/compare/v0.1.2-alpha.1...v0.1.2-alpha.2) (2022-07-02)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-### [0.1.2-alpha.1](https://github.com/logto-io/schemas/compare/v0.1.2-alpha.0...v0.1.2-alpha.1) (2022-07-02)
+### [0.1.2-alpha.1](https://github.com/myeyesid-io/schemas/compare/v0.1.2-alpha.0...v0.1.2-alpha.1) (2022-07-02)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-### [0.1.2-alpha.0](https://github.com/logto-io/schemas/compare/v0.1.1-alpha.0...v0.1.2-alpha.0) (2022-07-02)
+### [0.1.2-alpha.0](https://github.com/myeyesid-io/schemas/compare/v0.1.1-alpha.0...v0.1.2-alpha.0) (2022-07-02)
 
-**Note:** Version bump only for package @logto/schemas
+**Note:** Version bump only for package @myeyesid/schemas
 
-### [0.1.1-alpha.0](https://github.com/logto-io/schemas/compare/v0.1.0-internal...v0.1.1-alpha.0) (2022-07-01)
+### [0.1.1-alpha.0](https://github.com/myeyesid-io/schemas/compare/v0.1.0-internal...v0.1.1-alpha.0) (2022-07-01)
 
 ### Features
 
-- **console,ui:** generate dark mode color in console ([#1231](https://github.com/logto-io/schemas/issues/1231)) ([f72b21d](https://github.com/logto-io/schemas/commit/f72b21d1602ab0fb35ef3e7d84f6c8ebd7e18b08))
-- **console:** add application column in user management ([#728](https://github.com/logto-io/schemas/issues/728)) ([a035587](https://github.com/logto-io/schemas/commit/a0355872c65bc0da27e57e25568fbe5dcc5b671b))
-- **console:** add column lastSignIn in user management ([#679](https://github.com/logto-io/schemas/issues/679)) ([a0b4b98](https://github.com/logto-io/schemas/commit/a0b4b98c35ff08c2df0863e4bc2110386fc54aee))
-- **console:** audit log table ([#1000](https://github.com/logto-io/schemas/issues/1000)) ([fdd12de](https://github.com/logto-io/schemas/commit/fdd12de1cf39c36dd65dd9365ad343478718d112))
-- **console:** configure cors-allowed-origins ([#695](https://github.com/logto-io/schemas/issues/695)) ([4a0577a](https://github.com/logto-io/schemas/commit/4a0577accdb36e2b916b0e520b3352f6426b64c7))
-- **console:** dark logo ([#860](https://github.com/logto-io/schemas/issues/860)) ([664a218](https://github.com/logto-io/schemas/commit/664a2180a51b577fb517661cf0d7efb1374f3858))
-- **console:** hide get-started page on clicking 'Hide this' button ([7fd42fd](https://github.com/logto-io/schemas/commit/7fd42fdaa17217f8be6ea120e287ea243904977a))
-- **console:** integrate dark mode settings ([a04f818](https://github.com/logto-io/schemas/commit/a04f818ffb8627a5c3d594edb466d1b8e45e3015))
-- **console:** log details page ([#1064](https://github.com/logto-io/schemas/issues/1064)) ([0421195](https://github.com/logto-io/schemas/commit/04211957e1222f9597c32afd2982258afa73fa31))
-- **console:** sie form reorg ([#1218](https://github.com/logto-io/schemas/issues/1218)) ([2c41334](https://github.com/logto-io/schemas/commit/2c413341d1c515049faa130416f7a5e591d10e8a))
-- **console:** sign in exp guide ([#755](https://github.com/logto-io/schemas/issues/755)) ([bafd094](https://github.com/logto-io/schemas/commit/bafd09474c68ca5539d676d2cbf06fa16e070edb))
-- **console:** support persisting get-started progress in settings config ([43b2309](https://github.com/logto-io/schemas/commit/43b2309c994b2eb8b1b8f1c12893eb66b5ce1d95))
-- **core,console:** social connector targets ([#851](https://github.com/logto-io/schemas/issues/851)) ([127664a](https://github.com/logto-io/schemas/commit/127664a62f1b1c794569b7fe9d0bfceb7b97dc74))
-- **core,schemas:** koaLogSession middleware ([#767](https://github.com/logto-io/schemas/issues/767)) ([4e60446](https://github.com/logto-io/schemas/commit/4e6044641190faaa2ee4f8d4765118e381df8a30))
-- **core,schemas:** log IP and user agent ([#682](https://github.com/logto-io/schemas/issues/682)) ([0ecb7e4](https://github.com/logto-io/schemas/commit/0ecb7e4d2fe869ada46cc39e0fef98d2240cb1b2))
-- **core,schemas:** log token exchange success ([#809](https://github.com/logto-io/schemas/issues/809)) ([3b048a8](https://github.com/logto-io/schemas/commit/3b048a80a374ff720a5afe3b35f007b31fddd576))
-- **core,schemas:** save application id that the user first consented ([#688](https://github.com/logto-io/schemas/issues/688)) ([4521c3c](https://github.com/logto-io/schemas/commit/4521c3c8d17becb6b322fc0128fff992f34d2a0d))
-- **core:** add experience configs ([#745](https://github.com/logto-io/schemas/issues/745)) ([08904b8](https://github.com/logto-io/schemas/commit/08904b8f93f39cfd24dae88746e5b18ce35ff0b4))
-- **core:** add role table seed ([#1145](https://github.com/logto-io/schemas/issues/1145)) ([837ad52](https://github.com/logto-io/schemas/commit/837ad523cef4a41ab9fdddfe7a92b6ed074114a0))
-- **core:** add sign-in-mode ([#1132](https://github.com/logto-io/schemas/issues/1132)) ([f640dad](https://github.com/logto-io/schemas/commit/f640dad52f2e75620b392114673860138e1aca2c))
-- **core:** grantRevokedListener for logging revocation of access and refresh token ([#900](https://github.com/logto-io/schemas/issues/900)) ([e5196fc](https://github.com/logto-io/schemas/commit/e5196fc31dc1c4ec8086c9df2d1cc8f5486af380))
-- **core:** log error body ([#1065](https://github.com/logto-io/schemas/issues/1065)) ([2ba1121](https://github.com/logto-io/schemas/commit/2ba11215edc8bc83efcd41e1587b53fddc5bb101))
-- **core:** log sending passcode with connector id ([#824](https://github.com/logto-io/schemas/issues/824)) ([82c7138](https://github.com/logto-io/schemas/commit/82c7138683f1027a227b3939d7516e0912773fe5))
-- **core:** update connector db schema ([#732](https://github.com/logto-io/schemas/issues/732)) ([8e1533a](https://github.com/logto-io/schemas/commit/8e1533a70267d459feea4e5174296b17bef84d48))
-- **demo-app:** implementation ([#982](https://github.com/logto-io/schemas/issues/982)) ([7f4f4f8](https://github.com/logto-io/schemas/commit/7f4f4f84addf8a25c3d30f1ac3ceeef460afcf17))
-- **demo-app:** implementation (3/3) ([#1021](https://github.com/logto-io/schemas/issues/1021)) ([91e2f05](https://github.com/logto-io/schemas/commit/91e2f055f2eb75ef8846b02d0d211adbbb898b41))
-- **demo-app:** show notification in main flow ([#1038](https://github.com/logto-io/schemas/issues/1038)) ([90ca76e](https://github.com/logto-io/schemas/commit/90ca76eeb5460b66d2241f137f179bf4d5d6ae37))
-- remove target, platform from connector schema and add id to metadata ([#930](https://github.com/logto-io/schemas/issues/930)) ([054b0f7](https://github.com/logto-io/schemas/commit/054b0f7b6a6dfed66540042ea69b0721126fe695))
-- **schemas:** create log indices on application id and user id ([#933](https://github.com/logto-io/schemas/issues/933)) ([bf6e08c](https://github.com/logto-io/schemas/commit/bf6e08c37233da372bc5570f9855df023704a93b))
-- **schemas:** make users.avatar URL length 2048 ([#1141](https://github.com/logto-io/schemas/issues/1141)) ([3ac01d7](https://github.com/logto-io/schemas/commit/3ac01d72f9d30eca5836dcfbddd1700ebb3ddac1))
-- update field check rules ([#854](https://github.com/logto-io/schemas/issues/854)) ([85a407c](https://github.com/logto-io/schemas/commit/85a407c5f6f76fed0513acd6fb41943413935b5a))
-- use user level custom data to save preferences ([#1045](https://github.com/logto-io/schemas/issues/1045)) ([f2b44b4](https://github.com/logto-io/schemas/commit/f2b44b49f9763b365b0062000146fee2b8df72a9))
+- **console,ui:** generate dark mode color in console ([#1231](https://github.com/myeyesid-io/schemas/issues/1231)) ([f72b21d](https://github.com/myeyesid-io/schemas/commit/f72b21d1602ab0fb35ef3e7d84f6c8ebd7e18b08))
+- **console:** add application column in user management ([#728](https://github.com/myeyesid-io/schemas/issues/728)) ([a035587](https://github.com/myeyesid-io/schemas/commit/a0355872c65bc0da27e57e25568fbe5dcc5b671b))
+- **console:** add column lastSignIn in user management ([#679](https://github.com/myeyesid-io/schemas/issues/679)) ([a0b4b98](https://github.com/myeyesid-io/schemas/commit/a0b4b98c35ff08c2df0863e4bc2110386fc54aee))
+- **console:** audit log table ([#1000](https://github.com/myeyesid-io/schemas/issues/1000)) ([fdd12de](https://github.com/myeyesid-io/schemas/commit/fdd12de1cf39c36dd65dd9365ad343478718d112))
+- **console:** configure cors-allowed-origins ([#695](https://github.com/myeyesid-io/schemas/issues/695)) ([4a0577a](https://github.com/myeyesid-io/schemas/commit/4a0577accdb36e2b916b0e520b3352f6426b64c7))
+- **console:** dark logo ([#860](https://github.com/myeyesid-io/schemas/issues/860)) ([664a218](https://github.com/myeyesid-io/schemas/commit/664a2180a51b577fb517661cf0d7efb1374f3858))
+- **console:** hide get-started page on clicking 'Hide this' button ([7fd42fd](https://github.com/myeyesid-io/schemas/commit/7fd42fdaa17217f8be6ea120e287ea243904977a))
+- **console:** integrate dark mode settings ([a04f818](https://github.com/myeyesid-io/schemas/commit/a04f818ffb8627a5c3d594edb466d1b8e45e3015))
+- **console:** log details page ([#1064](https://github.com/myeyesid-io/schemas/issues/1064)) ([0421195](https://github.com/myeyesid-io/schemas/commit/04211957e1222f9597c32afd2982258afa73fa31))
+- **console:** sie form reorg ([#1218](https://github.com/myeyesid-io/schemas/issues/1218)) ([2c41334](https://github.com/myeyesid-io/schemas/commit/2c413341d1c515049faa130416f7a5e591d10e8a))
+- **console:** sign in exp guide ([#755](https://github.com/myeyesid-io/schemas/issues/755)) ([bafd094](https://github.com/myeyesid-io/schemas/commit/bafd09474c68ca5539d676d2cbf06fa16e070edb))
+- **console:** support persisting get-started progress in settings config ([43b2309](https://github.com/myeyesid-io/schemas/commit/43b2309c994b2eb8b1b8f1c12893eb66b5ce1d95))
+- **core,console:** social connector targets ([#851](https://github.com/myeyesid-io/schemas/issues/851)) ([127664a](https://github.com/myeyesid-io/schemas/commit/127664a62f1b1c794569b7fe9d0bfceb7b97dc74))
+- **core,schemas:** koaLogSession middleware ([#767](https://github.com/myeyesid-io/schemas/issues/767)) ([4e60446](https://github.com/myeyesid-io/schemas/commit/4e6044641190faaa2ee4f8d4765118e381df8a30))
+- **core,schemas:** log IP and user agent ([#682](https://github.com/myeyesid-io/schemas/issues/682)) ([0ecb7e4](https://github.com/myeyesid-io/schemas/commit/0ecb7e4d2fe869ada46cc39e0fef98d2240cb1b2))
+- **core,schemas:** log token exchange success ([#809](https://github.com/myeyesid-io/schemas/issues/809)) ([3b048a8](https://github.com/myeyesid-io/schemas/commit/3b048a80a374ff720a5afe3b35f007b31fddd576))
+- **core,schemas:** save application id that the user first consented ([#688](https://github.com/myeyesid-io/schemas/issues/688)) ([4521c3c](https://github.com/myeyesid-io/schemas/commit/4521c3c8d17becb6b322fc0128fff992f34d2a0d))
+- **core:** add experience configs ([#745](https://github.com/myeyesid-io/schemas/issues/745)) ([08904b8](https://github.com/myeyesid-io/schemas/commit/08904b8f93f39cfd24dae88746e5b18ce35ff0b4))
+- **core:** add role table seed ([#1145](https://github.com/myeyesid-io/schemas/issues/1145)) ([837ad52](https://github.com/myeyesid-io/schemas/commit/837ad523cef4a41ab9fdddfe7a92b6ed074114a0))
+- **core:** add sign-in-mode ([#1132](https://github.com/myeyesid-io/schemas/issues/1132)) ([f640dad](https://github.com/myeyesid-io/schemas/commit/f640dad52f2e75620b392114673860138e1aca2c))
+- **core:** grantRevokedListener for logging revocation of access and refresh token ([#900](https://github.com/myeyesid-io/schemas/issues/900)) ([e5196fc](https://github.com/myeyesid-io/schemas/commit/e5196fc31dc1c4ec8086c9df2d1cc8f5486af380))
+- **core:** log error body ([#1065](https://github.com/myeyesid-io/schemas/issues/1065)) ([2ba1121](https://github.com/myeyesid-io/schemas/commit/2ba11215edc8bc83efcd41e1587b53fddc5bb101))
+- **core:** log sending passcode with connector id ([#824](https://github.com/myeyesid-io/schemas/issues/824)) ([82c7138](https://github.com/myeyesid-io/schemas/commit/82c7138683f1027a227b3939d7516e0912773fe5))
+- **core:** update connector db schema ([#732](https://github.com/myeyesid-io/schemas/issues/732)) ([8e1533a](https://github.com/myeyesid-io/schemas/commit/8e1533a70267d459feea4e5174296b17bef84d48))
+- **demo-app:** implementation ([#982](https://github.com/myeyesid-io/schemas/issues/982)) ([7f4f4f8](https://github.com/myeyesid-io/schemas/commit/7f4f4f84addf8a25c3d30f1ac3ceeef460afcf17))
+- **demo-app:** implementation (3/3) ([#1021](https://github.com/myeyesid-io/schemas/issues/1021)) ([91e2f05](https://github.com/myeyesid-io/schemas/commit/91e2f055f2eb75ef8846b02d0d211adbbb898b41))
+- **demo-app:** show notification in main flow ([#1038](https://github.com/myeyesid-io/schemas/issues/1038)) ([90ca76e](https://github.com/myeyesid-io/schemas/commit/90ca76eeb5460b66d2241f137f179bf4d5d6ae37))
+- remove target, platform from connector schema and add id to metadata ([#930](https://github.com/myeyesid-io/schemas/issues/930)) ([054b0f7](https://github.com/myeyesid-io/schemas/commit/054b0f7b6a6dfed66540042ea69b0721126fe695))
+- **schemas:** create log indices on application id and user id ([#933](https://github.com/myeyesid-io/schemas/issues/933)) ([bf6e08c](https://github.com/myeyesid-io/schemas/commit/bf6e08c37233da372bc5570f9855df023704a93b))
+- **schemas:** make users.avatar URL length 2048 ([#1141](https://github.com/myeyesid-io/schemas/issues/1141)) ([3ac01d7](https://github.com/myeyesid-io/schemas/commit/3ac01d72f9d30eca5836dcfbddd1700ebb3ddac1))
+- update field check rules ([#854](https://github.com/myeyesid-io/schemas/issues/854)) ([85a407c](https://github.com/myeyesid-io/schemas/commit/85a407c5f6f76fed0513acd6fb41943413935b5a))
+- use user level custom data to save preferences ([#1045](https://github.com/myeyesid-io/schemas/issues/1045)) ([f2b44b4](https://github.com/myeyesid-io/schemas/commit/f2b44b49f9763b365b0062000146fee2b8df72a9))
 
 ### Bug Fixes
 
-- `lint:report` script ([#730](https://github.com/logto-io/schemas/issues/730)) ([3b17324](https://github.com/logto-io/schemas/commit/3b17324d189b2fe47985d0bee8b37b4ef1dbdd2b))
-- **console:** align usage of customizeSignInExperience ([#837](https://github.com/logto-io/schemas/issues/837)) ([808a676](https://github.com/logto-io/schemas/commit/808a676da6239fa0471c65f9920bd9715bfe4c19))
-- **console:** update terms of use ([#1122](https://github.com/logto-io/schemas/issues/1122)) ([9262a6f](https://github.com/logto-io/schemas/commit/9262a6f3beb7c2c46708453ce7d667dc5b39da8e))
-- delete custom domain ([#737](https://github.com/logto-io/schemas/issues/737)) ([8a48fb6](https://github.com/logto-io/schemas/commit/8a48fb6225f9850aeec7917a54d849fd9a88254e))
-- **schemas:** remove user foreign key on application id ([#964](https://github.com/logto-io/schemas/issues/964)) ([9d8ef76](https://github.com/logto-io/schemas/commit/9d8ef7632b2d1d2094eae1b232eba334342e5d74))
+- `lint:report` script ([#730](https://github.com/myeyesid-io/schemas/issues/730)) ([3b17324](https://github.com/myeyesid-io/schemas/commit/3b17324d189b2fe47985d0bee8b37b4ef1dbdd2b))
+- **console:** align usage of customizeSignInExperience ([#837](https://github.com/myeyesid-io/schemas/issues/837)) ([808a676](https://github.com/myeyesid-io/schemas/commit/808a676da6239fa0471c65f9920bd9715bfe4c19))
+- **console:** update terms of use ([#1122](https://github.com/myeyesid-io/schemas/issues/1122)) ([9262a6f](https://github.com/myeyesid-io/schemas/commit/9262a6f3beb7c2c46708453ce7d667dc5b39da8e))
+- delete custom domain ([#737](https://github.com/myeyesid-io/schemas/issues/737)) ([8a48fb6](https://github.com/myeyesid-io/schemas/commit/8a48fb6225f9850aeec7917a54d849fd9a88254e))
+- **schemas:** remove user foreign key on application id ([#964](https://github.com/myeyesid-io/schemas/issues/964)) ([9d8ef76](https://github.com/myeyesid-io/schemas/commit/9d8ef7632b2d1d2094eae1b232eba334342e5d74))

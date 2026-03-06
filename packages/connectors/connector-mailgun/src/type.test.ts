@@ -1,4 +1,4 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 
 import { mailgunConfigGuard } from './types.js';
 

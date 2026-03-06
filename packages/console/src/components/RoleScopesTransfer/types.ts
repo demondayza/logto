@@ -1,4 +1,4 @@
-import type { ResourceResponse, ScopeResponse } from '@logto/schemas';
+import type { ResourceResponse, ScopeResponse } from '@myeyesid/schemas';
 
 export type DetailedResourceResponse = Omit<ResourceResponse, 'scopes'> & {
   scopes: ScopeResponse[];

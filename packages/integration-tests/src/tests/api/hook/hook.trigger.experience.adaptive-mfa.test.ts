@@ -4,7 +4,7 @@ import {
   MfaFactor,
   MfaPolicy,
   SignInIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { authenticator } from 'otplib';
 
 import { createUserMfaVerification } from '#src/api/admin-user.js';
@@ -69,7 +69,7 @@ describe('adaptive MFA experience hook trigger', () => {
         }
 
         const client = await initExperienceClient({
-          extraHeaders: { 'x-logto-cf-bot-score': '10' },
+          extraHeaders: { 'x-myeyesid-cf-bot-score': '10' },
         });
         await identifyUserWithUsernamePassword(client, username, password);
         await successfullyVerifyTotp(client, {

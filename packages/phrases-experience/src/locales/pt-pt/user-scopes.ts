@@ -6,11 +6,11 @@ const user_scopes = {
     profile: 'O teu nome, nome de utilizador, avatar e outras informações pessoais',
     roles: 'Os teus papéis',
     identities: 'As tuas identidades sociais associadas',
-    'urn:logto:scope:organizations': 'As tuas informações de organização',
-    'urn:logto:scope:organization_roles': 'Os teus papéis na organização',
+    'urn:myeyesid:scope:organizations': 'As tuas informações de organização',
+    'urn:myeyesid:scope:organization_roles': 'Os teus papéis na organização',
     address: 'A tua morada',
     /** UNTRANSLATED */
-    'urn:logto:scope:sessions': 'Your active sessions',
+    'urn:myeyesid:scope:sessions': 'Your active sessions',
   },
 };
 

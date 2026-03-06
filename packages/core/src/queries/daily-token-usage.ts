@@ -1,5 +1,5 @@
-import { DailyTokenUsage } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { DailyTokenUsage } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 import { z } from 'zod';

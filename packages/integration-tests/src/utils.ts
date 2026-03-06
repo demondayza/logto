@@ -1,7 +1,7 @@
 import crypto, { randomInt } from 'node:crypto';
 import path from 'node:path';
 
-import { generateStandardId } from '@logto/shared';
+import { generateStandardId } from '@myeyesid/shared';
 import { assert } from '@silverhand/essentials';
 import { type Page } from 'puppeteer';
 
@@ -13,8 +13,8 @@ export const generateUsername = () => `usr_${crypto.randomUUID().replaceAll('-',
 export const generatePassword = () => `pwd_${crypto.randomUUID().slice(0, 12)}`;
 
 export const generateResourceName = () => `res_${crypto.randomUUID()}`;
-export const generateResourceIndicator = () => `https://${crypto.randomUUID()}.logto.io`;
-export const generateEmail = (domain = 'logto.io') =>
+export const generateResourceIndicator = () => `https://${crypto.randomUUID()}.myeyesid.io`;
+export const generateEmail = (domain = 'myeyesid.io') =>
   `${crypto.randomUUID().toLowerCase()}@${domain}`;
 export const generateScopeName = () => `sc:${crypto.randomUUID()}`;
 export const generateRoleName = () => `role_${crypto.randomUUID()}`;

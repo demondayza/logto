@@ -1,5 +1,5 @@
-import { appInsights } from '@logto/app-insights/node';
-import { type DirectSignInOptions, Prompt, QueryKey, ReservedScope, UserScope } from '@logto/js';
+import { appInsights } from '@myeyesid/app-insights/node';
+import { type DirectSignInOptions, Prompt, QueryKey, ReservedScope, UserScope } from '@myeyesid/js';
 import {
   ApplicationType,
   type SsoSamlAssertionContent,
@@ -8,8 +8,8 @@ import {
   type SsoConnectorIdpInitiatedAuthConfig,
   type EncryptedTokenSet,
   type SecretEnterpriseSsoConnectorRelationPayload,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { assert, deduplicate, trySafe } from '@silverhand/essentials';
 
 import { defaultIdPInitiatedSamlSsoSessionTtl } from '#src/constants/index.js';
@@ -95,7 +95,7 @@ export const createSsoConnectorLibrary = (queries: Queries) => {
     // Throws an 404 error if the application is not found
     const application = await applications.findApplicationById(defaultApplicationId);
 
-    // Authorization request initiated by Logto server
+    // Authorization request initiated by MyEyesID server
     if (autoSendAuthorizationRequest) {
       // Only first-party traditional web applications or SAML applications are allowed
       assertThat(
@@ -146,7 +146,7 @@ export const createSsoConnectorLibrary = (queries: Queries) => {
    * @remarks
    * For IdP-initiated SAML SSO flow use only.
    * Save the SAML assertion content to the database
-   * The session ID will be used to retrieve the SAML assertion content when the user is redirected to Logto SSO authentication flow.
+   * The session ID will be used to retrieve the SAML assertion content when the user is redirected to MyEyesID SSO authentication flow.
    */
   const createIdpInitiatedSamlSsoSession = async (
     connectorId: string,
@@ -272,7 +272,7 @@ export const createSsoConnectorLibrary = (queries: Queries) => {
       connector,
       // Placeholder, not used in OIDC SSO connectors
       // Avoid importing unnecessary envSet to this method
-      new URL('http://auth.logto.io')
+      new URL('http://auth.myeyesid.io')
     );
 
     assertThat(

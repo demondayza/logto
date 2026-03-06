@@ -29,7 +29,7 @@ export default function koaSpaProxy<StateT, ContextT extends IRouterParamContext
 }: Properties): MiddlewareType<StateT, ContextT, ResponseBodyT> {
   type Middleware = MiddlewareType<StateT, ContextT, ResponseBodyT>;
 
-  const distributionPath = path.join('node_modules/@logto', packagePath, 'dist');
+  const distributionPath = path.join('node_modules/@myeyesid', packagePath, 'dist');
 
   const spaProxy: Middleware = EnvSet.values.isProduction
     ? serveStatic(distributionPath)
@@ -78,7 +78,7 @@ export default function koaSpaProxy<StateT, ContextT extends IRouterParamContext
     }
 
     // Add a header to indicate which static package is being served
-    ctx.set('Logto-Static-Package', packagePath);
+    ctx.set('MyEyesID-Static-Package', packagePath);
 
     return spaProxy(ctx, next);
   };

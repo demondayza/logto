@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { conditionalString } from '@silverhand/essentials';
 import classNames from 'classnames';
 import i18next from 'i18next';

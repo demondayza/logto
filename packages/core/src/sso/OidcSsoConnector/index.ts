@@ -1,4 +1,4 @@
-import { SsoProviderName, SsoProviderType } from '@logto/schemas';
+import { SsoProviderName, SsoProviderType } from '@myeyesid/schemas';
 
 import OidcConnector from '../OidcConnector/index.js';
 import { type SingleSignOnFactory } from '../index.js';

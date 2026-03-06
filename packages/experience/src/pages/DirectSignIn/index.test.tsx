@@ -1,7 +1,7 @@
 import { useParams as useParamsMock } from 'react-router-dom';
 
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
-import { mockSsoConnectors, socialConnectors } from '@/__mocks__/logto';
+import { mockSsoConnectors, socialConnectors } from '@/__mocks__/myeyesid';
 
 import DirectSignIn from '.';
 

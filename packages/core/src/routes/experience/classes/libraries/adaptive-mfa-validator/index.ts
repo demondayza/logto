@@ -1,4 +1,4 @@
-import { InteractionEvent, type User, type UserGeoLocation } from '@logto/schemas';
+import { InteractionEvent, type User, type UserGeoLocation } from '@myeyesid/schemas';
 import { conditional, type Nullable, type Optional, trySafe } from '@silverhand/essentials';
 
 import { EnvSet } from '#src/env-set/index.js';

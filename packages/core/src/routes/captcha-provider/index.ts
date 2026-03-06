@@ -1,4 +1,4 @@
-import { CaptchaProviders, captchaConfigGuard } from '@logto/schemas';
+import { CaptchaProviders, captchaConfigGuard } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

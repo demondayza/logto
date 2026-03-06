@@ -4,11 +4,11 @@ import type { AlterationScript } from '../lib/types/alteration.js';
 
 const alteration: AlterationScript = {
   // We are making the jwt-customizer script field mandatory
-  // Delete the records in logto_configs where key is jwt.accessToken or jwt.clientCredentials and value jsonb's script field is undefined
+  // Delete the records in myeyesid_configs where key is jwt.accessToken or jwt.clientCredentials and value jsonb's script field is undefined
   up: async (pool) => {
     await pool.query(
       sql`
-        delete from logto_configs 
+        delete from myeyesid_configs 
         where key in ('jwt.accessToken', 'jwt.clientCredentials')
         and value->>'script' is null
       `

@@ -1,15 +1,15 @@
-import { buildRawConnector, notImplemented } from '@logto/cli/lib/connector/index.js';
-import type { ConnectorFactory } from '@logto/cli/lib/connector/index.js';
-import type CloudRouter from '@logto/cloud/routes';
+import { buildRawConnector, notImplemented } from '@myeyesid/cli/lib/connector/index.js';
+import type { ConnectorFactory } from '@myeyesid/cli/lib/connector/index.js';
+import type CloudRouter from '@myeyesid/cloud/routes';
 import {
   type SmsConnector,
   type EmailConnector,
   demoConnectorIds,
   TemplateType,
-} from '@logto/connector-kit';
-import { ServiceConnector } from '@logto/connector-kit';
-import { phoneRegEx, emailRegEx } from '@logto/core-kit';
-import { jsonObjectGuard, ConnectorType } from '@logto/schemas';
+} from '@myeyesid/connector-kit';
+import { ServiceConnector } from '@myeyesid/connector-kit';
+import { phoneRegEx, emailRegEx } from '@myeyesid/core-kit';
+import { jsonObjectGuard, ConnectorType } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { string, object } from 'zod';
 

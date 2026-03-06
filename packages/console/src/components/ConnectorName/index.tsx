@@ -1,4 +1,4 @@
-import { type ConnectorResponse } from '@logto/schemas';
+import { type ConnectorResponse } from '@myeyesid/schemas';
 
 import UnnamedTrans from '../UnnamedTrans';
 

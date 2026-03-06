@@ -1,4 +1,4 @@
-import { connectorFactoryResponseGuard } from '@logto/schemas';
+import { connectorFactoryResponseGuard } from '@myeyesid/schemas';
 import { string, object } from 'zod';
 
 import RequestError from '#src/errors/RequestError/index.js';

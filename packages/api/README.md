@@ -1,11 +1,11 @@
-# @logto/api
+# @myeyesid/api
 
-A TypeScript SDK for interacting with Logto's Management API using client credentials authentication.
+A TypeScript SDK for interacting with MyEyesID's Management API using client credentials authentication.
 
 ## Installation
 
 ```bash
-npm install @logto/api
+npm install @myeyesid/api
 ```
 
 ## Quick start
@@ -14,20 +14,20 @@ npm install @logto/api
 
 Before using this SDK, you need to:
 
-1. Create a machine-to-machine application in your Logto Console
+1. Create a machine-to-machine application in your MyEyesID Console
 2. Grant the application access to the Management API
 3. Note down the client ID and client secret
 
-For detailed setup instructions, visit: https://a.logto.io/m2m-mapi
+For detailed setup instructions, visit: https://a.myeyesid.io/m2m-mapi
 
 ### Basic usage
 
-#### Logto Cloud
+#### MyEyesID Cloud
 
 ```ts
-import { createManagementApi } from '@logto/api/management';
+import { createManagementApi } from '@myeyesid/api/management';
 
-// For Logto Cloud
+// For MyEyesID Cloud
 const { apiClient } = createManagementApi('your-tenant-id', {
   clientId: 'your-client-id',
   clientSecret: 'your-client-secret',
@@ -41,13 +41,13 @@ console.log(response.data);
 #### Self-hosted / OSS
 
 ```ts
-import { createManagementApi } from '@logto/api/management';
+import { createManagementApi } from '@myeyesid/api/management';
 
 const { apiClient } = createManagementApi('default', {
   clientId: 'your-client-id',
   clientSecret: 'your-client-secret',
-  baseUrl: 'https://your-logto-instance.com',
-  apiIndicator: 'https://your-logto-instance.com/api',
+  baseUrl: 'https://your-myeyesid-instance.com',
+  apiIndicator: 'https://your-myeyesid-instance.com/api',
 });
 ```
 
@@ -56,10 +56,10 @@ const { apiClient } = createManagementApi('default', {
 For advanced use cases where you need full control over the authentication logic, use `createApiClient`:
 
 ```ts
-import { createApiClient } from '@logto/api/management';
+import { createApiClient } from '@myeyesid/api/management';
 
 const client = createApiClient({
-  baseUrl: 'https://your-logto-instance.com',
+  baseUrl: 'https://your-myeyesid-instance.com',
   getToken: async () => {
     // Your custom token retrieval logic
     return getYourToken();
@@ -74,7 +74,7 @@ const response = await client.GET('/api/applications/{id}', {
 
 ### API documentation
 
-For detailed API documentation, refer to the [Logto Management API documentation](https://openapi.logto.io/).
+For detailed API documentation, refer to the [MyEyesID Management API documentation](https://openapi.myeyesid.io/).
 
 ## Development
 

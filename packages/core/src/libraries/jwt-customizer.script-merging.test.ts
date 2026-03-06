@@ -1,18 +1,18 @@
-import { LogtoJwtTokenKey } from '@logto/schemas';
+import { MyEyesIDJwtTokenKey } from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import deepmerge from 'deepmerge';
 
 describe('Test the deploy custom JWT script', () => {
   describe('Test script when both AccessToken & ClientCredentials scripts are existing', () => {
-    it.each(Object.values(LogtoJwtTokenKey))('test %s script', (key) => {
+    it.each(Object.values(MyEyesIDJwtTokenKey))('test %s script', (key) => {
       expect(
         deepmerge(
           {
-            [LogtoJwtTokenKey.AccessToken]: {
-              production: `${LogtoJwtTokenKey.AccessToken}-production`,
+            [MyEyesIDJwtTokenKey.AccessToken]: {
+              production: `${MyEyesIDJwtTokenKey.AccessToken}-production`,
             },
-            [LogtoJwtTokenKey.ClientCredentials]: {
-              production: `${LogtoJwtTokenKey.ClientCredentials}-production`,
+            [MyEyesIDJwtTokenKey.ClientCredentials]: {
+              production: `${MyEyesIDJwtTokenKey.ClientCredentials}-production`,
             },
           },
           {
@@ -22,13 +22,13 @@ describe('Test the deploy custom JWT script', () => {
           }
         )
       ).toEqual({
-        [LogtoJwtTokenKey.AccessToken]: {
-          production: `${LogtoJwtTokenKey.AccessToken}-production`,
-          ...cond(key === LogtoJwtTokenKey.AccessToken && { test: `${key}-test` }),
+        [MyEyesIDJwtTokenKey.AccessToken]: {
+          production: `${MyEyesIDJwtTokenKey.AccessToken}-production`,
+          ...cond(key === MyEyesIDJwtTokenKey.AccessToken && { test: `${key}-test` }),
         },
-        [LogtoJwtTokenKey.ClientCredentials]: {
-          production: `${LogtoJwtTokenKey.ClientCredentials}-production`,
-          ...cond(key === LogtoJwtTokenKey.ClientCredentials && { test: `${key}-test` }),
+        [MyEyesIDJwtTokenKey.ClientCredentials]: {
+          production: `${MyEyesIDJwtTokenKey.ClientCredentials}-production`,
+          ...cond(key === MyEyesIDJwtTokenKey.ClientCredentials && { test: `${key}-test` }),
         },
       });
     });
@@ -36,10 +36,10 @@ describe('Test the deploy custom JWT script', () => {
 
   describe('Test script:', () => {
     // Test it.each() can not be nested, so we have to test each key separately.
-    it.each(Object.values(LogtoJwtTokenKey))(
-      `when ${LogtoJwtTokenKey.AccessToken} script is existing, test $s script`,
+    it.each(Object.values(MyEyesIDJwtTokenKey))(
+      `when ${MyEyesIDJwtTokenKey.AccessToken} script is existing, test $s script`,
       (testingKey) => {
-        const existingKey = LogtoJwtTokenKey.AccessToken;
+        const existingKey = MyEyesIDJwtTokenKey.AccessToken;
         const existingScript = {
           [existingKey]: {
             production: `${existingKey}-production`,
@@ -71,10 +71,10 @@ describe('Test the deploy custom JWT script', () => {
       }
     );
 
-    it.each(Object.values(LogtoJwtTokenKey))(
-      `when ${LogtoJwtTokenKey.ClientCredentials} script is existing, test $s script`,
+    it.each(Object.values(MyEyesIDJwtTokenKey))(
+      `when ${MyEyesIDJwtTokenKey.ClientCredentials} script is existing, test $s script`,
       (testingKey) => {
-        const existingKey = LogtoJwtTokenKey.ClientCredentials;
+        const existingKey = MyEyesIDJwtTokenKey.ClientCredentials;
         const existingScript = {
           [existingKey]: {
             production: `${existingKey}-production`,
@@ -108,7 +108,7 @@ describe('Test the deploy custom JWT script', () => {
   });
 
   describe('Test script when both AccessToken & ClientCredentials scripts are not existing', () => {
-    it.each(Object.values(LogtoJwtTokenKey))('test %s script', (key) => {
+    it.each(Object.values(MyEyesIDJwtTokenKey))('test %s script', (key) => {
       expect(
         deepmerge(
           {},
@@ -125,15 +125,15 @@ describe('Test the deploy custom JWT script', () => {
 
 describe('Test deploy custom JWT script', () => {
   describe('Deploy script when both AccessToken & ClientCredentials scripts are existing', () => {
-    it.each(Object.values(LogtoJwtTokenKey))('deploy %s script', (key) => {
+    it.each(Object.values(MyEyesIDJwtTokenKey))('deploy %s script', (key) => {
       expect(
         deepmerge(
           {
-            [LogtoJwtTokenKey.AccessToken]: {
-              production: `${LogtoJwtTokenKey.AccessToken}-production`,
+            [MyEyesIDJwtTokenKey.AccessToken]: {
+              production: `${MyEyesIDJwtTokenKey.AccessToken}-production`,
             },
-            [LogtoJwtTokenKey.ClientCredentials]: {
-              production: `${LogtoJwtTokenKey.ClientCredentials}-production`,
+            [MyEyesIDJwtTokenKey.ClientCredentials]: {
+              production: `${MyEyesIDJwtTokenKey.ClientCredentials}-production`,
             },
           },
           {
@@ -143,14 +143,14 @@ describe('Test deploy custom JWT script', () => {
           }
         )
       ).toEqual({
-        [LogtoJwtTokenKey.AccessToken]: {
-          production: `${LogtoJwtTokenKey.AccessToken}-production${
-            key === LogtoJwtTokenKey.AccessToken ? '-new' : ''
+        [MyEyesIDJwtTokenKey.AccessToken]: {
+          production: `${MyEyesIDJwtTokenKey.AccessToken}-production${
+            key === MyEyesIDJwtTokenKey.AccessToken ? '-new' : ''
           }`,
         },
-        [LogtoJwtTokenKey.ClientCredentials]: {
-          production: `${LogtoJwtTokenKey.ClientCredentials}-production${
-            key === LogtoJwtTokenKey.ClientCredentials ? '-new' : ''
+        [MyEyesIDJwtTokenKey.ClientCredentials]: {
+          production: `${MyEyesIDJwtTokenKey.ClientCredentials}-production${
+            key === MyEyesIDJwtTokenKey.ClientCredentials ? '-new' : ''
           }`,
         },
       });
@@ -159,10 +159,10 @@ describe('Test deploy custom JWT script', () => {
 
   describe('Deploy script:', () => {
     // Test it.each() can not be nested, so we have to test each key separately.
-    it.each(Object.values(LogtoJwtTokenKey))(
-      `when ${LogtoJwtTokenKey.AccessToken} script is existing, deploy $s script`,
+    it.each(Object.values(MyEyesIDJwtTokenKey))(
+      `when ${MyEyesIDJwtTokenKey.AccessToken} script is existing, deploy $s script`,
       (deployingKey) => {
-        const existingKey = LogtoJwtTokenKey.AccessToken;
+        const existingKey = MyEyesIDJwtTokenKey.AccessToken;
         const existingScript = {
           [existingKey]: {
             production: `${existingKey}-production`,
@@ -193,10 +193,10 @@ describe('Test deploy custom JWT script', () => {
       }
     );
 
-    it.each(Object.values(LogtoJwtTokenKey))(
-      `when ${LogtoJwtTokenKey.ClientCredentials} script is existing, deploy $s script`,
+    it.each(Object.values(MyEyesIDJwtTokenKey))(
+      `when ${MyEyesIDJwtTokenKey.ClientCredentials} script is existing, deploy $s script`,
       (deployingKey) => {
-        const existingKey = LogtoJwtTokenKey.ClientCredentials;
+        const existingKey = MyEyesIDJwtTokenKey.ClientCredentials;
         const existingScript = {
           [existingKey]: {
             production: `${existingKey}-production`,
@@ -229,7 +229,7 @@ describe('Test deploy custom JWT script', () => {
   });
 
   describe('Deploy script when both AccessToken & ClientCredentials scripts are not existing', () => {
-    it.each(Object.values(LogtoJwtTokenKey))('deploy %s script', (key) => {
+    it.each(Object.values(MyEyesIDJwtTokenKey))('deploy %s script', (key) => {
       expect(
         deepmerge(
           {},
@@ -250,15 +250,15 @@ describe('Test deploy custom JWT script', () => {
 
 describe('Test undeploy custom JWT script', () => {
   describe('Undeploy script when both AccessToken & ClientCredentials scripts are existing', () => {
-    it.each(Object.values(LogtoJwtTokenKey))('undeploy %s script', (key) => {
+    it.each(Object.values(MyEyesIDJwtTokenKey))('undeploy %s script', (key) => {
       expect(
         deepmerge(
           {
-            [LogtoJwtTokenKey.AccessToken]: {
-              production: `${LogtoJwtTokenKey.AccessToken}-production`,
+            [MyEyesIDJwtTokenKey.AccessToken]: {
+              production: `${MyEyesIDJwtTokenKey.AccessToken}-production`,
             },
-            [LogtoJwtTokenKey.ClientCredentials]: {
-              production: `${LogtoJwtTokenKey.ClientCredentials}-production`,
+            [MyEyesIDJwtTokenKey.ClientCredentials]: {
+              production: `${MyEyesIDJwtTokenKey.ClientCredentials}-production`,
             },
           },
           {
@@ -268,17 +268,17 @@ describe('Test undeploy custom JWT script', () => {
           }
         )
       ).toEqual({
-        [LogtoJwtTokenKey.AccessToken]: {
+        [MyEyesIDJwtTokenKey.AccessToken]: {
           production:
-            key === LogtoJwtTokenKey.AccessToken
+            key === MyEyesIDJwtTokenKey.AccessToken
               ? undefined
-              : `${LogtoJwtTokenKey.AccessToken}-production`,
+              : `${MyEyesIDJwtTokenKey.AccessToken}-production`,
         },
-        [LogtoJwtTokenKey.ClientCredentials]: {
+        [MyEyesIDJwtTokenKey.ClientCredentials]: {
           production:
-            key === LogtoJwtTokenKey.ClientCredentials
+            key === MyEyesIDJwtTokenKey.ClientCredentials
               ? undefined
-              : `${LogtoJwtTokenKey.ClientCredentials}-production`,
+              : `${MyEyesIDJwtTokenKey.ClientCredentials}-production`,
         },
       });
     });
@@ -286,10 +286,10 @@ describe('Test undeploy custom JWT script', () => {
 
   describe('Undeploy script:', () => {
     // Test it.each() can not be nested, so we have to test each key separately.
-    it.each(Object.values(LogtoJwtTokenKey))(
-      `when ${LogtoJwtTokenKey.AccessToken} script is existing, undeploy $s script`,
+    it.each(Object.values(MyEyesIDJwtTokenKey))(
+      `when ${MyEyesIDJwtTokenKey.AccessToken} script is existing, undeploy $s script`,
       (undeployingKey) => {
-        const existingKey = LogtoJwtTokenKey.AccessToken;
+        const existingKey = MyEyesIDJwtTokenKey.AccessToken;
         const existingScript = {
           [existingKey]: {
             production: `${existingKey}-production`,
@@ -320,10 +320,10 @@ describe('Test undeploy custom JWT script', () => {
       }
     );
 
-    it.each(Object.values(LogtoJwtTokenKey))(
-      `when ${LogtoJwtTokenKey.ClientCredentials} script is existing, undeploy $s script`,
+    it.each(Object.values(MyEyesIDJwtTokenKey))(
+      `when ${MyEyesIDJwtTokenKey.ClientCredentials} script is existing, undeploy $s script`,
       (undeployingKey) => {
-        const existingKey = LogtoJwtTokenKey.ClientCredentials;
+        const existingKey = MyEyesIDJwtTokenKey.ClientCredentials;
         const existingScript = {
           [existingKey]: {
             production: `${existingKey}-production`,

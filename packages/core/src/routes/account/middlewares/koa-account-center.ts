@@ -1,4 +1,4 @@
-import type { AccountCenter } from '@logto/schemas';
+import type { AccountCenter } from '@myeyesid/schemas';
 import type { MiddlewareType } from 'koa';
 import { type IRouterParamContext } from 'koa-router';
 

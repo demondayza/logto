@@ -1,5 +1,5 @@
-import type { SignIn, SsoConnectorMetadata } from '@logto/schemas';
-import { SignInIdentifier, experience } from '@logto/schemas';
+import type { SignIn, SsoConnectorMetadata } from '@myeyesid/schemas';
+import { SignInIdentifier, experience } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import { fireEvent, act, waitFor } from '@testing-library/react';
 
@@ -11,7 +11,7 @@ import {
   mockSignInMethodSettingsTestCases,
   mockSignInExperienceSettings,
   mockSsoConnectors,
-} from '@/__mocks__/logto';
+} from '@/__mocks__/myeyesid';
 import { sendVerificationCodeApi } from '@/apis/utils';
 import { UserFlow } from '@/types';
 import { getDefaultCountryCallingCode } from '@/utils/country-code';

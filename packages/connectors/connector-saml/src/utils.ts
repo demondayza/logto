@@ -1,5 +1,5 @@
-import type { SetSession } from '@logto/connector-kit';
-import { ConnectorError, ConnectorErrorCodes, socialUserInfoGuard } from '@logto/connector-kit';
+import type { SetSession } from '@myeyesid/connector-kit';
+import { ConnectorError, ConnectorErrorCodes, socialUserInfoGuard } from '@myeyesid/connector-kit';
 import { XMLValidator } from 'fast-xml-parser';
 import * as saml from 'samlify';
 

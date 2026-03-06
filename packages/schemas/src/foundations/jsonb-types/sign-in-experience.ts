@@ -1,5 +1,5 @@
-import { hexColorRegEx } from '@logto/core-kit';
-import { languageTagGuard } from '@logto/language-kit';
+import { hexColorRegEx } from '@myeyesid/core-kit';
+import { languageTagGuard } from '@myeyesid/language-kit';
 import { z } from 'zod';
 
 import { Theme } from '../../types/theme.js';

@@ -1,4 +1,4 @@
-import { LogtoAccountApi } from '../api/index.js';
+import { MyEyesIDAccountApi } from '../api/index.js';
 import { type UserProfile } from '../types.js';
 
 type CreteMockAccountApiOptions = {
@@ -7,12 +7,12 @@ type CreteMockAccountApiOptions = {
 
 export const createMockAccountApi = ({
   fetchUserProfile,
-}: CreteMockAccountApiOptions): LogtoAccountApi => {
-  class MockAccountApi extends LogtoAccountApi {
+}: CreteMockAccountApiOptions): MyEyesIDAccountApi => {
+  class MockAccountApi extends MyEyesIDAccountApi {
     async fetchUserProfile(): Promise<UserProfile> {
       return fetchUserProfile();
     }
   }
 
-  return new MockAccountApi('https://mock.logto.app', async () => 'dummy_access_token');
+  return new MockAccountApi('https://mock.myeyesid.app', async () => 'dummy_access_token');
 };

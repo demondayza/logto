@@ -1,5 +1,5 @@
-import { defaultTenantId, MfaFactor, UsersPasswordEncryptionMethod } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { defaultTenantId, MfaFactor, UsersPasswordEncryptionMethod } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockResource, mockAdminUserRole, mockScope } from '#src/__mocks__/index.js';
 import { mockUser } from '#src/__mocks__/user.js';

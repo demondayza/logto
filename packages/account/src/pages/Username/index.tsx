@@ -1,7 +1,7 @@
 import Button from '@experience/shared/components/Button';
 import SmartInputField from '@experience/shared/components/InputFields/SmartInputField';
 import { validateUsername } from '@experience/shared/utils/validate-username';
-import { AccountCenterControlValue, SignInIdentifier } from '@logto/schemas';
+import { AccountCenterControlValue, SignInIdentifier } from '@myeyesid/schemas';
 import { useContext, useEffect, useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';

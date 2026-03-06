@@ -1,4 +1,4 @@
-import { ossConsolePath } from '@logto/schemas';
+import { ossConsolePath } from '@myeyesid/schemas';
 import type { Next } from 'koa';
 
 import { MockQueries } from '#src/test-utils/tenant.js';

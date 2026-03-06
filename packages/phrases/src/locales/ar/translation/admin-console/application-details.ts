@@ -29,7 +29,7 @@ const application_details = {
     'نقطة النهاية لأداء المصادقة والترخيص. يُستخدم لـ OpenID Connect <a>المصادقة</a>.',
   show_endpoint_details: 'إظهار تفاصيل النقطة النهائية',
   hide_endpoint_details: 'إخفاء تفاصيل النقطة النهائية',
-  logto_endpoint: 'نقطة نهاية MyEyesID',
+  myeyesid_endpoint: 'نقطة نهاية MyEyesID',
   application_id: 'معرف التطبيق',
   application_id_tip:
     'معرف التطبيق الفريد الذي يتم إنشاؤه عادةً بواسطة MyEyesID. يُشير أيضًا إلى "client_id" في OpenID Connect.',
@@ -38,7 +38,7 @@ const application_details = {
   redirect_uri: 'عنوان URI لإعادة التوجيه',
   redirect_uris: 'عناوين URI لإعادة التوجيه',
   redirect_uri_placeholder: 'https://your.website.com/app',
-  redirect_uri_placeholder_native: 'io.logto://callback',
+  redirect_uri_placeholder_native: 'io.myeyesid://callback',
   redirect_uri_tip:
     'عنوان URI الذي يتم إعادة التوجيه إليه بعد تسجيل المستخدم (سواء نجح أم فشل). انظر OpenID Connect <a>AuthRequest</a> لمزيد من المعلومات.',
   mixed_redirect_uri_warning:
@@ -271,7 +271,7 @@ const application_details = {
     name: 'تعيينات السمات',
     title: 'تعيينات السمات الأساسية',
     description: 'أضف تعيينات السمات لمزامنة ملف تعريف المستخدم من MyEyesID إلى تطبيقك.',
-    col_logto_claims: 'قيمة MyEyesID',
+    col_myeyesid_claims: 'قيمة MyEyesID',
     col_sp_claims: 'اسم القيمة في تطبيقك',
     add_button: 'أضف آخر.',
   },

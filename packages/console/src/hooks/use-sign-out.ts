@@ -1,26 +1,26 @@
-import { useLogto } from '@logto/react';
+import { useMyEyesID } from '@myeyesid/react';
 import { usePostHog } from 'posthog-js/react';
 import { useCallback } from 'react';
 
 /**
- * A hook that returns a wrapped `signOut` function from `useLogto` with necessary cleanup logic.
+ * A hook that returns a wrapped `signOut` function from `useMyEyesID` with necessary cleanup logic.
  *
- * Unless you have special needs, you should always use this hook instead of `useLogto` directly.
+ * Unless you have special needs, you should always use this hook instead of `useMyEyesID` directly.
  */
 const useSignOut = () => {
-  const { signOut: logtoSignOut } = useLogto();
+  const { signOut: myeyesidSignOut } = useMyEyesID();
   const postHog = usePostHog();
 
-  const signOut = useCallback<ReturnType<typeof useLogto>['signOut']>(
+  const signOut = useCallback<ReturnType<typeof useMyEyesID>['signOut']>(
     async (postSignOutRedirectUri) => {
       postHog.resetGroups(); // Not sure if this is needed, but just in case.
       postHog.reset();
-      return logtoSignOut(postSignOutRedirectUri);
+      return myeyesidSignOut(postSignOutRedirectUri);
     },
-    [logtoSignOut, postHog]
+    [myeyesidSignOut, postHog]
   );
   return {
-    /** A wrapped version of `useLogto`'s `signOut` with necessary cleanup logic. */
+    /** A wrapped version of `useMyEyesID`'s `signOut` with necessary cleanup logic. */
     signOut,
   };
 };

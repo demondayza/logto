@@ -1,4 +1,4 @@
-import { SignInIdentifier, SignInMode } from '@logto/schemas';
+import { SignInIdentifier, SignInMode } from '@myeyesid/schemas';
 import { Route, Routes } from 'react-router-dom';
 
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
@@ -7,7 +7,7 @@ import {
   mockSignInExperienceSettings,
   mockSignInMethodSettingsTestCases,
   mockSsoConnectors,
-} from '@/__mocks__/logto';
+} from '@/__mocks__/myeyesid';
 import SignIn from '@/pages/SignIn';
 
 jest.mock('i18next', () => ({

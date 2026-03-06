@@ -1,4 +1,4 @@
-import { logtoIssuer, metadataXml } from '#src/__mocks__/sso-connectors-mock.js';
+import { myeyesidIssuer, metadataXml } from '#src/__mocks__/sso-connectors-mock.js';
 
 // Will extend this type definition later since we are going to configure the SSO connectors with specific values.
 export type Protocol = 'SAML' | 'OIDC';
@@ -14,7 +14,7 @@ export type SsoConnectorTestCase = {
 const oidcFormData = {
   clientId: 'client-id',
   clientSecret: 'client-secret',
-  issuer: logtoIssuer,
+  issuer: myeyesidIssuer,
 };
 
 const samlFormData = {
@@ -22,11 +22,11 @@ const samlFormData = {
 };
 
 export const oidcPreviewResults = {
-  'Authorization endpoint': `${logtoIssuer}/auth`,
-  'Token endpoint': `${logtoIssuer}/token`,
-  'User information endpoint': `${logtoIssuer}/me`,
-  'JSON web key set endpoint': `${logtoIssuer}/jwks`,
-  Issuer: logtoIssuer,
+  'Authorization endpoint': `${myeyesidIssuer}/auth`,
+  'Token endpoint': `${myeyesidIssuer}/token`,
+  'User information endpoint': `${myeyesidIssuer}/me`,
+  'JSON web key set endpoint': `${myeyesidIssuer}/jwks`,
+  Issuer: myeyesidIssuer,
 };
 
 const oidcName = 'OIDC';
@@ -35,7 +35,7 @@ const oidc: SsoConnectorTestCase = {
   connectorName: oidcName,
   connectorFactoryName: oidcName,
   protocol: 'OIDC',
-  // To avoid external dependencies we use local logtoOidcUrl as the issuer for all the OIDC based connectors.
+  // To avoid external dependencies we use local myeyesidOidcUrl as the issuer for all the OIDC based connectors.
   formData: { ...oidcFormData },
   previewResults: oidcPreviewResults,
 };

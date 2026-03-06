@@ -1,6 +1,6 @@
 # Xiaomi social connector
 
-The official Logto connector for Xiaomi social sign-in. [中文文档](https://github.com/logto-io/logto/tree/master/packages/connectors/connector-xiaomi/README.zh-CN.md)
+The official MyEyesID connector for Xiaomi social sign-in. [中文文档](https://github.com/myeyesid-io/myeyesid/tree/master/packages/connectors/connector-xiaomi/README.zh-CN.md)
 
 **Table of contents**
 
@@ -22,10 +22,10 @@ The official Logto connector for Xiaomi social sign-in. [中文文档](https://g
 1. Visit [Xiaomi Account Service](https://dev.mi.com/passport/oauth2/applist)
 2. Configure OAuth settings:
    - Open the application you want to use for login, click on "Callback URL" (if you haven't edited the callback URL, it will display as "Enabled")
-   - Add authorization callback URL: `${your_logto_origin}/callback/${connector_id}`
-   - `connector_id` can be found on the top of the connector details page in Logto Console
+   - Add authorization callback URL: `${your_myeyesid_origin}/callback/${connector_id}`
+   - `connector_id` can be found on the top of the connector details page in MyEyesID Console
 3. Get `AppID` and `AppSecret` from the application details page
-4. Fill in the `clientId` and `clientSecret` fields in Logto Console with the values from step 3
+4. Fill in the `clientId` and `clientSecret` fields in MyEyesID Console with the values from step 3
 5. Optional configuration:
    - `skipConfirm`: Whether to skip the Xiaomi authorization confirmation page when user is already logged in to Xiaomi account, defaults to false
 
@@ -61,7 +61,7 @@ Multiple scopes can be configured by separating them with spaces, e.g.: `1 3 600
 
 ## Test Xiaomi connector
 
-That's it. Don't forget to [Enable social sign-in](https://docs.logto.io/connectors/social-connectors#enable-social-sign-in) in the sign-in experience.
+That's it. Don't forget to [Enable social sign-in](https://docs.myeyesid.io/connectors/social-connectors#enable-social-sign-in) in the sign-in experience.
 
 ## References
 

@@ -1,4 +1,4 @@
-import { RoleType, type ScopeResponse, isManagementApi, type RoleResponse } from '@logto/schemas';
+import { RoleType, type ScopeResponse, isManagementApi, type RoleResponse } from '@myeyesid/schemas';
 import useSWR from 'swr';
 
 import ManagementApiAccessFlag from '@/assets/icons/management-api-access.svg?react';

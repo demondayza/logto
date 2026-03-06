@@ -1,6 +1,6 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorPlatform } from '@logto/connector-kit';
-import type { Connector } from '@logto/schemas';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorPlatform } from '@myeyesid/connector-kit';
+import type { Connector } from '@myeyesid/schemas';
 
 export const mockMetadata: ConnectorMetadata = {
   id: 'id',

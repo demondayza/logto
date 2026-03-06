@@ -33,7 +33,7 @@ const link: CommandModule<{ path?: string }, { path?: string; cloud: boolean; mo
 
     await Promise.all(
       packages.map(async ([packageName, packagePath]) => {
-        if (!cloud && packageName.startsWith('connector-logto-')) {
+        if (!cloud && packageName.startsWith('connector-myeyesid-')) {
           return;
         }
 
@@ -42,7 +42,7 @@ const link: CommandModule<{ path?: string }, { path?: string; cloud: boolean; mo
         }
 
         try {
-          const targetPath = path.join(connectorDirectory, '@logto-' + packageName);
+          const targetPath = path.join(connectorDirectory, '@myeyesid-' + packageName);
 
           await fs.rm(targetPath, { recursive: true, force: true });
           await fs.symlink(path.relative(connectorDirectory, packagePath), targetPath);

@@ -1,7 +1,7 @@
 import {
   type LocalePhraseGroupKey,
   type LocalePhraseKey,
-} from '@logto/phrases-experience/lib/types';
+} from '@myeyesid/phrases-experience/lib/types';
 
 /**
  * List of locale phrase groups that should be hidden from the experience UI language editor.

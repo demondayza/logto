@@ -1,5 +1,5 @@
-import { appInsights } from '@logto/app-insights/node';
-import { ConsoleLog } from '@logto/shared';
+import { appInsights } from '@myeyesid/app-insights/node';
+import { ConsoleLog } from '@myeyesid/shared';
 import { trySafe } from '@silverhand/essentials';
 import chalk from 'chalk';
 import Koa from 'koa';

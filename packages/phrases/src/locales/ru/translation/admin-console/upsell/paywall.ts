@@ -43,7 +43,7 @@ const paywall = {
     'Достигнут лимит {{count, number}} разрешений на роль в плане <planName/>. Повысьте план, чтобы добавить дополнительные роли и разрешения. Если вам нужна помощь, не стесняйтесь <а>связаться с нами</а>.',
   saml_applications_oss:
     'Дополнительное SAML-приложение доступно в рамках корпоративного плана MyEyesID. Свяжитесь с нами, если вам нужна помощь.',
-  logto_pricing_button_text: 'Цены MyEyesID Cloud',
+  myeyesid_pricing_button_text: 'Цены MyEyesID Cloud',
   saml_applications:
     'Дополнительное SAML-приложение доступно с планом MyEyesID Enterprise. Свяжитесь с нами, если вам нужна помощь.',
   saml_applications_add_on:

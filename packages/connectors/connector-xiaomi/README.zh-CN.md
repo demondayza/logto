@@ -1,6 +1,6 @@
 # 小米社交连接器
 
-小米社交登录 Logto 官方连接器 [中文文档](#小米社交连接器)
+小米社交登录 MyEyesID 官方连接器 [中文文档](#小米社交连接器)
 
 **目录**
 
@@ -24,10 +24,10 @@
 1. 访问[小米帐号服务](https://dev.mi.com/passport/oauth2/applist)
 2. 配置 OAuth 设置:
    - 打开要用于登录的应用，点击「回调地址」（如果没有编辑过回调地址，会显示为「启用」）
-   - 添加授权回调地址: `${your_logto_origin}/callback/${connector_id}`
-   - `connector_id` 可以在 Logto 管理控制台连接器详情页顶部找到
+   - 添加授权回调地址: `${your_myeyesid_origin}/callback/${connector_id}`
+   - `connector_id` 可以在 MyEyesID 管理控制台连接器详情页顶部找到
 3. 从应用详情页获取 `AppID` 和 `AppSecret`
-4. 将第 3 步获取的值填入 Logto 管理控制台的 `clientId` 和 `clientSecret` 字段
+4. 将第 3 步获取的值填入 MyEyesID 管理控制台的 `clientId` 和 `clientSecret` 字段
 5. 可选配置:
    - `skipConfirm`: 在用户已登录小米账号的情况下，是否跳过小米授权确认页面，默认为 false
 
@@ -63,7 +63,7 @@
 
 ## 测试小米连接器
 
-大功告成！别忘了在[登录体验](https://docs.logto.io/zh-CN/connectors/social-connectors#enable-social-sign-in)中启用该连接器。
+大功告成！别忘了在[登录体验](https://docs.myeyesid.io/zh-CN/connectors/social-connectors#enable-social-sign-in)中启用该连接器。
 
 ## 参考
 

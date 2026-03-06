@@ -1,4 +1,4 @@
-import { pickDefault } from '@logto/shared/esm';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { MockTenant } from '#src/test-utils/tenant.js';
 
@@ -11,14 +11,14 @@ const queries = {
   findUserByIdentity: jest.fn(),
 };
 
-const getLogtoConnectorById = jest.fn().mockResolvedValue({ metadata: { target: 'logto' } });
+const getMyEyesIDConnectorById = jest.fn().mockResolvedValue({ metadata: { target: 'myeyesid' } });
 
 const tenantContext = new MockTenant(
   undefined,
   {
     users: queries,
   },
-  { getLogtoConnectorById }
+  { getMyEyesIDConnectorById }
 );
 
 const findUserByIdentifier = await pickDefault(import('./find-user-by-identifier.js'));
@@ -30,8 +30,8 @@ describe('findUserByIdentifier', () => {
   });
 
   it('email', async () => {
-    await findUserByIdentifier(tenantContext, { email: 'foo@logto.io' });
-    expect(queries.findUserByEmail).toBeCalledWith('foo@logto.io');
+    await findUserByIdentifier(tenantContext, { email: 'foo@myeyesid.io' });
+    expect(queries.findUserByEmail).toBeCalledWith('foo@myeyesid.io');
   });
 
   it('phone', async () => {
@@ -44,7 +44,7 @@ describe('findUserByIdentifier', () => {
       connectorId: 'connector',
       userInfo: { id: 'foo' },
     });
-    expect(getLogtoConnectorById).toBeCalledWith('connector');
-    expect(queries.findUserByIdentity).toBeCalledWith('logto', 'foo');
+    expect(getMyEyesIDConnectorById).toBeCalledWith('connector');
+    expect(queries.findUserByIdentity).toBeCalledWith('myeyesid', 'foo');
   });
 });

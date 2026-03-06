@@ -1,6 +1,6 @@
-import { emailRegEx } from '@logto/core-kit';
-import { SignInIdentifier } from '@logto/schemas';
-import { PhoneNumberParser } from '@logto/shared/universal';
+import { emailRegEx } from '@myeyesid/core-kit';
+import { SignInIdentifier } from '@myeyesid/schemas';
+import { PhoneNumberParser } from '@myeyesid/shared/universal';
 import i18next from 'i18next';
 import type { TFuncKey } from 'i18next';
 import { ParseError } from 'libphonenumber-js/mobile';

@@ -1,5 +1,5 @@
 import { formatPhoneNumberWithCountryCallingCode } from '@experience/utils/country-code';
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 import { updatePrimaryPhone } from '@ac/apis/account';
 import { sendPhoneVerificationCode, verifyPhoneVerificationCode } from '@ac/apis/verification';

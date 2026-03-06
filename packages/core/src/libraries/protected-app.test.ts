@@ -1,5 +1,5 @@
-import { type Application } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { type Application } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import {
   mockProtectedAppConfigProviderConfig,

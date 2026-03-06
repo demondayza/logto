@@ -1,4 +1,4 @@
-import { MfaFactor, MfaPolicy, SignInIdentifier } from '@logto/schemas';
+import { MfaFactor, MfaPolicy, SignInIdentifier } from '@myeyesid/schemas';
 import { authenticator } from 'otplib';
 
 import {
@@ -16,7 +16,7 @@ import { generateNewUserProfile, UserApiTest } from '#src/helpers/user.js';
 import { devFeatureTest } from '#src/utils.js';
 
 const lowBotScoreHeaders = Object.freeze({
-  'x-logto-cf-bot-score': '10',
+  'x-myeyesid-cf-bot-score': '10',
 });
 
 devFeatureTest.describe('adaptive MFA enforcement', () => {

@@ -1,5 +1,5 @@
-import { GlobalValues, UrlSet } from '@logto/shared';
-import { createMockUtils } from '@logto/shared/esm';
+import { GlobalValues, UrlSet } from '@myeyesid/shared';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import type { RequestMethod } from 'node-mocks-http';
 
 import createMockContext from '#src/test-utils/jest-koa-mocks/create-mock-context.js';
@@ -54,7 +54,7 @@ describe('koaCors() middleware', () => {
 
   describe('with URL sets', () => {
     it('should set proper CORS response headers for a single URL Set', async () => {
-      const endpoint = 'https://logto.io';
+      const endpoint = 'https://myeyesid.io';
       process.env.ENDPOINT = endpoint;
       process.env.NODE_ENV = 'dev';
       const urlSet = new UrlSet(false, 3001);
@@ -70,8 +70,8 @@ describe('koaCors() middleware', () => {
     });
 
     it('should set proper CORS response headers for multiple URL Sets', async () => {
-      const endpoint = 'https://logto.io';
-      const adminEndpoint = 'https://logto.admin';
+      const endpoint = 'https://myeyesid.io';
+      const adminEndpoint = 'https://myeyesid.admin';
 
       process.env.ENDPOINT = endpoint;
       process.env.ADMIN_ENDPOINT = adminEndpoint;
@@ -99,7 +99,7 @@ describe('koaCors() middleware', () => {
     });
 
     it('should not to set CORS response headers for localhost in production when endpoint is available', async () => {
-      const endpoint = 'https://logto.io';
+      const endpoint = 'https://myeyesid.io';
       process.env.ENDPOINT = endpoint;
       process.env.NODE_ENV = 'production';
       const urlSet = new UrlSet(false, 3001);
@@ -115,9 +115,9 @@ describe('koaCors() middleware', () => {
     it('should allow any origin if the path starts with an allowed prefix', async () => {
       const run = koaCors([], ['/api']);
 
-      const [ctx, setSpy] = mockContext('GET', 'https://logto.io/api');
+      const [ctx, setSpy] = mockContext('GET', 'https://myeyesid.io/api');
       await run(ctx, noop);
-      expectCorsHeaders(setSpy, 'https://logto.io');
+      expectCorsHeaders(setSpy, 'https://myeyesid.io');
     });
   });
 });

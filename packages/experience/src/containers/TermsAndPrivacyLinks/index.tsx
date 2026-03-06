@@ -1,4 +1,4 @@
-import { AgreeToTermsPolicy } from '@logto/schemas';
+import { AgreeToTermsPolicy } from '@myeyesid/schemas';
 import { t } from 'i18next';
 import { Trans } from 'react-i18next';
 

@@ -1,4 +1,4 @@
-import type { AdminConsoleKey } from '@logto/phrases';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

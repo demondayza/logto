@@ -1,4 +1,4 @@
-import { type EmailTemplateDetails, TemplateType } from '@logto/connector-kit';
+import { type EmailTemplateDetails, TemplateType } from '@myeyesid/connector-kit';
 
 import { mockEmailConnectorConfig } from '#src/__mocks__/connectors-mock.js';
 import { type MockEmailTemplatePayload } from '#src/__mocks__/email-templates.js';

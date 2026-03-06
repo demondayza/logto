@@ -3,7 +3,7 @@
  */
 /* eslint max-lines: 0 */
 
-import { ConnectorType } from '@logto/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 import {
   ApplicationType,
   type Branding,
@@ -11,14 +11,14 @@ import {
   SignInIdentifier,
   type FullSignInExperience,
   type PartialColor,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { appendPath, pick } from '@silverhand/essentials';
 
 import api from '#src/api/api.js';
 import { setApplicationSignInExperience } from '#src/api/application-sign-in-experience.js';
 import { createApplication, deleteApplication } from '#src/api/application.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
-import { demoAppRedirectUri, demoAppUrl, logtoUrl } from '#src/constants.js';
+import { demoAppRedirectUri, demoAppUrl, myeyesidUrl } from '#src/constants.js';
 import { clearConnectorsByTypes } from '#src/helpers/connector.js';
 import { OrganizationApiTest } from '#src/helpers/organization.js';
 import ExpectExperience from '#src/ui-helpers/expect-experience.js';
@@ -37,7 +37,7 @@ describe('overrides', () => {
     favicon: 'mock://fake-url-for-omni/favicon.ico',
     darkFavicon: 'mock://fake-url-for-omni/dark-favicon.ico',
   } satisfies Branding);
-  const omniCustomCss = '.logto_main-content { background-color: #f00 !important; }';
+  const omniCustomCss = '.myeyesid_main-content { background-color: #f00 !important; }';
 
   const appColor = Object.freeze({
     primaryColor: '#00f',
@@ -49,7 +49,7 @@ describe('overrides', () => {
     favicon: 'mock://fake-url-for-app/favicon.ico',
     darkFavicon: 'mock://fake-url-for-app/dark-favicon.ico',
   } satisfies Branding);
-  const appCustomCss = '.logto_main-content { background-color: #0f0 !important; }';
+  const appCustomCss = '.myeyesid_main-content { background-color: #0f0 !important; }';
 
   const orgColor = Object.freeze({
     primaryColor: '#0f0',
@@ -61,7 +61,7 @@ describe('overrides', () => {
     favicon: 'mock://fake-url-for-org/favicon.ico',
     darkFavicon: 'mock://fake-url-for-org/dark-favicon.ico',
   } satisfies Branding);
-  const organizationCustomCss = '.logto_main-content { background-color: #00f !important; }';
+  const organizationCustomCss = '.myeyesid_main-content { background-color: #00f !important; }';
 
   afterEach(async () => {
     await organizationApi.cleanUp();
@@ -237,7 +237,7 @@ describe('overrides', () => {
     // It's hard to simulate third-party apps because their type is "Traditional" while our demo
     // app is an SPA. Only test the API response here.
     const experience = await api
-      .get(appendPath(new URL(logtoUrl), 'api/.well-known/sign-in-exp'))
+      .get(appendPath(new URL(myeyesidUrl), 'api/.well-known/sign-in-exp'))
       .json<FullSignInExperience>();
 
     expect(experience.branding).toEqual(omniBranding);
@@ -454,7 +454,7 @@ describe('overrides', () => {
     const experience = new ExpectExperience(await browser.newPage());
     await experience.navigateTo(demoAppUrl.href + `?organization_id=${organization.id}`);
 
-    const element = await experience.toMatchElement('main.logto_main-content');
+    const element = await experience.toMatchElement('main.myeyesid_main-content');
     expect(await element.evaluate((node) => window.getComputedStyle(node).backgroundColor)).toBe(
       'rgb(255, 0, 0)'
     );
@@ -477,14 +477,14 @@ describe('overrides', () => {
     const experience = new ExpectExperience(await browser.newPage());
     // Omni baseline
     await experience.navigateTo(demoAppUrl.href);
-    const baseElement = await experience.toMatchElement('main.logto_main-content');
+    const baseElement = await experience.toMatchElement('main.myeyesid_main-content');
     expect(
       await baseElement.evaluate((node) => window.getComputedStyle(node).backgroundColor)
     ).toBe('rgb(255, 0, 0)');
 
     // App override
     await experience.navigateTo(demoAppUrl.href + `?app_id=${application.id}`);
-    const appElement = await experience.toMatchElement('main.logto_main-content');
+    const appElement = await experience.toMatchElement('main.myeyesid_main-content');
     expect(await appElement.evaluate((node) => window.getComputedStyle(node).backgroundColor)).toBe(
       'rgb(0, 255, 0)'
     );
@@ -493,7 +493,7 @@ describe('overrides', () => {
     await experience.navigateTo(
       demoAppUrl.href + `?app_id=${application.id}&organization_id=${organization.id}`
     );
-    const orgElement = await experience.toMatchElement('main.logto_main-content');
+    const orgElement = await experience.toMatchElement('main.myeyesid_main-content');
     expect(await orgElement.evaluate((node) => window.getComputedStyle(node).backgroundColor)).toBe(
       'rgb(0, 0, 255)'
     );

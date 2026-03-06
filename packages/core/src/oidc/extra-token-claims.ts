@@ -1,14 +1,14 @@
-import { appInsights } from '@logto/app-insights/node';
+import { appInsights } from '@myeyesid/app-insights/node';
 import {
   type Json,
-  LogtoJwtTokenKey,
-  LogtoJwtTokenKeyType,
+  MyEyesIDJwtTokenKey,
+  MyEyesIDJwtTokenKeyType,
   LogResult,
   jwtCustomizer as jwtCustomizerLog,
   type CustomJwtFetcher,
   GrantType,
   jwtCustomizerUserInteractionContextGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, trySafe } from '@silverhand/essentials';
 import { ResponseError } from '@withtyped/client';
 import {
@@ -21,7 +21,7 @@ import { z } from 'zod';
 
 import { EnvSet } from '#src/env-set/index.js';
 import { JwtCustomizerLibrary } from '#src/libraries/jwt-customizer.js';
-import { type LogtoConfigLibrary } from '#src/libraries/logto-config.js';
+import { type MyEyesIDConfigLibrary } from '#src/libraries/myeyesid-config.js';
 import { type LogEntry, type WithLogContext } from '#src/middleware/koa-audit-log.js';
 import type Libraries from '#src/tenants/Libraries.js';
 import type Queries from '#src/tenants/Queries.js';
@@ -153,12 +153,12 @@ export const getExtraTokenClaimsForJwtCustomization = async (
     envSet,
     queries,
     libraries,
-    logtoConfigs,
+    myeyesidConfigs,
   }: {
     envSet: EnvSet;
     queries: Queries;
     libraries: Libraries;
-    logtoConfigs: LogtoConfigLibrary;
+    myeyesidConfigs: MyEyesIDConfigLibrary;
   }
 ): Promise<UnknownObject | undefined> => {
   // Narrow down the token type to `AccessToken` and `ClientCredentials`.
@@ -181,10 +181,10 @@ export const getExtraTokenClaimsForJwtCustomization = async (
      */
     const { script, environmentVariables } =
       (await trySafe(
-        logtoConfigs.getJwtCustomizer(
+        myeyesidConfigs.getJwtCustomizer(
           isClientCredentialsToken
-            ? LogtoJwtTokenKey.ClientCredentials
-            : LogtoJwtTokenKey.AccessToken
+            ? MyEyesIDJwtTokenKey.ClientCredentials
+            : MyEyesIDJwtTokenKey.AccessToken
         )
       )) ?? {};
 
@@ -204,7 +204,7 @@ export const getExtraTokenClaimsForJwtCustomization = async (
     );
 
     // Fetch user info context for user access token.
-    const logtoUserInfo = conditional(
+    const myeyesidUserInfo = conditional(
       !isClientCredentialsToken &&
         token.accountId &&
         (await libraries.jwtCustomizers.getUserContext(token.accountId))
@@ -238,7 +238,7 @@ export const getExtraTokenClaimsForJwtCustomization = async (
     logEntry.append({
       sessionId: ctx.oidc.session?.uid,
       applicationId: ctx.oidc.client?.clientId,
-      ...conditional(logtoUserInfo && { userId: logtoUserInfo.id }),
+      ...conditional(myeyesidUserInfo && { userId: myeyesidUserInfo.id }),
       tenantId: envSet.tenantId,
     });
 
@@ -248,7 +248,7 @@ export const getExtraTokenClaimsForJwtCustomization = async (
       token: originalTokenPayload,
       ...(isClientCredentialsToken
         ? {
-            tokenType: LogtoJwtTokenKeyType.ClientCredentials,
+            tokenType: MyEyesIDJwtTokenKeyType.ClientCredentials,
             context: {
               ...conditional(
                 applicationContext && {
@@ -258,11 +258,11 @@ export const getExtraTokenClaimsForJwtCustomization = async (
             },
           }
         : {
-            tokenType: LogtoJwtTokenKeyType.AccessToken,
+            tokenType: MyEyesIDJwtTokenKeyType.AccessToken,
             // TODO (LOG-8555): the newly added `UserProfile` type includes undefined fields and can not be directly assigned to `Json` type. And the `undefined` fields should be removed by zod guard.
             context: {
               // eslint-disable-next-line no-restricted-syntax
-              user: logtoUserInfo as Record<string, Json>,
+              user: myeyesidUserInfo as Record<string, Json>,
               ...conditional(
                 subjectToken && {
                   grant: {

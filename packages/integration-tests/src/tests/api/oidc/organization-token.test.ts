@@ -1,8 +1,8 @@
 import assert from 'node:assert';
 
-import { UserScope, buildOrganizationUrn } from '@logto/core-kit';
-import { LogtoRequestError } from '@logto/js';
-import { InteractionEvent, MfaFactor } from '@logto/schemas';
+import { UserScope, buildOrganizationUrn } from '@myeyesid/core-kit';
+import { MyEyesIDRequestError } from '@myeyesid/js';
+import { InteractionEvent, MfaFactor } from '@myeyesid/schemas';
 
 import { createUserMfaVerification, deleteUser } from '#src/api/admin-user.js';
 import { putInteraction } from '#src/api/index.js';
@@ -100,7 +100,7 @@ describe('get access token for organization', () => {
       .getOrganizationTokenClaims(newOrganization.id)
       .catch((error: unknown) => error);
 
-    assert(error instanceof LogtoRequestError);
+    assert(error instanceof MyEyesIDRequestError);
     expect(error.code).toBe('oidc.access_denied');
   });
 
@@ -112,7 +112,7 @@ describe('get access token for organization', () => {
       .getOrganizationTokenClaims(testOrganizationId)
       .catch((error: unknown) => error);
 
-    assert(error instanceof LogtoRequestError);
+    assert(error instanceof MyEyesIDRequestError);
     expect(error.code).toBe('oidc.access_denied');
   });
 

@@ -1,8 +1,8 @@
 // To refactor: should combine into other similar utils
 // Since they are just different in URLs
 
-import { type SocialUserInfo } from '@logto/connector-kit';
-import type { LogtoConfig } from '@logto/node';
+import { type SocialUserInfo } from '@myeyesid/connector-kit';
+import type { MyEyesIDConfig } from '@myeyesid/node';
 import {
   PredefinedScope,
   adminTenantId,
@@ -13,11 +13,11 @@ import {
   type Role,
   type User,
   RoleType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { authedAdminTenantApi as api, adminTenantApi } from '#src/api/api.js';
 import type { InteractionPayload } from '#src/api/interaction.js';
-import { adminConsoleRedirectUri, logtoConsoleUrl } from '#src/constants.js';
+import { adminConsoleRedirectUri, myeyesidConsoleUrl } from '#src/constants.js';
 import { initClient, initExperienceClient, processSession } from '#src/helpers/client.js';
 import { generatePassword, generateUsername } from '#src/utils.js';
 
@@ -79,10 +79,10 @@ export const putInteraction = async (cookie: string, payload: InteractionPayload
     })
     .json();
 
-export const initAdminExperienceClient = async (config?: Partial<LogtoConfig>) =>
+export const initAdminExperienceClient = async (config?: Partial<MyEyesIDConfig>) =>
   initExperienceClient({
     interactionEvent: InteractionEvent.SignIn,
-    config: { endpoint: logtoConsoleUrl, appId: adminConsoleApplicationId, ...config },
+    config: { endpoint: myeyesidConsoleUrl, appId: adminConsoleApplicationId, ...config },
     redirectUri: adminConsoleRedirectUri,
     api: adminTenantApi,
   });
@@ -90,11 +90,11 @@ export const initAdminExperienceClient = async (config?: Partial<LogtoConfig>) =
 export const initClientAndSignIn = async (
   username: string,
   password: string,
-  config?: Partial<LogtoConfig>
+  config?: Partial<MyEyesIDConfig>
 ) => {
   const client = await initClient(
     {
-      endpoint: logtoConsoleUrl,
+      endpoint: myeyesidConsoleUrl,
       appId: adminConsoleApplicationId,
       ...config,
     },

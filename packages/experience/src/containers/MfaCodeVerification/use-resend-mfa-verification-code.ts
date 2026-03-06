@@ -1,4 +1,4 @@
-import { type SignInIdentifier } from '@logto/schemas';
+import { type SignInIdentifier } from '@myeyesid/schemas';
 import { t } from 'i18next';
 import { useCallback } from 'react';
 import { useTimer } from 'react-timer-hook';

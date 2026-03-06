@@ -1,5 +1,5 @@
-import type { CreateHook } from '@logto/schemas';
-import { Hooks } from '@logto/schemas';
+import type { CreateHook } from '@myeyesid/schemas';
+import { Hooks } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

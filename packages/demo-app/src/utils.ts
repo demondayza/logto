@@ -1,11 +1,11 @@
-import { Prompt, UserScope } from '@logto/react';
+import { Prompt, UserScope } from '@myeyesid/react';
 import { z } from 'zod';
 
 type ToZodObject<T> = z.ZodObject<{
   [K in keyof T]-?: z.ZodType<T[K]>;
 }>;
 
-type LocalLogtoConfig = {
+type LocalMyEyesIDConfig = {
   signInExtraParams?: string;
   prompt?: string;
   scope?: string;
@@ -13,7 +13,7 @@ type LocalLogtoConfig = {
   appId?: string;
 };
 
-const localLogtoConfigGuard = z
+const localMyEyesIDConfigGuard = z
   .object({
     signInExtraParams: z.string(),
     prompt: z.string(),
@@ -21,7 +21,7 @@ const localLogtoConfigGuard = z
     resource: z.string(),
     appId: z.string(),
   })
-  .partial() satisfies ToZodObject<LocalLogtoConfig>;
+  .partial() satisfies ToZodObject<LocalMyEyesIDConfig>;
 
 type LocalUiConfig = {
   showDevPanel?: boolean;
@@ -35,17 +35,17 @@ const localUiConfigGuard = z
 
 type Key = 'config' | 'ui';
 
-const keyPrefix = 'logto:demo-app:dev:';
+const keyPrefix = 'myeyesid:demo-app:dev:';
 
 type KeyToType = {
-  config: LocalLogtoConfig;
+  config: LocalMyEyesIDConfig;
   ui: LocalUiConfig;
 };
 
 const keyToGuard: Readonly<{
   [K in Key]: z.ZodType<KeyToType[K]>;
 }> = Object.freeze({
-  config: localLogtoConfigGuard,
+  config: localMyEyesIDConfigGuard,
   ui: localUiConfigGuard,
 });
 

@@ -1,7 +1,7 @@
-import { ConnectorPlatform } from '@logto/connector-kit';
-import type { Connector } from '@logto/schemas';
-import { ConnectorType } from '@logto/schemas';
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+import { ConnectorPlatform } from '@myeyesid/connector-kit';
+import type { Connector } from '@myeyesid/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 import { type Nullable } from '@silverhand/essentials';
 import { any } from 'zod';
 
@@ -9,14 +9,14 @@ import {
   mockMetadata,
   mockConnector,
   mockConnectorFactory,
-  mockLogtoConnector,
+  mockMyEyesIDConnector,
 } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
 import type Queries from '#src/tenants/Queries.js';
 import { createMockQuotaLibrary } from '#src/test-utils/quota.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 import { createRequester } from '#src/utils/test-utils.js';
 
 const { jest } = import.meta;
@@ -30,7 +30,7 @@ const connectorQueries = {
 const { countConnectorByConnectorId, deleteConnectorByIds, insertConnector } = connectorQueries;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const getLogtoConnectors = jest.fn<Promise<LogtoConnector[]>, []>();
+const getMyEyesIDConnectors = jest.fn<Promise<MyEyesIDConnector[]>, []>();
 
 const { loadConnectorFactories } = await mockEsmWithActual(
   '#src/utils/connectors/index.js',
@@ -39,11 +39,11 @@ const { loadConnectorFactories } = await mockEsmWithActual(
   })
 );
 
-const { buildRawConnector } = await mockEsmWithActual('@logto/cli/lib/connector/index.js', () => ({
+const { buildRawConnector } = await mockEsmWithActual('@myeyesid/cli/lib/connector/index.js', () => ({
   buildRawConnector: jest.fn(),
 }));
 
-const { validateConfig } = await mockEsmWithActual('@logto/connector-kit', () => ({
+const { validateConfig } = await mockEsmWithActual('@myeyesid/connector-kit', () => ({
   validateConfig: jest.fn(),
 }));
 
@@ -51,9 +51,9 @@ const tenantContext = new MockTenant(
   undefined,
   { connectors: connectorQueries },
   {
-    getLogtoConnectors,
-    getLogtoConnectorById: async (connectorId: string) => {
-      const connectors = await getLogtoConnectors();
+    getMyEyesIDConnectors,
+    getMyEyesIDConnectorById: async (connectorId: string) => {
+      const connectors = await getMyEyesIDConnectors();
       const connector = connectors.find(({ dbEntry }) => dbEntry.id === connectorId);
       assertThat(
         connector,
@@ -66,11 +66,11 @@ const tenantContext = new MockTenant(
 
       return connector;
     },
-    getLogtoConnectorByTargetAndPlatform: async (
+    getMyEyesIDConnectorByTargetAndPlatform: async (
       target: string,
       platform: Nullable<ConnectorPlatform>
     ) => {
-      const connectors = await getLogtoConnectors();
+      const connectors = await getMyEyesIDConnectors();
 
       return connectors.find(({ type, metadata }) => {
         return (
@@ -104,12 +104,12 @@ describe('connector data route', () => {
         },
       ]);
       countConnectorByConnectorId.mockResolvedValueOnce({ count: 0 });
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: { ...mockConnector, connectorId: 'id0' },
           metadata: { ...mockMetadata, id: 'id0' },
           type: ConnectorType.Sms,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       validateConfig.mockReturnValueOnce(null);
@@ -134,12 +134,12 @@ describe('connector data route', () => {
         },
       ]);
       countConnectorByConnectorId.mockResolvedValueOnce({ count: 0 });
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: { ...mockConnector, connectorId: 'id0' },
           metadata: { ...mockMetadata, id: 'id0' },
           type: ConnectorType.Sms,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       const response = await connectorRequest.post('/connectors').send({
@@ -176,12 +176,12 @@ describe('connector data route', () => {
         },
       ]);
       countConnectorByConnectorId.mockResolvedValueOnce({ count: 1 });
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: { ...mockConnector, connectorId: 'id0' },
           metadata: { ...mockMetadata, id: 'id0', platform: ConnectorPlatform.Universal },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       validateConfig.mockReturnValueOnce(null);
@@ -245,12 +245,12 @@ describe('connector data route', () => {
           metadata: { ...mockConnectorFactory.metadata, id: 'id1' },
         },
       ]);
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: { ...mockConnector, connectorId: 'id0' },
           metadata: { ...mockMetadata, id: 'id0' },
           type: ConnectorType.Sms,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       countConnectorByConnectorId.mockResolvedValueOnce({ count: 0 });
@@ -285,7 +285,7 @@ describe('connector data route', () => {
         },
       ]);
       countConnectorByConnectorId.mockResolvedValueOnce({ count: 0 });
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: { ...mockConnector, connectorId: 'id0', metadata: { target: 'target' } },
           metadata: {
@@ -295,7 +295,7 @@ describe('connector data route', () => {
             platform: ConnectorPlatform.Universal,
           },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       const response = await connectorRequest.post('/connectors').send({
@@ -318,7 +318,7 @@ describe('connector data route', () => {
         },
       ]);
       countConnectorByConnectorId.mockResolvedValueOnce({ count: 0 });
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: { ...mockConnector, connectorId: 'id0', metadata: { target: 'target' } },
           metadata: {
@@ -328,7 +328,7 @@ describe('connector data route', () => {
             platform: ConnectorPlatform.Universal,
           },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       const response = await connectorRequest.post('/connectors').send({

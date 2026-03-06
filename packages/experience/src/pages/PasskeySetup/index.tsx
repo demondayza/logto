@@ -1,4 +1,4 @@
-import { InteractionEvent, type WebAuthnRegistrationOptions } from '@logto/schemas';
+import { InteractionEvent, type WebAuthnRegistrationOptions } from '@myeyesid/schemas';
 import { browserSupportsWebAuthn } from '@simplewebauthn/browser';
 import { useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';

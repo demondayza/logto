@@ -2,13 +2,13 @@
  * @fileoverview This file contains the successful interaction flow helper functions that use the experience APIs.
  */
 
-import { type TokenResponse, type SocialUserInfo } from '@logto/connector-kit';
+import { type TokenResponse, type SocialUserInfo } from '@myeyesid/connector-kit';
 import {
   InteractionEvent,
   SignInIdentifier,
   type InteractionIdentifier,
   type VerificationCodeIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { type ExperienceClient } from '#src/client/experience/index.js';
 import { generatePassword } from '#src/utils.js';

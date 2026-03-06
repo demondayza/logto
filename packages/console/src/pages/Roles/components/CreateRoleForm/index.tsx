@@ -1,6 +1,6 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import type { Role, ScopeResponse } from '@logto/schemas';
-import { RoleType, internalRolePrefix } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import type { Role, ScopeResponse } from '@myeyesid/schemas';
+import { RoleType, internalRolePrefix } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useContext } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -85,7 +85,7 @@ function CreateRoleForm({ onClose }: Props) {
       subtitle="roles.create_role_description"
       hasAddOnTag={isPaidTenant && !hasRolesIncluded}
       learnMoreLink={{
-        href: 'https://docs.logto.io/docs/recipes/rbac/manage-permissions-and-roles#manage-roles',
+        href: 'https://docs.myeyesid.io/docs/recipes/rbac/manage-permissions-and-roles#manage-roles',
         targetBlank: 'noopener',
       }}
       size="large"

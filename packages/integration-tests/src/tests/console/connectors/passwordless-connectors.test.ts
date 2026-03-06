@@ -1,6 +1,6 @@
-import { ConnectorType } from '@logto/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import {
   expectToClickDetailsPageOption,
   expectUnsavedChangesAlert,
@@ -25,7 +25,7 @@ import {
 await page.setViewport({ width: 1920, height: 1080 });
 
 describe('passwordless connectors', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   beforeAll(async () => {
     await goToAdminConsole();
@@ -33,13 +33,13 @@ describe('passwordless connectors', () => {
 
   it('navigate to passwordless connector page', async () => {
     // Should navigate to passwordless page when visit '/console/connectors'
-    await expectNavigation(page.goto(appendPathname('/console/connectors', logtoConsoleUrl).href));
-    expect(page.url()).toBe(new URL('/console/connectors/passwordless', logtoConsoleUrl).href);
+    await expectNavigation(page.goto(appendPathname('/console/connectors', myeyesidConsoleUrl).href));
+    expect(page.url()).toBe(new URL('/console/connectors/passwordless', myeyesidConsoleUrl).href);
 
     await expectNavigation(
-      page.goto(appendPathname('/console/connectors/passwordless', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/connectors/passwordless', myeyesidConsoleUrl).href)
     );
-    expect(page.url()).toBe(new URL('/console/connectors/passwordless', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('/console/connectors/passwordless', myeyesidConsoleUrl).href);
   });
 
   it.each(passwordlessConnectorTestCases)(
@@ -165,7 +165,7 @@ describe('passwordless connectors', () => {
 
       await expectToConfirmConnectorDeletion(
         page,
-        new URL(`console/connectors/passwordless`, logtoConsoleUrl).href
+        new URL(`console/connectors/passwordless`, myeyesidConsoleUrl).href
       );
     }
   );

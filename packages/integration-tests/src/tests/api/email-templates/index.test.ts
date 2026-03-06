@@ -1,5 +1,5 @@
-import { TemplateType } from '@logto/connector-kit';
-import { type EmailTemplateDetails } from '@logto/schemas';
+import { TemplateType } from '@myeyesid/connector-kit';
+import { type EmailTemplateDetails } from '@myeyesid/schemas';
 
 import { mockEmailTemplates } from '#src/__mocks__/email-templates.js';
 import { EmailTemplatesApiTest } from '#src/helpers/email-templates.js';
@@ -86,7 +86,7 @@ describe('email templates management API', () => {
 
     const updatedDetails: Partial<EmailTemplateDetails> = {
       subject: `${template!.details.subject} updated`,
-      replyTo: 'logto test',
+      replyTo: 'myeyesid test',
     };
 
     const updated = await emailTemplatesApi.updateTemplateDetailsById(template!.id, updatedDetails);

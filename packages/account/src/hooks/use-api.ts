@@ -1,4 +1,4 @@
-import { useLogto } from '@logto/react';
+import { useMyEyesID } from '@myeyesid/react';
 import type { Nullable } from '@silverhand/essentials';
 import { useCallback, useContext } from 'react';
 
@@ -12,7 +12,7 @@ const useApi = <Args extends unknown[], Response>(
   api: (accessToken: string, ...args: Args) => Promise<Response>,
   options?: Options
 ) => {
-  const { getAccessToken } = useLogto();
+  const { getAccessToken } = useMyEyesID();
   const { setLoading } = useContext(LoadingContext);
 
   const request = useCallback(

@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorPlatform, ConnectorConfigFormItemType } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorPlatform, ConnectorConfigFormItemType } from '@myeyesid/connector-kit';
 
 export const authorizationEndpoint = 'wechat://'; // This is used to arouse the native WeChat App
 export const accessTokenEndpoint = 'https://api.weixin.qq.com/sns/oauth2/access_token';

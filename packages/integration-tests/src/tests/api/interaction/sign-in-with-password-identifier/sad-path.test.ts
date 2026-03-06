@@ -1,4 +1,4 @@
-import { InteractionEvent, SignInMode } from '@logto/schemas';
+import { InteractionEvent, SignInMode } from '@myeyesid/schemas';
 
 import { suspendUser } from '#src/api/admin-user.js';
 import { putInteraction } from '#src/api/interaction.js';

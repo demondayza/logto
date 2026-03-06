@@ -1,5 +1,5 @@
-import type { ConnectorConfigFormItem } from '@logto/connector-kit';
-import { ConnectorType } from '@logto/connector-kit';
+import type { ConnectorConfigFormItem } from '@myeyesid/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 import { appendPath, conditional } from '@silverhand/essentials';
 import { useContext } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';

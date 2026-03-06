@@ -1,24 +1,24 @@
 export const discordLink = 'https://discord.gg/UEPaF3j5e6';
-export const githubOrgLink = 'https://github.com/logto-io';
-export const githubLink = 'https://github.com/logto-io/logto';
-export const githubIssuesLink = 'https://github.com/logto-io/logto/issues';
-export const githubReleasesLink = 'https://github.com/logto-io/logto/releases';
-export const contactEmail = 'contact@logto.io';
+export const githubOrgLink = 'https://github.com/myeyesid-io';
+export const githubLink = 'https://github.com/myeyesid-io/myeyesid';
+export const githubIssuesLink = 'https://github.com/myeyesid-io/myeyesid/issues';
+export const githubReleasesLink = 'https://github.com/myeyesid-io/myeyesid/releases';
+export const contactEmail = 'contact@myeyesid.io';
 export const contactEmailLink = `mailto:${contactEmail}`;
-export const reservationLink = 'https://cal.com/logto/30min';
-export const trustAndSecurityLink = 'https://logto.io/trust-and-security';
-export const pricingLink = 'https://logto.io/pricing';
-export const officialWebsiteContactPageLink = 'https://logto.io/contact';
-export const entityPolicyLink = 'https://docs.logto.io/logto-cloud/system-limit';
+export const reservationLink = 'https://cal.com/myeyesid/30min';
+export const trustAndSecurityLink = 'https://myeyesid.io/trust-and-security';
+export const pricingLink = 'https://myeyesid.io/pricing';
+export const officialWebsiteContactPageLink = 'https://myeyesid.io/contact';
+export const entityPolicyLink = 'https://docs.myeyesid.io/myeyesid-cloud/system-limit';
 
 /** Docs link */
 export const organizationsFeatureLink = '/organizations';
 export const organizationConfigGuideLink =
   '/authorization/organization-template/configure-organization-template';
-export const logtoThirdPartyGuideLink = '/docs/recipes/logto-as-idp/';
-export const logtoThirdPartyAppPermissionsLink =
-  '/docs/recipes/logto-as-idp/permissions-management/';
-export const logtoThirdPartyAppBrandingLink = '/docs/recipes/logto-as-idp/branding-customization/';
+export const myeyesidThirdPartyGuideLink = '/docs/recipes/myeyesid-as-idp/';
+export const myeyesidThirdPartyAppPermissionsLink =
+  '/docs/recipes/myeyesid-as-idp/permissions-management/';
+export const myeyesidThirdPartyAppBrandingLink = '/docs/recipes/myeyesid-as-idp/branding-customization/';
 export const appSpecificBrandingLink =
   '/docs/recipes/customize-sie/match-your-brand/#app-specific-branding';
 export const organizationBrandingLink =
@@ -37,13 +37,13 @@ export const organizationJit = Object.freeze({
     '/docs/recipes/organizations/just-in-time-provisioning/#enterprise-sso-provisioning',
   emailDomain: '/docs/recipes/organizations/just-in-time-provisioning/#email-domain-provisioning',
 });
-export const integrateLogto = '/integrate-logto';
-export const applicationDataStructure = '/integrate-logto/application-data-structure';
+export const integrateMyEyesID = '/integrate-myeyesid';
+export const applicationDataStructure = '/integrate-myeyesid/application-data-structure';
 export const thirdPartyApp =
-  '/integrate-logto/third-party-applications/oidc-oauth-third-party-applications';
-export const protectedApp = '/integrate-logto/protected-app';
-export const protectedAppLocalDev = '/integrate-logto/protected-app#local-development';
-export const protectOriginServer = '/integrate-logto/protected-app#protect-your-origin-server';
+  '/integrate-myeyesid/third-party-applications/oidc-oauth-third-party-applications';
+export const protectedApp = '/integrate-myeyesid/protected-app';
+export const protectedAppLocalDev = '/integrate-myeyesid/protected-app#local-development';
+export const protectOriginServer = '/integrate-myeyesid/protected-app#protect-your-origin-server';
 export const backchannelLogout = '/end-user-flows/sign-out#federated-sign-out-back-channel-logout';
 export const authFlows = '/end-user-flows#authentication-flows';
 export const termsAndPrivacy = '/end-user-flows/sign-up-and-sign-in/terms-and-privacy';
@@ -71,12 +71,12 @@ export const userImpersonation = '/developers/user-impersonation';
 export const webhooks = '/developers/webhooks';
 export const secureWebhooks = '/developers/webhooks/secure-webhooks';
 export const auditLogs = '/developers/audit-logs';
-export const logtoCloud = '/logto-cloud';
-export const logtoCloudTenantSettings = '/logto-cloud/tenant-settings';
-export const customDomain = '/logto-cloud/custom-domain#use-custom-domain';
-export const customDomainFeatureLink = '/logto-cloud/custom-domain';
+export const myeyesidCloud = '/myeyesid-cloud';
+export const myeyesidCloudTenantSettings = '/myeyesid-cloud/tenant-settings';
+export const customDomain = '/myeyesid-cloud/custom-domain#use-custom-domain';
+export const customDomainFeatureLink = '/myeyesid-cloud/custom-domain';
 export const retrieveTokenStorage = '/secret-vault/federated-token-set#token-retrieval';
 
-export const addOnPricingExplanationLink = 'https://docs.logto.io/logto-cloud/billing-and-pricing';
+export const addOnPricingExplanationLink = 'https://docs.myeyesid.io/myeyesid-cloud/billing-and-pricing';
 
 export const dateFnsDocumentationLink = 'https://date-fns.org/v2.30.0/docs/format';

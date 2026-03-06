@@ -1,4 +1,4 @@
-import type { SchemaLike } from '@logto/schemas';
+import type { SchemaLike } from '@myeyesid/schemas';
 import {
   SlonikError,
   NotFoundError,

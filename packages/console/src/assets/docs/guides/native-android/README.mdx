@@ -29,7 +29,7 @@ Add MyEyesID Android SDK to your dependencies:
 
 ```kotlin title="build.gradle.kts"
 dependencies {
-    implementation("io.logto.sdk:android:1.1.3")
+    implementation("io.myeyesid.sdk:android:1.1.3")
 }
 ```
 
@@ -49,19 +49,19 @@ Since the SDK needs internet access, you need to add the following permission to
 
 </Step>
 
-<Step title="Init LogtoClient">
+<Step title="Init MyEyesIDClient">
 
 <InlineNotification>We use Kotlin in this example, but the concepts are the same for Java.</InlineNotification>
 
-Create a `LogtoViewModel.kt` and init `LogtoClient` in this view model:
+Create a `MyEyesIDViewModel.kt` and init `MyEyesIDClient` in this view model:
 
-```kotlin title="LogtoViewModel.kt"
+```kotlin title="MyEyesIDViewModel.kt"
 //...with other imports
-import io.logto.sdk.android.LogtoClient
-import io.logto.sdk.android.type.LogtoConfig
+import io.myeyesid.sdk.android.MyEyesIDClient
+import io.myeyesid.sdk.android.type.MyEyesIDConfig
 
-class LogtoViewModel(application: Application) : AndroidViewModel(application) {
-    private val logtoConfig = LogtoConfig(
+class MyEyesIDViewModel(application: Application) : AndroidViewModel(application) {
+    private val myeyesidConfig = MyEyesIDConfig(
           endpoint = "${props.endpoint}",
           appId = "${props.app.id}",
           scopes = null,
@@ -69,7 +69,7 @@ class LogtoViewModel(application: Application) : AndroidViewModel(application) {
           usingPersistStorage = true,
     )
 
-    private val logtoClient = LogtoClient(logtoConfig, application)
+    private val myeyesidClient = MyEyesIDClient(myeyesidConfig, application)
 
     companion object {
         val Factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
@@ -80,7 +80,7 @@ class LogtoViewModel(application: Application) : AndroidViewModel(application) {
             ): T {
                 // Get the Application object from extras
                 val application = checkNotNull(extras[APPLICATION_KEY])
-                return LogtoViewModel(application) as T
+                return MyEyesIDViewModel(application) as T
             }
         }
     }
@@ -91,12 +91,12 @@ class LogtoViewModel(application: Application) : AndroidViewModel(application) {
 
 <CustomDomainEndpointNotice />
 
-then, create a `LogtoViewModel` for your `MainActivity.kt`:
+then, create a `MyEyesIDViewModel` for your `MainActivity.kt`:
 
 ```kotlin title="MainActivity.kt"
 //...with other imports
 class MainActivity : AppCompatActivity() {
-    private val logtoViewModel: LogtoViewModel by viewModels { LogtoViewModel.Factory }
+    private val myeyesidViewModel: MyEyesIDViewModel by viewModels { MyEyesIDViewModel.Factory }
     //...other codes
 }
 ```
@@ -105,46 +105,46 @@ class MainActivity : AppCompatActivity() {
 
 <Step title="Configure redirect URI">
 
-<RedirectUrisNative defaultUri="io.logto.android://io.logto.sample/callback"/>
+<RedirectUrisNative defaultUri="io.myeyesid.android://io.myeyesid.sample/callback"/>
 
 In Android, the redirect URI follows the pattern: `$(LOGTO_REDIRECT_SCHEME)://$(YOUR_APP_PACKAGE)/callback`:
 
 - The `LOGTO_REDIRECT_SCHEME` should be a custom scheme in the reverse domain format.
 - The `YOUR_APP_PACKAGE` is your app package name.
 
-Assuming you treat `io.logto.android` as the custom `LOGTO_REDIRECT_SCHEME`, and `io.logto.sample` is your app package name, the Redirect URI should be `io.logto.android://io.logto.sample/callback`.
+Assuming you treat `io.myeyesid.android` as the custom `LOGTO_REDIRECT_SCHEME`, and `io.myeyesid.sample` is your app package name, the Redirect URI should be `io.myeyesid.android://io.myeyesid.sample/callback`.
 
 </Step>
 
 <Step title="Implement sign-in and sign-out">
 
-After the redirect URI is configured, we can use `logtoClient.signIn` to sign in the user and `logtoClient.signOut` to sign out the user.
+After the redirect URI is configured, we can use `myeyesidClient.signIn` to sign in the user and `myeyesidClient.signOut` to sign out the user.
 
-Now let's use them in your `LogtoViewModel.kt`:
+Now let's use them in your `MyEyesIDViewModel.kt`:
 
-<Code title="LogtoViewModel.kt" className="language-kotlin">
+<Code title="MyEyesIDViewModel.kt" className="language-kotlin">
     {`//...with other imports
-class LogtoViewModel(application: Application) : AndroidViewModel(application) {
+class MyEyesIDViewModel(application: Application) : AndroidViewModel(application) {
     // ...other codes
 
     // Add a live data to observe the authentication status
-    private val _authenticated = MutableLiveData(logtoClient.isAuthenticated)
+    private val _authenticated = MutableLiveData(myeyesidClient.isAuthenticated)
     val authenticated: LiveData<Boolean>
         get() = _authenticated
 
     fun signIn(context: Activity) {
-        logtoClient.signIn(context, "${props.redirectUris[0] ?? '<your-redirect-uri>'}") { logtoException ->
-            logtoException?.let { println(it) }
+        myeyesidClient.signIn(context, "${props.redirectUris[0] ?? '<your-redirect-uri>'}") { myeyesidException ->
+            myeyesidException?.let { println(it) }
             // Update the live data
-            _authenticated.postValue(logtoClient.isAuthenticated)
+            _authenticated.postValue(myeyesidClient.isAuthenticated)
         }
     }
 
     fun signOut() {
-        logtoClient.signOut { logtoException ->
-            logtoException?.let { println(it) }
+        myeyesidClient.signOut { myeyesidException ->
+            myeyesidException?.let { println(it) }
             // Update the live data
-            _authenticated.postValue(logtoClient.isAuthenticated)
+            _authenticated.postValue(myeyesidClient.isAuthenticated)
         }
     }
 }`}
@@ -161,19 +161,19 @@ class MainActivity : AppCompatActivity() {
         // Assume you have a button with id "sign_in_button" in your layout
         val signInButton = findViewById<Button>(R.id.sign_in_button)
         signInButton.setOnClickListener {
-            logtoViewModel.signIn(this)
+            myeyesidViewModel.signIn(this)
         }
 
         // Assume you have a button with id "sign_out_button" in your layout
         val signOutButton = findViewById<Button>(R.id.sign_out_button)
         signOutButton.setOnClickListener {
-            if (logtoViewModel.authenticated) { // Check if the user is authenticated
-                logtoViewModel.signOut()
+            if (myeyesidViewModel.authenticated) { // Check if the user is authenticated
+                myeyesidViewModel.signOut()
             }
         }
 
         // Observe the authentication status to update the UI
-        logtoViewModel.authenticated.observe(this) { authenticated ->
+        myeyesidViewModel.authenticated.observe(this) { authenticated ->
             if (authenticated) {
                 // The user is authenticated
                 signInButton.visibility = View.GONE
@@ -202,9 +202,9 @@ class MainActivity : AppCompatActivity() {
 
 To display the user's information, you can use the `getIdTokenClaims` method to get user information. For example, you can get user information in a ViewModel and then display it in your activity:
 
-```kotlin title="LogtoViewModel.kt"
+```kotlin title="MyEyesIDViewModel.kt"
 //...with other imports
-class LogtoViewModel(application: Application) : AndroidViewModel(application) {
+class MyEyesIDViewModel(application: Application) : AndroidViewModel(application) {
     // ...other codes
 
     // Add a live data to observe the id token claims
@@ -213,8 +213,8 @@ class LogtoViewModel(application: Application) : AndroidViewModel(application) {
         get() = _idTokenClaims
 
     fun getIdTokenClaims() {
-        logtoClient.getIdTokenClaims { logtoException, idTokenClaims ->
-            logtoException?.let { _logtoException.postValue(it) } ?: _idTokenClaims.postValue(idTokenClaims)
+        myeyesidClient.getIdTokenClaims { myeyesidException, idTokenClaims ->
+            myeyesidException?.let { _myeyesidException.postValue(it) } ?: _idTokenClaims.postValue(idTokenClaims)
         }
     }
 }
@@ -228,7 +228,7 @@ class MainActivity : AppCompatActivity() {
 
         // Assume you have a text View with id `user_info_text_view` in your layout
         val userInfoResponseTextView: TextView = findViewById(R.id.user_info_text_view)
-        logtoViewModel.userInfoResponse.observe(this) { userInfoResponse ->
+        myeyesidViewModel.userInfoResponse.observe(this) { userInfoResponse ->
             userInfoResponseTextView.text = if (userInfoResponse !== null) {
                 val json = Gson().toJson(userInfoResponse, UserInfoResponse::class.java)
                 JSONObject(json).toString(2)

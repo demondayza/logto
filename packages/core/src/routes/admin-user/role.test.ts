@@ -1,5 +1,5 @@
-import { RoleType } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { RoleType } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import {
   mockAdminUserRole,

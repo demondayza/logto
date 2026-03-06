@@ -1,4 +1,4 @@
-import { urlRegEx } from '@logto/connector-kit';
+import { urlRegEx } from '@myeyesid/connector-kit';
 import { conditionalString } from '@silverhand/essentials';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -46,53 +46,53 @@ function EmailServiceConnectorForm({ extraInfo }: Props) {
 
   const validateInput = (value: string) => {
     const containUrl = urlRegEx.test(value);
-    return containUrl ? t('connector_details.logto_email.urls_not_allowed') : true;
+    return containUrl ? t('connector_details.myeyesid_email.urls_not_allowed') : true;
   };
 
   return (
     <FormCard
-      title="connector_details.logto_email.email_template_title"
-      description="connector_details.logto_email.template_description"
+      title="connector_details.myeyesid_email.email_template_title"
+      description="connector_details.myeyesid_email.template_description"
       learnMoreLink={{
         href: getDocumentationUrl(
-          '/docs/recipes/configure-connectors/email-connector/configure-logto-email-service/#unified-email-templates'
+          '/docs/recipes/configure-connectors/email-connector/configure-myeyesid-email-service/#unified-email-templates'
         ),
-        customI18nKey: 'connector_details.logto_email.template_description_link_text',
+        customI18nKey: 'connector_details.myeyesid_email.template_description_link_text',
       }}
     >
-      <FormField title="connector_details.logto_email.from_email_field">
+      <FormField title="connector_details.myeyesid_email.from_email_field">
         <TextInput
           readOnly
           value={conditionalString(parsedExtraInfo.success && parsedExtraInfo.data.fromEmail)}
         />
       </FormField>
       <FormField
-        title="connector_details.logto_email.sender_name_field"
-        tip={<DynamicT forKey="connector_details.logto_email.sender_name_tip" />}
+        title="connector_details.myeyesid_email.sender_name_field"
+        tip={<DynamicT forKey="connector_details.myeyesid_email.sender_name_tip" />}
       >
         <TextInput
           {...register('formConfig.senderName', {
             validate: (value) => validateInput(conditionalString(value)),
           })}
           error={fromConfigErrors?.senderName?.message}
-          placeholder={t('connector_details.logto_email.sender_name_placeholder')}
+          placeholder={t('connector_details.myeyesid_email.sender_name_placeholder')}
         />
       </FormField>
-      <FormField title="connector_details.logto_email.company_information_field">
+      <FormField title="connector_details.myeyesid_email.company_information_field">
         <TextInput
           {...register('formConfig.companyInformation', {
             validate: (value) => validateInput(conditionalString(value)),
           })}
           error={fromConfigErrors?.companyInformation?.message}
-          placeholder={t('connector_details.logto_email.company_information_placeholder')}
+          placeholder={t('connector_details.myeyesid_email.company_information_placeholder')}
         />
         <div className={styles.description}>
-          {t('connector_details.logto_email.company_information_description')}
+          {t('connector_details.myeyesid_email.company_information_description')}
         </div>
       </FormField>
       <FormField
-        title="connector_details.logto_email.email_logo_field"
-        tip={<DynamicT forKey="connector_details.logto_email.email_logo_tip" />}
+        title="connector_details.myeyesid_email.email_logo_field"
+        tip={<DynamicT forKey="connector_details.myeyesid_email.email_logo_tip" />}
         headlineSpacing={isUserAssetsServiceReady ? 'large' : 'default'}
       >
         {isUserAssetsServiceReady ? (

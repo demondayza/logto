@@ -1,4 +1,4 @@
-import { type RequestErrorBody } from '@logto/schemas';
+import { type RequestErrorBody } from '@myeyesid/schemas';
 import { useCallback, useMemo } from 'react';
 
 import useNavigateWithPreservedSearchParams from '@/hooks/use-navigate-with-preserved-search-params';

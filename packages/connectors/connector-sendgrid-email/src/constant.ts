@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType } from '@myeyesid/connector-kit';
 
 export const endpoint = 'https://api.sendgrid.com/v3/mail/send';
 
@@ -40,7 +40,7 @@ export const defaultMetadata: ConnectorMetadata = {
       label: 'From Name',
       type: ConnectorConfigFormItemType.Text,
       required: false,
-      placeholder: 'Logto',
+      placeholder: 'MyEyesID',
     },
     {
       key: 'templates',
@@ -51,65 +51,65 @@ export const defaultMetadata: ConnectorMetadata = {
         {
           usageType: 'SignIn',
           type: 'text/plain',
-          subject: 'Logto SignIn Template',
+          subject: 'MyEyesID SignIn Template',
           content:
-            'Your Logto sign-in verification code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID sign-in verification code is {{code}}. The code will remain active for 10 minutes.',
         },
         {
           usageType: 'Register',
           type: 'text/plain',
-          subject: 'Logto Register Template',
+          subject: 'MyEyesID Register Template',
           content:
-            'Your Logto sign-up verification code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID sign-up verification code is {{code}}. The code will remain active for 10 minutes.',
         },
         {
           usageType: 'ForgotPassword',
           type: 'text/plain',
-          subject: 'Logto ForgotPassword Template',
+          subject: 'MyEyesID ForgotPassword Template',
           content:
-            'Your Logto password change verification code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID password change verification code is {{code}}. The code will remain active for 10 minutes.',
         },
         {
           usageType: 'OrganizationInvitation',
           type: 'text/plain',
-          subject: 'Logto OrganizationInvitation Template',
+          subject: 'MyEyesID OrganizationInvitation Template',
           content:
-            'Your Logto organization invitation code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID organization invitation code is {{code}}. The code will remain active for 10 minutes.',
         },
         {
           usageType: 'Generic',
           type: 'text/plain',
-          subject: 'Logto Generic Template',
+          subject: 'MyEyesID Generic Template',
           content:
-            'Your Logto verification code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID verification code is {{code}}. The code will remain active for 10 minutes.',
         },
         {
           usageType: 'UserPermissionValidation',
           type: 'text/plain',
-          subject: 'Logto UserPermissionValidation Template',
+          subject: 'MyEyesID UserPermissionValidation Template',
           content:
-            'Your Logto permission validation code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID permission validation code is {{code}}. The code will remain active for 10 minutes.',
         },
         {
           usageType: 'BindNewIdentifier',
           type: 'text/plain',
-          subject: 'Logto BindNewIdentifier Template',
+          subject: 'MyEyesID BindNewIdentifier Template',
           content:
-            'Your Logto new identifier binding code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID new identifier binding code is {{code}}. The code will remain active for 10 minutes.',
         },
         {
           usageType: 'MfaVerification',
           type: 'text/plain',
-          subject: 'Logto MfaVerification Template',
+          subject: 'MyEyesID MfaVerification Template',
           content:
-            'Your Logto MFA verification code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID MFA verification code is {{code}}. The code will remain active for 10 minutes.',
         },
         {
           usageType: 'BindMfa',
           type: 'text/plain',
-          subject: 'Logto BindMfa Template',
+          subject: 'MyEyesID BindMfa Template',
           content:
-            'Your Logto 2-step verification setup code is {{code}}. The code will remain active for 10 minutes.',
+            'Your MyEyesID 2-step verification setup code is {{code}}. The code will remain active for 10 minutes.',
         },
       ],
     },

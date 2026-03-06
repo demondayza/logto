@@ -25,8 +25,8 @@ jobs:
 
       - name: Docker Compose up
         run: |
-          curl -fsSL https://raw.githubusercontent.com/logto-io/logto/HEAD/docker-compose.yml |\
-          TAG=edge docker compose -p logto -f - up -d
+          curl -fsSL https://raw.githubusercontent.com/myeyesid-io/myeyesid/HEAD/docker-compose.yml |\
+          TAG=edge docker compose -p myeyesid -f - up -d
 
       - name: Sleep for 30 seconds
         run: sleep 30s

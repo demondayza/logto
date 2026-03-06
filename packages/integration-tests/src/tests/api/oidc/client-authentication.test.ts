@@ -8,7 +8,7 @@
 
 import assert from 'node:assert';
 
-import { ApplicationType, token } from '@logto/schemas';
+import { ApplicationType, token } from '@myeyesid/schemas';
 import { noop, removeUndefinedKeys } from '@silverhand/essentials';
 import { HTTPError } from 'ky';
 

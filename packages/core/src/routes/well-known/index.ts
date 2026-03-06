@@ -1,4 +1,4 @@
-import { adminTenantId, fullSignInExperienceGuard, AccountCenters } from '@logto/schemas';
+import { adminTenantId, fullSignInExperienceGuard, AccountCenters } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import { EnvSet, getTenantEndpoint } from '#src/env-set/index.js';

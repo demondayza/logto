@@ -1,4 +1,4 @@
-import { useLogto } from '@logto/react';
+import { useMyEyesID } from '@myeyesid/react';
 import { yes, conditional } from '@silverhand/essentials';
 import { useContext, useEffect } from 'react';
 import { Outlet, useMatch, useSearchParams } from 'react-router-dom';
@@ -16,7 +16,7 @@ import { saveRedirect } from '@/utils/storage';
  *
  * That is, when it renders `<Outlet />`, you can expect:
  *
- * - `isAuthenticated` from `useLogto()` to be `true`.
+ * - `isAuthenticated` from `useMyEyesID()` to be `true`.
  * - `isInitComplete` from `TenantsContext` to be `true`.
  *
  * Usage:
@@ -32,7 +32,7 @@ import { saveRedirect } from '@/utils/storage';
 export default function ProtectedRoutes() {
   const api = useCloudApi();
   const [searchParameters] = useSearchParams();
-  const { isAuthenticated, isLoading, signIn } = useLogto();
+  const { isAuthenticated, isLoading, signIn } = useMyEyesID();
   const { isInitComplete, resetTenants } = useContext(TenantsContext);
   const redirectUri = useRedirectUri();
   const match = useMatch('/accept/:invitationId');

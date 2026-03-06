@@ -1,5 +1,5 @@
-import en from '@logto/phrases-experience/lib/locales/en';
-import type { Translation } from '@logto/schemas';
+import en from '@myeyesid/phrases-experience/lib/locales/en';
+import type { Translation } from '@myeyesid/schemas';
 
 export const flattenTranslation = (
   translation: Translation,

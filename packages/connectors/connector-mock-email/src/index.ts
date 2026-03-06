@@ -7,7 +7,7 @@ import type {
   CreateConnector,
   EmailConnector,
   GetI18nEmailTemplate,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
@@ -16,7 +16,7 @@ import {
   mockConnectorFilePaths,
   replaceSendMessageHandlebars,
   getConfigTemplateByType,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import { defaultMetadata } from './constant.js';
 import { mockMailConfigGuard } from './types.js';

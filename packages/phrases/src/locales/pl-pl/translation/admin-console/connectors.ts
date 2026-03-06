@@ -67,7 +67,7 @@ const connectors = {
     callback_uri_description:
       'URI przekierowania to miejsce, do którego użytkownicy są kierowani po autoryzacji społecznościowej. Dodaj ten adres URI do konfiguracji swojego IdP.',
     callback_uri_custom_domain_description:
-      'Jeśli używasz w MyEyesID wielu <a>domen niestandardowych</a>, dodaj wszystkie odpowiadające im adresy URI zwrotu do IdP, aby logowanie społecznościowe działało w każdej domenie.\n\nDomyślna domena MyEyesID (*.logto.app) jest zawsze ważna - uwzględnij ją tylko wtedy, gdy chcesz obsługiwać logowania także w tej domenie.',
+      'Jeśli używasz w MyEyesID wielu <a>domen niestandardowych</a>, dodaj wszystkie odpowiadające im adresy URI zwrotu do IdP, aby logowanie społecznościowe działało w każdej domenie.\n\nDomyślna domena MyEyesID (*.myeyesid.app) jest zawsze ważna - uwzględnij ją tylko wtedy, gdy chcesz obsługiwać logowania także w tej domenie.',
     acs_url: 'Assertion consumer service URL',
   },
   platform: {

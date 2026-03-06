@@ -1,11 +1,11 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import { conditional, type Nullable } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useContext } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import Tip from '@/assets/icons/tip.svg?react';
-import { type LogtoSkuResponse } from '@/cloud/types/router';
+import { type MyEyesIDSkuResponse } from '@/cloud/types/router';
 import { addOnPricingExplanationLink } from '@/consts/external-links';
 import { SubscriptionDataContext } from '@/contexts/SubscriptionDataProvider';
 import DynamicT from '@/ds-components/DynamicT';
@@ -54,7 +54,7 @@ const formatDecimalPrice = (price: number): string => {
 };
 
 // Manually format the quota display for add-on usages
-const formatAddOnQuota = (quota?: LogtoSkuResponse['quota']) => {
+const formatAddOnQuota = (quota?: MyEyesIDSkuResponse['quota']) => {
   if (!quota) {
     return;
   }
@@ -80,7 +80,7 @@ export type Props = {
   readonly unitPrice: number;
   readonly className?: string;
   readonly isQuotaNoticeHidden?: boolean;
-  readonly usageAddOnSku?: LogtoSkuResponse;
+  readonly usageAddOnSku?: MyEyesIDSkuResponse;
 };
 
 // eslint-disable-next-line complexity

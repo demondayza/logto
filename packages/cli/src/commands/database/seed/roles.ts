@@ -2,8 +2,8 @@ import {
   PredefinedScope,
   getManagementApiResourceIndicator,
   createPreConfiguredManagementApiAccessRole,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import { insertInto } from '../../../database.js';
@@ -22,7 +22,7 @@ export const seedPreConfiguredManagementApiAccessRole = async (
 
   await pool.query(insertInto(role, 'roles'));
 
-  // Assign Logto Management API permission `all` to the Logto Management API M2M role
+  // Assign MyEyesID Management API permission `all` to the MyEyesID Management API M2M role
   await pool.query(sql`
     insert into roles_scopes (id, role_id, scope_id, tenant_id)
     values (

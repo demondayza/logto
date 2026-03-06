@@ -1,4 +1,4 @@
-import { type ApplicationResponse, type SnakeCaseOidcConfig } from '@logto/schemas';
+import { type ApplicationResponse, type SnakeCaseOidcConfig } from '@myeyesid/schemas';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 

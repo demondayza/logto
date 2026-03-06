@@ -8,9 +8,9 @@ import {
   webAuthnAuthenticationOptionsGuard,
   webAuthnRegistrationOptionsGuard,
   webAuthnVerificationPayloadGuard,
-} from '@logto/schemas';
-import { Action } from '@logto/schemas/lib/types/log/interaction.js';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { Action } from '@myeyesid/schemas/lib/types/log/interaction.js';
+import { generateStandardId } from '@myeyesid/shared';
 import type Router from 'koa-router';
 import { z } from 'zod';
 

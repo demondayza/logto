@@ -1,4 +1,4 @@
-import { MfaFactor, SignInIdentifier } from '@logto/schemas';
+import { MfaFactor, SignInIdentifier } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 
 import MfaFactorButton from '@/components/Button/MfaFactorButton';

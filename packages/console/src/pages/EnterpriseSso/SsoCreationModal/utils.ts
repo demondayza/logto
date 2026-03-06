@@ -1,4 +1,4 @@
-import { type SsoConnectorProvidersResponse, SsoProviderName } from '@logto/schemas';
+import { type SsoConnectorProvidersResponse, SsoProviderName } from '@myeyesid/schemas';
 
 const standardSsoConnectorProviders = Object.freeze([SsoProviderName.OIDC, SsoProviderName.SAML]);
 

@@ -3,8 +3,8 @@ import {
   SentinelActivityAction,
   VerificationType,
   totpVerificationVerifyPayloadGuard,
-} from '@logto/schemas';
-import { Action } from '@logto/schemas/lib/types/log/interaction.js';
+} from '@myeyesid/schemas';
+import { Action } from '@myeyesid/schemas/lib/types/log/interaction.js';
 import type Router from 'koa-router';
 import { z } from 'zod';
 

@@ -1,8 +1,8 @@
 # DingTalk Web Connector
 
-The official Logto connector for DingTalk social sign-in in web apps.
+The official MyEyesID connector for DingTalk social sign-in in web apps.
 
-钉钉 web 应用社交登录官方 Logto 连接器 [中文文档](#钉钉网页连接器)
+钉钉 web 应用社交登录官方 MyEyesID 连接器 [中文文档](#钉钉网页连接器)
 
 **Table of contents**
 
@@ -46,7 +46,7 @@ If you do not have a DingTalk developer account, please register at the [DingTal
 
 1. In the DingTalk Open Platform "[Application Development](https://open-dev.dingtalk.com/fe/app)" > "Internal Enterprise Application" > "DingTalk Application", click "Create Application"
 2. Fill in the **application name** and **description**, and click "Save"
-3. In the left navigation bar, select "Development Configuration" > "Security Settings", find and configure the "Redirect URL" `${your_logto_origin}/callback/${connector_id}`. You can find the `connector_id` on the connector details page after adding the respective connector in the management console
+3. In the left navigation bar, select "Development Configuration" > "Security Settings", find and configure the "Redirect URL" `${your_myeyesid_origin}/callback/${connector_id}`. You can find the `connector_id` on the connector details page after adding the respective connector in the management console
 4. In the left navigation bar, select "Basic Information" > "Credentials and Basic Information" to get the `Client ID` and `Client Secret`
 
 ### Configure permissions
@@ -76,7 +76,7 @@ Fill out the `clientId` and `clientSecret` field with _Client ID(formerly AppKey
 
 ## Test DingTalk connector
 
-That's it. The DingTalk connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. The DingTalk connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 Once DingTalk web connector is enabled, you can sign in to your app again to see if it works.
 
@@ -106,7 +106,7 @@ If you have any questions or need further assistance, please visit the [DingTalk
 
 1. 在 钉钉开放平台「[应用开发](https://open-dev.dingtalk.com/fe/app)」>「企业内部应用」>「钉钉应用」中，点击「创建应用」
 2. 填写**应用名称**和**应用描述**，点击「保存」
-3. 在左侧导航栏选择「开发配置」>「安全设置」，找到并配置「重定向 URL」 `${your_logto_origin}/callback/${connector_id}`。其中 `connector_id` 在管理控制台添加了相应的连接器之后，可以在连接器的详情页中找到
+3. 在左侧导航栏选择「开发配置」>「安全设置」，找到并配置「重定向 URL」 `${your_myeyesid_origin}/callback/${connector_id}`。其中 `connector_id` 在管理控制台添加了相应的连接器之后，可以在连接器的详情页中找到
 4. 在左侧导航栏选择「基础信息」>「凭证与基础信息」中可以获取「Client ID」、「Client Secret」
 
 ### 配置权限
@@ -136,7 +136,7 @@ If you have any questions or need further assistance, please visit the [DingTalk
 
 ## 测试钉钉连接器
 
-大功告成。别忘了 [在登录体验中启用本连接器](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
+大功告成。别忘了 [在登录体验中启用本连接器](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
 
 在钉钉web连接器启用后，你可以构建并运行你的应用看看是否生效。
 

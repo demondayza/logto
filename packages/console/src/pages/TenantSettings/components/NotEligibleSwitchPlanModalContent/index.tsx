@@ -2,7 +2,7 @@ import { conditional } from '@silverhand/essentials';
 import { useMemo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { type LogtoSkuResponse } from '@/cloud/types/router';
+import { type MyEyesIDSkuResponse } from '@/cloud/types/router';
 import ContactUsPhraseLink from '@/components/ContactUsPhraseLink';
 import SkuName from '@/components/SkuName';
 import { skuQuotaItemOrder } from '@/consts/plan-quotas';
@@ -11,20 +11,20 @@ import {
   skuQuotaItemNotEligiblePhrasesMap,
 } from '@/consts/quota-item-phrases';
 import DynamicT from '@/ds-components/DynamicT';
-import { type LogtoSkuQuota, type LogtoSkuQuotaEntries } from '@/types/skus';
+import { type MyEyesIDSkuQuota, type MyEyesIDSkuQuotaEntries } from '@/types/skus';
 import { sortBy } from '@/utils/sort';
 import { isProPlan } from '@/utils/subscription';
 
 import styles from './index.module.scss';
 
-const excludedSkuQuotaKeys = new Set<keyof LogtoSkuQuota>([
+const excludedSkuQuotaKeys = new Set<keyof MyEyesIDSkuQuota>([
   'auditLogsRetentionDays',
   'ticketSupportResponseTime',
 ]);
 
 type SkuProps = {
-  readonly targetSku: LogtoSkuResponse;
-  readonly exceededSkuQuotaKeys: Array<keyof LogtoSkuQuota>;
+  readonly targetSku: MyEyesIDSkuResponse;
+  readonly exceededSkuQuotaKeys: Array<keyof MyEyesIDSkuQuota>;
   readonly isDowngrade?: boolean;
 };
 
@@ -45,7 +45,7 @@ export function NotEligibleSwitchSkuModalContent({
 
   const orderedEntries = useMemo(() => {
     // eslint-disable-next-line no-restricted-syntax
-    const entries = Object.entries(quota) as LogtoSkuQuotaEntries;
+    const entries = Object.entries(quota) as MyEyesIDSkuQuotaEntries;
     return entries
       .filter(([quotaKey]) => exceededSkuQuotaKeys.includes(quotaKey))
       .slice()

@@ -10,7 +10,7 @@ import {
   type VerificationCodeIdentifier,
   type WebAuthnAuthenticationOptions,
   type WebAuthnVerificationPayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import MockClient from '#src/client/index.js';
 

@@ -1,4 +1,4 @@
-import { experience, OneTimeTokenStatus } from '@logto/schemas';
+import { experience, OneTimeTokenStatus } from '@myeyesid/schemas';
 import { type MiddlewareType } from 'koa';
 import { type IRouterParamContext } from 'koa-router';
 import { type Provider } from 'oidc-provider';

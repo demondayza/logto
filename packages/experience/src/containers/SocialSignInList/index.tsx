@@ -1,4 +1,4 @@
-import type { ExperienceSocialConnector } from '@logto/schemas';
+import type { ExperienceSocialConnector } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useState } from 'react';
 

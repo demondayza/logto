@@ -1,4 +1,4 @@
-import { ssrPlaceholder } from '@logto/schemas';
+import { ssrPlaceholder } from '@myeyesid/schemas';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
@@ -64,14 +64,14 @@ describe('koaExperienceSsr()', () => {
       ...baseCtx,
       path: '/',
       body: `<script>
-        const logtoSsr=${ssrPlaceholder};
+        const myeyesidSsr=${ssrPlaceholder};
       </script>`,
     };
     await koaExperienceSsr(tenant.libraries, tenant.queries)(ctx, next);
     expect(next).toHaveBeenCalledTimes(1);
     expect(ctx.body).not.toContain(ssrPlaceholder);
     expect(ctx.body).toContain(
-      `const logtoSsr=Object.freeze(${JSON.stringify({
+      `const myeyesidSsr=Object.freeze(${JSON.stringify({
         signInExperience: { data: mockSignInExperience },
         phrases: { lng: 'en', data: phrases },
       })});`

@@ -3,7 +3,7 @@ import {
   type CreateSamlApplication,
   type PatchSamlApplication,
   type SamlApplicationSecretResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import api, { authedAdminApi } from './api.js';
 

@@ -1,4 +1,4 @@
-import { type LogtoJwtTokenKeyType } from '@logto/schemas';
+import { type MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import { type ResponseError } from '@withtyped/client';
 import useSWR from 'swr';
 
@@ -9,7 +9,7 @@ import { shouldRetryOnError } from '@/utils/request';
 
 import { type Action, type JwtCustomizer } from './type';
 
-const useDataFetch = <T extends LogtoJwtTokenKeyType>(tokenType: T, action: Action) => {
+const useDataFetch = <T extends MyEyesIDJwtTokenKeyType>(tokenType: T, action: Action) => {
   const apiPath = getApiPath(tokenType);
   const fetchApi = useApi({ hideErrorToast: true });
   const fetcher = useSwrFetcher<JwtCustomizer<T>>(fetchApi);

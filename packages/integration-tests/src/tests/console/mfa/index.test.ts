@@ -1,4 +1,4 @@
-import { logtoConsoleUrl } from '#src/constants.js';
+import { myeyesidConsoleUrl } from '#src/constants.js';
 import {
   expectMainPageWithTitle,
   expectToClickSidebarMenu,
@@ -24,7 +24,7 @@ describe.skip('multi-factor authentication', () => {
   it('navigate to multi-factor authentication page', async () => {
     await expectToClickSidebarMenu(page, 'Multi-factor auth');
     await expectMainPageWithTitle(page, 'Multi-factor authentication');
-    expect(page.url()).toBe(new URL(`console/mfa`, new URL(logtoConsoleUrl)).href);
+    expect(page.url()).toBe(new URL(`console/mfa`, new URL(myeyesidConsoleUrl)).href);
   });
 
   it('should be able to update multi-factors', async () => {

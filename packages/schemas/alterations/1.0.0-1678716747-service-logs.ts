@@ -16,7 +16,7 @@ const getDatabaseName = async (pool: CommonQueryMethods) => {
 const alteration: AlterationScript = {
   up: async (pool) => {
     const database = await getDatabaseName(pool);
-    const baseRole = `logto_tenant_${database}`;
+    const baseRole = `myeyesid_tenant_${database}`;
     const baseRoleId = getId(baseRole);
 
     await pool.query(sql`

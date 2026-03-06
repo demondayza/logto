@@ -1,5 +1,5 @@
-import type { SchemaLike, GeneratedSchema, SchemaValue } from '@logto/schemas';
-import type { UpdateWhereData } from '@logto/shared';
+import type { SchemaLike, GeneratedSchema, SchemaValue } from '@myeyesid/schemas';
+import type { UpdateWhereData } from '@myeyesid/shared';
 import type { Truthy } from '@silverhand/essentials';
 import { notFalsy } from '@silverhand/essentials';
 import type { CommonQueryMethods } from '@silverhand/slonik';

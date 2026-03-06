@@ -1,6 +1,6 @@
 import { pathToFileURL } from 'node:url';
 
-import type { AlterationScript } from '@logto/schemas/lib/types/alteration.js';
+import type { AlterationScript } from '@myeyesid/schemas/lib/types/alteration.js';
 import { conditionalString } from '@silverhand/essentials';
 import type { CommonQueryMethods, DatabasePool } from '@silverhand/slonik';
 import chalk from 'chalk';

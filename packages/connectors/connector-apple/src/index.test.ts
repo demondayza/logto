@@ -1,4 +1,4 @@
-import { ConnectorError, ConnectorErrorCodes } from '@logto/connector-kit';
+import { ConnectorError, ConnectorErrorCodes } from '@myeyesid/connector-kit';
 
 import { mockedConfig } from './mock.js';
 

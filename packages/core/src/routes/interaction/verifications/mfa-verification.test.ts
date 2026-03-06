@@ -1,8 +1,8 @@
 import crypto from 'node:crypto';
 
-import { PasswordPolicyChecker } from '@logto/core-kit';
-import { InteractionEvent, MfaFactor, MfaPolicy } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { PasswordPolicyChecker } from '@myeyesid/core-kit';
+import { InteractionEvent, MfaFactor, MfaPolicy } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import type { Provider } from 'oidc-provider';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
@@ -232,7 +232,7 @@ describe('validateMandatoryBindMfa', () => {
     it('user mfaVerifications and bindMfa missing, mark skipped, and not required should pass', async () => {
       findUserById.mockResolvedValueOnce({
         ...mockUser,
-        logtoConfig: {
+        myeyesidConfig: {
           mfa: { skipped: true },
         },
       });

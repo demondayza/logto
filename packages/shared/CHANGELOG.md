@@ -45,7 +45,7 @@
 
 ### Patch Changes
 
-- 21bb35b12: add `normalizeError` method to `@logto/shared` package
+- 21bb35b12: add `normalizeError` method to `@myeyesid/shared` package
 
   Use this method to normalize error objects for logging. This method is useful for logging errors in a consistent format.
 
@@ -55,7 +55,7 @@
 
 - 31e60811d: use Node 20 LTS for engine requirement.
 
-  Note: We mark it as minor because Logto is shipping with Docker image and it's not a breaking change for users.
+  Note: We mark it as minor because MyEyesID is shipping with Docker image and it's not a breaking change for users.
 
 ### Patch Changes
 
@@ -68,9 +68,9 @@
 
 - 18181f892: standardize id and secret generators
 
-  - Remove `buildIdGenerator` export from `@logto/shared`
-  - Add `generateStandardSecret` and `generateStandardShortId` exports to `@logto/shared`
-  - Align comment and implementation of `buildIdGenerator` in `@logto/shared`
+  - Remove `buildIdGenerator` export from `@myeyesid/shared`
+  - Add `generateStandardSecret` and `generateStandardShortId` exports to `@myeyesid/shared`
+  - Align comment and implementation of `buildIdGenerator` in `@myeyesid/shared`
     - The comment stated the function will include uppercase letters by default, but it did not; Now it does.
   - Use `generateStandardSecret` for all secret generation
 
@@ -92,7 +92,7 @@
 
 - 4945b0be2: Apply security headers
 
-  Apply security headers to logto http request response using (helmetjs)[https://helmetjs.github.io/].
+  Apply security headers to myeyesid http request response using (helmetjs)[https://helmetjs.github.io/].
 
   - [x] crossOriginOpenerPolicy
   - [x] crossOriginEmbedderPolicy
@@ -109,21 +109,21 @@
 
 ### Patch Changes
 
-- @logto/schemas@1.1.0
+- @myeyesid/schemas@1.1.0
 
 ## 1.0.2
 
 ### Patch Changes
 
 - Updated dependencies [5b4da1e3d]
-  - @logto/schemas@1.0.7
+  - @myeyesid/schemas@1.0.7
 
 ## 1.0.1
 
 ### Patch Changes
 
 - Updated dependencies [621b09ba1]
-  - @logto/schemas@1.0.1
+  - @myeyesid/schemas@1.0.1
 
 ## 1.0.0
 
@@ -144,7 +144,7 @@
   - cli!: remove `oidc` option for `database seed` command as it's unused
   - cli: add hidden `--cloud` option for `database seed` command to init cloud data
   - cli, cloud: appending Redirect URIs to Admin Console will deduplicate values before update
-  - move `UrlSet` and `GlobalValues` to `@logto/shared`
+  - move `UrlSet` and `GlobalValues` to `@myeyesid/shared`
 
 - Updated dependencies [343b1090f]
 - Updated dependencies [e63f5f8b0]
@@ -164,15 +164,15 @@
 - Updated dependencies [f41fd3f05]
 - Updated dependencies [f41fd3f05]
 - Updated dependencies [2d45cc3e6]
-  - @logto/schemas@1.0.0
-  - @logto/core-kit@1.1.0
+  - @myeyesid/schemas@1.0.0
+  - @myeyesid/core-kit@1.1.0
 
 ## 1.0.0-rc.1
 
 ### Patch Changes
 
 - Updated dependencies [c12717412]
-  - @logto/schemas@1.0.0-rc.1
+  - @myeyesid/schemas@1.0.0-rc.1
 
 ## 1.0.0-rc.0
 
@@ -181,14 +181,14 @@
 - Updated dependencies [f41fd3f0]
 - Updated dependencies [f41fd3f0]
 - Updated dependencies [f41fd3f0]
-  - @logto/schemas@1.0.0-rc.0
+  - @myeyesid/schemas@1.0.0-rc.0
 
 ## 1.0.0-beta.18
 
 ### Patch Changes
 
 - Updated dependencies [df9e98dc]
-  - @logto/schemas@1.0.0-beta.18
+  - @myeyesid/schemas@1.0.0-beta.18
 
 ## 1.0.0-beta.17
 
@@ -200,7 +200,7 @@
 
 - Updated dependencies [1c916011]
 - Updated dependencies [1c916011]
-  - @logto/schemas@1.0.0-beta.17
+  - @myeyesid/schemas@1.0.0-beta.17
 
 ## 1.0.0-beta.16
 
@@ -208,37 +208,37 @@
 
 - 38970fb8: Fix a Sign-in experience bug that may block some users to sign in.
 - Updated dependencies [38970fb8]
-  - @logto/schemas@1.0.0-beta.16
+  - @myeyesid/schemas@1.0.0-beta.16
 
 ## 1.0.0-beta.15
 
 ### Patch Changes
 
 - Updated dependencies
-  - @logto/schemas@1.0.0-beta.15
+  - @myeyesid/schemas@1.0.0-beta.15
 
 ## 1.0.0-beta.14
 
 ### Patch Changes
 
 - Updated dependencies [2d45cc3e]
-  - @logto/schemas@1.0.0-beta.14
+  - @myeyesid/schemas@1.0.0-beta.14
 
 ## 1.0.0-beta.13
 
 ### Patch Changes
 
-- @logto/schemas@1.0.0-beta.13
+- @myeyesid/schemas@1.0.0-beta.13
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.0.0-beta.12](https://github.com/logto-io/logto/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2022-10-19)
+## [1.0.0-beta.12](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2022-10-19)
 
 ### Bug Fixes
 
-- make packages public ([e24fd04](https://github.com/logto-io/logto/commit/e24fd0479bc20c92bd38b5e214abe441404ce496))
+- make packages public ([e24fd04](https://github.com/myeyesid-io/myeyesid/commit/e24fd0479bc20c92bd38b5e214abe441404ce496))
 
-## [1.0.0-beta.11](https://github.com/logto-io/logto/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2022-10-19)
+## [1.0.0-beta.11](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2022-10-19)
 
-**Note:** Version bump only for package @logto/shared
+**Note:** Version bump only for package @myeyesid/shared

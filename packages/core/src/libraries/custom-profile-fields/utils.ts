@@ -1,4 +1,4 @@
-import { isValidRegEx, numberAndAlphabetRegEx } from '@logto/core-kit';
+import { isValidRegEx, numberAndAlphabetRegEx } from '@myeyesid/core-kit';
 import {
   textProfileFieldGuard,
   numberProfileFieldGuard,
@@ -10,7 +10,7 @@ import {
   urlProfileFieldGuard,
   addressProfileFieldGuard,
   CustomProfileFieldType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { ZodError } from 'zod';
 
 import {

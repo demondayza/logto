@@ -1,5 +1,5 @@
-import { type Domain } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { type Domain } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 
 import { mockDomain, mockDomainResponse } from '#src/__mocks__/domain.js';
 import { createMockQuotaLibrary } from '#src/test-utils/quota.js';

@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorPlatform, ConnectorConfigFormItemType } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorPlatform, ConnectorConfigFormItemType } from '@myeyesid/connector-kit';
 
 // See https://developers.line.biz/en/docs/line-login/overview/
 export const authorizationEndpoint = 'https://access.line.me/oauth2/v2.1/authorize';

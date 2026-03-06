@@ -4,7 +4,7 @@ import {
   type OrganizationKeys,
   OrganizationRoles,
   OrganizationScopes,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { deduplicate } from '@silverhand/essentials';
 import { z } from 'zod';
 

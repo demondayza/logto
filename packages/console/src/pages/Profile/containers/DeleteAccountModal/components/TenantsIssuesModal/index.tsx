@@ -1,4 +1,4 @@
-import { type LocalePhrase } from '@logto/phrases';
+import { type LocalePhrase } from '@myeyesid/phrases';
 import { useTranslation } from 'react-i18next';
 
 import { type TenantResponse } from '@/cloud/types/router';

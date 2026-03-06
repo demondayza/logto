@@ -61,11 +61,11 @@ export default class GlobalValues {
   public readonly isHttpsEnabled = Boolean(this.httpsCert && this.httpsKey);
 
   /**
-   * The UrlSet with no prefix for Logto core service. It serves requests to the OIDC Provider and Management APIs
+   * The UrlSet with no prefix for MyEyesID core service. It serves requests to the OIDC Provider and Management APIs
    * from all tenants.
    *
    * Especially, a glob (`*`) is allowed for the hostname of its property `endpoint` to indicate if the domain-based multi-tenancy (DBMT)
-   * is enabled which affects some critical behaviors of Logto.
+   * is enabled which affects some critical behaviors of MyEyesID.
    *
    * **When DBMT is enabled**
    *
@@ -88,7 +88,7 @@ export default class GlobalValues {
    */
   public readonly urlSet = new UrlSet(this.isHttpsEnabled, 3001);
   /**
-   * The UrlSet with prefix `ADMIN_` for Logto admin tenant. To completely disable it, set `ADMIN_DISABLE_LOCALHOST` to a truthy value and leave `ADMIN_ENDPOINT` unset.
+   * The UrlSet with prefix `ADMIN_` for MyEyesID admin tenant. To completely disable it, set `ADMIN_DISABLE_LOCALHOST` to a truthy value and leave `ADMIN_ENDPOINT` unset.
    *
    * Should be disabled on the cloud.
    *
@@ -96,7 +96,7 @@ export default class GlobalValues {
    */
   public readonly adminUrlSet = new UrlSet(this.isHttpsEnabled, 3002, 'ADMIN_');
   /**
-   * The UrlSet with prefix `CLOUD_` for Logto cloud service. It affects Admin Console Redirect URIs and some CORS configuration.
+   * The UrlSet with prefix `CLOUD_` for MyEyesID cloud service. It affects Admin Console Redirect URIs and some CORS configuration.
    */
   public readonly cloudUrlSet = new UrlSet(this.isHttpsEnabled, 3003, 'CLOUD_');
 
@@ -138,7 +138,7 @@ export default class GlobalValues {
   public readonly isCloud = yes(getEnv('IS_CLOUD'));
 
   /**
-   * Indicates whether this Logto instance supports multiple custom domains.
+   * Indicates whether this MyEyesID instance supports multiple custom domains.
    *
    * **NOTE: Only available to enterprise customers running private instances that need this feature.**
    *
@@ -148,7 +148,7 @@ export default class GlobalValues {
   public readonly isMultipleCustomDomainsEnabled = yes(getEnv('MULTIPLE_CUSTOM_DOMAINS_ENABLED'));
 
   /**
-   * Indicates whether this Logto instance supports access token exchange.
+   * Indicates whether this MyEyesID instance supports access token exchange.
    *
    * **NOTE: Only available to enterprise customers running private instances that need this feature.**
    *
@@ -217,8 +217,8 @@ export default class GlobalValues {
 
   /**
    * For cloud use only.
-   * Define regional Azure function app endpoint and key to enable the Logto Azure Functions integration.
-   * This is the prerequisite of the calling on `@logto/azure-functions`.
+   * Define regional Azure function app endpoint and key to enable the MyEyesID Azure Functions integration.
+   * This is the prerequisite of the calling on `@myeyesid/azure-functions`.
    */
   public get azureFunctionAppEndpoint() {
     return getEnv('AZURE_FUNCTION_APP_ENDPOINT');
@@ -230,7 +230,7 @@ export default class GlobalValues {
 
   /**
    * For cloud use only.
-   * Define regional Untrusted Azure function app endpoint and key to enable the Logto Azure Functions integration for untrusted operations.
+   * Define regional Untrusted Azure function app endpoint and key to enable the MyEyesID Azure Functions integration for untrusted operations.
    */
   public get azureFunctionUntrustedAppEndpoint() {
     return getEnv('AZURE_FUNCTION_UNTRUSTED_APP_ENDPOINT');

@@ -3,7 +3,7 @@ import changesetConfig from '../.changeset/config.json' with { type: 'json' };
 
 export { default as changesetConfig } from '../.changeset/config.json' with { type: 'json' };
 
-export const corePackageName = '@logto/core';
+export const corePackageName = '@myeyesid/core';
 /** @type {Array<{ name: string; version?: string; path: string; private: boolean; }>} */
 export const allPackages = JSON
   .parse(execSync('pnpm recursive list --depth=-1 --json', { encoding: 'utf8' }))

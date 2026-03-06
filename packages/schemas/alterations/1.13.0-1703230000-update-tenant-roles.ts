@@ -1,4 +1,4 @@
-import { ConsoleLog } from '@logto/shared';
+import { ConsoleLog } from '@myeyesid/shared';
 import { sql } from '@silverhand/slonik';
 
 import type { AlterationScript } from '../lib/types/alteration.js';

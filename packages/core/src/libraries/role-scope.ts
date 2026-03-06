@@ -1,4 +1,4 @@
-import { isManagementApi, RoleType } from '@logto/schemas';
+import { isManagementApi, RoleType } from '@myeyesid/schemas';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import type Queries from '#src/tenants/Queries.js';

@@ -258,7 +258,7 @@ export const validateSwaggerDocument = (document: OpenAPIV3.Document) => {
  * **CAUTION**: This function mutates the input document.
  *
  * Remove operations (path + method) that are tagged with `Cloud only` if the application is not
- * running in the cloud and remove operations with `Dev feature` tag if Logto's `isDevFeatureEnabled` flag
+ * running in the cloud and remove operations with `Dev feature` tag if MyEyesID's `isDevFeatureEnabled` flag
  * is set to be false.
  *
  * This will prevent the swagger validation from failing in the OSS environment.

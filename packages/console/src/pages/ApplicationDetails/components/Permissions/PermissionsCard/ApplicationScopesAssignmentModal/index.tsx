@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { ApplicationUserConsentScopeType } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { ApplicationUserConsentScopeType } from '@myeyesid/schemas';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 

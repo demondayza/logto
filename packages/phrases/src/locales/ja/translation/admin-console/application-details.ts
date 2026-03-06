@@ -30,7 +30,7 @@ const application_details = {
     '認証と認可を実行するエンドポイントです。OpenID Connect の<a>認証</a>に使用されます。',
   show_endpoint_details: 'エンドポイントの詳細を表示',
   hide_endpoint_details: 'エンドポイントの詳細を非表示',
-  logto_endpoint: 'MyEyesID エンドポイント',
+  myeyesid_endpoint: 'MyEyesID エンドポイント',
   application_id: 'アプリ ID',
   application_id_tip:
     '通常 MyEyesID によって生成される一意のアプリケーション識別子です。OpenID Connect では「<a>client_id</a>」とも呼ばれます。',
@@ -39,7 +39,7 @@ const application_details = {
   redirect_uri: 'リダイレクト URI',
   redirect_uris: 'リダイレクト URI',
   redirect_uri_placeholder: 'https://your.website.com/app',
-  redirect_uri_placeholder_native: 'io.logto://callback',
+  redirect_uri_placeholder_native: 'io.myeyesid://callback',
   redirect_uri_tip:
     'ユーザーがサインイン（成功した場合も失敗した場合も）した後にリダイレクトされる URI です。詳細については、OpenID Connect の<a>AuthRequest</a>を参照してください。',
   mixed_redirect_uri_warning:
@@ -276,7 +276,7 @@ const application_details = {
     title: '基本属性マッピング',
     description:
       'MyEyesID からアプリケーションにユーザープロファイルを同期するために属性マッピングを追加します。',
-    col_logto_claims: 'MyEyesID の値',
+    col_myeyesid_claims: 'MyEyesID の値',
     col_sp_claims: 'アプリケーションの値名',
     add_button: '別のものを追加',
   },

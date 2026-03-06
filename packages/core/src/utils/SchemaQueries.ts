@@ -1,5 +1,5 @@
-import { type GeneratedSchema } from '@logto/schemas';
-import { type UpdateWhereData, type SchemaLike } from '@logto/shared';
+import { type GeneratedSchema } from '@myeyesid/schemas';
+import { type UpdateWhereData, type SchemaLike } from '@myeyesid/shared';
 import { type CommonQueryMethods } from '@silverhand/slonik';
 
 import { buildDeleteByIdWithPool } from '#src/database/delete-by-id.js';

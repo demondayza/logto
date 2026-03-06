@@ -1,5 +1,5 @@
-import type { RoleResponse, UserProfileResponse, Application } from '@logto/schemas';
-import { RoleType } from '@logto/schemas';
+import type { RoleResponse, UserProfileResponse, Application } from '@myeyesid/schemas';
+import { RoleType } from '@myeyesid/schemas';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Trans, useTranslation } from 'react-i18next';

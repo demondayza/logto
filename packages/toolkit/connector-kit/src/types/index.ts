@@ -50,8 +50,8 @@ export type CreateConnector<
 export type AllConnector = SmsConnector | EmailConnector | SocialConnector;
 
 export enum DemoConnector {
-  Sms = 'logto-sms',
-  Social = 'logto-social-demo',
+  Sms = 'myeyesid-sms',
+  Social = 'myeyesid-social-demo',
 }
 
 export const demoConnectorIds: readonly string[] = Object.freeze([
@@ -60,7 +60,7 @@ export const demoConnectorIds: readonly string[] = Object.freeze([
 ]);
 
 export enum ServiceConnector {
-  Email = 'logto-email',
+  Email = 'myeyesid-email',
 }
 
 export const serviceConnectorIds: readonly string[] = Object.freeze([ServiceConnector.Email]);

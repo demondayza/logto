@@ -1,9 +1,9 @@
-import { appInsights } from '@logto/app-insights/node';
-import type { GetSession, SocialUserInfo } from '@logto/connector-kit';
-import { socialUserInfoGuard } from '@logto/connector-kit';
-import type { EncryptedTokenSet, SecretSocialConnectorRelationPayload, User } from '@logto/schemas';
-import { ConnectorType } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { appInsights } from '@myeyesid/app-insights/node';
+import type { GetSession, SocialUserInfo } from '@myeyesid/connector-kit';
+import { socialUserInfoGuard } from '@myeyesid/connector-kit';
+import type { EncryptedTokenSet, SecretSocialConnectorRelationPayload, User } from '@myeyesid/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { trySafe, type Nullable } from '@silverhand/essentials';
 import type { InteractionResults } from 'oidc-provider';
 import { z } from 'zod';
@@ -13,7 +13,7 @@ import type { ConnectorLibrary } from '#src/libraries/connector.js';
 import { type WithLogContext } from '#src/middleware/koa-audit-log.js';
 import type Queries from '#src/tenants/Queries.js';
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 import { buildAppInsightsTelemetry } from '#src/utils/request.js';
 import {
   deserializeEncryptedSecret,
@@ -47,11 +47,11 @@ const getUserInfoFromInteractionResult = async (
 
 export const createSocialLibrary = (queries: Queries, connectorLibrary: ConnectorLibrary) => {
   const { findUserByEmail, findUserByNormalizedPhone } = queries.users;
-  const { getLogtoConnectorById } = connectorLibrary;
+  const { getMyEyesIDConnectorById } = connectorLibrary;
 
-  const getConnector = async (connectorId: string): Promise<LogtoConnector> => {
+  const getConnector = async (connectorId: string): Promise<MyEyesIDConnector> => {
     try {
-      return await getLogtoConnectorById(connectorId);
+      return await getMyEyesIDConnectorById(connectorId);
     } catch (error: unknown) {
       // Throw a new error with status 422 when connector not found.
       if (error instanceof RequestError && error.code === 'entity.not_found') {

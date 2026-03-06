@@ -1,5 +1,5 @@
-import { UserScope } from '@logto/core-kit';
-import { type ConsentInfoResponse } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { type ConsentInfoResponse } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 

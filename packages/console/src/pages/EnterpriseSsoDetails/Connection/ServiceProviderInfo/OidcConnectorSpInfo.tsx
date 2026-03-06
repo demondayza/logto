@@ -15,7 +15,7 @@ type Props = {
   readonly ssoConnectorId: string;
 };
 
-const customDomainSettingsLink = 'https://cloud.logto.io/to/tenant-settings/domains';
+const customDomainSettingsLink = 'https://cloud.myeyesid.io/to/tenant-settings/domains';
 
 function OidcConnectorSpInfo({ ssoConnectorId }: Props) {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });

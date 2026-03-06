@@ -1,4 +1,4 @@
-import { type SsoConnectorProviderDetail } from '@logto/schemas';
+import { type SsoConnectorProviderDetail } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import { type ConnectorRadioGroupSize } from '@/components/CreateConnectorForm/ConnectorRadioGroup';

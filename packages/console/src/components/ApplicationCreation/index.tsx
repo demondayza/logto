@@ -1,4 +1,4 @@
-import { ApplicationType, RoleType, type Application } from '@logto/schemas';
+import { ApplicationType, RoleType, type Application } from '@myeyesid/schemas';
 import { useCallback, useState } from 'react';
 
 import RoleAssignmentModal from '@/components/RoleAssignmentModal';

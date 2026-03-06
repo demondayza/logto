@@ -41,7 +41,7 @@
                               "description": "The reply name template of the email. If not provided, the target email address will be used. (The render logic may differ based on the email provider.)"
                             },
                             "sendFrom": {
-                              "description": "The send from name template of the email. If not provided, the default Logto email address will be used. (The render logic may differ based on the email provider.)"
+                              "description": "The send from name template of the email. If not provided, the default MyEyesID email address will be used. (The render logic may differ based on the email provider.)"
                             }
                           }
                         }
@@ -166,7 +166,7 @@
                     "description": "The reply name template of the email. If not provided, the target email address will be used. (The render logic may differ based on the email provider.)"
                   },
                   "sendFrom": {
-                    "description": "The send from name template of the email. If not provided, the default Logto email address will be used. (The render logic may differ based on the email provider.)"
+                    "description": "The send from name template of the email. If not provided, the default MyEyesID email address will be used. (The render logic may differ based on the email provider.)"
                   }
                 }
               }

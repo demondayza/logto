@@ -1,4 +1,4 @@
-import type { User } from '@logto/schemas';
+import type { User } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

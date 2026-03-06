@@ -1,4 +1,4 @@
-import { type SsoConnector, SsoProviderName } from '@logto/schemas';
+import { type SsoConnector, SsoProviderName } from '@myeyesid/schemas';
 
 export const mockSsoConnector = {
   id: 'mock-sso-connector',

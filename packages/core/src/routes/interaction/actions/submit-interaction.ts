@@ -1,6 +1,6 @@
-import { Component, CoreEvent, getEventName } from '@logto/app-insights/custom-event';
-import { appInsights } from '@logto/app-insights/node';
-import type { User, UserOnboardingData } from '@logto/schemas';
+import { Component, CoreEvent, getEventName } from '@myeyesid/app-insights/custom-event';
+import { appInsights } from '@myeyesid/app-insights/node';
+import type { User, UserOnboardingData } from '@myeyesid/schemas';
 import {
   AdminTenantRole,
   InteractionEvent,
@@ -16,8 +16,8 @@ import {
   getTenantRole,
   userMfaDataKey,
   userOnboardingDataKey,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { conditional, conditionalArray } from '@silverhand/essentials';
 
 import { EnvSet } from '#src/env-set/index.js';
@@ -123,7 +123,7 @@ async function handleSubmitRegister(
     String(client_id) === adminConsoleApplicationId &&
     !(await hasActiveUsers());
 
-  // If it's Logto Cloud, Check if the new user has any pending invitations, if yes, skip onboarding flow.
+  // If it's MyEyesID Cloud, Check if the new user has any pending invitations, if yes, skip onboarding flow.
   const invitations =
     isCloud && userProfile.primaryEmail
       ? await organizations.invitations.findEntities({
@@ -155,7 +155,7 @@ async function handleSubmitRegister(
       ),
       ...conditional(
         mfaSkipped && {
-          logtoConfig: {
+          myeyesidConfig: {
             [userMfaDataKey]: {
               skipped: true,
             },
@@ -238,8 +238,8 @@ async function handleSubmitSignIn(
     ),
     ...conditional(
       mfaSkipped && {
-        logtoConfig: {
-          ...user.logtoConfig,
+        myeyesidConfig: {
+          ...user.myeyesidConfig,
           [userMfaDataKey]: {
             skipped: true,
           },

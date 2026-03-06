@@ -1,4 +1,4 @@
-import { InteractionEvent } from '@logto/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 
 import {
   putInteractionEvent,
@@ -111,7 +111,7 @@ describe('Interaction details guard checking', () => {
     await expectRejects(
       client.send(createSocialAuthorizationUri, {
         state: 'fake_state',
-        redirectUri: 'https://logto.dev',
+        redirectUri: 'https://myeyesid.dev',
         connectorId: 'fake_connector_id',
       }),
       {

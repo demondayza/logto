@@ -7,20 +7,20 @@ import type {
   SocialUserInfo,
   CreateConnector,
   GetConnectorConfig,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
   validateConfig,
   ConnectorType,
   parseJson,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   constructAuthorizationUri,
   oauth2AuthResponseGuard,
   requestTokenEndpoint,
   TokenEndpointAuthMethod,
-} from '@logto/connector-oauth';
+} from '@myeyesid/connector-oauth';
 import ky, { HTTPError } from 'ky';
 
 import {

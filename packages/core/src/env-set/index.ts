@@ -1,12 +1,12 @@
-import { ConsoleLog, GlobalValues, TtlCache } from '@logto/shared';
+import { ConsoleLog, GlobalValues, TtlCache } from '@myeyesid/shared';
 import type { Optional } from '@silverhand/essentials';
 import { appendPath } from '@silverhand/essentials';
 import type { DatabasePool } from '@silverhand/slonik';
 import chalk from 'chalk';
 
 import { WellKnownCache } from '#src/caches/well-known.js';
-import { createLogtoConfigLibrary } from '#src/libraries/logto-config.js';
-import { createLogtoConfigQueries } from '#src/queries/logto-config.js';
+import { createMyEyesIDConfigLibrary } from '#src/libraries/myeyesid-config.js';
+import { createMyEyesIDConfigQueries } from '#src/queries/myeyesid-config.js';
 
 import createPoolByEnv from './create-pool.js';
 import loadOidcValues from './oidc.js';
@@ -90,8 +90,8 @@ export class EnvSet {
     this.#pool = pool;
 
     const consoleLog = new ConsoleLog(chalk.magenta('env-set'));
-    const { getOidcConfigs } = createLogtoConfigLibrary({
-      logtoConfigs: createLogtoConfigQueries(
+    const { getOidcConfigs } = createMyEyesIDConfigLibrary({
+      myeyesidConfigs: createMyEyesIDConfigQueries(
         pool,
         new WellKnownCache(this.tenantId, new TtlCache(60_000))
       ),

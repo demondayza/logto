@@ -1,4 +1,4 @@
-import { type ToZodObject } from '@logto/connector-kit';
+import { type ToZodObject } from '@myeyesid/connector-kit';
 import { z } from 'zod';
 
 export type OneTimeTokenContext = {

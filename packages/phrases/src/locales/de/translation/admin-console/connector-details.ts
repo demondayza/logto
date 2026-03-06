@@ -34,7 +34,7 @@ const connector_details = {
     'Dieser {{name}} wird in Ihrem Anmeldeerlebnis verwendet. Wenn Sie ihn löschen, funktioniert Ihr Anmeldeerlebnis nicht ordnungsgemäß, bis Sie das Problem gelöst haben. Wenn Sie ihn wieder hinzufügen möchten, müssen Sie ihn erneut konfigurieren.',
   deletion_description:
     'Sie entfernen diesen Connector. Dies kann nicht rückgängig gemacht werden, und Sie müssen ihn erneut konfigurieren, wenn Sie ihn wieder hinzufügen möchten.',
-  logto_email: {
+  myeyesid_email: {
     total_email_sent: 'Gesamtanzahl gesendeter E-Mails: {{value, number}}',
     total_email_sent_tip:
       'MyEyesID verwendet SendGrid für sicheren und stabilen integrierten E-Mail-Versand. Es ist komplett kostenlos. <a>Weitere Informationen</a>',

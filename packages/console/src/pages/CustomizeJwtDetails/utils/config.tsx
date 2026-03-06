@@ -9,7 +9,7 @@ import {
   type JwtCustomizerGrantContext,
   type JwtCustomizerUserInteractionContext,
   InteractionEvent,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type EditorProps } from '@monaco-editor/react';
 
 import TokenFileIcon from '@/assets/icons/token-file-icon.svg?react';
@@ -31,7 +31,7 @@ import {
 const accessTokenJwtCustomizerDefinition = `
 declare interface CustomJwtClaims extends Record<string, any> {}
 
-/** Logto internal data that can be used to pass additional information
+/** MyEyesID internal data that can be used to pass additional information
  *
  * @param {${JwtCustomizerTypeDefinitionKey.JwtCustomizerUserContext}} user - The user info associated with the token.
  * @param {${JwtCustomizerTypeDefinitionKey.JwtCustomizerGrantContext}} [grant] - The grant context associated with the token.
@@ -63,7 +63,7 @@ declare type Payload = {
    */
   token: ${JwtCustomizerTypeDefinitionKey.AccessTokenPayload};
   /**
-   * Logto internal data that can be used to pass additional information.
+   * MyEyesID internal data that can be used to pass additional information.
    *
    * @params {${JwtCustomizerTypeDefinitionKey.JwtCustomizerUserContext}} user
    * @params {${JwtCustomizerTypeDefinitionKey.JwtCustomizerGrantContext}} [grant]
@@ -76,7 +76,7 @@ declare type Payload = {
    */
   environmentVariables: ${JwtCustomizerTypeDefinitionKey.EnvironmentVariables};
   /**
-   * Logto API context, provides callback methods for access control.
+   * MyEyesID API context, provides callback methods for access control.
    *
    * @param {${JwtCustomizerTypeDefinitionKey.CustomJwtApiContext}} api
    */
@@ -91,7 +91,7 @@ declare type Payload = {
 const clientCredentialsJwtCustomizerDefinition = `
 declare interface CustomJwtClaims extends Record<string, any> {}
 
-/** Logto internal data that can be used to pass additional information
+/** MyEyesID internal data that can be used to pass additional information
  *
  * @param {${JwtCustomizerTypeDefinitionKey.JwtCustomizerApplicationContext}} application - The application info associated with the token.
  */
@@ -108,7 +108,7 @@ declare type Payload = {
    */
   token: ${JwtCustomizerTypeDefinitionKey.ClientCredentialsPayload};
   /**
-   * Logto internal data that can be used to pass additional information.
+   * MyEyesID internal data that can be used to pass additional information.
    *
    * @params {${JwtCustomizerTypeDefinitionKey.JwtCustomizerApplicationContext}} application
    */
@@ -118,7 +118,7 @@ declare type Payload = {
    */
   environmentVariables: ${JwtCustomizerTypeDefinitionKey.EnvironmentVariables};
   /**
-   * Logto API context, callback methods for access control.
+   * MyEyesID API context, callback methods for access control.
    *
    * @param {${JwtCustomizerTypeDefinitionKey.CustomJwtApiContext}} api
    */
@@ -159,11 +159,11 @@ export const accessTokenJwtCustomizerModel: ModelSettings = {
   extraLibs: [
     {
       content: accessTokenJwtCustomizerDefinition,
-      filePath: `file:///logto-jwt-customizer.d.ts`,
+      filePath: `file:///myeyesid-jwt-customizer.d.ts`,
     },
     {
       content: buildAccessTokenJwtCustomizerContextTsDefinition(),
-      filePath: `file:///logto-jwt-customizer-context.d.ts`,
+      filePath: `file:///myeyesid-jwt-customizer-context.d.ts`,
     },
   ],
 };
@@ -176,11 +176,11 @@ export const clientCredentialsModel: ModelSettings = {
   extraLibs: [
     {
       content: clientCredentialsJwtCustomizerDefinition,
-      filePath: `file:///logto-jwt-customizer.d.ts`,
+      filePath: `file:///myeyesid-jwt-customizer.d.ts`,
     },
     {
       content: buildClientCredentialsJwtCustomizerContextTsDefinition(),
-      filePath: `file:///logto-jwt-customizer-context.d.ts`,
+      filePath: `file:///myeyesid-jwt-customizer-context.d.ts`,
     },
   ],
 };
@@ -271,7 +271,7 @@ const defaultUserContext: Partial<JwtCustomizerUserContext> = {
   id: '123',
   hasPassword: false,
   username: 'foo',
-  primaryEmail: 'foo@logto.io',
+  primaryEmail: 'foo@myeyesid.io',
   primaryPhone: '+1234567890',
   name: 'Foo Bar',
   avatar: 'https://example.com/avatar.png',

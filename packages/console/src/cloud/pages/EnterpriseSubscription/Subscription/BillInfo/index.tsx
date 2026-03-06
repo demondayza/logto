@@ -14,10 +14,10 @@ import styles from './index.module.scss';
 
 type Props = {
   readonly cost: number;
-  readonly logtoEnterpriseId: string;
+  readonly myeyesidEnterpriseId: string;
 };
 
-function BillInfo({ cost, logtoEnterpriseId }: Props) {
+function BillInfo({ cost, myeyesidEnterpriseId }: Props) {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -25,14 +25,14 @@ function BillInfo({ cost, logtoEnterpriseId }: Props) {
   const cloudApi = useCloudApi({ hideErrorToast: true });
 
   const visitCustomerPortal = useCallback(
-    async (logtoEnterpriseId: string) => {
+    async (myeyesidEnterpriseId: string) => {
       try {
         const currentUrl = window.location.href;
         const { redirectUri } = await cloudApi.post(
-          '/api/me/logto-enterprises/:id/stripe-customer-portal',
+          '/api/me/myeyesid-enterprises/:id/stripe-customer-portal',
           {
             params: {
-              id: logtoEnterpriseId,
+              id: myeyesidEnterpriseId,
             },
             body: {
               callbackUrl: currentUrl,
@@ -81,7 +81,7 @@ function BillInfo({ cost, logtoEnterpriseId }: Props) {
         isLoading={isLoading}
         onClick={async () => {
           setIsLoading(true);
-          await visitCustomerPortal(logtoEnterpriseId);
+          await visitCustomerPortal(myeyesidEnterpriseId);
           setIsLoading(false);
         }}
       />

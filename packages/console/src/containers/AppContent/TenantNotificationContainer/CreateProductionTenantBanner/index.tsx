@@ -1,4 +1,4 @@
-import { TenantTag } from '@logto/schemas';
+import { TenantTag } from '@myeyesid/schemas';
 import { useContext, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';

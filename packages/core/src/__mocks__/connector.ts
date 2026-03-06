@@ -1,11 +1,11 @@
-import type { ConnectorFactory } from '@logto/cli/lib/connector/index.js';
-import type router from '@logto/cloud/routes';
-import { ConnectorPlatform, DemoConnector } from '@logto/connector-kit';
-import type { Connector } from '@logto/schemas';
-import { ConnectorType } from '@logto/schemas';
+import type { ConnectorFactory } from '@myeyesid/cli/lib/connector/index.js';
+import type router from '@myeyesid/cloud/routes';
+import { ConnectorPlatform, DemoConnector } from '@myeyesid/connector-kit';
+import type { Connector } from '@myeyesid/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
 import { any } from 'zod';
 
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 
 import {
   mockConnector0,
@@ -48,7 +48,7 @@ export const mockConnector: Connector = {
   connectorId: 'id',
 };
 
-export const mockLogtoConnector = {
+export const mockMyEyesIDConnector = {
   getAuthorizationUri: jest.fn(),
   getUserInfo: jest.fn(),
   sendMessage: jest.fn(),
@@ -74,52 +74,52 @@ export const mockConnectorList: Connector[] = [
   mockConnector6,
 ];
 
-export const mockLogtoConnectorList: LogtoConnector[] = [
+export const mockMyEyesIDConnectorList: MyEyesIDConnector[] = [
   {
     dbEntry: mockConnector0,
     metadata: { ...mockMetadata0 },
     type: ConnectorType.Social,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
   {
     dbEntry: mockConnector1,
     metadata: mockMetadata1,
     type: ConnectorType.Sms,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
   {
     dbEntry: mockConnector2,
     metadata: mockMetadata2,
     type: ConnectorType.Social,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
   {
     dbEntry: mockConnector3,
     metadata: mockMetadata3,
     type: ConnectorType.Social,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
   {
     dbEntry: mockConnector4,
     metadata: { ...mockMetadata4, platform: null },
     type: ConnectorType.Email,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
   {
     dbEntry: mockConnector5,
     metadata: { ...mockMetadata5, platform: null },
     type: ConnectorType.Sms,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
   {
     dbEntry: mockConnector6,
     metadata: { ...mockMetadata6, platform: null },
     type: ConnectorType.Email,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
 ];
 
-export const mockAliyunDmConnector: LogtoConnector = {
+export const mockAliyunDmConnector: MyEyesIDConnector = {
   dbEntry: {
     ...mockConnector,
     id: 'aliyun-dm',
@@ -131,10 +131,10 @@ export const mockAliyunDmConnector: LogtoConnector = {
     platform: null,
   },
   type: ConnectorType.Email,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
 };
 
-export const mockAliyunSmsConnector: LogtoConnector = {
+export const mockAliyunSmsConnector: MyEyesIDConnector = {
   dbEntry: {
     ...mockConnector,
     id: 'aliyun-sms',
@@ -146,10 +146,10 @@ export const mockAliyunSmsConnector: LogtoConnector = {
     platform: null,
   },
   type: ConnectorType.Sms,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
 };
 
-export const mockFacebookConnector: LogtoConnector = {
+export const mockFacebookConnector: MyEyesIDConnector = {
   dbEntry: {
     ...mockConnector,
     id: 'facebook',
@@ -161,10 +161,10 @@ export const mockFacebookConnector: LogtoConnector = {
     platform: ConnectorPlatform.Web,
   },
   type: ConnectorType.Social,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
 };
 
-export const mockGithubConnector: LogtoConnector = {
+export const mockGithubConnector: MyEyesIDConnector = {
   dbEntry: {
     ...mockConnector,
     id: 'github',
@@ -176,10 +176,10 @@ export const mockGithubConnector: LogtoConnector = {
     platform: ConnectorPlatform.Web,
   },
   type: ConnectorType.Social,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
 };
 
-export const mockWechatConnector: LogtoConnector = {
+export const mockWechatConnector: MyEyesIDConnector = {
   dbEntry: {
     ...mockConnector,
     id: 'wechat-web',
@@ -191,10 +191,10 @@ export const mockWechatConnector: LogtoConnector = {
     platform: ConnectorPlatform.Web,
   },
   type: ConnectorType.Social,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
 };
 
-export const mockWechatNativeConnector: LogtoConnector = {
+export const mockWechatNativeConnector: MyEyesIDConnector = {
   dbEntry: {
     ...mockConnector,
     id: 'wechat-native',
@@ -206,10 +206,10 @@ export const mockWechatNativeConnector: LogtoConnector = {
     platform: ConnectorPlatform.Native,
   },
   type: ConnectorType.Social,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
 };
 
-export const mockGoogleConnector: LogtoConnector = {
+export const mockGoogleConnector: MyEyesIDConnector = {
   dbEntry: {
     ...mockConnector,
     id: 'google',
@@ -229,10 +229,10 @@ export const mockGoogleConnector: LogtoConnector = {
     platform: ConnectorPlatform.Web,
   },
   type: ConnectorType.Social,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
 };
 
-export const mockDemoSocialConnector: LogtoConnector = {
+export const mockDemoSocialConnector: MyEyesIDConnector = {
   dbEntry: {
     ...mockConnector,
     id: 'demo-social',
@@ -244,13 +244,13 @@ export const mockDemoSocialConnector: LogtoConnector = {
     platform: null,
   },
   type: ConnectorType.Social,
-  ...mockLogtoConnector,
+  ...mockMyEyesIDConnector,
 };
 
 export const socialTarget01 = 'socialTarget-id01';
 export const socialTarget02 = 'socialTarget-id02';
 
-export const mockSocialConnectors: LogtoConnector[] = [
+export const mockSocialConnectors: MyEyesIDConnector[] = [
   {
     dbEntry: {
       tenantId: 'fake_tenant',
@@ -267,7 +267,7 @@ export const mockSocialConnectors: LogtoConnector[] = [
       target: socialTarget01,
     },
     type: ConnectorType.Social,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
   {
     dbEntry: {
@@ -285,6 +285,6 @@ export const mockSocialConnectors: LogtoConnector[] = [
       target: socialTarget02,
     },
     type: ConnectorType.Social,
-    ...mockLogtoConnector,
+    ...mockMyEyesIDConnector,
   },
 ];

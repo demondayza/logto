@@ -1,4 +1,4 @@
-import { type ApplicationResponse } from '@logto/schemas';
+import { type ApplicationResponse } from '@myeyesid/schemas';
 import { noop } from '@silverhand/essentials';
 import classNames from 'classnames';
 import {

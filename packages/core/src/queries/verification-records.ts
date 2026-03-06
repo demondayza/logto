@@ -1,4 +1,4 @@
-import { type VerificationRecord, VerificationRecords } from '@logto/schemas';
+import { type VerificationRecord, VerificationRecords } from '@myeyesid/schemas';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import { buildInsertIntoWithPool } from '#src/database/insert-into.js';

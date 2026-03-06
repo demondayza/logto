@@ -1,10 +1,10 @@
-import { GoogleConnector } from '@logto/connector-kit';
-import type { ConnectorMetadata } from '@logto/schemas';
-import { ConnectorPlatform } from '@logto/schemas';
+import { GoogleConnector } from '@myeyesid/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/schemas';
+import { ConnectorPlatform } from '@myeyesid/schemas';
 import { getCookie } from 'tiny-cookie';
 
 import { SearchParameters } from '@/types';
-import { getLogtoNativeSdk, isNativeWebview } from '@/utils/native-sdk';
+import { getMyEyesIDNativeSdk, isNativeWebview } from '@/utils/native-sdk';
 
 import {
   filterSocialConnectors,
@@ -25,7 +25,7 @@ const mockConnectors = [
 
 jest.mock('@/utils/native-sdk', () => ({
   isNativeWebview: jest.fn(),
-  getLogtoNativeSdk: jest.fn(),
+  getMyEyesIDNativeSdk: jest.fn(),
 }));
 
 // Mock tiny-cookie for new tests
@@ -33,7 +33,7 @@ jest.mock('tiny-cookie', () => ({
   getCookie: jest.fn(),
 }));
 
-const getLogtoNativeSdkMock = getLogtoNativeSdk as jest.Mock;
+const getMyEyesIDNativeSdkMock = getMyEyesIDNativeSdk as jest.Mock;
 const isNativeWebviewMock = isNativeWebview as jest.Mock;
 const getCookieMock = getCookie as jest.Mock;
 
@@ -58,7 +58,7 @@ describe('filterSocialConnectors', () => {
 
   it('Native Platform should return empty if not getPostMessage method is injected', () => {
     isNativeWebviewMock.mockImplementation(() => true);
-    getLogtoNativeSdkMock.mockImplementation(() => ({
+    getMyEyesIDNativeSdkMock.mockImplementation(() => ({
       supportedConnector: {
         universal: true,
         nativeTargets: ['wechat', 'alipay'],
@@ -70,13 +70,13 @@ describe('filterSocialConnectors', () => {
 
   it('filter Native & Universal  Connectors', () => {
     isNativeWebviewMock.mockImplementation(() => true);
-    getLogtoNativeSdkMock.mockImplementation(() => ({
+    getMyEyesIDNativeSdkMock.mockImplementation(() => ({
       supportedConnector: {
         universal: true,
         nativeTargets: ['wechat'],
       },
       getPostMessage: jest.fn(),
-      callbackLink: 'logto://callback',
+      callbackLink: 'myeyesid://callback',
     }));
 
     expect(filterSocialConnectors(mockConnectors)).toEqual([
@@ -87,7 +87,7 @@ describe('filterSocialConnectors', () => {
 
   it('filter Native & Universal Connectors with out callbackLink should only return native connectors', () => {
     isNativeWebviewMock.mockImplementation(() => true);
-    getLogtoNativeSdkMock.mockImplementation(() => ({
+    getMyEyesIDNativeSdkMock.mockImplementation(() => ({
       supportedConnector: {
         universal: true,
         nativeTargets: ['wechat'],
@@ -102,7 +102,7 @@ describe('filterSocialConnectors', () => {
 
   it('filter Native Connectors', () => {
     isNativeWebviewMock.mockImplementation(() => true);
-    getLogtoNativeSdkMock.mockImplementation(() => ({
+    getMyEyesIDNativeSdkMock.mockImplementation(() => ({
       platform: 'ios',
       supportedConnector: {
         universal: false,
@@ -147,9 +147,9 @@ describe('filterPreviewSocialConnectors', () => {
 
 describe('buildSocialLandingUri', () => {
   it('buildSocialLandingUri', () => {
-    getLogtoNativeSdkMock.mockImplementation(() => ({
+    getMyEyesIDNativeSdkMock.mockImplementation(() => ({
       platform: 'ios',
-      callbackLink: 'logto://callback',
+      callbackLink: 'myeyesid://callback',
     }));
 
     const redirectUri = 'https://www.example.com/callback';
@@ -159,7 +159,7 @@ describe('buildSocialLandingUri', () => {
     expect(callbackUri.pathname).toEqual(socialLandingPath);
     expect(callbackUri.searchParams.get(SearchParameters.RedirectTo)).toEqual(redirectUri);
     expect(callbackUri.searchParams.get(SearchParameters.NativeCallbackLink)).toEqual(
-      'logto://callback'
+      'myeyesid://callback'
     );
   });
 });

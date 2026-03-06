@@ -1,8 +1,8 @@
 # Alipay Web
 
-The official Logto connector for Alipay social sign-in in web apps.
+The official MyEyesID connector for Alipay social sign-in in web apps.
 
-支付宝 web 应用社交登录官方 Logto 连接器 [中文文档](#支付宝网页连接器)
+支付宝 web 应用社交登录官方 MyEyesID 连接器 [中文文档](#支付宝网页连接器)
 
 **Table of contents**
 
@@ -10,7 +10,7 @@ The official Logto connector for Alipay social sign-in in web apps.
   - [Get started](#get-started)
   - [Register Alipay developer account](#register-alipay-developer-account)
   - [Create and configure Alipay app](#create-and-configure-alipay-app)
-  - [Set up the Logto Alipay Web connector settings](#set-up-the-logto-alipay-web-connector-settings)
+  - [Set up the MyEyesID Alipay Web connector settings](#set-up-the-myeyesid-alipay-web-connector-settings)
     - [Config types](#config-types)
   - [Test Alipay web connector](#test-alipay-web-connector)
   - [References](#references)
@@ -41,7 +41,7 @@ Alipay Web connector is designed for desktop Web applications. It takes advantag
 6. Go to [Alipay Customer Center](https://b.alipay.com/index2.htm), and sign in with the Alipay developer account. Click "Account Center" (账号中心) on the topbar and go to "APPID binding" (APPID 绑定), whose entrance can be found at the bottom of the sidebar. "Add binding" (添加绑定) by type in the APPID of the web application you just created in step 4.
 7. Click on "Sign" button of "App Alipay login", and finish signing process following the guide. After finishing this step, you are expected to find abilities you have just added in step 5 kicks in.
 8. Come back to Alipay open platform console page, and you can find "Interface signing method" (接口加签方式（密钥/证书）) in "development information" (开发信息) section. Click "set up" (设置) button, and you can find yourself on a page setting signing method. "Public Key" (公钥) is the preferred signing mode, and fill in contents from the public key file you have generated in the text input box.
-9. Set up "Authorization Redirect URI" (授权回调地址) by clicking "set up" (设置) button on the bottom of the Alipay console page. `${your_logto_origin}/callback/${connector_id}` is the default redirect URI used in Logto core. The `connector_id` can be found on the top bar of the Logto Admin Console connector details page.
+9. Set up "Authorization Redirect URI" (授权回调地址) by clicking "set up" (设置) button on the bottom of the Alipay console page. `${your_myeyesid_origin}/callback/${connector_id}` is the default redirect URI used in MyEyesID core. The `connector_id` can be found on the top bar of the MyEyesID Admin Console connector details page.
 10. After finishing all these steps, go back to the top right corner of Alipay console page, and click "Submit for review" (提交审核). Once the review is approved, you are good to go with a smooth Alipay sign-in flow.
 
 > ℹ️ **Note**
@@ -55,11 +55,11 @@ Alipay Web connector is designed for desktop Web applications. It takes advantag
 > 
 > When filling in the public key on the Alipay app setup website, you need to remove the header and footer of `public.pem`, delete all newline characters, and paste the rest of the contents into the text input box for "public key".
 
-## Set up the Logto Alipay Web connector settings
+## Set up the MyEyesID Alipay Web connector settings
 
 1. In [the Alipay console workspace](https://open.alipay.com/dev/workspace) go to "My application" (我的应用) panel and click "Web & Mobile Apps" (网页&移动应用) tab, you can find APPID of all applications.
 2. In step 7 of the previous part, you have already generated a key pair including a private key and a public key.
-3. Fill out the Logto connector settings:
+3. Fill out the MyEyesID connector settings:
     - Fill out the `appId` field with APPID you've got from step 1.
     - Fill out the `privateKey` field with contents from the private key file mentioned in step 2. Please MAKE SURE to use '\n' to replace all newline characters and do not remove header and footer in private key file.
     - Fill out the `signType` field with 'RSA2' due to the `Public key` signing mode we chose in step 7 of "Create And Configure Alipay Apps".
@@ -78,7 +78,7 @@ Alipay Web connector is designed for desktop Web applications. It takes advantag
 
 ## Test Alipay web connector
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 Once Alipay web connector is enabled, you can build and run your web app to see if it works.
 
@@ -107,7 +107,7 @@ Once Alipay web connector is enabled, you can build and run your web app to see 
 6. 使用开发者账号登录 [支付宝商家中心](https://b.alipay.com/index2.htm) 后，从顶栏菜单的进入「账号中心」，然后选择从左侧的菜单栏底部进入「APPID 绑定」页面。点击「+ 添加绑定」，之后输入你在步骤 4 中所创建的应用的 APPID。
 7. 点按「App 支付宝登录」旁边「签约」按钮，并按照提示完成签约。当此步骤完成后，步骤 5 中所添加的各种「能力」即可生效。
 8. 回到「支付宝开放平台控制台」中第 5 步所创建的应用的「概览」页面, 在该页面的「开发信息」中点击「接口加签方式（密钥/证书）」的「设置」链接，将「选择加签模式」设定为「公钥」,然后将你生成的公钥填入下方「填写公钥字符」的文本编辑框中。
-9. 点击「授权回调地址」的「设置链接」，选择你所需要的「回调地址类型」，将 Logto Core 默认使用的 `${your_logto_origin}/callback/${connector_id}` 设置为「回调地址」。`connector_id` 在管理控制台相应连接器的详情页的顶栏中可以找到。
+9. 点击「授权回调地址」的「设置链接」，选择你所需要的「回调地址类型」，将 MyEyesID Core 默认使用的 `${your_myeyesid_origin}/callback/${connector_id}` 设置为「回调地址」。`connector_id` 在管理控制台相应连接器的详情页的顶栏中可以找到。
 10. 当设置完以上的所有步骤，点击「概览」页面上方的「提交审核」，当审核通过后，你将可以顺利地使用支付宝登录自己的网页应用。
 
 > ℹ️ **注意**
@@ -144,7 +144,7 @@ Once Alipay web connector is enabled, you can build and run your web app to see 
 
 ## 测试支付宝网页连接器
 
-大功告成。别忘了 [在登录体验中启用社交登录](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
+大功告成。别忘了 [在登录体验中启用社交登录](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
 
 在支付宝网页连接器启用后，你可以构建并运行你的网页应用看看是否生效。
 

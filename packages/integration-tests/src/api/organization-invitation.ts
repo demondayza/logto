@@ -1,8 +1,8 @@
-import { type SendMessagePayload } from '@logto/connector-kit';
+import { type SendMessagePayload } from '@myeyesid/connector-kit';
 import {
   type OrganizationInvitationStatus,
   type OrganizationInvitationEntity,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { authedAdminApi } from './api.js';
 import { ApiFactory } from './factory.js';

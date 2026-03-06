@@ -1,4 +1,4 @@
-import { RoleType, type Role } from '@logto/schemas';
+import { RoleType, type Role } from '@myeyesid/schemas';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';

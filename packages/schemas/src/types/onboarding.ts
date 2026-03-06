@@ -51,7 +51,7 @@ export enum Stage {
 export enum AdditionalFeatures {
   CustomizeUiAndFlow = 'customize-ui-and-flow',
   Compliance = 'compliance',
-  ExportUserDataFromLogto = 'export-user-data-from-logto',
+  ExportUserDataFromMyEyesID = 'export-user-data-from-myeyesid',
   BudgetControl = 'budget-control',
   BringOwnAuth = 'bring-own-auth',
   Others = 'others',

@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { MfaFactor } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { MfaFactor } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import { UAParser as parseUa } from 'ua-parser-js';
 

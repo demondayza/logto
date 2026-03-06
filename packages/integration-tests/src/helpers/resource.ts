@@ -1,4 +1,4 @@
-import { type Scope } from '@logto/schemas';
+import { type Scope } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 
 import { createResource, deleteResource } from '#src/api/resource.js';

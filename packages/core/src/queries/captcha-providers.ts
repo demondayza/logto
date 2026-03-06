@@ -3,8 +3,8 @@ import {
   CaptchaProviders,
   type CaptchaProviderKeys,
   type CreateCaptchaProvider,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { type CommonQueryMethods } from '@silverhand/slonik';
 
 import SchemaQueries from '../utils/SchemaQueries.js';

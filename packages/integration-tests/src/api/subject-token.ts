@@ -1,4 +1,4 @@
-import type { JsonObject, SubjectTokenResponse } from '@logto/schemas';
+import type { JsonObject, SubjectTokenResponse } from '@myeyesid/schemas';
 
 import { authedAdminApi } from './api.js';
 

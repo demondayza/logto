@@ -1,4 +1,4 @@
-import { ForgotPasswordMethod, ConnectorType } from '@logto/schemas';
+import { ForgotPasswordMethod, ConnectorType } from '@myeyesid/schemas';
 
 import { updateSignInExperience } from '#src/api/index.js';
 import {

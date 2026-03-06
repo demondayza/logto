@@ -1,4 +1,4 @@
-import { ApplicationType } from '@logto/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { type Ref, forwardRef, useContext } from 'react';

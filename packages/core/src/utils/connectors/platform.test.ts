@@ -1,12 +1,12 @@
-import { ConnectorType } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
 
 import {
   mockMetadata0,
   mockMetadata1,
   mockConnector0,
   mockConnector1,
-  mockLogtoConnector,
-  mockLogtoConnectorList,
+  mockMyEyesIDConnector,
+  mockMyEyesIDConnectorList,
 } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
 
@@ -19,13 +19,13 @@ describe('check social connector target and platform uniqueness', () => {
         dbEntry: mockConnector0,
         metadata: { ...mockMetadata0, target: 'target' },
         type: ConnectorType.Social,
-        ...mockLogtoConnector,
+        ...mockMyEyesIDConnector,
       },
       {
         dbEntry: mockConnector1,
         metadata: { ...mockMetadata1, target: 'target' },
         type: ConnectorType.Social,
-        ...mockLogtoConnector,
+        ...mockMyEyesIDConnector,
       },
     ];
     expect(() => {
@@ -40,7 +40,7 @@ describe('check social connector target and platform uniqueness', () => {
 
   it('should not throw when no multiple connectors sharing same target and platform', () => {
     expect(() => {
-      checkSocialConnectorTargetAndPlatformUniqueness(mockLogtoConnectorList);
+      checkSocialConnectorTargetAndPlatformUniqueness(mockMyEyesIDConnectorList);
     }).not.toThrow();
   });
 });

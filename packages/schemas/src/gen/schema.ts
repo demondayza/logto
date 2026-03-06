@@ -1,4 +1,4 @@
-// LOG-88: Refactor '@logto/schemas' type gen
+// LOG-88: Refactor '@myeyesid/schemas' type gen
 
 import { condArray, condString, conditionalString } from '@silverhand/essentials';
 import camelcase from 'camelcase';

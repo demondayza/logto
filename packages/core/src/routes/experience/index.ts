@@ -4,13 +4,13 @@
  * Note the experience APIs also known as interaction APIs v2,
  * are the new version of the interaction APIs with design improvements.
  *
- * @see {@link https://github.com/logto-io/rfcs | Logto RFCs} for more information about RFC 0004.
+ * @see {@link https://github.com/myeyesid-io/rfcs | MyEyesID RFCs} for more information about RFC 0004.
  *
  * @remarks
  * The experience APIs can be used by developers to build custom user interaction experiences.
  */
 
-import { identificationApiPayloadGuard, InteractionEvent } from '@logto/schemas';
+import { identificationApiPayloadGuard, InteractionEvent } from '@myeyesid/schemas';
 import type Router from 'koa-router';
 import { z } from 'zod';
 

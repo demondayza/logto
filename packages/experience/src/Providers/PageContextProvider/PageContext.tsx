@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { noop } from '@silverhand/essentials';
 import { createContext } from 'react';
 import { isMobile } from 'react-device-detect';

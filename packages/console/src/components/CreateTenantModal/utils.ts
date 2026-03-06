@@ -1,4 +1,4 @@
-import { isValidCustomTenantId } from '@logto/core-kit';
+import { isValidCustomTenantId } from '@myeyesid/core-kit';
 import { condArray } from '@silverhand/essentials';
 
 import { type RegionResponse as RegionType } from '@/cloud/types/router';

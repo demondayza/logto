@@ -6,11 +6,11 @@ const user_scopes = {
     profile: 'Ваше имя, имя пользователя, аватар и другая информация профиля',
     roles: 'Ваши роли',
     identities: 'Ваши связанные социальные идентификаторы',
-    'urn:logto:scope:organizations': 'Информация о ваших организациях',
-    'urn:logto:scope:organization_roles': 'Ваши организационные роли',
+    'urn:myeyesid:scope:organizations': 'Информация о ваших организациях',
+    'urn:myeyesid:scope:organization_roles': 'Ваши организационные роли',
     address: 'Ваш адрес',
     /** UNTRANSLATED */
-    'urn:logto:scope:sessions': 'Your active sessions',
+    'urn:myeyesid:scope:sessions': 'Your active sessions',
   },
 };
 

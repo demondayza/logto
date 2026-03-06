@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { type RequestErrorBody } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { type RequestErrorBody } from '@myeyesid/schemas';
 import { useCallback, useContext } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { z } from 'zod';

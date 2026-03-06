@@ -5,7 +5,7 @@ import {
   type VerificationIdentifier,
   type Sentinel,
   type SentinelActivityAction,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { sha256 } from 'hash-wasm';
 
 import RequestError from '#src/errors/RequestError/index.js';

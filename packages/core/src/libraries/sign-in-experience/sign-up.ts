@@ -1,9 +1,9 @@
-import type { SignUp } from '@logto/schemas';
-import { SignInIdentifier, ConnectorType, AlternativeSignUpIdentifier } from '@logto/schemas';
+import type { SignUp } from '@myeyesid/schemas';
+import { SignInIdentifier, ConnectorType, AlternativeSignUpIdentifier } from '@myeyesid/schemas';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 
 const validatePrimarySignUpIdentifier = ({ identifiers, secondaryIdentifiers = [] }: SignUp) => {
   if (secondaryIdentifiers.length > 0) {
@@ -49,7 +49,7 @@ const validateSignUpIdentifiersUniqueness = ({
 
 const validatePasswordlessIdentifiers = (
   { identifiers, secondaryIdentifiers = [], verify }: SignUp,
-  enabledConnectors: LogtoConnector[]
+  enabledConnectors: MyEyesIDConnector[]
 ) => {
   if (
     identifiers.some((identifier) => identifier !== SignInIdentifier.Username) ||
@@ -108,7 +108,7 @@ const validatePasswordlessIdentifiers = (
   }
 };
 
-export const validateSignUp = (signUp: SignUp, enabledConnectors: LogtoConnector[]) => {
+export const validateSignUp = (signUp: SignUp, enabledConnectors: MyEyesIDConnector[]) => {
   validatePrimarySignUpIdentifier(signUp);
 
   validateSignUpIdentifiersUniqueness(signUp);

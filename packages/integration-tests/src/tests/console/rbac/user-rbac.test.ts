@@ -1,4 +1,4 @@
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import {
   expectConfirmModalAndAct,
   expectModalWithTitle,
@@ -24,7 +24,7 @@ import { expectToSelectPermissionAction } from './helper.js';
 await page.setViewport({ width: 1920, height: 1080 });
 
 describe('User RBAC', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
   const apiResourceName = generateResourceName();
   const apiResourceIndicator = generateResourceIndicator();
   const permissionName = generateScopeName();
@@ -39,7 +39,7 @@ describe('User RBAC', () => {
 
   it('navigate to api resources page', async () => {
     await expectNavigation(
-      page.goto(appendPathname('/console/api-resources', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/api-resources', myeyesidConsoleUrl).href)
     );
 
     await expect(page).toMatchElement(
@@ -113,7 +113,7 @@ describe('User RBAC', () => {
   });
 
   it('navigate to user management page', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/users', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/users', myeyesidConsoleUrl).href));
     await expect(page).toMatchElement(
       'div[class$=main] div[class$=headline] div[class$=titleEllipsis]',
       {
@@ -139,7 +139,7 @@ describe('User RBAC', () => {
   });
 
   it('navigate to roles page', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/roles', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/roles', myeyesidConsoleUrl).href));
 
     await expect(page).toMatchElement(
       'div[class$=main] div[class$=headline] div[class$=titleEllipsis]',
@@ -327,11 +327,11 @@ describe('User RBAC', () => {
       text: 'The user has been successfully deleted',
     });
 
-    expect(page.url()).toBe(new URL(`console/users`, logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL(`console/users`, myeyesidConsoleUrl).href);
   });
 
   it('delete the role', async () => {
-    await expectNavigation(page.goto(appendPathname('/console/roles', logtoConsoleUrl).href));
+    await expectNavigation(page.goto(appendPathname('/console/roles', myeyesidConsoleUrl).href));
 
     await expect(page).toMatchElement(
       'div[class$=main] div[class$=headline] div[class$=titleEllipsis]',
@@ -358,12 +358,12 @@ describe('User RBAC', () => {
       text: `${roleName} was successfully deleted`,
     });
 
-    expect(page.url()).toBe(new URL(`console/roles`, logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL(`console/roles`, myeyesidConsoleUrl).href);
   });
 
   it('delete permission', async () => {
     await expectNavigation(
-      page.goto(appendPathname('/console/api-resources', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/api-resources', myeyesidConsoleUrl).href)
     );
 
     await expect(page).toMatchElement(
@@ -412,6 +412,6 @@ describe('User RBAC', () => {
       text: `The API resource ${apiResourceName} has been successfully deleted`,
     });
 
-    expect(page.url()).toBe(new URL(`console/api-resources`, logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL(`console/api-resources`, myeyesidConsoleUrl).href);
   });
 });

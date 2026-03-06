@@ -7,7 +7,7 @@ import {
   type SsoConnectorMetadata,
   SupportedDateFormat,
   VerificationType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import * as s from 'superstruct';
 
 import { type IdentifierInputValue } from '@/shared/components/InputFields/SmartInputField';

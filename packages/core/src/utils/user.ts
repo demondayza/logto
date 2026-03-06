@@ -5,8 +5,8 @@ import {
   type UserSsoIdentity,
   type User,
   type UserMfaVerificationResponse,
-} from '@logto/schemas';
-import { PhoneNumberParser } from '@logto/shared/universal';
+} from '@myeyesid/schemas';
+import { PhoneNumberParser } from '@myeyesid/shared/universal';
 import { pick } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

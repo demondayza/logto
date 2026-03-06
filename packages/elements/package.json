@@ -1,9 +1,9 @@
 {
-  "name": "@logto/elements",
+  "name": "@myeyesid/elements",
   "version": "0.1.0",
   "description": "MyEyesID user interface elements.",
   "author": "Silverhand Inc. <contact@silverhand.io>",
-  "homepage": "https://github.com/demondayza/logto#readme",
+  "homepage": "https://github.com/demondayza/myeyesid#readme",
   "license": "MPL-2.0",
   "type": "module",
   "private": true,
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/demondayza/logto.git"
+    "url": "git+https://github.com/demondayza/myeyesid.git"
   },
   "scripts": {
     "precommit": "lint-staged",
@@ -41,7 +41,7 @@
     "node": "^22.14.0"
   },
   "bugs": {
-    "url": "https://github.com/demondayza/logto/issues"
+    "url": "https://github.com/demondayza/myeyesid/issues"
   },
   "dependencies": {
     "@lit/context": "^1.1.2",
@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@lit/localize-tools": "^0.8.0",
-    "@logto/schemas": "workspace:^",
+    "@myeyesid/schemas": "workspace:^",
     "@open-wc/testing": "^4.0.0",
     "@playwright/test": "^1.48.1",
     "@silverhand/eslint-config": "6.0.1",

@@ -1,7 +1,7 @@
 // https://react.i18next.com/latest/typescript#create-a-declaration-file
 
-import type { LocalePhrase } from '@logto/phrases';
-import type { LocalePhrase as ExperiencePhrase } from '@logto/phrases-experience';
+import type { LocalePhrase } from '@myeyesid/phrases';
+import type { LocalePhrase as ExperiencePhrase } from '@myeyesid/phrases-experience';
 
 declare module 'i18next' {
   interface CustomTypeOptions {

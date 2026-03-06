@@ -1,4 +1,4 @@
-import { RoleType, roleTypeToKey, type RoleResponse } from '@logto/schemas';
+import { RoleType, roleTypeToKey, type RoleResponse } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';

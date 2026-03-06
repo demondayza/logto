@@ -1,6 +1,6 @@
 import http from 'node:http';
 
-import { isValidUrl } from '@logto/core-kit';
+import { isValidUrl } from '@myeyesid/core-kit';
 import { conditional } from '@silverhand/essentials';
 import chalk from 'chalk';
 import type { CommandModule } from 'yargs';
@@ -10,15 +10,15 @@ import { consoleLog } from '../../utils.js';
 import { type TunnelCommandArgs } from './types.js';
 import {
   checkExperienceInput,
-  createLogtoResponseHandler,
+  createMyEyesIDResponseHandler,
   createProxy,
   createStaticFileProxy,
-  isLogtoRequestPath,
+  isMyEyesIDRequestPath,
 } from './utils.js';
 
 const tunnel: CommandModule<unknown, TunnelCommandArgs> = {
   command: ['$0'],
-  describe: 'Command for Logto tunnel',
+  describe: 'Command for MyEyesID tunnel',
   builder: (yargs) =>
     yargs.options({
       'experience-uri': {
@@ -32,7 +32,7 @@ const tunnel: CommandModule<unknown, TunnelCommandArgs> = {
         type: 'string',
       },
       endpoint: {
-        describe: `Logto endpoint URI that points to your Logto Cloud instance. E.g.: https://<tenant-id>.logto.app/`,
+        describe: `MyEyesID endpoint URI that points to your MyEyesID Cloud instance. E.g.: https://<tenant-id>.myeyesid.app/`,
         type: 'string',
       },
       port: {
@@ -52,22 +52,22 @@ const tunnel: CommandModule<unknown, TunnelCommandArgs> = {
 
     if (!endpoint || !isValidUrl(endpoint)) {
       consoleLog.fatal(
-        'A valid Logto endpoint URI must be provided. E.g. `--endpoint https://<tenant-id>.logto.app/` or add `LOGTO_ENDPOINT` to your environment variables.'
+        'A valid MyEyesID endpoint URI must be provided. E.g. `--endpoint https://<tenant-id>.myeyesid.app/` or add `LOGTO_ENDPOINT` to your environment variables.'
       );
     }
-    const logtoEndpointUrl = new URL(endpoint);
+    const myeyesidEndpointUrl = new URL(endpoint);
 
     const startServer = (port: number) => {
       const tunnelServiceUrl = new URL(`http://localhost:${port}`);
 
-      const proxyLogtoRequest = createProxy(
-        logtoEndpointUrl.href,
+      const proxyMyEyesIDRequest = createProxy(
+        myeyesidEndpointUrl.href,
         async (proxyResponse, request, response) =>
-          createLogtoResponseHandler({
+          createMyEyesIDResponseHandler({
             proxyResponse,
             request,
             response,
-            logtoEndpointUrl,
+            myeyesidEndpointUrl,
             tunnelServiceUrl,
             verbose,
           })
@@ -78,9 +78,9 @@ const tunnel: CommandModule<unknown, TunnelCommandArgs> = {
       const server = http.createServer((request, response) => {
         consoleLog.info(`[${chalk.green(request.method)}] ${request.url}`);
 
-        // Tunneling the requests to Logto endpoint
-        if (isLogtoRequestPath(request.url)) {
-          void proxyLogtoRequest(request, response);
+        // Tunneling the requests to MyEyesID endpoint
+        if (isMyEyesIDRequestPath(request.url)) {
+          void proxyMyEyesIDRequest(request, response);
           return;
         }
 
@@ -96,10 +96,10 @@ const tunnel: CommandModule<unknown, TunnelCommandArgs> = {
 
       server.listen(port, () => {
         const serviceUrl = new URL(`http://localhost:${port}`);
-        consoleLog.plain(`${chalk.green('✔')} 🎉 Logto tunnel service is running!`);
+        consoleLog.plain(`${chalk.green('✔')} 🎉 MyEyesID tunnel service is running!`);
         consoleLog.plain(`${chalk.green('➜')} Your custom sign-in UI is hosted on:`);
         consoleLog.plain(`  ${chalk.blue(chalk.bold(serviceUrl.href))}`);
-        consoleLog.plain(`${chalk.green('➜')} Remember to update Logto endpoint URI in your app:`);
+        consoleLog.plain(`${chalk.green('➜')} Remember to update MyEyesID endpoint URI in your app:`);
         consoleLog.plain(`  ${chalk.gray('From:')} ${chalk.blue(chalk.bold(endpoint))}`);
         consoleLog.plain(`  ${chalk.gray('To:')}   ${chalk.blue(chalk.bold(serviceUrl.href))}`);
         consoleLog.plain(

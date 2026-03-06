@@ -1,10 +1,10 @@
 # GatewayAPI SMS connector
 
-The official Logto connector for GatewayAPI SMS.
+The official MyEyesID connector for GatewayAPI SMS.
 
 ## Get started
 
-GatewayAPI is a cloud service provider in Europe, offering many cloud services, including SMS (short message service). GatewayAPI SMS Connector is a plugin provided by the Logto team to call the GatewayAPI SMS service, with the help of which Logto end-users can register and sign in to their Logto account via SMS verification code.
+GatewayAPI is a cloud service provider in Europe, offering many cloud services, including SMS (short message service). GatewayAPI SMS Connector is a plugin provided by the MyEyesID team to call the GatewayAPI SMS service, with the help of which MyEyesID end-users can register and sign in to their MyEyesID account via SMS verification code.
 
 ## Set up in GatewayAPI
 
@@ -24,7 +24,7 @@ You may need to enable your account before using the SMS service. You can contac
 
 Go to the API Keys page from the GatewayAPI console, and find the API token or create a new API token.
 
-## Set up in Logto
+## Set up in MyEyesID
 
 1. **Endpoint**: If your GatewayAPI account is in the EU region, you should use the endpoint `https://gatewayapi.eu/rest/mtsms`. If your GatewayAPI account is in the US region, you should use the endpoint `https://gatewayapi.com/rest/mtsms`.
 2. **API Token**: The API token you created in the previous step.

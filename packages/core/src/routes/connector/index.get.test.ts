@@ -1,5 +1,5 @@
-import { ConnectorType } from '@logto/schemas';
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+import { ConnectorType } from '@myeyesid/schemas';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 
 import {
   mockMetadata0,
@@ -7,12 +7,12 @@ import {
   mockMetadata2,
   mockMetadata3,
   mockConnectorFactory,
-  mockLogtoConnectorList,
+  mockMyEyesIDConnectorList,
 } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 import { createRequester } from '#src/utils/test-utils.js';
 
 const { jest } = import.meta;
@@ -23,7 +23,7 @@ mockEsm('#src/utils/connectors/platform.js', () => ({
 }));
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const getLogtoConnectors = jest.fn<Promise<LogtoConnector[]>, []>();
+const getMyEyesIDConnectors = jest.fn<Promise<MyEyesIDConnector[]>, []>();
 
 const { loadConnectorFactories } = await mockEsmWithActual(
   '#src/utils/connectors/index.js',
@@ -36,9 +36,9 @@ const tenantContext = new MockTenant(
   undefined,
   {},
   {
-    getLogtoConnectors,
-    getLogtoConnectorById: async (connectorId: string) => {
-      const connectors = await getLogtoConnectors();
+    getMyEyesIDConnectors,
+    getMyEyesIDConnectorById: async (connectorId: string) => {
+      const connectors = await getMyEyesIDConnectors();
       const connector = connectors.find(({ dbEntry }) => dbEntry.id === connectorId);
       assertThat(
         connector,
@@ -66,22 +66,22 @@ describe('connector data route', () => {
     });
 
     it('throws if more than one email connector exists', async () => {
-      getLogtoConnectors.mockResolvedValueOnce(mockLogtoConnectorList);
+      getMyEyesIDConnectors.mockResolvedValueOnce(mockMyEyesIDConnectorList);
       const response = await connectorRequest.get('/connectors').send({});
       expect(response).toHaveProperty('statusCode', 400);
     });
 
     it('throws if more than one SMS connector exists', async () => {
-      getLogtoConnectors.mockResolvedValueOnce(
-        mockLogtoConnectorList.filter((connector) => connector.type !== ConnectorType.Email)
+      getMyEyesIDConnectors.mockResolvedValueOnce(
+        mockMyEyesIDConnectorList.filter((connector) => connector.type !== ConnectorType.Email)
       );
       const response = await connectorRequest.get('/connectors').send({});
       expect(response).toHaveProperty('statusCode', 400);
     });
 
     it('shows all connectors', async () => {
-      getLogtoConnectors.mockResolvedValueOnce(
-        mockLogtoConnectorList.filter((connector) => connector.type === ConnectorType.Social)
+      getMyEyesIDConnectors.mockResolvedValueOnce(
+        mockMyEyesIDConnectorList.filter((connector) => connector.type === ConnectorType.Social)
       );
       const response = await connectorRequest.get('/connectors').send({});
       expect(response).toHaveProperty('statusCode', 200);
@@ -94,19 +94,19 @@ describe('connector data route', () => {
     });
 
     it('throws when connector can not be found by given connectorId (locally)', async () => {
-      getLogtoConnectors.mockResolvedValueOnce(mockLogtoConnectorList.slice(2));
+      getMyEyesIDConnectors.mockResolvedValueOnce(mockMyEyesIDConnectorList.slice(2));
       const response = await connectorRequest.get('/connectors/findConnector').send({});
       expect(response).toHaveProperty('statusCode', 404);
     });
 
     it('throws when connector can not be found by given connectorId (remotely)', async () => {
-      getLogtoConnectors.mockResolvedValueOnce([]);
+      getMyEyesIDConnectors.mockResolvedValueOnce([]);
       const response = await connectorRequest.get('/connectors/id0').send({});
       expect(response).toHaveProperty('statusCode', 404);
     });
 
     it('shows found connector information', async () => {
-      getLogtoConnectors.mockResolvedValueOnce(mockLogtoConnectorList);
+      getMyEyesIDConnectors.mockResolvedValueOnce(mockMyEyesIDConnectorList);
       const response = await connectorRequest.get('/connectors/id0').send({});
       expect(response).toHaveProperty('statusCode', 200);
     });

@@ -15,7 +15,7 @@ const getDatabaseName = async (pool: CommonQueryMethods) => {
 const alteration: AlterationScript = {
   up: async (pool) => {
     const database = await getDatabaseName(pool);
-    const baseRoleId = getId(`logto_tenant_${database}`);
+    const baseRoleId = getId(`myeyesid_tenant_${database}`);
 
     await pool.query(sql`
       create table sso_connectors (

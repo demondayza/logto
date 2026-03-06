@@ -5,7 +5,7 @@
  * we have moved some of the standalone functions into this file.
  */
 
-import { MfaFactor, VerificationType, type User, type Mfa } from '@logto/schemas';
+import { MfaFactor, VerificationType, type User, type Mfa } from '@myeyesid/schemas';
 import { conditional, type Nullable } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

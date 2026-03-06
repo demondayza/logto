@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { useEffect, useContext } from 'react';
 
 import PageContext from '@/Providers/PageContextProvider/PageContext';

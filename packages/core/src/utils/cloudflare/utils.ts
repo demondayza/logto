@@ -1,6 +1,6 @@
-import { parseJson } from '@logto/connector-kit';
-import { type CloudflareData, DomainStatus } from '@logto/schemas';
-import { ConsoleLog } from '@logto/shared';
+import { parseJson } from '@myeyesid/connector-kit';
+import { type CloudflareData, DomainStatus } from '@myeyesid/schemas';
+import { ConsoleLog } from '@myeyesid/shared';
 import chalk from 'chalk';
 import { type Response } from 'got';
 import { type ZodType } from 'zod';

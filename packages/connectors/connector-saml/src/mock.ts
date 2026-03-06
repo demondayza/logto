@@ -19,11 +19,11 @@ export const mockedConfig = {
 export const mockAttributes = {
   'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier':
     'google-oauth2|u98ewdsah9annkjsn',
-  'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress': 'test@logto.io',
+  'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress': 'test@myeyesid.io',
   'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name': 'saml test',
   'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname': 'saml',
   'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname': 'test',
-  'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn': 'test@logto.io',
+  'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn': 'test@myeyesid.io',
   'http://schemas.auth0.com/identities/default/provider': 'google-oauth2',
   'http://schemas.auth0.com/identities/default/connection': 'google-oauth2',
   'http://schemas.auth0.com/identities/default/isSocial': 'true',
@@ -33,7 +33,7 @@ export const mockAttributes = {
   'http://schemas.auth0.com/email_verified': 'true',
   'http://schemas.auth0.com/locale': 'en',
   'http://schemas.auth0.com/nickname': 'test',
-  'http://schemas.auth0.com/picture': 'https://logto.io/logo.4667af9d.svg',
+  'http://schemas.auth0.com/picture': 'https://myeyesid.io/logo.4667af9d.svg',
   'http://schemas.auth0.com/updated_at':
     'Sat Jan 14 2023 18:55:15 GMT+0000 (Coordinated Universal Time)',
 };

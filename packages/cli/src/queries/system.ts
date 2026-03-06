@@ -1,5 +1,5 @@
-import type { AlterationState, System, SystemKey } from '@logto/schemas';
-import { systemGuards, Systems, AlterationStateKey } from '@logto/schemas';
+import type { AlterationState, System, SystemKey } from '@myeyesid/schemas';
+import { systemGuards, Systems, AlterationStateKey } from '@myeyesid/schemas';
 import type { Nullable } from '@silverhand/essentials';
 import type { CommonQueryMethods, DatabaseTransactionConnection } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
@@ -21,12 +21,12 @@ const doesTableExist = async (pool: CommonQueryMethods, table: string) => {
 export const doesSystemsTableExist = async (pool: CommonQueryMethods) =>
   doesTableExist(pool, Systems.table);
 
-const legacyLogtoConfigsTable = '_logto_configs';
+const legacyMyEyesIDConfigsTable = '_myeyesid_configs';
 
 const getAlterationStateTable = async (pool: CommonQueryMethods) =>
   (await doesSystemsTableExist(pool))
     ? sql.identifier([Systems.table])
-    : sql.identifier([legacyLogtoConfigsTable]); // Fall back to the old config table
+    : sql.identifier([legacyMyEyesIDConfigsTable]); // Fall back to the old config table
 
 export const getCurrentDatabaseAlterationTimestamp = async (pool: CommonQueryMethods) => {
   const table = await getAlterationStateTable(pool);

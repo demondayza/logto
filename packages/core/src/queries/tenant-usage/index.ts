@@ -15,7 +15,7 @@ import {
   OrganizationRoles,
   OrganizationScopes,
   Domains,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { sql } from '@silverhand/slonik';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 

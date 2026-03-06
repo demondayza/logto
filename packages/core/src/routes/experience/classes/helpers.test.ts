@@ -1,4 +1,4 @@
-import { MfaFactor, MfaPolicy, type Mfa, type User } from '@logto/schemas';
+import { MfaFactor, MfaPolicy, type Mfa, type User } from '@myeyesid/schemas';
 
 import {
   mockUser,

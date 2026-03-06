@@ -1,4 +1,4 @@
-import { type Application } from '@logto/schemas';
+import { type Application } from '@myeyesid/schemas';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import useSWR from 'swr';
 

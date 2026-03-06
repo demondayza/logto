@@ -4,8 +4,8 @@ import {
   SsoProviderType,
   ssoConnectorProvidersResponseGuard,
   ssoConnectorWithProviderConfigGuard,
-} from '@logto/schemas';
-import { generateStandardShortId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardShortId } from '@myeyesid/shared';
 import { assert, conditional } from '@silverhand/essentials';
 import { z } from 'zod';
 

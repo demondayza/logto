@@ -1,4 +1,4 @@
-import { type Log } from '@logto/schemas';
+import { type Log } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 

@@ -2,7 +2,7 @@
   "tags": [
     {
       "name": "Users",
-      "description": "Endpoints for user management. Including creating, updating, deleting, and querying users with flexible filters. In addition to the endpoints, see [🧑‍🚀 Manage users](https://docs.logto.io/docs/recipes/manage-users/) for more insights."
+      "description": "Endpoints for user management. Including creating, updating, deleting, and querying users with flexible filters. In addition to the endpoints, see [🧑‍🚀 Manage users](https://docs.myeyesid.io/docs/recipes/manage-users/) for more insights."
     }
   ],
   "paths": {
@@ -108,15 +108,15 @@
         "description": "Update custom data for the given user ID. This method performs a partial update of the custom data object."
       }
     },
-    "/api/users/{userId}/logto-configs": {
+    "/api/users/{userId}/myeyesid-configs": {
       "get": {
         "responses": {
           "200": {
-            "description": "Returns the exposed user logto config fields. Currently, only the MFA skip state is available."
+            "description": "Returns the exposed user myeyesid config fields. Currently, only the MFA skip state is available."
           }
         },
-        "summary": "Get user logto config",
-        "description": "Retrieve the exposed portion of a user's logto config. This endpoint currently includes only the MFA skip state."
+        "summary": "Get user myeyesid config",
+        "description": "Retrieve the exposed portion of a user's myeyesid config. This endpoint currently includes only the MFA skip state."
       },
       "patch": {
         "requestBody": {
@@ -138,11 +138,11 @@
         },
         "responses": {
           "200": {
-            "description": "The exposed logto config fields were updated successfully."
+            "description": "The exposed myeyesid config fields were updated successfully."
           }
         },
-        "summary": "Update user logto config",
-        "description": "Update the exposed portion of a user's logto config. This endpoint currently allows updating only the MFA skip state."
+        "summary": "Update user myeyesid config",
+        "description": "Update the exposed portion of a user's myeyesid config. This endpoint currently allows updating only the MFA skip state."
       }
     },
     "/api/users/{userId}/profile": {

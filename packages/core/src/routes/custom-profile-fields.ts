@@ -3,7 +3,7 @@ import {
   updateCustomProfileFieldSieOrderGuard,
   customProfileFieldUnionGuard,
   updateCustomProfileFieldDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

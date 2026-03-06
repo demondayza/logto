@@ -1,11 +1,11 @@
-import { InteractionEvent } from '@logto/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { getSsoAuthorizationUrl, getSsoConnectorsByEmail } from '#src/api/interaction-sso.js';
 import { putInteraction } from '#src/api/interaction.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
 import { SsoConnectorApi } from '#src/api/sso-connector.js';
-import { logtoUrl } from '#src/constants.js';
+import { myeyesidUrl } from '#src/constants.js';
 import { initClient } from '#src/helpers/client.js';
 import { registerNewUserWithSso, signInWithSso } from '#src/helpers/single-sign-on.js';
 import { generateEmail, generateUserId, randomString } from '#src/utils.js';
@@ -44,7 +44,7 @@ describe('Single Sign On Happy Path', () => {
     });
 
     expect(response.redirectTo).not.toBeUndefined();
-    expect(response.redirectTo.indexOf(logtoUrl)).not.toBe(-1);
+    expect(response.redirectTo.indexOf(myeyesidUrl)).not.toBe(-1);
     expect(response.redirectTo.indexOf(state)).not.toBe(-1);
   });
 
@@ -66,7 +66,7 @@ describe('Single Sign On Happy Path', () => {
     const client = await initClient();
 
     const response = await client.send(getSsoConnectorsByEmail, {
-      email: 'foo@logto-invalid.com',
+      email: 'foo@myeyesid-invalid.com',
     });
 
     expect(response.length).toBe(0);

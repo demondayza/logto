@@ -6,7 +6,7 @@ import {
   jwtCustomizer,
   saml,
   type AuditLogPrefix,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { object, string } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

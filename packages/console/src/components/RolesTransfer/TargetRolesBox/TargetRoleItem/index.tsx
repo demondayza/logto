@@ -1,4 +1,4 @@
-import { type RoleResponse } from '@logto/schemas';
+import { type RoleResponse } from '@myeyesid/schemas';
 
 import Close from '@/assets/icons/close.svg?react';
 import IconButton from '@/ds-components/IconButton';

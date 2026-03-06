@@ -1,4 +1,4 @@
-import { type RoleResponse, RoleType } from '@logto/schemas';
+import { type RoleResponse, RoleType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { Trans, useTranslation } from 'react-i18next';
 

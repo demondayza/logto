@@ -1,7 +1,7 @@
 import path from 'node:path';
 
-import { GoogleConnector } from '@logto/connector-kit';
-import type { CustomClientMetadata, ExtraParamsObject, OidcClientMetadata } from '@logto/schemas';
+import { GoogleConnector } from '@myeyesid/connector-kit';
+import type { CustomClientMetadata, ExtraParamsObject, OidcClientMetadata } from '@myeyesid/schemas';
 import {
   ApplicationType,
   customClientMetadataGuard,
@@ -9,7 +9,7 @@ import {
   ExtraParamsKey,
   FirstScreen,
   experience,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { condArray, conditional, trySafe } from '@silverhand/essentials';
 import { type AllClientMetadata, type ClientAuthMethod, errors } from 'oidc-provider';
 

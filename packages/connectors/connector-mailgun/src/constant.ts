@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType } from '@myeyesid/connector-kit';
 
 export const endpoint = 'https://api.sendgrid.com/v3/mail/send';
 
@@ -56,20 +56,20 @@ export const defaultMetadata: ConnectorMetadata = {
       required: true,
       defaultValue: {
         SignIn: {
-          subject: 'Logto sign-in template {{code}}',
-          html: 'Your Logto sign-in verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID sign-in template {{code}}',
+          html: 'Your MyEyesID sign-in verification code is {{code}}. The code will remain active for 10 minutes.',
         },
         Register: {
-          subject: 'Logto sign-up template {{code}}',
-          html: 'Your Logto sign-up verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID sign-up template {{code}}',
+          html: 'Your MyEyesID sign-up verification code is {{code}}. The code will remain active for 10 minutes.',
         },
         ForgotPassword: {
-          subject: 'Logto reset password template {{code}}',
-          html: 'Your Logto reset password verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID reset password template {{code}}',
+          html: 'Your MyEyesID reset password verification code is {{code}}. The code will remain active for 10 minutes.',
         },
         Generic: {
-          subject: 'Logto generic template {{code}}',
-          html: 'Your Logto generic verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID generic template {{code}}',
+          html: 'Your MyEyesID generic verification code is {{code}}. The code will remain active for 10 minutes.',
         },
       },
     },

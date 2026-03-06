@@ -1,4 +1,4 @@
-import type { GeneratedSchema, SchemaLike } from '@logto/schemas';
+import type { GeneratedSchema, SchemaLike } from '@myeyesid/schemas';
 
 export const isKeyOf =
   <

@@ -15,7 +15,7 @@ export default ky.extend({
          */
         const appId = sessionStorage.getItem(searchKeys.appId);
         if (appId) {
-          request.headers.set('Logto-App-Id', appId);
+          request.headers.set('MyEyesID-App-Id', appId);
         }
       },
     ],

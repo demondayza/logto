@@ -1,5 +1,5 @@
-import type { LanguageTag } from '@logto/language-kit';
-import { isLanguageTag } from '@logto/language-kit';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import { isLanguageTag } from '@myeyesid/language-kit';
 import { type Nullable } from '@silverhand/essentials';
 import type { ZodType } from 'zod';
 import { z } from 'zod';
@@ -43,7 +43,7 @@ export type SocialConnectorMetadata = {
    * Indicates whether the connector supports token storage.
    *
    * @remark
-   * Previously, social connectors did not expose access tokens to Logto.
+   * Previously, social connectors did not expose access tokens to MyEyesID.
    * We are gradually migrating existing social connectors to support token storage.
    * Use this field to indicate whether the connector supports token storage.
    */

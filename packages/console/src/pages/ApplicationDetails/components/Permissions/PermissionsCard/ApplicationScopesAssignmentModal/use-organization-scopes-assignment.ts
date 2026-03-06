@@ -2,7 +2,7 @@ import {
   ApplicationUserConsentScopeType,
   type OrganizationScope,
   type ApplicationUserConsentScopesResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useState, useMemo } from 'react';
 import useSWR from 'swr';
 

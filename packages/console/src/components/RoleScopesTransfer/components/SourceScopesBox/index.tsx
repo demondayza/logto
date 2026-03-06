@@ -1,5 +1,5 @@
-import type { ResourceResponse, Scope, ScopeResponse } from '@logto/schemas';
-import { isManagementApi, PredefinedScope, RoleType } from '@logto/schemas';
+import type { ResourceResponse, Scope, ScopeResponse } from '@myeyesid/schemas';
+import { isManagementApi, PredefinedScope, RoleType } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import type { ChangeEvent } from 'react';

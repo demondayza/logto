@@ -5,8 +5,8 @@
  * For normal error handling test cases, please add them to the corresponding test files of the flow.
  */
 
-import { fetchTokenByRefreshToken } from '@logto/js';
-import { SignInIdentifier, InteractionEvent } from '@logto/schemas';
+import { fetchTokenByRefreshToken } from '@myeyesid/js';
+import { SignInIdentifier, InteractionEvent } from '@myeyesid/schemas';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { putInteraction } from '#src/api/interaction.js';

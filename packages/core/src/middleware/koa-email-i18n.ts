@@ -2,7 +2,7 @@ import { type MiddlewareType } from 'koa';
 import { type IRouterParamContext } from 'koa-router';
 
 import type Queries from '../tenants/Queries.js';
-import { getLogtoCookie } from '../utils/cookie.js';
+import { getMyEyesIDCookie } from '../utils/cookie.js';
 import { getExperienceLanguage } from '../utils/i18n.js';
 
 type EmailI18nContext = {
@@ -40,7 +40,7 @@ export default function koaEmailI18n<StateT, ContextT extends IRouterParamContex
       signInExperiences: { findDefaultSignInExperience },
     } = queries;
 
-    const { uiLocales } = getLogtoCookie(ctx);
+    const { uiLocales } = getMyEyesIDCookie(ctx);
     const [customLanguages, { languageInfo }] = await Promise.all([
       findAllCustomLanguageTags(),
       findDefaultSignInExperience(),

@@ -1,4 +1,4 @@
-import { hookEvents, type Hook, type HookEvent, type WebhookLogKey } from '@logto/schemas';
+import { hookEvents, type Hook, type HookEvent, type WebhookLogKey } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import { type WebhookDetailsFormType } from './types';

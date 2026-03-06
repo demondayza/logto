@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared';
+import { generateStandardId } from '@myeyesid/shared';
 import { sql } from '@silverhand/slonik';
 
 import type { AlterationScript } from '../lib/types/alteration.js';

@@ -1,11 +1,11 @@
-# @logto/tunnel
+# @myeyesid/tunnel
 
 ## 0.3.5
 
 ### Patch Changes
 
 - Updated dependencies [57b0008ee8]
-  - @logto/core-kit@2.7.1
+  - @myeyesid/core-kit@2.7.1
 
 ## 0.3.4
 
@@ -13,15 +13,15 @@
 
 - Updated dependencies [317f9744d1]
 - Updated dependencies [ce65b07964]
-  - @logto/shared@3.3.1
-  - @logto/core-kit@2.7.0
+  - @myeyesid/shared@3.3.1
+  - @myeyesid/core-kit@2.7.0
 
 ## 0.3.3
 
 ### Patch Changes
 
 - Updated dependencies [4cc321dbb]
-  - @logto/core-kit@2.6.1
+  - @myeyesid/core-kit@2.6.1
 
 ## 0.3.2
 
@@ -34,7 +34,7 @@
 ### Patch Changes
 
 - Updated dependencies [35bbc4399]
-  - @logto/shared@3.3.0
+  - @myeyesid/shared@3.3.0
 
 ## 0.3.0
 
@@ -45,8 +45,8 @@
 ### Patch Changes
 
 - Updated dependencies [2961d355d]
-  - @logto/core-kit@2.6.0
-  - @logto/shared@3.2.0
+  - @myeyesid/core-kit@2.6.0
+  - @myeyesid/shared@3.2.0
 
 ## 0.2.6
 
@@ -60,8 +60,8 @@
 
 - e11e57de8: bump dependencies for security update
 - Updated dependencies [e11e57de8]
-  - @logto/core-kit@2.5.4
-  - @logto/shared@3.1.4
+  - @myeyesid/core-kit@2.5.4
+  - @myeyesid/shared@3.1.4
 
 ## 0.2.4
 
@@ -69,56 +69,56 @@
 
 - Updated dependencies [62eb8ed8d]
 - Updated dependencies [a8080e891]
-  - @logto/core-kit@2.5.3
-  - @logto/shared@3.1.3
+  - @myeyesid/core-kit@2.5.3
+  - @myeyesid/shared@3.1.3
 
 ## 0.2.3
 
 ### Patch Changes
 
 - Updated dependencies [239b81e31]
-  - @logto/core-kit@2.5.2
+  - @myeyesid/core-kit@2.5.2
 
 ## 0.2.2
 
 ### Patch Changes
 
 - Updated dependencies [bc2a0ac03]
-  - @logto/shared@3.1.2
+  - @myeyesid/shared@3.1.2
 
-## @logto/tunnel@0.2.1
+## @myeyesid/tunnel@0.2.1
 
 ### Patch Changes
 
 - 349a6a405: support range request for mp4 video source hosting
 
-  Safari browser uses range request to fetch video data, but it was not supported by the `@logto/tunnel` CLI tool. This prevents our users who want to build custom sign-in pages with video background. In order to fix this, we need to partially read the video file stream based on the `range` request header, and set proper response headers and status code (206).
+  Safari browser uses range request to fetch video data, but it was not supported by the `@myeyesid/tunnel` CLI tool. This prevents our users who want to build custom sign-in pages with video background. In order to fix this, we need to partially read the video file stream based on the `range` request header, and set proper response headers and status code (206).
 
 - Updated dependencies [3c993d59c]
-  - @logto/core-kit@2.5.1
+  - @myeyesid/core-kit@2.5.1
 
-## @logto/tunnel@0.2.0
+## @myeyesid/tunnel@0.2.0
 
 ### Minor Changes
 
 - ff4cd67a9: add deploy command and env support
 
-  #### Add new `deploy` command to deploy your local custom UI assets to your Logto Cloud tenant
+  #### Add new `deploy` command to deploy your local custom UI assets to your MyEyesID Cloud tenant
 
-  1. Create a machine-to-machine app with Management API permissions in your Logto tenant.
+  1. Create a machine-to-machine app with Management API permissions in your MyEyesID tenant.
   2. Run the following command:
 
   ```bash
-  npx @logto/tunnel deploy --auth <your-m2m-app-id>:<your-m2m-app-secret> --endpoint https://<tenant-id>.logto.app --management-api-resource https://<tenant-id>.logto.app/api --experience-path /path/to/your/custom/ui
+  npx @myeyesid/tunnel deploy --auth <your-m2m-app-id>:<your-m2m-app-secret> --endpoint https://<tenant-id>.myeyesid.app --management-api-resource https://<tenant-id>.myeyesid.app/api --experience-path /path/to/your/custom/ui
   ```
 
   Note:
 
-  1. The `--management-api-resource` (or `--resource`) can be omitted when using the default Logto domain, since the CLI can infer the value automatically. If you are using custom domain for your Logto endpoint, this option must be provided.
+  1. The `--management-api-resource` (or `--resource`) can be omitted when using the default MyEyesID domain, since the CLI can infer the value automatically. If you are using custom domain for your MyEyesID endpoint, this option must be provided.
   2. You can also specify an existing zip file (`--zip-path` or `--zip`) instead of a directory to deploy. Only one of `--experience-path` or `--zip-path` can be used at a time.
 
   ```bash
-  npx @logto/tunnel deploy --auth <your-m2m-app-id>:<your-m2m-app-secret> --endpoint https://<tenant-id>.logto.app --zip-path /path/to/your/custom/ui.zip
+  npx @myeyesid/tunnel deploy --auth <your-m2m-app-id>:<your-m2m-app-secret> --endpoint https://<tenant-id>.myeyesid.app --zip-path /path/to/your/custom/ui.zip
   ```
 
   #### Add environment variable support
@@ -127,7 +127,7 @@
   2. Alternatively, specify environment variables directly when running CLI commands:
 
   ```bash
-  LOGTO_ENDPOINT=https://<tenant-id>.logto.app npx @logto/tunnel ...
+  LOGTO_ENDPOINT=https://<tenant-id>.myeyesid.app npx @myeyesid/tunnel ...
   ```
 
   Supported environment variables:
@@ -143,14 +143,14 @@
 
 ### Minor Changes
 
-- 976558af9: add new cli command to setup Logto tunnel service for developing and debugging custom ui on your local machine
+- 976558af9: add new cli command to setup MyEyesID tunnel service for developing and debugging custom ui on your local machine
 
-  This command will establish a tunnel service between the following 3 entities: Logto cloud auth services, your application, and your custom sign-in UI.
+  This command will establish a tunnel service between the following 3 entities: MyEyesID cloud auth services, your application, and your custom sign-in UI.
 
   #### Installation
 
   ```bash
-  npm i @logto/tunnel -g
+  npm i @myeyesid/tunnel -g
   ```
 
   #### Usage
@@ -158,25 +158,25 @@
   Assuming you have a custom sign-in page running on `http://localhost:4000`, then you can execute the command this way:
 
   ```bash
-  logto-tunnel --endpoint https://<tenant-id>.logto.app --port 9000 --experience-uri http://localhost:4000
+  myeyesid-tunnel --endpoint https://<tenant-id>.myeyesid.app --port 9000 --experience-uri http://localhost:4000
   ```
 
   Or if you don't have your custom UI pages hosted on a dev server, you can use the `--experience-path` option to specify the path to your static files:
 
   ```bash
-  logto-tunnel --endpoint https://<tenant-id>.logto.app --port 9000 --experience-path /path/to/your/custom/ui
+  myeyesid-tunnel --endpoint https://<tenant-id>.myeyesid.app --port 9000 --experience-path /path/to/your/custom/ui
   ```
 
-  This command also works if you have enabled custom domain in your Logto tenant. E.g.:
+  This command also works if you have enabled custom domain in your MyEyesID tenant. E.g.:
 
   ```bash
-  logto-tunnel --endpoint https://your-custom-domain.com --port 9000 --experience-path /path/to/your/custom/ui
+  myeyesid-tunnel --endpoint https://your-custom-domain.com --port 9000 --experience-path /path/to/your/custom/ui
   ```
 
   This should set up the tunnel and it will be running on your local machine at `http://localhost:9000/`.
 
-  Finally, run your application and set its endpoint in Logto config to the tunnel address `http://localhost:9000/` instead.
+  Finally, run your application and set its endpoint in MyEyesID config to the tunnel address `http://localhost:9000/` instead.
 
-  If all set up correctly, when you click the "sign-in" button in your application, you should be navigated to your custom sign-in page instead of Logto's built-in UI, along with valid session (cookies) that allows you to further interact with Logto experience API.
+  If all set up correctly, when you click the "sign-in" button in your application, you should be navigated to your custom sign-in page instead of MyEyesID's built-in UI, along with valid session (cookies) that allows you to further interact with MyEyesID experience API.
 
-  Refer to [Logto tunnel documentation](https://docs.logto.dev/docs/references/tunnel-cli/) for more details.
+  Refer to [MyEyesID tunnel documentation](https://docs.myeyesid.dev/docs/references/tunnel-cli/) for more details.

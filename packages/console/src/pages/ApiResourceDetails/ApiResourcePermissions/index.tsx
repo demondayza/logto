@@ -1,4 +1,4 @@
-import { type ScopeResponse } from '@logto/schemas';
+import { type ScopeResponse } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -22,7 +22,7 @@ const pageSize = defaultPageSize;
 function ApiResourcePermissions() {
   const {
     resource: { id: resourceId },
-    isLogtoManagementApiResource,
+    isMyEyesIDManagementApiResource,
   } = useOutletContext<ApiResourceDetailsOutletContext>();
 
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
@@ -60,7 +60,7 @@ function ApiResourcePermissions() {
         isCreateGuideVisible
         scopes={scopes}
         isLoading={isLoading}
-        isReadOnly={isLogtoManagementApiResource}
+        isReadOnly={isMyEyesIDManagementApiResource}
         createButtonTitle="api_resource_details.permission.create_button"
         createHandler={() => {
           setIsCreateFormOpen(true);

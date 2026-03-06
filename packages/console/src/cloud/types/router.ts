@@ -1,5 +1,5 @@
-import type router from '@logto/cloud/routes';
-import { type tenantAuthRouter } from '@logto/cloud/routes';
+import type router from '@myeyesid/cloud/routes';
+import { type tenantAuthRouter } from '@myeyesid/cloud/routes';
 import { type GuardedResponse, type RouterRoutes } from '@withtyped/client';
 
 type GetRoutes = RouterRoutes<typeof router>['get'];
@@ -7,7 +7,7 @@ type GetTenantAuthRoutes = RouterRoutes<typeof tenantAuthRouter>['get'];
 
 export type GetArrayElementType<T> = T extends Array<infer U> ? U : never;
 
-export type LogtoSkuResponse = GetArrayElementType<GuardedResponse<GetRoutes['/api/skus']>>;
+export type MyEyesIDSkuResponse = GetArrayElementType<GuardedResponse<GetRoutes['/api/skus']>>;
 
 export type Subscription = GuardedResponse<GetRoutes['/api/tenants/:tenantId/subscription']>;
 
@@ -70,14 +70,14 @@ export type RegionResponse = GetArrayElementType<
   GuardedResponse<GetRoutes['/api/me/regions']>['regions']
 >;
 
-export type LogtoEnterpriseResponse = GetArrayElementType<
-  GuardedResponse<GetRoutes['/api/me/logto-enterprises']>['logtoEnterprises']
+export type MyEyesIDEnterpriseResponse = GetArrayElementType<
+  GuardedResponse<GetRoutes['/api/me/myeyesid-enterprises']>['myeyesidEnterprises']
 >;
 
-export type LogtoEnterpriseSubscriptionResponse = GuardedResponse<
-  GetRoutes['/api/me/logto-enterprises/:id']
+export type MyEyesIDEnterpriseSubscriptionResponse = GuardedResponse<
+  GetRoutes['/api/me/myeyesid-enterprises/:id']
 >;
 
-export type LogtoEnterpriseSubscriptionInvoiceResponse = GetArrayElementType<
-  GuardedResponse<GetRoutes['/api/me/logto-enterprises/:id/invoices']>['invoices']
+export type MyEyesIDEnterpriseSubscriptionInvoiceResponse = GetArrayElementType<
+  GuardedResponse<GetRoutes['/api/me/myeyesid-enterprises/:id/invoices']>['invoices']
 >;

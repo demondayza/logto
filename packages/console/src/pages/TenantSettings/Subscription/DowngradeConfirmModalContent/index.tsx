@@ -2,17 +2,17 @@ import { diff } from 'deep-object-diff';
 import { useMemo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { type LogtoSkuResponse } from '@/cloud/types/router';
+import { type MyEyesIDSkuResponse } from '@/cloud/types/router';
 import SkuName from '@/components/SkuName';
 import { comingSoonSkuQuotaKeys, hiddenQuotaDiffUsageKeys } from '@/consts/plan-quotas';
-import { type LogtoSkuQuota, type LogtoSkuQuotaEntries } from '@/types/skus';
+import { type MyEyesIDSkuQuota, type MyEyesIDSkuQuotaEntries } from '@/types/skus';
 
 import PlanQuotaDiffCard from './PlanQuotaDiffCard';
 import styles from './index.module.scss';
 
 type Props = {
-  readonly currentSku: LogtoSkuResponse;
-  readonly targetSku: LogtoSkuResponse;
+  readonly currentSku: MyEyesIDSkuResponse;
+  readonly targetSku: MyEyesIDSkuResponse;
 };
 
 /**
@@ -20,9 +20,9 @@ type Props = {
  * - Coming soon features
  * - Add-on/legacy features whose quotas vary based on the current plan
  */
-const excludeHiddenUsages = (quotaDiff: Partial<LogtoSkuQuota>): Partial<LogtoSkuQuota> => {
+const excludeHiddenUsages = (quotaDiff: Partial<MyEyesIDSkuQuota>): Partial<MyEyesIDSkuQuota> => {
   // eslint-disable-next-line no-restricted-syntax
-  const entries = Object.entries(quotaDiff) as LogtoSkuQuotaEntries;
+  const entries = Object.entries(quotaDiff) as MyEyesIDSkuQuotaEntries;
   return Object.fromEntries(
     entries.filter(
       ([key]) => !comingSoonSkuQuotaKeys.includes(key) && !hiddenQuotaDiffUsageKeys.includes(key)

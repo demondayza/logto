@@ -1,4 +1,4 @@
-# @logto/connector-http-sms
+# @myeyesid/connector-http-sms
 
 ## 0.2.0
 
@@ -12,7 +12,7 @@
 
 - Updated dependencies [462e430445]
 - Updated dependencies [7c87ebc068]
-  - @logto/connector-kit@4.7.0
+  - @myeyesid/connector-kit@4.7.0
 
 ## 0.1.0
 

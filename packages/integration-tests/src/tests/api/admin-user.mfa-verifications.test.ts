@@ -1,12 +1,12 @@
-import { MfaFactor } from '@logto/schemas';
+import { MfaFactor } from '@myeyesid/schemas';
 
 import {
   createUserMfaVerification,
   deleteUser,
   deleteUserMfaVerification,
-  getUserLogtoConfig,
+  getUserMyEyesIDConfig,
   getUserMfaVerifications,
-  updateUserLogtoConfig,
+  updateUserMyEyesIDConfig,
 } from '#src/api/index.js';
 import { createUserByAdmin } from '#src/helpers/index.js';
 
@@ -57,16 +57,16 @@ describe('admin console user management (mfa verifications)', () => {
     await deleteUser(user.id);
   });
 
-  it('should update logto_config MFA skip state successfully', async () => {
+  it('should update myeyesid_config MFA skip state successfully', async () => {
     const user = await createUserByAdmin();
 
-    const config = await getUserLogtoConfig(user.id);
+    const config = await getUserMyEyesIDConfig(user.id);
     expect(config).toEqual({
       mfa: { skipped: false, skipMfaOnSignIn: false },
       passkeySignIn: { skipped: false },
     });
 
-    const response = await updateUserLogtoConfig(user.id, {
+    const response = await updateUserMyEyesIDConfig(user.id, {
       mfa: { skipped: true, skipMfaOnSignIn: false },
       passkeySignIn: { skipped: false },
     });
@@ -75,11 +75,11 @@ describe('admin console user management (mfa verifications)', () => {
       passkeySignIn: { skipped: false },
     });
 
-    const updatedConfig = await getUserLogtoConfig(user.id);
+    const updatedConfig = await getUserMyEyesIDConfig(user.id);
     expect(updatedConfig.mfa.skipped).toBe(true);
     expect(updatedConfig.mfa.skipMfaOnSignIn).toBe(false);
 
-    const response2 = await updateUserLogtoConfig(user.id, {
+    const response2 = await updateUserMyEyesIDConfig(user.id, {
       mfa: { skipped: false, skipMfaOnSignIn: true },
       passkeySignIn: { skipped: true },
     });
@@ -88,13 +88,13 @@ describe('admin console user management (mfa verifications)', () => {
       passkeySignIn: { skipped: true },
     });
 
-    const updatedConfig2 = await getUserLogtoConfig(user.id);
+    const updatedConfig2 = await getUserMyEyesIDConfig(user.id);
     expect(updatedConfig2.mfa.skipped).toBe(false);
     expect(updatedConfig2.mfa.skipMfaOnSignIn).toBe(true);
     expect(updatedConfig2.passkeySignIn.skipped).toBe(true);
 
     // Reset all flags
-    const response3 = await updateUserLogtoConfig(user.id, {
+    const response3 = await updateUserMyEyesIDConfig(user.id, {
       mfa: { skipped: false, skipMfaOnSignIn: false },
       passkeySignIn: { skipped: false },
     });

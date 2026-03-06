@@ -1,5 +1,5 @@
-import { MfaFactor, VerificationType } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { MfaFactor, VerificationType } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockUser, mockUserWebAuthnMfaVerification } from '#src/__mocks__/user.js';
 import { mockWebAuthnVerificationPayload } from '#src/__mocks__/webauthn.js';

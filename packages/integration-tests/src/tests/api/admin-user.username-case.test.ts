@@ -1,4 +1,4 @@
-import { type User } from '@logto/schemas';
+import { type User } from '@myeyesid/schemas';
 
 import { authedAdminApi, deleteUser } from '#src/api/index.js';
 import { createUserByAdmin, expectRejects } from '#src/helpers/index.js';

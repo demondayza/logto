@@ -2,7 +2,7 @@ import {
   InteractionEvent,
   SignInIdentifier,
   type VerificationCodeIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { initExperienceClient, logoutClient, processSession } from '#src/helpers/client.js';

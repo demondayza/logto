@@ -5,7 +5,7 @@ import {
   VerificationType,
   type AccessTokenPayload,
   type ClientCredentialsPayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 const standardTokenPayloadData = {
   jti: 'f1d3d2d1-1f2d-3d4e-5d6f-7d8a9d0e1d2',
@@ -49,7 +49,7 @@ export const accessTokenJwtCustomizerPayload = {
     user: {
       id: '123',
       username: 'foo',
-      primaryEmail: 'foo@logto.io',
+      primaryEmail: 'foo@myeyesid.io',
       primaryPhone: '+1234567890',
       name: 'Foo Bar',
       avatar: 'https://example.com/avatar.png',

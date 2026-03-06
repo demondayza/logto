@@ -1,4 +1,4 @@
-import { type ApplicationResponse } from '@logto/schemas';
+import { type ApplicationResponse } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useContext, useMemo, useState } from 'react';
 

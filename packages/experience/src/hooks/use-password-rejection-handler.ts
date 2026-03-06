@@ -1,4 +1,4 @@
-import { type RequestErrorBody } from '@logto/schemas';
+import { type RequestErrorBody } from '@myeyesid/schemas';
 import { useCallback, useMemo } from 'react';
 
 import usePasswordErrorMessage from '@/shared/hooks/use-password-error-message';

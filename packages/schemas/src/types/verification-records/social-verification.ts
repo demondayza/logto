@@ -3,7 +3,7 @@ import {
   socialUserInfoGuard,
   type ConnectorSession,
   type SocialUserInfo,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import { z } from 'zod';
 
 import { type ToZodObject } from '../../utils/zod.js';

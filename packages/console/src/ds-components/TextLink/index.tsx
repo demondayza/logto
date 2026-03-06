@@ -21,7 +21,7 @@ export type Props = AnchorHTMLAttributes<HTMLAnchorElement> &
      * - When it's `true`, the `rel` attribute will be set to `noopener noreferrer`.
      * - When it's `noopener`, the `rel` attribute will be set to `noopener`.
      *
-     * Typically, when navigating to Logto's website (official site, blog, documentation, etc.), use 'noopener'.
+     * Typically, when navigating to MyEyesID's website (official site, blog, documentation, etc.), use 'noopener'.
      *
      * Note: This prop is align with the `targetBlank` prop of {@link LinkButton}, they share the same logic.
      */

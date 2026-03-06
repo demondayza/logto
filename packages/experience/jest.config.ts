@@ -28,9 +28,9 @@ const config: Config.InitialOptions = {
     // Ensure CSS modules are stubbed before applying path aliases.
     '\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '^@/([^?]*)(\\?.*)?$': '<rootDir>/src/$1',
-    '^@logto/shared/(.*)$': '<rootDir>/../shared/lib/$1',
+    '^@myeyesid/shared/(.*)$': '<rootDir>/../shared/lib/$1',
   },
-  transformIgnorePatterns: ['node_modules/(?!(.*(nanoid|jose|ky|@logto|@silverhand))/)'],
+  transformIgnorePatterns: ['node_modules/(?!(.*(nanoid|jose|ky|@myeyesid|@silverhand))/)'],
 };
 
 export default config;

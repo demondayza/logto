@@ -1,5 +1,5 @@
-import { RoleType, Roles } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { RoleType, Roles } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { tryThat } from '@silverhand/essentials';
 import { array, object, string } from 'zod';
 

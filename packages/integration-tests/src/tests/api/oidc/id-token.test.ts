@@ -1,5 +1,5 @@
-import { Prompt } from '@logto/node';
-import { InteractionEvent, demoAppApplicationId } from '@logto/schemas';
+import { Prompt } from '@myeyesid/node';
+import { InteractionEvent, demoAppApplicationId } from '@myeyesid/schemas';
 
 import { assignRolesToUser, putRolesToUser, putInteraction } from '#src/api/index.js';
 import { createRole } from '#src/api/role.js';
@@ -79,7 +79,7 @@ describe('OpenID Connect ID token', () => {
     await organizationApi.addUserRoles(org1.id, userId, [role.id]);
 
     // Organizations claim
-    const { organizations } = await fetchIdToken(['urn:logto:scope:organizations']);
+    const { organizations } = await fetchIdToken(['urn:myeyesid:scope:organizations']);
 
     expect(organizations).toHaveLength(2);
     expect(organizations).toContainEqual(org1.id);
@@ -87,7 +87,7 @@ describe('OpenID Connect ID token', () => {
 
     // Organization roles claim
     const { organization_roles: organizationRoles } = await fetchIdToken([
-      'urn:logto:scope:organization_roles',
+      'urn:myeyesid:scope:organization_roles',
     ]);
 
     expect(organizationRoles).toHaveLength(1);

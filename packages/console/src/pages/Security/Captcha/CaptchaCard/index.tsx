@@ -1,4 +1,4 @@
-import { type CaptchaProvider } from '@logto/schemas';
+import { type CaptchaProvider } from '@myeyesid/schemas';
 import { useNavigate } from 'react-router-dom';
 
 import Gear from '@/assets/icons/gear.svg?react';

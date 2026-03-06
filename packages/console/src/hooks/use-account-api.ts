@@ -1,4 +1,4 @@
-import { useLogto } from '@logto/react';
+import { useMyEyesID } from '@myeyesid/react';
 import ky from 'ky';
 import { useMemo } from 'react';
 
@@ -26,7 +26,7 @@ const getAccountApiPrefixUrl = (): URL => {
  * In OSS environment, requests go directly to the admin tenant endpoint.
  */
 const useAccountApi = () => {
-  const { isAuthenticated, getAccessToken } = useLogto();
+  const { isAuthenticated, getAccessToken } = useMyEyesID();
 
   const api = useMemo(
     () =>

@@ -1,6 +1,6 @@
 # Slack connector
 
-The official Logto connector for Slack social sign-in.
+The official MyEyesID connector for Slack social sign-in.
 
 **Table of contents**
 - [Slack connector](#slack-connector)
@@ -29,13 +29,13 @@ You can find the `Client ID` and `Client Secret` on the **"Basic Information"** 
 
 Go to the **"OAuth & Permissions"** section, you can find the **"Redirect URLs"** form.
 
-In our case, this will be `${your_logto_endpoint}/callback/${connector_id}`. e.g. `https://foo.logto.app/callback/${connector_id}`. The `connector_id` can be found on the top bar of the Logto Admin Console connector details page.
+In our case, this will be `${your_myeyesid_endpoint}/callback/${connector_id}`. e.g. `https://foo.myeyesid.app/callback/${connector_id}`. The `connector_id` can be found on the top bar of the MyEyesID Admin Console connector details page.
 
 You can refer to the [Slack API documentation](https://api.slack.com/authentication/sign-in-with-slack) for more details.
 
 ## Configure your connector
 
-In your Logto connector configuration, fill out the following fields with the values obtained from your App's "Keys and tokens" page's "OAuth 2.0 Client ID and Client Secret" section:
+In your MyEyesID connector configuration, fill out the following fields with the values obtained from your App's "Keys and tokens" page's "OAuth 2.0 Client ID and Client Secret" section:
 
 - **clientId:** Your App's Client ID.
 - **clientSecret:** Your App's Client Secret.
@@ -52,7 +52,7 @@ In your Logto connector configuration, fill out the following fields with the va
 
 ## Test Slack connector
 
-That's it! The Slack connector should now be available for end-users to sign in with their Slack accounts. Don't forget to [Enable the connector in the sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it! The Slack connector should now be available for end-users to sign in with their Slack accounts. Don't forget to [Enable the connector in the sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 ## Reference
 

@@ -1,4 +1,4 @@
-import { SearchJointMode, SearchMatchMode } from '@logto/schemas';
+import { SearchJointMode, SearchMatchMode } from '@myeyesid/schemas';
 import type { ListSqlToken, TaggedTemplateLiteralInvocation } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

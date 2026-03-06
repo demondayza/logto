@@ -1,5 +1,5 @@
-import type router from '@logto/cloud/routes';
-import { type ToZodObject } from '@logto/connector-kit';
+import type router from '@myeyesid/cloud/routes';
+import { type ToZodObject } from '@myeyesid/connector-kit';
 import { type RouterRoutes } from '@withtyped/client';
 import { z, type ZodType } from 'zod';
 
@@ -55,7 +55,7 @@ export type ReportSubscriptionUpdatesUsageKey = Exclude<
   'organizationsEnabled'
 >;
 
-// Have to manually define this variable since we can only get the literal union from the @logto/cloud/routes module.
+// Have to manually define this variable since we can only get the literal union from the @myeyesid/cloud/routes module.
 export const allReportSubscriptionUpdatesUsageKeys = Object.freeze([
   'machineToMachineLimit',
   'resourcesLimit',
@@ -90,7 +90,7 @@ const upcomingInvoiceGuard = z.object({
   totalExcludingTax: z.number().nullable(),
 }) satisfies ToZodObject<Subscription['upcomingInvoice']>;
 
-const logtoSkuQuotaGuard = z.object({
+const myeyesidSkuQuotaGuard = z.object({
   mauLimit: z.number().nullable(),
   applicationsLimit: z.number().nullable(),
   thirdPartyApplicationsLimit: z.number().nullable(),
@@ -148,7 +148,7 @@ export type SystemLimit = z.infer<typeof systemLimitGuard>;
 
 /**
  * Redis cache guard for the subscription data returned from the Cloud API `/api/tenants/my/subscription`.
- * Logto core does not have access to the zod guard of the subscription data in Cloud,
+ * MyEyesID core does not have access to the zod guard of the subscription data in Cloud,
  * so we need to manually define the guard here,
  * it should be kept in sync with the Cloud API response.
  */
@@ -160,6 +160,6 @@ export const subscriptionCacheGuard = z.object({
   isEnterprisePlan: z.boolean(),
   status: subscriptionStatusGuard,
   upcomingInvoice: upcomingInvoiceGuard.nullable().optional(),
-  quota: logtoSkuQuotaGuard,
+  quota: myeyesidSkuQuotaGuard,
   systemLimit: systemLimitGuard,
 }) satisfies ToZodObject<Subscription>;

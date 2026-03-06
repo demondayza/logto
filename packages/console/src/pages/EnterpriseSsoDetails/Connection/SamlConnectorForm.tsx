@@ -1,5 +1,5 @@
-import { type LogtoErrorCode } from '@logto/phrases';
-import { type RequestErrorBody } from '@logto/schemas';
+import { type MyEyesIDErrorCode } from '@myeyesid/phrases';
+import { type RequestErrorBody } from '@myeyesid/schemas';
 import cleanDeep from 'clean-deep';
 import { HTTPError } from 'ky';
 import { useEffect, useMemo } from 'react';
@@ -32,7 +32,7 @@ type Props = {
   readonly onUpdated: (data: SamlSsoConnectorWithProviderConfig) => void;
 };
 
-const manualHandleErrorCodes: LogtoErrorCode[] = [invalidConfigErrorCode, invalidMetadataErrorCode];
+const manualHandleErrorCodes: MyEyesIDErrorCode[] = [invalidConfigErrorCode, invalidMetadataErrorCode];
 
 function SamlConnectorForm({ isDeleted, data, onUpdated }: Props) {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });

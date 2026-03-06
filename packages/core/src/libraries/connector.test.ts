@@ -1,4 +1,4 @@
-import type { Connector } from '@logto/schemas';
+import type { Connector } from '@myeyesid/schemas';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { MockQueries } from '#src/test-utils/tenant.js';

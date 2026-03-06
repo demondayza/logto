@@ -3,7 +3,7 @@ import useSWR from 'swr';
 
 import CardIcon from '@/assets/icons/card.svg?react';
 import { useCloudApi } from '@/cloud/hooks/use-cloud-api';
-import { type LogtoEnterpriseResponse } from '@/cloud/types/router';
+import { type MyEyesIDEnterpriseResponse } from '@/cloud/types/router';
 import { GlobalRoute } from '@/contexts/TenantsProvider';
 import DynamicT from '@/ds-components/DynamicT';
 import TextLink from '@/ds-components/TextLink';
@@ -17,18 +17,18 @@ type Props = {
 function EnterpriseSubscriptions({ className }: Props) {
   const cloudApi = useCloudApi();
 
-  const { data } = useSWR<{ logtoEnterprises: LogtoEnterpriseResponse[] }, Error>(
-    '/api/me/logto-enterprises',
-    async () => cloudApi.get('/api/me/logto-enterprises')
+  const { data } = useSWR<{ myeyesidEnterprises: MyEyesIDEnterpriseResponse[] }, Error>(
+    '/api/me/myeyesid-enterprises',
+    async () => cloudApi.get('/api/me/myeyesid-enterprises')
   );
 
-  if (!data || data.logtoEnterprises.length === 0) {
+  if (!data || data.myeyesidEnterprises.length === 0) {
     return null;
   }
 
   // Currently only support one enterprise subscription per user
   // If there are multiple, consider adding a dropdown selector in the future
-  const defaultEnterpriseSubscription = data.logtoEnterprises[0];
+  const defaultEnterpriseSubscription = data.myeyesidEnterprises[0];
 
   if (!defaultEnterpriseSubscription) {
     return null;

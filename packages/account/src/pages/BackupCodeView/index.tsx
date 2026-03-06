@@ -1,6 +1,6 @@
 import Button from '@experience/shared/components/Button';
 import DynamicT from '@experience/shared/components/DynamicT';
-import { AccountCenterControlValue, MfaFactor, type Mfa } from '@logto/schemas';
+import { AccountCenterControlValue, MfaFactor, type Mfa } from '@myeyesid/schemas';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';

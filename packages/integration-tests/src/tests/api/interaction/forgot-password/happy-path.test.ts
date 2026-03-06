@@ -1,4 +1,4 @@
-import { InteractionEvent, ConnectorType, SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, ConnectorType, SignInIdentifier } from '@myeyesid/schemas';
 
 import {
   putInteraction,

@@ -1,5 +1,5 @@
-import { isBuiltInLanguageTag } from '@logto/phrases-experience';
-import type { LanguageInfo } from '@logto/schemas';
+import { isBuiltInLanguageTag } from '@myeyesid/phrases-experience';
+import type { LanguageInfo } from '@myeyesid/schemas';
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 

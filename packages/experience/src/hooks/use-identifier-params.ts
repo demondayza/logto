@@ -1,4 +1,4 @@
-import { ExtraParamsKey, type SignInIdentifier, signInIdentifierGuard } from '@logto/schemas';
+import { ExtraParamsKey, type SignInIdentifier, signInIdentifierGuard } from '@myeyesid/schemas';
 import { useSearchParams } from 'react-router-dom';
 
 /**

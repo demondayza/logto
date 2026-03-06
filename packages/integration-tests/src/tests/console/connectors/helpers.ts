@@ -1,4 +1,4 @@
-import { ConnectorType } from '@logto/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 import { type Page } from 'puppeteer';
 
 import {

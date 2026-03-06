@@ -42,8 +42,8 @@ const sign_in_exp = {
     app_logo_and_favicon: 'Логотип приложения и иконка',
     company_logo_and_favicon: 'Логотип компании и иконка',
     organization_logo_and_favicon: 'Логотип организации и иконка',
-    hide_logto_branding: 'Скрыть брендинг MyEyesID',
-    hide_logto_branding_description:
+    hide_myeyesid_branding: 'Скрыть брендинг MyEyesID',
+    hide_myeyesid_branding_description:
       'Удалите надпись "Powered by MyEyesID". Подчеркните только свой бренд с помощью чистого и профессионального процесса входа.',
   },
   branding_uploads: {
@@ -97,7 +97,7 @@ const sign_in_exp = {
     description: 'Настройте процессы центра учётной записи с помощью API MyEyesID.',
     enable_account_api: 'Включить Account API',
     enable_account_api_description:
-      'Включите Account API, чтобы создать собственный центр учётной записи и предоставить конечным пользователям прямой доступ к API без использования Logto Management API.',
+      'Включите Account API, чтобы создать собственный центр учётной записи и предоставить конечным пользователям прямой доступ к API без использования MyEyesID Management API.',
     field_options: {
       off: 'Выключено',
       edit: 'Редактировать',

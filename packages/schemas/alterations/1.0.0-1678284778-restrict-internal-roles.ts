@@ -6,12 +6,12 @@ const alteration: AlterationScript = {
   up: async (pool) => {
     await pool.query(sql`
       update roles
-      set name = '#internal:admin', description = 'Internal admin role for Logto tenant ' || tenant_id || '.'
+      set name = '#internal:admin', description = 'Internal admin role for MyEyesID tenant ' || tenant_id || '.'
       where name = 'admin'
       and tenant_id != 'admin';
 
       update roles
-      set description = 'Admin tenant admin role for Logto tenant ' || substring(name from 0 for strpos(name, ':admin')) || '.'
+      set description = 'Admin tenant admin role for MyEyesID tenant ' || substring(name from 0 for strpos(name, ':admin')) || '.'
       where name like '%:admin'
       and tenant_id = 'admin';
 
@@ -35,12 +35,12 @@ const alteration: AlterationScript = {
   down: async (pool) => {
     await pool.query(sql`
       update roles
-      set name = 'admin', description = 'Admin role for Logto.'
+      set name = 'admin', description = 'Admin role for MyEyesID.'
       where name = '#internal:admin'
       and tenant_id != 'admin';
 
       update roles
-      set description = 'Admin role for Logto.'
+      set description = 'Admin role for MyEyesID.'
       where name like '%:admin'
       and tenant_id = 'admin';
 

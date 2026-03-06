@@ -1,4 +1,4 @@
-import { Sentinel, SentinelDecision } from '@logto/schemas';
+import { Sentinel, SentinelDecision } from '@myeyesid/schemas';
 
 export class MockSentinel extends Sentinel {
   override async reportActivity(activity: unknown) {

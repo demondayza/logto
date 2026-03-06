@@ -1,5 +1,5 @@
-import { adminTenantId, experience } from '@logto/schemas';
-import { ConsoleLog } from '@logto/shared';
+import { adminTenantId, experience } from '@myeyesid/schemas';
+import { ConsoleLog } from '@myeyesid/shared';
 import type { MiddlewareType } from 'koa';
 import Koa from 'koa';
 import compose from 'koa-compose';
@@ -12,7 +12,7 @@ import { WellKnownCache } from '#src/caches/well-known.js';
 import { AdminApps, EnvSet, UserApps } from '#src/env-set/index.js';
 import { createCloudConnectionLibrary } from '#src/libraries/cloud-connection.js';
 import { createConnectorLibrary } from '#src/libraries/connector.js';
-import { createLogtoConfigLibrary } from '#src/libraries/logto-config.js';
+import { createMyEyesIDConfigLibrary } from '#src/libraries/myeyesid-config.js';
 import koaAutoConsent from '#src/middleware/koa-auto-consent.js';
 import koaConnectorErrorHandler from '#src/middleware/koa-connector-error-handler.js';
 import koaConsoleRedirectProxy from '#src/middleware/koa-console-redirect-proxy.js';
@@ -83,8 +83,8 @@ export default class Tenant implements TenantContext {
     public readonly id: string,
     public readonly wellKnownCache: WellKnownCache,
     public readonly queries = new Queries(envSet.pool, wellKnownCache),
-    public readonly logtoConfigs = createLogtoConfigLibrary(queries),
-    public readonly cloudConnection = createCloudConnectionLibrary(logtoConfigs),
+    public readonly myeyesidConfigs = createMyEyesIDConfigLibrary(queries),
+    public readonly cloudConnection = createCloudConnectionLibrary(myeyesidConfigs),
     public readonly connectors = createConnectorLibrary(queries, cloudConnection),
     public readonly subscription = new SubscriptionLibrary(
       id,
@@ -97,7 +97,7 @@ export default class Tenant implements TenantContext {
       queries,
       connectors,
       cloudConnection,
-      logtoConfigs,
+      myeyesidConfigs,
       subscription
     ),
     public readonly sentinel = new BasicSentinel(envSet.pool, queries)
@@ -122,14 +122,14 @@ export default class Tenant implements TenantContext {
     app.use(koaSecurityHeaders(mountedApps, id));
 
     // Mount OIDC
-    const provider = initOidc(id, envSet, queries, libraries, logtoConfigs, subscription);
+    const provider = initOidc(id, envSet, queries, libraries, myeyesidConfigs, subscription);
     app.use(mount('/oidc', provider.app));
 
     const tenantContext: TenantContext = {
       id,
       provider,
       queries,
-      logtoConfigs,
+      myeyesidConfigs,
       cloudConnection,
       connectors,
       libraries,
@@ -155,7 +155,7 @@ export default class Tenant implements TenantContext {
       app.use(mount('/me', initMeApis(tenantContext)));
 
       // Mount Admin Console when needed
-      // Skip in multi-tenancy mode since Logto Cloud serves Admin Console in this case
+      // Skip in multi-tenancy mode since MyEyesID Cloud serves Admin Console in this case
       if (!isMultiTenancy) {
         app.use(koaConsoleRedirectProxy(queries));
         app.use(

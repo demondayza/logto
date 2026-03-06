@@ -1,4 +1,4 @@
-import { ConnectorType, InteractionEvent } from '@logto/schemas';
+import { ConnectorType, InteractionEvent } from '@myeyesid/schemas';
 
 import { putInteraction, sendVerificationCode } from '#src/api/interaction.js';
 import { initClient } from '#src/helpers/client.js';

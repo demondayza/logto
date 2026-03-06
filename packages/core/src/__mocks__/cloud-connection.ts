@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 
 import { type CloudConnectionLibrary } from '#src/libraries/cloud-connection.js';
 import { type Subscription } from '#src/utils/subscription/types.js';
@@ -25,11 +25,11 @@ const defaultSystemLimit: Subscription['systemLimit'] = {
 
 export const mockGetCloudConnectionData: CloudConnectionLibrary['getCloudConnectionData'] =
   async () => ({
-    resource: 'https://logto.dev',
+    resource: 'https://myeyesid.dev',
     appId: 'appId',
     appSecret: 'appSecret',
-    endpoint: 'https://logto.dev/api',
-    tokenEndpoint: 'https://logto.dev/oidc/token',
+    endpoint: 'https://myeyesid.dev/api',
+    tokenEndpoint: 'https://myeyesid.dev/oidc/token',
   });
 
 export const mockQuota = {

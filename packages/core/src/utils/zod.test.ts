@@ -1,10 +1,10 @@
-import { languages, languageTagGuard } from '@logto/language-kit';
+import { languages, languageTagGuard } from '@myeyesid/language-kit';
 import {
   ApplicationType,
   jsonObjectGuard,
   translationGuard,
   customContentGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { string, boolean, number, object, nativeEnum, unknown, literal, union } from 'zod';
 
 import RequestError from '#src/errors/RequestError/index.js';
@@ -205,9 +205,9 @@ describe('zodTypeToSwagger', () => {
     expect(zodTypeToSwagger(number().or(boolean()))).toEqual({
       oneOf: [{ type: 'number' }, { type: 'boolean' }],
     });
-    expect(zodTypeToSwagger(union([literal('Logto'), literal(true)]))).toEqual({
+    expect(zodTypeToSwagger(union([literal('MyEyesID'), literal(true)]))).toEqual({
       oneOf: [
-        { type: 'string', format: '"Logto"' },
+        { type: 'string', format: '"MyEyesID"' },
         { type: 'boolean', format: 'true' },
       ],
     });

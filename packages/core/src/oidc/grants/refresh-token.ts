@@ -8,7 +8,7 @@
  * For "RFC 0001"-related edited parts, we added comments with `=== RFC 0001 ===` and
  * `=== End RFC 0001 ===` to indicate the changes.
  *
- * @see {@link https://github.com/logto-io/rfcs | Logto RFCs} for more information about RFC 0001.
+ * @see {@link https://github.com/myeyesid-io/rfcs | MyEyesID RFCs} for more information about RFC 0001.
  * @see {@link https://github.com/panva/node-oidc-provider/blob/cf2069cbb31a6a855876e95157372d25dde2511c/lib/actions/grants/refresh_token.js | Original file}.
  *
  * @remarks
@@ -19,7 +19,7 @@
  * The commit hash of the original file is `cf2069cbb31a6a855876e95157372d25dde2511c`.
  */
 
-import { UserScope } from '@logto/core-kit';
+import { UserScope } from '@myeyesid/core-kit';
 import { isKeyInObject } from '@silverhand/essentials';
 import type { Provider } from 'oidc-provider';
 import { errors } from 'oidc-provider';

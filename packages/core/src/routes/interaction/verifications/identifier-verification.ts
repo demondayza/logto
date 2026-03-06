@@ -1,4 +1,4 @@
-import { InteractionEvent } from '@logto/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 import type { Context } from 'koa';
 
 import type TenantContext from '#src/tenants/TenantContext.js';

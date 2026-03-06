@@ -1,10 +1,10 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { Globals } from '@react-spring/web';
 import { assert } from '@silverhand/essentials';
 import { act, fireEvent, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { getBoundingClientRectMock } from '@/__mocks__/logto';
+import { getBoundingClientRectMock } from '@/__mocks__/myeyesid';
 import { getDefaultCountryCallingCode } from '@/utils/country-code';
 
 import type { IdentifierInputType } from '.';

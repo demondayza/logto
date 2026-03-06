@@ -1,4 +1,4 @@
-import type { PersistKey, Storage } from '@logto/node';
+import type { PersistKey, Storage } from '@myeyesid/node';
 import type { Nullable } from '@silverhand/essentials';
 
 export class MemoryStorage implements Storage<PersistKey> {

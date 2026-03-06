@@ -1,4 +1,4 @@
-import { generateStandardId, generateStandardSecret } from '@logto/shared/universal';
+import { generateStandardId, generateStandardSecret } from '@myeyesid/shared/universal';
 
 import type {
   Application,
@@ -85,7 +85,7 @@ export const createDefaultAdminConsoleApplication = (): Readonly<CreateApplicati
     id: adminConsoleApplicationId,
     name: 'Admin Console',
     secret: generateStandardSecret(),
-    description: 'Logto Admin Console.',
+    description: 'MyEyesID Admin Console.',
     type: ApplicationType.SPA,
     oidcClientMetadata: { redirectUris: [], postLogoutRedirectUris: [] },
   });

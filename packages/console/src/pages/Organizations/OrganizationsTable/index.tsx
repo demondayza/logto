@@ -1,4 +1,4 @@
-import { type OrganizationWithFeatured, RoleType } from '@logto/schemas';
+import { type OrganizationWithFeatured, RoleType } from '@myeyesid/schemas';
 import { joinPath } from '@silverhand/essentials';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';

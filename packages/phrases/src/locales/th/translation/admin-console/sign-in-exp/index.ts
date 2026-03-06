@@ -41,8 +41,8 @@ const sign_in_exp = {
     app_logo_and_favicon: 'โลโก้แอปและ Favicon',
     company_logo_and_favicon: 'โลโก้บริษัทและ Favicon',
     organization_logo_and_favicon: 'โลโก้องค์กรและ Favicon',
-    hide_logto_branding: 'ซ่อนแบรนด์ MyEyesID',
-    hide_logto_branding_description:
+    hide_myeyesid_branding: 'ซ่อนแบรนด์ MyEyesID',
+    hide_myeyesid_branding_description:
       'ลบ "Powered by MyEyesID" เพื่อให้แบรนด์ของคุณโดดเด่นด้วยประสบการณ์ลงชื่อเข้าใช้ที่สะอาดและเป็นมืออาชีพ',
   },
   branding_uploads: {
@@ -96,7 +96,7 @@ const sign_in_exp = {
     description: 'ปรับแต่งขั้นตอนศูนย์บัญชีของคุณด้วย MyEyesID API.',
     enable_account_api: 'เปิดใช้งาน Account API',
     enable_account_api_description:
-      'เปิดใช้งาน Account API เพื่อสร้างศูนย์บัญชีแบบกำหนดเอง ให้ผู้ใช้ปลายทางเข้าถึง API ได้โดยตรงโดยไม่ต้องใช้ Logto Management API.',
+      'เปิดใช้งาน Account API เพื่อสร้างศูนย์บัญชีแบบกำหนดเอง ให้ผู้ใช้ปลายทางเข้าถึง API ได้โดยตรงโดยไม่ต้องใช้ MyEyesID Management API.',
     field_options: {
       off: 'ปิด',
       edit: 'แก้ไข',

@@ -1,52 +1,52 @@
 import { createComponent } from '@lit/react';
 
-import { LogtoUsername } from './elements/logto-username.js';
+import { MyEyesIDUsername } from './elements/myeyesid-username.js';
 import {
-  LogtoAccountCenter,
-  LogtoAccountProvider,
-  LogtoSocialIdentity,
-  LogtoUserEmail,
-  LogtoUserPassword,
-  LogtoUserPhone,
+  MyEyesIDAccountCenter,
+  MyEyesIDAccountProvider,
+  MyEyesIDSocialIdentity,
+  MyEyesIDUserEmail,
+  MyEyesIDUserPassword,
+  MyEyesIDUserPhone,
 } from './index.js';
 
 export * from './api/index.js';
 
 export const createReactComponents = (react: Parameters<typeof createComponent>[0]['react']) => {
   return {
-    LogtoAccountProvider: createComponent({
-      tagName: LogtoAccountProvider.tagName,
-      elementClass: LogtoAccountProvider,
+    MyEyesIDAccountProvider: createComponent({
+      tagName: MyEyesIDAccountProvider.tagName,
+      elementClass: MyEyesIDAccountProvider,
       react,
     }),
-    LogtoUsername: createComponent({
-      tagName: LogtoUsername.tagName,
-      elementClass: LogtoUsername,
+    MyEyesIDUsername: createComponent({
+      tagName: MyEyesIDUsername.tagName,
+      elementClass: MyEyesIDUsername,
       react,
     }),
-    LogtoUserEmail: createComponent({
-      tagName: LogtoUserEmail.tagName,
-      elementClass: LogtoUserEmail,
+    MyEyesIDUserEmail: createComponent({
+      tagName: MyEyesIDUserEmail.tagName,
+      elementClass: MyEyesIDUserEmail,
       react,
     }),
-    LogtoUserPassword: createComponent({
-      tagName: LogtoUserPassword.tagName,
-      elementClass: LogtoUserPassword,
+    MyEyesIDUserPassword: createComponent({
+      tagName: MyEyesIDUserPassword.tagName,
+      elementClass: MyEyesIDUserPassword,
       react,
     }),
-    LogtoUserPhone: createComponent({
-      tagName: LogtoUserPhone.tagName,
-      elementClass: LogtoUserPhone,
+    MyEyesIDUserPhone: createComponent({
+      tagName: MyEyesIDUserPhone.tagName,
+      elementClass: MyEyesIDUserPhone,
       react,
     }),
-    LogtoSocialIdentity: createComponent({
-      tagName: LogtoSocialIdentity.tagName,
-      elementClass: LogtoSocialIdentity,
+    MyEyesIDSocialIdentity: createComponent({
+      tagName: MyEyesIDSocialIdentity.tagName,
+      elementClass: MyEyesIDSocialIdentity,
       react,
     }),
-    LogtoAccountCenter: createComponent({
-      tagName: LogtoAccountCenter.tagName,
-      elementClass: LogtoAccountCenter,
+    MyEyesIDAccountCenter: createComponent({
+      tagName: MyEyesIDAccountCenter.tagName,
+      elementClass: MyEyesIDAccountCenter,
       react,
     }),
   };

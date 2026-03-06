@@ -1,4 +1,4 @@
-import { CaptchaType, type CaptchaProvider } from '@logto/schemas';
+import { CaptchaType, type CaptchaProvider } from '@myeyesid/schemas';
 
 export const mockCaptchaProvider: CaptchaProvider = {
   id: 'captcha_provider_id',

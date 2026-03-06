@@ -3,8 +3,8 @@ import {
   type Application,
   type ProtectedAppMetadata,
   type CustomDomain,
-} from '@logto/schemas';
-import { isValidSubdomain } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { isValidSubdomain } from '@myeyesid/shared';
 
 import { protectedAppSignInCallbackUrl } from '#src/constants/index.js';
 import { EnvSet, getTenantEndpoint } from '#src/env-set/index.js';

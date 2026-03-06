@@ -1,4 +1,4 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import classNames from 'classnames';
 import type { HTMLProps, ReactElement, ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';

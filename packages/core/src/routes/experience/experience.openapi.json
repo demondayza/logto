@@ -2,7 +2,7 @@
   "tags": [
     {
       "name": "Experience",
-      "description": "The Experience endpoints allow end-users to interact with Logto for identity verification and profile completion."
+      "description": "The Experience endpoints allow end-users to interact with MyEyesID for identity verification and profile completion."
     }
   ],
   "paths": {

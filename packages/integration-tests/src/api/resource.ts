@@ -1,4 +1,4 @@
-import type { Resource, CreateResource } from '@logto/schemas';
+import type { Resource, CreateResource } from '@myeyesid/schemas';
 import { type Options } from 'ky';
 
 import { generateResourceIndicator, generateResourceName } from '#src/utils.js';

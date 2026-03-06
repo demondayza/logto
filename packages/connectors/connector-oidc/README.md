@@ -1,6 +1,6 @@
 # OIDC standard connector
 
-The official Logto connector for OIDC protocol.
+The official MyEyesID connector for OIDC protocol.
 
 **Table of contents**
 
@@ -14,14 +14,14 @@ The official Logto connector for OIDC protocol.
 
 ## Get started
 
-The OIDC connector enables Logto's connection to an arbitrary social identity provider that supports OIDC protocol. Use the OIDC connector to let your application:
+The OIDC connector enables MyEyesID's connection to an arbitrary social identity provider that supports OIDC protocol. Use the OIDC connector to let your application:
 
 - Add social sign-in buttons
 - Link user accounts to social identities
 - Sync user profile info from the social provider
-- Access third-party APIs through secure token storage in Logto [Secret Vault](https://docs.logto.io/secret-vault) for automation tasks (e.g., editing Google Docs, managing Calendar events in your app)
+- Access third-party APIs through secure token storage in MyEyesID [Secret Vault](https://docs.myeyesid.io/secret-vault) for automation tasks (e.g., editing Google Docs, managing Calendar events in your app)
 
-**Note**: OIDC connector is a special kind of connector in Logto, you can add multiple OIDC-protocol-based connectors.
+**Note**: OIDC connector is a special kind of connector in MyEyesID, you can add multiple OIDC-protocol-based connectors.
 
 ## Create your OIDC app
 
@@ -29,7 +29,7 @@ When you open this page, we believe you already know which social identity provi
 
 ## Configure your connector
 
-We ONLY support "Authorization Code" grant type for security consideration and it can perfectly fit Logto's scenario.
+We ONLY support "Authorization Code" grant type for security consideration and it can perfectly fit MyEyesID's scenario.
 
 `clientId` and `clientSecret` can be found at your OIDC apps details page.
 
@@ -57,7 +57,7 @@ Together, `jwksUri` and `issuer` provide a secure mechanism for the RP to verify
 
 Since an authentication request is always required, an `authRequestOptionalConfig` is provided to wrap all optional configs, you can find details on [OIDC Authentication Request](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest). You may also find that `nonce` is missing in this config. Since `nonce` should identical for each request, we put the generation of `nonce` in code implementation. So do not worry about it! Previously mentioned `jwksUri` and `issuer` are also included in `idTokenVerificationConfig`.
 
-You may be curious as to why a standard OIDC protocol supports both the implicit and hybrid flows, yet the Logto connector only supports the authorization flow. It has been determined that the implicit and hybrid flows are less secure than the authorization flow. Due to Logto's focus on security, it only supports the authorization flow for the highest level of security for its users, despite its slightly less convenient nature.
+You may be curious as to why a standard OIDC protocol supports both the implicit and hybrid flows, yet the MyEyesID connector only supports the authorization flow. It has been determined that the implicit and hybrid flows are less secure than the authorization flow. Due to MyEyesID's focus on security, it only supports the authorization flow for the highest level of security for its users, despite its slightly less convenient nature.
 
 `responseType` and `grantType` can ONLY be FIXED values with "Authorization Code" flow, so we make them optional and default values will be automatically filled.
 
@@ -118,7 +118,7 @@ If you want to display a social button on your login page, you can set the **nam
 
 ### Identity provider name
 
-Each social connector has a unique Identity Provider (IdP) name to differentiate user identities. While common connectors use a fixed IdP name, custom connectors require a unique value. Learn more about [IdP names](https://docs.logto.io/connectors/connector-data-structure#target-identity-provider-name) for more details.
+Each social connector has a unique Identity Provider (IdP) name to differentiate user identities. While common connectors use a fixed IdP name, custom connectors require a unique value. Learn more about [IdP names](https://docs.myeyesid.io/connectors/connector-data-structure#target-identity-provider-name) for more details.
 
 ### Sync profile information
 
@@ -129,10 +129,10 @@ In the OIDC connector, you can set the policy for syncing profile information, s
 
 ### Store tokens to access third-party APIs (Optional)
 
-If you want to access the Identity Provider's APIs and perform actions with user authorization (whether via social sign-in or account linking), Logto needs to get specific API scopes and store tokens.
+If you want to access the Identity Provider's APIs and perform actions with user authorization (whether via social sign-in or account linking), MyEyesID needs to get specific API scopes and store tokens.
 
 1. Add the required scopes in the **scope** field following the instructions above
-2. Enable **Store tokens for persistent API access** in the Logto OIDC connector. Logto will securely [store access tokens](https://docs.logto.io/secret-vault/federated-token-set) in the Secret Vault.
+2. Enable **Store tokens for persistent API access** in the MyEyesID OIDC connector. MyEyesID will securely [store access tokens](https://docs.myeyesid.io/secret-vault/federated-token-set) in the Secret Vault.
 3. For **standard** OAuth/OIDC identity providers, the `offline_access` scope must be included to obtain a refresh token, preventing repeated user consent prompts.
 
 ## Utilize the OIDC connector
@@ -141,27 +141,27 @@ Once you've created an OIDC connector and connected it to your identity provider
 
 ### Enable social sign-in button
 
-1. In Logto Console, go to [Sign-in experience > Sign-up and sign-in](https://cloud.logto.io/to/sign-in-experience/sign-up-and-sign-in).
+1. In MyEyesID Console, go to [Sign-in experience > Sign-up and sign-in](https://cloud.myeyesid.io/to/sign-in-experience/sign-up-and-sign-in).
 2. Add the OIDC connector under **Social sign-in** section to let users authenticate with your identity provider.
 
-Learn more about [social sign-in experience](https://docs.logto.io/end-user-flows/sign-up-and-sign-in/social-sign-in).
+Learn more about [social sign-in experience](https://docs.myeyesid.io/end-user-flows/sign-up-and-sign-in/social-sign-in).
 
 ### Link or unlink a social account
 
-Use the Account API to build a custom Account Center in your app that lets signed-in users link or unlink their social accounts. [Follow the Account API tutorial](https://docs.logto.io/end-user-flows/account-settings/by-account-api#link-a-new-social-connection)
+Use the Account API to build a custom Account Center in your app that lets signed-in users link or unlink their social accounts. [Follow the Account API tutorial](https://docs.myeyesid.io/end-user-flows/account-settings/by-account-api#link-a-new-social-connection)
 
 **Tip**: It's allowed to enable the OIDC connector only for account linking and API access, without enabling it for social sign-in.
 
 ### Access identity provider APIs and perform actions
 
-Your application can retrieve stored access tokens from the Secret Vault to call your identity provider's APIs and automate backend tasks. The specific capabilities depend on your identity provider and the scopes you've requested. [Refer to the guide](https://docs.logto.io/secret-vault/federated-token-set/token-retrieval) on retrieving stored tokens for API access.
+Your application can retrieve stored access tokens from the Secret Vault to call your identity provider's APIs and automate backend tasks. The specific capabilities depend on your identity provider and the scopes you've requested. [Refer to the guide](https://docs.myeyesid.io/secret-vault/federated-token-set/token-retrieval) on retrieving stored tokens for API access.
 
 ## Manage user's social identity
 
-After a user links their social account, admins can manage that connection in the Logto Console:
+After a user links their social account, admins can manage that connection in the MyEyesID Console:
 
-1. Navigate to [Logto console > User management](https://cloud.logto.io/to/users) and open the user's profile.
+1. Navigate to [MyEyesID console > User management](https://cloud.myeyesid.io/to/users) and open the user's profile.
 2. Under **Social connections**, locate the identity provider item and click **Manage**.
-3. On this page, admins can manage the user's social connection, see all profile information granted and synced from their social account, and check the [access token status](https://docs.logto.io/secret-vault/federated-token-set/token-status).
+3. On this page, admins can manage the user's social connection, see all profile information granted and synced from their social account, and check the [access token status](https://docs.myeyesid.io/secret-vault/federated-token-set/token-status).
 
-**Note**: A few Identity Provider access token response does not include the specific scope information, so Logto cannot directly display the list of permissions granted by the user. However, as long as the user has consented to the requested scopes during authorization, your application will have the corresponding permissions when accessing the OIDC API.
+**Note**: A few Identity Provider access token response does not include the specific scope information, so MyEyesID cannot directly display the list of permissions granted by the user. However, as long as the user has consented to the requested scopes during authorization, your application will have the corresponding permissions when accessing the OIDC API.

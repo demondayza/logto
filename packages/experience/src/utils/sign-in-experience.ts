@@ -3,7 +3,7 @@
  * Remove this once we have a better way to get the sign in experience through SSR
  */
 
-import { SignInIdentifier, VerificationType } from '@logto/schemas';
+import { SignInIdentifier, VerificationType } from '@myeyesid/schemas';
 import { isObject } from '@silverhand/essentials';
 import i18next from 'i18next';
 
@@ -24,8 +24,8 @@ const parseSignInExperienceResponse = (
 };
 
 export const getSignInExperienceSettings = async (): Promise<SignInExperienceResponse> => {
-  if (isObject(logtoSsr)) {
-    const { data, ...rest } = logtoSsr.signInExperience;
+  if (isObject(myeyesidSsr)) {
+    const { data, ...rest } = myeyesidSsr.signInExperience;
 
     if (
       searchKeysCamelCase.every((key) => {
@@ -66,7 +66,7 @@ export const parseHtmlTitle = (path: string) => {
     return;
   }
 
-  return 'Logto';
+  return 'MyEyesID';
 };
 
 export const codeVerificationTypeMap = Object.freeze({

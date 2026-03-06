@@ -16,12 +16,12 @@ export enum TokenExchangeTokenType {
    * @see {@link https://datatracker.ietf.org/doc/html/rfc8693#section-3 | RFC 8693 Section 3}
    */
   AccessToken = 'urn:ietf:params:oauth:token-type:access_token',
-  PersonalAccessToken = 'urn:logto:token-type:personal_access_token',
+  PersonalAccessToken = 'urn:myeyesid:token-type:personal_access_token',
   /**
-   * Logto-specific impersonation token type.
+   * MyEyesID-specific impersonation token type.
    * Used for subject tokens created via the impersonation API.
    * @deprecated Use AccessToken type for new implementations. This type exists for backward
    * compatibility with tokens that were created using the legacy impersonation flow.
    */
-  ImpersonationToken = 'urn:logto:token-type:impersonation_token',
+  ImpersonationToken = 'urn:myeyesid:token-type:impersonation_token',
 }

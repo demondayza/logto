@@ -1,4 +1,4 @@
-import { type ConsentInfoResponse } from '@logto/schemas';
+import { type ConsentInfoResponse } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 

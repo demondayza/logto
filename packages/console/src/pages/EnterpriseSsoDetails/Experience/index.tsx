@@ -4,8 +4,8 @@ import {
   type SsoConnectorWithProviderConfig,
   type RequestErrorBody,
   SsoProviderType,
-} from '@logto/schemas';
-import { generateStandardShortId } from '@logto/shared/universal';
+} from '@myeyesid/schemas';
+import { generateStandardShortId } from '@myeyesid/shared/universal';
 import { conditional } from '@silverhand/essentials';
 import cleanDeep from 'clean-deep';
 import { HTTPError } from 'ky';

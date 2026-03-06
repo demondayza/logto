@@ -1,5 +1,5 @@
-import { ReservedPlanId } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { ReservedPlanId } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockSubscriptionData } from '#src/__mocks__/cloud-connection.js';
 

@@ -161,7 +161,7 @@ describe('GET /swagger.json', () => {
             summary: 'Health check',
             responses: {
               '204': {
-                description: 'The Logto core service is healthy.',
+                description: 'The MyEyesID core service is healthy.',
               },
             },
           },

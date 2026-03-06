@@ -3,7 +3,7 @@ import {
   ForgotPasswordMethod,
   type AccountCenter as AccountCenterConfig,
   type SignInExperience,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';

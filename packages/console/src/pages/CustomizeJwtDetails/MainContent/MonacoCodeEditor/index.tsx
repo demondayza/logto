@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { Editor, useMonaco, type OnMount } from '@monaco-editor/react';
 import { type Nullable } from '@silverhand/essentials';
 import classNames from 'classnames';
@@ -10,7 +10,7 @@ import { onKeyDownHandler } from '@/utils/a11y';
 
 import CodeRestoreButton from './ActionButton/CodeRestoreButton.js';
 import DashBoard, { type Props as DashboardProps } from './Dashboard';
-import { defaultOptions, logtoDarkTheme, logtoLightTheme } from './config.js';
+import { defaultOptions, myeyesidDarkTheme, myeyesidLightTheme } from './config.js';
 import styles from './index.module.scss';
 import type { IStandaloneCodeEditor, ModelSettings } from './type.js';
 import useEditorHeight from './use-editor-height.js';
@@ -120,9 +120,9 @@ function MonacoCodeEditor({
       return;
     }
 
-    const editorTheme = theme === Theme.Light ? logtoLightTheme : logtoDarkTheme;
+    const editorTheme = theme === Theme.Light ? myeyesidLightTheme : myeyesidDarkTheme;
 
-    monaco.editor.defineTheme('logto-dark', editorTheme);
+    monaco.editor.defineTheme('myeyesid-dark', editorTheme);
   }, [monaco, theme]);
 
   const handleEditorDidMount = useCallback<OnMount>(
@@ -192,7 +192,7 @@ function MonacoCodeEditor({
             height={editorHeight}
             language={activeModel.language}
             path={activeModel.name}
-            theme="logto-dark"
+            theme="myeyesid-dark"
             options={{
               ...defaultOptions,
               ...activeModel.options,

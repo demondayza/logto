@@ -1,4 +1,4 @@
-import type { GeneratedSchema, SchemaLike } from '@logto/schemas';
+import type { GeneratedSchema, SchemaLike } from '@myeyesid/schemas';
 import { has } from '@silverhand/essentials';
 import type { CommonQueryMethods, IdentifierSqlToken } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';

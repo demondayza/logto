@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { type ToZodObject } from '@logto/connector-kit';
+import { type ToZodObject } from '@myeyesid/connector-kit';
 import {
   type BindBackupCode,
   bindBackupCodeGuard,
@@ -20,8 +20,8 @@ import {
   AlternativeSignUpIdentifier,
   userMfaDataKey,
   userPasskeySignInDataKey,
-} from '@logto/schemas';
-import { generateStandardId, maskEmail, maskPhone } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId, maskEmail, maskPhone } from '@myeyesid/shared';
 import { cond, condObject, deduplicate, pick } from '@silverhand/essentials';
 import { z } from 'zod';
 
@@ -81,24 +81,24 @@ export const sanitizedMfaDataGuard = z.object({
 /**
  * Check if the user has skipped MFA binding
  */
-const isMfaSkipped = (logtoConfig: JsonObject): boolean => {
+const isMfaSkipped = (myeyesidConfig: JsonObject): boolean => {
   const userMfaDataGuard = z.object({
     skipped: z.boolean().optional(),
   });
 
-  const parsed = z.object({ [userMfaDataKey]: userMfaDataGuard }).safeParse(logtoConfig);
+  const parsed = z.object({ [userMfaDataKey]: userMfaDataGuard }).safeParse(myeyesidConfig);
 
   return parsed.success ? parsed.data[userMfaDataKey].skipped === true : false;
 };
 
-const isPasskeySkipped = (logtoConfig: JsonObject): boolean => {
+const isPasskeySkipped = (myeyesidConfig: JsonObject): boolean => {
   const userPasskeySignInDataGuard = z.object({
     skipped: z.boolean().optional(),
   });
 
   const parsed = z
     .object({ [userPasskeySignInDataKey]: userPasskeySignInDataGuard })
-    .safeParse(logtoConfig);
+    .safeParse(myeyesidConfig);
 
   return parsed.success ? parsed.data[userPasskeySignInDataKey].skipped === true : false;
 };
@@ -435,9 +435,9 @@ export class Mfa {
 
   async assertPasskeySignInFulfilled() {
     const { passkeySignIn } = await this.signInExperienceValidator.getSignInExperienceData();
-    const { logtoConfig, mfaVerifications } = await this.interactionContext.getIdentifiedUser();
+    const { myeyesidConfig, mfaVerifications } = await this.interactionContext.getIdentifiedUser();
 
-    if (passkeySignIn.enabled && !(this.#passkeySkipped ?? isPasskeySkipped(logtoConfig))) {
+    if (passkeySignIn.enabled && !(this.#passkeySkipped ?? isPasskeySkipped(myeyesidConfig))) {
       const hasPasskey =
         Boolean(this.data.webAuthn?.length) ||
         mfaVerifications.some((verification) => verification.type === MfaFactor.WebAuthn);
@@ -485,7 +485,7 @@ export class Mfa {
     }
 
     const { user: identifiedUser } = submitMfaValidationContext;
-    const { logtoConfig, id: userId } = identifiedUser;
+    const { myeyesidConfig, id: userId } = identifiedUser;
 
     const isMfaRequiredByUserOrganizations = await this.isMfaRequiredByUserOrganizations(
       mfaSettings,
@@ -501,7 +501,7 @@ export class Mfa {
     // and MFA is not required by the user organizations, then there is nothing to check
     if (
       policy !== MfaPolicy.Mandatory &&
-      (this.#mfaSkipped ?? isMfaSkipped(logtoConfig)) &&
+      (this.#mfaSkipped ?? isMfaSkipped(myeyesidConfig)) &&
       !isMfaRequiredByUserOrganizations
     ) {
       return;

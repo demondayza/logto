@@ -25,7 +25,7 @@ function SwitchAccount({ onClickSwitch }: Props) {
       <div className={styles.wrapper}>
         <Logo className={styles.logo} />
         <div className={styles.title}>
-          {/** Since this is a Logto Cloud feature, ideally the primary email should always be available.
+          {/** Since this is a MyEyesID Cloud feature, ideally the primary email should always be available.
            * However, in case it's not (e.g. in dev env), we fallback to username and then finally the ID.
            */}
           {t('invitation.email_not_match_title', { email: primaryEmail ?? username ?? id })}

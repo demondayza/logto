@@ -1,4 +1,4 @@
-import { type SystemKey, Systems } from '@logto/schemas';
+import { type SystemKey, Systems } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

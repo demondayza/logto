@@ -3,7 +3,7 @@ import {
   type GetUserSessionsResponse,
   type UserSessionSignInContext,
   userSessionSignInContextGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { UAParser } from 'ua-parser-js';
 
 type UserSessionTableRow = {

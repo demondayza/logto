@@ -1,12 +1,12 @@
 /* eslint-disable max-lines */
-import { UserScope } from '@logto/core-kit';
+import { UserScope } from '@myeyesid/core-kit';
 import {
   VerificationType,
   MfaFactor,
   AccountCenterControlValue,
   userMfaVerificationResponseGuard,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { z } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

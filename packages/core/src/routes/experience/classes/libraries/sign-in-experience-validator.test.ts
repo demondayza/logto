@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 import {
   InteractionEvent,
   MfaFactor,
@@ -8,7 +8,7 @@ import {
   SignInIdentifier,
   SignInMode,
   VerificationType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
 import RequestError from '#src/errors/RequestError/index.js';
@@ -26,7 +26,7 @@ import { SignInExperienceValidator } from './sign-in-experience-validator.js';
 
 const { jest } = import.meta;
 
-const emailDomain = 'logto.io';
+const emailDomain = 'myeyesid.io';
 
 const signInExperiences = {
   findDefaultSignInExperience: jest.fn().mockResolvedValue(mockSignInExperience),
@@ -90,7 +90,7 @@ const oneTimeTokenVerificationRecord = new OneTimeTokenVerification(
   {
     id: 'one_time_token_verification_id',
     type: VerificationType.OneTimeToken,
-    identifier: { type: SignInIdentifier.Email, value: 'foo@logto.io' },
+    identifier: { type: SignInIdentifier.Email, value: 'foo@myeyesid.io' },
     verified: true,
   }
 );

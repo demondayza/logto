@@ -14,7 +14,7 @@ import type {
   User,
   UserSsoIdentity,
   UsersPasswordEncryptionMethod,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import { authedAdminApi } from './api.js';
@@ -136,18 +136,18 @@ export const createUserMfaVerification = async (userId: string, type: MfaFactor)
       | { type: MfaFactor.BackupCode; codes: string[] }
     >();
 
-type UserLogtoConfig = {
+type UserMyEyesIDConfig = {
   mfa: { skipped: boolean; skipMfaOnSignIn: boolean };
   passkeySignIn: { skipped: boolean };
 };
 
-export const getUserLogtoConfig = async (userId: string) =>
-  authedAdminApi.get(`users/${userId}/logto-configs`).json<UserLogtoConfig>();
+export const getUserMyEyesIDConfig = async (userId: string) =>
+  authedAdminApi.get(`users/${userId}/myeyesid-configs`).json<UserMyEyesIDConfig>();
 
-export const updateUserLogtoConfig = async (userId: string, logtoConfig: UserLogtoConfig) =>
+export const updateUserMyEyesIDConfig = async (userId: string, myeyesidConfig: UserMyEyesIDConfig) =>
   authedAdminApi
-    .patch(`users/${userId}/logto-configs`, { json: logtoConfig })
-    .json<UserLogtoConfig>();
+    .patch(`users/${userId}/myeyesid-configs`, { json: myeyesidConfig })
+    .json<UserMyEyesIDConfig>();
 
 export const getUserOrganizations = async (userId: string) =>
   authedAdminApi.get(`users/${userId}/organizations`).json<OrganizationWithRoles[]>();

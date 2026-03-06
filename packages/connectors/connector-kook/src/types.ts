@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { oauth2ConfigGuard } from '@logto/connector-oauth';
+import { oauth2ConfigGuard } from '@myeyesid/connector-oauth';
 
 export const kookConfigGuard = oauth2ConfigGuard.pick({
   clientId: true,

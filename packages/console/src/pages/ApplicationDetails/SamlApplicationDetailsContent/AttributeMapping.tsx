@@ -1,5 +1,5 @@
-import { type UserClaim, userClaimsList } from '@logto/core-kit';
-import { type SamlApplicationResponse, samlAttributeMappingKeys } from '@logto/schemas';
+import { type UserClaim, userClaimsList } from '@myeyesid/core-kit';
+import { type SamlApplicationResponse, samlAttributeMappingKeys } from '@myeyesid/schemas';
 import { conditionalArray } from '@silverhand/essentials';
 import { useForm, Controller } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -116,7 +116,7 @@ function AttributeMapping({ data, mutateApplication }: Props) {
         title="application_details.saml_app_attribute_mapping.title"
         description="application_details.saml_app_attribute_mapping.description"
         learnMoreLink={{
-          href: getDocumentationUrl('/integrate-logto/saml-app/attribute-mapping'),
+          href: getDocumentationUrl('/integrate-myeyesid/saml-app/attribute-mapping'),
           targetBlank: 'noopener',
         }}
       >
@@ -124,7 +124,7 @@ function AttributeMapping({ data, mutateApplication }: Props) {
           <thead className={styles.header}>
             <tr className={styles.row}>
               <th>
-                <DynamicT forKey="application_details.saml_app_attribute_mapping.col_logto_claims" />
+                <DynamicT forKey="application_details.saml_app_attribute_mapping.col_myeyesid_claims" />
               </th>
               <th>
                 <DynamicT forKey="application_details.saml_app_attribute_mapping.col_sp_claims" />

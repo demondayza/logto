@@ -1,13 +1,13 @@
-import { demoAppApplicationId } from '@logto/schemas';
+import { demoAppApplicationId } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import ky, { HTTPError } from 'ky';
 import { type KyHeadersInit } from 'node_modules/ky/distribution/types/options.js';
 
-import { logtoUrl } from '#src/constants.js';
+import { myeyesidUrl } from '#src/constants.js';
 
 describe('content-type: application/json compatibility', () => {
   const api = ky.extend({
-    prefixUrl: new URL('/oidc', logtoUrl),
+    prefixUrl: new URL('/oidc', myeyesidUrl),
   });
 
   const expectErrorMessageForPayload = async (

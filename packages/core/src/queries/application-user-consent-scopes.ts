@@ -1,4 +1,4 @@
-import { type UserScope } from '@logto/core-kit';
+import { type UserScope } from '@myeyesid/core-kit';
 import {
   ApplicationUserConsentOrganizationScopes,
   ApplicationUserConsentResourceScopes,
@@ -7,7 +7,7 @@ import {
   Applications,
   OrganizationScopes,
   Scopes,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import { buildInsertIntoWithPool } from '#src/database/insert-into.js';

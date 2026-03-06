@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { generateStandardShortId } from '@logto/shared/universal';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { generateStandardShortId } from '@myeyesid/shared/universal';
 import { conditional, type Nullable } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useRef, useState } from 'react';

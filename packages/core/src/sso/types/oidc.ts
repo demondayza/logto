@@ -14,7 +14,7 @@ const scopeDelimiter = /[ +]/;
  * @param {string} scope
  * @returns {string}
  *
- * @remark Forked from @logto/oidc-connector
+ * @remark Forked from @myeyesid/oidc-connector
  */
 export const scopePostProcessor = (scope = '') => {
   const splitScopes = scope.split(scopeDelimiter).filter(Boolean);

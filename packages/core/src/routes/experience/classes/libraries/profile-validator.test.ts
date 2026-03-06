@@ -1,4 +1,4 @@
-import { consoleUserPreferenceKey } from '@logto/schemas';
+import { consoleUserPreferenceKey } from '@myeyesid/schemas';
 
 import { mockUser } from '#src/__mocks__/user.js';
 import RequestError from '#src/errors/RequestError/index.js';
@@ -216,7 +216,7 @@ describe('ProfileValidator', () => {
       // Required field provided, optional skipped
       expect(
         await profileValidator.hasMissingExtraProfileFields({
-          customData: { company: 'Logto Inc.' },
+          customData: { company: 'MyEyesID Inc.' },
           submitted: true,
         })
       ).toBe(false);

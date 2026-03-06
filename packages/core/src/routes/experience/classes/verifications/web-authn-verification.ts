@@ -10,8 +10,8 @@ import {
   type SignInWebAuthnVerificationRecordData,
   type SanitizedWebAuthnVerificationRecordData,
   type SanitizedSignInWebAuthnVerificationRecordData,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { conditional } from '@silverhand/essentials';
 import { isoBase64URL } from '@simplewebauthn/server/helpers';
 import { type PublicKeyCredentialRequestOptionsJSON } from 'node_modules/@simplewebauthn/server/esm/deps.js';
@@ -40,7 +40,7 @@ export {
   type SanitizedSignInWebAuthnVerificationRecordData,
   sanitizedWebAuthnVerificationRecordDataGuard,
   sanitizedSignInWebAuthnVerificationRecordDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 abstract class BaseWebAuthnVerification {
   readonly id: string;

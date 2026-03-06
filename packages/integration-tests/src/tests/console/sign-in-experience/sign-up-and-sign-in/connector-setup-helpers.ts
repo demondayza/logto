@@ -1,7 +1,7 @@
-import { ConnectorType } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
 import { type Page } from 'puppeteer';
 
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import { expectToClickDetailsPageOption, waitForToast } from '#src/ui-helpers/index.js';
 import { expectNavigation, appendPathname, cls } from '#src/utils.js';
 
@@ -11,7 +11,7 @@ import {
   waitForConnectorCreationGuide,
 } from '../../connectors/helpers.js';
 
-const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
 type TestConnector = {
   factoryId: string;
@@ -27,7 +27,7 @@ export const testSendgridConnector: TestConnector = {
   data: {
     'formConfig.apiKey': 'api-key',
     'formConfig.fromEmail': 'foo@example.com',
-    'formConfig.fromName': 'Logto',
+    'formConfig.fromName': 'MyEyesID',
   },
 };
 
@@ -60,7 +60,7 @@ export const expectToSetupPasswordlessConnector = async (
   }
 
   await expectNavigation(
-    page.goto(appendPathname('/console/connectors/passwordless', logtoConsoleUrl).href)
+    page.goto(appendPathname('/console/connectors/passwordless', myeyesidConsoleUrl).href)
   );
 
   const connectorItem = await expect(page).toMatchElement(
@@ -102,7 +102,7 @@ export const expectToSetupSocialConnector = async (
   }
 
   await expectNavigation(
-    page.goto(appendPathname('/console/connectors/social', logtoConsoleUrl).href)
+    page.goto(appendPathname('/console/connectors/social', myeyesidConsoleUrl).href)
   );
 
   await expect(page).toClick('div[class$=headline] button[class$=withIcon] span', {
@@ -126,7 +126,7 @@ export const expectToSetupSocialConnector = async (
 
 export const expectToDeletePasswordlessConnector = async (page: Page, { name }: TestConnector) => {
   await expectNavigation(
-    page.goto(appendPathname('/console/connectors/passwordless', logtoConsoleUrl).href)
+    page.goto(appendPathname('/console/connectors/passwordless', myeyesidConsoleUrl).href)
   );
 
   await expect(page).toClick(`table tbody tr td div[class$=item] a${cls('title')} span`, {
@@ -141,13 +141,13 @@ export const expectToDeletePasswordlessConnector = async (page: Page, { name }: 
 
   await expectToConfirmConnectorDeletion(
     page,
-    new URL('/console/connectors/passwordless', logtoConsoleUrl).href
+    new URL('/console/connectors/passwordless', myeyesidConsoleUrl).href
   );
 };
 
 export const expectToDeleteSocialConnector = async (page: Page, { name }: TestConnector) => {
   await expectNavigation(
-    page.goto(appendPathname('/console/connectors/social', logtoConsoleUrl).href)
+    page.goto(appendPathname('/console/connectors/social', myeyesidConsoleUrl).href)
   );
 
   await expect(page).toClick(`table tbody tr td div[class$=item] a${cls('title')} span`, {
@@ -162,6 +162,6 @@ export const expectToDeleteSocialConnector = async (page: Page, { name }: TestCo
 
   await expectToConfirmConnectorDeletion(
     page,
-    new URL('/console/connectors/social', logtoConsoleUrl).href
+    new URL('/console/connectors/social', myeyesidConsoleUrl).href
   );
 };

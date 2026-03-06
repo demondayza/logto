@@ -1,4 +1,4 @@
-import { type ApplicationSignInExperience } from '@logto/schemas';
+import { type ApplicationSignInExperience } from '@myeyesid/schemas';
 import useSWR from 'swr';
 
 import useApi, { type RequestError } from '@/hooks/use-api';

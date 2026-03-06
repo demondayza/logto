@@ -1,10 +1,10 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import {
   DataHookSchema,
   InteractionHookEvent,
   hookEvents,
   type DataHookEvent,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { isDevFeaturesEnabled } from './env';
 

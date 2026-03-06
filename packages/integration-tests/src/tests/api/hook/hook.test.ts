@@ -1,5 +1,5 @@
-import type { Hook } from '@logto/schemas';
-import { InteractionHookEvent } from '@logto/schemas';
+import type { Hook } from '@myeyesid/schemas';
+import { InteractionHookEvent } from '@myeyesid/schemas';
 
 import { authedAdminApi } from '#src/api/index.js';
 import { isDevFeaturesEnabled } from '#src/constants.js';

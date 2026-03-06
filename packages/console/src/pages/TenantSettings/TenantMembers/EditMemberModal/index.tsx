@@ -1,5 +1,5 @@
-import { TenantRole } from '@logto/schemas';
-import { getUserDisplayName } from '@logto/shared/universal';
+import { TenantRole } from '@myeyesid/schemas';
+import { getUserDisplayName } from '@myeyesid/shared/universal';
 import { useContext, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';

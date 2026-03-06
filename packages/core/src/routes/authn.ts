@@ -1,6 +1,6 @@
-import type { ConnectorSession } from '@logto/connector-kit';
-import { ConnectorError, ConnectorErrorCodes, ConnectorType } from '@logto/connector-kit';
-import { jsonObjectGuard, SsoAuthenticationQueryKey } from '@logto/schemas';
+import type { ConnectorSession } from '@myeyesid/connector-kit';
+import { ConnectorError, ConnectorErrorCodes, ConnectorType } from '@myeyesid/connector-kit';
+import { jsonObjectGuard, SsoAuthenticationQueryKey } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import { idpInitiatedSamlSsoSessionCookieName } from '#src/constants/index.js';

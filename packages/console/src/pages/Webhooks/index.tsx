@@ -1,4 +1,4 @@
-import { Theme, type Hook, type HookResponse } from '@logto/schemas';
+import { Theme, type Hook, type HookResponse } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';

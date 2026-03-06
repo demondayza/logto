@@ -1,4 +1,4 @@
-import { CustomProfileFieldType, type FieldOption, Gender, type FieldPart } from '@logto/schemas';
+import { CustomProfileFieldType, type FieldOption, Gender, type FieldPart } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import InputField from '@/shared/components/InputFields/InputField';

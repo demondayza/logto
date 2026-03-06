@@ -1,5 +1,5 @@
-import type { LanguageTag } from '@logto/language-kit';
-import { languages, fallback } from '@logto/language-kit';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import { languages, fallback } from '@myeyesid/language-kit';
 import type { DeepPartial, NormalizeKeyPaths } from '@silverhand/essentials';
 import { z } from 'zod';
 
@@ -57,8 +57,8 @@ export const builtInLanguageTagGuard = z.enum(builtInLanguages);
 export type BuiltInLanguageTag = z.infer<typeof builtInLanguageTagGuard>;
 
 export type Errors = typeof en.errors;
-export type LogtoErrorCode = NormalizeKeyPaths<Errors>;
-export type LogtoErrorI18nKey = `errors:${LogtoErrorCode}`;
+export type MyEyesIDErrorCode = NormalizeKeyPaths<Errors>;
+export type MyEyesIDErrorI18nKey = `errors:${MyEyesIDErrorCode}`;
 
 export type AdminConsoleKey = NormalizeKeyPaths<typeof en.translation.admin_console>;
 

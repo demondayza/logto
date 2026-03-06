@@ -1,5 +1,5 @@
 {
-  "name": "@logto/account",
+  "name": "@myeyesid/account",
   "version": "0.2.0",
   "description": "MyEyesID account center app.",
   "author": "Silverhand Inc. <contact@silverhand.io>",
@@ -20,12 +20,12 @@
     "stylelint": "stylelint \"src/**/*.scss\""
   },
   "devDependencies": {
-    "@logto/core-kit": "workspace:^",
-    "@logto/experience": "workspace:^",
-    "@logto/language-kit": "workspace:^",
-    "@logto/phrases-experience": "workspace:^",
-    "@logto/react": "^4.0.6",
-    "@logto/schemas": "workspace:^",
+    "@myeyesid/core-kit": "workspace:^",
+    "@myeyesid/experience": "workspace:^",
+    "@myeyesid/language-kit": "workspace:^",
+    "@myeyesid/phrases-experience": "workspace:^",
+    "@myeyesid/react": "^4.0.6",
+    "@myeyesid/schemas": "workspace:^",
     "@silverhand/eslint-config": "6.0.1",
     "@silverhand/eslint-config-react": "6.0.2",
     "@silverhand/essentials": "^2.9.1",

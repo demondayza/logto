@@ -2,7 +2,7 @@ import {
   SentinelActivities,
   type SentinelActivity,
   type SentinelActivityTargetType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type CommonQueryMethods, sql } from '@silverhand/slonik';
 
 import { convertToIdentifiers } from '../utils/sql.js';

@@ -15,11 +15,11 @@
 
 - ad4f9d6abf: add support to the OIDC standard authentication parameter `ui_locales`
 
-  We are now supporting the standard OIDC `ui_locales` auth parameter to customize the language of the authentication pages. You can pass the `ui_locales` parameter in the `signIn` method via the `extraParams` option in all Logto SDKs.
+  We are now supporting the standard OIDC `ui_locales` auth parameter to customize the language of the authentication pages. You can pass the `ui_locales` parameter in the `signIn` method via the `extraParams` option in all MyEyesID SDKs.
 
   ### What it does
 
-  - Determines the UI language of the Logto-hosted sign-in experience at runtime. Logto picks the first language tag in `ui_locales` that is supported in your tenant's language library.
+  - Determines the UI language of the MyEyesID-hosted sign-in experience at runtime. MyEyesID picks the first language tag in `ui_locales` that is supported in your tenant's language library.
   - Affects email localization for messages triggered by the interaction (e.g., verification code emails).
   - Exposes the original value to email templates as a variable `uiLocales`, allowing you to include it in the email subject/content if needed.
 
@@ -28,7 +28,7 @@
   If you want to display the sign-in page in French (Canada), you can do it like this:
 
   ```ts
-  await logtoClient.signIn({
+  await myeyesidClient.signIn({
     redirectUri: "https://your.app/callback",
     extraParams: {
       ui_locales: "fr-CA fr en",
@@ -36,7 +36,7 @@
   });
   ```
 
-  Refer to the [documentation](https://docs.logto.io/end-user-flows/authentication-parameters/ui-locales) for more details.
+  Refer to the [documentation](https://docs.myeyesid.io/end-user-flows/authentication-parameters/ui-locales) for more details.
 
 - 5da6792d40: add bindMFA to template type
 
@@ -67,7 +67,7 @@ If you are using Email/SMS as a MFA method, you should update your connector con
 ### Patch Changes
 
 - Updated dependencies [2961d355d]
-  - @logto/language-kit@1.2.0
+  - @myeyesid/language-kit@1.2.0
 
 ## 4.2.0
 
@@ -131,7 +131,7 @@ If you are using Email/SMS as a MFA method, you should update your connector con
 
 - e11e57de8: bump dependencies for security update
 - Updated dependencies [e11e57de8]
-  - @logto/language-kit@1.1.1
+  - @myeyesid/language-kit@1.1.1
 
 ## 4.1.0
 
@@ -144,17 +144,17 @@ If you are using Email/SMS as a MFA method, you should update your connector con
   1. Direct access: The Account API empowers end users to directly access and manage their own account profile without requiring the relay of Management API.
   2. User profile and identities management: Users can fully manage their profiles and security settings, including the ability to update identity information like email, phone, and password, as well as manage social connections. MFA and SSO support are coming soon.
   3. Global access control: Admin has full, global control over access settings, can customize each fields.
-  4. Seamless authorization: Authorizing is easier than ever! Simply use `client.getAccessToken()` to obtain an opaque access token for OP (Logto), and attach it to the Authorization header as `Bearer <access_token>`.
+  4. Seamless authorization: Authorizing is easier than ever! Simply use `client.getAccessToken()` to obtain an opaque access token for OP (MyEyesID), and attach it to the Authorization header as `Bearer <access_token>`.
 
   ## Get started
 
   > ![Note]
-  > Go to the [Logto Docs](https://bump.sh/logto/doc/logto-user-api) to find full API reference.
+  > Go to the [MyEyesID Docs](https://bump.sh/myeyesid/doc/myeyesid-user-api) to find full API reference.
 
   1. Use `/api/account-center` endpoint to enable the feature, for security reason, it is disabled by default. And set fields permission for each field.
   2. Use `client.getAccessToken()` to get the access token.
   3. Attach the access token to the Authorization header of your request, and start interacting with the Account API directly from the frontend.
-  4. You may need to setup `logto-verification-id` header as an additional verification for some requests related to identity verification.
+  4. You may need to setup `myeyesid-verification-id` header as an additional verification for some requests related to identity verification.
 
   ## What you can do with Account API
 
@@ -173,7 +173,7 @@ If you are using Email/SMS as a MFA method, you should update your connector con
 
   `.catchall()` allows unknown keys to be parsed as metadata. This is troublesome when we want to strip out unknown keys (Zod provides `.strip()` for this purpose but somehow it doesn't work with `.catchall()`).
 
-  For data extensibility, we added `customData` field to `ConnectorMetadata` type to store unknown keys. For example, the `fromEmail` field in `connector-logto-email` is not part of the standard metadata, so it should be stored in `customData` in the future.
+  For data extensibility, we added `customData` field to `ConnectorMetadata` type to store unknown keys. For example, the `fromEmail` field in `connector-myeyesid-email` is not part of the standard metadata, so it should be stored in `customData` in the future.
 
 ### Minor Changes
 
@@ -210,7 +210,7 @@ If you are using Email/SMS as a MFA method, you should update your connector con
 
 - 31e60811d: use Node 20 LTS for engine requirement.
 
-  Note: We mark it as minor because Logto is shipping with Docker image and it's not a breaking change for users.
+  Note: We mark it as minor because MyEyesID is shipping with Docker image and it's not a breaking change for users.
 
 - 570a4ea9e: add `replaceSendMessageHandlebars()` for replacing `SendMessagePayload` handlebars in a message template
 - 570a4ea9e: support magic link feature
@@ -227,7 +227,7 @@ If you are using Email/SMS as a MFA method, you should update your connector con
 - 9089dbf84: upgrade TypeScript to 5.3.3
 - Updated dependencies [9089dbf84]
 - Updated dependencies [31e60811d]
-  - @logto/language-kit@1.1.0
+  - @myeyesid/language-kit@1.1.0
 
 ## 2.0.0
 
@@ -271,11 +271,11 @@ If you are using Email/SMS as a MFA method, you should update your connector con
 - 69af8a381: 1. Add `connectorId`, `connectorFactoryId` and `jti` to `GetAuthorizationUri`. 2. Make `ConnectorSession` compatible for arbitrary keys.
 - c2d36b1c8: Add optional `setSession` method and `getSession` method as input parameters of `getAuthorizationUri` and `getUserInfo` respectively.
 
-  This change enabled stateless connectors to utilize Logto session to pass parameters between APIs.
+  This change enabled stateless connectors to utilize MyEyesID session to pass parameters between APIs.
 
 - ad3611f5a: Remove connector database `storage` column and its corresponding access.
 - Updated dependencies [738675a7d]
-  - @logto/language-kit@1.0.0
+  - @myeyesid/language-kit@1.0.0
 
 ## 1.0.0-rc.3
 
@@ -321,8 +321,8 @@ If you are using Email/SMS as a MFA method, you should update your connector con
 ### Patch Changes
 
 - Updated dependencies [738675a7]
-  - @logto/core-kit@1.0.0-beta.30
-  - @logto/language-kit@1.0.0-beta.30
+  - @myeyesid/core-kit@1.0.0-beta.30
+  - @myeyesid/language-kit@1.0.0-beta.30
 
 ## 1.0.0-beta.30
 
@@ -330,113 +330,113 @@ If you are using Email/SMS as a MFA method, you should update your connector con
 
 - c2d36b1c: Add optional `setSession` method and `getSession` method as input parameters of `getAuthorizationUri` and `getUserInfo` respectively.
 
-  This change enabled stateless connectors to utilize Logto session to pass parameters between APIs.
+  This change enabled stateless connectors to utilize MyEyesID session to pass parameters between APIs.
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.0.0-beta.29](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.28...v1.0.0-beta.29) (2022-12-07)
+## [1.0.0-beta.29](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.28...v1.0.0-beta.29) (2022-12-07)
 
 ### Bug Fixes
 
-- exports info and lock dep version ([#45](https://github.com/logto-io/toolkit/issues/45)) ([2ac83b4](https://github.com/logto-io/toolkit/commit/2ac83b4f0ff17579456569fb67ba018ac493c1af))
+- exports info and lock dep version ([#45](https://github.com/myeyesid-io/toolkit/issues/45)) ([2ac83b4](https://github.com/myeyesid-io/toolkit/commit/2ac83b4f0ff17579456569fb67ba018ac493c1af))
 
-## [1.0.0-beta.28](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2022-12-06)
+## [1.0.0-beta.28](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2022-12-06)
 
-**Note:** Version bump only for package @logto/connector-kit
+**Note:** Version bump only for package @myeyesid/connector-kit
 
-## [1.0.0-beta.27](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2022-11-29)
+## [1.0.0-beta.27](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2022-11-29)
 
 ### Features
 
-- **connector:** add continue message type ([#41](https://github.com/logto-io/toolkit/issues/41)) ([78f1eb0](https://github.com/logto-io/toolkit/commit/78f1eb06f84de2bc7601016a6bcc3c85eb4695f0))
+- **connector:** add continue message type ([#41](https://github.com/myeyesid-io/toolkit/issues/41)) ([78f1eb0](https://github.com/myeyesid-io/toolkit/commit/78f1eb06f84de2bc7601016a6bcc3c85eb4695f0))
 
-## [1.0.0-beta.26](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2022-11-23)
+## [1.0.0-beta.26](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2022-11-23)
 
-**Note:** Version bump only for package @logto/connector-kit
+**Note:** Version bump only for package @myeyesid/connector-kit
 
-## [1.0.0-beta.25](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-11-22)
+## [1.0.0-beta.25](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2022-11-22)
 
-**Note:** Version bump only for package @logto/connector-kit
+**Note:** Version bump only for package @myeyesid/connector-kit
 
-## [1.0.0-beta.24](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2022-11-22)
+## [1.0.0-beta.24](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2022-11-22)
 
-**Note:** Version bump only for package @logto/connector-kit
+**Note:** Version bump only for package @myeyesid/connector-kit
 
-## [1.0.0-beta.23](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2022-11-18)
+## [1.0.0-beta.23](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2022-11-18)
 
 ### Bug Fixes
 
-- hot fix the check on whether an element exists in array ([#37](https://github.com/logto-io/toolkit/issues/37)) ([889a577](https://github.com/logto-io/toolkit/commit/889a5773b5e95c35c4ef17db24622e7b87b723c5))
+- hot fix the check on whether an element exists in array ([#37](https://github.com/myeyesid-io/toolkit/issues/37)) ([889a577](https://github.com/myeyesid-io/toolkit/commit/889a5773b5e95c35c4ef17db24622e7b87b723c5))
 
-## [1.0.0-beta.22](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2022-11-16)
+## [1.0.0-beta.22](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2022-11-16)
 
 ### Bug Fixes
 
-- make standard connectors display name configurable ([#36](https://github.com/logto-io/toolkit/issues/36)) ([da431bf](https://github.com/logto-io/toolkit/commit/da431bf318a83e0086070d49a16a8cc3d970f388))
+- make standard connectors display name configurable ([#36](https://github.com/myeyesid-io/toolkit/issues/36)) ([da431bf](https://github.com/myeyesid-io/toolkit/commit/da431bf318a83e0086070d49a16a8cc3d970f388))
 
-## [1.0.0-beta.21](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2022-11-11)
-
-### Features
-
-- update connector metadata types and add corresponding type guards ([#35](https://github.com/logto-io/toolkit/issues/35)) ([4e7cd12](https://github.com/logto-io/toolkit/commit/4e7cd12b4b4fb32f2ed5a7d66e1616e20fa395f1))
-
-## [1.0.0-beta.20](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2022-10-21)
-
-**Note:** Version bump only for package @logto/connector-kit
-
-## [1.0.0-beta.19](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2022-10-19)
-
-**Note:** Version bump only for package @logto/connector-kit
-
-## [1.0.0-beta.18](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2022-10-12)
-
-**Note:** Version bump only for package @logto/connector-kit
-
-## [1.0.0-beta.17](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2022-10-12)
-
-**Note:** Version bump only for package @logto/connector-kit
-
-## [1.0.0-beta.16](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2022-09-28)
-
-**Note:** Version bump only for package @logto/connector-kit
-
-## [1.0.0-beta.15](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2022-09-27)
+## [1.0.0-beta.21](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2022-11-11)
 
 ### Features
 
-- **language,core,connector:** init language-kit package ([#14](https://github.com/logto-io/toolkit/issues/14)) ([9a74fc4](https://github.com/logto-io/toolkit/commit/9a74fc4d34c9ce277b8734ab78735549dc3a3cda))
+- update connector metadata types and add corresponding type guards ([#35](https://github.com/myeyesid-io/toolkit/issues/35)) ([4e7cd12](https://github.com/myeyesid-io/toolkit/commit/4e7cd12b4b4fb32f2ed5a7d66e1616e20fa395f1))
 
-## [1.0.0-beta.14](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2022-09-23)
+## [1.0.0-beta.20](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2022-10-21)
 
-**Note:** Version bump only for package @logto/connector-kit
+**Note:** Version bump only for package @myeyesid/connector-kit
 
-## [1.0.0-beta.13](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2022-09-19)
+## [1.0.0-beta.19](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2022-10-19)
 
-**Note:** Version bump only for package @logto/connector-kit
+**Note:** Version bump only for package @myeyesid/connector-kit
 
-## [1.0.0-beta.12](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2022-09-17)
+## [1.0.0-beta.18](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2022-10-12)
 
-**Note:** Version bump only for package @logto/connector-kit
+**Note:** Version bump only for package @myeyesid/connector-kit
 
-## [1.0.0-beta.11](https://github.com/logto-io/toolkit/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2022-09-16)
+## [1.0.0-beta.17](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2022-10-12)
 
-**Note:** Version bump only for package @logto/connector-kit
+**Note:** Version bump only for package @myeyesid/connector-kit
+
+## [1.0.0-beta.16](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2022-09-28)
+
+**Note:** Version bump only for package @myeyesid/connector-kit
+
+## [1.0.0-beta.15](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2022-09-27)
+
+### Features
+
+- **language,core,connector:** init language-kit package ([#14](https://github.com/myeyesid-io/toolkit/issues/14)) ([9a74fc4](https://github.com/myeyesid-io/toolkit/commit/9a74fc4d34c9ce277b8734ab78735549dc3a3cda))
+
+## [1.0.0-beta.14](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2022-09-23)
+
+**Note:** Version bump only for package @myeyesid/connector-kit
+
+## [1.0.0-beta.13](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2022-09-19)
+
+**Note:** Version bump only for package @myeyesid/connector-kit
+
+## [1.0.0-beta.12](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2022-09-17)
+
+**Note:** Version bump only for package @myeyesid/connector-kit
+
+## [1.0.0-beta.11](https://github.com/myeyesid-io/toolkit/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2022-09-16)
+
+**Note:** Version bump only for package @myeyesid/connector-kit
 
 ## 1.0.0-beta.10 (2022-09-16)
 
 ### Features
 
-- initial commit ([56a4968](https://github.com/logto-io/toolkit/commit/56a496848168a4a9ae9ac7af83d51f1b8a6afe2c))
+- initial commit ([56a4968](https://github.com/myeyesid-io/toolkit/commit/56a496848168a4a9ae9ac7af83d51f1b8a6afe2c))
 
-## [1.0.0-beta.9](https://github.com/logto-io/logto/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2022-09-07)
+## [1.0.0-beta.9](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2022-09-07)
 
-**Note:** Version bump only for package @logto/connector-core
+**Note:** Version bump only for package @myeyesid/connector-core
 
-## [1.0.0-beta.8](https://github.com/logto-io/logto/compare/v1.0.0-beta.6...v1.0.0-beta.8) (2022-09-01)
+## [1.0.0-beta.8](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.6...v1.0.0-beta.8) (2022-09-01)
 
-**Note:** Version bump only for package @logto/connector-core
+**Note:** Version bump only for package @myeyesid/connector-core
 
-## [1.0.0-beta.6](https://github.com/logto-io/logto/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2022-08-30)
+## [1.0.0-beta.6](https://github.com/myeyesid-io/myeyesid/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2022-08-30)
 
-**Note:** Version bump only for package @logto/connector-core
+**Note:** Version bump only for package @myeyesid/connector-core

@@ -1,4 +1,4 @@
-import { type ConsentInfoResponse } from '@logto/schemas';
+import { type ConsentInfoResponse } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import type { TFuncKey } from 'i18next';
 import type { ReactNode } from 'react';

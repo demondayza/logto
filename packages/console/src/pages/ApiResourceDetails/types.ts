@@ -1,8 +1,8 @@
-import type { Resource } from '@logto/schemas';
+import type { Resource } from '@myeyesid/schemas';
 
 export type ApiResourceDetailsOutletContext = {
   resource: Resource;
   isDeleting: boolean;
-  isLogtoManagementApiResource: boolean;
+  isMyEyesIDManagementApiResource: boolean;
   onResourceUpdated: (resource: Resource) => void;
 };

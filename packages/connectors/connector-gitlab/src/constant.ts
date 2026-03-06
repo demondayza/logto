@@ -1,6 +1,6 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorPlatform } from '@logto/connector-kit';
-import { clientSecretFormItem, clientIdFormItem, scopeFormItem } from '@logto/connector-oauth';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorPlatform } from '@myeyesid/connector-kit';
+import { clientSecretFormItem, clientIdFormItem, scopeFormItem } from '@myeyesid/connector-oauth';
 
 export const jwksUri = 'https://gitlab.com/oauth/discovery/keys';
 export const authorizationEndpoint = 'https://gitlab.com/oauth/authorize';

@@ -1,12 +1,12 @@
 import crypto from 'node:crypto';
 
-import { ConnectorType } from '@logto/connector-kit';
-import { AgreeToTermsPolicy, SignInIdentifier, SignInMode, SsoProviderName } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { AgreeToTermsPolicy, SignInIdentifier, SignInMode, SsoProviderName } from '@myeyesid/schemas';
 import { appendPath } from '@silverhand/essentials';
 
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
 import { createSsoConnector } from '#src/api/sso-connector.js';
-import { demoAppUrl, logtoUrl } from '#src/constants.js';
+import { demoAppUrl, myeyesidUrl } from '#src/constants.js';
 import {
   clearConnectorsByTypes,
   setEmailConnector,
@@ -27,7 +27,7 @@ describe('social sign-in (with email identifier)', () => {
   const context = new (class Context {
     ssoConnectorId?: string;
   })();
-  const ssoOidcIssuer = `${logtoUrl}/oidc`;
+  const ssoOidcIssuer = `${myeyesidUrl}/oidc`;
   // eslint-disable-next-line @silverhand/fp/no-let
   let experience: ExpectExperience;
   const socialUserId = 'foo_' + randomString();
@@ -96,7 +96,7 @@ describe('social sign-in (with email identifier)', () => {
       socialUserId,
     });
     // Redirected back to the social callback page
-    experience.toMatchUrl(new RegExp(appendPath(new URL(logtoUrl), 'callback/social/.*').href));
+    experience.toMatchUrl(new RegExp(appendPath(new URL(myeyesidUrl), 'callback/social/.*').href));
 
     // Should have popped up the terms of use and privacy policy dialog
     await experience.toMatchElement([dmodal(), dcls('content')].join(' '), {
@@ -121,7 +121,7 @@ describe('social sign-in (with email identifier)', () => {
     });
 
     // Redirected back to the social callback page
-    experience.toMatchUrl(new RegExp(appendPath(new URL(logtoUrl), 'callback/social/.*').href));
+    experience.toMatchUrl(new RegExp(appendPath(new URL(myeyesidUrl), 'callback/social/.*').href));
 
     // Should have popped up the terms of use and privacy policy dialog
     await experience.toMatchElement([dmodal(), dcls('content')].join(' '), {

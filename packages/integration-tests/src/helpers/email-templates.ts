@@ -1,4 +1,4 @@
-import { type CreateEmailTemplate, type EmailTemplate } from '@logto/schemas';
+import { type CreateEmailTemplate, type EmailTemplate } from '@myeyesid/schemas';
 
 import { EmailTemplatesApi } from '#src/api/email-templates.js';
 

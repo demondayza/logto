@@ -1,8 +1,8 @@
 import { generateKeyPair } from 'node:crypto';
 import { promisify } from 'node:util';
 
-import { type OidcConfigKey, SupportedSigningKeyAlgorithm } from '@logto/schemas';
-import { generateStandardId, generateStandardSecret } from '@logto/shared';
+import { type OidcConfigKey, SupportedSigningKeyAlgorithm } from '@myeyesid/schemas';
+import { generateStandardId, generateStandardSecret } from '@myeyesid/shared';
 
 export const generateOidcPrivateKey = async (
   type: SupportedSigningKeyAlgorithm = SupportedSigningKeyAlgorithm.EC

@@ -1,11 +1,11 @@
-import { emailRegEx, phoneRegEx } from '@logto/core-kit';
+import { emailRegEx, phoneRegEx } from '@myeyesid/core-kit';
 import { z } from 'zod';
 
 const emailIdentifierGuard = z.string().regex(emailRegEx);
 const phoneIdentifierGuard = z.string().regex(phoneRegEx);
 const codeGuard = z.string().min(1);
 
-// Used when requesting Logto to send a verification code to email or phone
+// Used when requesting MyEyesID to send a verification code to email or phone
 export const requestVerificationCodePayloadGuard = z.union([
   z.object({ email: emailIdentifierGuard }),
   z.object({ phone: phoneIdentifierGuard }),
@@ -25,7 +25,7 @@ export const phoneVerificationCodePayloadGuard = z.object({
 });
 export type PhoneVerificationCodePayload = z.infer<typeof phoneVerificationCodePayloadGuard>;
 
-// Used when requesting Logto to verify the validity of a verification code
+// Used when requesting MyEyesID to verify the validity of a verification code
 export const verifyVerificationCodePayloadGuard = z.union([
   emailVerificationCodePayloadGuard,
   phoneVerificationCodePayloadGuard,

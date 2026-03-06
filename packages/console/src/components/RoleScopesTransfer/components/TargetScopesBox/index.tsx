@@ -1,4 +1,4 @@
-import type { ScopeResponse } from '@logto/schemas';
+import type { ScopeResponse } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import transferLayout from '@/scss/transfer.module.scss';

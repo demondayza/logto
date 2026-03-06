@@ -1,10 +1,10 @@
-import { ConnectorType } from '@logto/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 import {
   SignInMode,
   SignInIdentifier,
   type PartialPasswordPolicy,
   type SentinelPolicy,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { type ElementHandle, type Browser, type Page, type Frame } from 'puppeteer';
 
@@ -12,7 +12,7 @@ import { updateSignInExperience } from '#src/api/sign-in-experience.js';
 import {
   consolePassword,
   consoleUsername,
-  logtoConsoleUrl as logtoConsoleUrlString,
+  myeyesidConsoleUrl as myeyesidConsoleUrlString,
 } from '#src/constants.js';
 import { clearConnectorsByTypes, setEmailConnector } from '#src/helpers/connector.js';
 import { dcls, expectNavigation, waitFor } from '#src/utils.js';
@@ -22,10 +22,10 @@ import { selectDropdownMenuItem } from './select-dropdown-menu-item.js';
 export type PuppeteerInstance = Page | Frame | ElementHandle;
 
 export const goToAdminConsole = async () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
-  await expectNavigation(page.goto(logtoConsoleUrl.href));
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
+  await expectNavigation(page.goto(myeyesidConsoleUrl.href));
 
-  if (page.url() === new URL('sign-in', logtoConsoleUrl).href) {
+  if (page.url() === new URL('sign-in', myeyesidConsoleUrl).href) {
     await expect(page).toFillForm('form', {
       identifier: consoleUsername,
       password: consolePassword,

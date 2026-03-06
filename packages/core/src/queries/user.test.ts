@@ -1,4 +1,4 @@
-import { MfaFactor, Users } from '@logto/schemas';
+import { MfaFactor, Users } from '@myeyesid/schemas';
 import { createMockPool, createMockQueryResult, sql } from '@silverhand/slonik';
 import Sinon from 'sinon';
 
@@ -53,7 +53,7 @@ describe('user query', () => {
     profile: JSON.stringify({}),
     identities: JSON.stringify(mockUser.identities),
     customData: JSON.stringify(mockUser.customData),
-    logtoConfig: JSON.stringify(mockUser.logtoConfig),
+    myeyesidConfig: JSON.stringify(mockUser.myeyesidConfig),
     mfaVerifications: JSON.stringify(mockUser.mfaVerifications),
   };
 
@@ -399,7 +399,7 @@ describe('user query', () => {
       profile: JSON.stringify({}),
       identities: JSON.stringify(restIdentities),
       customData: JSON.stringify(mockUser.customData),
-      logtoConfig: JSON.stringify(mockUser.logtoConfig),
+      myeyesidConfig: JSON.stringify(mockUser.myeyesidConfig),
       mfaVerifications: JSON.stringify(mockUser.mfaVerifications),
     };
 

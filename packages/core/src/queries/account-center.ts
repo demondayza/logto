@@ -3,7 +3,7 @@ import {
   AccountCenters,
   type AccountCenterKeys,
   type CreateAccountCenter,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type CommonQueryMethods } from '@silverhand/slonik';
 
 import { type WellKnownCache } from '../caches/well-known.js';

@@ -1,12 +1,12 @@
-import type { LanguageTag } from '@logto/language-kit';
-import { languages as uiLanguageNameMapping } from '@logto/language-kit';
-import resource, { isBuiltInLanguageTag } from '@logto/phrases-experience';
-import en from '@logto/phrases-experience/lib/locales/en';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import { languages as uiLanguageNameMapping } from '@myeyesid/language-kit';
+import resource, { isBuiltInLanguageTag } from '@myeyesid/phrases-experience';
+import en from '@myeyesid/phrases-experience/lib/locales/en';
 import {
   type LocalePhraseGroupKey,
   type LocalePhraseKey,
-} from '@logto/phrases-experience/lib/types';
-import type { SignInExperience, Translation } from '@logto/schemas';
+} from '@myeyesid/phrases-experience/lib/types';
+import type { SignInExperience, Translation } from '@myeyesid/schemas';
 import cleanDeep from 'clean-deep';
 import deepmerge from 'deepmerge';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
@@ -189,7 +189,7 @@ function LanguageDetails() {
         <div className={styles.languageInfo}>
           {uiLanguageNameMapping[selectedLanguage]}
           <span>{selectedLanguage}</span>
-          {isBuiltIn && <Tag>{t('sign_in_exp.content.manage_language.logto_provided')}</Tag>}
+          {isBuiltIn && <Tag>{t('sign_in_exp.content.manage_language.myeyesid_provided')}</Tag>}
         </div>
         {!isBuiltIn && (
           <Tooltip content={t('sign_in_exp.content.manage_language.deletion_tip')}>
@@ -219,7 +219,7 @@ function LanguageDetails() {
               className: styles.sectionDataKey,
             },
             {
-              title: t('sign_in_exp.content.manage_language.logto_source_values'),
+              title: t('sign_in_exp.content.manage_language.myeyesid_source_values'),
               dataIndex: 'sourceValue',
               render: ({ sourceValue }) => (
                 <div className={styles.sectionBuiltInText}>{sourceValue}</div>

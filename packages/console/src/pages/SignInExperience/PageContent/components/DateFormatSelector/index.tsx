@@ -1,4 +1,4 @@
-import { SupportedDateFormat } from '@logto/schemas';
+import { SupportedDateFormat } from '@myeyesid/schemas';
 import { useEffect } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Trans, useTranslation } from 'react-i18next';

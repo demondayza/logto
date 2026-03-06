@@ -1,6 +1,6 @@
 # GitLab Connector
 
-The official Logto connector for GitLab social sign-in, based on the Hugging Face connector by Silverhand Inc.
+The official MyEyesID connector for GitLab social sign-in, based on the Hugging Face connector by Silverhand Inc.
 
 **Table of contents**
 
@@ -26,13 +26,13 @@ Go to the [GitLab website](https://gitlab.com/) and sign in with your GitLab acc
 
 Follow the [creating a GitLab OAuth App](https://docs.gitlab.com/ee/integration/oauth_provider.html) guide, and register a new application.
 
-Name your new OAuth application in **Name** and fill up **Redirect URI** of the app. Customize the **Redirect URIs** as `${your_logto_origin}/callback/${connector_id}`. The `connector_id` can be found on the top bar of the Logto Admin Console connector details page.
+Name your new OAuth application in **Name** and fill up **Redirect URI** of the app. Customize the **Redirect URIs** as `${your_myeyesid_origin}/callback/${connector_id}`. The `connector_id` can be found on the top bar of the MyEyesID Admin Console connector details page.
 
 On scopes, select `openid`. You also may want to enable `profile`, and `email`. `profile` scope is required to get the user's profile information, and `email` scope is required to get the user's email address. Ensure you have allowed these scopes in your GitLab OAuth app if you want to use them.
 
 > Notes: 
-> * If you use custom domains, add both the custom domain and the default Logto domain to the Redirect URIs to ensure the OAuth flow works correctly with both domains. 
-> * If you encounter the error message "The redirect_uri MUST match the registered callback URL for this application." when logging in, try aligning the Redirect URI of your GitLab OAuth App and your Logto App's redirect URL (including the protocol) to resolve the issue.
+> * If you use custom domains, add both the custom domain and the default MyEyesID domain to the Redirect URIs to ensure the OAuth flow works correctly with both domains. 
+> * If you encounter the error message "The redirect_uri MUST match the registered callback URL for this application." when logging in, try aligning the Redirect URI of your GitLab OAuth App and your MyEyesID App's redirect URL (including the protocol) to resolve the issue.
 
 ## Managing OAuth apps
 
@@ -54,7 +54,7 @@ Fill out the `clientId` and `clientSecret` field with the _Application ID_ and _
 
 ## Test GitLab connector
 
-That's it. The GitLab connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. The GitLab connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 ## Reference
 

@@ -1,4 +1,4 @@
-import { type Scope, type OrganizationScope } from '@logto/schemas';
+import { type Scope, type OrganizationScope } from '@myeyesid/schemas';
 import { useCallback, useMemo, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';

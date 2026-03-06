@@ -3,7 +3,7 @@ import {
   InteractionEvent,
   SignInIdentifier,
   VerificationType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { mockEmailConnectorId, mockSocialConnectorId } from '#src/__mocks__/connectors-mock.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';

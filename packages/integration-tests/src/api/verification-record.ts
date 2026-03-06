@@ -2,7 +2,7 @@ import {
   type WebAuthnRegistrationOptions,
   type SignInIdentifier,
   type BindWebAuthnPayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type KyInstance } from 'ky';
 
 import { readConnectorMessage } from '#src/helpers/index.js';

@@ -15,14 +15,14 @@ import type {
   GetUserInfo,
   CreateConnector,
   SocialConnector,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
   validateConfig,
   ConnectorType,
   parseJson,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import dayjs from 'dayjs';
 
 import {

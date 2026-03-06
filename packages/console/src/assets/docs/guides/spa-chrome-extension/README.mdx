@@ -15,7 +15,7 @@ import extensionPopup from './extension-popup.webp';
   subtitle="Install MyEyesID SDK for your project"
 >
 
-<NpmLikeInstallation packageName="@logto/chrome-extension" />
+<NpmLikeInstallation packageName="@myeyesid/chrome-extension" />
 
 </Step>
 
@@ -51,7 +51,7 @@ MyEyesID SDK requires the following permissions in the `manifest.json`:
 ```json title="manifest.json"
 {
   "permissions": ["identity", "storage"],
-  "host_permissions": ["https://*.logto.app/*"]
+  "host_permissions": ["https://*.myeyesid.app/*"]
 }
 ```
 
@@ -68,15 +68,15 @@ If you are using a custom domain on MyEyesID Cloud, you need to update the `host
 In your Chrome extension's background script, initialize the MyEyesID SDK:
 
 ```js title="service-worker.js"
-import LogtoClient from '@logto/chrome-extension';
+import MyEyesIDClient from '@myeyesid/chrome-extension';
 
-export const logtoClient = new LogtoClient({
-  endpoint: '<your-logto-endpoint>'
-  appId: '<your-logto-app-id>',
+export const myeyesidClient = new MyEyesIDClient({
+  endpoint: '<your-myeyesid-endpoint>'
+  appId: '<your-myeyesid-app-id>',
 });
 ```
 
-Replace `<your-logto-endpoint>` and `<your-logto-app-id>` with the actual values. You can find these values in the application page you just created in the MyEyesID Console.
+Replace `<your-myeyesid-endpoint>` and `<your-myeyesid-app-id>` with the actual values. You can find these values in the application page you just created in the MyEyesID Console.
 
 If you don't have a background script, you can follow the [official guide](https://developer.chrome.com/docs/extensions/develop/concepts/service-workers/basics) to create one.
 
@@ -95,13 +95,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
   if (message.action === 'signIn') {
     const redirectUri = chrome.identity.getRedirectURL('/callback');
-    logtoClient.signIn(redirectUri).finally(sendResponse);
+    myeyesidClient.signIn(redirectUri).finally(sendResponse);
     return true;
   }
 
   if (message.action === 'signOut') {
     const redirectUri = chrome.identity.getRedirectURL();
-    logtoClient.signOut(redirectUri).finally(sendResponse);
+    myeyesidClient.signOut(redirectUri).finally(sendResponse);
     return true;
   }
 
@@ -178,29 +178,29 @@ Now you can test the authentication flow in your Chrome extension:
 
 Since Chrome provide unified storage APIs, rather than the sign-in and sign-out flow, all other MyEyesID SDK methods can be used in the popup page directly.
 
-In your `popup.js`, you can reuse the `LogtoClient` instance created in the background script, or create a new one with the same configuration:
+In your `popup.js`, you can reuse the `MyEyesIDClient` instance created in the background script, or create a new one with the same configuration:
 
 ```js title="popup.js"
-import LogtoClient from '@logto/chrome-extension';
+import MyEyesIDClient from '@myeyesid/chrome-extension';
 
-const logtoClient = new LogtoClient({
-  endpoint: '<your-logto-endpoint>'
-  appId: '<your-logto-app-id>',
+const myeyesidClient = new MyEyesIDClient({
+  endpoint: '<your-myeyesid-endpoint>'
+  appId: '<your-myeyesid-app-id>',
 });
 
-// Or reuse the logtoClient instance created in the background script
-import { logtoClient } from './service-worker.js';
+// Or reuse the myeyesidClient instance created in the background script
+import { myeyesidClient } from './service-worker.js';
 ```
 
 Then you can create a function to load the authentication state and user's profile:
 
 ```js title="popup.js"
 const loadAuthenticationState = async () => {
-  const isAuthenticated = await logtoClient.isAuthenticated();
+  const isAuthenticated = await myeyesidClient.isAuthenticated();
   // Update the UI based on the authentication state
 
   if (isAuthenticated) {
-    const user = await logtoClient.getIdTokenClaims(); // { sub: '...', email: '...', ... }
+    const user = await myeyesidClient.getIdTokenClaims(); // { sub: '...', email: '...', ... }
     // Update the UI with the user's profile
   }
 };
@@ -231,7 +231,7 @@ Here's an example of the popup page with the authentication state:
 - **Service worker bundling**: If you use a bundler like Webpack or Rollup, you need to explicitly set the target to `browser` or similar to avoid unnecessary bundling of Node.js modules.
 - **Module resolution**: MyEyesID Chrome extension SDK is an ESM-only module.
 
-See our [sample project](https://github.com/logto-io/js/tree/HEAD/packages/chrome-extension-sample) for a complete example with TypeScript, Rollup, and other configurations.
+See our [sample project](https://github.com/myeyesid-io/js/tree/HEAD/packages/chrome-extension-sample) for a complete example with TypeScript, Rollup, and other configurations.
 
 </Step>
 

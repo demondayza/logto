@@ -4,7 +4,7 @@ import {
   SignInIdentifier,
   type SignUpIdentifier,
   type SignInExperience,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { t } from 'i18next';
 import { useCallback, useMemo } from 'react';
 import { Controller, useFieldArray, useFormContext, useWatch } from 'react-hook-form';

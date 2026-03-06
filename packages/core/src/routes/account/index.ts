@@ -1,4 +1,4 @@
-import { usernameRegEx, UserScope } from '@logto/core-kit';
+import { usernameRegEx, UserScope } from '@myeyesid/core-kit';
 import {
   userProfileResponseGuard,
   userProfileGuard,
@@ -7,7 +7,7 @@ import {
   userMfaDataGuard,
   userMfaDataKey,
   jsonObjectGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { z } from 'zod';
 
@@ -23,7 +23,7 @@ import type { UserRouter, RouterInitArgs } from '../types.js';
 import { accountApiPrefix } from './constants.js';
 import emailAndPhoneRoutes from './email-and-phone.js';
 import identitiesRoutes from './identities.js';
-import logtoConfigRoutes from './logto-config.js';
+import myeyesidConfigRoutes from './myeyesid-config.js';
 import mfaVerificationsRoutes from './mfa-verifications.js';
 import koaAccountCenter from './middlewares/koa-account-center.js';
 import accountSessionRoutes from './sessions.js';
@@ -224,7 +224,7 @@ export default function accountRoutes<T extends UserRouter>(...args: RouterInitA
       );
 
       const user = await findUserById(userId);
-      const mfaData = userMfaDataGuard.safeParse(user.logtoConfig[userMfaDataKey]);
+      const mfaData = userMfaDataGuard.safeParse(user.myeyesidConfig[userMfaDataKey]);
       const skipMfaOnSignIn = mfaData.success ? (mfaData.data.skipMfaOnSignIn ?? false) : false;
 
       ctx.body = { skipMfaOnSignIn };
@@ -263,11 +263,11 @@ export default function accountRoutes<T extends UserRouter>(...args: RouterInitA
       );
 
       const user = await findUserById(userId);
-      const existingMfaData = userMfaDataGuard.safeParse(user.logtoConfig[userMfaDataKey]);
+      const existingMfaData = userMfaDataGuard.safeParse(user.myeyesidConfig[userMfaDataKey]);
 
       const updatedUser = await updateUserById(userId, {
-        logtoConfig: {
-          ...user.logtoConfig,
+        myeyesidConfig: {
+          ...user.myeyesidConfig,
           [userMfaDataKey]: {
             ...(existingMfaData.success ? existingMfaData.data : {}),
             skipMfaOnSignIn,
@@ -283,7 +283,7 @@ export default function accountRoutes<T extends UserRouter>(...args: RouterInitA
     }
   );
 
-  logtoConfigRoutes(...args);
+  myeyesidConfigRoutes(...args);
   thirdPartyTokensRoutes(...args);
   emailAndPhoneRoutes(...args);
   identitiesRoutes(...args);

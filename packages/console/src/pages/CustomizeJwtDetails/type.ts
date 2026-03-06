@@ -1,9 +1,9 @@
-import type { AccessTokenJwtCustomizer, ClientCredentialsJwtCustomizer } from '@logto/schemas';
-import { LogtoJwtTokenKeyType } from '@logto/schemas';
+import type { AccessTokenJwtCustomizer, ClientCredentialsJwtCustomizer } from '@myeyesid/schemas';
+import { MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 export type JwtCustomizerForm = {
-  tokenType: LogtoJwtTokenKeyType;
+  tokenType: MyEyesIDJwtTokenKeyType;
   script: string;
   environmentVariables?: Array<{ key: string; value: string }>;
   testSample: {
@@ -14,12 +14,12 @@ export type JwtCustomizerForm = {
 
 export type Action = 'create' | 'edit';
 
-export type JwtCustomizer<T extends LogtoJwtTokenKeyType> =
-  T extends LogtoJwtTokenKeyType.AccessToken
+export type JwtCustomizer<T extends MyEyesIDJwtTokenKeyType> =
+  T extends MyEyesIDJwtTokenKeyType.AccessToken
     ? AccessTokenJwtCustomizer
     : ClientCredentialsJwtCustomizer;
 
 export const pageParamsGuard = z.object({
-  tokenType: z.nativeEnum(LogtoJwtTokenKeyType),
+  tokenType: z.nativeEnum(MyEyesIDJwtTokenKeyType),
   action: z.union([z.literal('create'), z.literal('edit')]),
 });

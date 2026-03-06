@@ -8,16 +8,16 @@ import type {
   GetConnectorConfig,
   GetTokenResponseAndUserInfo,
   GetAccessTokenByRefreshToken,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
   validateConfig,
   ConnectorType,
   jsonGuard,
-} from '@logto/connector-kit';
-import { constructAuthorizationUri } from '@logto/connector-oauth';
-import { generateStandardId } from '@logto/shared/universal';
+} from '@myeyesid/connector-kit';
+import { constructAuthorizationUri } from '@myeyesid/connector-oauth';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 import { HTTPError } from 'ky';
 

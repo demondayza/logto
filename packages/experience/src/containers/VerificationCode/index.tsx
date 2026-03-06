@@ -1,4 +1,4 @@
-import { type VerificationCodeIdentifier } from '@logto/schemas';
+import { type VerificationCodeIdentifier } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation, Trans } from 'react-i18next';

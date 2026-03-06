@@ -1,6 +1,6 @@
 import type { IncomingHttpHeaders } from 'node:http';
 
-import { createMockUtils } from '@logto/shared/esm';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 const { jest } = import.meta;
 
@@ -31,8 +31,8 @@ describe('getInjectedHeaderValues', () => {
   it('should use default mapping when no custom mapping is provided', async () => {
     const getInjectedHeaderValues = await loadGetInjectedHeaderValues();
     const headers: IncomingHttpHeaders = {
-      'x-logto-cf-country': 'US',
-      'x-logto-cf-city': 'New York',
+      'x-myeyesid-cf-country': 'US',
+      'x-myeyesid-cf-city': 'New York',
     };
 
     expect(getInjectedHeaderValues(headers)).toEqual({
@@ -62,7 +62,7 @@ describe('getInjectedHeaderValues', () => {
   it('should fall back to default mapping when mapping JSON is invalid', async () => {
     const getInjectedHeaderValues = await loadGetInjectedHeaderValues('not-json');
     const headers: IncomingHttpHeaders = {
-      'x-logto-cf-country': 'US',
+      'x-myeyesid-cf-country': 'US',
     };
 
     expect(getInjectedHeaderValues(headers)).toEqual({ country: 'US' });
@@ -74,7 +74,7 @@ describe('getInjectedHeaderValues', () => {
       JSON.stringify({ country: 'FR', botScore: 10 })
     );
     const headers: IncomingHttpHeaders = {
-      'x-logto-cf-country': 'US',
+      'x-myeyesid-cf-country': 'US',
     };
 
     expect(getInjectedHeaderValues(headers)).toEqual({ country: 'FR', botScore: '10' });
@@ -87,7 +87,7 @@ describe('getInjectedHeaderValues', () => {
       false
     );
     const headers: IncomingHttpHeaders = {
-      'x-logto-cf-country': 'US',
+      'x-myeyesid-cf-country': 'US',
     };
 
     expect(getInjectedHeaderValues(headers)).toEqual({ country: 'US' });

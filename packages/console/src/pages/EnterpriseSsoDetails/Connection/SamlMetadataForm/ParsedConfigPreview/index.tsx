@@ -1,4 +1,4 @@
-import { isLanguageTag } from '@logto/language-kit';
+import { isLanguageTag } from '@myeyesid/language-kit';
 import { conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import i18next from 'i18next';
@@ -35,7 +35,7 @@ export function CertificatePreview({
         forKey="enterprise_sso_details.saml_preview.certificate_content"
         interpolation={{
           date: new Date(certificateExpiresAt).toLocaleDateString(
-            // TODO: @darcyYe check whether can use date-fns later, may need a Logto locale to date-fns locale mapping.
+            // TODO: @darcyYe check whether can use date-fns later, may need a MyEyesID locale to date-fns locale mapping.
             conditional(isLanguageTag(language) && language) ?? 'en',
             {
               weekday: 'long',

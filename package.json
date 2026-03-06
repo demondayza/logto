@@ -1,5 +1,5 @@
 {
-  "name": "@logto/root",
+  "name": "@myeyesid/root",
   "private": true,
   "license": "MPL-2.0",
   "type": "module",
@@ -10,12 +10,12 @@
     "prepack": "pnpm -r prepack",
     "dev": "pnpm -r prepack && pnpm start:dev",
     "dev:cloud": "IS_CLOUD=1 CONSOLE_PUBLIC_URL=/ pnpm dev",
-    "start:dev": "pnpm -r --parallel --filter=!@logto/root --filter=!@logto/integration-tests --filter \"!./packages/connectors/connector-*\" dev",
+    "start:dev": "pnpm -r --parallel --filter=!@myeyesid/root --filter=!@myeyesid/integration-tests --filter \"!./packages/connectors/connector-*\" dev",
     "start": "cd packages/core && NODE_ENV=production node .",
-    "cli": "logto",
-    "translate": "logto-translate",
+    "cli": "myeyesid",
+    "translate": "myeyesid-translate",
     "changeset": "changeset",
-    "alteration": "logto db alt",
+    "alteration": "myeyesid db alt",
     "connectors": "pnpm -r --filter \"./packages/connectors/connector-*\"",
     "//": "# `changeset version` won't run version lifecycle scripts, see https://github.com/changesets/changesets/issues/860",
     "ci:version": "changeset version && pnpm -r version",
@@ -86,7 +86,7 @@
     }
   },
   "dependencies": {
-    "@logto/cli": "workspace:^",
-    "@logto/translate": "workspace:^"
+    "@myeyesid/cli": "workspace:^",
+    "@myeyesid/translate": "workspace:^"
   }
 }

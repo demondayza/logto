@@ -1,3 +1,3 @@
-import { type UserProfileResponse } from '@logto/schemas';
+import { type UserProfileResponse } from '@myeyesid/schemas';
 
 export type UserProfile = Partial<UserProfileResponse>;

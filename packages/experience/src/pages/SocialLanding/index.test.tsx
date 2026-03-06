@@ -11,7 +11,7 @@ import SocialLanding from '.';
 
 describe(`SocialLanding Page`, () => {
   const replace = jest.fn();
-  const callbackLink = 'logto:logto.android.com';
+  const callbackLink = 'myeyesid:myeyesid.android.com';
   const redirectUri = 'http://www.github.com';
   const originalLocation = window.location;
 

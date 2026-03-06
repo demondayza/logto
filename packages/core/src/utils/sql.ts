@@ -1,4 +1,4 @@
-import type { SchemaValue, SchemaValuePrimitive, Table } from '@logto/shared';
+import type { SchemaValue, SchemaValuePrimitive, Table } from '@myeyesid/shared';
 import type { Falsy } from '@silverhand/essentials';
 import { notFalsy } from '@silverhand/essentials';
 import type { SqlSqlToken, SqlToken, IdentifierSqlToken, QueryResult } from '@silverhand/slonik';

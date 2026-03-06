@@ -2,7 +2,7 @@
   "tags": [
     {
       "name": "Audit logs",
-      "description": "Audit logs are used to track end-user activities in Logto sign-in experience and other flows. It does not include activities in Logto Console."
+      "description": "Audit logs are used to track end-user activities in MyEyesID sign-in experience and other flows. It does not include activities in MyEyesID Console."
     }
   ],
   "paths": {

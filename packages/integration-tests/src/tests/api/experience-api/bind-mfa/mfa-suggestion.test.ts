@@ -1,11 +1,11 @@
-import { ConnectorType } from '@logto/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 import {
   AlternativeSignUpIdentifier,
   InteractionEvent,
   MfaFactor,
   MfaPolicy,
   SignInIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { authenticator } from 'otplib';
 
 import { deleteUser } from '#src/api/admin-user.js';

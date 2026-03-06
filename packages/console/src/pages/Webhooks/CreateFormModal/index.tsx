@@ -1,4 +1,4 @@
-import { type Hook } from '@logto/schemas';
+import { type Hook } from '@myeyesid/schemas';
 import Modal from 'react-modal';
 
 import modalStyles from '@/scss/modal.module.scss';

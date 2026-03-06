@@ -1,5 +1,5 @@
-import { type IdTokenClaims, useLogto } from '@logto/react';
-import { TenantRole, getTenantIdFromOrganizationId } from '@logto/schemas';
+import { type IdTokenClaims, useMyEyesID } from '@myeyesid/react';
+import { TenantRole, getTenantIdFromOrganizationId } from '@myeyesid/schemas';
 import { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
@@ -48,7 +48,7 @@ export default function DeletionConfirmationModal({ onClose }: Props) {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console.profile.delete_account' });
   const [isFinalConfirmationOpen, setIsFinalConfirmationOpen] = useState(false);
   const [claims, setClaims] = useState<IdTokenClaims>();
-  const { getIdTokenClaims } = useLogto();
+  const { getIdTokenClaims } = useMyEyesID();
   const { tenants } = useContext(TenantsContext);
 
   useEffect(() => {

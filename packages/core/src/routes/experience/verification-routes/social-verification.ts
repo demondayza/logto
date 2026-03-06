@@ -1,14 +1,14 @@
 import {
   GoogleConnector,
   isGoogleOneTap as isGoogleOneTapChecker,
-  logtoGoogleOneTapCookieKey,
-} from '@logto/connector-kit';
+  myeyesidGoogleOneTapCookieKey,
+} from '@myeyesid/connector-kit';
 import {
   VerificationType,
   socialAuthorizationUrlPayloadGuard,
   socialVerificationCallbackPayloadGuard,
-} from '@logto/schemas';
-import { Action } from '@logto/schemas/lib/types/log/interaction.js';
+} from '@myeyesid/schemas';
+import { Action } from '@myeyesid/schemas/lib/types/log/interaction.js';
 import type Router from 'koa-router';
 import { z } from 'zod';
 
@@ -154,7 +154,7 @@ export default function socialVerificationRoutes<T extends ExperienceInteraction
       await ctx.experienceInteraction.save();
 
       // Clear the Google One Tap cookie to avoid the cookie being used in the next sign in.
-      ctx.cookies.set(logtoGoogleOneTapCookieKey, '', {
+      ctx.cookies.set(myeyesidGoogleOneTapCookieKey, '', {
         httpOnly: false,
         expires: new Date(0),
       });

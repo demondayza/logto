@@ -1,4 +1,4 @@
-import { type Resource } from '@logto/schemas';
+import { type Resource } from '@myeyesid/schemas';
 import useSWR from 'swr';
 
 import ResourceIcon from '@/assets/icons/resource.svg?react';

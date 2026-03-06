@@ -1,4 +1,4 @@
-import { type CaptchaPolicy } from '@logto/schemas';
+import { type CaptchaPolicy } from '@myeyesid/schemas';
 import { useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

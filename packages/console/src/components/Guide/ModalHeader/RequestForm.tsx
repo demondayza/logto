@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { guideRequestsKey } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { guideRequestsKey } from '@myeyesid/schemas';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';

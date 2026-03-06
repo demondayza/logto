@@ -1,6 +1,6 @@
 import nock from 'nock';
 
-import { ConnectorError } from '@logto/connector-kit';
+import { ConnectorError } from '@myeyesid/connector-kit';
 
 import {
   accessTokenEndpoint,

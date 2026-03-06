@@ -30,7 +30,7 @@ const application_details = {
     'O endpoint para execução de autenticação e autorização. É usado para <a>autenticação</a> OpenID Connect.',
   show_endpoint_details: 'Mostrar detalhes do endpoint',
   hide_endpoint_details: 'Ocultar detalhes do endpoint',
-  logto_endpoint: 'Endpoint do MyEyesID',
+  myeyesid_endpoint: 'Endpoint do MyEyesID',
   application_id: 'ID da aplicação',
   application_id_tip:
     'O identificador exclusivo da aplicação normalmente gerado pelo MyEyesID. Também conhecido como “<a>client_id</a>” no OpenID Connect.',
@@ -39,7 +39,7 @@ const application_details = {
   redirect_uri: 'URI de redirecionamento',
   redirect_uris: 'URIs de redirecionamento',
   redirect_uri_placeholder: 'https://seusite.com.br/app',
-  redirect_uri_placeholder_native: 'io.logto://retorno',
+  redirect_uri_placeholder_native: 'io.myeyesid://retorno',
   redirect_uri_tip:
     'O URI para o redirecionamento após o login do usuário (seja bem-sucedido ou não). Consulte <a>AuthRequest</a> OpenID Connect para mais informações.',
   mixed_redirect_uri_warning:
@@ -278,7 +278,7 @@ const application_details = {
     title: 'Mapeamento de atributos básicos',
     description:
       'Adicione mapeamentos de atributos para sincronizar o perfil do usuário do MyEyesID para sua aplicação.',
-    col_logto_claims: 'Valor do MyEyesID',
+    col_myeyesid_claims: 'Valor do MyEyesID',
     col_sp_claims: 'Nome do valor da sua aplicação',
     add_button: 'Adicionar outro',
   },

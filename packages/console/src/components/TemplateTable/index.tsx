@@ -1,4 +1,4 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import { useMemo } from 'react';
 import { type FieldPath, type FieldValues } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,4 @@
-import { defaultSentinelPolicy, type SentinelPolicy, type SignInExperience } from '@logto/schemas';
+import { defaultSentinelPolicy, type SentinelPolicy, type SignInExperience } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 

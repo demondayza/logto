@@ -1,4 +1,4 @@
-import { SsoProviderName } from '@logto/schemas';
+import { SsoProviderName } from '@myeyesid/schemas';
 
 import { mockSsoConnector as _mockSsoConnector } from '#src/__mocks__/sso.js';
 import { getTenantEndpoint, EnvSet } from '#src/env-set/index.js';

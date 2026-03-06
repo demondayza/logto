@@ -1,5 +1,5 @@
-import type { CreateUser } from '@logto/schemas';
-import { Users, CustomProfileFields, CustomProfileFieldType } from '@logto/schemas';
+import type { CreateUser } from '@myeyesid/schemas';
+import { Users, CustomProfileFields, CustomProfileFieldType } from '@myeyesid/schemas';
 import decamelize from 'decamelize';
 
 import { InsertionError } from '#src/errors/SlonikError/index.js';

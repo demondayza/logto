@@ -1,4 +1,4 @@
-import { getManagementApiResourceIndicator } from '@logto/schemas';
+import { getManagementApiResourceIndicator } from '@myeyesid/schemas';
 import Koa from 'koa';
 import Router from 'koa-router';
 
@@ -38,7 +38,7 @@ import experienceApiRoutes from './experience/index.js';
 import hookRoutes from './hook.js';
 import interactionRoutes from './interaction/index.js';
 import logRoutes from './log.js';
-import logtoConfigRoutes from './logto-config/index.js';
+import myeyesidConfigRoutes from './myeyesid-config/index.js';
 import oneTimeTokenRoutes from './one-time-tokens.js';
 import organizationRoutes from './organization/index.js';
 import publicWellKnownRoutes from './public-wellknown.js';
@@ -90,7 +90,7 @@ const createRouters = (tenant: TenantContext) => {
   applicationSignInExperienceRoutes(managementRouter, tenant);
   applicationUserConsentOrganizationRoutes(managementRouter, tenant);
 
-  logtoConfigRoutes(managementRouter, tenant);
+  myeyesidConfigRoutes(managementRouter, tenant);
   connectorRoutes(managementRouter, tenant);
   resourceRoutes(managementRouter, tenant);
   resourceScopeRoutes(managementRouter, tenant);

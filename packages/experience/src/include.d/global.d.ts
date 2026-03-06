@@ -1,6 +1,6 @@
-import { type SsrData } from '@logto/schemas';
+import { type SsrData } from '@myeyesid/schemas';
 
-type LogtoNativeSdkInfo = {
+type MyEyesIDNativeSdkInfo = {
   platform: 'ios' | 'android';
   callbackLink: string;
   getPostMessage: () => (data: { callbackUri?: string; redirectTo?: string }) => void;
@@ -10,15 +10,15 @@ type LogtoNativeSdkInfo = {
   };
 };
 
-type LogtoSsr = string | Readonly<SsrData> | undefined;
+type MyEyesIDSsr = string | Readonly<SsrData> | undefined;
 
 declare global {
-  const logtoNativeSdk: LogtoNativeSdkInfo | undefined;
-  const logtoSsr: LogtoSsr;
+  const myeyesidNativeSdk: MyEyesIDNativeSdkInfo | undefined;
+  const myeyesidSsr: MyEyesIDSsr;
 
   interface Window {
-    logtoNativeSdk: LogtoNativeSdkInfo | undefined;
-    logtoSsr: LogtoSsr;
+    myeyesidNativeSdk: MyEyesIDNativeSdkInfo | undefined;
+    myeyesidSsr: MyEyesIDSsr;
 
     // Captcha providers
     grecaptcha?: {

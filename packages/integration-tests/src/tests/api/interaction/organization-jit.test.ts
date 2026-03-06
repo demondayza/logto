@@ -4,7 +4,7 @@
  * email domain.
  */
 
-import { ConnectorType, SignInIdentifier } from '@logto/schemas';
+import { ConnectorType, SignInIdentifier } from '@myeyesid/schemas';
 
 import { deleteUser, getUserOrganizations, updateSignInExperience } from '#src/api/index.js';
 import { SsoConnectorApi } from '#src/api/sso-connector.js';

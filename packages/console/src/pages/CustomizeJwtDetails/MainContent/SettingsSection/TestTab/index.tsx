@@ -1,4 +1,4 @@
-import { LogtoJwtTokenKeyType } from '@logto/schemas';
+import { MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Controller, useFormContext, type ControllerRenderProps } from 'react-hook-form';
@@ -35,7 +35,7 @@ function TestTab({ isActive }: Props) {
 
   const editorModels = useMemo(
     () =>
-      tokenType === LogtoJwtTokenKeyType.AccessToken
+      tokenType === MyEyesIDJwtTokenKeyType.AccessToken
         ? accessTokenModelSettings
         : clientCredentialsModelSettings,
     [tokenType]

@@ -1,4 +1,4 @@
-import { AgreeToTermsPolicy, SignInIdentifier } from '@logto/schemas';
+import { AgreeToTermsPolicy, SignInIdentifier } from '@myeyesid/schemas';
 import { useCallback, useContext, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 

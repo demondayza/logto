@@ -1,4 +1,4 @@
-import { type VerificationStatus, VerificationStatuses } from '@logto/schemas';
+import { type VerificationStatus, VerificationStatuses } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

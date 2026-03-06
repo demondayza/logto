@@ -1,5 +1,5 @@
-import { ConnectorType, InteractionEvent, SignInIdentifier } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { ConnectorType, InteractionEvent, SignInIdentifier } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import {
   mockSocialConnectorId,

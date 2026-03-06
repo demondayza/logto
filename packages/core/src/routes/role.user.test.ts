@@ -1,4 +1,4 @@
-import { pickDefault } from '@logto/shared/esm';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { mockAdminUserRole, mockUser } from '#src/__mocks__/index.js';
 import { mockId, mockIdGenerators } from '#src/test-utils/nanoid.js';

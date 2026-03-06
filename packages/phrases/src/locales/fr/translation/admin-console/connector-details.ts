@@ -34,7 +34,7 @@ const connector_details = {
     'Cet {{name}} est utilisé dans votre expérience de connexion. En le supprimant, votre expérience de connexion ne fonctionnera pas correctement tant que vous n’aurez pas résolu le conflit. Vous devrez le reconfigurer si vous décidez de l’ajouter à nouveau.',
   deletion_description:
     "Vous supprimez ce connecteur. Il ne peut pas être annulé et vous devrez le reconfigurer si vous décidez de l'ajouter à nouveau.",
-  logto_email: {
+  myeyesid_email: {
     total_email_sent: 'Total email envoyé: {{value, number}}',
     total_email_sent_tip:
       "MyEyesID utilise SendGrid pour une livraison sécurisée et stable des emails intégrés. C'est totalement gratuit. <a>En savoir plus</a>",

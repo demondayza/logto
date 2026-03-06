@@ -1,4 +1,4 @@
-import { LogtoClientError, LogtoError, LogtoRequestError } from '@logto/react';
+import { MyEyesIDClientError, MyEyesIDError, MyEyesIDRequestError } from '@myeyesid/react';
 import { HTTPError } from 'ky';
 import type { ReactNode } from 'react';
 import { Component } from 'react';
@@ -7,7 +7,7 @@ import ErrorPage from '@ac/components/ErrorPage';
 import SessionExpired from '@ac/pages/SessionExpired';
 
 const isOidcInvalidGrantError = (error: Error) => {
-  if (!(error instanceof LogtoRequestError)) {
+  if (!(error instanceof MyEyesIDRequestError)) {
     return false;
   }
 
@@ -40,8 +40,8 @@ class ErrorBoundary extends Component<Props, State> {
     }
 
     if (
-      error instanceof LogtoError ||
-      error instanceof LogtoClientError ||
+      error instanceof MyEyesIDError ||
+      error instanceof MyEyesIDClientError ||
       isOidcInvalidGrantError(error) ||
       (error instanceof HTTPError && error.response.status === 401)
     ) {

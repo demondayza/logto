@@ -1,4 +1,4 @@
-import { adminTenantId, ConnectorType } from '@logto/schemas';
+import { adminTenantId, ConnectorType } from '@myeyesid/schemas';
 
 import { EnvSet } from '#src/env-set/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
@@ -370,7 +370,7 @@ class TenantUsageQuery {
 
   private readonly getTenantUsage: TenantUsageQueryFunction = async (key, entityId) => {
     if (key === 'socialConnectorsLimit') {
-      const connectors = await this.connectorLibrary.getLogtoConnectors();
+      const connectors = await this.connectorLibrary.getMyEyesIDConnectors();
 
       return connectors.filter((connector) => connector.type === ConnectorType.Social).length;
     }

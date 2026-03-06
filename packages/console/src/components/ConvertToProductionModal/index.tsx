@@ -1,4 +1,4 @@
-import { TenantTag } from '@logto/schemas';
+import { TenantTag } from '@myeyesid/schemas';
 import { useContext, useMemo, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Trans, useTranslation } from 'react-i18next';
@@ -36,9 +36,9 @@ function ConvertToProductionModal({ isOpen, onClose }: Props) {
   const [isLoading, setIsLoading] = useState(false);
   const { currentTenant, currentTenantId } = useContext(TenantsContext);
   const { subscribe } = useSubscribe();
-  const { logtoSkus } = useContext(SubscriptionDataContext);
+  const { myeyesidSkus } = useContext(SubscriptionDataContext);
 
-  const proSku = useMemo(() => logtoSkus.find(({ id }) => id === latestProPlanId), [logtoSkus]);
+  const proSku = useMemo(() => myeyesidSkus.find(({ id }) => id === latestProPlanId), [myeyesidSkus]);
 
   const handleConvert = async () => {
     if (!proSku || !currentTenant) {

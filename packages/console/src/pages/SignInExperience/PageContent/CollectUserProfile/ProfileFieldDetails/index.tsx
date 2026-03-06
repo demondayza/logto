@@ -1,4 +1,4 @@
-import { type CustomProfileField } from '@logto/schemas';
+import { type CustomProfileField } from '@myeyesid/schemas';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 

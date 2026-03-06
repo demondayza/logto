@@ -22,7 +22,7 @@ In this guide, we assume you have set up Next Auth in your Next.js project. If y
 
 First, let’s enter your redirect URI.
 
-<UriInputField name="redirectUris" defaultValue="http://localhost:3000/api/auth/callback/logto" />
+<UriInputField name="redirectUris" defaultValue="http://localhost:3000/api/auth/callback/myeyesid" />
 
 Don't forget to click the **Save** button.
 
@@ -51,10 +51,10 @@ Configure the provider:
 
 <Code className="language-ts">
 {`import NextAuth from 'next-auth';
-import Logto from 'next-auth/providers/logto';
+import MyEyesID from 'next-auth/providers/myeyesid';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [Logto],
+  providers: [MyEyesID],
 });`}
 </Code>
 </TabItem>
@@ -66,7 +66,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 const handler = NextAuth({
   providers: [
     {
-      id: 'logto',
+      id: 'myeyesid',
       name: 'MyEyesID',
       type: 'oauth',
       // You can get the well-known URL from the MyEyesID Application Details page,

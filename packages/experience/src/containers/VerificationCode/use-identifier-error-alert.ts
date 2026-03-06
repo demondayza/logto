@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 

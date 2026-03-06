@@ -19,7 +19,7 @@
 
 import { createServer, type RequestListener, type Server } from 'node:http';
 
-import { adminConsoleApplicationId, type Application } from '@logto/schemas';
+import { adminConsoleApplicationId, type Application } from '@myeyesid/schemas';
 
 import { authedAdminTenantApi } from '#src/api/api.js';
 import ExpectConsole from '#src/ui-helpers/expect-console.js';

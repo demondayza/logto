@@ -27,7 +27,7 @@ const application_details = {
   authorization_endpoint_tip: '进行鉴权与授权的端点。用于 OpenID Connect 中的 <a>鉴权</a> 流程。',
   show_endpoint_details: '显示端点详细信息',
   hide_endpoint_details: '隐藏端点详细信息',
-  logto_endpoint: 'MyEyesID 端点',
+  myeyesid_endpoint: 'MyEyesID 端点',
   application_id: '应用 ID',
   application_id_tip:
     '应用的唯一标识，通常由 MyEyesID 生成。等价于 OpenID Connect 中的 <a>client_id</a>。',
@@ -36,7 +36,7 @@ const application_details = {
   redirect_uri: '重定向 URI',
   redirect_uris: '重定向 URIs',
   redirect_uri_placeholder: 'https://your.website.com/app',
-  redirect_uri_placeholder_native: 'io.logto://callback',
+  redirect_uri_placeholder_native: 'io.myeyesid://callback',
   redirect_uri_tip:
     '在用户登录完成（不论成功与否）后重定向的目标 URI。参见 OpenID Connect <a>AuthRequest</a> 以了解更多。',
   mixed_redirect_uri_warning:
@@ -255,7 +255,7 @@ const application_details = {
     name: '属性映射',
     title: '基础属性映射',
     description: '添加属性映射以从 MyEyesID 同步用户资料到你的应用程序。',
-    col_logto_claims: 'MyEyesID 的值',
+    col_myeyesid_claims: 'MyEyesID 的值',
     col_sp_claims: '你应用中的值名称',
     add_button: '添加另一个',
   },

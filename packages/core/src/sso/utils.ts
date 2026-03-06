@@ -1,4 +1,4 @@
-import type { SsoConnector, SupportedSsoConnector, SsoProviderName } from '@logto/schemas';
+import type { SsoConnector, SupportedSsoConnector, SsoProviderName } from '@myeyesid/schemas';
 
 import { ssoConnectorFactories } from './index.js';
 

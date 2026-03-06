@@ -1,5 +1,5 @@
-import type { ConnectorFactoryResponse, ConnectorResponse } from '@logto/schemas';
-import { ConnectorType } from '@logto/schemas';
+import type { ConnectorFactoryResponse, ConnectorResponse } from '@myeyesid/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
 
 import type { ConnectorGroup } from '@/types/connector';
 

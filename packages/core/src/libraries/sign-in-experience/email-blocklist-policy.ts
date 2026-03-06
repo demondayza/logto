@@ -1,5 +1,5 @@
-import { emailOrEmailDomainRegEx } from '@logto/core-kit';
-import { type EmailBlocklistPolicy } from '@logto/schemas';
+import { emailOrEmailDomainRegEx } from '@myeyesid/core-kit';
+import { type EmailBlocklistPolicy } from '@myeyesid/schemas';
 import { conditional, deduplicate } from '@silverhand/essentials';
 import { got } from 'got';
 import { z } from 'zod';

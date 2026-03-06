@@ -4,7 +4,7 @@ import {
   type HookExecutionStats,
   type Log,
   type WebhookLogPrefix,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, conditionalArray } from '@silverhand/essentials';
 import { sql } from '@silverhand/slonik';
 import type { CommonQueryMethods } from '@silverhand/slonik';

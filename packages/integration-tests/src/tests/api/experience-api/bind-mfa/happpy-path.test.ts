@@ -1,11 +1,11 @@
-import { InteractionEvent, MfaFactor, SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, MfaFactor, SignInIdentifier } from '@myeyesid/schemas';
 import { authenticator } from 'otplib';
 
 import {
   createUserMfaVerification,
   deleteUser,
-  getUserLogtoConfig,
-  updateUserLogtoConfig,
+  getUserMyEyesIDConfig,
+  updateUserMyEyesIDConfig,
 } from '#src/api/admin-user.js';
 import { initExperienceClient, logoutClient, processSession } from '#src/helpers/client.js';
 import {
@@ -201,7 +201,7 @@ describe('Bind MFA APIs happy path', () => {
       const userId = await processSession(client, redirectTo);
       await logoutClient(client);
 
-      const skippedConfig = await getUserLogtoConfig(userId);
+      const skippedConfig = await getUserMyEyesIDConfig(userId);
       expect(skippedConfig.mfa.skipped).toBe(true);
 
       await signInWithPassword({
@@ -212,11 +212,11 @@ describe('Bind MFA APIs happy path', () => {
         password,
       });
 
-      await updateUserLogtoConfig(userId, {
+      await updateUserMyEyesIDConfig(userId, {
         mfa: { skipped: false, skipMfaOnSignIn: false },
         passkeySignIn: { skipped: false },
       });
-      const resetConfig = await getUserLogtoConfig(userId);
+      const resetConfig = await getUserMyEyesIDConfig(userId);
       expect(resetConfig.mfa.skipped).toBe(false);
 
       const client2 = await initExperienceClient();

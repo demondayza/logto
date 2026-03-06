@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared';
+import { generateStandardId } from '@myeyesid/shared';
 
 import { createUser, deleteUser } from '#src/api/admin-user.js';
 import { OrganizationApiTest, OrganizationInvitationApiTest } from '#src/helpers/organization.js';

@@ -1,4 +1,4 @@
-import { type RequestErrorBody } from '@logto/schemas';
+import { type RequestErrorBody } from '@myeyesid/schemas';
 import cleanDeep from 'clean-deep';
 import { HTTPError } from 'ky';
 import { useEffect, useMemo } from 'react';

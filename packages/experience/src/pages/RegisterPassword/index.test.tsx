@@ -1,10 +1,10 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { act, waitFor, fireEvent } from '@testing-library/react';
 import { useLocation } from 'react-router-dom';
 
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings } from '@/__mocks__/myeyesid';
 import { continueRegisterWithPassword } from '@/apis/experience';
 
 import RegisterPassword from '.';

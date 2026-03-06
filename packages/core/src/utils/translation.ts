@@ -1,5 +1,5 @@
-import { type I18nPhrases } from '@logto/connector-kit';
-import type { Translation } from '@logto/schemas';
+import { type I18nPhrases } from '@myeyesid/connector-kit';
+import type { Translation } from '@myeyesid/schemas';
 
 /**
  * @param fullTranslation The translation with full keys

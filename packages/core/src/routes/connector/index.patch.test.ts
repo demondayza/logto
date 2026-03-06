@@ -1,28 +1,28 @@
-import { ConnectorError, ConnectorErrorCodes } from '@logto/connector-kit';
-import { ConnectorType } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { ConnectorError, ConnectorErrorCodes } from '@myeyesid/connector-kit';
+import { ConnectorType } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import {
   mockMetadata,
   mockConnector,
-  mockLogtoConnectorList,
-  mockLogtoConnector,
+  mockMyEyesIDConnectorList,
+  mockMyEyesIDConnector,
 } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
 import type Queries from '#src/tenants/Queries.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 import { createRequester } from '#src/utils/test-utils.js';
 
 const { jest } = import.meta;
 
 const removeUnavailableSocialConnectorTargets = jest.fn();
 
-const getLogtoConnectors: jest.MockedFunction<() => Promise<LogtoConnector[]>> = jest.fn();
-const getLogtoConnectorById: jest.MockedFunction<(connectorId: string) => Promise<LogtoConnector>> =
+const getMyEyesIDConnectors: jest.MockedFunction<() => Promise<MyEyesIDConnector[]>> = jest.fn();
+const getMyEyesIDConnectorById: jest.MockedFunction<(connectorId: string) => Promise<MyEyesIDConnector>> =
   jest.fn(async (connectorId: string) => {
-    const connectors = await getLogtoConnectors();
+    const connectors = await getMyEyesIDConnectors();
     const connector = connectors.find(({ dbEntry }) => dbEntry.id === connectorId);
 
     assertThat(
@@ -53,8 +53,8 @@ const tenantContext = new MockTenant(
   undefined,
   { connectors: connectorQueries },
   {
-    getLogtoConnectors,
-    getLogtoConnectorById,
+    getMyEyesIDConnectors,
+    getMyEyesIDConnectorById,
   },
   {
     signInExperiences: { removeUnavailableSocialConnectorTargets },
@@ -72,24 +72,24 @@ describe('connector data routes', () => {
     });
 
     it('throws when connector can not be found by given connectorId (locally)', async () => {
-      getLogtoConnectors.mockResolvedValueOnce(mockLogtoConnectorList.slice(0, 1));
+      getMyEyesIDConnectors.mockResolvedValueOnce(mockMyEyesIDConnectorList.slice(0, 1));
       const response = await connectorRequest.patch('/connectors/findConnector').send({});
       expect(response).toHaveProperty('statusCode', 404);
     });
 
     it('throws when connector can not be found by given connectorId (remotely)', async () => {
-      getLogtoConnectors.mockResolvedValueOnce([]);
+      getMyEyesIDConnectors.mockResolvedValueOnce([]);
       const response = await connectorRequest.patch('/connectors/id0').send({});
       expect(response).toHaveProperty('statusCode', 404);
     });
 
     it('config validation fails', async () => {
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: mockConnector,
           metadata: mockMetadata,
           type: ConnectorType.Sms,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
           validateConfig: () => {
             throw new ConnectorError(ConnectorErrorCodes.InvalidConfig);
           },
@@ -102,12 +102,12 @@ describe('connector data routes', () => {
     });
 
     it('throws when trying to update target', async () => {
-      getLogtoConnectors.mockResolvedValue([
+      getMyEyesIDConnectors.mockResolvedValue([
         {
           dbEntry: mockConnector,
           metadata: { ...mockMetadata, isStandard: true },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       const response = await connectorRequest.patch('/connectors/id').send({
@@ -119,12 +119,12 @@ describe('connector data routes', () => {
     });
 
     it('throws when updates non-standard connector metadata', async () => {
-      getLogtoConnectors.mockResolvedValue([
+      getMyEyesIDConnectors.mockResolvedValue([
         {
           dbEntry: mockConnector,
           metadata: { ...mockMetadata },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       const response = await connectorRequest.patch('/connectors/id').send({
@@ -138,12 +138,12 @@ describe('connector data routes', () => {
     });
 
     it('throws when set syncProfile to `true` and with non-social connector', async () => {
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: mockConnector,
           metadata: mockMetadata,
           type: ConnectorType.Sms,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       const response = await connectorRequest.patch('/connectors/id').send({ syncProfile: true });
@@ -152,12 +152,12 @@ describe('connector data routes', () => {
     });
 
     it('successfully updates connector config', async () => {
-      getLogtoConnectors.mockResolvedValue([
+      getMyEyesIDConnectors.mockResolvedValue([
         {
           dbEntry: mockConnector,
           metadata: { ...mockMetadata, isStandard: true },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       updateConnector.mockResolvedValueOnce({
@@ -180,12 +180,12 @@ describe('connector data routes', () => {
     });
 
     it('successfully reset connector config', async () => {
-      getLogtoConnectors.mockResolvedValue([
+      getMyEyesIDConnectors.mockResolvedValue([
         {
           dbEntry: mockConnector,
           metadata: { ...mockMetadata, isStandard: true },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       updateConnector.mockResolvedValueOnce({
@@ -208,12 +208,12 @@ describe('connector data routes', () => {
     });
 
     it('successfully updates connector config and metadata', async () => {
-      getLogtoConnectors.mockResolvedValue([
+      getMyEyesIDConnectors.mockResolvedValue([
         {
           dbEntry: mockConnector,
           metadata: { ...mockMetadata, isStandard: true },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       updateConnector.mockResolvedValueOnce({
@@ -251,12 +251,12 @@ describe('connector data routes', () => {
     });
 
     it('successfully clear connector config metadata', async () => {
-      getLogtoConnectors.mockResolvedValueOnce([
+      getMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: mockConnector,
           metadata: { ...mockMetadata, isStandard: true },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       updateConnector.mockResolvedValueOnce({
@@ -281,12 +281,12 @@ describe('connector data routes', () => {
     });
 
     it('successfully set syncProfile to `true` and with social connector', async () => {
-      getLogtoConnectors.mockResolvedValue([
+      getMyEyesIDConnectors.mockResolvedValue([
         {
           dbEntry: { ...mockConnector, syncProfile: false },
           metadata: mockMetadata,
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       const response = await connectorRequest.patch('/connectors/id').send({ syncProfile: true });
@@ -301,12 +301,12 @@ describe('connector data routes', () => {
     });
 
     it('successfully set syncProfile to `false`', async () => {
-      getLogtoConnectors.mockResolvedValue([
+      getMyEyesIDConnectors.mockResolvedValue([
         {
           dbEntry: { ...mockConnector, syncProfile: false },
           metadata: mockMetadata,
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
         },
       ]);
       const response = await connectorRequest.patch('/connectors/id').send({ syncProfile: false });

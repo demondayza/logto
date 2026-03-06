@@ -1,5 +1,5 @@
-import type { CreateSignInExperience, SignInExperience } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import type { CreateSignInExperience, SignInExperience } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { mockColor, mockSignInExperience } from '#src/__mocks__/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';

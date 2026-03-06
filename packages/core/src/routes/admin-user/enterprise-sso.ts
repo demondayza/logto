@@ -2,7 +2,7 @@ import {
   type GetUserAllIdentitiesResponse,
   getUserAllIdentitiesResponseGuard,
   getUserSsoIdentityResponseGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, yes } from '@silverhand/essentials';
 import { object, string } from 'zod';
 

@@ -1,4 +1,4 @@
-import resources from '@logto/phrases';
+import resources from '@myeyesid/phrases';
 import i18next from 'i18next';
 
 export default async function initI18n() {

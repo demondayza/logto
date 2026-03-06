@@ -5,11 +5,11 @@ import {
   type SsoConnector,
   type SsoConnectorProvidersResponse,
   type SsoConnectorIdpInitiatedAuthConfig,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { metadataXml } from '#src/__mocks__/sso-connectors-mock.js';
 import { authedAdminApi } from '#src/api/api.js';
-import { logtoUrl } from '#src/constants.js';
+import { myeyesidUrl } from '#src/constants.js';
 import { randomString } from '#src/utils.js';
 
 export type SsoConnectorWithProviderConfig = SsoConnector & {
@@ -64,7 +64,7 @@ export class SsoConnectorApi {
       config: {
         clientId: 'foo',
         clientSecret: 'bar',
-        issuer: `${logtoUrl}/oidc`,
+        issuer: `${myeyesidUrl}/oidc`,
       },
       syncProfile: true,
       enableTokenStorage,

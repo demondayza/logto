@@ -33,7 +33,7 @@ const connector_details = {
     '{name}}은/는 로그인 경험에서 사용 중이에요. 삭제하면 충돌을 해결할 때까지 로그인 환경이 제대로 작동하지 않을 거예요. 나중에 되돌리려면 다시 구성해야 해요.',
   deletion_description:
     '이 연동을 삭제하려고 하고 있어요. 이 작업은 돌이킬 수 없으며, 나중에 되돌리려면 다시 구성해야 해요.',
-  logto_email: {
+  myeyesid_email: {
     total_email_sent: '전체 이메일 발송: {{value, number}}',
     total_email_sent_tip:
       'MyEyesID 에서 안전하고 안정적인 내장형 이메일을 위해 SendGrid 를 사용합니다. 완전 무료로 사용할 수 있습니다. <a>자세히 알아보기</a>',

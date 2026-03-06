@@ -7,7 +7,7 @@ import type {
   GetConnectorConfig,
   GetI18nEmailTemplate,
   SendMessageFunction,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
@@ -16,7 +16,7 @@ import {
   parseJson,
   replaceSendMessageHandlebars,
   getConfigTemplateByType,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import { defaultMetadata } from './constant.js';
 import { singleSendMail } from './single-send-mail.js';

@@ -1,4 +1,4 @@
-import { type Theme } from '@logto/schemas';
+import { type Theme } from '@myeyesid/schemas';
 import { type FieldValues, type Control, type UseFormRegister } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

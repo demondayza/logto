@@ -9,7 +9,7 @@ import type {
   SendMessagePayload,
   GetI18nEmailTemplate,
   EmailTemplateDetails,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
@@ -17,7 +17,7 @@ import {
   validateConfig,
   TemplateType,
   replaceSendMessageHandlebars,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import { defaultMetadata } from './constant.js';
 import { type DeliveryConfig, mailgunConfigGuard } from './types.js';

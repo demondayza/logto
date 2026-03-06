@@ -5,7 +5,7 @@ import {
   MfaPolicy,
   OrganizationRequiredMfaPolicy,
   type User,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import type Libraries from '#src/tenants/Libraries.js';
 import type Queries from '#src/tenants/Queries.js';
@@ -25,7 +25,7 @@ const createMfa = ({
   },
   user = {
     id: 'user-id',
-    logtoConfig: {},
+    myeyesidConfig: {},
     mfaVerifications: [],
   },
   currentProfile = {},
@@ -94,7 +94,7 @@ describe('Mfa.assertMfaFulfilled', () => {
       mfaSettings: mandatoryMfaSettings,
       user: {
         id: 'user-id',
-        logtoConfig: {},
+        myeyesidConfig: {},
         mfaVerifications: [
           {
             type: MfaFactor.TOTP,
@@ -131,9 +131,9 @@ describe('Mfa.assertMfaFulfilled', () => {
       mfaSettings: mandatoryMfaSettings,
       user: {
         id: 'user-id',
-        logtoConfig: {},
+        myeyesidConfig: {},
         mfaVerifications: [],
-        primaryEmail: 'bound@logto.dev',
+        primaryEmail: 'bound@myeyesid.dev',
         primaryPhone: null,
       },
     });

@@ -1,7 +1,7 @@
-import type { Hook } from '@logto/schemas';
-import { InteractionEvent, InteractionHookEvent, LogResult } from '@logto/schemas';
-import { ConsoleLog } from '@logto/shared';
-import { createMockUtils } from '@logto/shared/esm';
+import type { Hook } from '@myeyesid/schemas';
+import { InteractionEvent, InteractionHookEvent, LogResult } from '@myeyesid/schemas';
+import { ConsoleLog } from '@myeyesid/shared';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { mockId, mockIdGenerators } from '#src/test-utils/nanoid.js';
@@ -28,7 +28,7 @@ const { sendWebhookRequest } = await mockEsmWithActual('./utils.js', () => ({
 
 const { MockQueries } = await import('#src/test-utils/tenant.js');
 
-const url = 'https://logto.gg';
+const url = 'https://myeyesid.gg';
 
 const hook: Hook = {
   tenantId: 'bar',

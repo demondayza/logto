@@ -1,5 +1,5 @@
-import type { LanguageTag } from '@logto/language-kit';
-import type { Translation } from '@logto/schemas';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import type { Translation } from '@myeyesid/schemas';
 
 export type CustomPhraseResponse = {
   languageTag: LanguageTag;

@@ -1,4 +1,4 @@
-import { ConnectorType, SignInIdentifier, UsersPasswordEncryptionMethod } from '@logto/schemas';
+import { ConnectorType, SignInIdentifier, UsersPasswordEncryptionMethod } from '@myeyesid/schemas';
 
 import { deleteUser } from '#src/api/index.js';
 import {

@@ -34,7 +34,7 @@ const connector_details = {
     'Bu {{name}} giriş deneyiminizde kullanımda. Silerek, giriş deneyiminiz çözülünceye kadar doğru çalışmayacaktır. Geri eklemeye karar verirseniz yeniden yapılandırmanız gerekecektir.',
   deletion_description:
     'Bu bağdaştırıcıyı kaldırıyorsunuz. Geri alınamaz ve geri eklemeye karar verirseniz yeniden yapılandırmanız gerekecektir.',
-  logto_email: {
+  myeyesid_email: {
     total_email_sent: 'Toplam e-posta gönderildi: {{value, number}}',
     total_email_sent_tip:
       'MyEyesID dahili e-posta için güvenli ve stabil SendGrid kullanır. Tamamen ücretsizdir. <a>Daha fazla bilgi edinin</a>',

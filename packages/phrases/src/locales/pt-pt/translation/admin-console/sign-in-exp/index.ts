@@ -41,8 +41,8 @@ const sign_in_exp = {
     app_logo_and_favicon: 'Logótipo e favicon do aplicativo',
     company_logo_and_favicon: 'Logótipo e favicon da empresa',
     organization_logo_and_favicon: 'Logótipo e favicon da organização',
-    hide_logto_branding: 'Ocultar a marca MyEyesID',
-    hide_logto_branding_description:
+    hide_myeyesid_branding: 'Ocultar a marca MyEyesID',
+    hide_myeyesid_branding_description:
       'Remova "Powered by MyEyesID". Destaque apenas a sua marca com uma experiência de início de sessão limpa e profissional.',
   },
   branding_uploads: {
@@ -96,7 +96,7 @@ const sign_in_exp = {
     description: 'Personalize os fluxos do centro de conta com as APIs da MyEyesID.',
     enable_account_api: 'Ativar a Account API',
     enable_account_api_description:
-      'Ative a Account API para criar um centro de conta personalizado, dando aos utilizadores finais acesso direto à API sem utilizar a Logto Management API.',
+      'Ative a Account API para criar um centro de conta personalizado, dando aos utilizadores finais acesso direto à API sem utilizar a MyEyesID Management API.',
     field_options: {
       off: 'Desligado',
       edit: 'Editar',

@@ -1,4 +1,4 @@
-import { type Application, ApplicationType, customClientMetadataGuard } from '@logto/schemas';
+import { type Application, ApplicationType, customClientMetadataGuard } from '@myeyesid/schemas';
 import { useFormContext } from 'react-hook-form';
 import { Trans, useTranslation } from 'react-i18next';
 
@@ -50,7 +50,7 @@ function RefreshTokenSettings({ data: { type } }: Props) {
               components={{
                 a: (
                   <TextLink
-                    href="https://docs.logto.io/docs/references/applications/#rotate-refresh-token"
+                    href="https://docs.myeyesid.io/docs/references/applications/#rotate-refresh-token"
                     targetBlank="noopener"
                   />
                 ),

@@ -10,7 +10,7 @@
  * - Override the `get` method to return the correct value type.
  * - Override the `set` method to throw an error to prevent using it directly.
  */
-import { type VerificationType } from '@logto/schemas';
+import { type VerificationType } from '@myeyesid/schemas';
 
 import { type VerificationRecord, type VerificationRecordMap } from './index.js';
 

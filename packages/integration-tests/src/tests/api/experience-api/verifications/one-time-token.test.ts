@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 import { createOneTimeToken } from '#src/api/one-time-token.js';
 import { initExperienceClient } from '#src/helpers/client.js';
@@ -10,14 +10,14 @@ describe('One-time token verification APIs', () => {
     const client = await initExperienceClient();
 
     const oneTimeToken = await createOneTimeToken({
-      email: 'foo@logto.io',
+      email: 'foo@myeyesid.io',
     });
 
     const { verificationId } = await client.verifyOneTimeToken({
       token: oneTimeToken.token,
       identifier: {
         type: SignInIdentifier.Email,
-        value: 'foo@logto.io',
+        value: 'foo@myeyesid.io',
       },
     });
 
@@ -28,14 +28,14 @@ describe('One-time token verification APIs', () => {
     const client = await initExperienceClient();
 
     const oneTimeToken = await createOneTimeToken({
-      email: 'foo@logto.io',
+      email: 'foo@myeyesid.io',
     });
 
     await client.verifyOneTimeToken({
       token: oneTimeToken.token,
       identifier: {
         type: SignInIdentifier.Email,
-        value: 'foo@logto.io',
+        value: 'foo@myeyesid.io',
       },
     });
 
@@ -44,7 +44,7 @@ describe('One-time token verification APIs', () => {
         token: oneTimeToken.token,
         identifier: {
           type: SignInIdentifier.Email,
-          value: 'foo@logto.io',
+          value: 'foo@myeyesid.io',
         },
       }),
       {
@@ -58,7 +58,7 @@ describe('One-time token verification APIs', () => {
     const client = await initExperienceClient();
 
     const oneTimeToken = await createOneTimeToken({
-      email: 'foo@logto.io',
+      email: 'foo@myeyesid.io',
       expiresIn: 1,
     });
 
@@ -69,7 +69,7 @@ describe('One-time token verification APIs', () => {
         token: oneTimeToken.token,
         identifier: {
           type: SignInIdentifier.Email,
-          value: 'foo@logto.io',
+          value: 'foo@myeyesid.io',
         },
       }),
       {
@@ -87,7 +87,7 @@ describe('One-time token verification APIs', () => {
         token: 'invalid_token',
         identifier: {
           type: SignInIdentifier.Email,
-          value: 'foo@logto.io',
+          value: 'foo@myeyesid.io',
         },
       }),
       {
@@ -101,7 +101,7 @@ describe('One-time token verification APIs', () => {
     const client = await initExperienceClient();
 
     const oneTimeToken = await createOneTimeToken({
-      email: 'foo@logto.io',
+      email: 'foo@myeyesid.io',
     });
 
     await expectRejects(
@@ -109,7 +109,7 @@ describe('One-time token verification APIs', () => {
         token: oneTimeToken.token,
         identifier: {
           type: SignInIdentifier.Email,
-          value: 'bar@logto.io',
+          value: 'bar@myeyesid.io',
         },
       }),
       {

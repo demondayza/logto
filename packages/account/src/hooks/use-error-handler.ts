@@ -1,4 +1,4 @@
-import type { RequestErrorBody } from '@logto/schemas';
+import type { RequestErrorBody } from '@myeyesid/schemas';
 import { HTTPError, TimeoutError } from 'ky';
 import { useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -19,14 +19,14 @@ const useErrorHandler = () => {
     async (error: unknown, errorHandlers?: ErrorHandlers) => {
       if (error instanceof HTTPError) {
         try {
-          const logtoError = await error.response.json<RequestErrorBody>();
+          const myeyesidError = await error.response.json<RequestErrorBody>();
 
-          const { code, message } = logtoError;
+          const { code, message } = myeyesidError;
 
           const handler = errorHandlers?.[code] ?? errorHandlers?.global;
 
           if (handler) {
-            await handler(logtoError);
+            await handler(myeyesidError);
           } else {
             setToast(message);
           }

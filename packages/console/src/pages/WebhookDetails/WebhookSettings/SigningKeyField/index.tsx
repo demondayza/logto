@@ -1,4 +1,4 @@
-import { type Hook } from '@logto/schemas';
+import { type Hook } from '@myeyesid/schemas';
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';

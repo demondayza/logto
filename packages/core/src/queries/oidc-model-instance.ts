@@ -1,5 +1,5 @@
-import type { OidcModelInstance, OidcModelInstancePayload } from '@logto/schemas';
-import { OidcModelInstances } from '@logto/schemas';
+import type { OidcModelInstance, OidcModelInstancePayload } from '@myeyesid/schemas';
+import { OidcModelInstances } from '@myeyesid/schemas';
 import type { Nullable } from '@silverhand/essentials';
 import { conditional } from '@silverhand/essentials';
 import type { CommonQueryMethods, ValueExpression } from '@silverhand/slonik';

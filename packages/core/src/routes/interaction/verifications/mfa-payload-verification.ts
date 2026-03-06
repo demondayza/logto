@@ -17,7 +17,7 @@ import {
   type VerifyMfaPayload,
   type VerifyMfaResult,
   type WebAuthnVerificationPayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { pick } from '@silverhand/essentials';
 import { isoBase64URL } from '@simplewebauthn/server/helpers';
 

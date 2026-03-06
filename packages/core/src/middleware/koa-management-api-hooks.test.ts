@@ -1,5 +1,5 @@
-import { managementApiHooksRegistration } from '@logto/schemas';
-import { ConsoleLog } from '@logto/shared';
+import { managementApiHooksRegistration } from '@myeyesid/schemas';
+import { ConsoleLog } from '@myeyesid/shared';
 import { type ParameterizedContext } from 'koa';
 
 import type Libraries from '#src/tenants/Libraries.js';

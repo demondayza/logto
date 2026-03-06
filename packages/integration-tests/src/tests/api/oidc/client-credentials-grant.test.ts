@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 
-import { buildOrganizationUrn } from '@logto/core-kit';
+import { buildOrganizationUrn } from '@myeyesid/core-kit';
 import {
   type Application,
   ApplicationType,
@@ -8,7 +8,7 @@ import {
   type Resource,
   type Role,
   type Scope,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { appendPath } from '@silverhand/essentials';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 import { HTTPError } from 'ky';
@@ -26,7 +26,7 @@ import {
 } from '#src/api/resource.js';
 import { assignScopesToRole, createRole as createRoleApi, deleteRole } from '#src/api/role.js';
 import { createScope as createScopeApi } from '#src/api/scope.js';
-import { logtoUrl } from '#src/constants.js';
+import { myeyesidUrl } from '#src/constants.js';
 import { OrganizationApiTest } from '#src/helpers/organization.js';
 import { randomString } from '#src/utils.js';
 
@@ -50,7 +50,7 @@ const createApi = <R, Args extends unknown[]>(
 };
 
 describe('client credentials grant', () => {
-  const jwkSet = createRemoteJWKSet(appendPath(new URL(logtoUrl), 'oidc/jwks'));
+  const jwkSet = createRemoteJWKSet(appendPath(new URL(myeyesidUrl), 'oidc/jwks'));
   const organizationApi = new OrganizationApiTest();
   // eslint-disable-next-line @silverhand/fp/no-let
   let client: Application;

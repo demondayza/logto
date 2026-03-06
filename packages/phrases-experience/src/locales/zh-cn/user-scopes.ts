@@ -6,11 +6,11 @@ const user_scopes = {
     profile: '你的名称，用户名，头像和其他个人资料信息',
     roles: '你的角色',
     identities: '你已连接的第三方账号',
-    'urn:logto:scope:organizations': '你的组织信息',
-    'urn:logto:scope:organization_roles': '你的组织角色',
+    'urn:myeyesid:scope:organizations': '你的组织信息',
+    'urn:myeyesid:scope:organization_roles': '你的组织角色',
     address: '你的地址',
     /** UNTRANSLATED */
-    'urn:logto:scope:sessions': 'Your active sessions',
+    'urn:myeyesid:scope:sessions': 'Your active sessions',
   },
 };
 

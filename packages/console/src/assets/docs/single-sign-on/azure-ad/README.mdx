@@ -6,7 +6,7 @@ import setupSso from './assets/set_up_single_sign_on.webp';
 import spConfig from './assets/sp_config.webp';
 import metadataUrl from './assets/metadata_url.webp';
 import defaultAttributesMapping from './assets/default_attribute_mapping.webp';
-import logtoAttributes from './assets/logto_attribute_mapping.webp';
+import myeyesidAttributes from './assets/myeyesid_attribute_mapping.webp';
 import assignUsers from './assets/assign_users.webp';
 
 <Step index={0} title="Create an Azure AD SSO application">
@@ -99,7 +99,7 @@ You may manage the user attributes mapping logic either on the Azure AD side or 
    Should end up with the following settings:
 
 <center>
-  <img src={logtoAttributes} alt="MyEyesID Attributes" />
+  <img src={myeyesidAttributes} alt="MyEyesID Attributes" />
 </center>
 
 You may also specify additional user attributes on the Azure AD side. MyEyesID will keep a record of the original user attributes returned from IdP under the user's `sso_identity` field.

@@ -1,4 +1,4 @@
-import { type WebAuthnAuthenticationOptions } from '@logto/schemas';
+import { type WebAuthnAuthenticationOptions } from '@myeyesid/schemas';
 import { browserSupportsWebAuthn } from '@simplewebauthn/browser';
 import {
   useState,

@@ -1,2 +1,2 @@
 #!/bin/sh
-logto init "$@"
+myeyesid init "$@"

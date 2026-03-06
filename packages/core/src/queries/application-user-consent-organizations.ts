@@ -3,7 +3,7 @@ import {
   Applications,
   Organizations,
   Users,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import RelationQueries from '#src/utils/RelationQueries.js';

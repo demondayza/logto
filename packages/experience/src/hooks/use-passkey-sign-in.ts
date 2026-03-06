@@ -3,7 +3,7 @@ import {
   MfaFactor,
   type WebAuthnAuthenticationOptions,
   type WebAuthnRegistrationOptions,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import {
   browserSupportsWebAuthn,

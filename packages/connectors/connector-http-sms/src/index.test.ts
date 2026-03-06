@@ -1,6 +1,6 @@
 import nock from 'nock';
 
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 
 import createConnector from './index.js';
 import { mockedConfig } from './mock.js';

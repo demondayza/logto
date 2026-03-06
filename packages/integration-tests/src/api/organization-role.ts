@@ -4,7 +4,7 @@ import {
   type OrganizationRoleWithScopes,
   type Scope,
   type RoleType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { authedAdminApi } from './api.js';
 import { ApiFactory } from './factory.js';

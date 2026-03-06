@@ -7,7 +7,7 @@ import {
   AccountCenters,
   type IdTokenConfig,
   idTokenConfigGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type Nullable } from '@silverhand/essentials';
 import { type ZodType, z } from 'zod';
 

@@ -1,4 +1,4 @@
-import { OrganizationRoles } from '@logto/schemas';
+import { OrganizationRoles } from '@myeyesid/schemas';
 import { sql } from '@silverhand/slonik';
 
 import { convertToIdentifiers } from '#src/utils/sql.js';

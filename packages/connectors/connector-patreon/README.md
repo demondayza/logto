@@ -1,6 +1,6 @@
 # Patreon Connector
 
-The official Logto connector for Patreon social sign-in, based on the Hugging Face connector by Silverhand Inc.
+The official MyEyesID connector for Patreon social sign-in, based on the Hugging Face connector by Silverhand Inc.
 
 **Table of contents**
 
@@ -26,9 +26,9 @@ Go to the [Patreon website](https://www.patreon.com/) and sign in with your Patr
 
 Follow the [creating a Patreon OAuth App](https://www.patreon.com/portal/registration/register-clients) guide, and register a new application.
 
-Name your new OAuth application in **App Name** and fill up **App URL** of the app. You can leave the **App Description** field blank and customize the **Redirect URIs** as `${your_logto_origin}/callback/${connector_id}`. The `connector_id` can be found on the top bar of the Logto Admin Console connector details page.
+Name your new OAuth application in **App Name** and fill up **App URL** of the app. You can leave the **App Description** field blank and customize the **Redirect URIs** as `${your_myeyesid_origin}/callback/${connector_id}`. The `connector_id` can be found on the top bar of the MyEyesID Admin Console connector details page.
 
-> Note: If you encounter the error message "The redirect_uri MUST match the registered callback URL for this application." when logging in, try aligning the Redirect URI of your Patreon OAuth App and your Logto App's redirect URL (including the protocol) to resolve the issue.
+> Note: If you encounter the error message "The redirect_uri MUST match the registered callback URL for this application." when logging in, try aligning the Redirect URI of your Patreon OAuth App and your MyEyesID App's redirect URL (including the protocol) to resolve the issue.
 
 ## Managing OAuth apps
 
@@ -50,7 +50,7 @@ Fill out the `clientId` and `clientSecret` field with the _Client ID_ and _Clien
 
 ## Test Patreon connector
 
-That's it. The Patreon connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. The Patreon connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 ## Reference
 

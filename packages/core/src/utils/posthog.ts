@@ -5,7 +5,7 @@ import {
   EventGroup,
   tenantEventDistinctId,
   type ProductEvent,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type Optional } from '@silverhand/essentials';
 import { PostHog } from 'posthog-node';
 
@@ -15,7 +15,7 @@ import { EnvSet } from '../env-set/index.js';
  * PostHog client instance for server-side event tracking.
  * If public key is not set, this will be `undefined`.
  *
- * @see {@link @logto/shared#GlobalValues} for global environment variable details.
+ * @see {@link @myeyesid/shared#GlobalValues} for global environment variable details.
  *
  * @remarks Don't export this instance directly if possible to avoid unnecessary actions.
  */

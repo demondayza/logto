@@ -1,4 +1,4 @@
-import { ApplicationType, BindingType, NameIdFormat } from '@logto/schemas';
+import { ApplicationType, BindingType, NameIdFormat } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import {
@@ -76,10 +76,10 @@ describe('SAML application', () => {
 
   it('should be able to create SAML application with `config` field', async () => {
     const config = {
-      entityId: 'https://example.logto.io',
+      entityId: 'https://example.myeyesid.io',
       acsUrl: {
         binding: BindingType.Post,
-        url: 'https://example.logto.io/sso/saml',
+        url: 'https://example.myeyesid.io/sso/saml',
       },
       nameIdFormat: NameIdFormat.EmailAddress,
       encryption: {
@@ -109,7 +109,7 @@ describe('SAML application', () => {
       config: {
         acsUrl: {
           binding: BindingType.Post,
-          url: 'https://example.logto.io/sso/saml',
+          url: 'https://example.myeyesid.io/sso/saml',
         },
         entityId: null,
       },
@@ -118,16 +118,16 @@ describe('SAML application', () => {
       name: 'Update with Entity ID only',
       config: {
         acsUrl: null,
-        entityId: 'https://example.logto.io/new-entity',
+        entityId: 'https://example.myeyesid.io/new-entity',
       },
     },
     {
       config: {
         acsUrl: {
           binding: BindingType.Post,
-          url: 'https://example.logto.io/sso/saml2',
+          url: 'https://example.myeyesid.io/sso/saml2',
         },
-        entityId: 'https://example.logto.io/entity2',
+        entityId: 'https://example.myeyesid.io/entity2',
       },
     },
     {
@@ -161,7 +161,7 @@ describe('SAML application', () => {
     const initConfig = {
       name: 'test',
       description: 'test',
-      entityId: 'http://example.logto.io/foo',
+      entityId: 'http://example.myeyesid.io/foo',
     };
     // Create initial SAML application
     const createdSamlApplication = await createSamlApplication(initConfig);

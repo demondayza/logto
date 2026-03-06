@@ -1,5 +1,5 @@
-import { extendedIdTokenClaimsByScope } from '@logto/core-kit';
-import { type ExtendedIdTokenClaim } from '@logto/schemas';
+import { extendedIdTokenClaimsByScope } from '@myeyesid/core-kit';
+import { type ExtendedIdTokenClaim } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import Checkbox from '@/ds-components/Checkbox';

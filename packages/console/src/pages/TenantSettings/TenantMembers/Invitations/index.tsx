@@ -1,4 +1,4 @@
-import { OrganizationInvitationStatus, TenantRole } from '@logto/schemas';
+import { OrganizationInvitationStatus, TenantRole } from '@myeyesid/schemas';
 import { condArray, conditional } from '@silverhand/essentials';
 import { format } from 'date-fns';
 import { useContext, useState } from 'react';

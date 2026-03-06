@@ -30,4 +30,4 @@ pnpm cli connector link $cloud_option -p .
 
 echo Tar
 cd ..
-tar -czf /tmp/logto.tar.gz logto
+tar -czf /tmp/myeyesid.tar.gz myeyesid

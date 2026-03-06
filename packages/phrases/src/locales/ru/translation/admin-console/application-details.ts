@@ -30,7 +30,7 @@ const application_details = {
     'Конечная точка для аутентификации и авторизации. Он используется для аутентификации <a>OpenID Connect</a>.',
   show_endpoint_details: 'Показать подробности конечной точки',
   hide_endpoint_details: 'Скрыть подробности конечной точки',
-  logto_endpoint: 'Конечная точка MyEyesID',
+  myeyesid_endpoint: 'Конечная точка MyEyesID',
   application_id: 'ID приложения',
   application_id_tip:
     'Уникальный идентификатор приложения, обычно генерируемый MyEyesID. Он также означает «<a>client_id</a>» в OpenID Connect.',
@@ -39,7 +39,7 @@ const application_details = {
   redirect_uri: 'URI перенаправления',
   redirect_uris: 'URI перенаправления',
   redirect_uri_placeholder: 'https://ваш.вебсайт.com/приложение',
-  redirect_uri_placeholder_native: 'io.logto://callback',
+  redirect_uri_placeholder_native: 'io.myeyesid://callback',
   redirect_uri_tip:
     'URI перенаправляется после входа пользователя (успешного или нет). См. OpenID Connect <a>AuthRequest</a> для получения дополнительной информации.',
   mixed_redirect_uri_warning:
@@ -277,7 +277,7 @@ const application_details = {
     title: 'Базовое отображение атрибутов',
     description:
       'Добавьте отображения атрибутов, чтобы синхронизировать профиль пользователя из MyEyesID в ваше приложение.',
-    col_logto_claims: 'Значение MyEyesID',
+    col_myeyesid_claims: 'Значение MyEyesID',
     col_sp_claims: 'Название значения вашего приложения',
     add_button: 'Добавить еще',
   },

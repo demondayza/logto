@@ -1,4 +1,4 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 import {
   adminConsoleApplicationId,
   adminTenantId,
@@ -8,8 +8,8 @@ import {
   SignInMode,
   type User,
   VerificationType,
-} from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+} from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
 import { mockUser } from '#src/__mocks__/user.js';
@@ -110,9 +110,9 @@ const createSignInInteraction = ({
       ? { headers }
       : {
           headers: {
-            'x-logto-cf-country': 'US',
-            'x-logto-cf-latitude': '37.7749',
-            'x-logto-cf-longitude': '-122.4194',
+            'x-myeyesid-cf-country': 'US',
+            'x-myeyesid-cf-latitude': '37.7749',
+            'x-myeyesid-cf-longitude': '-122.4194',
           },
         }
   );
@@ -252,9 +252,9 @@ describe('ExperienceInteraction class', () => {
       setDevFeaturesEnabled(true);
       const { experienceInteraction, userGeoLocations } = createSignInInteraction({
         headers: {
-          'x-logto-cf-country': 'US',
-          'x-logto-cf-latitude': '0',
-          'x-logto-cf-longitude': '0',
+          'x-myeyesid-cf-country': 'US',
+          'x-myeyesid-cf-latitude': '0',
+          'x-myeyesid-cf-longitude': '0',
         },
       });
 
@@ -268,9 +268,9 @@ describe('ExperienceInteraction class', () => {
       const { experienceInteraction, userGeoLocations, userSignInCountries } =
         createSignInInteraction({
           headers: {
-            'x-logto-cf-country': 'US',
-            'x-logto-cf-latitude': 'abc',
-            'x-logto-cf-longitude': '181',
+            'x-myeyesid-cf-country': 'US',
+            'x-myeyesid-cf-latitude': 'abc',
+            'x-myeyesid-cf-longitude': '181',
           },
         });
 
@@ -285,9 +285,9 @@ describe('ExperienceInteraction class', () => {
       const { experienceInteraction, userGeoLocations, userSignInCountries } =
         createSignInInteraction({
           headers: {
-            'x-logto-cf-country': 'US',
-            'x-logto-cf-latitude': '-91',
-            'x-logto-cf-longitude': '10',
+            'x-myeyesid-cf-country': 'US',
+            'x-myeyesid-cf-latitude': '-91',
+            'x-myeyesid-cf-longitude': '10',
           },
         });
 
@@ -305,9 +305,9 @@ describe('ExperienceInteraction class', () => {
         const { experienceInteraction, userGeoLocations, userSignInCountries } =
           createSignInInteraction({
             headers: {
-              'x-logto-cf-country': country,
-              'x-logto-cf-latitude': '37.7749',
-              'x-logto-cf-longitude': '-122.4194',
+              'x-myeyesid-cf-country': country,
+              'x-myeyesid-cf-latitude': '37.7749',
+              'x-myeyesid-cf-longitude': '-122.4194',
             },
           });
 
@@ -330,9 +330,9 @@ describe('ExperienceInteraction class', () => {
       setDevFeaturesEnabled(true);
       const { experienceInteraction, userSignInCountries } = createSignInInteraction({
         headers: {
-          'x-logto-cf-country': 'jp',
-          'x-logto-cf-latitude': '35.6762',
-          'x-logto-cf-longitude': '139.6503',
+          'x-myeyesid-cf-country': 'jp',
+          'x-myeyesid-cf-latitude': '35.6762',
+          'x-myeyesid-cf-longitude': '139.6503',
         },
       });
 
@@ -346,7 +346,7 @@ describe('ExperienceInteraction class', () => {
       const { experienceInteraction, userGeoLocations, userSignInCountries } =
         createSignInInteraction({
           headers: {
-            'x-logto-cf-country': 'US',
+            'x-myeyesid-cf-country': 'US',
           },
         });
 
@@ -361,7 +361,7 @@ describe('ExperienceInteraction class', () => {
       const { experienceInteraction, userGeoLocations, userSignInCountries } =
         createSignInInteraction({
           headers: {
-            'x-logto-cf-latitude': '51.5074',
+            'x-myeyesid-cf-latitude': '51.5074',
           },
         });
 

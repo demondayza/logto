@@ -1,4 +1,4 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 
 import DynamicT from '@/ds-components/DynamicT';
 import TextLink, { type Props as TextLinkProps } from '@/ds-components/TextLink';

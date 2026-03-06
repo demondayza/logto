@@ -10,7 +10,7 @@ import {
   VerificationType,
   webAuthnVerificationRecordDataGuard,
   signInWebAuthnVerificationRecordDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import type Libraries from '#src/tenants/Libraries.js';

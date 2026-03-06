@@ -1,4 +1,4 @@
-import { type SamlApplicationSecret } from '@logto/schemas';
+import { type SamlApplicationSecret } from '@myeyesid/schemas';
 import { addMilliseconds, addYears, format } from 'date-fns';
 import { useCallback, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';

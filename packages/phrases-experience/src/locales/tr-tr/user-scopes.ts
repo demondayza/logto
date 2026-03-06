@@ -6,11 +6,11 @@ const user_scopes = {
     profile: 'Adın, kullanıcı adın, profil fotoğrafın ve diğer kişisel bilgilerin',
     roles: 'Rollerin',
     identities: 'Bağlı sosyal hesapların',
-    'urn:logto:scope:organizations': 'Organizasyon bilgilerin',
-    'urn:logto:scope:organization_roles': 'Organizasyon rollerin',
+    'urn:myeyesid:scope:organizations': 'Organizasyon bilgilerin',
+    'urn:myeyesid:scope:organization_roles': 'Organizasyon rollerin',
     address: 'Adresin',
     /** UNTRANSLATED */
-    'urn:logto:scope:sessions': 'Your active sessions',
+    'urn:myeyesid:scope:sessions': 'Your active sessions',
   },
 };
 

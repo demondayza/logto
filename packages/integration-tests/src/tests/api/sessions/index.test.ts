@@ -1,4 +1,4 @@
-import { SignInIdentifier, demoAppApplicationId } from '@logto/schemas';
+import { SignInIdentifier, demoAppApplicationId } from '@myeyesid/schemas';
 
 import { getUserSession, getUserSessions, revokeUserSession } from '#src/api/index.js';
 import { signInWithPassword } from '#src/helpers/experience/index.js';

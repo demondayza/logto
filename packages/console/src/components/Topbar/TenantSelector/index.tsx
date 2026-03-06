@@ -1,4 +1,4 @@
-import { OrganizationInvitationStatus } from '@logto/schemas';
+import { OrganizationInvitationStatus } from '@myeyesid/schemas';
 import { useContext, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

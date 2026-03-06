@@ -1,4 +1,4 @@
-import { InteractionEvent, SignInIdentifier, SignInMode } from '@logto/schemas';
+import { InteractionEvent, SignInIdentifier, SignInMode } from '@myeyesid/schemas';
 
 import { deleteUser, updateSignInExperience } from '#src/api/index.js';
 import { createOneTimeToken } from '#src/api/one-time-token.js';
@@ -44,14 +44,14 @@ describe('Register interaction with one-time token', () => {
     });
 
     const oneTimeToken = await createOneTimeToken({
-      email: 'foo@logto.io',
+      email: 'foo@myeyesid.io',
     });
 
     const { verificationId } = await client.verifyOneTimeToken({
       token: oneTimeToken.token,
       identifier: {
         type: SignInIdentifier.Email,
-        value: 'foo@logto.io',
+        value: 'foo@myeyesid.io',
       },
     });
 
@@ -119,14 +119,14 @@ describe('Register interaction with one-time token', () => {
     });
 
     const oneTimeToken = await createOneTimeToken({
-      email: 'bar@logto.io',
+      email: 'bar@myeyesid.io',
     });
 
     const { verificationId } = await client.verifyOneTimeToken({
       token: oneTimeToken.token,
       identifier: {
         type: SignInIdentifier.Email,
-        value: 'bar@logto.io',
+        value: 'bar@myeyesid.io',
       },
     });
 
@@ -172,14 +172,14 @@ describe('Register interaction with one-time token', () => {
     });
 
     const oneTimeToken = await createOneTimeToken({
-      email: 'foo@logto.io',
+      email: 'foo@myeyesid.io',
     });
 
     const { verificationId } = await client.verifyOneTimeToken({
       token: oneTimeToken.token,
       identifier: {
         type: SignInIdentifier.Email,
-        value: 'foo@logto.io',
+        value: 'foo@myeyesid.io',
       },
     });
     // SignIn identify should fail then switch to Register
@@ -222,14 +222,14 @@ describe('Register interaction with one-time token', () => {
     });
 
     const oneTimeToken = await createOneTimeToken({
-      email: 'foo@logto.io',
+      email: 'foo@myeyesid.io',
     });
 
     const { verificationId } = await client.verifyOneTimeToken({
       token: oneTimeToken.token,
       identifier: {
         type: SignInIdentifier.Email,
-        value: 'foo@logto.io',
+        value: 'foo@myeyesid.io',
       },
     });
     // SignIn identify should fail then switch to Register and fulfill required profile

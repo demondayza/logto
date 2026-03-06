@@ -1,5 +1,5 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { InteractionEvent } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { InteractionEvent } from '@myeyesid/schemas';
 import { type Optional } from '@silverhand/essentials';
 
 import {

@@ -1,5 +1,5 @@
-import { emailOrEmailDomainRegEx } from '@logto/core-kit';
-import { type SignInExperience, type EmailBlocklistPolicy } from '@logto/schemas';
+import { emailOrEmailDomainRegEx } from '@myeyesid/core-kit';
+import { type SignInExperience, type EmailBlocklistPolicy } from '@myeyesid/schemas';
 import { useContext } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

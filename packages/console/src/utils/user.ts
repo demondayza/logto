@@ -1,5 +1,5 @@
-import type { UserInfo } from '@logto/schemas';
-import { getUserDisplayName } from '@logto/shared/universal';
+import type { UserInfo } from '@myeyesid/schemas';
+import { getUserDisplayName } from '@myeyesid/shared/universal';
 import { t } from 'i18next';
 
 export const getUserTitle = (user?: Partial<UserInfo>): string =>

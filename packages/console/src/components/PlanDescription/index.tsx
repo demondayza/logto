@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { type TFuncKey } from 'i18next';
 
 import DynamicT from '@/ds-components/DynamicT';

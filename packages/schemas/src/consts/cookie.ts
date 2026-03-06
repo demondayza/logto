@@ -1,1 +1,1 @@
-export const logtoCookieKey = '_logto';
+export const myeyesidCookieKey = '_myeyesid';

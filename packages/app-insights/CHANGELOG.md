@@ -1,4 +1,4 @@
-# @logto/app-insights
+# @myeyesid/app-insights
 
 ## 2.1.0
 
@@ -28,7 +28,7 @@
 
 - 31e60811d: use Node 20 LTS for engine requirement.
 
-  Note: We mark it as minor because Logto is shipping with Docker image and it's not a breaking change for users.
+  Note: We mark it as minor because MyEyesID is shipping with Docker image and it's not a breaking change for users.
 
 ### Patch Changes
 

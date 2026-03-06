@@ -1,11 +1,11 @@
-import { UserScope } from '@logto/core-kit';
-import { LogtoProvider, Prompt, useLogto } from '@logto/react';
+import { UserScope } from '@myeyesid/core-kit';
+import { MyEyesIDProvider, Prompt, useMyEyesID } from '@myeyesid/react';
 import {
   adminConsoleApplicationId,
   defaultTenantId,
   PredefinedScope,
   TenantScope,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditionalArray } from '@silverhand/essentials';
 import { PostHogProvider, usePostHog } from 'posthog-js/react';
 import { useContext, useEffect, useMemo } from 'react';
@@ -29,7 +29,7 @@ import { ConsoleRoutes } from '@/containers/ConsoleRoutes';
 import { GlobalScripts } from './components/Conversion';
 import { adminTenantEndpoint, mainTitle } from './consts';
 import ErrorBoundary from './containers/ErrorBoundary';
-import LogtoErrorBoundary from './containers/LogtoErrorBoundary';
+import MyEyesIDErrorBoundary from './containers/MyEyesIDErrorBoundary';
 import AppConfirmModalProvider from './contexts/AppConfirmModalProvider';
 import AppDataProvider, { AppDataContext } from './contexts/AppDataProvider';
 import { AppThemeProvider } from './contexts/AppThemeProvider';
@@ -68,7 +68,7 @@ export default App;
  * This component serves as a container for all the providers and boundary components.
  *
  * Since `TenantsContext` requires the `TenantsProvider` to be mounted, and the initialization
- * of `LogtoProvider` requires the `TenantsContext` to be available, we have to put them into
+ * of `MyEyesIDProvider` requires the `TenantsContext` to be available, we have to put them into
  * different components.
  */
 function Providers() {
@@ -112,7 +112,7 @@ function Providers() {
         defaults: '2025-05-24',
       }}
     >
-      <LogtoProvider
+      <MyEyesIDProvider
         unstable_enableCache
         config={{
           endpoint: adminTenantEndpoint.href,
@@ -127,16 +127,16 @@ function Providers() {
           <Toast />
           <AppConfirmModalProvider>
             <ErrorBoundary>
-              <LogtoErrorBoundary>
+              <MyEyesIDErrorBoundary>
                 <AppDataProvider>
                   <GlobalScripts />
                   <Content />
                 </AppDataProvider>
-              </LogtoErrorBoundary>
+              </MyEyesIDErrorBoundary>
             </ErrorBoundary>
           </AppConfirmModalProvider>
         </AppThemeProvider>
-      </LogtoProvider>
+      </MyEyesIDProvider>
     </PostHogProvider>
   );
 }
@@ -144,7 +144,7 @@ function Providers() {
 function Content() {
   const { tenantEndpoint } = useContext(AppDataContext);
   const { isLoaded, user } = useCurrentUser();
-  const { isAuthenticated } = useLogto();
+  const { isAuthenticated } = useMyEyesID();
   const { currentTenantId, currentTenant } = useContext(TenantsContext);
   const postHog = usePostHog();
 

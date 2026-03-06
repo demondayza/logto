@@ -3,7 +3,7 @@
 import {
   type ApplicationUserConsentScopesResponse,
   ApplicationUserConsentScopeType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 

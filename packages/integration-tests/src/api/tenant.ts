@@ -1,5 +1,5 @@
-import { type TenantTag } from '@logto/schemas';
-import type { TenantModel } from '@logto/schemas/models';
+import { type TenantTag } from '@myeyesid/schemas';
+import type { TenantModel } from '@myeyesid/schemas/models';
 
 import { cloudApi } from './api.js';
 

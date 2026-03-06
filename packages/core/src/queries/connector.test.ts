@@ -1,4 +1,4 @@
-import { Connectors } from '@logto/schemas';
+import { Connectors } from '@myeyesid/schemas';
 import { createMockPool, createMockQueryResult, sql } from '@silverhand/slonik';
 
 import { mockConnector } from '#src/__mocks__/index.js';

@@ -1,4 +1,4 @@
-import type { SignUp, ForgotPasswordMethod } from '@logto/schemas';
+import type { SignUp, ForgotPasswordMethod } from '@myeyesid/schemas';
 import { diff } from 'deep-object-diff';
 import type { DeepRequired, FieldErrorsImpl } from 'react-hook-form';
 

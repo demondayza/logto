@@ -1,5 +1,5 @@
 import { getSsoConnectors, deleteSsoConnectorById } from '#src/api/sso-connector.js';
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import {
   goToAdminConsole,
   expectModalWithTitle,
@@ -26,7 +26,7 @@ const emailDomainInputFieldSelector = [
 const connectorNameInputFieldSelector = ['form', 'input[type=text][name=connectorName]'].join(' ');
 
 describe('create SSO connectors', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   beforeAll(async () => {
     // Enter admin console
@@ -41,7 +41,7 @@ describe('create SSO connectors', () => {
 
   it('navigate to Enterprise SSO connectors listing page', async () => {
     await expectNavigation(
-      page.goto(appendPathname('/console/enterprise-sso', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/enterprise-sso', myeyesidConsoleUrl).href)
     );
 
     await expect(page).toMatchElement(
@@ -51,7 +51,7 @@ describe('create SSO connectors', () => {
       }
     );
 
-    expect(page.url()).toBe(new URL(`console/enterprise-sso`, logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL(`console/enterprise-sso`, myeyesidConsoleUrl).href);
   });
 
   it('can open create SSO connector modal from table placeholder and create the first SSO connector', async () => {
@@ -65,7 +65,7 @@ describe('create SSO connectors', () => {
     await fillSsoConnectorCreationModal(page, ssoConnectorTestCases[0]!, true);
 
     // Come back to Enterprise SSO listing page.
-    await page.goto(appendPathname('/console/enterprise-sso', logtoConsoleUrl).href);
+    await page.goto(appendPathname('/console/enterprise-sso', myeyesidConsoleUrl).href);
   });
 
   it.each(ssoConnectorTestCases.slice(1))(
@@ -87,7 +87,7 @@ describe('create SSO connectors', () => {
       await fillSsoConnectorCreationModal(page, ssoConnector, true);
 
       // Come back to Enterprise SSO listing page.
-      await page.goto(appendPathname('/console/enterprise-sso', logtoConsoleUrl).href);
+      await page.goto(appendPathname('/console/enterprise-sso', myeyesidConsoleUrl).href);
     }
   );
 
@@ -278,8 +278,8 @@ describe('create SSO connectors', () => {
     // Can successfully configure the `displayName`, `logo` and `darkLogo` fields.
     const dataToFill = {
       'branding.displayName': 'Display name',
-      'branding.logo': 'https://logto.io/logo.png',
-      'branding.darkLogo': 'https://logto.io/logo-dark.png',
+      'branding.logo': 'https://myeyesid.io/logo.png',
+      'branding.darkLogo': 'https://myeyesid.io/logo-dark.png',
     };
     await expect(page).toFillForm('form', dataToFill);
     await expectToSaveChanges(page);
@@ -326,6 +326,6 @@ describe('create SSO connectors', () => {
     // Wait to navigate to the connector list page
     await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-    expect(page.url()).toBe(new URL(`console/enterprise-sso`, logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL(`console/enterprise-sso`, myeyesidConsoleUrl).href);
   });
 });

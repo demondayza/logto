@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorPlatform, ConnectorConfigFormItemType } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorPlatform, ConnectorConfigFormItemType } from '@myeyesid/connector-kit';
 
 // https://appleid.apple.com/.well-known/openid-configuration
 export const issuer = 'https://appleid.apple.com';

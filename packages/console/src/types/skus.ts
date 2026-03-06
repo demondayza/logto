@@ -1,14 +1,14 @@
 import { type SubscriptionQuota } from '@/cloud/types/router';
 
-// TODO: This is a copy from `@logto/cloud-models`, make a SSoT for this later
-export enum LogtoSkuType {
+// TODO: This is a copy from `@myeyesid/cloud-models`, make a SSoT for this later
+export enum MyEyesIDSkuType {
   Basic = 'Basic',
   AddOn = 'AddOn',
 }
 
-export type LogtoSkuQuota = SubscriptionQuota & {
+export type MyEyesIDSkuQuota = SubscriptionQuota & {
   // Add ticket support quota item to the plan since it will be compared in the downgrade plan notification modal.
   ticketSupportResponseTime: number;
 };
 
-export type LogtoSkuQuotaEntries = Array<[keyof LogtoSkuQuota, LogtoSkuQuota[keyof LogtoSkuQuota]]>;
+export type MyEyesIDSkuQuotaEntries = Array<[keyof MyEyesIDSkuQuota, MyEyesIDSkuQuota[keyof MyEyesIDSkuQuota]]>;

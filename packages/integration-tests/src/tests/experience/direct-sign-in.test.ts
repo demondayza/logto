@@ -1,11 +1,11 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { AgreeToTermsPolicy, SignInIdentifier, SsoProviderName } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { AgreeToTermsPolicy, SignInIdentifier, SsoProviderName } from '@myeyesid/schemas';
 import { appendPath } from '@silverhand/essentials';
 
 import { mockSocialConnectorTarget } from '#src/__mocks__/connectors-mock.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
 import { createSsoConnector } from '#src/api/sso-connector.js';
-import { demoAppUrl, logtoUrl } from '#src/constants.js';
+import { demoAppUrl, myeyesidUrl } from '#src/constants.js';
 import { clearConnectorsByTypes, setSocialConnector } from '#src/helpers/connector.js';
 import ExpectExperience from '#src/ui-helpers/expect-experience.js';
 import { dcls, dmodal, randomString } from '#src/utils.js';
@@ -20,7 +20,7 @@ describe('direct sign-in', () => {
   const context = new (class Context {
     ssoConnectorId?: string;
   })();
-  const ssoOidcIssuer = `${logtoUrl}/oidc`;
+  const ssoOidcIssuer = `${myeyesidUrl}/oidc`;
 
   beforeAll(async () => {
     await clearConnectorsByTypes([ConnectorType.Social, ConnectorType.Email, ConnectorType.Sms]);
@@ -70,7 +70,7 @@ describe('direct sign-in', () => {
     });
 
     // Redirected back to the social callback page
-    experience.toMatchUrl(new RegExp(appendPath(new URL(logtoUrl), 'callback/social/.*').href));
+    experience.toMatchUrl(new RegExp(appendPath(new URL(myeyesidUrl), 'callback/social/.*').href));
 
     // Should have popped up the terms of use and privacy policy dialog
     await experience.toMatchElement([dmodal(), dcls('content')].join(' '), {

@@ -1,4 +1,4 @@
-# @logto/elements
+# @myeyesid/elements
 
 ## 0.1.0
 

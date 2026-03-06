@@ -1,6 +1,6 @@
 # Postmark connector
 
-Logto connector for Postmark email service.
+MyEyesID connector for Postmark email service.
 
 ## Get started
 
@@ -25,19 +25,19 @@ Here is an example of Postmark connector template JSON.
 [
     {
         "usageType": "Register",
-        "templateAlias": "logto-register"
+        "templateAlias": "myeyesid-register"
     },
     {
         "usageType": "SignIn",
-        "templateAlias": "logto-sign-in"
+        "templateAlias": "myeyesid-sign-in"
     },
     {
         "usageType": "ForgotPassword",
-        "templateAlias": "logto-forgot-password"
+        "templateAlias": "myeyesid-forgot-password"
     },
     {
         "usageType": "Generic",
-        "templateAlias": "logto-generic"
+        "templateAlias": "myeyesid-generic"
     },
 ]
 ```
@@ -46,7 +46,7 @@ Here is an example of Postmark connector template JSON.
 
 You can type in an email address and click on "Send" to see whether the settings can work before "Save and Done".
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/tutorials/get-started/passwordless-sign-in-by-adding-connectors#enable-sms-or-email-passwordless-sign-in)
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/tutorials/get-started/passwordless-sign-in-by-adding-connectors#enable-sms-or-email-passwordless-sign-in)
 
 ## Config types
 

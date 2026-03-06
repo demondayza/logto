@@ -1,4 +1,4 @@
-import { type CustomProfileField } from '@logto/schemas';
+import { type CustomProfileField } from '@myeyesid/schemas';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';

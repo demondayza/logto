@@ -1,5 +1,5 @@
-import { ConnectorType, InteractionEvent, SignInIdentifier, SignInMode } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { ConnectorType, InteractionEvent, SignInIdentifier, SignInMode } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import { mockSocialConnectorId } from '#src/__mocks__/connectors-mock.js';
 import { deleteUser } from '#src/api/admin-user.js';
@@ -256,14 +256,14 @@ describe('captcha', () => {
       });
 
       const oneTimeToken = await createOneTimeToken({
-        email: 'foo@logto.io',
+        email: 'foo@myeyesid.io',
       });
 
       const { verificationId } = await client.verifyOneTimeToken({
         token: oneTimeToken.token,
         identifier: {
           type: SignInIdentifier.Email,
-          value: 'foo@logto.io',
+          value: 'foo@myeyesid.io',
         },
       });
 

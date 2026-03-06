@@ -1,5 +1,5 @@
-import type { CreateRolesScope, RolesScope } from '@logto/schemas';
-import { RolesScopes } from '@logto/schemas';
+import type { CreateRolesScope, RolesScope } from '@myeyesid/schemas';
+import { RolesScopes } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

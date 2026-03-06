@@ -1,4 +1,4 @@
-import { InteractionEvent, type BindMfaPayload, type VerifyMfaPayload } from '@logto/schemas';
+import { InteractionEvent, type BindMfaPayload, type VerifyMfaPayload } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 
 import { bindMfa, verifyMfa } from '@/apis/experience';

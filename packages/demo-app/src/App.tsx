@@ -1,5 +1,5 @@
-import { type IdTokenClaims, LogtoProvider, useLogto, type Prompt } from '@logto/react';
-import { demoAppApplicationId } from '@logto/schemas';
+import { type IdTokenClaims, MyEyesIDProvider, useMyEyesID, type Prompt } from '@myeyesid/react';
+import { demoAppApplicationId } from '@myeyesid/schemas';
 import i18next from 'i18next';
 import { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -20,7 +20,7 @@ void initI18n();
 const Main = () => {
   const config = getLocalData('config');
   const params = new URL(window.location.href).searchParams;
-  const { isAuthenticated, isLoading, getIdTokenClaims, signIn, signOut } = useLogto();
+  const { isAuthenticated, isLoading, getIdTokenClaims, signIn, signOut } = useMyEyesID();
   const [user, setUser] = useState<Pick<IdTokenClaims, 'sub' | 'username'>>();
   const { t } = useTranslation(undefined, { keyPrefix: 'demo_app' });
   const isInCallback = Boolean(params.get('code'));
@@ -201,7 +201,7 @@ const App = () => {
   const config = getLocalData('config');
 
   return (
-    <LogtoProvider
+    <MyEyesIDProvider
       config={{
         endpoint: window.location.origin,
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- We need to fall back for empty string
@@ -213,7 +213,7 @@ const App = () => {
       }}
     >
       <Main />
-    </LogtoProvider>
+    </MyEyesIDProvider>
   );
 };
 

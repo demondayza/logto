@@ -1,4 +1,4 @@
-import { tokenResponseGuard } from '@logto/connector-kit';
+import { tokenResponseGuard } from '@myeyesid/connector-kit';
 import { z } from 'zod';
 
 import { SecretEnterpriseSsoConnectorRelations } from '../db-entries/secret-enterprise-sso-connector-relation.js';

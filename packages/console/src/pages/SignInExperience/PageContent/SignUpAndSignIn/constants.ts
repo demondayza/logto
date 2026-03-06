@@ -1,5 +1,5 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { SignInIdentifier } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 export const identifierRequiredConnectorMapping: {
   [key in SignInIdentifier]?: ConnectorType;

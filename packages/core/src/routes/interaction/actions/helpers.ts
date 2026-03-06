@@ -1,4 +1,4 @@
-import { type CreateUser, type User } from '@logto/schemas';
+import { type CreateUser, type User } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import { type ConnectorLibrary } from '#src/libraries/connector.js';
@@ -20,7 +20,7 @@ const filterSocialIdentifiers = (identifiers: Identifier[]): SocialIdentifier[] 
 
 /* Sync avatar and name from the latest social identity for existing users  */
 const getSocialSyncProfile = async (
-  { getLogtoConnectorById }: ConnectorLibrary,
+  { getMyEyesIDConnectorById }: ConnectorLibrary,
   authIdentifiers: Identifier[]
 ) => {
   const socialIdentifier = filterSocialIdentifiers(authIdentifiers).at(-1);
@@ -36,7 +36,7 @@ const getSocialSyncProfile = async (
 
   const {
     dbEntry: { syncProfile },
-  } = await getLogtoConnectorById(connectorId);
+  } = await getMyEyesIDConnectorById(connectorId);
 
   return conditional(
     syncProfile && {
@@ -49,7 +49,7 @@ const getSocialSyncProfile = async (
 /* Parse the user profile from the new linked Social identity */
 const parseNewSocialProfile = async (
   { users: { hasUserWithEmail, hasUserWithNormalizedPhone } }: Queries,
-  { getLogtoConnectorById }: ConnectorLibrary,
+  { getMyEyesIDConnectorById }: ConnectorLibrary,
   socialIdentifier: SocialIdentifier,
   user?: User
 ) => {
@@ -59,7 +59,7 @@ const parseNewSocialProfile = async (
   const {
     metadata: { target },
     dbEntry: { syncProfile },
-  } = await getLogtoConnectorById(connectorId);
+  } = await getMyEyesIDConnectorById(connectorId);
 
   // Sync the social identity, merge the new social identity with the existing one
   const identities = { ...user?.identities, [target]: { userId: id, details: userInfo } };

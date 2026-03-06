@@ -18,7 +18,7 @@ import RedirectUrisNative, { defaultRedirectUri } from '../../fragments/_redirec
 Use the following URL to add MyEyesID SDK as a dependency in Swift Package Manager.
 
 ```bash
-https://github.com/logto-io/swift.git
+https://github.com/myeyesid-io/swift.git
 ```
 
 Since Xcode 11, you can [directly import a swift package](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app) w/o any additional tool.
@@ -43,21 +43,21 @@ CocoaPods [does not support local dependency](https://github.com/CocoaPods/Cocoa
 </Step>
 
 <Step
-  title="Init LogtoClient"
+  title="Init MyEyesIDClient"
   subtitle="1 step"
 >
 
-You can initialize `LogtoClient` in a proper place of your app that can be accessed globally:
+You can initialize `MyEyesIDClient` in a proper place of your app that can be accessed globally:
 
 <Code className="language-swift">
-    {`import Logto
-import LogtoClient
+    {`import MyEyesID
+import MyEyesIDClient
 
-let config = try? LogtoConfig(
+let config = try? MyEyesIDConfig(
   endpoint: "${props.endpoint}",
   appId: "${props.app.id}"
 )
-let logtoClient = LogtoClient(useConfig: config)`}
+let myeyesidClient = MyEyesIDClient(useConfig: config)`}
 </Code>
 
 <br/>
@@ -69,7 +69,7 @@ By default, we store credentials like ID Token and Refresh Token in Keychain. Th
 To turn off this behavior, set `usingPersistStorage` to `false`:
 
 ```swift
-let config = try? LogtoConfig(
+let config = try? MyEyesIDConfig(
   // ...
   usingPersistStorage: false
 )
@@ -118,7 +118,7 @@ For example, in a SwiftUI app:
                 props.redirectUris[0] ?? defaultRedirectUri
               }")
               isAuthenticated = true
-            } catch let error as LogtoClientErrors.SignIn {
+            } catch let error as MyEyesIDClientErrors.SignIn {
               // error occured during sign in
             } catch {
               // other errors

@@ -1,5 +1,5 @@
-import { isManagementApi, ProductEvent, Resources, Scopes } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { isManagementApi, ProductEvent, Resources, Scopes } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { yes } from '@silverhand/essentials';
 import { boolean, object, string } from 'zod';
 

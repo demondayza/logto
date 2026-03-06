@@ -1,7 +1,7 @@
 import path from 'node:path';
 
-import { adminTenantId } from '@logto/schemas';
-import type { GlobalValues } from '@logto/shared';
+import { adminTenantId } from '@myeyesid/schemas';
+import type { GlobalValues } from '@myeyesid/shared';
 import type { Optional } from '@silverhand/essentials';
 import { deduplicate, trySafe } from '@silverhand/essentials';
 

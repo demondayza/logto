@@ -3,7 +3,7 @@ import {
   CustomProfileFieldType,
   type FieldPart,
   userProfileAddressKeys,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 const addressComponentKeySet = Object.freeze(new Set<string>(userProfileAddressKeys));
 

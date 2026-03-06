@@ -2,7 +2,7 @@ import {
   SsoConnectors,
   SsoConnectorIdpInitiatedAuthConfigs,
   SsoProviderType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import RequestError from '#src/errors/RequestError/index.js';

@@ -3,8 +3,8 @@ import { themes } from 'prism-react-renderer';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import logtoAiBotDark from '@/assets/icons/logto-ai-bot-dark.svg?url';
-import logtoAiBot from '@/assets/icons/logto-ai-bot.svg?url';
+import myeyesidAiBotDark from '@/assets/icons/myeyesid-ai-bot-dark.svg?url';
+import myeyesidAiBot from '@/assets/icons/myeyesid-ai-bot.svg?url';
 import { inkeepApiKey } from '@/consts/env';
 
 import useTheme from './use-theme';
@@ -32,7 +32,7 @@ const customStyles = `
     margin-left: 178px;
     width: 60px;
     height: 20px;
-    background: var(--inkeep-logto-icon) center/60px 20px no-repeat;
+    background: var(--inkeep-myeyesid-icon) center/60px 20px no-repeat;
   }
 }
 .ikp-codeblock-header {
@@ -131,7 +131,7 @@ const useInkeepConfigs = () => {
           },
         },
         aiChatSettings: {
-          aiAssistantAvatar: theme === 'dark' ? logtoAiBotDark : logtoAiBot,
+          aiAssistantAvatar: theme === 'dark' ? myeyesidAiBotDark : myeyesidAiBot,
           aiAssistantName: 'MyEyesID AI',
           introMessage: t('intro_message'),
           exampleQuestionsLabel: t('example_questions_label'),
@@ -154,7 +154,7 @@ const useInkeepConfigs = () => {
               name: t('contact'),
               action: {
                 type: 'open_link',
-                url: 'https://logto.io/contact',
+                url: 'https://myeyesid.io/contact',
               },
             },
             {
@@ -170,7 +170,7 @@ const useInkeepConfigs = () => {
               name: 'GitHub',
               action: {
                 type: 'open_link',
-                url: 'https://github.com/logto-io/logto/issues/new/choose',
+                url: 'https://github.com/myeyesid-io/myeyesid/issues/new/choose',
               },
             },
           ],

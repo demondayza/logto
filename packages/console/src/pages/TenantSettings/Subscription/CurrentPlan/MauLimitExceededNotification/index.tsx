@@ -23,11 +23,11 @@ function MauLimitExceededNotification({ periodicUsage: rawPeriodicUsage, classNa
   const { currentTenantId } = useContext(TenantsContext);
   const { subscribe } = useSubscribe();
   const { show } = useConfirmModal();
-  const { logtoSkus, currentSubscriptionQuota } = useContext(SubscriptionDataContext);
+  const { myeyesidSkus, currentSubscriptionQuota } = useContext(SubscriptionDataContext);
   const { currentTenant } = useContext(TenantsContext);
 
   const [isLoading, setIsLoading] = useState(false);
-  const proSku = useMemo(() => logtoSkus.find(({ id }) => id === latestProPlanId), [logtoSkus]);
+  const proSku = useMemo(() => myeyesidSkus.find(({ id }) => id === latestProPlanId), [myeyesidSkus]);
 
   const periodicUsage = useMemo(
     () =>

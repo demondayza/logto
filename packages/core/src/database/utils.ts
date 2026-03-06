@@ -1,5 +1,5 @@
-import { type GeneratedSchema } from '@logto/schemas';
-import { type SchemaLike, type Table } from '@logto/shared';
+import { type GeneratedSchema } from '@myeyesid/schemas';
+import { type SchemaLike, type Table } from '@myeyesid/shared';
 import { type SqlSqlToken, sql } from '@silverhand/slonik';
 
 import { conditionalSql, convertToIdentifiers } from '#src/utils/sql.js';

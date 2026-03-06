@@ -5,7 +5,7 @@ import {
   InteractionEvent,
   SignInIdentifier,
   type RequestErrorBody,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

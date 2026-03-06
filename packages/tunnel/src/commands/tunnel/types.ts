@@ -8,11 +8,11 @@ export type TunnelCommandArgs = {
   verbose: boolean;
 };
 
-export type LogtoResponseHandler = {
+export type MyEyesIDResponseHandler = {
   proxyResponse: http.IncomingMessage;
   request: http.IncomingMessage;
   response: http.ServerResponse;
-  logtoEndpointUrl: URL;
+  myeyesidEndpointUrl: URL;
   tunnelServiceUrl: URL;
   verbose: boolean;
 };

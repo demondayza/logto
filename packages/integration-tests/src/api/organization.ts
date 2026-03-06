@@ -7,7 +7,7 @@ import {
   type CreateOrganization,
   type Application,
   type OrganizationRole,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { authedAdminApi } from './api.js';
 import { ApiFactory, RelationApiFactory } from './factory.js';

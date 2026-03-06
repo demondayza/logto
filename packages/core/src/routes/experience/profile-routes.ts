@@ -3,7 +3,7 @@ import {
   MfaFactor,
   SignInIdentifier,
   updateProfileApiPayloadGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type MiddlewareType } from 'koa';
 import type Router from 'koa-router';
 import { z } from 'zod';

@@ -1,5 +1,5 @@
-import type { SignInExperience } from '@logto/schemas';
-import { SignInIdentifier, SignInMode, InteractionEvent, MfaFactor } from '@logto/schemas';
+import type { SignInExperience } from '@myeyesid/schemas';
+import { SignInIdentifier, SignInMode, InteractionEvent, MfaFactor } from '@myeyesid/schemas';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
 
@@ -269,7 +269,7 @@ describe('identifier validation', () => {
   });
 
   it('connector phone should not throw', () => {
-    const identifier = { phone: '123456', connectorId: 'logto' };
+    const identifier = { phone: '123456', connectorId: 'myeyesid' };
 
     expect(() => {
       verifyIdentifierSettings(identifier, {
@@ -284,7 +284,7 @@ describe('identifier validation', () => {
   });
 
   it('connector email should not throw', () => {
-    const identifier = { email: 'foo@logto.io', connectorId: 'logto' };
+    const identifier = { email: 'foo@myeyesid.io', connectorId: 'myeyesid' };
 
     expect(() => {
       verifyIdentifierSettings(identifier, {
@@ -306,12 +306,12 @@ describe('profile validation', () => {
     }).not.toThrow();
 
     expect(() => {
-      verifyProfileSettings({ email: 'email@logto.io' }, mockSignInExperience);
+      verifyProfileSettings({ email: 'email@myeyesid.io' }, mockSignInExperience);
     }).toThrow();
 
     expect(() => {
       verifyProfileSettings(
-        { email: 'email@logto.io' },
+        { email: 'email@myeyesid.io' },
         {
           ...mockSignInExperience,
           signUp: { identifiers: [SignInIdentifier.Email], password: false, verify: true },
@@ -349,7 +349,7 @@ describe('profile validation', () => {
 
     expect(() => {
       verifyProfileSettings(
-        { email: 'email@logto.io' },
+        { email: 'email@myeyesid.io' },
         {
           ...mockSignInExperience,
           signUp: {

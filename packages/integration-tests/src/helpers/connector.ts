@@ -1,4 +1,4 @@
-import { ConnectorType } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
 import { type KyInstance } from 'ky';
 
 import {

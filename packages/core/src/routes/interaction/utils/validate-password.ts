@@ -1,4 +1,4 @@
-import { type PasswordPolicyChecker, type UserInfo } from '@logto/core-kit';
+import { type PasswordPolicyChecker, type UserInfo } from '@myeyesid/core-kit';
 import { type Optional } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

@@ -14,9 +14,9 @@ import RedirectUrisNative, { defaultRedirectUri } from '../../fragments/_redirec
   subtitle="Install MyEyesID SDK and peer dependencies"
 >
 
-<NpmLikeInstallation packageName="@logto/rn expo-crypto expo-secure-store expo-web-browser @react-native-async-storage/async-storage" />
+<NpmLikeInstallation packageName="@myeyesid/rn expo-crypto expo-secure-store expo-web-browser @react-native-async-storage/async-storage" />
 
-The `@logto/rn` package is the SDK for MyEyesID. The remaining packages are its peer dependencies. They couldn't be listed as direct dependencies because the Expo CLI requires that all dependencies for native modules be installed directly within the root project's `package.json`.
+The `@myeyesid/rn` package is the SDK for MyEyesID. The remaining packages are its peer dependencies. They couldn't be listed as direct dependencies because the Expo CLI requires that all dependencies for native modules be installed directly within the root project's `package.json`.
 
 <InlineNotification>
 
@@ -28,20 +28,20 @@ If you're installing this in a [bare React Native app](https://docs.expo.dev/bar
 
 <Step title="Init MyEyesID provider">
 
-Import and use `LogtoProvider` to provide a MyEyesID context:
+Import and use `MyEyesIDProvider` to provide a MyEyesID context:
 
 <Code className="language-tsx" title="App.tsx">
-    {`import { LogtoProvider, type LogtoConfig } from '@logto/rn';
+    {`import { MyEyesIDProvider, type MyEyesIDConfig } from '@myeyesid/rn';
 
-const config: LogtoConfig = {
+const config: MyEyesIDConfig = {
   endpoint: '${props.endpoint}',
   appId: '${props.app.id}',
 };
 
 const App = () => (
-  <LogtoProvider config={config}>
+  <MyEyesIDProvider config={config}>
     <YourAppContent />
-  </LogtoProvider>
+  </MyEyesIDProvider>
 );`}
 </Code>
 
@@ -61,7 +61,7 @@ const App = () => (
   ```json title="app.json"
   {
     "expo": {
-      "scheme": "io.logto"
+      "scheme": "io.myeyesid"
     }
   }
   ```
@@ -72,14 +72,14 @@ The redirect URI is used to redirect the user back to your app after they sign i
 
 <Step title="Implement sign-in and sign-out">
 
-You can use `useLogto` hook to sign in and sign out:
+You can use `useMyEyesID` hook to sign in and sign out:
 
 <Code className="language-tsx" title="App.tsx">
-    {`import { useLogto } from '@logto/rn';
+    {`import { useMyEyesID } from '@myeyesid/rn';
 import { Button } from 'react-native';
 
 const Content = () => {
-  const { signIn, signOut, isAuthenticated } = useLogto();
+  const { signIn, signOut, isAuthenticated } = useMyEyesID();
 
   return (
     <div>
@@ -108,11 +108,11 @@ const Content = () => {
 To display the user's information, you can use the `getIdTokenClaims()` method:
 
 <Code className="language-tsx" title="App.tsx">
-    {`import { useLogto } from '@logto/rn';
+    {`import { useMyEyesID } from '@myeyesid/rn';
 import { Button, Text } from 'react-native';
 
 const Content = () => {
-  const { getIdTokenClaims, isAuthenticated } = useLogto();
+  const { getIdTokenClaims, isAuthenticated } = useMyEyesID();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -131,7 +131,7 @@ const Content = () => {
 
 <Step title="Troubleshooting">
 
-For Expo projects, if you encounter the error `Unable to resolve "@logto/client/shim" from "node_modules/@logto/rn/lib/index.js"`, you can resolve it by adding the following to your `metro.config.js` file:
+For Expo projects, if you encounter the error `Unable to resolve "@myeyesid/client/shim" from "node_modules/@myeyesid/rn/lib/index.js"`, you can resolve it by adding the following to your `metro.config.js` file:
 
 ```js title="metro.config.js"
 const config = {
@@ -144,9 +144,9 @@ const config = {
 module.exports = config;
 ```
 
-This error indicates that `@logto/rn` package is not able to resolve the `@logto/client/shim` module.
+This error indicates that `@myeyesid/rn` package is not able to resolve the `@myeyesid/client/shim` module.
 
-As the node exports were used in the`@logto/client` package, and package exports are not enabled by default in Metro bundler, you need to enable them manually.
+As the node exports were used in the`@myeyesid/client` package, and package exports are not enabled by default in Metro bundler, you need to enable them manually.
 
 See the [React Native package exports support](https://reactnative.dev/blog/2023/06/21/package-exports-support#enabling-package-exports-beta) for more details.
 

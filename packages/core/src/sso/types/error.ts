@@ -1,5 +1,5 @@
-import { ConnectorError, ConnectorErrorCodes } from '@logto/connector-kit';
-import { type JsonObject } from '@logto/schemas';
+import { ConnectorError, ConnectorErrorCodes } from '@myeyesid/connector-kit';
+import { type JsonObject } from '@myeyesid/schemas';
 
 export enum SsoConnectorErrorCodes {
   InvalidMetadata = 'invalid_metadata',

@@ -1,4 +1,4 @@
-import { useLogto } from '@logto/react';
+import { useMyEyesID } from '@myeyesid/react';
 import { useEffect } from 'react';
 
 import useRedirectUri from '@/hooks/use-redirect-uri';
@@ -8,7 +8,7 @@ import AppLoading from '../AppLoading';
 
 /** This component shows a loading indicator and tries to sign in again. */
 function SessionExpired() {
-  const { signIn, isLoading } = useLogto();
+  const { signIn, isLoading } = useMyEyesID();
   const redirectUri = useRedirectUri();
 
   useEffect(() => {

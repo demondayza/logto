@@ -13,14 +13,14 @@ import type {
   GetUserInfo,
   GetConnectorConfig,
   GetTokenResponseAndUserInfo,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
   validateConfig,
   ConnectorType,
   parseJson,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import {
   accessTokenEndpoint,

@@ -8,7 +8,7 @@ import AiPluginJson from './components/AiPluginJson';
 import ClientBasics from './components/ClientBasics';
 import chatgptPluginLogin from './assets/chatgpt-plugin-login.png';
 import chatgptPluginOauthCredentials from './assets/chatgpt-plugin-oauth-credentials.png';
-import logtoSignInExperience from './assets/logto-sign-in-experience.png';
+import myeyesidSignInExperience from './assets/myeyesid-sign-in-experience.png';
 
 <Steps>
 
@@ -66,7 +66,7 @@ The ChatGPT UI will automatically prompt you to install the plugin. Once success
 
 Click on the button, and you will be directed to the MyEyesID sign-in experience.
 
-<img alt="MyEyesID sign-in experience" src={logtoSignInExperience} width="560" style={{ borderRadius: '6px' }} />
+<img alt="MyEyesID sign-in experience" src={myeyesidSignInExperience} width="560" style={{ borderRadius: '6px' }} />
 
 If everything is configured correctly, once you complete the sign-in or registration process in MyEyesID, you will be redirected back to ChatGPT. From now on, every request sent by ChatGPT to your plugin server will carry the Authorization header, allowing you to decode and verify the token in your API.
 

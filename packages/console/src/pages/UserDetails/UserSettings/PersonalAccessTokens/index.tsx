@@ -1,4 +1,4 @@
-import { type PersonalAccessToken, type PersonalAccessToken as Token } from '@logto/schemas';
+import { type PersonalAccessToken, type PersonalAccessToken as Token } from '@myeyesid/schemas';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';

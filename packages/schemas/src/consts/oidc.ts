@@ -27,7 +27,7 @@ export enum ExtraParamsKey {
   FirstScreen = 'first_screen',
   /**
    * Directly sign in via the specified method. Note that the method must be properly configured
-   * in Logto.
+   * in MyEyesID.
    *
    * @remark
    * The format of the value for this key is one of the following:
@@ -59,7 +59,7 @@ export enum ExtraParamsKey {
    * This parameter is applicable only when first_screen is set to either `FirstScreen.IdentifierSignIn` or `FirstScreen.IdentifierRegister`.
    * Multiple identifiers can be provided in the identifier parameter, separated by spaces.
    *
-   * If the provided identifier is not supported in the Logto sign-in experience configuration, it will be ignored,
+   * If the provided identifier is not supported in the MyEyesID sign-in experience configuration, it will be ignored,
    * and if no one of them is supported, it will fallback to the sign-in / sign-up method value set in the sign-in experience configuration.
    *
    * @see {@link SignInIdentifier} for available values.

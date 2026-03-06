@@ -5,7 +5,7 @@ create table sso_connector_idp_initiated_auth_configs (
   /** The globally unique identifier of the SSO connector. */
   connector_id varchar(128) not null
     references sso_connectors (id) on update cascade on delete cascade,
-  /** The default Logto application id. */
+  /** The default MyEyesID application id. */
   default_application_id varchar(21) not null
     references applications (id) on update cascade on delete cascade,
   /** OIDC sign-in redirect URI. */

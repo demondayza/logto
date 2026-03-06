@@ -1,6 +1,6 @@
 import PageContext from '@/Providers/PageContextProvider/PageContext';
-import { absoluteDarken, absoluteLighten } from '@logto/core-kit';
-import { Theme } from '@logto/schemas';
+import { absoluteDarken, absoluteLighten } from '@myeyesid/core-kit';
+import { Theme } from '@myeyesid/schemas';
 import color from 'color';
 import { useEffect, useContext } from 'react';
 

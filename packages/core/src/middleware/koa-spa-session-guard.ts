@@ -1,4 +1,4 @@
-import { logtoConfigGuards, LogtoTenantConfigKey } from '@logto/schemas';
+import { myeyesidConfigGuards, MyEyesIDTenantConfigKey } from '@myeyesid/schemas';
 import { appendPath, trySafe } from '@silverhand/essentials';
 import type { MiddlewareType } from 'koa';
 import type { IRouterParamContext } from 'koa-router';
@@ -47,14 +47,14 @@ export default function koaSpaSessionGuard<
           return;
         }
 
-        // If not, check if there is a redirect URL set in the tenant level LogtoConfigs
+        // If not, check if there is a redirect URL set in the tenant level MyEyesIDConfigs
         const {
           rows: [data],
-        } = await queries.logtoConfigs.getRowsByKeys([
-          LogtoTenantConfigKey.SessionNotFoundRedirectUrl,
+        } = await queries.myeyesidConfigs.getRowsByKeys([
+          MyEyesIDTenantConfigKey.SessionNotFoundRedirectUrl,
         ]);
         const parsed = trySafe(() =>
-          logtoConfigGuards.sessionNotFoundRedirectUrl.parse(data?.value)
+          myeyesidConfigGuards.sessionNotFoundRedirectUrl.parse(data?.value)
         );
 
         if (parsed?.url) {

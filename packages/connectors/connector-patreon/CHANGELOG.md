@@ -1,10 +1,10 @@
-# @logto/connector-patreon
+# @myeyesid/connector-patreon
 
 ## 1.2.3
 
 ### Patch Changes
 
-- @logto/connector-oauth@1.7.3
+- @myeyesid/connector-oauth@1.7.3
 
 ## 1.2.2
 
@@ -12,8 +12,8 @@
 
 - Updated dependencies [462e430445]
 - Updated dependencies [7c87ebc068]
-  - @logto/connector-kit@4.7.0
-  - @logto/connector-oauth@1.7.2
+  - @myeyesid/connector-kit@4.7.0
+  - @myeyesid/connector-oauth@1.7.2
 
 ## 1.2.1
 
@@ -21,8 +21,8 @@
 
 - Updated dependencies [ad4f9d6abf]
 - Updated dependencies [5da6792d40]
-  - @logto/connector-kit@4.6.0
-  - @logto/connector-oauth@1.7.1
+  - @myeyesid/connector-kit@4.6.0
+  - @myeyesid/connector-oauth@1.7.1
 
 ## 1.2.0
 
@@ -38,8 +38,8 @@
 
 - Updated dependencies [0343699d7]
 - Updated dependencies [34964af46]
-  - @logto/connector-oauth@1.7.0
-  - @logto/connector-kit@4.4.0
+  - @myeyesid/connector-oauth@1.7.0
+  - @myeyesid/connector-kit@4.4.0
 
 ## 1.1.0
 
@@ -50,8 +50,8 @@
 ### Patch Changes
 
 - Updated dependencies [2961d355d]
-  - @logto/connector-oauth@1.6.0
-  - @logto/connector-kit@4.3.0
+  - @myeyesid/connector-oauth@1.6.0
+  - @myeyesid/connector-kit@4.3.0
 
 ## 1.0.1
 
@@ -59,8 +59,8 @@
 
 - e11e57de8: bump dependencies for security update
 - Updated dependencies [e11e57de8]
-  - @logto/connector-oauth@1.5.1
-  - @logto/connector-kit@4.1.1
+  - @myeyesid/connector-oauth@1.5.1
+  - @myeyesid/connector-kit@4.1.1
 
 ## 1.0.0
 
@@ -72,7 +72,7 @@
 
   - Initial release of the Patreon connector.
 
-    This release introduces the Logto connector for Patreon, enabling social sign-in using Patreon accounts. It supports OAuth 2.0 authentication flow, fetching user information, and handling errors gracefully.
+    This release introduces the MyEyesID connector for Patreon, enabling social sign-in using Patreon accounts. It supports OAuth 2.0 authentication flow, fetching user information, and handling errors gracefully.
 
   ### Features
 
@@ -84,4 +84,4 @@
 ### Patch Changes
 
 - Updated dependencies [27d2c91d2]
-  - @logto/connector-oauth@1.5.0
+  - @myeyesid/connector-oauth@1.5.0

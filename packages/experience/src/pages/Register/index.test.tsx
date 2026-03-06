@@ -1,10 +1,10 @@
-import type { SignUp } from '@logto/schemas';
-import { SignInMode, SignInIdentifier } from '@logto/schemas';
+import type { SignUp } from '@myeyesid/schemas';
+import { SignInMode, SignInIdentifier } from '@myeyesid/schemas';
 import { Route, Routes } from 'react-router-dom';
 
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings, mockSsoConnectors } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings, mockSsoConnectors } from '@/__mocks__/myeyesid';
 import Register from '@/pages/Register';
 import type { SignInExperienceResponse } from '@/types';
 

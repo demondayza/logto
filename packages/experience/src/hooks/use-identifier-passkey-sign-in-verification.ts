@@ -1,4 +1,4 @@
-import { InteractionEvent, MfaFactor, type WebAuthnAuthenticationOptions } from '@logto/schemas';
+import { InteractionEvent, MfaFactor, type WebAuthnAuthenticationOptions } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import { browserSupportsWebAuthn, startAuthentication } from '@simplewebauthn/browser';
 import { useCallback } from 'react';

@@ -1,4 +1,4 @@
-import { isManagementApi, type Scope, type ResourceResponse } from '@logto/schemas';
+import { isManagementApi, type Scope, type ResourceResponse } from '@myeyesid/schemas';
 import { useMemo, useState } from 'react';
 import useSWR from 'swr';
 

@@ -29,7 +29,7 @@ const application_details = {
     'Endpoint สำหรับดำเนินการตรวจสอบตัวตนและการให้สิทธิ์ ใช้กับ OpenID Connect <a>Authentication</a>',
   show_endpoint_details: 'แสดงรายละเอียด endpoint',
   hide_endpoint_details: 'ซ่อนรายละเอียด endpoint',
-  logto_endpoint: 'MyEyesID endpoint',
+  myeyesid_endpoint: 'MyEyesID endpoint',
   application_id: 'App ID',
   application_id_tip:
     'รหัสประจำตัวแอปพลิเคชันที่ไม่ซ้ำกันซึ่งโดยทั่วไปจะถูกสร้างขึ้นโดย MyEyesID โดยจะเป็นค่า “<a>client_id</a>” ใน OpenID Connect',
@@ -38,7 +38,7 @@ const application_details = {
   redirect_uri: 'Redirect URI',
   redirect_uris: 'Redirect URIs',
   redirect_uri_placeholder: 'https://your.website.com/app',
-  redirect_uri_placeholder_native: 'io.logto://callback',
+  redirect_uri_placeholder_native: 'io.myeyesid://callback',
   redirect_uri_tip:
     'URI สำหรับ redirect หลังจากผู้ใช้ลงชื่อเข้าใช้ (ไม่ว่าจะสำเร็จหรือไม่) ดูข้อมูลเพิ่มเติมใน OpenID Connect <a>AuthRequest</a>',
   mixed_redirect_uri_warning:
@@ -270,7 +270,7 @@ const application_details = {
     name: 'Mapping ค่าคุณสมบัติ',
     title: 'Mapping ค่าคุณสมบัติพื้นฐาน',
     description: 'เพิ่ม mapping เพื่อ sync โปรไฟล์ผู้ใช้จาก MyEyesID สู่แอปพลิเคชันของคุณ',
-    col_logto_claims: 'ค่าของ MyEyesID',
+    col_myeyesid_claims: 'ค่าของ MyEyesID',
     col_sp_claims: 'ชื่อค่าของแอปของคุณ',
     add_button: 'เพิ่มอีกหนึ่งรายการ',
   },

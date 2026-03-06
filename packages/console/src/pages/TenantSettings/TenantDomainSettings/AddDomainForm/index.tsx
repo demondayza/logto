@@ -1,4 +1,4 @@
-import { domainRegEx } from '@logto/core-kit';
+import { domainRegEx } from '@myeyesid/core-kit';
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';

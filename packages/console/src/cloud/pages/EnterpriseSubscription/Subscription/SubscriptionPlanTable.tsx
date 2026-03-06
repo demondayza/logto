@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { type LogtoEnterpriseSubscriptionResponse } from '@/cloud/types/router';
+import { type MyEyesIDEnterpriseSubscriptionResponse } from '@/cloud/types/router';
 import DynamicT from '@/ds-components/DynamicT';
 import Table from '@/ds-components/Table';
 import Tag from '@/ds-components/Tag';
@@ -11,7 +11,7 @@ import styles from './index.module.scss';
 import { formatTableData } from './utils';
 
 type Props = {
-  readonly data?: LogtoEnterpriseSubscriptionResponse;
+  readonly data?: MyEyesIDEnterpriseSubscriptionResponse;
   readonly isLoading?: boolean;
 };
 

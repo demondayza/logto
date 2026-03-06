@@ -1,5 +1,5 @@
-import { UserScope, ReservedScope } from '@logto/core-kit';
-import { NameIdFormat } from '@logto/schemas';
+import { UserScope, ReservedScope } from '@myeyesid/core-kit';
+import { NameIdFormat } from '@myeyesid/schemas';
 import nock from 'nock';
 
 import { EnvSet, getTenantEndpoint } from '#src/env-set/index.js';
@@ -27,7 +27,7 @@ describe('SamlApplication', () => {
       url: 'https://sp.example.com/acs',
     },
     oidcClientMetadata: {
-      redirectUris: ['https://logto.test/callback'],
+      redirectUris: ['https://myeyesid.test/callback'],
     },
     privateKey: 'mock-private-key',
     certificate: 'mock-certificate',

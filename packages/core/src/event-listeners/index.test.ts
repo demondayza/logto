@@ -1,4 +1,4 @@
-import { defaultTenantId } from '@logto/schemas';
+import { defaultTenantId } from '@myeyesid/schemas';
 
 import { createMockProvider } from '#src/test-utils/oidc-provider.js';
 import { MockQueries } from '#src/test-utils/tenant.js';

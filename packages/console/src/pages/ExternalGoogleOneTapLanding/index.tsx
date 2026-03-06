@@ -1,6 +1,6 @@
-import { GoogleConnector, logtoGoogleOneTapCookieKey } from '@logto/connector-kit';
-import { useLogto } from '@logto/react';
-import { ExtraParamsKey } from '@logto/schemas';
+import { GoogleConnector, myeyesidGoogleOneTapCookieKey } from '@myeyesid/connector-kit';
+import { useMyEyesID } from '@myeyesid/react';
+import { ExtraParamsKey } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -13,15 +13,15 @@ import useRedirectUri from '@/hooks/use-redirect-uri';
 /** The external Google One Tap landing page for external website integration. */
 function ExternalGoogleOneTapLanding() {
   const navigate = useNavigate();
-  const { isAuthenticated, signIn } = useLogto();
+  const { isAuthenticated, signIn } = useMyEyesID();
   const { navigateTenant } = useContext(TenantsContext);
   const redirectUri = useRedirectUri();
-  const [logtoGoogleOneTapCookie, setLogtoGoogleOneTapCookie] = useState<string>();
+  const [myeyesidGoogleOneTapCookie, setMyEyesIDGoogleOneTapCookie] = useState<string>();
 
   useEffect(() => {
-    const cookieValue = getCookie(logtoGoogleOneTapCookieKey);
+    const cookieValue = getCookie(myeyesidGoogleOneTapCookieKey);
     if (cookieValue) {
-      setLogtoGoogleOneTapCookie(cookieValue);
+      setMyEyesIDGoogleOneTapCookie(cookieValue);
     }
   }, []);
 
@@ -45,14 +45,14 @@ function ExternalGoogleOneTapLanding() {
         target: GoogleConnector.target,
       },
       ...conditional(
-        logtoGoogleOneTapCookie && {
+        myeyesidGoogleOneTapCookie && {
           extraParams: {
-            [ExtraParamsKey.GoogleOneTapCredential]: logtoGoogleOneTapCookie,
+            [ExtraParamsKey.GoogleOneTapCredential]: myeyesidGoogleOneTapCookie,
           },
         }
       ),
     });
-  }, [isAuthenticated, navigate, navigateTenant, signIn, redirectUri, logtoGoogleOneTapCookie]);
+  }, [isAuthenticated, navigate, navigateTenant, signIn, redirectUri, myeyesidGoogleOneTapCookie]);
 
   return <AppLoading />;
 }

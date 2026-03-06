@@ -34,7 +34,7 @@ const connector_details = {
     'この{{name}}はあなたのサインイン体験で使用されています。削除すると、競合が解決されるまでサインイン体験が正常に機能しません。再追加する場合は再設定する必要があります。',
   deletion_description:
     'このコネクタを削除します。元に戻すことはできず、再追加する場合は再設定する必要があります。',
-  logto_email: {
+  myeyesid_email: {
     total_email_sent: '総送信数: {{value, number}}',
     total_email_sent_tip:
       'MyEyesID はセキュアかつ安定した組み込みメールのために SendGrid を利用しています。完全に無料です。<a>詳細を見る</a>',

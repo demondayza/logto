@@ -1,4 +1,4 @@
-import { UsersPasswordEncryptionMethod, ConnectorType } from '@logto/schemas';
+import { UsersPasswordEncryptionMethod, ConnectorType } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import {
@@ -175,7 +175,7 @@ describe('admin console user management', () => {
 
     const patchProfile = {
       familyName: 'another name',
-      website: 'https://logto.io/',
+      website: 'https://myeyesid.io/',
     };
     const updatedProfile2 = await updateUserProfile(user.id, patchProfile);
     expect(updatedProfile2).toMatchObject({ ...profile, ...patchProfile });
@@ -260,7 +260,7 @@ describe('admin console user management', () => {
       userId: 'social_identity_user_id_' + randomString(),
       details: {
         age: 21,
-        email: 'foo@logto.io',
+        email: 'foo@myeyesid.io',
       },
     };
 

@@ -11,7 +11,7 @@ jobs:
   event_dispatch:
     strategy:
       matrix:
-        target: [logto-io/cloud]
+        target: [myeyesid-io/cloud]
     runs-on: ubuntu-latest
 
     steps:

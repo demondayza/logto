@@ -1,8 +1,8 @@
 import crypto from 'node:crypto';
 
-import { PasswordPolicyChecker } from '@logto/core-kit';
-import { InteractionEvent } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { PasswordPolicyChecker } from '@myeyesid/core-kit';
+import { InteractionEvent } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
 import RequestError from '#src/errors/RequestError/index.js';
@@ -175,7 +175,7 @@ describe('identifier verification', () => {
   });
 
   it('social', async () => {
-    const identifier = { connectorId: 'logto', connectorData: {} };
+    const identifier = { connectorId: 'myeyesid', connectorData: {} };
 
     const result = await identifierPayloadVerification(
       baseCtx,
@@ -195,7 +195,7 @@ describe('identifier verification', () => {
   });
 
   it('should throw if social email is SSO only', async () => {
-    const identifier = { connectorId: 'logto', connectorData: {} };
+    const identifier = { connectorId: 'myeyesid', connectorData: {} };
     const useInfo = { id: 'foo', email: 'foo@example.com' };
 
     verifySsoOnlyEmailIdentifier.mockRejectedValueOnce(new RequestError('session.sso_enabled'));
@@ -220,16 +220,16 @@ describe('identifier verification', () => {
       identifiers: [
         {
           key: 'social',
-          connectorId: 'logto',
+          connectorId: 'myeyesid',
           userInfo: {
             id: 'foo',
-            email: 'email@logto.io',
+            email: 'email@myeyesid.io',
           },
         },
       ],
     };
 
-    const identifierPayload = Object.freeze({ connectorId: 'logto', email: 'email@logto.io' });
+    const identifierPayload = Object.freeze({ connectorId: 'myeyesid', email: 'email@myeyesid.io' });
 
     const result = await identifierPayloadVerification(
       baseCtx,
@@ -240,12 +240,12 @@ describe('identifier verification', () => {
 
     expect(result).toEqual({
       key: 'emailVerified',
-      value: 'email@logto.io',
+      value: 'email@myeyesid.io',
     });
   });
 
   it('verified social email should throw if social session not found', async () => {
-    const identifierPayload = Object.freeze({ connectorId: 'logto', email: 'email@logto.io' });
+    const identifierPayload = Object.freeze({ connectorId: 'myeyesid', email: 'email@myeyesid.io' });
 
     await expect(
       identifierPayloadVerification(baseCtx, tenant, identifierPayload, interactionStorage)
@@ -258,7 +258,7 @@ describe('identifier verification', () => {
       identifiers: [
         {
           key: 'social',
-          connectorId: 'logto',
+          connectorId: 'myeyesid',
           userInfo: {
             id: 'foo',
             email: 'email@googl.io',
@@ -267,7 +267,7 @@ describe('identifier verification', () => {
       ],
     };
 
-    const identifierPayload = Object.freeze({ connectorId: 'logto', email: 'email@logto.io' });
+    const identifierPayload = Object.freeze({ connectorId: 'myeyesid', email: 'email@myeyesid.io' });
 
     await expect(
       identifierPayloadVerification(baseCtx, tenant, identifierPayload, interactionRecord)

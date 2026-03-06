@@ -1,4 +1,4 @@
-import { useLogto } from '@logto/react';
+import { useMyEyesID } from '@myeyesid/react';
 import classNames from 'classnames';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +14,7 @@ import styles from './index.module.scss';
 function Welcome() {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
   const { navigate } = useTenantPathname();
-  const { isAuthenticated, signIn } = useLogto();
+  const { isAuthenticated, signIn } = useMyEyesID();
   const theme = useTheme();
   const redirectUri = useRedirectUri();
 

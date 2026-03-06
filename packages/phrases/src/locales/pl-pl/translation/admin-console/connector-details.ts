@@ -34,7 +34,7 @@ const connector_details = {
     'Ten {{name}} jest używany w Twoim procesie logowania. Usunięcie spowoduje, że Twoje doświadczenie logowania nie będzie działać poprawnie, dopóki nie rozwiążesz konfliktu. Będziesz musiał go ponownie skonfigurować, jeśli zdecydujesz się go dodać z powrotem.',
   deletion_description:
     'Usuwasz ten konektor. Nie można tego cofnąć, będziesz musiał go ponownie skonfigurować, jeśli zdecydujesz się go ponownie dodać.',
-  logto_email: {
+  myeyesid_email: {
     total_email_sent: 'Wysłano łącznie emaili: {{value, number}}',
     total_email_sent_tip:
       'MyEyesID wykorzystuje SendGrid do bezpiecznej i stabilnej wysyłki wbudowanych wiadomości e-mail. Jest to całkowicie darmowe do użytku. <a>Więcej informacji</a>',

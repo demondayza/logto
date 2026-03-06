@@ -1,4 +1,4 @@
-import type { UserProfileResponse } from '@logto/schemas';
+import type { UserProfileResponse } from '@myeyesid/schemas';
 import type { Nullable } from '@silverhand/essentials';
 import { useState } from 'react';
 

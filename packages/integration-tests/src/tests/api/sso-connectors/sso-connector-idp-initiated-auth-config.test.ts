@@ -1,4 +1,4 @@
-import { ApplicationType, type SsoConnector, type Application } from '@logto/schemas';
+import { ApplicationType, type SsoConnector, type Application } from '@myeyesid/schemas';
 
 import { createApplication, deleteApplication } from '#src/api/application.js';
 import { SsoConnectorApi } from '#src/api/sso-connector.js';

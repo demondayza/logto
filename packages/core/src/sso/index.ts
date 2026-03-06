@@ -1,4 +1,4 @@
-import { SsoProviderName } from '@logto/schemas';
+import { SsoProviderName } from '@myeyesid/schemas';
 
 import { azureAdSsoConnectorFactory } from './AzureAdSsoConnector/index.js';
 import { azureOidcSsoConnectorFactory } from './AzureOidcSsoConnector/index.js';

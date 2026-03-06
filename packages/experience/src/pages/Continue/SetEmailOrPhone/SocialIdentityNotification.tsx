@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { is } from 'superstruct';

@@ -1,5 +1,5 @@
-import { SsoProviderName, SsoProviderType } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared/universal';
+import { SsoProviderName, SsoProviderType } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import snakecaseKeys from 'snakecase-keys';
 import { z } from 'zod';
 

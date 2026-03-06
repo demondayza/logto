@@ -5,7 +5,7 @@ import {
   LogResult,
   SignInIdentifier,
   InteractionHookEvent,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { authedAdminApi } from '#src/api/api.js';

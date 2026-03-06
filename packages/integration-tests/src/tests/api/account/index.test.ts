@@ -1,5 +1,5 @@
-import { UserScope } from '@logto/core-kit';
-import { hookEvents, SignInIdentifier } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { hookEvents, SignInIdentifier } from '@myeyesid/schemas';
 
 import { enableAllAccountCenterFields } from '#src/api/account-center.js';
 import { authedAdminApi } from '#src/api/api.js';

@@ -2,7 +2,7 @@
   "tags": [
     {
       "name": "Sign-in experience",
-      "description": "Endpoints for customizing Logto sign-in experience. See [🎨 Customize sign-in experience](https://docs.logto.io/docs/recipes/customize-sie/) to learn more about how the configuration works and reflects on the user interface."
+      "description": "Endpoints for customizing MyEyesID sign-in experience. See [🎨 Customize sign-in experience](https://docs.myeyesid.io/docs/recipes/customize-sie/) to learn more about how the configuration works and reflects on the user interface."
     }
   ],
   "paths": {
@@ -23,8 +23,8 @@
                     "languageInfo": {
                       "description": "The language detection policy for the sign-in page."
                     },
-                    "hideLogtoBranding": {
-                      "description": "Cloud only. Whether to hide the Logto branding on hosted sign-in pages."
+                    "hideMyEyesIDBranding": {
+                      "description": "Cloud only. Whether to hide the MyEyesID branding on hosted sign-in pages."
                     },
                     "signIn": {
                       "description": "Sign-in method settings."
@@ -77,7 +77,7 @@
                       "description": "Define email restriction policies. Users will be prohibited from registering or linking any email addresses that are included in the blocklist.",
                       "properties": {
                         "blockDisposableAddress": {
-                          "description": "Cloud only.  Whether to block disposable email addresses. Once enabled, Logto will check the email domain against a list of known disposable email domains. If the domain is found in the list, the email address will be blocked."
+                          "description": "Cloud only.  Whether to block disposable email addresses. Once enabled, MyEyesID will check the email domain against a list of known disposable email domains. If the domain is found in the list, the email address will be blocked."
                         },
                         "blockSubaddressing": {
                           "description": "Whether to block sub-addresses. (E.g., example+shopping@test.com)"
@@ -118,8 +118,8 @@
                   "languageInfo": {
                     "description": "Control the language detection policy for the sign-in page."
                   },
-                  "hideLogtoBranding": {
-                    "description": "Cloud only. Whether to hide the Logto branding on hosted sign-in pages."
+                  "hideMyEyesIDBranding": {
+                    "description": "Cloud only. Whether to hide the MyEyesID branding on hosted sign-in pages."
                   },
                   "signIn": {
                     "description": "Sign-in method settings"
@@ -169,7 +169,7 @@
                     "description": "Define email restriction policies. Users will be prohibited from registering or linking any email addresses that are included in the blocklist.",
                     "properties": {
                       "blockDisposableAddress": {
-                        "description": "Cloud only.  Whether to block disposable email addresses. Once enabled, Logto will check the email domain against a list of known disposable email domains. If the domain is found in the list, the email address will be blocked."
+                        "description": "Cloud only.  Whether to block disposable email addresses. Once enabled, MyEyesID will check the email domain against a list of known disposable email domains. If the domain is found in the list, the email address will be blocked."
                       },
                       "blockSubaddressing": {
                         "description": "Whether to block sub-addresses. (E.g., example+shopping@test.com)"

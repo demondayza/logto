@@ -1,4 +1,4 @@
-import { VerificationType } from '@logto/schemas';
+import { VerificationType } from '@myeyesid/schemas';
 import * as s from 'superstruct';
 
 import { verificationIdsMapGuard } from './guard';

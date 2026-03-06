@@ -1,10 +1,10 @@
-# @logto/schemas
+# @myeyesid/schemas
 
 The central packages for all database schemas and their TypeScript definitions and utilities.
 
 ## Table init
 
-The Logto CLI will pick up all necessary SQL queries in `tables/` and `src/models/` and run them in the following order:
+The MyEyesID CLI will pick up all necessary SQL queries in `tables/` and `src/models/` and run them in the following order:
 
 1. Run `tables/_before_all.sql`
 2. Run `tables/*.sql` with the snippet `/* init_order = <number> */` in ascending order of `<number>`

@@ -1,6 +1,6 @@
-import { buildOrganizationUrn } from '@logto/core-kit';
-import { ApplicationType, GrantType, type Resource } from '@logto/schemas';
-import { formUrlEncodedHeaders } from '@logto/shared';
+import { buildOrganizationUrn } from '@myeyesid/core-kit';
+import { ApplicationType, GrantType, type Resource } from '@myeyesid/schemas';
+import { formUrlEncodedHeaders } from '@myeyesid/shared';
 
 import { createPersonalAccessToken } from '#src/api/admin-user.js';
 import { oidcApi } from '#src/api/api.js';
@@ -14,7 +14,7 @@ import { createUserByAdmin } from '#src/helpers/index.js';
 import { OrganizationApiTest } from '#src/helpers/organization.js';
 import { generatePassword, generateUsername, getAccessTokenPayload } from '#src/utils.js';
 
-const tokenType = 'urn:logto:token-type:personal_access_token';
+const tokenType = 'urn:myeyesid:token-type:personal_access_token';
 
 describe('Token Exchange (Personal Access Token)', () => {
   const username = generateUsername();
@@ -23,7 +23,7 @@ describe('Token Exchange (Personal Access Token)', () => {
   // make it easy to check claims.
   const testApiResourceInfo: Pick<Resource, 'name' | 'indicator'> = {
     name: 'test-api-resource',
-    indicator: 'https://foo.logto.io/api',
+    indicator: 'https://foo.myeyesid.io/api',
   };
 
   /* eslint-disable @silverhand/fp/no-let */

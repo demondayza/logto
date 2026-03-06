@@ -1,4 +1,4 @@
-import { type Scope, type OrganizationScope } from '@logto/schemas';
+import { type Scope, type OrganizationScope } from '@myeyesid/schemas';
 import useSWR from 'swr';
 
 import { type RequestError } from '@/hooks/use-api';

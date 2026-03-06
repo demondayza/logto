@@ -1,6 +1,6 @@
-import { emailRegEx } from '@logto/core-kit';
-import { useLogto } from '@logto/react';
-import { TenantRole, Theme } from '@logto/schemas';
+import { emailRegEx } from '@myeyesid/core-kit';
+import { useMyEyesID } from '@myeyesid/react';
+import { TenantRole, Theme } from '@myeyesid/schemas';
 import { useCallback, useContext, useMemo } from 'react';
 import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -69,7 +69,7 @@ function CreateTenant() {
     [t]
   );
 
-  const { isAuthenticated, getOrganizationToken } = useLogto();
+  const { isAuthenticated, getOrganizationToken } = useMyEyesID();
   const cloudApi = useCloudApi();
   const { currentTenant } = useContext(TenantsContext);
   const { regions, regionsError } = useAvailableRegions();

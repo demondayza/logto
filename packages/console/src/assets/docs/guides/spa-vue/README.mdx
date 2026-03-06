@@ -16,33 +16,33 @@ import { defaultRedirectUri, defaultPostSignOutUri } from '../../fragments/_redi
   subtitle="Install MyEyesID SDK for your project"
 >
 
-<NpmLikeInstallation packageName="@logto/vue" />
+<NpmLikeInstallation packageName="@myeyesid/vue" />
 
 </Step>
 
 <Step
-  title="Init LogtoClient"
+  title="Init MyEyesIDClient"
 >
 
 <InlineNotification>
   MyEyesID Vue SDK is built with Vue 3 composition API. Therefore, only Vue 3 is supported at the moment. Contact us if you want to add support for Vue 2.
 </InlineNotification>
 
-Import and use `createLogto` to install MyEyesID plugin:
+Import and use `createMyEyesID` to install MyEyesID plugin:
 
 <Code className="language-ts" title="main.ts">
-    {`import { createLogto, type LogtoConfig } from '@logto/vue';
+    {`import { createMyEyesID, type MyEyesIDConfig } from '@myeyesid/vue';
 import { createApp } from 'vue';
 import App from './App.vue';
 
-const config: LogtoConfig = {
+const config: MyEyesIDConfig = {
   endpoint: '${props.endpoint}',
   appId: '${props.app.id}',
 };
 
 const app = createApp(App);
 
-app.use(createLogto, config);
+app.use(createMyEyesID, config);
 app.mount("#app");`}
 </Code>
 
@@ -65,7 +65,7 @@ There are still things to do after the user is redirected back to your applicati
 First let's create a callback page:
 
 ```ts title="views/CallbackView.vue"
-import { useHandleSignInCallback } from '@logto/vue';
+import { useHandleSignInCallback } from '@myeyesid/vue';
 import router from '@/router';
 
 const { isLoading } = useHandleSignInCallback(() => {
@@ -99,12 +99,12 @@ const router = createRouter({
 
 <Step title="Implement sign-in and sign-out">
 
-We provide a composable `useLogto()` which can help you easily manage the authentication flow.
+We provide a composable `useMyEyesID()` which can help you easily manage the authentication flow.
 
 <Code className="language-ts" title="views/HomeView.vue">
-    {`import { useLogto } from '@logto/vue';
+    {`import { useMyEyesID } from '@myeyesid/vue';
 
-const { signIn, signOut, isAuthenticated } = useLogto();
+const { signIn, signOut, isAuthenticated } = useMyEyesID();
 
 const onClickSignIn = () => signIn('${props.redirectUris[0] || defaultRedirectUri}');
 const onClickSignOut = () => signOut('${props.postLogoutRedirectUris[0] || defaultPostSignOutUri}');
@@ -126,10 +126,10 @@ Calling `.signOut()` will clear all the MyEyesID data in memory and localStorage
 To display the user's information, you can use the `getIdTokenClaims()` method. For example, in your Home page:
 
 ```ts title="views/HomeView.vue"
-import { useLogto, type IdTokenClaims } from '@logto/vue';
+import { useMyEyesID, type IdTokenClaims } from '@myeyesid/vue';
 import { ref } from 'vue';
 
-const { isAuthenticated, getIdTokenClaims } = useLogto();
+const { isAuthenticated, getIdTokenClaims } = useMyEyesID();
 const user = ref<IdTokenClaims>();
 
 if (isAuthenticated.value) {

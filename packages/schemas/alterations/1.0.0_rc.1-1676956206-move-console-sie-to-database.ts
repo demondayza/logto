@@ -1,4 +1,4 @@
-import { generateDarkColor } from '@logto/core-kit';
+import { generateDarkColor } from '@myeyesid/core-kit';
 import { sql } from '@silverhand/slonik';
 
 import type { AlterationScript } from '../lib/types/alteration.js';
@@ -15,8 +15,8 @@ const data = {
   },
   branding: {
     style: 'Logo_Slogan',
-    logoUrl: 'https://logto.io/logo.svg',
-    darkLogoUrl: 'https://logto.io/logo-dark.svg',
+    logoUrl: 'https://myeyesid.io/logo.svg',
+    darkLogoUrl: 'https://myeyesid.io/logo-dark.svg',
     slogan: 'admin_console.welcome.title',
   },
   languageInfo: {

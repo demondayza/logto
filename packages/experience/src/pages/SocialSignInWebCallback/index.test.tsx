@@ -1,11 +1,11 @@
-import { VerificationType } from '@logto/schemas';
+import { VerificationType } from '@myeyesid/schemas';
 import { renderHook, waitFor } from '@testing-library/react';
 import { Navigate, Route, Routes, useSearchParams } from 'react-router-dom';
 
 import UserInteractionContextProvider from '@/Providers/UserInteractionContextProvider';
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings, mockSsoConnectors } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings, mockSsoConnectors } from '@/__mocks__/myeyesid';
 import { socialConnectors } from '@/__mocks__/social-connectors';
 import { verifySocialVerification, signInWithSso } from '@/apis/experience';
 import useSessionStorage, { StorageKeys } from '@/hooks/use-session-storages';

@@ -1,4 +1,4 @@
-import { type OrganizationRole, type OrganizationJitEmailDomain } from '@logto/schemas';
+import { type OrganizationRole, type OrganizationJitEmailDomain } from '@myeyesid/schemas';
 
 import { authedAdminApi } from './api.js';
 import { RelationApiFactory } from './factory.js';

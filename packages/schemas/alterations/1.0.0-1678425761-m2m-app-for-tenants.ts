@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import { sql } from '@silverhand/slonik';
 
 import type { AlterationScript } from '../lib/types/alteration.js';
@@ -15,7 +15,7 @@ const alteration: AlterationScript = {
     const { id: resourceId } = await pool.one<{ id: string }>(sql`
       select id from resources
       where tenant_id = ${adminTenantId}
-      and indicator = 'https://cloud.logto.io/api'
+      and indicator = 'https://cloud.myeyesid.io/api'
     `);
 
     // Insert scopes
@@ -44,7 +44,7 @@ const alteration: AlterationScript = {
           ${adminTenantId},
           ${roleId},
           'tenantApplication',
-          'The role for M2M applications that represent a user tenant and send requests to Logto Cloud.'
+          'The role for M2M applications that represent a user tenant and send requests to MyEyesID Cloud.'
         );
     `);
 
@@ -170,7 +170,7 @@ const alteration: AlterationScript = {
         using resources
         where resources.id = scopes.resource_id
         and scopes.tenant_id = ${adminTenantId}
-        and resources.indicator = 'https://cloud.logto.io/api'
+        and resources.indicator = 'https://cloud.myeyesid.io/api'
         and (scopes.name='send:sms' or scopes.name='send:email');
     `);
   },

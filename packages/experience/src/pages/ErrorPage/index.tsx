@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import type { TFuncKey } from 'i18next';
 import { useContext } from 'react';
 

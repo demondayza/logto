@@ -1,4 +1,4 @@
-import { MfaFactor, SignInIdentifier } from '@logto/schemas';
+import { MfaFactor, SignInIdentifier } from '@myeyesid/schemas';
 
 import { initExperienceClient } from '#src/helpers/client.js';
 import { expectRejects } from '#src/helpers/index.js';

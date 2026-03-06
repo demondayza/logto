@@ -1,4 +1,4 @@
-import { ApplicationType } from '@logto/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import {
@@ -140,7 +140,7 @@ describe('application APIs', () => {
     const newApplicationDescription = `new_${application.description ?? ''}`;
 
     const newRedirectUris = application.oidcClientMetadata.redirectUris.concat([
-      'https://logto.dev/callback',
+      'https://myeyesid.dev/callback',
     ]);
 
     await updateApplication(application.id, {
@@ -168,7 +168,7 @@ describe('application APIs', () => {
       createApplication('test-update-app-2', ApplicationType.SPA),
     ]);
 
-    const nativeRedirectUri = 'io.logto://my-app/callback';
+    const nativeRedirectUri = 'io.myeyesid://my-app/callback';
     const webRedirectUri = 'https://example.com/callback';
 
     await Promise.all([

@@ -5,7 +5,7 @@ import { createCustomProfileFieldsLibrary } from '#src/libraries/custom-profile-
 import { createDomainLibrary } from '#src/libraries/domain.js';
 import { createHookLibrary } from '#src/libraries/hook/index.js';
 import { JwtCustomizerLibrary } from '#src/libraries/jwt-customizer.js';
-import type { LogtoConfigLibrary } from '#src/libraries/logto-config.js';
+import type { MyEyesIDConfigLibrary } from '#src/libraries/myeyesid-config.js';
 import { createOneTimeTokenLibrary } from '#src/libraries/one-time-token.js';
 import { OrganizationInvitationLibrary } from '#src/libraries/organization-invitation.js';
 import { createPasscodeLibrary } from '#src/libraries/passcode.js';
@@ -33,7 +33,7 @@ export default class Libraries {
   socials = createSocialLibrary(this.queries, this.connectors);
   jwtCustomizers = new JwtCustomizerLibrary(
     this.queries,
-    this.logtoConfigs,
+    this.myeyesidConfigs,
     this.cloudConnection,
     this.users,
     this.scopes
@@ -81,7 +81,7 @@ export default class Libraries {
     // Explicitly passing connector library to eliminate dependency issue
     private readonly connectors: ConnectorLibrary,
     private readonly cloudConnection: CloudConnectionLibrary,
-    private readonly logtoConfigs: LogtoConfigLibrary,
+    private readonly myeyesidConfigs: MyEyesIDConfigLibrary,
     private readonly subscription: SubscriptionLibrary
   ) {}
 }

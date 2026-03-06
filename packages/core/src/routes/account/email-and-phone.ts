@@ -1,5 +1,5 @@
-import { emailRegEx, phoneRegEx, UserScope } from '@logto/core-kit';
-import { VerificationType, AccountCenterControlValue, SignInIdentifier } from '@logto/schemas';
+import { emailRegEx, phoneRegEx, UserScope } from '@myeyesid/core-kit';
+import { VerificationType, AccountCenterControlValue, SignInIdentifier } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

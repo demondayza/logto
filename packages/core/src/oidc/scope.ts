@@ -1,13 +1,13 @@
 import assert from 'node:assert';
 
-import type { UserClaim } from '@logto/core-kit';
+import type { UserClaim } from '@myeyesid/core-kit';
 import {
   extendedIdTokenClaimsByScope,
   idTokenClaims,
   userClaims,
   UserScope,
-} from '@logto/core-kit';
-import { userProfileKeys, type User, type UserProfile } from '@logto/schemas';
+} from '@myeyesid/core-kit';
+import { userProfileKeys, type User, type UserProfile } from '@myeyesid/schemas';
 import { cond, pick } from '@silverhand/essentials';
 import { snakeCase } from 'snake-case';
 import { type SnakeCaseKeys } from 'snakecase-keys';

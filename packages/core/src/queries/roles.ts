@@ -1,5 +1,5 @@
-import type { CreateRole, Role, RoleType } from '@logto/schemas';
-import { internalRolePrefix, SearchJointMode, Roles } from '@logto/schemas';
+import type { CreateRole, Role, RoleType } from '@myeyesid/schemas';
+import { internalRolePrefix, SearchJointMode, Roles } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

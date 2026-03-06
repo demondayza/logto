@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { sql } from '@silverhand/slonik';
@@ -39,7 +39,7 @@ const alteration: AlterationScript = {
           'demo-app',
           ${generateStandardId()},
           'Demo App',
-          'Logto demo app.',
+          'MyEyesID demo app.',
           'SPA',
           '{ "redirectUris": [], "postLogoutRedirectUris": [] }'::jsonb
         );

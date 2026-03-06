@@ -9,7 +9,7 @@ import { isCloud } from '@/consts/env';
 import { SubscriptionDataContext } from '@/contexts/SubscriptionDataProvider';
 import { TenantsContext } from '@/contexts/TenantsProvider';
 import useAvailableRegions from '@/hooks/use-available-regions';
-import { pickupFeaturedLogtoSkus } from '@/utils/subscription';
+import { pickupFeaturedMyEyesIDSkus } from '@/utils/subscription';
 
 import Skeleton from '../components/Skeleton';
 
@@ -20,14 +20,14 @@ import styles from './index.module.scss';
 
 function Subscription() {
   const cloudApi = useCloudApi();
-  const { logtoSkus, currentSku, onCurrentSubscriptionUpdated } =
+  const { myeyesidSkus, currentSku, onCurrentSubscriptionUpdated } =
     useContext(SubscriptionDataContext);
 
   const { currentTenant, currentTenantId, updateTenant } = useContext(TenantsContext);
 
   const regions = useAvailableRegions();
 
-  const reservedSkus = pickupFeaturedLogtoSkus(logtoSkus);
+  const reservedSkus = pickupFeaturedMyEyesIDSkus(myeyesidSkus);
 
   const { data: periodicUsage, error: periodicUsageError } = useSWR<
     SubscriptionPeriodicUsage,
@@ -92,7 +92,7 @@ function Subscription() {
           <ConsoleEmbeddedPricing />
           <SwitchPlanActionBar
             currentSkuId={currentSku.id}
-            logtoSkus={reservedSkus}
+            myeyesidSkus={reservedSkus}
             onSubscriptionUpdated={async () => {
               /**
                * The upcoming billing info is calculated based on the current subscription usage,

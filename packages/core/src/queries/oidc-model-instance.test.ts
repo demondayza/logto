@@ -1,5 +1,5 @@
-import type { CreateOidcModelInstance } from '@logto/schemas';
-import { OidcModelInstances } from '@logto/schemas';
+import type { CreateOidcModelInstance } from '@myeyesid/schemas';
+import { OidcModelInstances } from '@myeyesid/schemas';
 import { createMockPool, createMockQueryResult, sql } from '@silverhand/slonik';
 
 import { convertToIdentifiers } from '#src/utils/sql.js';

@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 import type { StatisticsData } from '#src/api/index.js';
 import { api, getTotalUsersCount, getNewUsersData, getActiveUsersData } from '#src/api/index.js';

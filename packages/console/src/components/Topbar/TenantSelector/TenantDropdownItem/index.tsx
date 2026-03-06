@@ -1,4 +1,4 @@
-import { TenantTag } from '@logto/schemas';
+import { TenantTag } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 

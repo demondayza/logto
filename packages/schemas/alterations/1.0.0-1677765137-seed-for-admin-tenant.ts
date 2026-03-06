@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 
@@ -18,7 +18,7 @@ const addApiData = async (pool: CommonQueryMethods) => {
   const adminRole = {
     id: generateStandardId(),
     name: 'admin:admin',
-    description: 'Admin role for Logto.',
+    description: 'Admin role for MyEyesID.',
   };
 
   await pool.query(sql`
@@ -26,13 +26,13 @@ const addApiData = async (pool: CommonQueryMethods) => {
       values (
         ${adminTenantId},
         ${adminApi.resourceId},
-        'https://admin.logto.app/api',
-        'Logto Management API for tenant admin'
+        'https://admin.myeyesid.app/api',
+        'MyEyesID Management API for tenant admin'
       ), (
         ${adminTenantId},
         ${cloudApi.resourceId},
-        'https://cloud.logto.io/api',
-        'Logto Cloud API'
+        'https://cloud.myeyesid.io/api',
+        'MyEyesID Cloud API'
       );
   `);
   await pool.query(sql`
@@ -87,7 +87,7 @@ const alteration: AlterationScript = {
   up: async (pool) => {
     await addApiData(pool);
     await pool.query(sql`
-      insert into logto_configs (tenant_id, key, value)
+      insert into myeyesid_configs (tenant_id, key, value)
       values (
         ${adminTenantId},
         'adminConsole',
@@ -109,7 +109,7 @@ const alteration: AlterationScript = {
     await pool.query(sql`
       delete from resources
         where tenant_id = ${adminTenantId}
-        and indicator in ('https://admin.logto.app/api', 'https://cloud.logto.io/api');
+        and indicator in ('https://admin.myeyesid.app/api', 'https://cloud.myeyesid.io/api');
     `);
     await pool.query(sql`
       delete from roles
@@ -117,7 +117,7 @@ const alteration: AlterationScript = {
         and name = 'admin:admin';
     `);
     await pool.query(sql`
-      delete from logto_configs
+      delete from myeyesid_configs
         where tenant_id = ${adminTenantId}
         and key = 'adminConsole';
     `);

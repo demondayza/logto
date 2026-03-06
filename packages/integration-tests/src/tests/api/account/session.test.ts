@@ -1,4 +1,4 @@
-import { UserScope } from '@logto/core-kit';
+import { UserScope } from '@myeyesid/core-kit';
 
 import { enableAllAccountCenterFields } from '#src/api/account-center.js';
 import { authedAdminApi } from '#src/api/api.js';

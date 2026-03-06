@@ -1,6 +1,6 @@
 ###### [STAGE] Build ######
 FROM node:22-alpine as builder
-WORKDIR /etc/logto
+WORKDIR /etc/myeyesid
 ENV CI=true
 
 # No need for Docker build
@@ -39,9 +39,9 @@ RUN rm -rf .scripts pnpm-*.yaml packages/cloud
 
 ###### [STAGE] Seal ######
 FROM node:22-alpine as app
-WORKDIR /etc/logto
-COPY --from=builder /etc/logto .
-RUN mkdir -p /etc/logto/packages/cli/alteration-scripts && chmod g+w /etc/logto/packages/cli/alteration-scripts
+WORKDIR /etc/myeyesid
+COPY --from=builder /etc/myeyesid .
+RUN mkdir -p /etc/myeyesid/packages/cli/alteration-scripts && chmod g+w /etc/myeyesid/packages/cli/alteration-scripts
 EXPOSE 3001
 ENTRYPOINT ["npm", "run"]
 CMD ["start"]

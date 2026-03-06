@@ -1,4 +1,4 @@
-import { useLogto } from '@logto/react';
+import { useMyEyesID } from '@myeyesid/react';
 import { useContext, useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useSWRConfig } from 'swr';
@@ -41,7 +41,7 @@ import useUserDefaultTenantId from '@/hooks/use-user-default-tenant-id';
  * @see ProtectedRoutes
  */
 export default function TenantAccess() {
-  const { isAuthenticated } = useLogto();
+  const { isAuthenticated } = useMyEyesID();
   const { currentTenant, currentTenantId } = useContext(TenantsContext);
   const { mutate } = useSWRConfig();
   const { pathname } = useLocation();

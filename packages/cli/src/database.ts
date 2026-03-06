@@ -1,5 +1,5 @@
-import type { SchemaLike } from '@logto/schemas';
-import { parseTimeoutEnv } from '@logto/shared';
+import type { SchemaLike } from '@myeyesid/schemas';
+import { parseTimeoutEnv } from '@myeyesid/shared';
 import { assert, conditional } from '@silverhand/essentials';
 import {
   createPool,
@@ -16,7 +16,7 @@ import { ConfigKey, consoleLog, getCliConfigWithPrompt } from './utils.js';
 
 const databaseStatementTimeout = parseTimeoutEnv(process.env.DATABASE_STATEMENT_TIMEOUT);
 
-export const defaultDatabaseUrl = 'postgresql://localhost:5432/logto';
+export const defaultDatabaseUrl = 'postgresql://localhost:5432/myeyesid';
 
 export const getDatabaseUrlFromConfig = async () =>
   (await getCliConfigWithPrompt({

@@ -1,4 +1,4 @@
-import type { SignInIdentifier } from '@logto/schemas';
+import type { SignInIdentifier } from '@myeyesid/schemas';
 import { getSafe } from '@silverhand/essentials';
 import { detailedDiff } from 'deep-object-diff';
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 
 // Use lowercase letters for tenant IDs to improve compatibility
 const generateTenantId = () => generateStandardId(6);
@@ -14,8 +14,8 @@ export const createTenantDatabaseMetadata = (
   databaseName: string,
   tenantId = generateTenantId()
 ): TenantDatabaseMetadata => {
-  const parentRole = `logto_tenant_${databaseName}`;
-  const role = `logto_tenant_${databaseName}_${tenantId}`;
+  const parentRole = `myeyesid_tenant_${databaseName}`;
+  const role = `myeyesid_tenant_${databaseName}_${tenantId}`;
   const password = generateStandardId(32);
 
   return { id: tenantId, parentRole, role, password };

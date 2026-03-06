@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import i18next from 'i18next';
 import type { HTMLProps } from 'react';
 

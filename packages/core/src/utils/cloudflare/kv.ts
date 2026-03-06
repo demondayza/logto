@@ -1,6 +1,6 @@
 import path from 'node:path';
 
-import { type ProtectedAppConfigProviderData } from '@logto/schemas';
+import { type ProtectedAppConfigProviderData } from '@myeyesid/schemas';
 import { got } from 'got';
 
 import RequestError from '#src/errors/RequestError/index.js';

@@ -9,7 +9,7 @@ import {
   SignInIdentifier,
   SignInMode,
   VerificationType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { validateEmailAgainstBlocklistPolicy } from '#src/libraries/sign-in-experience/index.js';

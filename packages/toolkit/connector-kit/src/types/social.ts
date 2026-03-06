@@ -83,7 +83,7 @@ export const connectorSessionGuard = z
     state: z.string(),
   })
   .partial()
-  // Accept arbitrary unspecified keys so developers who can not publish @logto/connector-kit can more flexibly utilize connector session.
+  // Accept arbitrary unspecified keys so developers who can not publish @myeyesid/connector-kit can more flexibly utilize connector session.
   .catchall(z.unknown());
 
 export type ConnectorSession = z.infer<typeof connectorSessionGuard>;
@@ -222,7 +222,7 @@ export type GoogleConnectorConfig = {
  * Checks if the given social provider data is from Google One Tap.
  *
  * Google One Tap data can come from:
- * 1. Logto's built-in Google One Tap button (sign-in experience).
+ * 1. MyEyesID's built-in Google One Tap button (sign-in experience).
  * 2. An external Google One Tap button (added by the application itself).
  *
  * To check specifically for external One Tap, use `isExternalGoogleOneTap`.
@@ -235,7 +235,7 @@ export const isGoogleOneTap = (data: Record<string, unknown>) => {
 
 /**
  * Checks if the given social provider data is from an external Google One Tap button
- * (not Logto's sign-in experience).
+ * (not MyEyesID's sign-in experience).
  *
  * External Google One Tap data does not include a CSRF token, so different handling
  * and security measures are required.
@@ -247,4 +247,4 @@ export const isExternalGoogleOneTap = (data: Record<string, unknown>) => {
   return isGoogleOneTap(data) && !data[GoogleConnector.oneTapParams.csrfToken];
 };
 
-export const logtoGoogleOneTapCookieKey = '_logto_google_one_tap_credential';
+export const myeyesidGoogleOneTapCookieKey = '_myeyesid_google_one_tap_credential';

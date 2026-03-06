@@ -1,5 +1,5 @@
-import type { Role } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import type { Role } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { mockAdminUserRole, mockScope, mockUser } from '#src/__mocks__/index.js';
 import { mockIdGenerators } from '#src/test-utils/nanoid.js';

@@ -1,4 +1,4 @@
-import { CustomProfileFieldType, type CustomProfileField } from '@logto/schemas';
+import { CustomProfileFieldType, type CustomProfileField } from '@myeyesid/schemas';
 import { act, fireEvent } from '@testing-library/react';
 
 export const waitForStateUpdate = async () => {

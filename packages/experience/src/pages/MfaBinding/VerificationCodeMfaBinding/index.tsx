@@ -1,4 +1,4 @@
-import { InteractionEvent, type SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, type SignInIdentifier } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { type TFuncKey } from 'i18next';
 import { useCallback, useContext, useState } from 'react';

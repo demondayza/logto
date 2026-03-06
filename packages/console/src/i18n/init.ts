@@ -1,6 +1,6 @@
-import type { LanguageTag } from '@logto/language-kit';
-import resources from '@logto/phrases';
-import experienceResource from '@logto/phrases-experience';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import resources from '@myeyesid/phrases';
+import experienceResource from '@myeyesid/phrases-experience';
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
@@ -21,8 +21,8 @@ const initI18n = async (language?: LanguageTag) => {
       },
       lng: language,
       detection: {
-        lookupLocalStorage: 'i18nextLogtoAcLng',
-        lookupSessionStorage: 'i18nextLogtoAcLng',
+        lookupLocalStorage: 'i18nextMyEyesIDAcLng',
+        lookupSessionStorage: 'i18nextMyEyesIDAcLng',
       },
     });
 

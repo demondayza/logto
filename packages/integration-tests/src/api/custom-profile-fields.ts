@@ -3,7 +3,7 @@ import type {
   UpdateCustomProfileFieldSieOrder,
   CustomProfileField,
   CustomProfileFieldUnion,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { authedAdminApi } from './api.js';
 

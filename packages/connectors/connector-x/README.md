@@ -1,6 +1,6 @@
 # X connector
 
-The official Logto connector for X (formerly Twitter) social sign-in.
+The official MyEyesID connector for X (formerly Twitter) social sign-in.
 
 **Table of contents**
 - [X connector](#x-connector)
@@ -32,7 +32,7 @@ Complete the form with the following information:
 - **App Name:** Provide a unique and descriptive name for your application.
 - **Application Description:** (Optional) Add a brief description of what your app does.
 - **Website URL:** Enter the URL of your application's homepage.
-- **Callback URL / Redirect URI:** In our case, this will be `${your_logto_endpoint}/callback/${connector_id}`. e.g. `https://foo.logto.app/callback/${connector_id}`. The `connector_id` can be found on the top bar of the Logto Admin Console connector details page.
+- **Callback URL / Redirect URI:** In our case, this will be `${your_myeyesid_endpoint}/callback/${connector_id}`. e.g. `https://foo.myeyesid.app/callback/${connector_id}`. The `connector_id` can be found on the top bar of the MyEyesID Admin Console connector details page.
 
 **Step 3:** Select permissions and scopes.
 
@@ -46,7 +46,7 @@ After creation, navigate to your app’s **"Keys and tokens"** section to retrie
 
 ## Configure your connector
 
-In your Logto connector configuration, fill out the following fields with the values obtained from your App's "Keys and tokens" page's "OAuth 2.0 Client ID and Client Secret" section:
+In your MyEyesID connector configuration, fill out the following fields with the values obtained from your App's "Keys and tokens" page's "OAuth 2.0 Client ID and Client Secret" section:
 
 - **clientId:** Your App's Client ID.
 - **clientSecret:** Your App's Client Secret.
@@ -63,7 +63,7 @@ In your Logto connector configuration, fill out the following fields with the va
 
 ## Test X connector
 
-That's it! The X connector should now be available for end-users to sign in with their X accounts. Don't forget to [Enable the connector in the sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it! The X connector should now be available for end-users to sign in with their X accounts. Don't forget to [Enable the connector in the sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 ## Reference
 

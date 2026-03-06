@@ -23,7 +23,7 @@ await execAsync(`pnpm -r prepack`).catch(catchCmdError);
 
 // Note: We deliberately move the lockfile update before `prepublishOnly` to ensure the lockfile
 // is always updated after version bump and before publishing, so that Docker build and other CI
-// tasks can always get the latest lockfile. This is required for `@logto/api` package which has
+// tasks can always get the latest lockfile. This is required for `@myeyesid/api` package which has
 // Docker Compose file and needs to be built in CI.
 
 // Update lockfile

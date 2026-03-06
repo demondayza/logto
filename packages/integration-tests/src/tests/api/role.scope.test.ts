@@ -1,4 +1,4 @@
-import { defaultManagementApi } from '@logto/schemas';
+import { defaultManagementApi } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import { createResource } from '#src/api/index.js';

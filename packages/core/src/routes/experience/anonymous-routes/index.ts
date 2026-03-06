@@ -1,4 +1,4 @@
-import { webAuthnAuthenticationOptionsGuard } from '@logto/schemas';
+import { webAuthnAuthenticationOptionsGuard } from '@myeyesid/schemas';
 import type Router from 'koa-router';
 import { z } from 'zod';
 

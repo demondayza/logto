@@ -62,17 +62,17 @@ Register your application with MyEyesID to get the client credentials and IdP co
 Add the following configuration to your `application.properties` file:
 
 <Code className="language-properties" title="application.properties">
-    {`spring.security.oauth2.client.registration.logto.client-name=logto
-spring.security.oauth2.client.registration.logto.client-id=${props.app.id}
-spring.security.oauth2.client.registration.logto.client-secret=${props.secrets[0]?.value ?? props.app.secret}
-spring.security.oauth2.client.registration.logto.redirect-uri={baseUrl}/login/oauth2/code/{registrationId}
-spring.security.oauth2.client.registration.logto.authorization-grant-type=authorization_code
-spring.security.oauth2.client.registration.logto.scope=openid,profile,email,offline_access
-spring.security.oauth2.client.registration.logto.provider=logto
+    {`spring.security.oauth2.client.registration.myeyesid.client-name=myeyesid
+spring.security.oauth2.client.registration.myeyesid.client-id=${props.app.id}
+spring.security.oauth2.client.registration.myeyesid.client-secret=${props.secrets[0]?.value ?? props.app.secret}
+spring.security.oauth2.client.registration.myeyesid.redirect-uri={baseUrl}/login/oauth2/code/{registrationId}
+spring.security.oauth2.client.registration.myeyesid.authorization-grant-type=authorization_code
+spring.security.oauth2.client.registration.myeyesid.scope=openid,profile,email,offline_access
+spring.security.oauth2.client.registration.myeyesid.provider=myeyesid
 
-spring.security.oauth2.client.provider.logto.issuer-uri=${props.endpoint}oidc
-spring.security.oauth2.client.provider.logto.authorization-uri=${props.endpoint}oidc/auth
-spring.security.oauth2.client.provider.logto.jwk-set-uri=${props.endpoint}oidc/jwks
+spring.security.oauth2.client.provider.myeyesid.issuer-uri=${props.endpoint}oidc
+spring.security.oauth2.client.provider.myeyesid.authorization-uri=${props.endpoint}oidc/auth
+spring.security.oauth2.client.provider.myeyesid.jwk-set-uri=${props.endpoint}oidc/jwks
   `}
 </Code>
 
@@ -86,8 +86,8 @@ spring.security.oauth2.client.provider.logto.jwk-set-uri=${props.endpoint}oidc/j
 
 <RedirectUrisWeb
   defaultBaseUrl="http://localhost:8080/"
-  defaultRedirectUri="http://localhost:8080/login/oauth2/code/logto"
-  defaultPostSignOutUri="http://localhost:8080/login/oauth2/code/logto"
+  defaultRedirectUri="http://localhost:8080/login/oauth2/code/myeyesid"
+  defaultPostSignOutUri="http://localhost:8080/login/oauth2/code/myeyesid"
 />
 
 Make sure the redirect URI in MyEyesID matches the `redirect-uri` set in the `application.properties` file in the previous step.
@@ -257,7 +257,7 @@ This controller will redirect the user to the user page if the user is authentic
 <body>
   <h1>Welcome!</h1>
 
-  <p><a th:href="@{/oauth2/authorization/logto}">Login with MyEyesID</a></p>
+  <p><a th:href="@{/oauth2/authorization/myeyesid}">Login with MyEyesID</a></p>
 </body>
 ```
 

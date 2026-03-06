@@ -11,7 +11,7 @@ import {
   type SocialConnector,
   type CreateConnector,
   type GetConnectorConfig,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import ky, { HTTPError } from 'ky';
 
 import {

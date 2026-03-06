@@ -2,7 +2,7 @@ import {
   type RequestErrorBody,
   type SsoConnectorProvidersResponse,
   type SsoConnectorWithProviderConfig,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { HTTPError } from 'ky';
 import { useContext, useMemo, useState } from 'react';

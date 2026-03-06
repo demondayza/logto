@@ -1,5 +1,5 @@
-import { createManagementApi } from '@logto/api/management';
-import { ApplicationType, RoleType, defaultTenantId } from '@logto/schemas';
+import { createManagementApi } from '@myeyesid/api/management';
+import { ApplicationType, RoleType, defaultTenantId } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import { assignRolesToApplication, createApplication } from '#src/api/application.js';
@@ -10,7 +10,7 @@ import {
   putRolesToUser,
 } from '#src/api/index.js';
 import { createRole, getRoles } from '#src/api/role.js';
-import { logtoUrl } from '#src/constants.js';
+import { myeyesidUrl } from '#src/constants.js';
 import { createUserByAdmin, expectRejects } from '#src/helpers/index.js';
 import { generateRoleName, generateTestName, generateUsername } from '#src/utils.js';
 
@@ -99,7 +99,7 @@ describe('admin console user management (roles)', () => {
     const m2mApp = await createApplication(generateTestName(), ApplicationType.MachineToMachine);
     const [managementApiRole] = await getRoles({
       type: RoleType.MachineToMachine,
-      search: '%Logto Management API access%',
+      search: '%MyEyesID Management API access%',
     });
 
     if (!managementApiRole) {
@@ -111,7 +111,7 @@ describe('admin console user management (roles)', () => {
     const { apiClient } = createManagementApi(defaultTenantId, {
       clientId: m2mApp.id,
       clientSecret: m2mApp.secret,
-      baseUrl: logtoUrl,
+      baseUrl: myeyesidUrl,
     });
 
     const { POST: post, PUT: put } = apiClient as unknown as {

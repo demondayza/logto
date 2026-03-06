@@ -13,7 +13,7 @@ import {
   ConnectorType,
   type GetTokenResponseAndUserInfo,
   type GetAccessTokenByRefreshToken,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import ky, { HTTPError } from 'ky';
 
 import { defaultMetadata, defaultTimeout } from './constant.js';

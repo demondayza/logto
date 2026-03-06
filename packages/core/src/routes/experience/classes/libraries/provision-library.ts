@@ -1,5 +1,5 @@
-import { Component, CoreEvent, getEventName } from '@logto/app-insights/custom-event';
-import { appInsights } from '@logto/app-insights/node';
+import { Component, CoreEvent, getEventName } from '@myeyesid/app-insights/custom-event';
+import { appInsights } from '@myeyesid/app-insights/node';
 import {
   adminConsoleApplicationId,
   adminTenantId,
@@ -14,8 +14,8 @@ import {
   userOnboardingDataKey,
   type User,
   type UserOnboardingData,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { condArray, conditional, conditionalArray, trySafe } from '@silverhand/essentials';
 
 import { EnvSet } from '#src/env-set/index.js';
@@ -47,7 +47,7 @@ export class ProvisionLibrary {
   ) {}
 
   /**
-   * Insert a new user into the Logto database using the provided profile.
+   * Insert a new user into the MyEyesID database using the provided profile.
    *
    * - Provision all JIT organizations for the user if necessary.
    * - Assign the first user to the admin role and the default tenant organization membership. [OSS only]

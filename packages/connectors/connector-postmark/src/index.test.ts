@@ -1,4 +1,4 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 
 import { mockedConfig } from './mock.js';
 
@@ -32,7 +32,7 @@ describe('Postmark connector', () => {
       expect(sendEmailWithTemplate).toHaveBeenCalledWith(
         expect.objectContaining({
           From: mockedConfig.fromEmail,
-          TemplateAlias: 'logto-sign-in',
+          TemplateAlias: 'myeyesid-sign-in',
           To: 'to@email.com',
           TemplateModel: { code: '1234' },
         })

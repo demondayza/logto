@@ -1,4 +1,4 @@
-import { type GeneratedSchema, type SchemaLike } from '@logto/schemas';
+import { type GeneratedSchema, type SchemaLike } from '@myeyesid/schemas';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import { conditionalSql, convertToIdentifiers, manyRows } from '#src/utils/sql.js';

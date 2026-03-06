@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
 import { initExperienceClient } from '#src/helpers/client.js';

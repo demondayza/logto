@@ -1,11 +1,11 @@
-import type { BindMfa, CreateUser, Scope, User } from '@logto/schemas';
+import type { BindMfa, CreateUser, Scope, User } from '@myeyesid/schemas';
 import {
   adminTenantId,
   ProductEvent,
   RoleType,
   UsersPasswordEncryptionMethod,
-} from '@logto/schemas';
-import { generateStandardShortId, generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardShortId, generateStandardId } from '@myeyesid/shared';
 import type { Nullable } from '@silverhand/essentials';
 import { deduplicateByKey, condArray } from '@silverhand/essentials';
 import { argon2Verify, bcryptVerify, md5, sha1, sha256 } from 'hash-wasm';

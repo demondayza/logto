@@ -1,8 +1,8 @@
-import { UserScope } from '@logto/core-kit';
+import { UserScope } from '@myeyesid/core-kit';
 import {
   applicationUserConsentScopesResponseGuard,
   ApplicationUserConsentScopeType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { object, string, nativeEnum } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

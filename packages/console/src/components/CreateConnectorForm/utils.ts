@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { ConnectorType, type ConnectorResponse } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { ConnectorType, type ConnectorResponse } from '@myeyesid/schemas';
 
 import { type ConnectorRadioGroupSize } from './ConnectorRadioGroup';
 import { featuredConnectorTargets } from './constants';

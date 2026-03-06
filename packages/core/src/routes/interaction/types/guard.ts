@@ -1,12 +1,12 @@
-import { socialUserInfoGuard } from '@logto/connector-kit';
-import { validateRedirectUrl } from '@logto/core-kit';
+import { socialUserInfoGuard } from '@myeyesid/connector-kit';
+import { validateRedirectUrl } from '@myeyesid/core-kit';
 import {
   bindMfaGuard,
   eventGuard,
   verifyMfaResultGuard,
   pendingMfaGuard,
   profileGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { z } from 'zod';
 
 // Social Authorization Uri Route Payload Guard

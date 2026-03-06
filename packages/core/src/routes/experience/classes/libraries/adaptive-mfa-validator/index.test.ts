@@ -1,6 +1,6 @@
 import { type IncomingHttpHeaders } from 'node:http';
 
-import { InteractionEvent, type User } from '@logto/schemas';
+import { InteractionEvent, type User } from '@myeyesid/schemas';
 
 import { mockUser } from '#src/__mocks__/user.js';
 import { EnvSet } from '#src/env-set/index.js';
@@ -342,7 +342,7 @@ describe('AdaptiveMfaValidator', () => {
       const ctx = {
         request: {
           headers: {
-            'x-logto-cf-bot-verified': botVerifiedHeader,
+            'x-myeyesid-cf-bot-verified': botVerifiedHeader,
           },
         },
       };

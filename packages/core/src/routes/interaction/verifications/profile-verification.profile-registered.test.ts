@@ -1,5 +1,5 @@
-import { InteractionEvent } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { InteractionEvent } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
@@ -17,16 +17,16 @@ const userQueries = {
 };
 const { hasUser, hasUserWithEmail, hasUserWithNormalizedPhone, hasUserWithIdentity } = userQueries;
 
-const getLogtoConnectorById = jest.fn().mockResolvedValue({
-  metadata: { target: 'logto' },
+const getMyEyesIDConnectorById = jest.fn().mockResolvedValue({
+  metadata: { target: 'myeyesid' },
 });
 
-const tenantContext = new MockTenant(undefined, { users: userQueries }, { getLogtoConnectorById });
+const tenantContext = new MockTenant(undefined, { users: userQueries }, { getMyEyesIDConnectorById });
 const verifyProfile = await pickDefault(import('./profile-verification.js'));
 
 const identifiers: Identifier[] = [
   { key: 'accountId', value: 'foo' },
-  { key: 'emailVerified', value: 'email@logto.io' },
+  { key: 'emailVerified', value: 'email@myeyesid.io' },
   { key: 'phoneVerified', value: '123456' },
   { key: 'social', connectorId: 'connectorId', userInfo: { id: 'foo' } },
 ];
@@ -61,7 +61,7 @@ describe('profile registered validation', () => {
     const interaction = {
       ...baseInteraction,
       profile: {
-        email: 'email@logto.io',
+        email: 'email@myeyesid.io',
       },
     };
 

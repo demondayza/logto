@@ -6,7 +6,7 @@ import {
   type HookEvent,
   type HookEventPayload,
   type ManagementApiContext,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, trySafe } from '@silverhand/essentials';
 import { type Context } from 'koa';
 import { type IRouterParamContext } from 'koa-router';
@@ -38,9 +38,9 @@ export const sendWebhookRequest = async ({
 
   return ky.post(url, {
     headers: {
-      'user-agent': 'Logto (https://logto.io/)',
+      'user-agent': 'MyEyesID (https://myeyesid.io/)',
       ...headers,
-      ...conditional(signingKey && { 'logto-signature-sha-256': sign(signingKey, payload) }),
+      ...conditional(signingKey && { 'myeyesid-signature-sha-256': sign(signingKey, payload) }),
     },
     json: payload,
     retry: { limit: retries ?? 3 },

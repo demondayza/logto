@@ -2,7 +2,7 @@ import type { DatabasePool } from '@silverhand/slonik';
 import type { CommandModule } from 'yargs';
 
 import { createPoolAndDatabaseIfNeeded } from '../../../database.js';
-import { doesConfigsTableExist } from '../../../queries/logto-config.js';
+import { doesConfigsTableExist } from '../../../queries/myeyesid-config.js';
 import { consoleLog, oraPromise } from '../../../utils.js';
 import { getLatestAlterationTimestamp } from '../alteration/index.js';
 import { getAlterationDirectory } from '../alteration/utils.js';

@@ -14,18 +14,18 @@ import UriInputField from '@/mdx-components/UriInputField';
 
 <TabItem value="pub" label="pub.dev">
 
-You can install the `logto_dart_sdk package` directly using the pub package manager.
+You can install the `myeyesid_dart_sdk package` directly using the pub package manager.
 Run the following command under your project root:
 
 ```sh
-flutter pub get logto_dart_sdk
+flutter pub get myeyesid_dart_sdk
 ```
 
 Or add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  logto_dart_sdk: ^3.0.0
+  myeyesid_dart_sdk: ^3.0.0
 ```
 
 Then run:
@@ -41,7 +41,7 @@ flutter pub get
 If you prefer to fork your own version of the SDK, you can clone the repository directly from GitHub.
 
 ```sh
-git clone https://github.com/logto-io/dart
+git clone https://github.com/myeyesid-io/dart
 ```
 
 </TabItem>
@@ -191,10 +191,10 @@ Please check the setup guide in the [flutter_web_auth_2](https://pub.dev/package
 
 <Step title="Init Client" subtitle="1 step">
 
-Import the `logto_dart_sdk` package and initialize the `LogtoClient` instance at the root state of your application.
+Import the `myeyesid_dart_sdk` package and initialize the `MyEyesIDClient` instance at the root state of your application.
 
 <Code className="language-dart" title="lib/main.dart">
-{`import 'package:logto_dart_sdk/logto_dart_sdk.dart';
+{`import 'package:myeyesid_dart_sdk/myeyesid_dart_sdk.dart';
 import 'package:http/http.dart' as http;
 
 void main() async {
@@ -223,22 +223,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late LogtoClient logtoClient;
+  late MyEyesIDClient myeyesidClient;
 
   void render() {
     // state change
   }
 
   // highlight-start
-  // LogtoConfig
-  final logtoConfig = const LogtoConfig(
-    endpoint: "<your-logto-endpoint>",
+  // MyEyesIDConfig
+  final myeyesidConfig = const MyEyesIDConfig(
+    endpoint: "<your-myeyesid-endpoint>",
     appId: "<your-app-id>"
   );
 
   void _init() {
-    logtoClient = LogtoClient(
-      config: logtoConfig,
+    myeyesidClient = MyEyesIDClient(
+      config: myeyesidConfig,
       httpClient: http.Client(), // Optional http client
     );
     render();
@@ -272,7 +272,7 @@ class _MyHomePageState extends State<MyHomePage> {
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="io.logto"/>
+        <data android:scheme="io.myeyesid"/>
       </intent-filter>
     </activity>
     ```
@@ -289,12 +289,12 @@ Just like signing in, users should be redirected to MyEyesID for signing out of 
 
 ### Implement sign-in
 
-In your application, you can use the `logtoClient.signIn` method to initiate the sign-in process. This method will redirect the user to the MyEyesID sign-in page and handle the authentication flow.
+In your application, you can use the `myeyesidClient.signIn` method to initiate the sign-in process. This method will redirect the user to the MyEyesID sign-in page and handle the authentication flow.
 
 <Code className="language-dart" title="lib/main.dart">
 {`class _MyHomePageState extends State<MyHomePage> {
   // ...
-  final redirectUri = 'io.logto://callback';
+  final redirectUri = 'io.myeyesid://callback';
 
   @override
   Widget build(BuildContext context) {
@@ -303,7 +303,7 @@ In your application, you can use the `logtoClient.signIn` method to initiate the
     Widget signInButton = TextButton(
       onPressed: () async {
         // highlight-start
-        await logtoClient.signIn(redirectUri);
+        await myeyesidClient.signIn(redirectUri);
         render();
         // highlight-end
       },
@@ -337,7 +337,7 @@ Now let's add a sign-out button on the main page so users can sign out from your
 {`class _MyHomePageState extends State<MyHomePage> {
   // ...
 
-  final postSignOutRedirectUri = 'io.logto://home';
+  final postSignOutRedirectUri = 'io.myeyesid://home';
 
   @override
   Widget build(BuildContext context) {
@@ -346,7 +346,7 @@ Now let's add a sign-out button on the main page so users can sign out from your
     Widget signOutButton = TextButton(
       onPressed: () async {
         // highlight-start
-        await logtoClient.signOut(postSignOutRedirectUri);
+        await myeyesidClient.signOut(postSignOutRedirectUri);
         render();
         // highlight-end
       },
@@ -375,7 +375,7 @@ Now let's add a sign-out button on the main page so users can sign out from your
 
 <Step title="Handle authentication status" subtitle="1 step">
 
-In MyEyesID SDK, you can use `logtoClient.isAuthenticated` to check the authentication status, if the user is signed in, the value will be `true`, otherwise, the value will be `false`.
+In MyEyesID SDK, you can use `myeyesidClient.isAuthenticated` to check the authentication status, if the user is signed in, the value will be `true`, otherwise, the value will be `false`.
 
 Define a boolean variable `isAuthenticated` in the state of your application to keep track of the authentication status.
 
@@ -386,7 +386,7 @@ class _MyHomePageState extends State<MyHomePage>{
   // ...
 
   void render() async {
-    if (await logtoClient.isAuthenticated()) {
+    if (await myeyesidClient.isAuthenticated()) {
       setState(() {
         isAuthenticated = true;
       });
@@ -405,7 +405,7 @@ class _MyHomePageState extends State<MyHomePage>{
 
      Widget signInButton = TextButton(
       onPressed: () async {
-        await logtoClient.signIn(redirectUri);
+        await myeyesidClient.signIn(redirectUri);
         render();
       },
       child: const Text('Sign In'),
@@ -413,7 +413,7 @@ class _MyHomePageState extends State<MyHomePage>{
 
     Widget signOutButton = TextButton(
       onPressed: () async {
-        await logtoClient.signOut();
+        await myeyesidClient.signOut();
         render();
       },
       child: const Text('Sign Out'),

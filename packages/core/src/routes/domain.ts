@@ -1,4 +1,4 @@
-import { Domains, ProductEvent, domainResponseGuard, domainSelectFields } from '@logto/schemas';
+import { Domains, ProductEvent, domainResponseGuard, domainSelectFields } from '@myeyesid/schemas';
 import { pick, trySafe } from '@silverhand/essentials';
 import { z } from 'zod';
 

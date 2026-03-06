@@ -19,9 +19,9 @@ export type LocalCheckoutSession = z.infer<typeof localCheckoutSessionGuard>;
 export type InvoiceStatus = InvoicesResponse['invoices'][number]['status'];
 
 /**
- * Forked from `@logto/cloud` package
+ * Forked from `@myeyesid/cloud` package
  *
- * The original enum is defined in the `@logto/cloud` package.
+ * The original enum is defined in the `@myeyesid/cloud` package.
  * However, we do not have direct access to the enum in the console package.
  * So we need to redefine it here.
  */

@@ -6,8 +6,8 @@ import {
   type CreateOrganizationRole,
   type OrganizationRole,
   type OrganizationRoleKeys,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { z } from 'zod';
 
 import { buildManagementApiContext } from '#src/libraries/hook/utils.js';

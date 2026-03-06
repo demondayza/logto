@@ -1,4 +1,4 @@
-import { type TenantTag } from '@logto/schemas';
+import { type TenantTag } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useMemo, useRef, useState } from 'react';
 

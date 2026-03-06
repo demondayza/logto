@@ -1,5 +1,5 @@
-import type { LogtoErrorCode } from '@logto/phrases';
-import { InteractionEvent, eventGuard, identifierPayloadGuard, profileGuard } from '@logto/schemas';
+import type { MyEyesIDErrorCode } from '@myeyesid/phrases';
+import { InteractionEvent, eventGuard, identifierPayloadGuard, profileGuard } from '@myeyesid/schemas';
 import type Router from 'koa-router';
 import { z } from 'zod';
 
@@ -122,7 +122,7 @@ export default function interactionRoutes<T extends AnonymousRouter>(
       status: [204, 400],
     }),
     async (ctx, next) => {
-      const error: LogtoErrorCode = 'oidc.aborted';
+      const error: MyEyesIDErrorCode = 'oidc.aborted';
       await assignInteractionResults(ctx, provider, { error });
 
       ctx.status = 204;

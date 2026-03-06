@@ -7,7 +7,7 @@ import type {
   GetConnectorConfig,
   GetUserInfo,
   SocialConnector,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
@@ -15,7 +15,7 @@ import {
   ConnectorType,
   jsonGuard,
   validateConfig,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import {
   accessTokenEndpoint,

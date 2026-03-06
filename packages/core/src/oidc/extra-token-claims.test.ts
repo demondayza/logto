@@ -1,4 +1,4 @@
-import { InteractionEvent } from '@logto/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 import Router from 'koa-router';
 import { type AccessToken, type KoaContextWithOIDC } from 'oidc-provider';
 
@@ -80,7 +80,7 @@ describe('getExtraTokenClaimsForJwtCustomization', () => {
       envSet: tenant.envSet,
       queries: tenant.queries,
       libraries: tenant.libraries,
-      logtoConfigs: tenant.logtoConfigs,
+      myeyesidConfigs: tenant.myeyesidConfigs,
     });
 
     expect(runScriptInLocalVm.mock.calls[0]?.[0]).toMatchObject({

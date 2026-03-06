@@ -1,5 +1,5 @@
-import { InteractionEvent, MfaFactor } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { InteractionEvent, MfaFactor } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import type { Provider } from 'oidc-provider';
 
 import {
@@ -59,9 +59,9 @@ const { bindMfaPayloadVerification, verifyMfaPayloadVerification } = await impor
 );
 
 const additionalParameters = {
-  rpId: 'logto.io',
+  rpId: 'myeyesid.io',
   userAgent: 'userAgent',
-  origin: 'https://logto.io',
+  origin: 'https://myeyesid.io',
 };
 
 describe('bindMfaPayloadVerification', () => {

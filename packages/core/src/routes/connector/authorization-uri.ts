@@ -1,5 +1,5 @@
-import { notImplemented } from '@logto/cli/lib/connector/consts.js';
-import { ConnectorType } from '@logto/connector-kit';
+import { notImplemented } from '@myeyesid/cli/lib/connector/consts.js';
+import { ConnectorType } from '@myeyesid/connector-kit';
 import { object, string } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';
@@ -10,17 +10,17 @@ import { type ManagementApiRouter, type RouterInitArgs } from '../types.js';
 export default function connectorAuthorizationUriRoutes<T extends ManagementApiRouter>(
   ...[router, tenant]: RouterInitArgs<T>
 ) {
-  const { getLogtoConnectorById } = tenant.connectors;
+  const { getMyEyesIDConnectorById } = tenant.connectors;
 
   /**
    * Returns the authorization uri of the social platform that bundled with the given social connector.
    * With the returned authorization uri, you can redirect users to the social platform to authenticate.
    * The usage of this API is usually coupled with `POST /users/:userId/identities` to link authenticated
-   * social identity to a Logto user.
+   * social identity to a MyEyesID user.
    *
    * Note: Currently due to technical limitations, this API does not support the following connectors that
-   * rely on Logto interaction session: `@logto/apple`, `@logto/connector-saml`, `@logto/connector-oidc`
-   * and `@logto/connector-oauth`.
+   * rely on MyEyesID interaction session: `@myeyesid/apple`, `@myeyesid/connector-saml`, `@myeyesid/connector-oidc`
+   * and `@myeyesid/connector-oauth`.
    *
    * @param {string} connectorId - The id of the connector
    * @param {string} state - A random string generated on the client side to prevent CSRF attack
@@ -39,7 +39,7 @@ export default function connectorAuthorizationUriRoutes<T extends ManagementApiR
       const { state, redirectUri } = ctx.guard.body;
       assertThat(state && redirectUri, 'session.insufficient_info');
 
-      const connector = await getLogtoConnectorById(connectorId);
+      const connector = await getMyEyesIDConnectorById(connectorId);
       assertThat(connector.type === ConnectorType.Social, 'connector.unexpected_type');
 
       const {

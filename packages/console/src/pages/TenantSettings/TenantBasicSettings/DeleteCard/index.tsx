@@ -1,4 +1,4 @@
-import { adminTenantId } from '@logto/schemas';
+import { adminTenantId } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import FormCard from '@/components/FormCard';

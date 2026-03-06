@@ -3,7 +3,7 @@ import {
   ApplicationSignInExperiences,
   Applications,
   type ApplicationSignInExperience,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type Nullable } from '@silverhand/essentials';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 

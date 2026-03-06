@@ -1,4 +1,4 @@
-import { AlternativeSignUpIdentifier, type SignUp } from '@logto/schemas';
+import { AlternativeSignUpIdentifier, type SignUp } from '@myeyesid/schemas';
 import { getSafe } from '@silverhand/essentials';
 import { diff } from 'deep-object-diff';
 import { useTranslation } from 'react-i18next';

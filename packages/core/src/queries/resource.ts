@@ -1,5 +1,5 @@
-import type { Resource, CreateResource } from '@logto/schemas';
-import { Resources } from '@logto/schemas';
+import type { Resource, CreateResource } from '@myeyesid/schemas';
+import { Resources } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

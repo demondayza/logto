@@ -1,4 +1,4 @@
-import { type CaptchaProvider } from '@logto/schemas';
+import { type CaptchaProvider } from '@myeyesid/schemas';
 import { type ResponseError } from '@withtyped/client';
 import useSWR from 'swr';
 

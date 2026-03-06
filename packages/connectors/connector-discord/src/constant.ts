@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType, ConnectorPlatform } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType, ConnectorPlatform } from '@myeyesid/connector-kit';
 
 /**
  * Base authorization URL.

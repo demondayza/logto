@@ -1,8 +1,8 @@
 import {
   SupportedSigningKeyAlgorithm,
   type OidcConfigKeysResponse,
-  LogtoOidcConfigKeyType,
-} from '@logto/schemas';
+  MyEyesIDOidcConfigKeyType,
+} from '@myeyesid/schemas';
 import { condArray } from '@silverhand/essentials';
 import { useMemo, useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -23,14 +23,14 @@ import useApi, { type RequestError } from '@/hooks/use-api';
 import styles from './index.module.scss';
 
 type Props = {
-  readonly keyType: LogtoOidcConfigKeyType;
+  readonly keyType: MyEyesIDOidcConfigKeyType;
 };
 
 function SigningKeyFormCard({ keyType }: Props) {
   const api = useApi();
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console.signing_keys' });
 
-  const isPrivateKey = keyType === LogtoOidcConfigKeyType.PrivateKeys;
+  const isPrivateKey = keyType === MyEyesIDOidcConfigKeyType.PrivateKeys;
   const keyTypePhrase = isPrivateKey ? 'private' : 'cookie';
 
   const { data, error, mutate } = useSWR<OidcConfigKeysResponse[], RequestError>(

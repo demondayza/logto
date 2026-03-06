@@ -1,21 +1,21 @@
-import { notImplemented } from '@logto/cli/lib/connector/index.js';
-import { ConnectorType } from '@logto/schemas';
+import { notImplemented } from '@myeyesid/cli/lib/connector/index.js';
+import { ConnectorType } from '@myeyesid/schemas';
 import { has } from '@silverhand/essentials';
 import { object, record, string, unknown } from 'zod';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import koaGuard from '#src/middleware/koa-guard.js';
 import assertThat from '#src/utils/assert-that.js';
-import { transpileLogtoConnector } from '#src/utils/connectors/index.js';
+import { transpileMyEyesIDConnector } from '#src/utils/connectors/index.js';
 
 import type { RouterInitArgs } from '../routes/types.js';
 
 import type { AuthedMeRouter } from './types.js';
 
 /**
- * This social API route is meant for linking social accounts in Logto Cloud AC.
+ * This social API route is meant for linking social accounts in MyEyesID Cloud AC.
  * Thus it does NOT support connectors rely on the session (jti based) storage. E.g. Apple connector and all standard connectors.
- * This is because Logto Cloud AC only supports Google and GitHub social sign-in, both of which do not rely on session storage.
+ * This is because MyEyesID Cloud AC only supports Google and GitHub social sign-in, both of which do not rely on session storage.
  */
 export default function socialRoutes<T extends AuthedMeRouter>(
   ...[router, tenant]: RouterInitArgs<T>
@@ -25,11 +25,11 @@ export default function socialRoutes<T extends AuthedMeRouter>(
       users: { findUserById, updateUserById, deleteUserIdentity, hasUserWithIdentity },
       signInExperiences: { findDefaultSignInExperience },
     },
-    connectors: { getLogtoConnectors, getLogtoConnectorById },
+    connectors: { getMyEyesIDConnectors, getMyEyesIDConnectorById },
   } = tenant;
 
   router.get('/social/connectors', async (ctx, next) => {
-    const connectors = await getLogtoConnectors();
+    const connectors = await getMyEyesIDConnectors();
     const { socialSignInConnectorTargets } = await findDefaultSignInExperience();
 
     ctx.body = await Promise.all(
@@ -38,7 +38,7 @@ export default function socialRoutes<T extends AuthedMeRouter>(
           ({ type, metadata: { target } }) =>
             type === ConnectorType.Social && socialSignInConnectorTargets.includes(target)
         )
-        .map(async (connector) => transpileLogtoConnector(connector))
+        .map(async (connector) => transpileMyEyesIDConnector(connector))
     );
 
     return next();
@@ -53,7 +53,7 @@ export default function socialRoutes<T extends AuthedMeRouter>(
       const { connectorId, state, redirectUri } = ctx.guard.body;
       assertThat(state && redirectUri, 'session.insufficient_info');
 
-      const connector = await getLogtoConnectorById(connectorId);
+      const connector = await getMyEyesIDConnectorById(connectorId);
       assertThat(connector.type === ConnectorType.Social, 'connector.unexpected_type');
 
       const {
@@ -99,7 +99,7 @@ export default function socialRoutes<T extends AuthedMeRouter>(
       const { connectorId, connectorData } = ctx.guard.body;
 
       const [connector, user] = await Promise.all([
-        getLogtoConnectorById(connectorId),
+        getMyEyesIDConnectorById(connectorId),
         findUserById(userId),
       ]);
 
@@ -156,7 +156,7 @@ export default function socialRoutes<T extends AuthedMeRouter>(
       const { connectorId } = ctx.guard.params;
 
       const [connector, user] = await Promise.all([
-        getLogtoConnectorById(connectorId),
+        getMyEyesIDConnectorById(connectorId),
         findUserById(userId),
       ]);
 

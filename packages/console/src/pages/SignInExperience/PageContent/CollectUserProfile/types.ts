@@ -1,4 +1,4 @@
-import { type CustomProfileFieldType } from '@logto/schemas';
+import { type CustomProfileFieldType } from '@myeyesid/schemas';
 
 type ProfileFieldPartSubForm = {
   enabled: boolean;

@@ -1,10 +1,10 @@
-import { type ConnectorMetadata, ServiceConnector } from '@logto/connector-kit';
+import { type ConnectorMetadata, ServiceConnector } from '@myeyesid/connector-kit';
 import {
   type User,
   type Organization,
   type ApplicationSignInExperience,
   type Application,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, type Nullable, pick } from '@silverhand/essentials';
 import cleanDeep from 'clean-deep';
 import { string, object } from 'zod';

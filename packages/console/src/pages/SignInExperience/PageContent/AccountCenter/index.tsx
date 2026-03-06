@@ -1,4 +1,4 @@
-import { AccountCenterControlValue, type SignInExperience } from '@logto/schemas';
+import { AccountCenterControlValue, type SignInExperience } from '@myeyesid/schemas';
 import { useCallback, useMemo, type ChangeEvent } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Trans, useTranslation } from 'react-i18next';
@@ -118,7 +118,7 @@ function AccountCenter({ isActive, data }: Props) {
                       a: (
                         <TextLink
                           targetBlank="noopener"
-                          href="https://docs.logto.io/end-user-flows/account-settings/by-account-api#get-a-verification-record-id"
+                          href="https://docs.myeyesid.io/end-user-flows/account-settings/by-account-api#get-a-verification-record-id"
                         />
                       ),
                     }}

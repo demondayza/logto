@@ -1,4 +1,4 @@
-import { type CreateDomain, type Domain, DomainStatus, Domains } from '@logto/schemas';
+import { type CreateDomain, type Domain, DomainStatus, Domains } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

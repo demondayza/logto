@@ -38,7 +38,7 @@ export const applicationSignInExperienceGuard = ApplicationSignInExperiences.gua
 });
 
 export const missingResourceScopesGuard = z.object({
-  // The original resource id has a maximum length of 21 restriction. We need to make it compatible with the logto reserved organization name.
+  // The original resource id has a maximum length of 21 restriction. We need to make it compatible with the myeyesid reserved organization name.
   // use string here, as we do not care about the resource id length here.
   resource: Resources.guard.pick({ name: true, indicator: true }).extend({ id: z.string() }),
   scopes: Scopes.guard.pick({ id: true, name: true, description: true }).array(),

@@ -1,4 +1,4 @@
-import { SignInIdentifier, VerificationType } from '@logto/schemas';
+import { SignInIdentifier, VerificationType } from '@myeyesid/schemas';
 import { renderHook } from '@testing-library/react';
 import { Routes, Route } from 'react-router-dom';
 import { remove } from 'tiny-cookie';
@@ -15,7 +15,7 @@ describe('VerificationCode Page', () => {
   const { set } = result.current;
 
   beforeEach(() => {
-    set(StorageKeys.IdentifierInputValue, { type: SignInIdentifier.Email, value: 'foo@logto.io' });
+    set(StorageKeys.IdentifierInputValue, { type: SignInIdentifier.Email, value: 'foo@myeyesid.io' });
     set(StorageKeys.verificationIds, { [VerificationType.EmailVerificationCode]: 'foo' });
   });
 

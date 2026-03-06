@@ -1,4 +1,4 @@
-import { LogtoJwtTokenKeyType } from '@logto/schemas';
+import { MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import Card from '@/ds-components/Card';
@@ -6,7 +6,7 @@ import Card from '@/ds-components/Card';
 import styles from './index.module.scss';
 
 type Props = {
-  readonly tokenType: LogtoJwtTokenKeyType;
+  readonly tokenType: MyEyesIDJwtTokenKeyType;
 };
 
 function PageLoadingSkeleton({ tokenType }: Props) {
@@ -27,7 +27,7 @@ function PageLoadingSkeleton({ tokenType }: Props) {
           <div className={classNames(styles.textShimmer, styles.title)} />
           <div className={styles.textShimmer} />
         </Card>
-        {tokenType === LogtoJwtTokenKeyType.AccessToken && (
+        {tokenType === MyEyesIDJwtTokenKeyType.AccessToken && (
           <Card className={styles.card}>
             <div className={styles.textShimmer} />
             <div className={styles.textShimmer} />

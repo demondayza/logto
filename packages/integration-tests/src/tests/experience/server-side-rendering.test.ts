@@ -1,4 +1,4 @@
-import { demoAppApplicationId, fullSignInExperienceGuard } from '@logto/schemas';
+import { demoAppApplicationId, fullSignInExperienceGuard } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import { demoAppUrl } from '#src/constants.js';
@@ -47,7 +47,7 @@ describe('server-side rendering', () => {
 
     // Check page variables
     const data = await experience.page.evaluate(() => {
-      return window.logtoSsr;
+      return window.myeyesidSsr;
     });
 
     const parsed = ssrDataGuard.parse(data);
@@ -71,7 +71,7 @@ describe('server-side rendering', () => {
 
     // Check page variables
     const data = await experience.page.evaluate(() => {
-      return window.logtoSsr;
+      return window.myeyesidSsr;
     });
 
     const parsed = ssrDataGuard.parse(data);
@@ -96,7 +96,7 @@ describe('server-side rendering', () => {
 
     // Check page variables
     const data = await experience.page.evaluate(() => {
-      return window.logtoSsr;
+      return window.myeyesidSsr;
     });
 
     const parsed = ssrDataGuard.parse(data);

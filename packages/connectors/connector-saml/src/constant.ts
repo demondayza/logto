@@ -1,5 +1,5 @@
-import type { ConnectorConfigFormItem, ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorPlatform, ConnectorConfigFormItemType } from '@logto/connector-kit';
+import type { ConnectorConfigFormItem, ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorPlatform, ConnectorConfigFormItemType } from '@myeyesid/connector-kit';
 
 export const formItems: ConnectorConfigFormItem[] = [
   {

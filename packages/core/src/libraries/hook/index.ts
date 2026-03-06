@@ -7,8 +7,8 @@ import {
   type HookEventPayload,
   type HookTestErrorResponseData,
   type InteractionHookEventPayload,
-} from '@logto/schemas';
-import { generateStandardId, normalizeError, type ConsoleLog } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId, normalizeError, type ConsoleLog } from '@myeyesid/shared';
 import { conditional, deduplicate, type Optional, pick, trySafe } from '@silverhand/essentials';
 import { HTTPError } from 'ky';
 import pMap from 'p-map';

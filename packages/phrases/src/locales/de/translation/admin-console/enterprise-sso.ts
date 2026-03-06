@@ -38,7 +38,7 @@ const enterprise_sso = {
       redirect_uri_field_description:
         'Die Redirect-URI ist die Adresse, zu der Benutzer nach der SSO-Authentifizierung zurückgeleitet werden. Fügen Sie diese URI zur Konfiguration Ihres IdP hinzu.',
       redirect_uri_field_custom_domain_description:
-        'Wenn Sie in MyEyesID mehrere <a>benutzerdefinierte Domains</a> verwenden, fügen Sie alle entsprechenden Callback-URIs zu Ihrem IdP hinzu, damit SSO in jeder Domain funktioniert.\n\nDie standardmäßige MyEyesID-Domain (*.logto.app) ist immer gültig – fügen Sie sie nur hinzu, wenn Sie auch SSO unter dieser Domain unterstützen möchten.',
+        'Wenn Sie in MyEyesID mehrere <a>benutzerdefinierte Domains</a> verwenden, fügen Sie alle entsprechenden Callback-URIs zu Ihrem IdP hinzu, damit SSO in jeder Domain funktioniert.\n\nDie standardmäßige MyEyesID-Domain (*.myeyesid.app) ist immer gültig – fügen Sie sie nur hinzu, wenn Sie auch SSO unter dieser Domain unterstützen möchten.',
     },
   },
   attribute_mapping: {

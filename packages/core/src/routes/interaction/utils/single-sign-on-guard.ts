@@ -1,5 +1,5 @@
-import { type SocialUserInfo } from '@logto/connector-kit';
-import { type IdentifierPayload, type SignInExperience } from '@logto/schemas';
+import { type SocialUserInfo } from '@myeyesid/connector-kit';
+import { type IdentifierPayload, type SignInExperience } from '@myeyesid/schemas';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { type SsoConnectorLibrary } from '#src/libraries/sso-connector.js';

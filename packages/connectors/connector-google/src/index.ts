@@ -15,7 +15,7 @@ import type {
   SocialUserInfo,
   GetTokenResponseAndUserInfo,
   GetAccessTokenByRefreshToken,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
@@ -24,7 +24,7 @@ import {
   parseJson,
   GoogleConnector,
   getAccessTokenByRefreshToken as _getAccessTokenByRefreshToken,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 
 import {

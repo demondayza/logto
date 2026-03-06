@@ -1,5 +1,5 @@
-import { SsoProviderName } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { SsoProviderName } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockSsoConnector } from '#src/__mocks__/sso.js';
 import { getTenantEndpoint, EnvSet } from '#src/env-set/index.js';

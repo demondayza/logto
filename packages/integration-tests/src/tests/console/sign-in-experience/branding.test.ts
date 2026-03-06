@@ -1,4 +1,4 @@
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import { goToAdminConsole } from '#src/ui-helpers/index.js';
 import { expectNavigation, appendPathname, waitFor } from '#src/utils.js';
 
@@ -10,7 +10,7 @@ const testPrimaryColor = '#5B4D8E';
 await page.setViewport({ width: 1920, height: 1080 });
 
 describe('sign-in experience: branding', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   beforeAll(async () => {
     await goToAdminConsole();
@@ -18,7 +18,7 @@ describe('sign-in experience: branding', () => {
 
   it('navigate to sign-in experience page', async () => {
     await expectNavigation(
-      page.goto(appendPathname('/console/sign-in-experience', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/sign-in-experience', myeyesidConsoleUrl).href)
     );
 
     await expect(page).toMatchElement(
@@ -41,7 +41,7 @@ describe('sign-in experience: branding', () => {
     );
 
     // Land on branding tab by default
-    expect(page.url()).toBe(new URL(`console/sign-in-experience/branding`, logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL(`console/sign-in-experience/branding`, myeyesidConsoleUrl).href);
 
     // Wait for the branding tab to load
     await waitForFormCard(page, 'BRANDING AREA');

@@ -1,4 +1,4 @@
-import { Tenants } from '@logto/schemas/models';
+import { Tenants } from '@myeyesid/schemas/models';
 import { conditional } from '@silverhand/essentials';
 import { parseDsn, sql, stringifyDsn } from '@silverhand/slonik';
 import { z } from 'zod';
@@ -10,7 +10,7 @@ export class TenantNotFoundError extends Error {}
 /**
  * This function is to fetch the tenant password for the corresponding Postgres user.
  *
- * ** **CAUTION** ** In multi-tenancy mode, Logto should ALWAYS use a restricted user with RLS enforced to ensure data isolation between tenants.
+ * ** **CAUTION** ** In multi-tenancy mode, MyEyesID should ALWAYS use a restricted user with RLS enforced to ensure data isolation between tenants.
  */
 export const getTenantDatabaseDsn = async (tenantId: string) => {
   const { sharedPool, dbUrl } = EnvSet;

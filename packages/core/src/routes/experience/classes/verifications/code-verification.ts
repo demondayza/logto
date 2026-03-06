@@ -1,4 +1,4 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 import {
   type InteractionEvent,
   SignInIdentifier,
@@ -8,8 +8,8 @@ import {
   type VerificationCodeIdentifierOf,
   type VerificationCodeIdentifier,
   type CodeVerificationRecordData,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { z } from 'zod';
 
 import RequestError from '#src/errors/RequestError/index.js';
@@ -29,7 +29,7 @@ export {
   type CodeVerificationRecordData,
   emailCodeVerificationRecordDataGuard,
   phoneCodeVerificationRecordDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 const eventToTemplateTypeMap: Record<InteractionEvent, TemplateType> = {
   SignIn: TemplateType.SignIn,

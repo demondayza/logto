@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType } from '@myeyesid/connector-kit';
 
 export const defaultMetadata: ConnectorMetadata = {
   id: 'simple-mail-transfer-protocol',
@@ -69,64 +69,64 @@ export const defaultMetadata: ConnectorMetadata = {
         {
           contentType: 'text/plain',
           content:
-            'Your Logto sign-in verification code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto Sign In with SMTP',
+            'Your MyEyesID sign-in verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID Sign In with SMTP',
           usageType: 'SignIn',
         },
         {
           contentType: 'text/plain',
           content:
-            'Your Logto sign-up verification code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto register with SMTP',
+            'Your MyEyesID sign-up verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID register with SMTP',
           usageType: 'Register',
         },
         {
           contentType: 'text/plain',
           content:
-            'Your Logto password change verification code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto Forgot Password with SMTP',
+            'Your MyEyesID password change verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID Forgot Password with SMTP',
           usageType: 'ForgotPassword',
         },
         {
           contentType: 'text/plain',
           content:
-            'Your Logto organization invitation code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto OrganizationInvitation with SMTP',
+            'Your MyEyesID organization invitation code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID OrganizationInvitation with SMTP',
           usageType: 'OrganizationInvitation',
         },
         {
           contentType: 'text/plain',
           content:
-            'Your Logto verification code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto Generic with SMTP',
+            'Your MyEyesID verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID Generic with SMTP',
           usageType: 'Generic',
         },
         {
           contentType: 'text/plain',
           content:
-            'Your Logto permission validation code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto UserPermissionValidation with SMTP',
+            'Your MyEyesID permission validation code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID UserPermissionValidation with SMTP',
           usageType: 'UserPermissionValidation',
         },
         {
           contentType: 'text/plain',
           content:
-            'Your Logto new identifier binding code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto BindNewIdentifier with SMTP',
+            'Your MyEyesID new identifier binding code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID BindNewIdentifier with SMTP',
           usageType: 'BindNewIdentifier',
         },
         {
           contentType: 'text/plain',
           content:
-            'Your Logto MFA verification code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto MfaVerification with SMTP',
+            'Your MyEyesID MFA verification code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID MfaVerification with SMTP',
           usageType: 'MfaVerification',
         },
         {
           contentType: 'text/plain',
           content:
-            'Your Logto 2-step verification setup code is {{code}}. The code will remain active for 10 minutes.',
-          subject: 'Logto BindMfa with SMTP',
+            'Your MyEyesID 2-step verification setup code is {{code}}. The code will remain active for 10 minutes.',
+          subject: 'MyEyesID BindMfa with SMTP',
           usageType: 'BindMfa',
         },
       ],
@@ -168,7 +168,7 @@ export const defaultMetadata: ConnectorMetadata = {
       label: 'Name',
       type: ConnectorConfigFormItemType.Text,
       required: false,
-      placeholder: '<Logto-SMTP>',
+      placeholder: '<MyEyesID-SMTP>',
     },
     {
       key: 'localAddress',

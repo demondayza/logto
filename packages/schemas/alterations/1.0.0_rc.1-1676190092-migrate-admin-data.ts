@@ -1,7 +1,7 @@
 import { generateKeyPair } from 'node:crypto';
 import { promisify } from 'node:util';
 
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import inquirer from 'inquirer';
 import type { CommonQueryMethods, SerializableValue } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
@@ -37,7 +37,7 @@ const updateConfigByKey = async <T>(
 ) =>
   pool.query(
     sql`
-      insert into logto_configs (tenant_id, key, value) 
+      insert into myeyesid_configs (tenant_id, key, value) 
         values (${tenantId}, ${key}, ${sql.jsonb(value)})
     `
   );
@@ -54,7 +54,7 @@ const alteration: AlterationScript = {
     await updateConfigByKey(pool, adminTenantId, 'oidc.cookieKeys', [generateOidcCookieKey()]);
 
     // Skipped tables:
-    //   applications_roles, applications, connectors, custom_phrases, logto_configs,
+    //   applications_roles, applications, connectors, custom_phrases, myeyesid_configs,
     //   passcodes, resources, roles_scopes, roles, scopes, sign_in_experiences,
     //   systems, users_roles, hooks, tenants
     //

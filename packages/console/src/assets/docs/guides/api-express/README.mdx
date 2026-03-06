@@ -25,23 +25,23 @@ We understand that the RFC can be lengthy. In short, a JWT is a base64-encoded s
 
 <Step title="Obtain an access token in your client application">
 
-To proceed, you'll need to integrate the MyEyesID SDK package (for example, `@logto/react`) into your client application. This application might differ from your Express.js backend; for example, you might have a React app using Express.js as the backend API server.
+To proceed, you'll need to integrate the MyEyesID SDK package (for example, `@myeyesid/react`) into your client application. This application might differ from your Express.js backend; for example, you might have a React app using Express.js as the backend API server.
 
 You'll also need to tweak the MyEyesID SDK configuration to inform MyEyesID that you want to request an access token for your API in this grant. Here's an example using React:
 
 <Code className="language-ts">
-  {`import { LogtoProvider } from '@logto/react';
+  {`import { MyEyesIDProvider } from '@myeyesid/react';
 
 const App = () => {
   return (
-    <LogtoProvider
+    <MyEyesIDProvider
       config={{
         // ...other configurations
         resources: ['${props.audience}'],
       }}
     >
       <Content />
-    </LogtoProvider>
+    </MyEyesIDProvider>
   );
 };`}
 </Code>
@@ -49,10 +49,10 @@ const App = () => {
 Once a user signs in with MyEyesID, `isAuthenticated` within the MyEyesID SDK will become `true`:
 
 <Code className="language-ts">
-  {`import { useLogto } from '@logto/react';
+  {`import { useMyEyesID } from '@myeyesid/react';
 
 const Content = () => {
-  const { isAuthenticated } = useLogto();
+  const { isAuthenticated } = useMyEyesID();
 
   console.log(isAuthenticated); // true
 };`}
@@ -62,7 +62,7 @@ Now, you can use the `getAccessToken` method to retrieve an access token for you
 
 <Code className="language-ts">
   {`const Content = () => {
-  const { getAccessToken, isAuthenticated } = useLogto();
+  const { getAccessToken, isAuthenticated } = useMyEyesID();
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -77,7 +77,7 @@ Lastly, include this access token in the `Authorization` header when making requ
 
 <Code className="language-ts">
   {`const Content = () => {
-  const { getAccessToken, isAuthenticated } = useLogto();
+  const { getAccessToken, isAuthenticated } = useMyEyesID();
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -197,16 +197,16 @@ With this approach, you don't need to contact the MyEyesID server every time a r
 
 Up to this point, we've only verified that a user has logged in with MyEyesID. We still don't know if the user possesses the appropriate permission to access the API endpoint. This is because MyEyesID permits anyone to obtain an access token for an existing API resource.
 
-To address this, we can employ role-based access control (RBAC). In MyEyesID, you can define roles and assign permissions to them. Consult [this tutorial](https://docs.logto.io/docs/recipes/rbac/) to learn how to define roles and permissions in MyEyesID.
+To address this, we can employ role-based access control (RBAC). In MyEyesID, you can define roles and assign permissions to them. Consult [this tutorial](https://docs.myeyesid.io/docs/recipes/rbac/) to learn how to define roles and permissions in MyEyesID.
 
 <InlineNotification>
   "Permission" is identical to "scope" in [OAuth 2.0](https://oauth.net/2/scope/). We use the word "permission" in Admin Console since it's more intuitive for business.
 </InlineNotification>
 
-After defining roles and permissions, you can add the `scopes` option to the `LogtoProvider` component:
+After defining roles and permissions, you can add the `scopes` option to the `MyEyesIDProvider` component:
 
 <Code className="language-ts">
-  {`<LogtoProvider
+  {`<MyEyesIDProvider
   config={{
     // ...other configurations
     resources: ['${props.audience}'],

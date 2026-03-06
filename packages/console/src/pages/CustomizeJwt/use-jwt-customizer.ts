@@ -1,4 +1,4 @@
-import { LogtoJwtTokenKey, type JwtCustomizerConfigs } from '@logto/schemas';
+import { MyEyesIDJwtTokenKey, type JwtCustomizerConfigs } from '@myeyesid/schemas';
 import { type ResponseError } from '@withtyped/client';
 import { useMemo } from 'react';
 import useSWR from 'swr';
@@ -24,9 +24,9 @@ function useJwtCustomizer() {
 
   return useMemo(() => {
     const { value: accessTokenJwtCustomizer } =
-      data?.find(({ key }) => key === LogtoJwtTokenKey.AccessToken) ?? {};
+      data?.find(({ key }) => key === MyEyesIDJwtTokenKey.AccessToken) ?? {};
     const { value: clientCredentialsJwtCustomizer } =
-      data?.find(({ key }) => key === LogtoJwtTokenKey.ClientCredentials) ?? {};
+      data?.find(({ key }) => key === MyEyesIDJwtTokenKey.ClientCredentials) ?? {};
 
     return {
       accessTokenJwtCustomizer,

@@ -1,4 +1,4 @@
-import { type SocialUserInfo, socialUserInfoGuard, type ToZodObject } from '@logto/connector-kit';
+import { type SocialUserInfo, socialUserInfoGuard, type ToZodObject } from '@myeyesid/connector-kit';
 import {
   type CreateUser,
   encryptedTokenSetGuard,
@@ -10,7 +10,7 @@ import {
   UserSsoIdentities,
   type UserSsoIdentity,
   webAuthnAuthenticationOptionsGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import type { Provider } from 'oidc-provider';
 import { z } from 'zod';
 
@@ -57,11 +57,11 @@ export type InteractionProfile = {
   // Syncing the existing enterprise SSO identity detail
   syncedEnterpriseSsoIdentity?: Pick<UserSsoIdentity, 'identityId' | 'issuer' | 'detail'>;
   /**
-   * Store encrypted token set from a social verification record.  If present, Logto will save this token set in the Secret Vault for future use by the user.
+   * Store encrypted token set from a social verification record.  If present, MyEyesID will save this token set in the Secret Vault for future use by the user.
    */
   socialConnectorTokenSetSecret?: SocialConnectorTokenSetSecret;
   /**
-   * Store encrypted token set from a enterprise SSO verification record.  If present, Logto will save this token set in the Secret Vault for future use by the user.
+   * Store encrypted token set from a enterprise SSO verification record.  If present, MyEyesID will save this token set in the Secret Vault for future use by the user.
    */
   enterpriseSsoConnectorTokenSetSecret?: EnterpriseSsoConnectorTokenSetSecret;
   /**

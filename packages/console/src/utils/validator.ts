@@ -1,4 +1,4 @@
-import { validateRedirectUrl } from '@logto/core-kit';
+import { validateRedirectUrl } from '@myeyesid/core-kit';
 
 export const uriValidator = (value: string) => {
   try {

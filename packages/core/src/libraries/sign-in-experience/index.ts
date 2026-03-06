@@ -1,5 +1,5 @@
-import { GoogleConnector } from '@logto/connector-kit';
-import { builtInLanguages } from '@logto/phrases-experience';
+import { GoogleConnector } from '@myeyesid/connector-kit';
+import { builtInLanguages } from '@myeyesid/phrases-experience';
 import type {
   ConnectorMetadata,
   FullSignInExperience,
@@ -7,8 +7,8 @@ import type {
   PartialColor,
   SignInExperience,
   SsoConnectorMetadata,
-} from '@logto/schemas';
-import { adminTenantId, ConnectorType, ForgotPasswordMethod, TenantTag } from '@logto/schemas';
+} from '@myeyesid/schemas';
+import { adminTenantId, ConnectorType, ForgotPasswordMethod, TenantTag } from '@myeyesid/schemas';
 import { deduplicate, trySafe } from '@silverhand/essentials';
 import deepmerge from 'deepmerge';
 
@@ -31,7 +31,7 @@ type SignInExperienceOverride = Partial<Omit<SignInExperience, 'color'> & { colo
 export const createSignInExperienceLibrary = (
   tenantId: string,
   queries: Queries,
-  { getLogtoConnectors }: ConnectorLibrary,
+  { getMyEyesIDConnectors }: ConnectorLibrary,
   { getAvailableSsoConnectors }: SsoConnectorLibrary,
   wellKnownCache: WellKnownCache
 ) => {
@@ -58,7 +58,7 @@ export const createSignInExperienceLibrary = (
   };
 
   const removeUnavailableSocialConnectorTargets = async () => {
-    const connectors = await getLogtoConnectors();
+    const connectors = await getMyEyesIDConnectors();
     const availableSocialConnectorTargets = deduplicate(
       connectors
         .filter(({ type }) => type === ConnectorType.Social)
@@ -205,14 +205,14 @@ export const createSignInExperienceLibrary = (
   }): Promise<FullSignInExperience> => {
     const [
       signInExperience,
-      logtoConnectors,
+      myeyesidConnectors,
       isDevelopmentTenant,
       organizationOverride,
       appSignInExperience,
       customProfileFields,
     ] = await Promise.all([
       findDefaultSignInExperience(),
-      getLogtoConnectors(),
+      getMyEyesIDConnectors(),
       getIsDevelopmentTenant(),
       getOrganizationOverride(organizationId),
       findApplicationSignInExperience(appId),
@@ -227,7 +227,7 @@ export const createSignInExperienceLibrary = (
     const socialConnectors = signInExperience.socialSignInConnectorTargets.reduce<
       ConnectorMetadata[]
     >((previous, connectorTarget) => {
-      const connectors = logtoConnectors.filter(
+      const connectors = myeyesidConnectors.filter(
         ({ metadata: { target } }) => target === connectorTarget
       );
 
@@ -243,7 +243,7 @@ export const createSignInExperienceLibrary = (
     const getGoogleOneTap = (): FullSignInExperience['googleOneTap'] => {
       const googleConnector =
         signInExperience.socialSignInConnectorTargets.includes(GoogleConnector.target) &&
-        logtoConnectors.find(({ metadata }) => metadata.id === GoogleConnector.factoryId);
+        myeyesidConnectors.find(({ metadata }) => metadata.id === GoogleConnector.factoryId);
 
       if (!googleConnector) {
         return;
@@ -287,8 +287,8 @@ export const createSignInExperienceLibrary = (
      */
     const getForgotPassword = () => {
       // Check availability of required connectors
-      const hasEmailConnector = logtoConnectors.some(({ type }) => type === ConnectorType.Email);
-      const hasSmsConnector = logtoConnectors.some(({ type }) => type === ConnectorType.Sms);
+      const hasEmailConnector = myeyesidConnectors.some(({ type }) => type === ConnectorType.Email);
+      const hasSmsConnector = myeyesidConnectors.some(({ type }) => type === ConnectorType.Sms);
 
       // If forgotPasswordMethods is null (production compatibility),
       // fall back to connector-based availability only

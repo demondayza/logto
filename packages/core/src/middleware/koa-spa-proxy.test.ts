@@ -1,6 +1,6 @@
 import path from 'node:path';
 
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 import Sinon from 'sinon';
 
 import { EnvSet, UserApps } from '#src/env-set/index.js';
@@ -99,7 +99,7 @@ describe('koaSpaProxy middleware', () => {
     await koaSpaProxy({ mountedApps, queries })(ctx, next);
 
     const packagePath = 'experience';
-    const distributionPath = path.join('node_modules/@logto', packagePath, 'dist');
+    const distributionPath = path.join('node_modules/@myeyesid', packagePath, 'dist');
 
     expect(mockStaticMiddlewareFactory).toBeCalledWith(distributionPath);
     stub.restore();

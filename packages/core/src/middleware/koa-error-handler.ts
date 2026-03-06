@@ -1,5 +1,5 @@
-import { appInsights } from '@logto/app-insights/node';
-import type { RequestErrorBody } from '@logto/schemas';
+import { appInsights } from '@myeyesid/app-insights/node';
+import type { RequestErrorBody } from '@myeyesid/schemas';
 import { isHttpError } from 'http-errors';
 import type { Middleware } from 'koa';
 import { HttpError } from 'koa';

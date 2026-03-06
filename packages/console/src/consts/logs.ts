@@ -1,4 +1,4 @@
-import type { AuditLogKey, LogKey, interaction } from '@logto/schemas';
+import type { AuditLogKey, LogKey, interaction } from '@myeyesid/schemas';
 import { type Optional } from '@silverhand/essentials';
 
 export const auditLogEventTitle = Object.freeze({

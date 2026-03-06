@@ -1,4 +1,4 @@
-import { appInsights } from '@logto/app-insights/node';
+import { appInsights } from '@myeyesid/app-insights/node';
 import { condObject, isObject } from '@silverhand/essentials';
 import type { Middleware } from 'koa';
 import { errors } from 'oidc-provider';
@@ -65,7 +65,7 @@ const isSessionNotFound = (description?: string) =>
  * there's a string property error in the response. If an `oidc-provider` error is caught, the
  * handler will add several properties to the response body:
  *
- * - `code`: The error code in Logto's error system. Usually it just prepends `oidc.` to the error
+ * - `code`: The error code in MyEyesID's error system. Usually it just prepends `oidc.` to the error
  *   name. For example, `invalid_grant` will be `oidc.invalid_grant`.
  * - `message`: The error message in the current language. If the error code is not found in the
  *   current language, it will fallback to `oidc.provider_error_fallback`.

@@ -5,8 +5,8 @@ import {
   requestVerificationCodePayloadGuard,
   webAuthnAuthenticationOptionsGuard,
   webAuthnRegistrationOptionsGuard,
-} from '@logto/schemas';
-import { getUserDisplayName } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { getUserDisplayName } from '@myeyesid/shared';
 import type Router from 'koa-router';
 import { type IRouterParamContext } from 'koa-router';
 import { authenticator } from 'otplib';
@@ -21,7 +21,7 @@ import koaGuard from '#src/middleware/koa-guard.js';
 import { type WithI18nContext } from '#src/middleware/koa-i18next.js';
 import type TenantContext from '#src/tenants/TenantContext.js';
 import assertThat from '#src/utils/assert-that.js';
-import { getLogtoCookie } from '#src/utils/cookie.js';
+import { getMyEyesIDCookie } from '#src/utils/cookie.js';
 
 import { parseUserProfile } from './actions/helpers.js';
 import { interactionPrefix, verificationPath } from './const.js';
@@ -53,7 +53,7 @@ const buildVerificationCodeTemplateContext = async (
   }
 
   // Safely get the orgId and appId context from cookie
-  const { appId: applicationId, organizationId } = getLogtoCookie(ctx);
+  const { appId: applicationId, organizationId } = getMyEyesIDCookie(ctx);
 
   return passcodeLibrary.buildVerificationCodeContext(
     {
@@ -125,7 +125,7 @@ export default function additionalRoutes<T extends IRouterParamContext>(
       const { event } = getInteractionStorage(interactionDetails.result);
 
       const messageContext = await buildVerificationCodeTemplateContext(passcodes, ctx, guard.body);
-      const { uiLocales } = getLogtoCookie(ctx);
+      const { uiLocales } = getMyEyesIDCookie(ctx);
 
       await sendVerificationCodeToIdentifier(
         {

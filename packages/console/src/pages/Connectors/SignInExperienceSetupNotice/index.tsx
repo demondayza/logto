@@ -1,4 +1,4 @@
-import type { ConnectorResponse } from '@logto/schemas';
+import type { ConnectorResponse } from '@myeyesid/schemas';
 import { Trans, useTranslation } from 'react-i18next';
 import useSWR from 'swr';
 

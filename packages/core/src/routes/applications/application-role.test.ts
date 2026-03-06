@@ -1,5 +1,5 @@
-import { ApplicationType } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { ApplicationType } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import {
   mockAdminApplicationRole,

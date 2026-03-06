@@ -1,14 +1,14 @@
-import { type ConnectorFactory } from '@logto/cli/lib/connector/index.js';
-import type router from '@logto/cloud/routes';
-import { demoConnectorIds, validateConfig } from '@logto/connector-kit';
+import { type ConnectorFactory } from '@myeyesid/cli/lib/connector/index.js';
+import type router from '@myeyesid/cloud/routes';
+import { demoConnectorIds, validateConfig } from '@myeyesid/connector-kit';
 import {
   Connectors,
   ConnectorType,
   connectorResponseGuard,
   type JsonObject,
   ProductEvent,
-} from '@logto/schemas';
-import { generateStandardShortId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardShortId } from '@myeyesid/shared';
 import { conditional } from '@silverhand/essentials';
 import cleanDeep from 'clean-deep';
 import { string, object } from 'zod';
@@ -19,7 +19,7 @@ import { type QuotaLibrary } from '#src/libraries/quota.js';
 import koaGuard from '#src/middleware/koa-guard.js';
 import assertThat from '#src/utils/assert-that.js';
 import { buildExtraInfo } from '#src/utils/connectors/extra-information.js';
-import { loadConnectorFactories, transpileLogtoConnector } from '#src/utils/connectors/index.js';
+import { loadConnectorFactories, transpileMyEyesIDConnector } from '#src/utils/connectors/index.js';
 import { checkSocialConnectorTargetAndPlatformUniqueness } from '#src/utils/connectors/platform.js';
 
 import { captureEvent } from '../../utils/posthog.js';
@@ -55,7 +55,7 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
     insertConnector,
     updateConnector,
   } = tenant.queries.connectors;
-  const { getLogtoConnectorById, getLogtoConnectors, getLogtoConnectorByTargetAndPlatform } =
+  const { getMyEyesIDConnectorById, getMyEyesIDConnectors, getMyEyesIDConnectorByTargetAndPlatform } =
     tenant.connectors;
   const {
     quota,
@@ -76,7 +76,7 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
         /* 
           Currently the id can not be locked until the connector is successfully created.
           Some connectors providers require a pre-generated id to complete the configuration at the IdP side.
-          Logto connector creation process currently has a hard dependency on the provider's config data.
+          MyEyesID connector creation process currently has a hard dependency on the provider's config data.
           A optional pre-generated id from the client side is required to complete the connector creation process.
         */
         .merge(Connectors.createGuard.pick({ id: true }).partial()),
@@ -124,7 +124,7 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
           })
         );
 
-        const duplicateConnector = await getLogtoConnectorByTargetAndPlatform(
+        const duplicateConnector = await getMyEyesIDConnectorByTargetAndPlatform(
           // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
           metadata?.target || connectorFactory.metadata.target,
           connectorFactory.metadata.platform
@@ -181,8 +181,8 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
        * TODO: should using transaction to ensure the atomicity of the operation. LOG-7260
        */
       if (passwordlessConnector.has(connectorFactory.type)) {
-        const logtoConnectors = await getLogtoConnectors();
-        const conflictingConnectorIds = logtoConnectors
+        const myeyesidConnectors = await getMyEyesIDConnectors();
+        const conflictingConnectorIds = myeyesidConnectors
           .filter(
             ({ dbEntry: { id }, type }) =>
               type === connectorFactory.type && id !== insertConnectorId
@@ -206,8 +206,8 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
         );
       }
 
-      const connector = await getLogtoConnectorById(insertConnectorId);
-      ctx.body = await transpileLogtoConnector(connector, buildExtraInfo(connector.metadata));
+      const connector = await getMyEyesIDConnectorById(insertConnectorId);
+      ctx.body = await transpileMyEyesIDConnector(connector, buildExtraInfo(connector.metadata));
 
       return next();
     }
@@ -224,7 +224,7 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
     }),
     async (ctx, next) => {
       const { target: filterTarget } = ctx.query;
-      const connectors = await getLogtoConnectors();
+      const connectors = await getMyEyesIDConnectors();
 
       checkSocialConnectorTargetAndPlatformUniqueness(connectors);
 
@@ -243,7 +243,7 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
 
       ctx.body = await Promise.all(
         filteredConnectors.map(async (connector) =>
-          transpileLogtoConnector(connector, buildExtraInfo(connector.metadata))
+          transpileMyEyesIDConnector(connector, buildExtraInfo(connector.metadata))
         )
       );
 
@@ -262,12 +262,12 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
       const {
         params: { id },
       } = ctx.guard;
-      const connector = await getLogtoConnectorById(id);
+      const connector = await getMyEyesIDConnectorById(id);
 
       // Hide demo connector
       assertThat(!demoConnectorIds.includes(connector.metadata.id), 'connector.not_found');
 
-      ctx.body = await transpileLogtoConnector(connector, buildExtraInfo(connector.metadata));
+      ctx.body = await transpileMyEyesIDConnector(connector, buildExtraInfo(connector.metadata));
 
       return next();
     }
@@ -290,7 +290,7 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
         body: { config, metadata, syncProfile, enableTokenStorage },
       } = ctx.guard;
 
-      const { type, validateConfig, metadata: originalMetadata } = await getLogtoConnectorById(id);
+      const { type, validateConfig, metadata: originalMetadata } = await getMyEyesIDConnectorById(id);
 
       // Cannot modify demo connector
       assertThat(!demoConnectorIds.includes(originalMetadata.id), 'connector.not_found');
@@ -362,8 +362,8 @@ export default function connectorRoutes<T extends ManagementApiRouter>(
         jsonbMode: 'replace',
       });
 
-      const connector = await getLogtoConnectorById(id);
-      ctx.body = await transpileLogtoConnector(connector, buildExtraInfo(connector.metadata));
+      const connector = await getMyEyesIDConnectorById(id);
+      ctx.body = await transpileMyEyesIDConnector(connector, buildExtraInfo(connector.metadata));
 
       return next();
     }

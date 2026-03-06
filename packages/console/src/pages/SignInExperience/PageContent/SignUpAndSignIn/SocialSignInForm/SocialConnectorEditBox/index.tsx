@@ -1,4 +1,4 @@
-import { ConnectorType } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import { DragDropProvider, DraggableItem } from '@/ds-components/DragDrop';

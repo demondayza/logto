@@ -1,4 +1,4 @@
-import { type RecaptchaEnterpriseMode } from '@logto/schemas';
+import { type RecaptchaEnterpriseMode } from '@myeyesid/schemas';
 
 export type CaptchaFormType = {
   siteKey: string;

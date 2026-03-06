@@ -1,4 +1,4 @@
-import { type TenantModel } from '@logto/schemas';
+import { type TenantModel } from '@myeyesid/schemas';
 
 export type CreateTenantData = Pick<TenantModel, 'name' | 'tag'> & {
   instanceId: string;

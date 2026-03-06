@@ -1,8 +1,8 @@
 # Aliyun direct mail connector
 
-The official Logto connector for Aliyun connector for direct mail service.
+The official MyEyesID connector for Aliyun connector for direct mail service.
 
-阿里云邮件推送服务 Logto 官方连接器 [中文文档](#阿里云邮件连接器)
+阿里云邮件推送服务 MyEyesID 官方连接器 [中文文档](#阿里云邮件连接器)
 
 **Table of contents**
 
@@ -25,7 +25,7 @@ The official Logto connector for Aliyun connector for direct mail service.
 
 ## Get started
 
-Aliyun is a primary cloud service provider in Asia, offering many cloud services, including DM (direct mail). Aliyun DM Connector is a plugin provided by the Logto team to call the Aliyun DM service APIs, with the help of which Logto end-users can register and sign in to their Logto account via mail verification code (or in other words, verification code).
+Aliyun is a primary cloud service provider in Asia, offering many cloud services, including DM (direct mail). Aliyun DM Connector is a plugin provided by the MyEyesID team to call the Aliyun DM service APIs, with the help of which MyEyesID end-users can register and sign in to their MyEyesID account via mail verification code (or in other words, verification code).
 
 ## Set up an email service in Aliyun DirectMail Console
 
@@ -59,13 +59,13 @@ After finishing setup, there are two different ways to test:
     - You can add multiple DM connector templates for different cases. Here is an example of adding a single template:
         - Fill out the `subject` field, which will work as title of the sending email.
         - Fill out the `content` field with arbitrary string-type contents. Do not forget to leave `{{code}}` placeholder for random verification code.
-        - Fill out `usageType` field with either `Register`, `SignIn`, `ForgotPassword` or `Generic` for different use cases. (`usageType` is a Logto property to identify the proper use case.) In order to enable full user flows, templates with usageType `Register`, `SignIn`, `ForgotPassword` and `Generic` are required.
+        - Fill out `usageType` field with either `Register`, `SignIn`, `ForgotPassword` or `Generic` for different use cases. (`usageType` is a MyEyesID property to identify the proper use case.) In order to enable full user flows, templates with usageType `Register`, `SignIn`, `ForgotPassword` and `Generic` are required.
 
 ### Test Aliyun DM connector
 
 You can type in an email address and click on "Send" to see whether the settings can work before "Save and Done".
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/).
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/).
 
 ### Config types
 
@@ -89,7 +89,7 @@ That's it. Don't forget to [Enable connector in sign-in experience](https://docs
 
 阿里云是亚洲地区一个重要的云服务厂商，提供了包括邮件服务在内的诸多云服务。
 
-本连接器是 Logto 官方提供的阿里云邮件连接器，帮助终端用户通过邮件验证码进行登录注册。
+本连接器是 MyEyesID 官方提供的阿里云邮件连接器，帮助终端用户通过邮件验证码进行登录注册。
 
 ## 在阿里云邮件服务控制台中配置一个邮件服务
 
@@ -123,13 +123,13 @@ That's it. Don't forget to [Enable connector in sign-in experience](https://docs
     - 你可以添加多个邮件服务模板以应对不同的用户场景。这里展示填写单个模板的例子：
       - 在 `subject` 栏填写发送邮件的 _标题_。
       - 在 `content` 栏中填写字符形式的内容。不要忘了在内容中插入 `{{code}}` 占位符，在真实发送时他会被替换成随机生成的验证码。
-      - `usageType` 栏填写 `Register`，`SignIn`，`ForgotPassword` 或者`Generic` 其中之一以分别对应 _注册_，_登录_，_忘记密码_ 和 _通用_ 的不同场景。（`usageType` 是 Logto 的属性，用来确定使用场景。）为了能够使用完成的流程，需要配置 `usageType` 为 `Register`，`SignIn`, `ForgotPassword` 以及 `Generic` 的模板。
+      - `usageType` 栏填写 `Register`，`SignIn`，`ForgotPassword` 或者`Generic` 其中之一以分别对应 _注册_，_登录_，_忘记密码_ 和 _通用_ 的不同场景。（`usageType` 是 MyEyesID 的属性，用来确定使用场景。）为了能够使用完成的流程，需要配置 `usageType` 为 `Register`，`SignIn`, `ForgotPassword` 以及 `Generic` 的模板。
 
 ### 测试阿里云邮件连接器
 
 你可以在「保存并完成」之前输入一个邮件地址并点按「发送」来测试配置是否可以正常工作。
 
-大功告成！快去 [启用邮件验证码登录](https://docs.logto.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/) 吧。
+大功告成！快去 [启用邮件验证码登录](https://docs.myeyesid.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/) 吧。
 
 ### 配置类型
 

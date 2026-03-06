@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType, ConnectorPlatform } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType, ConnectorPlatform } from '@myeyesid/connector-kit';
 
 // https://open.dingtalk.com/document/orgapp-server/use-dingtalk-account-to-log-on-to-third-party-websites-1
 export const authorizationEndpoint = 'https://login.dingtalk.com/oauth2/auth';

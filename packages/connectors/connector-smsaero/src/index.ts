@@ -6,14 +6,14 @@ import type {
   GetConnectorConfig,
   SendMessageFunction,
   SmsConnector,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
   ConnectorType,
   replaceSendMessageHandlebars,
   validateConfig,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import { defaultMetadata, endpoint } from './constant.js';
 import type { PublicParameters } from './types.js';

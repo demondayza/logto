@@ -4,7 +4,7 @@ import {
   type Resource,
   type Role,
   type Scope,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { noop } from '@silverhand/essentials';
 
 import { createUser, deleteUser, getUserRoles } from '#src/api/admin-user.js';

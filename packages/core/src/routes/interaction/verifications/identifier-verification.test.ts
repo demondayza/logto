@@ -1,5 +1,5 @@
-import { InteractionEvent } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { InteractionEvent } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 
 import { createMockLogContext } from '#src/test-utils/koa-audit-log.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
@@ -43,7 +43,7 @@ describe('verifyIdentifier', () => {
   it('should return and assign the verified result to the interaction record if the event is sign in', async () => {
     const interactionRecord: SignInInteractionResult = {
       event: InteractionEvent.SignIn,
-      identifiers: [{ key: 'emailVerified', value: 'email@logto.io' }],
+      identifiers: [{ key: 'emailVerified', value: 'email@myeyesid.io' }],
     };
 
     const verifiedRecord = {

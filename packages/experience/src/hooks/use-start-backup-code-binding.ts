@@ -1,4 +1,4 @@
-import { MfaFactor, VerificationType } from '@logto/schemas';
+import { MfaFactor, VerificationType } from '@myeyesid/schemas';
 import { useCallback, useContext } from 'react';
 
 import UserInteractionContext from '@/Providers/UserInteractionContextProvider/UserInteractionContext';

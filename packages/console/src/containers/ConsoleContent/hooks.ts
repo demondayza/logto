@@ -1,5 +1,5 @@
-import { Prompt, useLogto } from '@logto/react';
-import { getTenantOrganizationId } from '@logto/schemas';
+import { Prompt, useMyEyesID } from '@myeyesid/react';
+import { getTenantOrganizationId } from '@myeyesid/schemas';
 import { useContext, useEffect, useState } from 'react';
 
 import { isCloud } from '@/consts/env';
@@ -19,7 +19,7 @@ import { saveRedirect } from '@/utils/storage';
  */
 const useTenantScopeListener = () => {
   const { currentTenantId, removeTenant, navigateTenant } = useContext(TenantsContext);
-  const { clearAccessToken, clearAllTokens, getOrganizationTokenClaims, signIn } = useLogto();
+  const { clearAccessToken, clearAllTokens, getOrganizationTokenClaims, signIn } = useMyEyesID();
   const [tokenClaims, setTokenClaims] = useState<string[]>();
   const redirectUri = useRedirectUri();
   const { scopes, isLoading } = useCurrentTenantScopes();

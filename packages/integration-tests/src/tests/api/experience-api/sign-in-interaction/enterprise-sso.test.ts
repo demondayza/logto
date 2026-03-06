@@ -1,5 +1,5 @@
-import { InteractionEvent, MfaFactor, SignInIdentifier, SignInMode } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { InteractionEvent, MfaFactor, SignInIdentifier, SignInMode } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import {
   createUserMfaVerification,

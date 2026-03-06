@@ -5,7 +5,7 @@ const log = debug('conversion');
 
 export const gtagAwTrackingId = 'AW-11124811245';
 export enum GtagConversionId {
-  /** This ID indicates a user has truly signed up for Logto Cloud. */
+  /** This ID indicates a user has truly signed up for MyEyesID Cloud. */
   SignUp = 'AW-11192640559/ZuqUCLvNpasYEK_IiNkp',
   /** This ID indicates a user has created their first app. */
   CreateFirstApp = 'AW-11192640559/jbsaCPS67q8ZEK_IiNkp',
@@ -16,16 +16,16 @@ export enum GtagConversionId {
 }
 
 /** The data domain to aggregate the data for Plausible. */
-export const plausibleDataDomain = 'logto.io';
+export const plausibleDataDomain = 'myeyesid.io';
 
-const logtoProductionHostname = 'logto.io';
+const myeyesidProductionHostname = 'myeyesid.io';
 
 /**
  * Due to the special of conversion reporting, it should be `true` only in the
- * Logto Cloud production environment.
- * Add the leading '.' to make it safer (ignore hostnames like "foologto.io").
+ * MyEyesID Cloud production environment.
+ * Add the leading '.' to make it safer (ignore hostnames like "foomyeyesid.io").
  */
-export const shouldReport = window.location.hostname.endsWith('.' + logtoProductionHostname);
+export const shouldReport = window.location.hostname.endsWith('.' + myeyesidProductionHostname);
 
 const sha256 = async (message: string) => {
   const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(message));

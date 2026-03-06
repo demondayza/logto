@@ -28,8 +28,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ghcr.io/logto-io/logto
-            svhd/logto
+            ghcr.io/myeyesid-io/myeyesid
+            svhd/myeyesid
           # https://github.com/docker/metadata-action#typesemver
           tags: |
             type=semver,pattern={{version}}
@@ -82,8 +82,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ghcr.io/logto-io/logto
-            svhd/logto
+            ghcr.io/myeyesid-io/myeyesid
+            svhd/myeyesid
           tags: |
             type=edge
 
@@ -178,5 +178,5 @@ jobs:
         with:
           token: ${{ secrets.BOT_PAT }}
           body: ""
-          files: /tmp/logto.tar.gz
+          files: /tmp/myeyesid.tar.gz
           append_body: true

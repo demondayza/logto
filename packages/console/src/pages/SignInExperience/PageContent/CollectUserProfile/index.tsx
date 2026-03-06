@@ -1,4 +1,4 @@
-import { Theme, type CustomProfileField } from '@logto/schemas';
+import { Theme, type CustomProfileField } from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useContext, type ReactNode } from 'react';

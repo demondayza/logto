@@ -1,4 +1,4 @@
-import { type Resource, type ResourceResponse } from '@logto/schemas';
+import { type Resource, type ResourceResponse } from '@myeyesid/schemas';
 
 import type Queries from '#src/tenants/Queries.js';
 

@@ -1,10 +1,10 @@
 {
-  "name": "@logto/connector-http-email",
+  "name": "@myeyesid/connector-http-email",
   "version": "0.4.0",
   "description": "Email connector to send email via HTTP call.",
   "author": "Silverhand Inc. <contact@silverhand.io>",
   "dependencies": {
-    "@logto/connector-kit": "workspace:^",
+    "@myeyesid/connector-kit": "workspace:^",
     "@silverhand/essentials": "^2.9.1",
     "got": "^14.0.0",
     "zod": "3.24.3"

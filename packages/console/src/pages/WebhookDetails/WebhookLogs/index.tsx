@@ -1,4 +1,4 @@
-import { hookEvents, type Log } from '@logto/schemas';
+import { hookEvents, type Log } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useTranslation } from 'react-i18next';
 import { useOutletContext } from 'react-router-dom';

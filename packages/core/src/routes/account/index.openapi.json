@@ -119,7 +119,7 @@
       "post": {
         "operationId": "UpdatePassword",
         "summary": "Update password",
-        "description": "Update password for the user, a logto-verification-id in header is required for checking sensitive permissions.",
+        "description": "Update password for the user, a myeyesid-verification-id in header is required for checking sensitive permissions.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -174,14 +174,14 @@
         }
       }
     },
-    "/api/my-account/logto-configs": {
+    "/api/my-account/myeyesid-configs": {
       "get": {
-        "operationId": "GetLogtoConfig",
-        "summary": "Get logto config",
-        "description": "Retrieve the exposed portion of the current user's logto config. This endpoint currently includes only the MFA skip state.",
+        "operationId": "GetMyEyesIDConfig",
+        "summary": "Get myeyesid config",
+        "description": "Retrieve the exposed portion of the current user's myeyesid config. This endpoint currently includes only the MFA skip state.",
         "responses": {
           "200": {
-            "description": "The exposed logto config fields were retrieved successfully."
+            "description": "The exposed myeyesid config fields were retrieved successfully."
           },
           "400": {
             "description": "MFA is not available in the account center."
@@ -192,9 +192,9 @@
         }
       },
       "patch": {
-        "operationId": "UpdateLogtoConfig",
-        "summary": "Update logto config",
-        "description": "Update the exposed portion of the current user's logto config. This endpoint currently allows updating only the MFA skip state.",
+        "operationId": "UpdateMyEyesIDConfig",
+        "summary": "Update myeyesid config",
+        "description": "Update the exposed portion of the current user's myeyesid config. This endpoint currently allows updating only the MFA skip state.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -214,7 +214,7 @@
         },
         "responses": {
           "200": {
-            "description": "The exposed logto_config fields were updated successfully."
+            "description": "The exposed myeyesid_config fields were updated successfully."
           },
           "400": {
             "description": "The request body is invalid."
@@ -229,7 +229,7 @@
       "post": {
         "operationId": "UpdatePrimaryEmail",
         "summary": "Update primary email",
-        "description": "Update primary email for the user, a logto-verification-id in header is required for checking sensitive permissions, and a new identifier verification record is required for the new email ownership verification.",
+        "description": "Update primary email for the user, a myeyesid-verification-id in header is required for checking sensitive permissions, and a new identifier verification record is required for the new email ownership verification.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -273,7 +273,7 @@
       "post": {
         "operationId": "UpdatePrimaryPhone",
         "summary": "Update primary phone",
-        "description": "Update primary phone for the user, a logto-verification-id in header is required for checking sensitive permissions, and a new identifier verification record is required for the new phone ownership verification.",
+        "description": "Update primary phone for the user, a myeyesid-verification-id in header is required for checking sensitive permissions, and a new identifier verification record is required for the new phone ownership verification.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -317,7 +317,7 @@
       "post": {
         "operationId": "AddUserIdentities",
         "summary": "Add a user identity",
-        "description": "Add an identity (social identity) to the user, a logto-verification-id in header is required for checking sensitive permissions, and a verification record for the social identity is required.",
+        "description": "Add an identity (social identity) to the user, a myeyesid-verification-id in header is required for checking sensitive permissions, and a verification record for the social identity is required.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -342,7 +342,7 @@
       "delete": {
         "operationId": "DeleteIdentity",
         "summary": "Delete a user identity",
-        "description": "Delete an identity (social identity) from the user, a logto-verification-id in header is required for checking sensitive permissions.",
+        "description": "Delete an identity (social identity) from the user, a myeyesid-verification-id in header is required for checking sensitive permissions.",
         "responses": {
           "204": {
             "description": "The identity was deleted successfully."
@@ -370,7 +370,7 @@
       "post": {
         "operationId": "AddMfaVerification",
         "summary": "Add a MFA verification",
-        "description": "Add a MFA verification to the user, a logto-verification-id in header is required for checking sensitive permissions.",
+        "description": "Add a MFA verification to the user, a myeyesid-verification-id in header is required for checking sensitive permissions.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -485,7 +485,7 @@
       "patch": {
         "operationId": "UpdateMfaVerificationName",
         "summary": "Update a MFA verification name",
-        "description": "Update a MFA verification name, a logto-verification-id in header is required for checking sensitive permissions. Only WebAuthn is supported for now.",
+        "description": "Update a MFA verification name, a myeyesid-verification-id in header is required for checking sensitive permissions. Only WebAuthn is supported for now.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -510,7 +510,7 @@
       "delete": {
         "operationId": "DeleteMfaVerification",
         "summary": "Delete an MFA verification",
-        "description": "Delete an MFA verification, a logto-verification-id in header is required for checking sensitive permissions.",
+        "description": "Delete an MFA verification, a myeyesid-verification-id in header is required for checking sensitive permissions.",
         "responses": {
           "204": {
             "description": "The MFA verification was deleted successfully."
@@ -522,7 +522,7 @@
       "get": {
         "operationId": "GetSocialIdentityAccessToken",
         "summary": "Retrieve the access token issued by a third-party social provider",
-        "description": "This API retrieves the access token issued by a third-party social provider for a given social target. \nAccess is only available if token storage is enabled for the corresponding social connector.\nWhen a user authenticates through a social provider, Logto automatically stores the provider’s tokens in an encrypted form.\nYou can use this API to securely retrieve the stored access token and use it to access third-party APIs on behalf of the user.",
+        "description": "This API retrieves the access token issued by a third-party social provider for a given social target. \nAccess is only available if token storage is enabled for the corresponding social connector.\nWhen a user authenticates through a social provider, MyEyesID automatically stores the provider’s tokens in an encrypted form.\nYou can use this API to securely retrieve the stored access token and use it to access third-party APIs on behalf of the user.",
         "responses": {
           "200": {
             "description": "The access token was retrieved successfully."
@@ -538,7 +538,7 @@
       "put": {
         "operationId": "UpdateSocialIdentityAccessTokenByVerificationId",
         "summary": "Update the access token for a social identity by verification ID",
-        "description": "This API updates the token storage for a social identity by a given social verification ID. \nIt is used to fetch a new access token from the social provider and store it securely in Logto.",
+        "description": "This API updates the token storage for a social identity by a given social verification ID. \nIt is used to fetch a new access token from the social provider and store it securely in MyEyesID.",
         "responses": {
           "200": {
             "description": "The token storage was updated successfully. The new access token is returned in the response body."
@@ -553,7 +553,7 @@
       "get": {
         "operationId": "GetEnterpriseSsoIdentityAccessToken",
         "summary": "Retrieve the access token issued by a third-party enterprise SSO provider",
-        "description": "This API retrieves the access token issued by a third-party enterprise SSO provider for a given SSO connector ID. \nAccess is only available if token storage is enabled for the corresponding connector.\nWhen a user authenticates through a SSO provider, Logto automatically stores the provider’s tokens in an encrypted form.\nYou can use this API to securely retrieve the stored access token and use it to access third-party APIs on behalf of the user.",
+        "description": "This API retrieves the access token issued by a third-party enterprise SSO provider for a given SSO connector ID. \nAccess is only available if token storage is enabled for the corresponding connector.\nWhen a user authenticates through a SSO provider, MyEyesID automatically stores the provider’s tokens in an encrypted form.\nYou can use this API to securely retrieve the stored access token and use it to access third-party APIs on behalf of the user.",
         "responses": {
           "200": {
             "description": "The access token was retrieved successfully."
@@ -572,7 +572,7 @@
         "tags": ["Dev feature"],
         "operationId": "GetSessions",
         "summary": "Get all active sessions",
-        "description": "Retrieve all non-expired sessions for the user, including session metadata and interaction details when available. A logto-verification-id in header is required for checking sensitive session details.",
+        "description": "Retrieve all non-expired sessions for the user, including session metadata and interaction details when available. A myeyesid-verification-id in header is required for checking sensitive session details.",
         "responses": {
           "200": {
             "description": "Return a list of non-expired sessions of the user."
@@ -585,7 +585,7 @@
         "tags": ["Dev feature"],
         "operationId": "DeleteSessionById",
         "summary": "Revoke a session by ID",
-        "description": "Revoke a specific user session by its ID, optionally revoking all associated grants and tokens.  A logto-verification-id in header is required for revoking sessions.",
+        "description": "Revoke a specific user session by its ID, optionally revoking all associated grants and tokens.  A myeyesid-verification-id in header is required for revoking sessions.",
         "parameters": [
           {
             "in": "query",

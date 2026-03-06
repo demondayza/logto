@@ -1,4 +1,4 @@
-import { PhoneNumberParser } from '@logto/shared/universal';
+import { PhoneNumberParser } from '@myeyesid/shared/universal';
 import i18next from 'i18next';
 import type { CountryCode, CountryCallingCode } from 'libphonenumber-js/mobile';
 import { getCountries, getCountryCallingCode } from 'libphonenumber-js/mobile';

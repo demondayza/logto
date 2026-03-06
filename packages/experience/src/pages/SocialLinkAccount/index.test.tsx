@@ -1,11 +1,11 @@
-import { SignInIdentifier, VerificationType } from '@logto/schemas';
+import { SignInIdentifier, VerificationType } from '@myeyesid/schemas';
 import { renderHook } from '@testing-library/react';
 import { Route, Routes } from 'react-router-dom';
 
 import UserInteractionContextProvider from '@/Providers/UserInteractionContextProvider';
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings } from '@/__mocks__/myeyesid';
 import useSessionStorage, { StorageKeys } from '@/hooks/use-session-storages';
 
 import SocialRegister from '.';
@@ -13,7 +13,7 @@ import SocialRegister from '.';
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: jest.fn(() => ({
-    state: { relatedUser: { type: 'email', value: 'foo@logto.io' } },
+    state: { relatedUser: { type: 'email', value: 'foo@myeyesid.io' } },
   })),
 }));
 

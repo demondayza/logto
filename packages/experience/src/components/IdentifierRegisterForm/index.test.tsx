@@ -1,4 +1,4 @@
-import { SignInIdentifier, experience, type SsoConnectorMetadata } from '@logto/schemas';
+import { SignInIdentifier, experience, type SsoConnectorMetadata } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import { fireEvent, act, waitFor, renderHook } from '@testing-library/react';
 
@@ -7,7 +7,7 @@ import SingleSignOnFormModeContextProvider from '@/Providers/SingleSignOnFormMod
 import UserInteractionContextProvider from '@/Providers/UserInteractionContextProvider';
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings, mockSsoConnectors } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings, mockSsoConnectors } from '@/__mocks__/myeyesid';
 import { registerWithUsername } from '@/apis/experience';
 import { sendVerificationCodeApi } from '@/apis/utils';
 import useSessionStorage, { StorageKeys } from '@/hooks/use-session-storages';
@@ -213,7 +213,7 @@ describe('<IdentifierRegisterForm />', () => {
         });
 
         act(() => {
-          fireEvent.change(emailInput, { target: { value: 'foo@logto.io' } });
+          fireEvent.change(emailInput, { target: { value: 'foo@myeyesid.io' } });
           fireEvent.blur(emailInput);
         });
 
@@ -232,7 +232,7 @@ describe('<IdentifierRegisterForm />', () => {
         assert(emailInput, new Error('email input not found'));
 
         act(() => {
-          fireEvent.change(emailInput, { target: { value: 'foo@logto.io' } });
+          fireEvent.change(emailInput, { target: { value: 'foo@myeyesid.io' } });
           fireEvent.click(termsButton);
         });
 
@@ -246,7 +246,7 @@ describe('<IdentifierRegisterForm />', () => {
             UserFlow.Register,
             {
               type: SignInIdentifier.Email,
-              value: 'foo@logto.io',
+              value: 'foo@myeyesid.io',
             },
             undefined,
             undefined

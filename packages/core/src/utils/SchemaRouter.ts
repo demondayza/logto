@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
-import { type DataHookEvent, type GeneratedSchema, type SchemaLike } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { type DataHookEvent, type GeneratedSchema, type SchemaLike } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { condArray, type DeepPartial, isPlainObject } from '@silverhand/essentials';
 import camelcase from 'camelcase';
 import deepmerge from 'deepmerge';

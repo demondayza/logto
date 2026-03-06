@@ -1,4 +1,4 @@
-import { InteractionEvent, MissingProfile, SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, MissingProfile, SignInIdentifier } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import { fireEvent, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
@@ -26,7 +26,7 @@ jest.mock('react-router-dom', () => ({
     state: {
       flow: UserFlow.SignIn,
       registeredSocialIdentity: {
-        email: 'foo@logto.io',
+        email: 'foo@myeyesid.io',
       },
     },
   })),
@@ -70,7 +70,7 @@ describe('continue with email or phone', () => {
     }
   });
 
-  const email = 'foo@logto.io';
+  const email = 'foo@myeyesid.io';
   const phone = '8573333333';
   const countryCode = getDefaultCountryCallingCode();
 

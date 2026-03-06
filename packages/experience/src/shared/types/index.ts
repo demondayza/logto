@@ -1,4 +1,4 @@
-import { type FullSignInExperience } from '@logto/schemas';
+import { type FullSignInExperience } from '@myeyesid/schemas';
 
 export type SignInExperienceResponse = Omit<FullSignInExperience, 'socialSignInConnectorTargets'>;
 

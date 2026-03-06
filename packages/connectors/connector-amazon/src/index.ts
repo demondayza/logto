@@ -6,14 +6,14 @@ import {
   validateConfig,
   ConnectorType,
   jsonGuard,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import type {
   GetAuthorizationUri,
   GetUserInfo,
   SocialConnector,
   CreateConnector,
   GetConnectorConfig,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import ky, { HTTPError } from 'ky';
 
 import {

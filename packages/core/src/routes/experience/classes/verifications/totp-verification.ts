@@ -7,8 +7,8 @@ import {
   type TotpVerificationRecordData,
   totpVerificationRecordDataGuard,
   type SanitizedTotpVerificationRecordData,
-} from '@logto/schemas';
-import { generateStandardId, getUserDisplayName } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId, getUserDisplayName } from '@myeyesid/shared';
 import { authenticator } from 'otplib';
 import qrcode from 'qrcode';
 
@@ -28,7 +28,7 @@ export {
   type SanitizedTotpVerificationRecordData,
   totpVerificationRecordDataGuard,
   sanitizedTotpVerificationRecordDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 const defaultDisplayName = 'Unnamed User';
 

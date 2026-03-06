@@ -1,4 +1,4 @@
-import { type Organization, type Application, ApplicationType, RoleType } from '@logto/schemas';
+import { type Organization, type Application, ApplicationType, RoleType } from '@myeyesid/schemas';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';

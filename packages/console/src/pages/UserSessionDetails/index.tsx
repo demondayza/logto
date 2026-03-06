@@ -1,5 +1,5 @@
-import type { AdminConsoleKey } from '@logto/phrases';
-import { Theme, isBuiltInApplicationId, type GetUserSessionResponse } from '@logto/schemas';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
+import { Theme, isBuiltInApplicationId, type GetUserSessionResponse } from '@myeyesid/schemas';
 import { Fragment, type ReactNode, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';

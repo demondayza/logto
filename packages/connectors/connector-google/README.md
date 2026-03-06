@@ -6,7 +6,7 @@ Integrate Google OAuth 2.0 authentication system to enable Sign-in with Google, 
 - [Get started](#get-started)
 - [Step 1: Create a project on Google Auth Platform](#step-1-create-a-project-on-google-auth-platform)
 - [Step 2: Create OAuth 2.0 credentials](#step-2-create-oauth-20-credentials)
-- [Step 3: Configure Logto connector with credentials](#step-3-configure-logto-connector-with-credentials)
+- [Step 3: Configure MyEyesID connector with credentials](#step-3-configure-myeyesid-connector-with-credentials)
 - [Step 4: Configure scopes](#step-4-configure-scopes)
 - [Step 5: Customize authentication prompts](#step-5-customize-authentication-prompts)
 - [Step 6: General settings](#step-6-general-settings)
@@ -23,7 +23,7 @@ The Google connector enables OAuth 2.0 integration to let your application:
 - Add "Sign-in with Google" authentication
 - Link user accounts to Google identities
 - Sync user profile info from Google
-- Access Google APIs through secure token storage in Logto [Secret Vault](https://docs.logto.io/secret-vault/federated-token-set) for automation tasks (e.g., editing Google Docs, managing Calendar events in your app)
+- Access Google APIs through secure token storage in MyEyesID [Secret Vault](https://docs.myeyesid.io/secret-vault/federated-token-set) for automation tasks (e.g., editing Google Docs, managing Calendar events in your app)
 
 ## Step 1: Create a project on Google Auth Platform
 
@@ -50,17 +50,17 @@ Navigate to the [Credentials](https://console.cloud.google.com/apis/credentials)
 2. Select **Web application** as the application type.
 3. Fill in the **Name** of your OAuth client. This helps you identify the credentials and is not shown to end users.
 4. Configure the authorized URIs:
-   - **Authorized JavaScript origins**: Add your Logto instance's origin (e.g., `https://your-logto-domain.com`)
-   - **Authorized redirect URIs**: Add the Logto **Callback URI** (copy this from your Logto Google connector)
+   - **Authorized JavaScript origins**: Add your MyEyesID instance's origin (e.g., `https://your-myeyesid-domain.com`)
+   - **Authorized redirect URIs**: Add the MyEyesID **Callback URI** (copy this from your MyEyesID Google connector)
 5. Click **Create** to generate the OAuth client.
 
-## Step 3: Configure Logto connector with credentials
+## Step 3: Configure MyEyesID connector with credentials
 
 After creating the OAuth client, Google will display a modal with your credentials:
 
-1. Copy the **Client ID** and paste it into the `clientId` field in Logto
-2. Copy the **Client secret** and paste it into the `clientSecret` field in Logto
-3. Click **Save and Done** in Logto to connect your identity system with Google
+1. Copy the **Client ID** and paste it into the `clientId` field in MyEyesID
+2. Copy the **Client secret** and paste it into the `clientSecret` field in MyEyesID
+3. Click **Save and Done** in MyEyesID to connect your identity system with Google
 
 **Warning**: Keep your client secret secure and never expose it in client-side code. If compromised, generate a new one immediately.
 
@@ -80,14 +80,14 @@ Scopes define the permissions your app requests from users and control which dat
 3. Click **Update** to confirm the selection.
 4. Click **Save and Continue** to apply the changes.
 
-### Configure scopes in Logto
+### Configure scopes in MyEyesID
 
 Choose one or more of the following approaches based on your needs:
 
 **Option 1: No extra API scopes needed**
 
-- Leave the `Scopes` field in your Logto Google connector blank.
-- The default scopes `openid profile email` will be requested to ensure Logto can get basic user info properly.
+- Leave the `Scopes` field in your MyEyesID Google connector blank.
+- The default scopes `openid profile email` will be requested to ensure MyEyesID can get basic user info properly.
 
 **Option 2: Request additional scopes at sign-in**
 
@@ -97,16 +97,16 @@ Choose one or more of the following approaches based on your needs:
 
 **Option 3: Request incremental scopes later**
 
-- After the user signs in, you can [request additional scopes](https://docs.logto.io/secret-vault/federated-token-set#reauthentication-and-token-renewal) on demand by reinitiating a federated social authorization flow and updating users' stored token set.
-- These additional scopes do not need to be filled in the `Scopes` field in your Logto Google connector, and can be achieved through Logto's Social Verification API.
+- After the user signs in, you can [request additional scopes](https://docs.myeyesid.io/secret-vault/federated-token-set#reauthentication-and-token-renewal) on demand by reinitiating a federated social authorization flow and updating users' stored token set.
+- These additional scopes do not need to be filled in the `Scopes` field in your MyEyesID Google connector, and can be achieved through MyEyesID's Social Verification API.
 
-By following these steps, your Logto Google connector requests exactly the permissions your app needs - no more, no less.
+By following these steps, your MyEyesID Google connector requests exactly the permissions your app needs - no more, no less.
 
-**Tip**: If your app requests these scopes to access the Google API and perform actions, make sure to enable **Store tokens for persistent API access** in Logto Google connector. See the next section for details.
+**Tip**: If your app requests these scopes to access the Google API and perform actions, make sure to enable **Store tokens for persistent API access** in MyEyesID Google connector. See the next section for details.
 
 ## Step 5: Customize authentication prompts
 
-Configure **Prompts** in Logto to control the user authentication experience. Prompts is an array of strings that specifies the type of user interaction required:
+Configure **Prompts** in MyEyesID to control the user authentication experience. Prompts is an array of strings that specifies the type of user interaction required:
 
 - `none` - The authorization server does not display any authentication or consent screens. Returns an error if the user is not already authenticated and has not pre-configured consent for the requested scopes. Use this to check for existing authentication and/or consent.
 - `consent` - The authorization server prompts the user for consent before returning information to the client. Required to enable **offline access** for Google API access.
@@ -125,15 +125,15 @@ In the Google connector, you can set the policy for syncing profile information,
 
 ### Store tokens to access Google APIs (Optional)
 
-If you want to access [Google APIs](https://console.cloud.google.com/apis/library) and perform actions with user authorization (whether via social sign-in or account linking), Logto needs to get specific API scopes and store tokens.
+If you want to access [Google APIs](https://console.cloud.google.com/apis/library) and perform actions with user authorization (whether via social sign-in or account linking), MyEyesID needs to get specific API scopes and store tokens.
 
-1. Add the required scopes in your Google Cloud Console OAuth consent screen configuration and Logto Google connector.
-2. Enable **Store tokens for persistent API access** in Logto Google connector. Logto will securely store Google access and refresh tokens in the Secret Vault.
-3. To ensure refresh tokens are returned, configure your Logto Google connector as follows:
+1. Add the required scopes in your Google Cloud Console OAuth consent screen configuration and MyEyesID Google connector.
+2. Enable **Store tokens for persistent API access** in MyEyesID Google connector. MyEyesID will securely store Google access and refresh tokens in the Secret Vault.
+3. To ensure refresh tokens are returned, configure your MyEyesID Google connector as follows:
    - Set **Prompts** to include `consent`
    - Enable **Offline Access**
 
-**Warning**: You do not need to add `offline_access` in the Logto `Scope` field — doing so may cause an error. Google uses `access_type=offline` automatically when offline access is enabled.
+**Warning**: You do not need to add `offline_access` in the MyEyesID `Scope` field — doing so may cause an error. Google uses `access_type=offline` automatically when offline access is enabled.
 
 ## Step 7: Enable Google One Tap (Optional)
 
@@ -155,7 +155,7 @@ If you enable **Store tokens for persistent API access** along with **Google One
 
 Google One Tap sign-in (unlike the standard "Sign in with Google" button) does **not** issue an OAuth access token. It only returns an ID token (a signed JWT) that verifies the user's identity, but does not grant API access.
 
-To access Google APIs with Google One Tap users, you can use [Logto's Social Verification API](https://openapi.logto.io/operation/operation-createverificationbysocial) to [reinitiate a federated social authorization flow](https://docs.logto.io/secret-vault/federated-token-set#reauthentication-and-token-renewal) after the user signs in with Google One Tap. This allows you to request additional scopes as needed and update the user's stored token set, without requiring the scopes to be pre-filled in the Logto Google connector. This approach enables incremental authorization, so users are only prompted for extra permissions when your app actually needs them.
+To access Google APIs with Google One Tap users, you can use [MyEyesID's Social Verification API](https://openapi.myeyesid.io/operation/operation-createverificationbysocial) to [reinitiate a federated social authorization flow](https://docs.myeyesid.io/secret-vault/federated-token-set#reauthentication-and-token-renewal) after the user signs in with Google One Tap. This allows you to request additional scopes as needed and update the user's stored token set, without requiring the scopes to be pre-filled in the MyEyesID Google connector. This approach enables incremental authorization, so users are only prompted for extra permissions when your app actually needs them.
 
 Learn more about [Google One Tap limitations](https://developers.google.com/identity/gsi/web/guides/overview) in the official documentation.
 
@@ -180,29 +180,29 @@ Once you've created a Google connector and connected it to Google, you can incor
 
 ### Enable "Sign-in with Google"
 
-1. In Logto Console, go to [Sign-in experience > Sign-up and sign-in](https://cloud.logto.io/to/sign-in-experience/sign-up-and-sign-in).
+1. In MyEyesID Console, go to [Sign-in experience > Sign-up and sign-in](https://cloud.myeyesid.io/to/sign-in-experience/sign-up-and-sign-in).
 2. Add the Google connector under **Social sign-in** section to let users authenticate with Google.
 3. Optionally enable **Google One Tap** on the sign-in and sign-up pages for a streamlined authentication experience.
 
-Learn more about [social sign-in experience](https://docs.logto.io//end-user-flows/sign-up-and-sign-in/social-sign-in).
+Learn more about [social sign-in experience](https://docs.myeyesid.io//end-user-flows/sign-up-and-sign-in/social-sign-in).
 
 ### Link or unlink a Google account
 
-Use the Account API to build a custom Account Center in your app that lets signed-in users link or unlink their Google account. [Follow the Account API tutorial](https://docs.logto.io//end-user-flows/account-settings/by-account-api#link-a-new-social-connection)
+Use the Account API to build a custom Account Center in your app that lets signed-in users link or unlink their Google account. [Follow the Account API tutorial](https://docs.myeyesid.io//end-user-flows/account-settings/by-account-api#link-a-new-social-connection)
 
 **Tip**: It's allowed to enable the Google connector only for account linking and API access, without enabling it for social sign-in.
 
 ### Access Google APIs and perform actions
 
-Your application can retrieve stored Google access tokens from the [Secret Vault](https://docs.logto.io/secret-vault) to call Google APIs and automate backend tasks (for example, managing Google Drive files, creating Calendar events, or sending emails through Gmail). [Refer to the guide](https://docs.logto.io/secret-vault/federated-token-set) on retrieving stored tokens for API access.
+Your application can retrieve stored Google access tokens from the [Secret Vault](https://docs.myeyesid.io/secret-vault) to call Google APIs and automate backend tasks (for example, managing Google Drive files, creating Calendar events, or sending emails through Gmail). [Refer to the guide](https://docs.myeyesid.io/secret-vault/federated-token-set) on retrieving stored tokens for API access.
 
 ## Manage user's Google identity
 
-After a user links their Google account, admins can manage that connection in the Logto Console:
+After a user links their Google account, admins can manage that connection in the MyEyesID Console:
 
-1. Navigate to [Logto console > User management](https://cloud.logto.io/to/users) and open the user's profile.
+1. Navigate to [MyEyesID console > User management](https://cloud.myeyesid.io/to/users) and open the user's profile.
 2. Under **Social connections**, locate the Google item and click **Manage**.
-3. On this page, admins can manage the user's Google connection, see all profile information granted and synced from their Google account, and check the [access token status](https://docs.logto.io/secret-vault/federated-token-set#token-storage-status).
+3. On this page, admins can manage the user's Google connection, see all profile information granted and synced from their Google account, and check the [access token status](https://docs.myeyesid.io/secret-vault/federated-token-set#token-storage-status).
 
 ## Reference
 

@@ -1,4 +1,4 @@
-import { Applications, type ApplicationSecret, ApplicationSecrets } from '@logto/schemas';
+import { Applications, type ApplicationSecret, ApplicationSecrets } from '@myeyesid/schemas';
 import { type CommonQueryMethods, sql } from '@silverhand/slonik';
 
 import { buildInsertIntoWithPool } from '#src/database/insert-into.js';

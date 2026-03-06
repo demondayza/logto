@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
-import { UserScope } from '@logto/core-kit';
-import { SignInIdentifier } from '@logto/schemas';
-import { PhoneNumberParser } from '@logto/shared';
+import { UserScope } from '@myeyesid/core-kit';
+import { SignInIdentifier } from '@myeyesid/schemas';
+import { PhoneNumberParser } from '@myeyesid/shared';
 
 import { enableAllAccountCenterFields } from '#src/api/account-center.js';
 import { authedAdminApi } from '#src/api/api.js';

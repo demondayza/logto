@@ -54,7 +54,7 @@ function AppRoutes() {
             {/* TODO: Remove dev features flag check when enterprise subscription is generally available */}
             {isDevFeaturesEnabled && (
               <Route
-                path={`${GlobalRoute.EnterpriseSubscription}/:logtoEnterpriseId`}
+                path={`${GlobalRoute.EnterpriseSubscription}/:myeyesidEnterpriseId`}
                 element={<EnterpriseSubscription />}
               >
                 <Route

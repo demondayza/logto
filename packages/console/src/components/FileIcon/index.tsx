@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { type ReactNode } from 'react';
 
 import FileIconDark from '@/assets/icons/file-icon-dark.svg?react';

@@ -1,17 +1,17 @@
-import { formUrlEncodedHeaders } from '@logto/shared';
+import { formUrlEncodedHeaders } from '@myeyesid/shared';
 import { appendPath } from '@silverhand/essentials';
 import ky from 'ky';
 
-import { logtoConsoleUrl, logtoUrl, logtoCloudUrl } from '#src/constants.js';
+import { myeyesidConsoleUrl, myeyesidUrl, myeyesidCloudUrl } from '#src/constants.js';
 
 const api = ky.extend({
-  prefixUrl: appendPath(new URL(logtoUrl), 'api'),
+  prefixUrl: appendPath(new URL(myeyesidUrl), 'api'),
 });
 
 export default api;
 
 export const baseApi = ky.extend({
-  prefixUrl: new URL(logtoUrl),
+  prefixUrl: new URL(myeyesidUrl),
 });
 
 // TODO: @gao rename
@@ -22,7 +22,7 @@ export const authedAdminApi = api.extend({
 });
 
 export const adminTenantApi = ky.extend({
-  prefixUrl: appendPath(new URL(logtoConsoleUrl), 'api'),
+  prefixUrl: appendPath(new URL(myeyesidConsoleUrl), 'api'),
 });
 
 export const authedAdminTenantApi = adminTenantApi.extend({
@@ -32,10 +32,10 @@ export const authedAdminTenantApi = adminTenantApi.extend({
 });
 
 export const cloudApi = ky.extend({
-  prefixUrl: appendPath(new URL(logtoCloudUrl), 'api'),
+  prefixUrl: appendPath(new URL(myeyesidCloudUrl), 'api'),
 });
 
 export const oidcApi = ky.extend({
   headers: formUrlEncodedHeaders,
-  prefixUrl: appendPath(new URL(logtoUrl), 'oidc'),
+  prefixUrl: appendPath(new URL(myeyesidUrl), 'oidc'),
 });

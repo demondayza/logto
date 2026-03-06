@@ -1,4 +1,4 @@
-import { ConnectorType, InteractionEvent, SignInIdentifier } from '@logto/schemas';
+import { ConnectorType, InteractionEvent, SignInIdentifier } from '@myeyesid/schemas';
 
 import {
   mockSocialConnectorId,

@@ -1,4 +1,4 @@
-import { ApplicationType, type ApplicationResponse } from '@logto/schemas';
+import { ApplicationType, type ApplicationResponse } from '@myeyesid/schemas';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

@@ -32,7 +32,7 @@ const connector_details = {
   in_used_passwordless_deletion_description:
     '您的登入體驗正在使用 {{name}} 連結器。刪除後，您的登入體驗將無法正常工作，直到您解決衝突，再次添加需重新配置。',
   deletion_description: '您將刪除此連結器。此操作不可撤銷，再次添加需重新配置。',
-  logto_email: {
+  myeyesid_email: {
     total_email_sent: '總發送郵件數：{{value, number}}',
     total_email_sent_tip:
       '在 MyEyesID 中，使用 SendGrid 進行安全、穩定的內建郵件發送。完全免費使用。<a>了解更多</a>',

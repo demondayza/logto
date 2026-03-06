@@ -1,11 +1,11 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { SignInMode, SignInIdentifier } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { SignInMode, SignInIdentifier } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import ky from 'ky';
 
 import { authedAdminTenantApi as api } from '#src/api/api.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
-import { logtoConsoleUrl, logtoUrl } from '#src/constants.js';
+import { myeyesidConsoleUrl, myeyesidUrl } from '#src/constants.js';
 import {
   createUserWithAllRolesAndSignInToClient,
   deleteUser,
@@ -24,13 +24,13 @@ import { generateEmail, generatePassword } from '#src/utils.js';
 
 describe('me', () => {
   it('should only be available in admin tenant', async () => {
-    await expectRejects(ky.get(new URL('/me/custom-data', logtoConsoleUrl)), {
+    await expectRejects(ky.get(new URL('/me/custom-data', myeyesidConsoleUrl)), {
       code: 'auth.authorization_header_missing',
       status: 401,
     });
 
     // Redirect to UI
-    const response = await ky.get(new URL('/me/custom-data', logtoUrl));
+    const response = await ky.get(new URL('/me/custom-data', myeyesidUrl));
     expect(response.status).toBe(200);
     expect(response.headers.get('content-type')?.startsWith('text/html;')).toBeTruthy();
   });
@@ -39,7 +39,7 @@ describe('me', () => {
     const { id, client } = await createUserWithAllRolesAndSignInToClient();
 
     await expectRejects(
-      ky.get(logtoConsoleUrl + '/me/custom-data', {
+      ky.get(myeyesidConsoleUrl + '/me/custom-data', {
         headers: { authorization: `Bearer ${await client.getAccessToken(resourceDefault)}` },
       }),
       {
@@ -49,7 +49,7 @@ describe('me', () => {
     );
 
     await expect(
-      ky.get(logtoConsoleUrl + '/me/custom-data', {
+      ky.get(myeyesidConsoleUrl + '/me/custom-data', {
         headers: { authorization: `Bearer ${await client.getAccessToken(resourceMe)}` },
       })
     ).resolves.toHaveProperty('status', 200);
@@ -62,10 +62,10 @@ describe('me', () => {
     const headers = { authorization: `Bearer ${await client.getAccessToken(resourceMe)}` };
 
     const data = await ky
-      .get(logtoConsoleUrl + '/me/custom-data', { headers })
+      .get(myeyesidConsoleUrl + '/me/custom-data', { headers })
       .json<Record<string, unknown>>();
     const newData = await ky
-      .patch(logtoConsoleUrl + '/me/custom-data', { headers, json: { foo: 'bar' } })
+      .patch(myeyesidConsoleUrl + '/me/custom-data', { headers, json: { foo: 'bar' } })
       .json<Record<string, unknown>>();
 
     expect({ ...data, foo: 'bar' }).toStrictEqual({ ...newData });
@@ -78,7 +78,7 @@ describe('me', () => {
     const headers = { authorization: `Bearer ${await client.getAccessToken(resourceMe)}` };
 
     await expectRejects(
-      ky.post(logtoConsoleUrl + '/me/password/verify', {
+      ky.post(myeyesidConsoleUrl + '/me/password/verify', {
         headers,
         json: { password: 'wrong-password' },
       }),
@@ -89,7 +89,7 @@ describe('me', () => {
     );
 
     await expect(
-      ky.post(logtoConsoleUrl + '/me/password/verify', {
+      ky.post(myeyesidConsoleUrl + '/me/password/verify', {
         headers,
         json: { password },
       })
@@ -97,14 +97,14 @@ describe('me', () => {
 
     // Should reject weak password
     await expect(
-      ky.post(logtoConsoleUrl + '/me/password', {
+      ky.post(myeyesidConsoleUrl + '/me/password', {
         headers,
         json: { password: '1' },
       })
     ).rejects.toMatchInlineSnapshot('[HTTPError: Request failed with status code 400 Bad Request]');
 
     await expect(
-      ky.post(logtoConsoleUrl + '/me/password', {
+      ky.post(myeyesidConsoleUrl + '/me/password', {
         headers,
         json: { password: generatePassword() },
       })
@@ -169,7 +169,7 @@ describe('me', () => {
 
       const headers = { authorization: `Bearer ${await client.getAccessToken(resourceMe)}` };
       await expect(
-        ky.post(logtoConsoleUrl + '/me/password', {
+        ky.post(myeyesidConsoleUrl + '/me/password', {
           headers,
           json: { password: generatePassword() },
         })

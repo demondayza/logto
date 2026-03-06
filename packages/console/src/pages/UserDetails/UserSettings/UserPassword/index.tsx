@@ -1,4 +1,4 @@
-import { type UserProfileResponse } from '@logto/schemas';
+import { type UserProfileResponse } from '@myeyesid/schemas';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactModal from 'react-modal';

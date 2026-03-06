@@ -1,5 +1,5 @@
 /**
- * In Logto Cloud, we have multiple schemas and the default search behavior will be problematic.
+ * In MyEyesID Cloud, we have multiple schemas and the default search behavior will be problematic.
  * This alteration script will fix it by setting the search path to public for the functions.
  */
 

@@ -1,15 +1,15 @@
 import crypto from 'node:crypto';
 
-import type { LogtoOidcConfigType } from '@logto/schemas';
-import { LogtoOidcConfigKey } from '@logto/schemas';
+import type { MyEyesIDOidcConfigType } from '@myeyesid/schemas';
+import { MyEyesIDOidcConfigKey } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { createLocalJWKSet } from 'jose';
 
 import { exportJWK } from '#src/utils/jwks.js';
 
-const loadOidcValues = async (issuer: string, configs: LogtoOidcConfigType) => {
-  const cookieKeys = configs[LogtoOidcConfigKey.CookieKeys].map(({ value }) => value);
-  const privateKeys = configs[LogtoOidcConfigKey.PrivateKeys].map(({ value }) =>
+const loadOidcValues = async (issuer: string, configs: MyEyesIDOidcConfigType) => {
+  const cookieKeys = configs[MyEyesIDOidcConfigKey.CookieKeys].map(({ value }) => value);
+  const privateKeys = configs[MyEyesIDOidcConfigKey.PrivateKeys].map(({ value }) =>
     crypto.createPrivateKey(value)
   );
   const publicKeys = privateKeys.map((key) => crypto.createPublicKey(key));

@@ -7,19 +7,19 @@ describe('findDuplicatedOrBlockedEmailDomains', () => {
     const { duplicatedDomains, forbiddenDomains } = findDuplicatedOrBlockedEmailDomains([
       'gmail.com',
       'silverhand.io',
-      'logto.io',
+      'myeyesid.io',
       'yahoo.com',
       'outlook.com',
-      'logto.io',
+      'myeyesid.io',
     ]);
-    expect(duplicatedDomains).toEqual(new Set(['logto.io']));
+    expect(duplicatedDomains).toEqual(new Set(['myeyesid.io']));
     expect(forbiddenDomains).toEqual(new Set(['gmail.com', 'yahoo.com', 'outlook.com']));
   });
 
   it('should return empty `duplicatedDomains` and `forbiddenDomains` sets if all domains are valid', () => {
     const { duplicatedDomains, forbiddenDomains } = findDuplicatedOrBlockedEmailDomains([
       'silverhand.io',
-      'logto.io',
+      'myeyesid.io',
       'metalhand.io',
     ]);
     expect(duplicatedDomains).toEqual(new Set());

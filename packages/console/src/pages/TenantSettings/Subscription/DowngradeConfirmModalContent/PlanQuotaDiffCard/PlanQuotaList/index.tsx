@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 
-import { type LogtoSkuQuotaEntries } from '@/types/skus';
+import { type MyEyesIDSkuQuotaEntries } from '@/types/skus';
 
 import { DiffSkuQuotaItem } from './DiffQuotaItem';
 import styles from './index.module.scss';
 
 type Props = {
-  readonly skuQuotaEntries: LogtoSkuQuotaEntries;
+  readonly skuQuotaEntries: MyEyesIDSkuQuotaEntries;
   readonly isDowngradeTargetPlan: boolean;
   readonly className?: string;
 };

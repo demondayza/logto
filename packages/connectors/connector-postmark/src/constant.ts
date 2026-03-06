@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType } from '@myeyesid/connector-kit';
 
 export const defaultMetadata: ConnectorMetadata = {
   id: 'postmark-mail',
@@ -40,39 +40,39 @@ export const defaultMetadata: ConnectorMetadata = {
       defaultValue: [
         {
           usageType: 'SignIn',
-          templateAlias: 'logto-sign-in',
+          templateAlias: 'myeyesid-sign-in',
         },
         {
           usageType: 'Register',
-          templateAlias: 'logto-register',
+          templateAlias: 'myeyesid-register',
         },
         {
           usageType: 'ForgotPassword',
-          templateAlias: 'logto-forgot-password',
+          templateAlias: 'myeyesid-forgot-password',
         },
         {
           usageType: 'OrganizationInvitation',
-          templateAlias: 'logto-organization-invitation',
+          templateAlias: 'myeyesid-organization-invitation',
         },
         {
           usageType: 'Generic',
-          templateAlias: 'logto-generic',
+          templateAlias: 'myeyesid-generic',
         },
         {
           usageType: 'UserPermissionValidation',
-          templateAlias: 'logto-user-permission-validation',
+          templateAlias: 'myeyesid-user-permission-validation',
         },
         {
           usageType: 'BindNewIdentifier',
-          templateAlias: 'logto-bind-new-identifier',
+          templateAlias: 'myeyesid-bind-new-identifier',
         },
         {
           usageType: 'MfaVerification',
-          templateAlias: 'logto-mfa-verification',
+          templateAlias: 'myeyesid-mfa-verification',
         },
         {
           usageType: 'BindMfa',
-          templateAlias: 'logto-bind-mfa',
+          templateAlias: 'myeyesid-bind-mfa',
         },
       ],
     },

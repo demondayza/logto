@@ -1,4 +1,4 @@
-# Logto connectors directory
+# MyEyesID connectors directory
 
 ## Template syncing
 

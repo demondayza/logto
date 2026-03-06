@@ -1,4 +1,4 @@
-import { MfaFactor, MfaPolicy } from '@logto/schemas';
+import { MfaFactor, MfaPolicy } from '@myeyesid/schemas';
 
 import { type MfaConfigForm } from '../types';
 

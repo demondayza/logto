@@ -1,4 +1,4 @@
-import { InteractionEvent, SsoProviderName } from '@logto/schemas';
+import { InteractionEvent, SsoProviderName } from '@myeyesid/schemas';
 
 import { getSsoAuthorizationUrl } from '#src/api/interaction-sso.js';
 import { putInteraction } from '#src/api/interaction.js';

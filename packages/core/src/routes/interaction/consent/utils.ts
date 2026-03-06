@@ -1,5 +1,5 @@
-import { ReservedResource } from '@logto/core-kit';
-import { type MissingResourceScopes, type Scope, missingResourceScopesGuard } from '@logto/schemas';
+import { ReservedResource } from '@myeyesid/core-kit';
+import { type MissingResourceScopes, type Scope, missingResourceScopesGuard } from '@myeyesid/schemas';
 import { errors } from 'oidc-provider';
 
 import {

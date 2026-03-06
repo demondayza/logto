@@ -1,4 +1,4 @@
-import { type AdaptiveMfa, MfaFactor, MfaPolicy } from '@logto/schemas';
+import { type AdaptiveMfa, MfaFactor, MfaPolicy } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import { type SignInPrompt, type MfaConfig, type MfaConfigForm } from '../types';

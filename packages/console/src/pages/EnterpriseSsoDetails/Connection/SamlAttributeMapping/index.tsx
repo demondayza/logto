@@ -41,7 +41,7 @@ function SamlAttributeMapping({ samlProviderConfig }: Props) {
                 <CopyToClipboard displayType="block" variant="border" value={key} />
               </td>
               <td>
-                {/* Show default value of `id` field to show that Logto has handled the default value. */}
+                {/* Show default value of `id` field to show that MyEyesID has handled the default value. */}
                 {/* Per SAML protocol, this field is not eligible to change in most cases. */}
                 {key === 'id' ? (
                   <CopyToClipboard

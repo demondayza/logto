@@ -4,7 +4,7 @@ import {
   MfaPolicy,
   bindMfaPayloadGuard,
   verifyMfaPayloadGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import type Router from 'koa-router';
 import { type IRouterParamContext } from 'koa-router';
 import { z } from 'zod';

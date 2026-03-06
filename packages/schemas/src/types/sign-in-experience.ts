@@ -3,7 +3,7 @@ import {
   type ConnectorMetadata,
   type GoogleOneTapConfig,
   googleOneTapConfigGuard,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import { z } from 'zod';
 
 import {

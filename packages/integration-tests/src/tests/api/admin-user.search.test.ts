@@ -1,4 +1,4 @@
-import type { Role, User } from '@logto/schemas';
+import type { Role, User } from '@myeyesid/schemas';
 
 import { assignRolesToUser, authedAdminApi, createUser, deleteUser } from '#src/api/index.js';
 import { createRole, deleteRole } from '#src/api/role.js';

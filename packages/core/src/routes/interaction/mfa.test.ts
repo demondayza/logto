@@ -1,5 +1,5 @@
-import { demoAppApplicationId, InteractionEvent, MfaFactor, MfaPolicy } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { demoAppApplicationId, InteractionEvent, MfaFactor, MfaPolicy } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockBackupCodeBind, mockTotpBind } from '#src/__mocks__/mfa-verification.js';
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';

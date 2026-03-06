@@ -8,7 +8,7 @@ import type {
   SendMessagePayload,
   GetI18nEmailTemplate,
   EmailTemplateDetails,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
@@ -16,7 +16,7 @@ import {
   ConnectorType,
   replaceSendMessageHandlebars,
   getConfigTemplateByType,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import nodemailer from 'nodemailer';
 import type Mail from 'nodemailer/lib/mailer';
 import type SMTPTransport from 'nodemailer/lib/smtp-transport';

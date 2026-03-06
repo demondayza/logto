@@ -1,14 +1,14 @@
 import { readFile } from 'node:fs/promises';
 
-import type { LogtoOidcConfigType } from '@logto/schemas';
-import { LogtoOidcConfigKey, logtoConfigGuards } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import type { MyEyesIDOidcConfigType } from '@myeyesid/schemas';
+import { MyEyesIDOidcConfigKey, myeyesidConfigGuards } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { getEnvAsStringArray } from '@silverhand/essentials';
 import type { DatabaseTransactionConnection } from '@silverhand/slonik';
 import chalk from 'chalk';
 import { z } from 'zod';
 
-import { getRowsByKeys, updateValueByKey } from '../../../queries/logto-config.js';
+import { getRowsByKeys, updateValueByKey } from '../../../queries/myeyesid-config.js';
 import { consoleLog } from '../../../utils.js';
 import {
   buildOidcKeyFromRawString,
@@ -21,16 +21,16 @@ const isBase64FormatPrivateKey = (key: string) => !key.includes('-');
 export const seedOidcConfigs = async (pool: DatabaseTransactionConnection, tenantId: string) => {
   const tenantPrefix = `[${tenantId}]`;
   const configGuard = z.object({
-    key: z.nativeEnum(LogtoOidcConfigKey),
+    key: z.nativeEnum(MyEyesIDOidcConfigKey),
     value: z.unknown(),
   });
-  const { rows } = await getRowsByKeys(pool, tenantId, Object.values(LogtoOidcConfigKey));
+  const { rows } = await getRowsByKeys(pool, tenantId, Object.values(MyEyesIDOidcConfigKey));
   // Filter out valid keys that hold a valid value
   const result = await Promise.all(
-    rows.map<Promise<LogtoOidcConfigKey | undefined>>(async (row) => {
+    rows.map<Promise<MyEyesIDOidcConfigKey | undefined>>(async (row) => {
       try {
         const { key, value } = await configGuard.parseAsync(row);
-        await logtoConfigGuards[key].parseAsync(value);
+        await myeyesidConfigGuards[key].parseAsync(value);
 
         return key;
       } catch {}
@@ -38,7 +38,7 @@ export const seedOidcConfigs = async (pool: DatabaseTransactionConnection, tenan
   );
   const existingKeys = new Set(result.filter(Boolean));
 
-  const validOptions = Object.values(LogtoOidcConfigKey).filter((key) => {
+  const validOptions = Object.values(MyEyesIDOidcConfigKey).filter((key) => {
     const included = existingKeys.has(key);
 
     if (included) {
@@ -72,8 +72,8 @@ export const seedOidcConfigs = async (pool: DatabaseTransactionConnection, tenan
  * 2. Generate value if #1 doesn't work
  */
 export const oidcConfigReaders: {
-  [key in LogtoOidcConfigKey]: () => Promise<{
-    value: LogtoOidcConfigType[key];
+  [key in MyEyesIDOidcConfigKey]: () => Promise<{
+    value: MyEyesIDOidcConfigType[key];
     fromEnv: boolean;
   }>;
 } = {
@@ -87,7 +87,7 @@ export const oidcConfigReaders: {
    * @returns The private keys for OIDC provider.
    * @throws An error when failed to read a private key.
    */
-  [LogtoOidcConfigKey.PrivateKeys]: async () => {
+  [MyEyesIDOidcConfigKey.PrivateKeys]: async () => {
     // Direct keys in env
     const privateKeys = getEnvAsStringArray('OIDC_PRIVATE_KEYS');
 
@@ -120,7 +120,7 @@ export const oidcConfigReaders: {
       fromEnv: false,
     };
   },
-  [LogtoOidcConfigKey.CookieKeys]: async () => {
+  [MyEyesIDOidcConfigKey.CookieKeys]: async () => {
     const envKey = 'OIDC_COOKIE_KEYS';
     const keys = getEnvAsStringArray(envKey).map((key) => ({
       id: generateStandardId(),

@@ -1,5 +1,5 @@
-import { SubscriptionRedisCacheKey } from '@logto/schemas';
-import { TtlCache } from '@logto/shared';
+import { SubscriptionRedisCacheKey } from '@myeyesid/schemas';
+import { TtlCache } from '@myeyesid/shared';
 
 import { TenantSubscriptionCache } from '#src/caches/tenant-subscription.js';
 import { type CacheStore } from '#src/caches/types.js';

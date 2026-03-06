@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import { type LanguageTag } from '@logto/language-kit';
+import { type LanguageTag } from '@myeyesid/language-kit';
 import { conditionalString, trySafe } from '@silverhand/essentials';
 import { type Got, got, HTTPError } from 'got';
 import { HttpsProxyAgent } from 'hpagent';

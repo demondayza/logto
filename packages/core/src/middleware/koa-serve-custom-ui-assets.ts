@@ -1,4 +1,4 @@
-import { isFileAssetPath, parseRange } from '@logto/core-kit';
+import { isFileAssetPath, parseRange } from '@myeyesid/core-kit';
 import { tryThat } from '@silverhand/essentials';
 import type { MiddlewareType } from 'koa';
 

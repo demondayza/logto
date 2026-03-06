@@ -4,7 +4,7 @@ import { mergeIdentifiers, categorizeIdentifiers } from './interaction.js';
 
 describe('interaction utils', () => {
   const usernameIdentifier: Identifier = { key: 'accountId', value: 'foo' };
-  const emailIdentifier: Identifier = { key: 'emailVerified', value: 'foo@logto.io' };
+  const emailIdentifier: Identifier = { key: 'emailVerified', value: 'foo@myeyesid.io' };
   const phoneIdentifier: Identifier = { key: 'phoneVerified', value: '12346' };
   const socialIdentifier: Identifier = {
     key: 'social',
@@ -42,7 +42,7 @@ describe('interaction utils', () => {
       expect(
         categorizeIdentifiers(
           [usernameIdentifier, emailIdentifier, phoneIdentifier, socialIdentifier],
-          { email: 'foo@logto.io', connectorId: 'foo_connector' }
+          { email: 'foo@myeyesid.io', connectorId: 'foo_connector' }
         )
       ).toEqual({
         authIdentifiers: [usernameIdentifier, phoneIdentifier],

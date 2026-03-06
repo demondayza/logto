@@ -141,7 +141,7 @@
               "schema": {
                 "properties": {
                   "connectorId": {
-                    "description": "The Logto connector ID."
+                    "description": "The MyEyesID connector ID."
                   },
                   "redirectUri": {
                     "description": "The URI to navigate back to after the user is authenticated by the connected social identity provider and has granted access to the connector."

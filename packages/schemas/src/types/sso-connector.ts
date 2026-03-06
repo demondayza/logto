@@ -1,4 +1,4 @@
-import { socialUserInfoGuard } from '@logto/connector-kit';
+import { socialUserInfoGuard } from '@myeyesid/connector-kit';
 import { z } from 'zod';
 
 import { SsoConnectors, type SsoConnector } from '../db-entries/sso-connector.js';

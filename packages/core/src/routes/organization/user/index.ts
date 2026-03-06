@@ -4,7 +4,7 @@ import {
   type Organization,
   userWithOrganizationRolesGuard,
   Users,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import { buildManagementApiContext } from '#src/libraries/hook/utils.js';

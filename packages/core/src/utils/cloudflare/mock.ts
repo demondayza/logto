@@ -4,4 +4,4 @@ export const mockCustomHostnameResponse = async (identifier?: string) => {
   return mockCloudflareData;
 };
 
-export const mockFallbackOrigin = 'mock.logto.dev';
+export const mockFallbackOrigin = 'mock.myeyesid.dev';

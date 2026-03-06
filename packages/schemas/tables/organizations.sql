@@ -1,6 +1,6 @@
 /* init_order = 1 */
 
-/** Organizations defined by [RFC 0001](https://github.com/logto-io/rfcs/blob/HEAD/active/0001-organization.md). */
+/** Organizations defined by [RFC 0001](https://github.com/myeyesid-io/rfcs/blob/HEAD/active/0001-organization.md). */
 create table organizations (
   tenant_id varchar(21) not null
     references tenants (id) on update cascade on delete cascade,

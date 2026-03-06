@@ -1,4 +1,4 @@
-import { pickDefault } from '@logto/shared/esm';
+import { pickDefault } from '@myeyesid/shared/esm';
 import type { Context } from 'koa';
 import type { IRouterParamContext } from 'koa-router';
 import { Provider } from 'oidc-provider';
@@ -13,7 +13,7 @@ import type { WithAuthContext } from './index.js';
 
 const { jest } = import.meta;
 
-const provider = new Provider('https://logto.test');
+const provider = new Provider('https://myeyesid.test');
 const tenantContext = new MockTenant(provider);
 
 const mockAccessToken = {

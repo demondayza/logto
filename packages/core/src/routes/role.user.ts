@@ -1,5 +1,5 @@
-import { UsersRoles, userProfileResponseGuard } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { UsersRoles, userProfileResponseGuard } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { tryThat } from '@silverhand/essentials';
 import { object, string } from 'zod';
 

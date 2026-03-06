@@ -38,7 +38,7 @@ const enterprise_sso = {
       redirect_uri_field_description:
         "Yeniden yönlendirme URI'si, SSO kimlik doğrulamasından sonra kullanıcıların yönlendirildiği yerdir. Bu URI'yi IdP yapılandırmanıza ekleyin.",
       redirect_uri_field_custom_domain_description:
-        "MyEyesID'da birden fazla <a>özel alan adı</a> kullanıyorsanız, SSO'nun her alan adında çalışması için ilgili tüm geri dönüş URI'lerini IdP'nize eklediğinizden emin olun.\n\nVarsayılan MyEyesID alan adı (*.logto.app) her zaman geçerlidir; yalnızca o alan adı altında SSO'yu desteklemek istiyorsanız ekleyin.",
+        "MyEyesID'da birden fazla <a>özel alan adı</a> kullanıyorsanız, SSO'nun her alan adında çalışması için ilgili tüm geri dönüş URI'lerini IdP'nize eklediğinizden emin olun.\n\nVarsayılan MyEyesID alan adı (*.myeyesid.app) her zaman geçerlidir; yalnızca o alan adı altında SSO'yu desteklemek istiyorsanız ekleyin.",
     },
   },
   attribute_mapping: {

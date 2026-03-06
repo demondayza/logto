@@ -57,7 +57,7 @@ export type SendMessagePayload = {
   link?: string;
   /**
    * The language tag detected from the user's request. It will be used to localize the message.
-   * If provided, Logto will use the corresponding language template to send the message.
+   * If provided, MyEyesID will use the corresponding language template to send the message.
    * If not provided, or the language template is not available, will fallback to the default language and template.
    *
    * @remarks

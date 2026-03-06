@@ -1,4 +1,4 @@
-# @logto/core
+# @myeyesid/core
 
 The core backend service.
 

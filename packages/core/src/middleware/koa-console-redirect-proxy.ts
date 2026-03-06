@@ -1,6 +1,6 @@
 import path from 'node:path';
 
-import { ossConsolePath } from '@logto/schemas';
+import { ossConsolePath } from '@myeyesid/schemas';
 import type { MiddlewareType } from 'koa';
 import type { IRouterParamContext } from 'koa-router';
 

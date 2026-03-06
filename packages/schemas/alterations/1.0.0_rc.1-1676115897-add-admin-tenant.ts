@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 
@@ -26,8 +26,8 @@ const addManagementApiData = async (pool: CommonQueryMethods) => {
       values (
         ${adminTenantId},
         ${resourceId},
-        'https://default.logto.app/api',
-        'Logto Management API for tenant default'
+        'https://default.myeyesid.app/api',
+        'MyEyesID Management API for tenant default'
       );
   `);
   await pool.query(sql`
@@ -46,7 +46,7 @@ const addManagementApiData = async (pool: CommonQueryMethods) => {
         ${adminTenantId},
         ${roleId},
         'default:admin',
-        'Admin role for Logto.'
+        'Admin role for MyEyesID.'
       );
   `);
   await pool.query(sql`
@@ -70,8 +70,8 @@ const addMeApiData = async (pool: CommonQueryMethods) => {
       values (
         ${adminTenantId},
         ${resourceId},
-        'https://admin.logto.app/me',
-        'Logto Me API'
+        'https://admin.myeyesid.app/me',
+        'MyEyesID Me API'
       );
   `);
   await pool.query(sql`
@@ -138,13 +138,13 @@ const alteration: AlterationScript = {
     // Update old resource
     await pool.query(sql`
       update resources
-        set indicator = 'https://default.logto.app/api'
-        where indicator = 'https://api.logto.io';
+        set indicator = 'https://default.myeyesid.app/api'
+        where indicator = 'https://api.myeyesid.io';
     `);
 
     // Create admin tenant
-    const baseRole = `logto_tenant_${database}`;
-    const role = `logto_tenant_${database}_${adminTenantId}`;
+    const baseRole = `myeyesid_tenant_${database}`;
+    const role = `myeyesid_tenant_${database}_${adminTenantId}`;
     const password = generateStandardId(32);
 
     await pool.query(sql`
@@ -162,7 +162,7 @@ const alteration: AlterationScript = {
   },
   down: async (pool) => {
     const database = await getDatabaseName(pool);
-    const role = `logto_tenant_${database}_${adminTenantId}`;
+    const role = `myeyesid_tenant_${database}_${adminTenantId}`;
 
     // Drop role and tenant
     await pool.query(sql`
@@ -186,8 +186,8 @@ const alteration: AlterationScript = {
     // Restore old resource
     await pool.query(sql`
       update resources
-      set indicator = 'https://api.logto.io'
-        where indicator = 'https://default.logto.app/api';
+      set indicator = 'https://api.myeyesid.io'
+        where indicator = 'https://default.myeyesid.app/api';
     `);
 
     // Update function

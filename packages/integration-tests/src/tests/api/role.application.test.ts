@@ -1,5 +1,5 @@
-import { ApplicationType, RoleType } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { ApplicationType, RoleType } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { HTTPError } from 'ky';
 
 import { assignRolesToApplication, createApplication } from '#src/api/index.js';

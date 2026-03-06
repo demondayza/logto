@@ -17,7 +17,7 @@ Now we have the Agent ID (NOT APPID) and Secret.
 Set the things you need on this page. It would be like:
 
 - Allowed users: _who can see this app_
-- App Homepage: _Your app homepage. E.g., `logto.io/demo-app`_
+- App Homepage: _Your app homepage. E.g., `myeyesid.io/demo-app`_
 
 **Important**
 There are three items on this page regarding the "Developer API(开发者接口)".

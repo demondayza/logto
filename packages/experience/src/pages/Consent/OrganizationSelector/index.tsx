@@ -1,4 +1,4 @@
-import { ReservedResource } from '@logto/core-kit';
+import { ReservedResource } from '@myeyesid/core-kit';
 import classNames from 'classnames';
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';

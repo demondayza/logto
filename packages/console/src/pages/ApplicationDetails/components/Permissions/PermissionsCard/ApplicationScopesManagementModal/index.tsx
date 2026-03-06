@@ -1,4 +1,4 @@
-import { ApplicationUserConsentScopeType } from '@logto/schemas';
+import { ApplicationUserConsentScopeType } from '@myeyesid/schemas';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -81,7 +81,7 @@ function ApplicationScopesManagementModal({ scope, onClose, onSubmit }: Props) {
           learnMoreLink={
             scope.type === ApplicationUserConsentScopeType.ResourceScopes
               ? {
-                  href: 'https://docs.logto.io/docs/recipes/rbac/manage-permissions-and-roles#manage-role-permissions',
+                  href: 'https://docs.myeyesid.io/docs/recipes/rbac/manage-permissions-and-roles#manage-role-permissions',
                   targetBlank: 'noopener',
                 }
               : undefined

@@ -1,4 +1,4 @@
-import { AlterationStateKey, Systems } from '@logto/schemas';
+import { AlterationStateKey, Systems } from '@myeyesid/schemas';
 import { createMockPool, createMockQueryResult, sql } from '@silverhand/slonik';
 import { DatabaseError } from 'pg-protocol';
 import { describe, it, expect, vi, type MockedFunction, afterAll, beforeAll } from 'vitest';

@@ -1,13 +1,13 @@
-# Logto elements
+# MyEyesID elements
 
-A collection of Web Components for building better applications with Logto.
+A collection of Web Components for building better applications with MyEyesID.
 
 > [!Warning]
 > This package is still under development and not yet published to npm.
 
 ## Development
 
-- The standard `dev` script is useful for testing the Logto integration when you are working with the workspace's `dev` script. How ever, the dev integration has some issues like duplicate registration and stale element cache. It's not easy to overcome them at the moment.
+- The standard `dev` script is useful for testing the MyEyesID integration when you are working with the workspace's `dev` script. How ever, the dev integration has some issues like duplicate registration and stale element cache. It's not easy to overcome them at the moment.
 - Run the `start` script to start a quick development server that serves the elements via `index.html`.
 
 ## Internationalization

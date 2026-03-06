@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { Globals } from '@react-spring/web';
 import { assert } from '@silverhand/essentials';
 import { renderHook } from '@testing-library/react';
@@ -6,7 +6,7 @@ import { renderHook } from '@testing-library/react';
 import UserInteractionContextProvider from '@/Providers/UserInteractionContextProvider';
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings, getBoundingClientRectMock } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings, getBoundingClientRectMock } from '@/__mocks__/myeyesid';
 import useSessionStorage, { StorageKeys } from '@/hooks/use-session-storages';
 import type { SignInExperienceResponse } from '@/types';
 
@@ -67,7 +67,7 @@ describe('ForgotPassword', () => {
     { email: false, phone: true },
     { email: true, phone: true },
   ])('render the forgot password page with settings %p %p', (settings) => {
-    const email = 'foo@logto.io';
+    const email = 'foo@myeyesid.io';
     const countryCode = '86';
     const phone = '13911111111';
 

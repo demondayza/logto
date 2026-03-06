@@ -1,4 +1,4 @@
-import { type ApplicationType } from '@logto/schemas';
+import { type ApplicationType } from '@myeyesid/schemas';
 import { type MDXProps } from 'mdx/types';
 import { type LazyExoticComponent, type ComponentType, type SVGProps } from 'react';
 
@@ -20,7 +20,7 @@ export type GuideMetadata = {
   target: ApplicationType | 'API';
   /** The related sample information of the guide. */
   sample?: {
-    /** The GitHub repository of the `logto-io` organization that the sample is in. */
+    /** The GitHub repository of the `myeyesid-io` organization that the sample is in. */
     repo: string;
     /** The path to the sample directory in the repository. */
     path: string;
@@ -33,7 +33,7 @@ export type GuideMetadata = {
   isCloud?: boolean;
   /** Indicates whether we should skip the guide after creating the application. */
   skipGuideAfterCreation?: boolean;
-  /** The related complete guide url relative to the quick starts page (https://docs.logto.io/quick-starts). */
+  /** The related complete guide url relative to the quick starts page (https://docs.myeyesid.io/quick-starts). */
   fullGuide?: string;
   /** The related URLs to add to the further readings section. */
   furtherReadings?: Array<{

@@ -1,4 +1,4 @@
-import type { ConnectorResponse } from '@logto/schemas';
+import type { ConnectorResponse } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 

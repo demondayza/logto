@@ -1,5 +1,5 @@
-import type { LogtoConfig, SignInOptions } from '@logto/node';
-import { InteractionEvent } from '@logto/schemas';
+import type { MyEyesIDConfig, SignInOptions } from '@myeyesid/node';
+import { InteractionEvent } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import { type KyInstance } from 'ky';
 
@@ -7,7 +7,7 @@ import { ExperienceClient } from '#src/client/experience/index.js';
 import MockClient from '#src/client/index.js';
 
 export const initClient = async (
-  config?: Partial<LogtoConfig>,
+  config?: Partial<MyEyesIDConfig>,
   redirectUri?: string,
   options: Omit<SignInOptions, 'redirectUri'> = {}
 ) => {
@@ -28,7 +28,7 @@ export const initExperienceClient = async ({
   extraHeaders,
 }: {
   interactionEvent?: InteractionEvent;
-  config?: Partial<LogtoConfig>;
+  config?: Partial<MyEyesIDConfig>;
   redirectUri?: string;
   options?: Omit<SignInOptions, 'redirectUri'>;
   api?: KyInstance;

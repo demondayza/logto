@@ -1,4 +1,4 @@
-import { ConnectorError, ConnectorErrorCodes } from '@logto/connector-kit';
+import { ConnectorError, ConnectorErrorCodes } from '@myeyesid/connector-kit';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { createContextWithRouteParameters } from '#src/utils/test-utils.js';

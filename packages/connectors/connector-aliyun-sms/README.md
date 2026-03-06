@@ -1,8 +1,8 @@
 # Aliyun short message service connector
 
-The official Logto connector for Aliyun short message service.
+The official MyEyesID connector for Aliyun short message service.
 
-阿里云短信服务 Logto 官方连接器 [中文文档](#阿里云短信连接器)
+阿里云短信服务 MyEyesID 官方连接器 [中文文档](#阿里云短信连接器)
 
 **Table of contents**
 
@@ -26,7 +26,7 @@ The official Logto connector for Aliyun short message service.
 
 ## Get started
 
-Aliyun is a primary cloud service provider in Asia, offering many cloud services, including SMS (short message service). Aliyun SMS Connector is a plugin provided by the Logto team to call the Aliyun SMS service, with the help of which Logto end-users can register and sign in to their Logto account via SMS verification code.
+Aliyun is a primary cloud service provider in Asia, offering many cloud services, including SMS (short message service). Aliyun SMS Connector is a plugin provided by the MyEyesID team to call the Aliyun SMS service, with the help of which MyEyesID end-users can register and sign in to their MyEyesID account via SMS verification code.
 
 ## Set up a short message service in Aliyun SMS Console
 
@@ -61,13 +61,13 @@ Go to the [Aliyun website](https://cn.aliyun.com/) and register your Aliyun acco
     - Fill out the `signName` field with "Signature" (签名名称) which is mentioned in step 2. All templates will share this signature name.
     - You can add multiple SMS connector templates for different cases. Here is an example of adding a single template:
         - Fill the `templateCode` field, which is how you can control SMS context, with "Template Code" (模板 CODE) from step 2.
-        - Fill out `usageType` field with either `Register`, `SignIn`, `ForgotPassword` or `Generic` for different use cases. (`usageType` is a Logto property to identify the proper use case.) In order to enable full user flows, templates with usageType `Register`, `SignIn`, `ForgotPassword` and `Generic` are required.
+        - Fill out `usageType` field with either `Register`, `SignIn`, `ForgotPassword` or `Generic` for different use cases. (`usageType` is a MyEyesID property to identify the proper use case.) In order to enable full user flows, templates with usageType `Register`, `SignIn`, `ForgotPassword` and `Generic` are required.
 
 ### Test Aliyun SMS connector
 
 You can type in a phone number and click on "Send" to see whether the settings can work before "Save and Done".
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/sms-connector/enable-SMS-sign-in/).
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/sms-connector/enable-SMS-sign-in/).
 
 ### Config types
 
@@ -92,7 +92,7 @@ That's it. Don't forget to [Enable connector in sign-in experience](https://docs
 
 阿里云是亚洲地区一个重要的云服务厂商，提供了包括短信服务在内的诸多云服务。
 
-本连接器是 Logto 官方提供的阿里云短信连接器，帮助终端用户通过短信验证码进行登录注册。
+本连接器是 MyEyesID 官方提供的阿里云短信连接器，帮助终端用户通过短信验证码进行登录注册。
 
 ## 在阿里云短信服务控制台中配置一个短信服务
 
@@ -127,13 +127,13 @@ That's it. Don't forget to [Enable connector in sign-in experience](https://docs
     - 用你在步骤 2 中拿到的「签名名称」填入 `signName` 栏。所有的模板都会共用这个签名。
     - 你可以添加多个短信服务模板以应对不同的用户场景。这里展示填写单个模板的例子：
       - `templateCode` 栏是你可以用来控制所发送短信内容的属性。它们的值从步骤 2 中的「模板 CODE」获取。
-      - `usageType` 栏填写 `Register`，`SignIn`，`ForgotPassword` 或者 `Generic` 其中之一以分别对应 _注册_，_登录_，_忘记密码_，_通用_ 的不同场景。（`usageType` 是 Logto 的属性，用来确定使用场景。）为了能够使用完成的流程，需要配置 `usageType` 为 `Register`，`SignIn` 以及 `ForgotPassword` 的模板。
+      - `usageType` 栏填写 `Register`，`SignIn`，`ForgotPassword` 或者 `Generic` 其中之一以分别对应 _注册_，_登录_，_忘记密码_，_通用_ 的不同场景。（`usageType` 是 MyEyesID 的属性，用来确定使用场景。）为了能够使用完成的流程，需要配置 `usageType` 为 `Register`，`SignIn` 以及 `ForgotPassword` 的模板。
 
 ### 测试阿里云短信连接器
 
 你可以在「保存并完成」之前输入一个手机号码并点按「发送」来测试配置是否可以正常工作。
 
-大功告成！快去 [启用短信验证码登录](https://docs.logto.io/docs/recipes/configure-connectors/sms-connector/enable-SMS-sign-in/) 吧。
+大功告成！快去 [启用短信验证码登录](https://docs.myeyesid.io/docs/recipes/configure-connectors/sms-connector/enable-SMS-sign-in/) 吧。
 
 ### 配置类型
 

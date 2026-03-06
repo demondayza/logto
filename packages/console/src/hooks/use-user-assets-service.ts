@@ -1,4 +1,4 @@
-import { type UserAssetsServiceStatus } from '@logto/schemas';
+import { type UserAssetsServiceStatus } from '@myeyesid/schemas';
 import { useLocation } from 'react-router-dom';
 import useSWRImmutable from 'swr/immutable';
 

@@ -1,5 +1,5 @@
-import { ApplicationType, GrantType, InteractionEvent, type Resource } from '@logto/schemas';
-import { formUrlEncodedHeaders } from '@logto/shared';
+import { ApplicationType, GrantType, InteractionEvent, type Resource } from '@myeyesid/schemas';
+import { formUrlEncodedHeaders } from '@myeyesid/shared';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { oidcApi } from '#src/api/api.js';
@@ -24,12 +24,12 @@ devFeatureTest.describe('Token Exchange (Access Token)', () => {
 
   const testApiResourceInfo: Pick<Resource, 'name' | 'indicator'> = {
     name: 'test-token-exchange-resource',
-    indicator: 'https://token-exchange.logto.io/api',
+    indicator: 'https://token-exchange.myeyesid.io/api',
   };
 
   const secondApiResourceInfo: Pick<Resource, 'name' | 'indicator'> = {
     name: 'second-token-exchange-resource',
-    indicator: 'https://token-exchange-2.logto.io/api',
+    indicator: 'https://token-exchange-2.myeyesid.io/api',
   };
 
   /* eslint-disable @silverhand/fp/no-let */

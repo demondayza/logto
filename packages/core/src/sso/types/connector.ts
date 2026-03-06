@@ -1,4 +1,4 @@
-import { type SsoProviderName, type JsonObject, type SsoConnector } from '@logto/schemas';
+import { type SsoProviderName, type JsonObject, type SsoConnector } from '@myeyesid/schemas';
 
 // Pick the required fields from SsoConnector Schema
 // providerName must be supported by the SSO connector factories

@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { RoleType, type OrganizationRole } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { RoleType, type OrganizationRole } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

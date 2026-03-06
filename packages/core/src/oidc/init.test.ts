@@ -5,10 +5,10 @@ import initOidc from './init.js';
 
 describe('oidc provider init', () => {
   it('init should not throw', async () => {
-    const { id, queries, libraries, logtoConfigs, subscription } = new MockTenant();
+    const { id, queries, libraries, myeyesidConfigs, subscription } = new MockTenant();
 
     expect(() =>
-      initOidc(id, mockEnvSet, queries, libraries, logtoConfigs, subscription)
+      initOidc(id, mockEnvSet, queries, libraries, myeyesidConfigs, subscription)
     ).not.toThrow();
   });
 });

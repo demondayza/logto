@@ -1,4 +1,4 @@
-import { MfaFactor, SignInIdentifier, type RequestErrorBody } from '@logto/schemas';
+import { MfaFactor, SignInIdentifier, type RequestErrorBody } from '@myeyesid/schemas';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { validate } from 'superstruct';

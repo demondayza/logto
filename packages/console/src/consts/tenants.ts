@@ -1,14 +1,14 @@
-import { ReservedPlanId, TenantTag, defaultManagementApi } from '@logto/schemas';
+import { ReservedPlanId, TenantTag, defaultManagementApi } from '@myeyesid/schemas';
 import dayjs from 'dayjs';
 
 import {
   type SubscriptionQuota,
-  type LogtoSkuResponse,
+  type MyEyesIDSkuResponse,
   type TenantResponse,
   type SubscriptionCountBasedUsage,
 } from '@/cloud/types/router';
 import { defaultRegionName } from '@/components/Region';
-import { LogtoSkuType } from '@/types/skus';
+import { MyEyesIDSkuType } from '@/types/skus';
 
 import { adminEndpoint, isCloud } from './env';
 
@@ -54,12 +54,12 @@ export const defaultTenantResponse: TenantResponse = {
  * - For cloud, the initial tenant's subscription plan will be fetched from the cloud API.
  * - OSS has a fixed subscription plan with `development` id and no cloud API to dynamically fetch the subscription plan.
  */
-export const defaultLogtoSku: LogtoSkuResponse = {
+export const defaultMyEyesIDSku: MyEyesIDSkuResponse = {
   id: ReservedPlanId.Development,
   name: 'MyEyesID Development plan',
   createdAt: new Date(),
   updatedAt: new Date(),
-  type: LogtoSkuType.Basic,
+  type: MyEyesIDSkuType.Basic,
   unitPrice: 0,
   productId: null,
   defaultPriceId: null,

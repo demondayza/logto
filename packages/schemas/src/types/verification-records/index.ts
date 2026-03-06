@@ -1,8 +1,8 @@
 /**
- * This file defines the data types and guards for verification records in Logto.
- * We keep these definitions in @logto/schemas to ensure it can be shared accross different packages.
+ * This file defines the data types and guards for verification records in MyEyesID.
+ * We keep these definitions in @myeyesid/schemas to ensure it can be shared accross different packages.
  *
- * Check {@link @logto/core/src/routes/experience/classes/verifications} for the implementation of verification records.
+ * Check {@link @myeyesid/core/src/routes/experience/classes/verifications} for the implementation of verification records.
  */
 
 export * from './verification-type.js';

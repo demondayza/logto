@@ -1,4 +1,4 @@
-import type { RequestErrorBody } from '@logto/schemas';
+import type { RequestErrorBody } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 import { toast } from 'react-hot-toast';
 
@@ -43,8 +43,8 @@ export const handleError = async (
   exec?: (errorCode: string, message: string, status: number) => Promise<boolean | undefined>
 ) => {
   if (error instanceof HTTPError) {
-    const logtoError = await error.response.json<RequestErrorBody>();
-    const { code, message } = logtoError;
+    const myeyesidError = await error.response.json<RequestErrorBody>();
+    const { code, message } = myeyesidError;
 
     const handled = await exec?.(code, message, error.response.status);
 

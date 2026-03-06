@@ -1,4 +1,4 @@
-import type { AllConnector, CreateConnector } from '@logto/connector-kit';
+import type { AllConnector, CreateConnector } from '@myeyesid/connector-kit';
 import type { BaseRoutes, Router } from '@withtyped/server';
 
 /**

@@ -1,4 +1,4 @@
-import { type SsoConnectorIdpInitiatedAuthConfig } from '@logto/schemas';
+import { type SsoConnectorIdpInitiatedAuthConfig } from '@myeyesid/schemas';
 import useSWR from 'swr';
 
 import useApi, { type RequestError } from '@/hooks/use-api';

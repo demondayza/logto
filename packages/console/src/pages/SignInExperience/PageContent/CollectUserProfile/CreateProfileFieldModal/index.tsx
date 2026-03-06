@@ -1,9 +1,9 @@
-import { numberAndAlphabetRegEx } from '@logto/core-kit';
+import { numberAndAlphabetRegEx } from '@myeyesid/core-kit';
 import {
   builtInCustomProfileFieldKeys,
   type CustomProfileField,
   reservedCustomDataKeys,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';

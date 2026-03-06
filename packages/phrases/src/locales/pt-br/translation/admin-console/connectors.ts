@@ -67,7 +67,7 @@ const connectors = {
     callback_uri_description:
       'A URI de redirecionamento é para onde os usuários são enviados após a autorização social. Adicione essa URI à configuração do seu IdP.',
     callback_uri_custom_domain_description:
-      'Se você usa vários <a>domínios personalizados</a> no MyEyesID, lembre-se de adicionar todas as URIs de callback correspondentes ao seu IdP para que o login social funcione em cada domínio.\n\nO domínio padrão do MyEyesID (*.logto.app) é sempre válido; inclua-o apenas se também quiser oferecer suporte a logins nesse domínio.',
+      'Se você usa vários <a>domínios personalizados</a> no MyEyesID, lembre-se de adicionar todas as URIs de callback correspondentes ao seu IdP para que o login social funcione em cada domínio.\n\nO domínio padrão do MyEyesID (*.myeyesid.app) é sempre válido; inclua-o apenas se também quiser oferecer suporte a logins nesse domínio.',
     acs_url: 'URL do serviço de consumo de afirmações',
   },
   platform: {

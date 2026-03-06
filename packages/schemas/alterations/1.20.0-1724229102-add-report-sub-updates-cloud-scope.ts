@@ -27,7 +27,7 @@ type Role = {
   description: string;
 };
 
-const cloudApiIndicator = 'https://cloud.logto.io/api';
+const cloudApiIndicator = 'https://cloud.myeyesid.io/api';
 
 const cloudConnectionAppRoleName = 'tenantApplication';
 
@@ -35,7 +35,7 @@ const adminTenantId = 'admin';
 
 const reportSubscriptionUpdatesScopeName = 'report:subscription:updates';
 const reportSubscriptionUpdatesScopeDescription =
-  'Allow reporting changes on Stripe subscription to Logto Cloud.';
+  'Allow reporting changes on Stripe subscription to MyEyesID Cloud.';
 
 const alteration: AlterationScript = {
   up: async (pool) => {

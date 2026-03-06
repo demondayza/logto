@@ -1,12 +1,12 @@
 import fs from 'node:fs/promises';
 import { createServer, type RequestListener } from 'node:http';
 
-import { mockConnectorFilePaths, type SendMessagePayload } from '@logto/connector-kit';
+import { mockConnectorFilePaths, type SendMessagePayload } from '@myeyesid/connector-kit';
 import {
   type UserProfile,
   type JsonObject,
   type UsersPasswordEncryptionMethod,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import { createUser } from '#src/api/index.js';

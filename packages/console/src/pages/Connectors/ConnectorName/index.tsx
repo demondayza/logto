@@ -1,4 +1,4 @@
-import { ConnectorPlatform, ConnectorType } from '@logto/schemas';
+import { ConnectorPlatform, ConnectorType } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useTranslation } from 'react-i18next';
 

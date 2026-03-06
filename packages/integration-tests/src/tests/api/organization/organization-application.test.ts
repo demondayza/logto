@@ -5,7 +5,7 @@ import {
   type ApplicationWithOrganizationRoles,
   type Application,
   RoleType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import {

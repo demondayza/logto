@@ -1,6 +1,6 @@
 import UriInputField from '@/mdx-components/UriInputField';
 import InlineNotification from '@/ds-components/InlineNotification';
-import { generateStandardSecret } from '@logto/shared/universal';
+import { generateStandardSecret } from '@myeyesid/shared/universal';
 import RedirectUrisWeb from '../../fragments/_redirect-uris-web.mdx';
 import Checkpoint from '../../fragments/_checkpoint.md';
 import Steps from '@/mdx-components/Steps';
@@ -15,7 +15,7 @@ import CustomDomainEndpointNotice from '@/mdx-components/CustomDomainEndpointNot
 >
 
 ```bash
-bundle add logto
+bundle add myeyesid
 ```
 
 Or whatever your preferred method of adding gems is.
@@ -36,16 +36,16 @@ The following demonstration is for Ruby on Rails. However, you can apply the sam
 In the file where you want to initialize the MyEyesID client (e.g. a base controller or a middleware), add the following code:
 
 <Code className="language-ruby">
-    {`require "logto/client"
+    {`require "myeyesid/client"
 
-@client = LogtoClient.new(
-  config: LogtoClient::Config.new(
+@client = MyEyesIDClient.new(
+  config: MyEyesIDClient::Config.new(
     endpoint: "${props.endpoint}",
     app_id: "${props.app.id}",
     app_secret: "${props.secrets[0]?.value ?? props.app.secret}"
   ),
   navigate: ->(uri) { a_redirect_method(uri) },
-  storage: LogtoClient::SessionStorage.new(the_session_object)
+  storage: MyEyesIDClient::SessionStorage.new(the_session_object)
 )
 end`}
 </Code>
@@ -53,16 +53,16 @@ end`}
 For instance, in a Rails controller, the code might look like this:
 
 <Code title="app/controllers/sample_controller.rb" className="language-ruby">
-    {`require "logto/client"
+    {`require "myeyesid/client"
 
 class SampleController < ApplicationController
-  before_action :initialize_logto_client
+  before_action :initialize_myeyesid_client
 
   private
 
-  def initialize_logto_client
-    @client = LogtoClient.new(
-      config: LogtoClient::Config.new(
+  def initialize_myeyesid_client
+    @client = MyEyesIDClient.new(
+      config: MyEyesIDClient::Config.new(
         endpoint: "${props.endpoint}",
         app_id: "${props.app.id}",
         app_secret: "${props.secrets[0]?.value ?? props.app.secret}"
@@ -70,7 +70,7 @@ class SampleController < ApplicationController
       # Allow the client to redirect to other hosts (i.e. your MyEyesID tenant)
       navigate: ->(uri) { redirect_to(uri, allow_other_host: true) },
       # Controller has access to the session object
-      storage: LogtoClient::SessionStorage.new(session)
+      storage: MyEyesIDClient::SessionStorage.new(session)
     )
   end
 end`}
@@ -177,7 +177,7 @@ To display the user's information, you can use the `@client.id_token_claims` met
 <% end %>
 ```
 
-Please refer to the `#id_token_claims` method in the [gemdocs](https://gemdocs.org/gems/logto/latest) for more information.
+Please refer to the `#id_token_claims` method in the [gemdocs](https://gemdocs.org/gems/myeyesid/latest) for more information.
 
 </Step>
 

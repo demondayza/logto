@@ -1,4 +1,4 @@
-import { getUserSessionResponseGuard, getUserSessionsResponseGuard } from '@logto/schemas';
+import { getUserSessionResponseGuard, getUserSessionsResponseGuard } from '@myeyesid/schemas';
 import { assert, yes } from '@silverhand/essentials';
 import { object, string } from 'zod';
 
@@ -89,8 +89,8 @@ export default function adminUserSessionRoutes<T extends ManagementApiRouter>(
       if (yes(revokeGrants)) {
         /**
          * Revoking all grants and associated tokens for the session.
-         * @link https://github.com/logto-io/node-oidc-provider/blob/460feeea606d4f1c0bbab82bc196311053070ffc/lib/actions/end_session.js#L166
-         * @link https://github.com/logto-io/node-oidc-provider/blob/460feeea606d4f1c0bbab82bc196311053070ffc/lib/helpers/revoke.js
+         * @link https://github.com/myeyesid-io/node-oidc-provider/blob/460feeea606d4f1c0bbab82bc196311053070ffc/lib/actions/end_session.js#L166
+         * @link https://github.com/myeyesid-io/node-oidc-provider/blob/460feeea606d4f1c0bbab82bc196311053070ffc/lib/helpers/revoke.js
          */
         await Promise.all(
           authorizations.map(async ([, { grantId }]) => {

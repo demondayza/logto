@@ -9,7 +9,7 @@ import type {
   GetI18nEmailTemplate,
   EmailTemplateDetails,
   SendMessagePayload,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
@@ -17,7 +17,7 @@ import {
   ConnectorType,
   replaceSendMessageHandlebars,
   getConfigTemplateByType,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import { defaultMetadata, endpoint } from './constant.js';
 import { ContextType, sendGridMailConfigGuard } from './types.js';

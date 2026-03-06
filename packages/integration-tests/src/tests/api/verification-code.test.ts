@@ -1,5 +1,5 @@
-import { TemplateType } from '@logto/connector-kit';
-import { ConnectorType, type RequestVerificationCodePayload } from '@logto/schemas';
+import { TemplateType } from '@myeyesid/connector-kit';
+import { ConnectorType, type RequestVerificationCodePayload } from '@myeyesid/schemas';
 
 import { requestVerificationCode, verifyVerificationCode } from '#src/api/verification-code.js';
 import {

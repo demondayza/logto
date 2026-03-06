@@ -1,25 +1,25 @@
-import { pickDefault } from '@logto/shared/esm';
+import { pickDefault } from '@myeyesid/shared/esm';
 
-import { mockLogtoConnectorList } from '#src/__mocks__/connector.js';
-import { mockConnector0, mockLogtoConnector, mockMetadata0 } from '#src/__mocks__/index.js';
+import { mockMyEyesIDConnectorList } from '#src/__mocks__/connector.js';
+import { mockConnector0, mockMyEyesIDConnector, mockMetadata0 } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
 import assertThat from '#src/utils/assert-that.js';
-import { ConnectorType, type LogtoConnector } from '#src/utils/connectors/types.js';
+import { ConnectorType, type MyEyesIDConnector } from '#src/utils/connectors/types.js';
 import { createRequester } from '#src/utils/test-utils.js';
 
 const { jest } = import.meta;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const getLogtoConnectors = jest.fn<Promise<LogtoConnector[]>, []>();
+const getMyEyesIDConnectors = jest.fn<Promise<MyEyesIDConnector[]>, []>();
 
 const tenantContext = new MockTenant(
   undefined,
   {},
   {
-    getLogtoConnectors,
-    getLogtoConnectorById: async (connectorId: string) => {
-      const connectors = await getLogtoConnectors();
+    getMyEyesIDConnectors,
+    getMyEyesIDConnectorById: async (connectorId: string) => {
+      const connectors = await getMyEyesIDConnectors();
       const connector = connectors.find(({ dbEntry }) => dbEntry.id === connectorId);
       assertThat(
         connector,
@@ -45,7 +45,7 @@ describe('POST /connectors/:connectorId/authorization-uri', () => {
   });
 
   it('should return 404 if connector not found', async () => {
-    getLogtoConnectors.mockResolvedValueOnce([]);
+    getMyEyesIDConnectors.mockResolvedValueOnce([]);
     const response = await connectorRequest
       .post('/connectors/non-exist-connector-id/authorization-uri')
       .send({
@@ -71,7 +71,7 @@ describe('POST /connectors/:connectorId/authorization-uri', () => {
   });
 
   it('should return 400 if connector type is not social', async () => {
-    getLogtoConnectors.mockResolvedValueOnce(mockLogtoConnectorList);
+    getMyEyesIDConnectors.mockResolvedValueOnce(mockMyEyesIDConnectorList);
     const response = await connectorRequest.post('/connectors/id1/authorization-uri').send({
       state: 'random_state',
       redirectUri: 'http://example.com/callback/random_string',
@@ -80,12 +80,12 @@ describe('POST /connectors/:connectorId/authorization-uri', () => {
   });
 
   it('should return connector authorization URI successfully', async () => {
-    getLogtoConnectors.mockResolvedValueOnce([
+    getMyEyesIDConnectors.mockResolvedValueOnce([
       {
         dbEntry: mockConnector0,
         metadata: { ...mockMetadata0 },
         type: ConnectorType.Social,
-        ...mockLogtoConnector,
+        ...mockMyEyesIDConnector,
         getAuthorizationUri: async () => 'http://example.com',
       },
     ]);

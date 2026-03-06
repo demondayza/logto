@@ -1,5 +1,5 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { InteractionEvent, MfaFactor, SignInIdentifier } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { InteractionEvent, MfaFactor, SignInIdentifier } from '@myeyesid/schemas';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { initExperienceClient, logoutClient, processSession } from '#src/helpers/client.js';

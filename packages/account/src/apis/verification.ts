@@ -1,4 +1,4 @@
-import { SignInIdentifier, TemplateType } from '@logto/schemas';
+import { SignInIdentifier, TemplateType } from '@myeyesid/schemas';
 
 import { createAuthenticatedKy } from './base-ky';
 

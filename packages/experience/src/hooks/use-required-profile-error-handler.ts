@@ -1,4 +1,4 @@
-import { InteractionEvent, MissingProfile } from '@logto/schemas';
+import { InteractionEvent, MissingProfile } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import { validate } from 'superstruct';
 

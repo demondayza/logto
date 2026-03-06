@@ -1,4 +1,4 @@
-import { type HookResponse, type Hook } from '@logto/schemas';
+import { type HookResponse, type Hook } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useState } from 'react';

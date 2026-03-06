@@ -1,4 +1,4 @@
-import { Resources } from '@logto/schemas';
+import { Resources } from '@myeyesid/schemas';
 import { createMockPool, createMockQueryResult, sql } from '@silverhand/slonik';
 
 import { mockResource } from '#src/__mocks__/index.js';

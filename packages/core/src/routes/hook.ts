@@ -12,8 +12,8 @@ import {
   type Hook,
   type HookEvent,
   type HookResponse,
-} from '@logto/schemas';
-import { generateStandardId, generateStandardSecret } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId, generateStandardSecret } from '@myeyesid/shared';
 import { conditional, deduplicate, yes } from '@silverhand/essentials';
 import { subDays } from 'date-fns';
 import { z } from 'zod';

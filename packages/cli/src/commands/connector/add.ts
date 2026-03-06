@@ -40,7 +40,7 @@ const add: CommandModule<
     }
 
     if (official) {
-      // Add demo connectors for Logto Cloud only
+      // Add demo connectors for MyEyesID Cloud only
       await addOfficialConnectors(instancePath, cloud);
     } else {
       if (!packageNames?.length) {

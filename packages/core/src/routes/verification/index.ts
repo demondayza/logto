@@ -1,4 +1,4 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 import {
   AdditionalIdentifier,
   bindWebAuthnPayloadGuard,
@@ -9,7 +9,7 @@ import {
   verificationCodeIdentifierGuard,
   VerificationType,
   webAuthnRegistrationOptionsGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

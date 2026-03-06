@@ -1,13 +1,13 @@
 /**
- * @fileoverview Copied from `@logto/core`. Originally we put them in `@logto/shared` but it
+ * @fileoverview Copied from `@myeyesid/core`. Originally we put them in `@myeyesid/shared` but it
  * requires `slonik` which makes the package too heavy.
  *
- * Since `@logto/cli` only use these functions in a stable manner, we copy them here for now. If
+ * Since `@myeyesid/cli` only use these functions in a stable manner, we copy them here for now. If
  * the number of functions grows, we should consider moving them to a separate package. (Actually,
  * we should remove the dependency on `slonik` at all, and this may not be an issue then.)
  */
 
-import { type SchemaValue, type SchemaValuePrimitive, type Table } from '@logto/shared';
+import { type SchemaValue, type SchemaValuePrimitive, type Table } from '@myeyesid/shared';
 import { type IdentifierSqlToken, type SqlToken, sql } from '@silverhand/slonik';
 
 /**

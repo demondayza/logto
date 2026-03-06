@@ -1,4 +1,4 @@
-import type { ScopeResponse, RoleType } from '@logto/schemas';
+import type { ScopeResponse, RoleType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import transferLayout from '@/scss/transfer.module.scss';

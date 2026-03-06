@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 
 import { RoleType } from '../db-entries/index.js';
 import type { CreateScope, Role } from '../db-entries/index.js';
@@ -7,8 +7,8 @@ import { AdminTenantRole } from '../types/index.js';
 import type { UpdateAdminData } from './management-api.js';
 import { adminTenantId } from './tenant.js';
 
-/** The API Resource Indicator for Logto Cloud. It's only useful when domain-based multi-tenancy is enabled. */
-export const cloudApiIndicator = 'https://cloud.logto.io/api';
+/** The API Resource Indicator for MyEyesID Cloud. It's only useful when domain-based multi-tenancy is enabled. */
+export const cloudApiIndicator = 'https://cloud.myeyesid.io/api';
 
 export enum CloudScope {
   /** The user can create a user tenant. */
@@ -18,19 +18,19 @@ export enum CloudScope {
   SendSms = 'send:sms',
   SendEmail = 'send:email',
   /**
-   * The user can access external (independent from Logto instance) resource to run JWT payload customizer
+   * The user can access external (independent from MyEyesID instance) resource to run JWT payload customizer
    * scripts and fetch the parsed token payload.
    */
   FetchCustomJwt = 'fetch:custom:jwt',
   /**
-   * The entity can report changes on Stripe subscription to Logto Cloud.
+   * The entity can report changes on Stripe subscription to MyEyesID Cloud.
    */
   ReportSubscriptionUpdates = 'report:subscription:updates',
   /** The user can see and manage affiliates, including create, update, and delete. */
   ManageAffiliate = 'manage:affiliate',
   /** The user can create new affiliates and logs. */
   CreateAffiliate = 'create:affiliate',
-  /** Allow accessing Logto MCP API (part of Logto Cloud API). This scope is only available to M2M MCP server. */
+  /** Allow accessing MyEyesID MCP API (part of MyEyesID Cloud API). This scope is only available to M2M MCP server. */
   AccessMcpApi = 'access:mcp:api',
 }
 
@@ -50,7 +50,7 @@ export const createCloudApi = (): Readonly<[UpdateAdminData, ...CreateScope[]]> 
         tenantId: adminTenantId,
         id: resourceId,
         indicator: cloudApiIndicator,
-        name: `Logto Cloud API`,
+        name: `MyEyesID Cloud API`,
       },
       scopes: [
         buildScope(CloudScope.CreateTenant, 'Allow creating new tenants.'),
@@ -78,7 +78,7 @@ export const createCloudApi = (): Readonly<[UpdateAdminData, ...CreateScope[]]> 
     ),
     buildScope(
       CloudScope.ReportSubscriptionUpdates,
-      'Allow reporting changes on Stripe subscription to Logto Cloud.'
+      'Allow reporting changes on Stripe subscription to MyEyesID Cloud.'
     ),
     buildScope(CloudScope.CreateAffiliate, 'Allow creating new affiliates and logs.'),
     buildScope(
@@ -93,7 +93,7 @@ export const createTenantApplicationRole = (): Readonly<Role> => ({
   id: generateStandardId(),
   name: AdminTenantRole.TenantApplication,
   description:
-    'The role for M2M applications that represent a user tenant and send requests to Logto Cloud.',
+    'The role for M2M applications that represent a user tenant and send requests to MyEyesID Cloud.',
   type: RoleType.MachineToMachine,
   isDefault: false,
 });

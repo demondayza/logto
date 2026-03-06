@@ -1,4 +1,4 @@
-import { InteractionEvent } from '@logto/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 import { conditionalString, noop, trySafe } from '@silverhand/essentials';
 import { type MiddlewareType } from 'koa';
 import { type IRouterParamContext } from 'koa-router';

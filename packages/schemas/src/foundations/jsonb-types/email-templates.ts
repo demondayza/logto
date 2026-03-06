@@ -3,4 +3,4 @@ export {
   templateTypeGuard,
   type EmailTemplateDetails,
   emailTemplateDetailsGuard,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';

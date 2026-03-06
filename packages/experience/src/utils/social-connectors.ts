@@ -1,11 +1,11 @@
-import { GoogleConnector } from '@logto/connector-kit';
-import type { ExperienceSocialConnector } from '@logto/schemas';
-import { ConnectorPlatform } from '@logto/schemas';
+import { GoogleConnector } from '@myeyesid/connector-kit';
+import type { ExperienceSocialConnector } from '@myeyesid/schemas';
+import { ConnectorPlatform } from '@myeyesid/schemas';
 import { getCookie } from 'tiny-cookie';
 
 import { SearchParameters } from '@/types';
 import { generateRandomString } from '@/utils';
-import { getLogtoNativeSdk, isNativeWebview } from '@/utils/native-sdk';
+import { getMyEyesIDNativeSdk, isNativeWebview } from '@/utils/native-sdk';
 
 /**
  * Social Connector State Utility Methods
@@ -143,7 +143,7 @@ export const buildSocialLandingUri = (path: string, redirectTo: string) => {
   const url = new URL(`${origin}${path}`);
   url.searchParams.set(SearchParameters.RedirectTo, redirectTo);
 
-  const callbackLink = getLogtoNativeSdk()?.callbackLink;
+  const callbackLink = getMyEyesIDNativeSdk()?.callbackLink;
 
   if (callbackLink) {
     url.searchParams.set(SearchParameters.NativeCallbackLink, callbackLink);
@@ -204,7 +204,7 @@ export const filterSocialConnectors = (socialConnectors?: ExperienceSocialConnec
    * Native platform has higher priority.
    **/
 
-  const { supportedConnector, getPostMessage, callbackLink } = getLogtoNativeSdk() ?? {};
+  const { supportedConnector, getPostMessage, callbackLink } = getMyEyesIDNativeSdk() ?? {};
 
   if (!getPostMessage) {
     // Invalid Native SDK bridge injections, not able to sign in with any social connectors.

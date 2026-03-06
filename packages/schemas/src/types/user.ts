@@ -63,7 +63,7 @@ export type UserMfaVerificationResponse = z.infer<typeof userMfaVerificationResp
  */
 export enum InternalRole {
   /**
-   * Internal admin role for Machine-to-Machine apps in Logto user tenants.
+   * Internal admin role for Machine-to-Machine apps in MyEyesID user tenants.
    *
    * It should NOT be assigned to any user.
    */
@@ -73,7 +73,7 @@ export enum InternalRole {
 export enum AdminTenantRole {
   /** Common user role in admin tenant. */
   User = 'user',
-  /** The role for machine to machine applications that represent a user tenant and send requests to Logto Cloud. */
+  /** The role for machine to machine applications that represent a user tenant and send requests to MyEyesID Cloud. */
   TenantApplication = 'tenantApplication',
 }
 

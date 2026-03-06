@@ -1,4 +1,4 @@
-import type { Role } from '@logto/schemas';
+import type { Role } from '@myeyesid/schemas';
 
 export type RoleDetailsOutletContext = {
   role: Role;

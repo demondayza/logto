@@ -1,5 +1,5 @@
-import { type Sentinel } from '@logto/schemas';
-import { TtlCache } from '@logto/shared';
+import { type Sentinel } from '@myeyesid/schemas';
+import { TtlCache } from '@myeyesid/shared';
 import { createMockPool, createMockQueryResult } from '@silverhand/slonik';
 
 import { WellKnownCache } from '#src/caches/well-known.js';
@@ -7,7 +7,7 @@ import type { CloudConnectionLibrary } from '#src/libraries/cloud-connection.js'
 import { createCloudConnectionLibrary } from '#src/libraries/cloud-connection.js';
 import type { ConnectorLibrary } from '#src/libraries/connector.js';
 import { createConnectorLibrary } from '#src/libraries/connector.js';
-import { createLogtoConfigLibrary, type LogtoConfigLibrary } from '#src/libraries/logto-config.js';
+import { createMyEyesIDConfigLibrary, type MyEyesIDConfigLibrary } from '#src/libraries/myeyesid-config.js';
 import Libraries from '#src/tenants/Libraries.js';
 import Queries from '#src/tenants/Queries.js';
 import type TenantContext from '#src/tenants/TenantContext.js';
@@ -64,7 +64,7 @@ export class MockTenant implements TenantContext {
   public id = 'mock_id';
   public envSet = mockEnvSet;
   public queries: Queries;
-  public logtoConfigs: LogtoConfigLibrary;
+  public myeyesidConfigs: MyEyesIDConfigLibrary;
   public cloudConnection: CloudConnectionLibrary;
   public connectors: ConnectorLibrary;
   public libraries: Libraries;
@@ -77,12 +77,12 @@ export class MockTenant implements TenantContext {
     queriesOverride?: Partial2<Queries>,
     connectorsOverride?: Partial<ConnectorLibrary>,
     librariesOverride?: Partial2<Libraries>,
-    logtoConfigsOverride?: Partial<LogtoConfigLibrary>
+    myeyesidConfigsOverride?: Partial<MyEyesIDConfigLibrary>
   ) {
     this.queries = new MockQueries(queriesOverride);
 
-    this.logtoConfigs = { ...createLogtoConfigLibrary(this.queries), ...logtoConfigsOverride };
-    this.cloudConnection = createCloudConnectionLibrary(this.logtoConfigs);
+    this.myeyesidConfigs = { ...createMyEyesIDConfigLibrary(this.queries), ...myeyesidConfigsOverride };
+    this.cloudConnection = createCloudConnectionLibrary(this.myeyesidConfigs);
     this.connectors = {
       ...createConnectorLibrary(this.queries, this.cloudConnection),
       ...connectorsOverride,
@@ -99,7 +99,7 @@ export class MockTenant implements TenantContext {
       this.queries,
       this.connectors,
       this.cloudConnection,
-      this.logtoConfigs,
+      this.myeyesidConfigs,
       this.subscription
     );
     this.setPartial('libraries', librariesOverride);

@@ -1,5 +1,5 @@
-import { UserScope } from '@logto/core-kit';
-import { ApplicationType, ApplicationUserConsentScopeType } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { ApplicationType, ApplicationUserConsentScopeType } from '@myeyesid/schemas';
 
 import {
   assignUserConsentScopes,

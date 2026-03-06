@@ -4,7 +4,7 @@ import {
   CloudScope,
   getManagementApiResourceIndicator,
   PredefinedScope,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export type ApiResource = {
   indicator: string;

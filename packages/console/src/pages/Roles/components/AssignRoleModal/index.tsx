@@ -1,4 +1,4 @@
-import { type Application, RoleType, type User, ApplicationType, type Role } from '@logto/schemas';
+import { type Application, RoleType, type User, ApplicationType, type Role } from '@myeyesid/schemas';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';

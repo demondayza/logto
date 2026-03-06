@@ -1,4 +1,4 @@
-import { CustomProfileFieldType, type CustomProfileField } from '@logto/schemas';
+import { CustomProfileFieldType, type CustomProfileField } from '@myeyesid/schemas';
 
 export const mockCustomProfileFields: CustomProfileField[] = [
   {

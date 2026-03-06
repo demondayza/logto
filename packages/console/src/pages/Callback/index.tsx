@@ -1,14 +1,14 @@
-import { useHandleSignInCallback, useLogto } from '@logto/react';
+import { useHandleSignInCallback, useMyEyesID } from '@myeyesid/react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import AppLoading from '@/components/AppLoading';
 import { consumeSavedRedirect } from '@/utils/storage';
 
-/** The global callback page for all sign-in redirects from Logto main flow. */
+/** The global callback page for all sign-in redirects from MyEyesID main flow. */
 function Callback() {
   const navigate = useNavigate();
-  const { clearAllTokens } = useLogto();
+  const { clearAllTokens } = useMyEyesID();
 
   useEffect(() => {
     void clearAllTokens();

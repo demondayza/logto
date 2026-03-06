@@ -1,4 +1,4 @@
-import { type Resource } from '@logto/schemas';
+import { type Resource } from '@myeyesid/schemas';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

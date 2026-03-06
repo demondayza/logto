@@ -1,6 +1,6 @@
 # Hugging Face connector
 
-The official Logto connector for Hugging Face social sign-in.
+The official MyEyesID connector for Hugging Face social sign-in.
 
 **Table of contents**
 
@@ -33,7 +33,7 @@ In the creation process, you will need to provide the following information:
 - **Homepage URL**: The URL of your application's homepage or landing page.
 - **Logo URL**: The URL of your application's logo.
 - **Scopes**: The scopes allowed for the OAuth app. For Hugging Face connector, usually use `profile` to get the user's profile information and `email` to get the user's email address. Ensure these scopes are allowed in your Hugging Face OAuth app if you want to use them.
-- **Redirect URI**: The URL to redirect the user to after they have authenticated. You can find the redirect URI in the Logto Admin Console when you're creating a Hugging Face connector or in the created Hugging Face connector details page.
+- **Redirect URI**: The URL to redirect the user to after they have authenticated. You can find the redirect URI in the MyEyesID Admin Console when you're creating a Hugging Face connector or in the created Hugging Face connector details page.
 
 ## Managing Hugging Face OAuth apps
 
@@ -57,7 +57,7 @@ Fill out the `clientId` and `clientSecret` field with _Client ID_ and _App Secre
 
 ## Test Hugging Face connector
 
-That's it. The Hugging Face connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. The Hugging Face connector should be available now. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 ## Reference
 

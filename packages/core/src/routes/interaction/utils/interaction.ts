@@ -1,5 +1,5 @@
-import type { Profile } from '@logto/schemas';
-import { InteractionEvent } from '@logto/schemas';
+import type { Profile } from '@myeyesid/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import type { Context } from 'koa';
 import type { Provider, InteractionResults } from 'oidc-provider';

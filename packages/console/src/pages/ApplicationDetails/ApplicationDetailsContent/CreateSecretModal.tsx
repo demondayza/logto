@@ -1,4 +1,4 @@
-import { type ApplicationSecret } from '@logto/schemas';
+import { type ApplicationSecret } from '@myeyesid/schemas';
 import { addDays, format } from 'date-fns';
 import { useCallback, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';

@@ -1,4 +1,4 @@
-import { type SsoConnectorWithProviderConfig } from '@logto/schemas';
+import { type SsoConnectorWithProviderConfig } from '@myeyesid/schemas';
 import { createContext, useMemo, type ReactNode } from 'react';
 
 export const SsoConnectorContext = createContext<{

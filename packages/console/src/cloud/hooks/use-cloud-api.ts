@@ -1,7 +1,7 @@
-import type router from '@logto/cloud/routes';
-import { type tenantAuthRouter } from '@logto/cloud/routes';
-import { useLogto } from '@logto/react';
-import { getTenantOrganizationId } from '@logto/schemas';
+import type router from '@myeyesid/cloud/routes';
+import { type tenantAuthRouter } from '@myeyesid/cloud/routes';
+import { useMyEyesID } from '@myeyesid/react';
+import { getTenantOrganizationId } from '@myeyesid/schemas';
 import { conditional, trySafe } from '@silverhand/essentials';
 import Client, { ResponseError } from '@withtyped/client';
 import { useContext, useMemo } from 'react';
@@ -43,7 +43,7 @@ export const useCloudApi = ({ hideErrorToast = false }: UseCloudApiProps = {}): 
   typeof router
 > => {
   const { i18n } = useTranslation();
-  const { isAuthenticated, getAccessToken } = useLogto();
+  const { isAuthenticated, getAccessToken } = useMyEyesID();
   const api = useMemo(
     () =>
       new Client<typeof router>({
@@ -67,7 +67,7 @@ export const useCloudApi = ({ hideErrorToast = false }: UseCloudApiProps = {}): 
 };
 
 type CreateTenantOptions = UseCloudApiProps &
-  Pick<ReturnType<typeof useLogto>, 'isAuthenticated' | 'getOrganizationToken'> & {
+  Pick<ReturnType<typeof useMyEyesID>, 'isAuthenticated' | 'getOrganizationToken'> & {
     tenantId: string;
     language: string;
   };
@@ -104,7 +104,7 @@ export const useAuthedCloudApi = ({ hideErrorToast = false }: UseCloudApiProps =
 > => {
   const { i18n } = useTranslation();
   const { currentTenantId } = useContext(TenantsContext);
-  const { isAuthenticated, getOrganizationToken } = useLogto();
+  const { isAuthenticated, getOrganizationToken } = useMyEyesID();
   const api = useMemo(
     () =>
       createTenantApi({

@@ -6,8 +6,8 @@ import {
   userMfaDataKey,
   type CreateUser,
   type User,
-} from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+} from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 import type { Provider } from 'oidc-provider';
 
 import { type InsertUserResult } from '#src/libraries/user.js';
@@ -25,9 +25,9 @@ import type {
 const { jest } = import.meta;
 const { mockEsm } = createMockUtils(jest);
 
-const getLogtoConnectorById = jest
+const getMyEyesIDConnectorById = jest
   .fn()
-  .mockResolvedValue({ metadata: { target: 'logto' }, dbEntry: { syncProfile: true } });
+  .mockResolvedValue({ metadata: { target: 'myeyesid' }, dbEntry: { syncProfile: true } });
 
 const { assignInteractionResults } = mockEsm('#src/libraries/session.js', () => ({
   assignInteractionResults: jest.fn(),
@@ -40,7 +40,7 @@ const { encryptUserPassword } = mockEsm('#src/libraries/user.utils.js', () => ({
   }),
 }));
 
-mockEsm('@logto/shared', () => ({
+mockEsm('@myeyesid/shared', () => ({
   generateStandardId: jest.fn().mockReturnValue('uid'),
 }));
 
@@ -77,7 +77,7 @@ describe('submit action', () => {
   const tenant = new MockTenant(
     undefined,
     { users: userQueries, signInExperiences: { updateDefaultSignInExperience: jest.fn() } },
-    { getLogtoConnectorById },
+    { getMyEyesIDConnectorById },
     { users: userLibraries }
   );
   const ctx = {
@@ -92,8 +92,8 @@ describe('submit action', () => {
     username: 'username',
     password: 'password',
     phone: '123456',
-    email: 'email@logto.io',
-    connectorId: 'logto',
+    email: 'email@myeyesid.io',
+    connectorId: 'myeyesid',
   };
 
   const userInfo = {
@@ -107,7 +107,7 @@ describe('submit action', () => {
   const identifiers: Identifier[] = [
     {
       key: 'social',
-      connectorId: 'logto',
+      connectorId: 'myeyesid',
       userInfo,
     },
   ];
@@ -115,11 +115,11 @@ describe('submit action', () => {
   const upsertProfile = {
     username: 'username',
     primaryPhone: '123456',
-    primaryEmail: 'email@logto.io',
+    primaryEmail: 'email@myeyesid.io',
     passwordEncrypted: 'passwordEncrypted',
     passwordEncryptionMethod: 'plain',
     identities: {
-      logto: { userId: userInfo.id, details: userInfo },
+      myeyesid: { userId: userInfo.id, details: userInfo },
     },
     name: userInfo.name,
     avatar: userInfo.avatar,
@@ -142,7 +142,7 @@ describe('submit action', () => {
     expect(generateUserId).toBeCalled();
     expect(hasActiveUsers).not.toBeCalled();
     expect(encryptUserPassword).toBeCalledWith('password');
-    expect(getLogtoConnectorById).toBeCalledWith('logto');
+    expect(getMyEyesIDConnectorById).toBeCalledWith('myeyesid');
 
     expect(insertUser).toBeCalledWith(
       {
@@ -176,7 +176,7 @@ describe('submit action', () => {
     expect(generateUserId).not.toBeCalled();
     expect(hasActiveUsers).not.toBeCalled();
     expect(encryptUserPassword).toBeCalledWith('password');
-    expect(getLogtoConnectorById).toBeCalledWith('logto');
+    expect(getMyEyesIDConnectorById).toBeCalledWith('myeyesid');
 
     expect(insertUser).toBeCalledWith(
       {
@@ -210,7 +210,7 @@ describe('submit action', () => {
       {
         id: 'uid',
         ...upsertProfile,
-        logtoConfig: {
+        myeyesidConfig: {
           [userMfaDataKey]: {
             skipped: true,
           },
@@ -223,7 +223,7 @@ describe('submit action', () => {
   it('register new social user', async () => {
     const interaction: VerifiedRegisterInteractionResult = {
       event: InteractionEvent.Register,
-      profile: { connectorId: 'logto', username: 'username' },
+      profile: { connectorId: 'myeyesid', username: 'username' },
       identifiers,
     };
 
@@ -232,14 +232,14 @@ describe('submit action', () => {
     expect(generateUserId).toBeCalled();
     expect(hasActiveUsers).not.toBeCalled();
     expect(encryptUserPassword).not.toBeCalled();
-    expect(getLogtoConnectorById).toBeCalledWith('logto');
+    expect(getMyEyesIDConnectorById).toBeCalledWith('myeyesid');
 
     expect(insertUser).toBeCalledWith(
       {
         id: 'uid',
         username: 'username',
         identities: {
-          logto: { userId: userInfo.id, details: userInfo },
+          myeyesid: { userId: userInfo.id, details: userInfo },
         },
         name: userInfo.name,
         avatar: userInfo.avatar,
@@ -257,7 +257,7 @@ describe('submit action', () => {
 
     const interaction: VerifiedRegisterInteractionResult = {
       event: InteractionEvent.Register,
-      profile: { connectorId: 'logto', username: 'username' },
+      profile: { connectorId: 'myeyesid', username: 'username' },
       identifiers,
     };
 
@@ -266,14 +266,14 @@ describe('submit action', () => {
     expect(generateUserId).toBeCalled();
     expect(hasActiveUsers).not.toBeCalled();
     expect(encryptUserPassword).not.toBeCalled();
-    expect(getLogtoConnectorById).toBeCalledWith('logto');
+    expect(getMyEyesIDConnectorById).toBeCalledWith('myeyesid');
 
     expect(insertUser).toBeCalledWith(
       {
         id: 'uid',
         username: 'username',
         identities: {
-          logto: { userId: userInfo.id, details: userInfo },
+          myeyesid: { userId: userInfo.id, details: userInfo },
         },
         name: userInfo.name,
         avatar: userInfo.avatar,
@@ -307,7 +307,7 @@ describe('submit action', () => {
     expect(generateUserId).toBeCalled();
     expect(hasActiveUsers).toBeCalled();
     expect(encryptUserPassword).toBeCalledWith('password');
-    expect(getLogtoConnectorById).toBeCalledWith('logto');
+    expect(getMyEyesIDConnectorById).toBeCalledWith('myeyesid');
 
     expect(insertUser).toBeCalledWith(
       {
@@ -340,28 +340,28 @@ describe('submit action', () => {
   });
 
   it('sign-in with new profile', async () => {
-    getLogtoConnectorById.mockResolvedValueOnce({
-      metadata: { target: 'logto' },
+    getMyEyesIDConnectorById.mockResolvedValueOnce({
+      metadata: { target: 'myeyesid' },
       dbEntry: { syncProfile: false },
     });
 
     const interaction: VerifiedSignInInteractionResult = {
       event: InteractionEvent.SignIn,
       accountId: 'foo',
-      profile: { connectorId: 'logto', password: 'password' },
+      profile: { connectorId: 'myeyesid', password: 'password' },
       identifiers,
     };
 
     await submitInteraction(interaction, ctx, tenant);
 
     expect(encryptUserPassword).toBeCalledWith('password');
-    expect(getLogtoConnectorById).toBeCalledWith('logto');
+    expect(getMyEyesIDConnectorById).toBeCalledWith('myeyesid');
 
     const updateProfile = {
       passwordEncrypted: 'passwordEncrypted',
       passwordEncryptionMethod: 'plain',
       identities: {
-        logto: { userId: userInfo.id, details: userInfo },
+        myeyesid: { userId: userInfo.id, details: userInfo },
         google: { userId: 'googleId', details: {} },
       },
       lastSignInAt: now,
@@ -377,14 +377,14 @@ describe('submit action', () => {
   });
 
   it('sign-in with mfaSkipped', async () => {
-    getLogtoConnectorById.mockResolvedValueOnce({
-      metadata: { target: 'logto' },
+    getMyEyesIDConnectorById.mockResolvedValueOnce({
+      metadata: { target: 'myeyesid' },
       dbEntry: { syncProfile: false },
     });
     const interaction: VerifiedSignInInteractionResult = {
       event: InteractionEvent.SignIn,
       accountId: 'foo',
-      profile: { connectorId: 'logto', password: 'password' },
+      profile: { connectorId: 'myeyesid', password: 'password' },
       identifiers,
       mfaSkipped: true,
     };
@@ -395,11 +395,11 @@ describe('submit action', () => {
       passwordEncrypted: 'passwordEncrypted',
       passwordEncryptionMethod: 'plain',
       identities: {
-        logto: { userId: userInfo.id, details: userInfo },
+        myeyesid: { userId: userInfo.id, details: userInfo },
         google: { userId: 'googleId', details: {} },
       },
       lastSignInAt: now,
-      logtoConfig: {
+      myeyesidConfig: {
         [userMfaDataKey]: {
           skipped: true,
         },
@@ -408,8 +408,8 @@ describe('submit action', () => {
   });
 
   it('sign-in and sync new Social', async () => {
-    getLogtoConnectorById.mockResolvedValueOnce({
-      metadata: { target: 'logto' },
+    getMyEyesIDConnectorById.mockResolvedValueOnce({
+      metadata: { target: 'myeyesid' },
       dbEntry: { syncProfile: true },
     });
 
@@ -421,7 +421,7 @@ describe('submit action', () => {
     };
 
     await submitInteraction(interaction, ctx, tenant);
-    expect(getLogtoConnectorById).toBeCalledWith('logto');
+    expect(getMyEyesIDConnectorById).toBeCalledWith('myeyesid');
     expect(updateUserById).toBeCalledWith('foo', {
       primaryEmail: 'email',
       name: userInfo.name,

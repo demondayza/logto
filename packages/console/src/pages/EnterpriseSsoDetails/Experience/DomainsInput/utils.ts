@@ -1,4 +1,4 @@
-import { findDuplicatedOrBlockedEmailDomains } from '@logto/schemas';
+import { findDuplicatedOrBlockedEmailDomains } from '@myeyesid/schemas';
 import { conditional, conditionalArray, conditionalString } from '@silverhand/essentials';
 import { t as globalTranslate } from 'i18next';
 

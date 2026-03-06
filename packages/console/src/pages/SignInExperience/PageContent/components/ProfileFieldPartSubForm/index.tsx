@@ -1,4 +1,4 @@
-import { CustomProfileFieldType } from '@logto/schemas';
+import { CustomProfileFieldType } from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import { type ReactNode } from 'react';
 import { useFormContext, Controller } from 'react-hook-form';

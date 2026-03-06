@@ -1,11 +1,11 @@
-import { type I18nPhrases } from '@logto/connector-kit';
+import { type I18nPhrases } from '@myeyesid/connector-kit';
 import type {
   JsonObject,
   SsoConnectorWithProviderConfig,
   SupportedSsoConnector,
   SsoProviderName,
-} from '@logto/schemas';
-import { findDuplicatedOrBlockedEmailDomains } from '@logto/schemas';
+} from '@myeyesid/schemas';
+import { findDuplicatedOrBlockedEmailDomains } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

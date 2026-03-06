@@ -1,6 +1,6 @@
-import type { Application, CreateApplication } from '@logto/schemas';
-import { ApplicationType } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import type { Application, CreateApplication } from '@myeyesid/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import {
   mockApplication,
@@ -301,7 +301,7 @@ describe('application route', () => {
           redirectUris: [
             'com.example://demo-app/callback',
             'com.example://callback',
-            'io.logto://Abc123',
+            'io.myeyesid://Abc123',
           ],
           postLogoutRedirectUris: [],
         },

@@ -2,7 +2,7 @@ import {
   InteractionEvent,
   SignInIdentifier,
   type PasswordVerificationPayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, useMemo, useState, useContext } from 'react';
 
 import CaptchaContext from '@/Providers/CaptchaContextProvider/CaptchaContext';

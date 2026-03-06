@@ -16,7 +16,7 @@ const getDatabaseName = async (pool: CommonQueryMethods) => {
  */
 export const applyTableRls = async (pool: CommonQueryMethods, tableName: string) => {
   const database = await getDatabaseName(pool);
-  const baseRoleId = getId(`logto_tenant_${database}`);
+  const baseRoleId = getId(`myeyesid_tenant_${database}`);
   const table = getId(tableName);
 
   await pool.query(sql`

@@ -1,5 +1,5 @@
-import { useLogto } from '@logto/react';
-import { Theme } from '@logto/schemas';
+import { useMyEyesID } from '@myeyesid/react';
+import { Theme } from '@myeyesid/schemas';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -25,7 +25,7 @@ function AppError({ title, errorCode, errorMessage, callStack, children }: Props
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const theme = useTheme();
-  const { clearAllTokens } = useLogto();
+  const { clearAllTokens } = useMyEyesID();
 
   return (
     <div className={styles.container}>

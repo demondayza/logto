@@ -14,7 +14,7 @@ If you do not have a Feishu developer account, please register on the [Feishu Op
 
 1. On the [Developer Console](https://open.feishu.cn/app), click "Create Custom App".
 2. Fill in the application name, description, select an icon, and click "Create" button.
-3. In the left sidebar, click "Security Settings", fill in the "Redirect URL" as `${logto_endpoint}/callback/${connector_id}`. The corresponding value can be found in the `Callback URI` field on the Feishu connector details page in the Logto Console.
+3. In the left sidebar, click "Security Settings", fill in the "Redirect URL" as `${myeyesid_endpoint}/callback/${connector_id}`. The corresponding value can be found in the `Callback URI` field on the Feishu connector details page in the MyEyesID Console.
 4. In "Credentials & Basic Info", you can obtain the "App ID" and "App Secret".
 
 > ℹ️ **Note**

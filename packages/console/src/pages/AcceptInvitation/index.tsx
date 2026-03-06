@@ -1,5 +1,5 @@
-import { useLogto } from '@logto/react';
-import { OrganizationInvitationStatus, getTenantIdFromOrganizationId } from '@logto/schemas';
+import { useMyEyesID } from '@myeyesid/react';
+import { OrganizationInvitationStatus, getTenantIdFromOrganizationId } from '@myeyesid/schemas';
 import { useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
@@ -18,7 +18,7 @@ import SwitchAccount from './SwitchAccount';
 
 function AcceptInvitation() {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
-  const { signIn } = useLogto();
+  const { signIn } = useMyEyesID();
   const redirectUri = useRedirectUri();
   const { invitationId = '' } = useParams();
   const cloudApi = useCloudApi();

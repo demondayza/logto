@@ -1,4 +1,4 @@
-import { type ProtectedAppMetadata } from '@logto/schemas';
+import { type ProtectedAppMetadata } from '@myeyesid/schemas';
 
 export const defaultProtectedAppSessionDuration: ProtectedAppMetadata['sessionDuration'] =
   60 * 60 * 24 * 14; // 14 days

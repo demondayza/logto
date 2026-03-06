@@ -1,4 +1,4 @@
-import { OrganizationScopes } from '@logto/schemas';
+import { OrganizationScopes } from '@myeyesid/schemas';
 
 import SchemaRouter from '#src/utils/SchemaRouter.js';
 

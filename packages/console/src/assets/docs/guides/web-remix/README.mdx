@@ -1,5 +1,5 @@
 import NpmLikeInstallation from '@/mdx-components/NpmLikeInstallation';
-import { generateStandardSecret } from '@logto/shared/universal';
+import { generateStandardSecret } from '@myeyesid/shared/universal';
 import Steps from '@/mdx-components/Steps';
 import Step from '@/mdx-components/Step';
 import CustomDomainEndpointNotice from '@/mdx-components/CustomDomainEndpointNotice';
@@ -13,29 +13,29 @@ import RedirectUrisWeb, { defaultBaseUrl } from '../../fragments/_redirect-uris-
   subtitle="Install MyEyesID SDK"
 >
 
-<NpmLikeInstallation packageName="@logto/remix" />
+<NpmLikeInstallation packageName="@myeyesid/remix" />
 
 </Step>
 
 <Step
-  title="Init LogtoClient"
+  title="Init MyEyesIDClient"
 >
 
 Before initializing the SDK, we have to create a `SessionStorage` instance which takes care of the session persistence. In our case, we want to use a cookie-based session:
 
 <Code title="services/auth.server.ts" className="language-ts">
     {`import { createCookieSessionStorage } from '@remix-run/node';
-import { makeLogtoRemix } from '@logto/remix';
+import { makeMyEyesIDRemix } from '@myeyesid/remix';
 
 const sessionStorage = createCookieSessionStorage({
   cookie: {
-    name: 'logto-session',
+    name: 'myeyesid-session',
     maxAge: 14 * 24 * 60 * 60,
     secrets: '${generateStandardSecret()}', // Auto-generated 32 digit secret
   },
 });
 
-export const logto = makeLogtoRemix(
+export const myeyesid = makeMyEyesIDRemix(
   {
     endpoint: '${props.endpoint}',
     appId: '${props.app.id}',
@@ -57,40 +57,40 @@ export const logto = makeLogtoRemix(
   subtitle="2 URIs"
 >
 
-<RedirectUrisWeb defaultRedirectUri={`${defaultBaseUrl}api/logto/callback`} />
+<RedirectUrisWeb defaultRedirectUri={`${defaultBaseUrl}api/myeyesid/callback`} />
 
 </Step>
 
 <Step title="Mounting authentication routes">
 
-The SDK ships with a convenient function that mounts the authentication routes: sign-in, sign-in callback and the sign-out route. Create a file `routes/api.logto.$action.ts`
+The SDK ships with a convenient function that mounts the authentication routes: sign-in, sign-in callback and the sign-out route. Create a file `routes/api.myeyesid.$action.ts`
 
-```ts title="routes/api.logto.$action.ts"
-import { logto } from '../services/auth.server';
+```ts title="routes/api.myeyesid.$action.ts"
+import { myeyesid } from '../services/auth.server';
 
-export const loader = logto.handleAuthRoutes({
+export const loader = myeyesid.handleAuthRoutes({
   'sign-in': {
-    path: '/api/logto/sign-in',
-    redirectBackTo: '/api/logto/callback',
+    path: '/api/myeyesid/sign-in',
+    redirectBackTo: '/api/myeyesid/callback',
   },
   'sign-in-callback': {
-    path: '/api/logto/callback',
+    path: '/api/myeyesid/callback',
     redirectBackTo: '/',
   },
   'sign-out': {
-    path: '/api/logto/sign-out',
+    path: '/api/myeyesid/sign-out',
     redirectBackTo: '/',
   },
   'sign-up': {
-    path: '/api/logto/sign-up',
-    redirectBackTo: '/api/logto/callback',
+    path: '/api/myeyesid/sign-up',
+    redirectBackTo: '/api/myeyesid/callback',
   },
 });
 ```
 
 As you can see, the mount process is configurable and you can adjust it for your particular route structure. The whole URL path structure can be customized via the passed configuration object.
 
-When mounting the routes as described above, you can navigate your browser to `/api/logto/sign-in` and you should be redirected to your MyEyesID instance where you have to authenticate then.
+When mounting the routes as described above, you can navigate your browser to `/api/myeyesid/sign-in` and you should be redirected to your MyEyesID instance where you have to authenticate then.
 
 </Step>
 
@@ -101,18 +101,18 @@ When mounting the routes as described above, you can navigate your browser to `/
 We have prepared the authentication routes, now let's implement the sign-in and sign-out buttons in your home page. We need to redirect the user to the sign-in or sign-out route when needed. To help with this, use `loader` to fetch authentication status from MyEyesID client.
 
 ```tsx title="/app/routes/_index.tsx"
-import { type LogtoContext } from '@logto/remix';
+import { type MyEyesIDContext } from '@myeyesid/remix';
 import { type LoaderFunction } from '@remix-run/node';
 import { json, Link, useLoaderData } from '@remix-run/react';
 
-import { logto } from '../services/auth.server';
+import { myeyesid } from '../services/auth.server';
 
 type LoaderResponse = {
-  readonly context: LogtoContext;
+  readonly context: MyEyesIDContext;
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const context = await logto.getContext({ getAccessToken: false })(request);
+  const context = await myeyesid.getContext({ getAccessToken: false })(request);
 
   return json<LoaderResponse>({ context });
 };
@@ -127,7 +127,7 @@ const Home = () => {
       {isAuthenticated ? (
         <div>
           <p>Hello {claims?.email ?? claims?.name ?? claims?.sub}</p>
-          <form action="/api/logto/sign-out" method="get">
+          <form action="/api/myeyesid/sign-out" method="get">
             <button type="submit">Sign Out</button>
           </form>
           <p>
@@ -138,7 +138,7 @@ const Home = () => {
           </p>
         </div>
       ) : (
-        <form action="/api/logto/sign-in" method="get">
+        <form action="/api/myeyesid/sign-in" method="get">
           <button type="submit">Sign In</button>
         </form>
       )}

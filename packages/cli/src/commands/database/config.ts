@@ -1,33 +1,33 @@
-import type { LogtoConfigKey } from '@logto/schemas';
+import type { MyEyesIDConfigKey } from '@myeyesid/schemas';
 import {
   defaultTenantId,
-  LogtoOidcConfigKey,
-  logtoConfigGuards,
-  logtoConfigKeys,
+  MyEyesIDOidcConfigKey,
+  myeyesidConfigGuards,
+  myeyesidConfigKeys,
   SupportedSigningKeyAlgorithm,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { deduplicate, noop } from '@silverhand/essentials';
 import chalk from 'chalk';
 import type { CommandModule } from 'yargs';
 
 import { createPoolFromConfig } from '../../database.js';
-import { getRowsByKeys, updateValueByKey } from '../../queries/logto-config.js';
+import { getRowsByKeys, updateValueByKey } from '../../queries/myeyesid-config.js';
 import { consoleLog } from '../../utils.js';
 
 import { generateOidcCookieKey, generateOidcPrivateKey } from './utils.js';
 
-const validKeysDisplay = chalk.green(logtoConfigKeys.join(', '));
+const validKeysDisplay = chalk.green(myeyesidConfigKeys.join(', '));
 
 type ValidateKeysFunction = {
-  (keys: string[]): asserts keys is LogtoConfigKey[];
-  (key: string): asserts key is LogtoConfigKey;
+  (keys: string[]): asserts keys is MyEyesIDConfigKey[];
+  (key: string): asserts key is MyEyesIDConfigKey;
 };
 
 const validateKeys: ValidateKeysFunction = (keys) => {
   const invalidKey = (Array.isArray(keys) ? keys : [keys]).find(
     // Using `.includes()` will result a type error
     // eslint-disable-next-line unicorn/prefer-includes
-    (key) => !logtoConfigKeys.some((element) => element === key)
+    (key) => !myeyesidConfigKeys.some((element) => element === key)
   );
 
   if (invalidKey) {
@@ -38,8 +38,8 @@ const validateKeys: ValidateKeysFunction = (keys) => {
 };
 
 const validRotateKeys = Object.freeze([
-  LogtoOidcConfigKey.PrivateKeys,
-  LogtoOidcConfigKey.CookieKeys,
+  MyEyesIDOidcConfigKey.PrivateKeys,
+  MyEyesIDOidcConfigKey.CookieKeys,
 ] as const);
 
 const validPrivateKeyTypes = Object.freeze([
@@ -143,7 +143,7 @@ const setConfig: CommandModule<unknown, { key: string; value: string; tenantId: 
   handler: async ({ key, value, tenantId }) => {
     validateKeys(key);
 
-    const guarded = logtoConfigGuards[key].parse(JSON.parse(value));
+    const guarded = myeyesidConfigGuards[key].parse(JSON.parse(value));
 
     const pool = await createPoolFromConfig();
     await updateValueByKey(pool, tenantId, key, guarded);
@@ -171,7 +171,7 @@ const rotateConfig: CommandModule<unknown, { key: string; tenantId: string; type
       })
       .option('type', {
         describe: `The key type for ${
-          LogtoOidcConfigKey.PrivateKeys
+          MyEyesIDOidcConfigKey.PrivateKeys
         }, one of ${validPrivateKeyTypes.join(', ')}`,
         type: 'string',
         default: 'ec',
@@ -189,16 +189,16 @@ const rotateConfig: CommandModule<unknown, { key: string; tenantId: string; type
     }
 
     const getValue = async () => {
-      const parsed = logtoConfigGuards[key].safeParse(rows[0]?.value);
+      const parsed = myeyesidConfigGuards[key].safeParse(rows[0]?.value);
       const original = parsed.success ? parsed.data : [];
 
       // No need for default. It's already exhaustive
       switch (key) {
-        case LogtoOidcConfigKey.PrivateKeys: {
+        case MyEyesIDOidcConfigKey.PrivateKeys: {
           return [await generateOidcPrivateKey(keyType), ...original];
         }
 
-        case LogtoOidcConfigKey.CookieKeys: {
+        case MyEyesIDOidcConfigKey.CookieKeys: {
           return [generateOidcCookieKey(), ...original];
         }
       }
@@ -247,7 +247,7 @@ const trimConfig: CommandModule<unknown, { key: string; length: number; tenantId
     }
 
     const getValue = async () => {
-      const value = logtoConfigGuards[key].parse(rows[0]?.value);
+      const value = myeyesidConfigGuards[key].parse(rows[0]?.value);
 
       if (value.length - length < 1) {
         await pool.end();

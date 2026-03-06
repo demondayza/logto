@@ -1,4 +1,4 @@
-import { ApplicationType, Theme, type Application, type Resource } from '@logto/schemas';
+import { ApplicationType, Theme, type Application, type Resource } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import dayjs from 'dayjs';
 import { useCallback, useContext, useMemo, useRef, useState } from 'react';

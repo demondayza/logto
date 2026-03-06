@@ -1,5 +1,5 @@
 /**
- * This file is forked from `@logto/shared` 3.1.0 to avoid alteration scripts to depend on outer packages.
+ * This file is forked from `@myeyesid/shared` 3.1.0 to avoid alteration scripts to depend on outer packages.
  */
 import { customAlphabet } from 'nanoid';
 

@@ -110,15 +110,15 @@ const queryDatabaseManifest = async (database) => {
     order by table_schema, grantee, table_name, privilege_type;
   `);
 
-  // This function removes the last segment of grantee since Logto will use 'logto_tenant_fresh/alteration' for the role name.
+  // This function removes the last segment of grantee since MyEyesID will use 'myeyesid_tenant_fresh/alteration' for the role name.
   const normalizeRoleName = (roleName) => {
-    if (roleName.startsWith('logto_tenant_')) {
-      return 'logto_tenant';
+    if (roleName.startsWith('myeyesid_tenant_')) {
+      return 'myeyesid_tenant';
     }
 
-    // Removes the last segment of region grantee since Logto will use 'logto_region_xxx' for the role name for different regions.
-    if (roleName.startsWith('logto_region_')) {
-      return 'logto_region';
+    // Removes the last segment of region grantee since MyEyesID will use 'myeyesid_region_xxx' for the role name for different regions.
+    if (roleName.startsWith('myeyesid_region_')) {
+      return 'myeyesid_region';
     }
 
     return roleName;
@@ -147,8 +147,8 @@ const queryDatabaseManifest = async (database) => {
       policyname.startsWith(prefix) &&
       policyname.endsWith(suffix)
     ) {
-      // This is a naming convention in Logto cloud, it is formatted as `allow_{role_name}_access`, we need to normalize the role name part for the convenience of comparing DB updates.
-      // Ref: https://github.com/logto-io/cloud/pull/738
+      // This is a naming convention in MyEyesID cloud, it is formatted as `allow_{role_name}_access`, we need to normalize the role name part for the convenience of comparing DB updates.
+      // Ref: https://github.com/myeyesid-io/cloud/pull/738
       return {
         policyname: `${prefix}${normalizeRoleName(
           policyname.slice(prefix.length, -suffix.length)
@@ -257,7 +257,7 @@ const queryDatabaseData = async (database, manifests) => {
       );
 
       // check config rows except the value column
-      if (['logto_configs', '_logto_configs', 'systems'].includes(table_name)) {
+      if (['myeyesid_configs', '_myeyesid_configs', 'systems'].includes(table_name)) {
         const data = omitArray(rows, 'value');
         return [
           table_name,

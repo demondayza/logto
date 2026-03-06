@@ -1,5 +1,5 @@
-import { ConnectorError, ConnectorErrorCodes, parseJson } from '@logto/connector-kit';
-import { requestTokenEndpoint } from '@logto/connector-oauth';
+import { ConnectorError, ConnectorErrorCodes, parseJson } from '@myeyesid/connector-kit';
+import { requestTokenEndpoint } from '@myeyesid/connector-oauth';
 import { type KyResponse } from 'ky';
 
 import type { AccessTokenResponse, OidcConnectorConfig } from './types.js';

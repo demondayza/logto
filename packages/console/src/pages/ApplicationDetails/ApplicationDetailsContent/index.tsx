@@ -2,7 +2,7 @@ import {
   ApplicationType,
   type ApplicationResponse,
   type SnakeCaseOidcConfig,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -18,7 +18,7 @@ import Drawer from '@/components/Drawer';
 import EmptyDataPlaceholder from '@/components/EmptyDataPlaceholder';
 import OrganizationList from '@/components/OrganizationList';
 import UnsavedChangesAlertModal from '@/components/UnsavedChangesAlertModal';
-import { ApplicationDetailsTabs, logtoThirdPartyGuideLink, protectedApp } from '@/consts';
+import { ApplicationDetailsTabs, myeyesidThirdPartyGuideLink, protectedApp } from '@/consts';
 import DeleteConfirmModal from '@/ds-components/DeleteConfirmModal';
 import TabNav, { TabNavItem } from '@/ds-components/TabNav';
 import TabWrapper from '@/ds-components/TabWrapper';
@@ -139,7 +139,7 @@ function ApplicationDetailsContent({ data, secrets, oidcConfig, onApplicationUpd
           onClick: () => {
             // Open IdP docs link in new tab if it's a third party app
             if (data.isThirdParty) {
-              window.open(getDocumentationUrl(logtoThirdPartyGuideLink), '_blank');
+              window.open(getDocumentationUrl(myeyesidThirdPartyGuideLink), '_blank');
               return;
             }
             // Open protected app docs link in new tab

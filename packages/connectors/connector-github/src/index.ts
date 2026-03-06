@@ -6,7 +6,7 @@ import {
   validateConfig,
   ConnectorType,
   jsonGuard,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import type {
   GetAuthorizationUri,
   GetUserInfo,
@@ -15,7 +15,7 @@ import type {
   GetConnectorConfig,
   GetTokenResponseAndUserInfo,
   GetAccessTokenByRefreshToken,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import ky, { HTTPError } from 'ky';
 
 import {

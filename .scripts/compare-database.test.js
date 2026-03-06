@@ -127,7 +127,7 @@ runTest('autoCompare - arrays with objects sorting stability', () => {
 
 runTest('autoCompare - complex nested objects sorting consistency', () => {
   const obj1 = {
-    logto_skus: [
+    myeyesid_skus: [
       { type: 'AddOn', quota: { tokenLimit: 10_000 }, is_default: false },
       { type: 'AddOn', quota: { tokenLimit: 100 }, is_default: true },
       { type: 'AddOn', quota: { enterpriseSsoLimit: null }, is_default: true },
@@ -135,7 +135,7 @@ runTest('autoCompare - complex nested objects sorting consistency', () => {
   };
   
   const obj2 = {
-    logto_skus: [
+    myeyesid_skus: [
       { type: 'AddOn', quota: { enterpriseSsoLimit: null }, is_default: true },
       { quota: { tokenLimit: 10_000 }, is_default: false, type: 'AddOn' },
       { type: 'AddOn', quota: { tokenLimit: 100 }, is_default: true },
@@ -143,15 +143,15 @@ runTest('autoCompare - complex nested objects sorting consistency', () => {
   };
   
   // Sort both arrays using buildSortByKeys for consistent comparison
-  const keys1 = obj1.logto_skus.length > 0 ? Object.keys(obj1.logto_skus[0]) : [];
-  const keys2 = obj2.logto_skus.length > 0 ? Object.keys(obj2.logto_skus[0]) : [];
+  const keys1 = obj1.myeyesid_skus.length > 0 ? Object.keys(obj1.myeyesid_skus[0]) : [];
+  const keys2 = obj2.myeyesid_skus.length > 0 ? Object.keys(obj2.myeyesid_skus[0]) : [];
   
   const sortedObj1 = {
-    logto_skus: obj1.logto_skus.slice().sort(buildSortByKeys(keys1))
+    myeyesid_skus: obj1.myeyesid_skus.slice().sort(buildSortByKeys(keys1))
   };
   
   const sortedObj2 = {
-    logto_skus: obj2.logto_skus.slice().sort(buildSortByKeys(keys2))
+    myeyesid_skus: obj2.myeyesid_skus.slice().sort(buildSortByKeys(keys2))
   };
   
   // After sorting, they should be comparable and produce consistent results

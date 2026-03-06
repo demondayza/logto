@@ -1,4 +1,4 @@
-import { type EmailTemplateDetails, TemplateType } from '@logto/connector-kit';
+import { type EmailTemplateDetails, TemplateType } from '@myeyesid/connector-kit';
 import type { Transporter } from 'nodemailer';
 import nodemailer from 'nodemailer';
 
@@ -44,7 +44,7 @@ describe('SMTP connector', () => {
 
     expect(sendMail).toHaveBeenCalledWith({
       from: '<notice@test.smtp>',
-      subject: 'Logto register with SMTP',
+      subject: 'MyEyesID register with SMTP',
       text: 'This is for register purposes only. Your verification code is 123456.',
       to: 'foo',
     });
@@ -60,7 +60,7 @@ describe('SMTP connector', () => {
 
     expect(sendMail).toHaveBeenCalledWith({
       from: '<notice@test.smtp>',
-      subject: 'Logto sign-in with SMTP 234567',
+      subject: 'MyEyesID sign-in with SMTP 234567',
       text: 'This is for sign-in purposes only. Your verification code is 234567.',
       to: 'bar',
     });

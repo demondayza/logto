@@ -1,9 +1,9 @@
-import { ConnectorType } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/schemas';
 
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 
-export const checkSocialConnectorTargetAndPlatformUniqueness = (connectors: LogtoConnector[]) => {
+export const checkSocialConnectorTargetAndPlatformUniqueness = (connectors: MyEyesIDConnector[]) => {
   const targetAndPlatformObjectsInUse = connectors
     .filter(({ type }) => type === ConnectorType.Social)
     .map(({ metadata: { target, platform } }) => ({

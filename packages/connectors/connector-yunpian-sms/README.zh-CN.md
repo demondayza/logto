@@ -1,6 +1,6 @@
 # 云片网短信连接器
 
-云片网短信服务 Logto 官方连接器
+云片网短信服务 MyEyesID 官方连接器
 
 **目录**
 
@@ -10,13 +10,13 @@
     - [创建云片网账号](#创建云片网账号)
     - [获取 API KEY](#获取-api-key)
     - [配置短信模板](#配置短信模板)
-  - [在 Logto 中配置](#在-logto-中配置)
+  - [在 MyEyesID 中配置](#在-myeyesid-中配置)
   - [注意事项](#注意事项)
   - [参考](#参考)
 
 ## 开始使用
 
-云片网是一家通信服务提供商，提供包括短信在内的多种通信服务。云片网 SMS 连接器是由 Logto 团队提供的插件，用于调用云片网的短信服务，帮助 Logto 终端用户通过短信验证码进行注册和登录。
+云片网是一家通信服务提供商，提供包括短信在内的多种通信服务。云片网 SMS 连接器是由 MyEyesID 团队提供的插件，用于调用云片网的短信服务，帮助 MyEyesID 终端用户通过短信验证码进行注册和登录。
 
 ## 在云片网中配置
 
@@ -39,9 +39,9 @@
 5. 等待模板审核通过
 6. 如果您需要发送国际短信，请重复上述步骤，选择"国际短信" -> "模板报备"并提交
 
-## 在 Logto 中配置
+## 在 MyEyesID 中配置
 
-1. 在 Logto 管理控制台中转到"连接器"
+1. 在 MyEyesID 管理控制台中转到"连接器"
 2. 找到并点击"云片短信服务"
 3. 在配置表单中填入:
    - API KEY: 从云片网获取的 API KEY
@@ -57,4 +57,4 @@
 ## 参考
 
 - [云片网开发文档](https://www.yunpian.com/official/document/sms/zh_CN/introduction_brief)
-- [Logto SMS 连接器指南](https://docs.logto.io/zh-CN/connectors/sms-connectors)
+- [MyEyesID SMS 连接器指南](https://docs.myeyesid.io/zh-CN/connectors/sms-connectors)

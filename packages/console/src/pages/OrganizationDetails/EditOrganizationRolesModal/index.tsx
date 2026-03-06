@@ -1,4 +1,4 @@
-import { RoleType, type OrganizationRoleEntity } from '@logto/schemas';
+import { RoleType, type OrganizationRoleEntity } from '@myeyesid/schemas';
 import { type Nullable } from '@silverhand/essentials';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';

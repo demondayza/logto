@@ -1,3 +1,3 @@
-import { ConsoleLog } from '@logto/shared';
+import { ConsoleLog } from '@myeyesid/shared';
 
 export const consoleLog: ConsoleLog = new ConsoleLog();

@@ -1,5 +1,5 @@
-import { useLogto } from '@logto/react';
-import type { JsonObject, RequestErrorBody, UserProfileResponse } from '@logto/schemas';
+import { useMyEyesID } from '@myeyesid/react';
+import type { JsonObject, RequestErrorBody, UserProfileResponse } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 import { useCallback } from 'react';
 import { toast } from 'react-hot-toast';
@@ -12,7 +12,7 @@ import useRedirectUri from './use-redirect-uri';
 import useSignOut from './use-sign-out';
 
 const useCurrentUser = () => {
-  const { isAuthenticated } = useLogto();
+  const { isAuthenticated } = useMyEyesID();
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
   const { signOut } = useSignOut();
   const postSignOutRedirectUri = useRedirectUri('signOut');

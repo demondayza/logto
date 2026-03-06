@@ -1,6 +1,6 @@
-import { adminTenantId, defaultTenantId } from '@logto/schemas';
-import { GlobalValues } from '@logto/shared';
-import { createMockUtils } from '@logto/shared/esm';
+import { adminTenantId, defaultTenantId } from '@myeyesid/schemas';
+import { GlobalValues } from '@myeyesid/shared';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 const { jest } = import.meta;
 
@@ -73,32 +73,32 @@ describe('getTenantId()', () => {
     process.env = {
       ...backupEnv,
       NODE_ENV: 'production',
-      ENDPOINT: 'https://foo.*.logto.mock/app',
+      ENDPOINT: 'https://foo.*.myeyesid.mock/app',
     };
 
     await expect(
-      getTenantIdFirstElement(new URL('https://foo.foo.logto.mock/app///asdasd'))
+      getTenantIdFirstElement(new URL('https://foo.foo.myeyesid.mock/app///asdasd'))
     ).resolves.toBe('foo');
-    await expect(getTenantIdFirstElement(new URL('https://foo.*.logto.mock/app'))).resolves.toBe(
+    await expect(getTenantIdFirstElement(new URL('https://foo.*.myeyesid.mock/app'))).resolves.toBe(
       undefined
     );
     await expect(
-      getTenantIdFirstElement(new URL('https://foo.foo.logto.mockk/app///asdasd'))
+      getTenantIdFirstElement(new URL('https://foo.foo.myeyesid.mockk/app///asdasd'))
     ).resolves.toBe(undefined);
-    await expect(getTenantIdFirstElement(new URL('https://foo.foo.logto.mock/appp'))).resolves.toBe(
+    await expect(getTenantIdFirstElement(new URL('https://foo.foo.myeyesid.mock/appp'))).resolves.toBe(
       undefined
     );
     await expect(
-      getTenantIdFirstElement(new URL('https://foo.foo.logto.mock:1/app/'))
+      getTenantIdFirstElement(new URL('https://foo.foo.myeyesid.mock:1/app/'))
     ).resolves.toBe(undefined);
-    await expect(getTenantIdFirstElement(new URL('http://foo.foo.logto.mock/app'))).resolves.toBe(
+    await expect(getTenantIdFirstElement(new URL('http://foo.foo.myeyesid.mock/app'))).resolves.toBe(
       undefined
     );
     await expect(
-      getTenantIdFirstElement(new URL('https://user.foo.bar.logto.mock/app'))
+      getTenantIdFirstElement(new URL('https://user.foo.bar.myeyesid.mock/app'))
     ).resolves.toBe(undefined);
     await expect(
-      getTenantIdFirstElement(new URL('https://foo.bar.bar.logto.mock/app'))
+      getTenantIdFirstElement(new URL('https://foo.bar.bar.myeyesid.mock/app'))
     ).resolves.toBe(undefined);
   });
 
@@ -107,8 +107,8 @@ describe('getTenantId()', () => {
       ...backupEnv,
       NODE_ENV: 'production',
       PORT: '5000',
-      ENDPOINT: 'https://user.*.logto.mock/app',
-      ADMIN_ENDPOINT: 'https://admin.logto.mock/app',
+      ENDPOINT: 'https://user.*.myeyesid.mock/app',
+      ADMIN_ENDPOINT: 'https://admin.myeyesid.mock/app',
       ADMIN_DISABLE_LOCALHOST: '1',
     };
 
@@ -118,13 +118,13 @@ describe('getTenantId()', () => {
     await expect(
       getTenantIdFirstElement(new URL('http://localhost:3002/app///asdasd'))
     ).resolves.toBe(undefined);
-    await expect(getTenantIdFirstElement(new URL('https://user.foo.logto.mock/app'))).resolves.toBe(
+    await expect(getTenantIdFirstElement(new URL('https://user.foo.myeyesid.mock/app'))).resolves.toBe(
       'foo'
     );
     await expect(
-      getTenantIdFirstElement(new URL('https://user.admin.logto.mock/app//'))
+      getTenantIdFirstElement(new URL('https://user.admin.myeyesid.mock/app//'))
     ).resolves.toBe(undefined); // Admin endpoint is explicitly set
-    await expect(getTenantIdFirstElement(new URL('https://admin.logto.mock/app'))).resolves.toBe(
+    await expect(getTenantIdFirstElement(new URL('https://admin.myeyesid.mock/app'))).resolves.toBe(
       adminTenantId
     );
 
@@ -132,11 +132,11 @@ describe('getTenantId()', () => {
       ...backupEnv,
       NODE_ENV: 'production',
       PORT: '5000',
-      ENDPOINT: 'https://user.*.logto.mock/app',
+      ENDPOINT: 'https://user.*.myeyesid.mock/app',
       ADMIN_DISABLE_LOCALHOST: '1',
     };
     await expect(
-      getTenantIdFirstElement(new URL('https://user.admin.logto.mock/app//'))
+      getTenantIdFirstElement(new URL('https://user.admin.myeyesid.mock/app//'))
     ).resolves.toBe('admin');
   });
 
@@ -145,7 +145,7 @@ describe('getTenantId()', () => {
       ...backupEnv,
       NODE_ENV: 'production',
       PORT: '5000',
-      ENDPOINT: 'https://user.logto.mock/app',
+      ENDPOINT: 'https://user.myeyesid.mock/app',
       PATH_BASED_MULTI_TENANCY: '1',
     };
 
@@ -155,27 +155,27 @@ describe('getTenantId()', () => {
     await expect(
       getTenantIdFirstElement(new URL('http://localhost:3002///bar///asdasd'))
     ).resolves.toBe(adminTenantId);
-    await expect(getTenantIdFirstElement(new URL('https://user.foo.logto.mock/app'))).resolves.toBe(
+    await expect(getTenantIdFirstElement(new URL('https://user.foo.myeyesid.mock/app'))).resolves.toBe(
       undefined
     );
     await expect(
-      getTenantIdFirstElement(new URL('https://user.admin.logto.mock/app//'))
+      getTenantIdFirstElement(new URL('https://user.admin.myeyesid.mock/app//'))
     ).resolves.toBe(undefined);
-    await expect(getTenantIdFirstElement(new URL('https://user.logto.mock/app'))).resolves.toBe(
+    await expect(getTenantIdFirstElement(new URL('https://user.myeyesid.mock/app'))).resolves.toBe(
       undefined
     );
     await expect(
-      getTenantIdFirstElement(new URL('https://user.logto.mock/app/admin'))
+      getTenantIdFirstElement(new URL('https://user.myeyesid.mock/app/admin'))
     ).resolves.toBe('admin');
   });
 
   it('should resolve proper custom domain', async () => {
     process.env = {
       ...backupEnv,
-      ENDPOINT: 'https://foo.*.logto.mock/app',
+      ENDPOINT: 'https://foo.*.myeyesid.mock/app',
       NODE_ENV: 'production',
     };
-    findActiveDomain.mockResolvedValueOnce({ domain: 'logto.mock.com', tenantId: 'mock' });
-    await expect(getTenantIdFirstElement(new URL('https://logto.mock.com'))).resolves.toBe('mock');
+    findActiveDomain.mockResolvedValueOnce({ domain: 'myeyesid.mock.com', tenantId: 'mock' });
+    await expect(getTenantIdFirstElement(new URL('https://myeyesid.mock.com'))).resolves.toBe('mock');
   });
 });

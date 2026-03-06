@@ -1,10 +1,10 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 import {
   AlternativeSignUpIdentifier,
   InteractionEvent,
   SignInIdentifier,
   verificationCodeIdentifierGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import type Router from 'koa-router';
 import { z } from 'zod';
 

@@ -1,8 +1,8 @@
 /**
- * Logto-provided predefined subscription plan IDs.
+ * MyEyesID-provided predefined subscription plan IDs.
  *
  * In theory, the subscription plan ID will be a random string,
- * but Logto provides some predefined subscription plans and their IDs are reserved plan IDs.
+ * but MyEyesID provides some predefined subscription plans and their IDs are reserved plan IDs.
  */
 export enum ReservedPlanId {
   Free = 'free',
@@ -34,7 +34,7 @@ export enum ReservedPlanId {
  * Tenant subscription related Redis cache keys.
  *
  * We use Redis to cache the tenant subscription data to reduce the number of requests to the Cloud.
- * Both @logto/core and @logto/cloud will need to access the cache, so we define the cache keys here as the SSOT.
+ * Both @myeyesid/core and @myeyesid/cloud will need to access the cache, so we define the cache keys here as the SSOT.
  */
 export enum SubscriptionRedisCacheKey {
   Subscription = 'subscription',

@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 
-import { generateStandardId } from '@logto/shared';
+import { generateStandardId } from '@myeyesid/shared';
 import { isKeyInObject, pick } from '@silverhand/essentials';
 import { HTTPError } from 'ky';
 

@@ -1,4 +1,4 @@
-import { experience } from '@logto/schemas';
+import { experience } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 
 const useFallbackRoute = () =>

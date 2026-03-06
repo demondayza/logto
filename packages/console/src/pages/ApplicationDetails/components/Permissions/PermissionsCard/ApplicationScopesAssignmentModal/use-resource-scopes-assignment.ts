@@ -2,8 +2,8 @@ import {
   type ResourceResponse,
   ApplicationUserConsentScopeType,
   type ApplicationUserConsentScopesResponse,
-} from '@logto/schemas';
-import { isManagementApi } from '@logto/schemas';
+} from '@myeyesid/schemas';
+import { isManagementApi } from '@myeyesid/schemas';
 import { useState, useMemo } from 'react';
 import useSWR from 'swr';
 

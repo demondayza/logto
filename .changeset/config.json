@@ -5,11 +5,11 @@
   "//": "CAUTION: When updating the fields below, you should also update README accordingly.",
   "fixed": [
     [
-      "@logto/core",
-      "@logto/api",
-      "@logto/cli",
-      "@logto/create",
-      "@logto/schemas"
+      "@myeyesid/core",
+      "@myeyesid/api",
+      "@myeyesid/cli",
+      "@myeyesid/create",
+      "@myeyesid/schemas"
     ]
   ],
   "linked": [],

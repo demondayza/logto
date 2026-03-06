@@ -1,4 +1,4 @@
-import { type Application } from '@logto/schemas';
+import { type Application } from '@myeyesid/schemas';
 import Modal from 'react-modal';
 
 import ModalLayout from '@/ds-components/ModalLayout';

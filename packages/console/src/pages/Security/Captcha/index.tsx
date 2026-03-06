@@ -1,4 +1,4 @@
-import { CaptchaType, type SignInExperience } from '@logto/schemas';
+import { CaptchaType, type SignInExperience } from '@myeyesid/schemas';
 import { useNavigate, useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import { z } from 'zod';

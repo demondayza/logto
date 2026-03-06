@@ -1,4 +1,4 @@
-import { roleTypeToKey, type OrganizationRole } from '@logto/schemas';
+import { roleTypeToKey, type OrganizationRole } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';

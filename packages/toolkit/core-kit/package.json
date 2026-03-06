@@ -1,11 +1,11 @@
 {
-  "name": "@logto/core-kit",
+  "name": "@myeyesid/core-kit",
   "version": "2.7.1",
   "author": "Silverhand Inc. <contact@silverhand.io>",
-  "homepage": "https://github.com/logto-io/toolkit#readme",
+  "homepage": "https://github.com/myeyesid-io/toolkit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/logto-io/toolkit.git"
+    "url": "git+https://github.com/myeyesid-io/toolkit.git"
   },
   "license": "MPL-2.0",
   "type": "module",
@@ -45,8 +45,8 @@
     "node": "^22.14.0"
   },
   "dependencies": {
-    "@logto/language-kit": "workspace:^",
-    "@logto/shared": "workspace:^",
+    "@myeyesid/language-kit": "workspace:^",
+    "@myeyesid/shared": "workspace:^",
     "@silverhand/essentials": "^2.9.1",
     "color": "^4.2.3"
   },

@@ -2,7 +2,7 @@ import {
   type OrganizationJitEmailDomain,
   type Organization,
   type OrganizationRole,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export type OrganizationDetailsOutletContext = {
   data: Organization;

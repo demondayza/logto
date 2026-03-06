@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { useContext } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 

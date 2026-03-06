@@ -1,4 +1,4 @@
-import { type SsoProviderType, type SsoConnectorWithProviderConfig } from '@logto/schemas';
+import { type SsoProviderType, type SsoConnectorWithProviderConfig } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 /* Oidc Connectors */
@@ -10,8 +10,8 @@ export type OidcSsoConnectorWithProviderConfig = Omit<
 };
 
 /**
- * All the following guards are copied from {@link @logto/core/packages/core/src/sso/types/oidc }
- * @TODO: consider to move them to a shared package e.g. @logto/schemas
+ * All the following guards are copied from {@link @myeyesid/core/packages/core/src/sso/types/oidc }
+ * @TODO: consider to move them to a shared package e.g. @myeyesid/schemas
  */
 
 export const oidcConnectorConfigGuard = z

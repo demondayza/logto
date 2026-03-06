@@ -1,4 +1,4 @@
-import { parseJson, tokenResponseGuard, type TokenResponse } from '@logto/connector-kit';
+import { parseJson, tokenResponseGuard, type TokenResponse } from '@myeyesid/connector-kit';
 import { assert } from '@silverhand/essentials';
 import camelcaseKeys, { type CamelCaseKeys } from 'camelcase-keys';
 import { got, HTTPError } from 'got';

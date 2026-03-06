@@ -1,4 +1,4 @@
-import { MfaFactor, SignInIdentifier } from '@logto/schemas';
+import { MfaFactor, SignInIdentifier } from '@myeyesid/schemas';
 import { useContext } from 'react';
 
 import SecondaryPageLayout from '@/Layout/SecondaryPageLayout';

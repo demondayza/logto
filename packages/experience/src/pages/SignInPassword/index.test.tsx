@@ -1,10 +1,10 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { renderHook } from '@testing-library/react';
 
 import UserInteractionContextProvider from '@/Providers/UserInteractionContextProvider';
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings } from '@/__mocks__/myeyesid';
 import useSessionStorage, { StorageKeys } from '@/hooks/use-session-storages';
 
 import SignInPassword from '.';
@@ -12,7 +12,7 @@ import SignInPassword from '.';
 describe('SignInPassword', () => {
   const { result } = renderHook(() => useSessionStorage());
   const { set, remove } = result.current;
-  const email = 'email@logto.io';
+  const email = 'email@myeyesid.io';
   const phone = '18571111111';
   const username = 'foo';
 

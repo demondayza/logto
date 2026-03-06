@@ -1,4 +1,4 @@
-import { MfaFactor, type SignInExperience, type UserMfaVerificationResponse } from '@logto/schemas';
+import { MfaFactor, type SignInExperience, type UserMfaVerificationResponse } from '@myeyesid/schemas';
 import { useCallback, useMemo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { useOutletContext } from 'react-router-dom';

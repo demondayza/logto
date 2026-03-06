@@ -1,6 +1,6 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import type { Application } from '@logto/schemas';
-import { ApplicationType } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import type { Application } from '@myeyesid/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
 import { type ReactElement, useContext, useMemo } from 'react';
 import { useController, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -10,7 +10,7 @@ import useSWR, { useSWRConfig } from 'swr';
 
 import { GtagConversionId, reportToGoogle } from '@/components/Conversion/utils';
 import LearnMore from '@/components/LearnMore';
-import { pricingLink, defaultPageSize, integrateLogto, thirdPartyApp } from '@/consts';
+import { pricingLink, defaultPageSize, integrateMyEyesID, thirdPartyApp } from '@/consts';
 import { isCloud } from '@/consts/env';
 import { latestProPlanId } from '@/consts/subscriptions';
 import { SubscriptionDataContext } from '@/contexts/SubscriptionDataProvider';
@@ -191,7 +191,7 @@ function CreateForm({
       return (
         <>
           <DynamicT forKey="applications.subtitle" />
-          <LearnMore isRelativeDocUrl href={integrateLogto} />
+          <LearnMore isRelativeDocUrl href={integrateMyEyesID} />
         </>
       );
     }
@@ -253,7 +253,7 @@ function CreateForm({
               <LinkButton
                 size="large"
                 type="primary"
-                title="upsell.paywall.logto_pricing_button_text"
+                title="upsell.paywall.myeyesid_pricing_button_text"
                 href={pricingLink}
                 targetBlank="noopener"
               />

@@ -1,4 +1,4 @@
-import { roleTypeToKey, type OrganizationRoleWithScopes } from '@logto/schemas';
+import { roleTypeToKey, type OrganizationRoleWithScopes } from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';

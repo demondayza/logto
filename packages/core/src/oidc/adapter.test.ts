@@ -1,5 +1,5 @@
-import { accountCenterApplicationId, demoAppApplicationId, type Application } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { accountCenterApplicationId, demoAppApplicationId, type Application } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import snakecaseKeys from 'snakecase-keys';
 
 import { mockApplication } from '#src/__mocks__/index.js';

@@ -14,7 +14,7 @@ describe('singleSendMail', () => {
         AccountName: 'noreply@example.com',
         AddressType: '1',
         FromAlias: 'CompanyName',
-        HtmlBody: 'test from logto',
+        HtmlBody: 'test from myeyesid',
         ReplyToAddress: 'false',
         Subject: 'test',
         ToAddress: 'user@example.com',

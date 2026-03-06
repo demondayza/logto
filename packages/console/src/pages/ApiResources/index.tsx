@@ -1,5 +1,5 @@
-import type { Resource } from '@logto/schemas';
-import { isManagementApi, Theme } from '@logto/schemas';
+import type { Resource } from '@myeyesid/schemas';
+import { isManagementApi, Theme } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import useSWR from 'swr';

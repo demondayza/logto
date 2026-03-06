@@ -1,4 +1,4 @@
-import { ForgotPasswordMethod } from '@logto/schemas';
+import { ForgotPasswordMethod } from '@myeyesid/schemas';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

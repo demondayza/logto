@@ -36,7 +36,7 @@ export default function FinalConfirmationModal({
   const [deletionError, setDeletionError] = useState<Error>();
   const errorRequestId =
     deletionError instanceof ResponseError
-      ? deletionError.response.headers.get('logto-cloud-request-id')
+      ? deletionError.response.headers.get('myeyesid-cloud-request-id')
       : null;
   const cloudApi = useCloudApi();
   const authedCloudApi = useAuthedCloudApi();

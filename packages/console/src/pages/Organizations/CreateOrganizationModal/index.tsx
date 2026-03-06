@@ -1,4 +1,4 @@
-import { type Organization, type CreateOrganization } from '@logto/schemas';
+import { type Organization, type CreateOrganization } from '@myeyesid/schemas';
 import { cond, conditional } from '@silverhand/essentials';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';

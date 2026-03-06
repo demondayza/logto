@@ -5,7 +5,7 @@ import {
   type OrganizationRoleWithScopes,
   type OrganizationInvitationEntity,
   type CreateOrganization,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 
 import {

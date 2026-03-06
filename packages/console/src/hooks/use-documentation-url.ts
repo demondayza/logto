@@ -2,13 +2,13 @@ import { appendPath } from '@silverhand/essentials';
 import { useTranslation } from 'react-i18next';
 
 /**
- * Supported languages on https://docs.logto.io
+ * Supported languages on https://docs.myeyesid.io
  */
 enum DocumentationLanguage {
   English = 'en',
 }
 
-const documentationSiteRoot = 'https://docs.logto.io';
+const documentationSiteRoot = 'https://docs.myeyesid.io';
 
 const useDocumentationUrl = () => {
   const {

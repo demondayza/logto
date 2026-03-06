@@ -1,6 +1,6 @@
-import type { LanguageTag } from '@logto/language-kit';
-import { Theme, ConnectorType, ForgotPasswordMethod } from '@logto/schemas';
-import type { ConnectorMetadata, ConnectorResponse } from '@logto/schemas';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import { Theme, ConnectorType, ForgotPasswordMethod } from '@myeyesid/schemas';
+import type { ConnectorMetadata, ConnectorResponse } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { format } from 'date-fns';
@@ -25,7 +25,7 @@ type Props = {
   readonly language?: LanguageTag;
   readonly signInExperience?: SignInExperiencePageManagedData;
   /**
-   * The Logto endpoint to use for the preview. If not provided, the current tenant endpoint from
+   * The MyEyesID endpoint to use for the preview. If not provided, the current tenant endpoint from
    * the `AppDataContext` will be used.
    */
   readonly endpoint?: URL;

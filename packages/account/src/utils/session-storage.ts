@@ -1,4 +1,4 @@
-const storagePrefix = 'logto:account-center:';
+const storagePrefix = 'myeyesid:account-center:';
 
 const storageKeys = Object.freeze({
   redirectUrl: `${storagePrefix}redirect-url`,

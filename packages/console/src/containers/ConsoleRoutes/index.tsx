@@ -1,4 +1,4 @@
-import { ossConsolePath } from '@logto/schemas';
+import { ossConsolePath } from '@myeyesid/schemas';
 import { Suspense } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { safeLazy } from 'react-safe-lazy';

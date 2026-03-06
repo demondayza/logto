@@ -19,7 +19,7 @@ services:
       - 3002:3002
     environment:
       - TRUST_PROXY_HEADER=1
-      - DB_URL=postgres://postgres:p0stgr3s@postgres:5432/logto
+      - DB_URL=postgres://postgres:p0stgr3s@postgres:5432/myeyesid
       # Mandatory for GitPod to map host env to the container, thus GitPod can dynamically configure the public URL of MyEyesID;
       # Or, you can leverage it for local testing.
       - ENDPOINT

@@ -1,4 +1,4 @@
-import { InteractionEvent, SignInMode } from '@logto/schemas';
+import { InteractionEvent, SignInMode } from '@myeyesid/schemas';
 import type Router from 'koa-router';
 import { type IRouterParamContext } from 'koa-router';
 import { z } from 'zod';

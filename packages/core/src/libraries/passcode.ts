@@ -1,12 +1,12 @@
-import { appInsights } from '@logto/app-insights/node';
-import type { SendMessagePayload, TemplateType } from '@logto/connector-kit';
-import { templateTypeGuard, ConnectorError, ConnectorErrorCodes } from '@logto/connector-kit';
+import { appInsights } from '@myeyesid/app-insights/node';
+import type { SendMessagePayload, TemplateType } from '@myeyesid/connector-kit';
+import { templateTypeGuard, ConnectorError, ConnectorErrorCodes } from '@myeyesid/connector-kit';
 import {
   buildBuiltInApplicationDataForTenant,
   isBuiltInApplicationId,
   type Passcode,
   type User,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { customAlphabet, nanoid } from 'nanoid';
 

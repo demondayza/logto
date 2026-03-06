@@ -34,7 +34,7 @@ const connector_details = {
     'Este {{name}} se utiliza en su experiencia de inicio de sesión. Al eliminarlo, su experiencia de inicio de sesión no funcionará correctamente hasta que resuelva el conflicto. Deberá reconfigurarlo si decide agregarlo nuevamente.',
   deletion_description:
     'Está eliminando este conector. No se puede deshacer, y deberá reconfigurarlo si decide agregarlo nuevamente.',
-  logto_email: {
+  myeyesid_email: {
     total_email_sent: 'Total de correos electrónicos enviados: {{value, number}}',
     total_email_sent_tip:
       'MyEyesID utiliza SendGrid para correo electrónico integrado seguro y estable. Es completamente gratuito de usar. <a>Más información</a>',

@@ -14,7 +14,7 @@
  * new tenants before running this script and deploying the changes.
  */
 
-import { ConsoleLog, generateStandardId } from '@logto/shared';
+import { ConsoleLog, generateStandardId } from '@myeyesid/shared';
 import { sql } from '@silverhand/slonik';
 
 import { type AlterationScript } from '../lib/types/alteration.js';
@@ -160,14 +160,14 @@ const alteration: AlterationScript = {
       select public.scopes.id, public.resources.indicator
       from public.resources
       join public.scopes on public.scopes.resource_id = public.resources.id
-      where public.resources.indicator like 'https://%.logto.app/api'
+      where public.resources.indicator like 'https://%.myeyesid.app/api'
       and public.scopes.name = 'all'
       and public.resources.tenant_id = ${adminTenantId};
     `);
 
     const assertScopeId = (forTenantId: string) => {
       const scope = managementApiScopes.find(
-        (scope) => scope.indicator === `https://${forTenantId}.logto.app/api`
+        (scope) => scope.indicator === `https://${forTenantId}.myeyesid.app/api`
       );
       if (!scope) {
         throw new Error(`Cannot find Management API scope for tenant '${forTenantId}'.`);

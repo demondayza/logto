@@ -1,4 +1,4 @@
-import type { RoleResponse } from '@logto/schemas';
+import type { RoleResponse } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import transferLayout from '@/scss/transfer.module.scss';

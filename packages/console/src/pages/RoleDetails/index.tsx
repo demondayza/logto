@@ -1,5 +1,5 @@
-import type { Role } from '@logto/schemas';
-import { RoleType } from '@logto/schemas';
+import type { Role } from '@myeyesid/schemas';
+import { RoleType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';

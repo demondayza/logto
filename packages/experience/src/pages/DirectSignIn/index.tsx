@@ -1,4 +1,4 @@
-import { GoogleConnector } from '@logto/connector-kit';
+import { GoogleConnector } from '@myeyesid/connector-kit';
 import { useContext, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import useFallbackRoute from '@/hooks/use-fallback-route';
 import { useSieMethods } from '@/hooks/use-sie';
 import useSingleSignOn from '@/hooks/use-single-sign-on';
 import { LoadingIconWithContainer } from '@/shared/components/LoadingLayer';
-import { logtoGoogleOneTapCookie } from '@/utils/cookies';
+import { myeyesidGoogleOneTapCookie } from '@/utils/cookies';
 
 import styles from './index.module.scss';
 
@@ -35,8 +35,8 @@ const DirectSignIn = () => {
       const social = socialConnectors.find((connector) => connector.target === target);
 
       if (social) {
-        // Redirect to the Google One Tap callback page if the social connector is Google and the logtoGoogleOneTapCookie is present (external Google One Tap).
-        if (social.target === GoogleConnector.target && logtoGoogleOneTapCookie) {
+        // Redirect to the Google One Tap callback page if the social connector is Google and the myeyesidGoogleOneTapCookie is present (external Google One Tap).
+        if (social.target === GoogleConnector.target && myeyesidGoogleOneTapCookie) {
           // eslint-disable-next-line @silverhand/fp/no-mutation
           window.location.href = `${window.location.origin}/callback/${experienceSettings?.googleOneTap?.connectorId}`;
           return;

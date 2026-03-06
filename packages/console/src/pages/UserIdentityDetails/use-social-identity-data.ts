@@ -1,4 +1,4 @@
-import { type ConnectorResponse, type GetUserSocialIdentityResponse } from '@logto/schemas';
+import { type ConnectorResponse, type GetUserSocialIdentityResponse } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 

@@ -1,6 +1,6 @@
 import * as s from 'superstruct';
 
-const verificationRecordStorageKey = 'logto:account-center:verification-record';
+const verificationRecordStorageKey = 'myeyesid:account-center:verification-record';
 
 export type StoredVerificationRecord = {
   verificationId: string;

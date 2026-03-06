@@ -1,5 +1,5 @@
-import type { SchemaLike, GeneratedSchema } from '@logto/schemas';
-import type { UpdateWhereData } from '@logto/shared';
+import type { SchemaLike, GeneratedSchema } from '@myeyesid/schemas';
+import type { UpdateWhereData } from '@myeyesid/shared';
 import { SlonikError } from '@silverhand/slonik';
 
 import { type OmitAutoSetFields } from '#src/utils/sql.js';

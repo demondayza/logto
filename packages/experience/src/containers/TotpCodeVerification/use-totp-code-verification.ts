@@ -1,4 +1,4 @@
-import { MfaFactor } from '@logto/schemas';
+import { MfaFactor } from '@myeyesid/schemas';
 import { useCallback, useMemo, useState } from 'react';
 
 import { type ErrorHandlers } from '@/hooks/use-error-handler';

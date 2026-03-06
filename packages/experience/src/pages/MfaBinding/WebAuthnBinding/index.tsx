@@ -1,4 +1,4 @@
-import { VerificationType } from '@logto/schemas';
+import { VerificationType } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';

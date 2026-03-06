@@ -6,7 +6,7 @@ export * from './admin-user.js';
 export * from './logs.js';
 export * from './dashboard.js';
 export * from './interaction.js';
-export * from './logto-config.js';
+export * from './myeyesid-config.js';
 export * from './domain.js';
 export * from './custom-profile-fields.js';
 

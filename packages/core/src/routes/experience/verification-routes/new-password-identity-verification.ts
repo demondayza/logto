@@ -1,6 +1,6 @@
-import { usernameRegEx } from '@logto/core-kit';
-import { SignInIdentifier, VerificationType } from '@logto/schemas';
-import { Action } from '@logto/schemas/lib/types/log/interaction.js';
+import { usernameRegEx } from '@myeyesid/core-kit';
+import { SignInIdentifier, VerificationType } from '@myeyesid/schemas';
+import { Action } from '@myeyesid/schemas/lib/types/log/interaction.js';
 import type Router from 'koa-router';
 import { z } from 'zod';
 

@@ -1,6 +1,6 @@
-import { languages } from '@logto/language-kit';
-import { isBuiltInLanguageTag as isPhrasesBuiltInLanguageTag } from '@logto/phrases';
-import { isBuiltInLanguageTag as isPhrasesUiBuiltInLanguageTag } from '@logto/phrases-experience';
+import { languages } from '@myeyesid/language-kit';
+import { isBuiltInLanguageTag as isPhrasesBuiltInLanguageTag } from '@myeyesid/phrases';
+import { isBuiltInLanguageTag as isPhrasesUiBuiltInLanguageTag } from '@myeyesid/phrases-experience';
 import chalk from 'chalk';
 import type { CommandModule } from 'yargs';
 

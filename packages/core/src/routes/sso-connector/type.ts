@@ -1,4 +1,4 @@
-import { SsoConnectors, SsoConnectorIdpInitiatedAuthConfigs } from '@logto/schemas';
+import { SsoConnectors, SsoConnectorIdpInitiatedAuthConfigs } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 export const ssoConnectorCreateGuard = SsoConnectors.createGuard

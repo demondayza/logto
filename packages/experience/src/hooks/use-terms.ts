@@ -1,4 +1,4 @@
-import { AgreeToTermsPolicy } from '@logto/schemas';
+import { AgreeToTermsPolicy } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useCallback, useContext, useMemo } from 'react';
 

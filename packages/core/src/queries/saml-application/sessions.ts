@@ -1,4 +1,4 @@
-import { type SamlApplicationSession, SamlApplicationSessions } from '@logto/schemas';
+import { type SamlApplicationSession, SamlApplicationSessions } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

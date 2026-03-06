@@ -1,6 +1,6 @@
 import { createAuthenticatedKy } from './base-ky';
 
-export const verificationRecordIdHeader = 'logto-verification-id';
+export const verificationRecordIdHeader = 'myeyesid-verification-id';
 
 export const updatePrimaryEmail = async (
   accessToken: string,

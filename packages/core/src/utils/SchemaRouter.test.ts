@@ -1,4 +1,4 @@
-import { type GeneratedSchema } from '@logto/schemas';
+import { type GeneratedSchema } from '@myeyesid/schemas';
 import type { Middleware } from 'koa';
 import { z } from 'zod';
 

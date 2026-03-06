@@ -1,5 +1,5 @@
-import { useLogto } from '@logto/react';
-import { demoAppApplicationId } from '@logto/schemas';
+import { useMyEyesID } from '@myeyesid/react';
+import { demoAppApplicationId } from '@myeyesid/schemas';
 import { decodeJwt } from 'jose';
 import { useCallback, useState, type FormEventHandler } from 'react';
 
@@ -17,7 +17,7 @@ const safeDecodeJwt = (token: string) => {
 const DevPanel = () => {
   const config = getLocalData('config');
   const [showSaved, setShowSaved] = useState(false);
-  const { getAccessToken, getIdTokenClaims, fetchUserInfo } = useLogto();
+  const { getAccessToken, getIdTokenClaims, fetchUserInfo } = useMyEyesID();
 
   const submitConfig: FormEventHandler<HTMLFormElement> = useCallback((event) => {
     event.preventDefault();
@@ -48,7 +48,7 @@ const DevPanel = () => {
   return (
     <div className={[styles.card, styles.devPanel].join(' ')}>
       <form onSubmit={submitConfig}>
-        <div className={styles.title}>Logto config</div>
+        <div className={styles.title}>MyEyesID config</div>
         <div className={styles.item}>
           <div className={styles.text}>App ID</div>
           <input

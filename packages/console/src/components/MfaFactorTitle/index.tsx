@@ -1,4 +1,4 @@
-import { MfaFactor } from '@logto/schemas';
+import { MfaFactor } from '@myeyesid/schemas';
 import { type ReactNode } from 'react';
 
 import FactorBackupCode from '@/assets/icons/factor-backup-code.svg?react';

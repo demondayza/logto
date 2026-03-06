@@ -1,4 +1,4 @@
-import { type TenantRole } from '@logto/schemas';
+import { type TenantRole } from '@myeyesid/schemas';
 
 import { type Props as TagProps } from '@/ds-components/Tag';
 

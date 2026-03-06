@@ -4,7 +4,7 @@ import {
   type CaptchaProvider,
   type RecaptchaEnterpriseConfig,
   type TurnstileConfig,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import ky from 'ky';
 import { z } from 'zod';
 

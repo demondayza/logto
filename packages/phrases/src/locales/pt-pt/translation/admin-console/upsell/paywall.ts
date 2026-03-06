@@ -43,7 +43,7 @@ const paywall = {
     'Atingiu o limite de {{count, number}} permissões por função do plano <planName/>. Atualize o plano para adicionar funções e permissões adicionais. Não hesite em <a>Contacte-nos</a> se precisar de ajuda.',
   saml_applications_oss:
     'A aplicação SAML adicional está disponível com o plano MyEyesID Empresarial. Contacte-nos se precisar de assistência.',
-  logto_pricing_button_text: 'Preços do MyEyesID Cloud',
+  myeyesid_pricing_button_text: 'Preços do MyEyesID Cloud',
   saml_applications:
     'A aplicação SAML adicional está disponível com o plano MyEyesID Empresarial. Contacte-nos se precisar de assistência.',
   saml_applications_add_on:

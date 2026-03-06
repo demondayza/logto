@@ -1,4 +1,4 @@
-import { type RoleResponse } from '@logto/schemas';
+import { type RoleResponse } from '@myeyesid/schemas';
 
 import Checkbox from '@/ds-components/Checkbox';
 import { onKeyDownHandler } from '@/utils/a11y';

@@ -1,5 +1,5 @@
-import { UserScope } from '@logto/core-kit';
-import { ApplicationUserConsentScopeType } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { ApplicationUserConsentScopeType } from '@myeyesid/schemas';
 import { useState, useMemo } from 'react';
 
 import { type ScopeAssignmentHook } from './type';

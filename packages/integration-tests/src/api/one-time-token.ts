@@ -1,4 +1,4 @@
-import { type OneTimeTokenStatus, type OneTimeToken } from '@logto/schemas';
+import { type OneTimeTokenStatus, type OneTimeToken } from '@myeyesid/schemas';
 
 import { authedAdminApi } from './api.js';
 

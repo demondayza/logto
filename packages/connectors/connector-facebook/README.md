@@ -6,7 +6,7 @@ Integrate Facebook OAuth 2.0 authentication system to enable Sign-in with Facebo
 
 - [Get started](#get-started)
 - [Step 1: Set up an app on Facebook App Dashboard](#step-1-set-up-an-app-on-facebook-app-dashboard)
-- [Step 2: Set up Logto connector with client credentials](#step-2-set-up-logto-connector-with-client-credentials)
+- [Step 2: Set up MyEyesID connector with client credentials](#step-2-set-up-myeyesid-connector-with-client-credentials)
 - [Step 3: Configure scopes](#step-3-configure-scopes)
 - [Step 4: General settings](#step-4-general-settings)
 - [Step 5: Test sign-in with Facebook's test users (Optional)](#step-5-test-sign-in-with-facebooks-test-users-optional)
@@ -22,7 +22,7 @@ The Facebook connector enables OAuth 2.0 integration to let your application:
 - Add “Sign-in with Facebook” authentication
 - Link user accounts to Facebook identities
 - Sync user profile info from Facebook
-- Access Facebook APIs through secure token storage in Logto [Secret Vault](https://docs.logto.io/secret-vault) for automation tasks (e.g., reply to thread; publish content and videos in your app)
+- Access Facebook APIs through secure token storage in MyEyesID [Secret Vault](https://docs.myeyesid.io/secret-vault) for automation tasks (e.g., reply to thread; publish content and videos in your app)
 
 ## Step 1: Set up an app on Facebook App Dashboard
 
@@ -33,18 +33,18 @@ Before you can use Facebook as an authentication provider, you must set up an ap
 3. Click your existing app or [create a new one](https://developers.facebook.com/docs/development/create-an-app) if needed.
    - A use case is the primary way your app will interact with Meta and determines which APIs, features, permissions, and products are available to your app. If you need social authentication only (to get email & public_profile), select "Authentication and request data from users with Facebook Login". If you want to access Facebook APIs, choose your preferred use cases - most of them also support integrating "Facebook Login for business" after app creation.
 4. After app creation, on the app dashboard page, navigate to **Use cases > Facebook Login > Settings** or **Facebook Login for business > Settings**.
-5. Fill in the **Valid OAuth Redirect URIs** with the Logto **Callback URI** (copy this from your Logto Facebook connector). After users sign in with Facebook, they'll be redirected here with an authorization code that Logto uses to finish authentication.
-6. Navigate to **Use cases** and click **Customize** of your use case to add the scopes. We recommend adding `email` and `public_profile` which are required to implement Sign-in with Facebook in Logto.
+5. Fill in the **Valid OAuth Redirect URIs** with the MyEyesID **Callback URI** (copy this from your MyEyesID Facebook connector). After users sign in with Facebook, they'll be redirected here with an authorization code that MyEyesID uses to finish authentication.
+6. Navigate to **Use cases** and click **Customize** of your use case to add the scopes. We recommend adding `email` and `public_profile` which are required to implement Sign-in with Facebook in MyEyesID.
 
-## Step 2: Set up Logto connector with client credentials
+## Step 2: Set up MyEyesID connector with client credentials
 
 1. In the Facebook App Dashboard, click the sidebar **App settings > Basic**.
 2. You will see the **App ID** and **App secret** on the panel.
 3. Click the **Show** button next to the App secret input box to reveal and copy its content.
-4. Configure your Logto Facebook connector settings:
+4. Configure your MyEyesID Facebook connector settings:
    - Fill the `clientId` field with the **App ID**.
    - Fill the `clientSecret` field with the **App secret**.
-   - Click **Save and Done** in Logto to connect your identity system with Facebook.
+   - Click **Save and Done** in MyEyesID to connect your identity system with Facebook.
 
 ## Step 3: Configure scopes
 
@@ -57,14 +57,14 @@ Scopes define the permissions your app requests from users and control which pri
    - **For authentication (Required)**: `email` and `public_profile`.
    - **For API access (Optional)**: Any additional scopes your app needs (e.g., `threads_content_publish`, `threads_read_replies` for accessing the Threads API). Browse the [Meta Developer Documentation](https://developers.facebook.com/docs/) for available services.
 
-### Configure scopes in Logto
+### Configure scopes in MyEyesID
 
 Choose one or more of the following approaches based on your needs:
 
 **Option 1: No extra API scopes needed**
 
-- Leave the `Scopes` field in your Logto Facebook connector blank.
-- The default scope `email public_profile` will be requested to ensure Logto can get basic user info properly.
+- Leave the `Scopes` field in your MyEyesID Facebook connector blank.
+- The default scope `email public_profile` will be requested to ensure MyEyesID can get basic user info properly.
 
 **Option 2: Request additional scopes at sign-in**
 
@@ -73,12 +73,12 @@ Choose one or more of the following approaches based on your needs:
 
 **Option 3: Request incremental scopes later**
 
-- After the user signs in, you can [request additional scopes](https://docs.logto.io/secret-vault/federated-token-set#reauthentication-and-token-renewal) on demand by reinitiating a federated social authorization flow and updating users' stored token set.
-- These additional scopes do not need to be filled in the `Scopes` field in your Logto Facebook connector, and can be achieved through Logto's Social Verification API.
+- After the user signs in, you can [request additional scopes](https://docs.myeyesid.io/secret-vault/federated-token-set#reauthentication-and-token-renewal) on demand by reinitiating a federated social authorization flow and updating users' stored token set.
+- These additional scopes do not need to be filled in the `Scopes` field in your MyEyesID Facebook connector, and can be achieved through MyEyesID's Social Verification API.
 
-By following these steps, your Logto Facebook connector requests exactly the permissions your app needs - no more, no less.
+By following these steps, your MyEyesID Facebook connector requests exactly the permissions your app needs - no more, no less.
 
-**Tip**: If your app requests these scopes to access the Facebook API and perform actions, make sure to enable **Store tokens for persistent API access** in Logto Facebook connector. See the next section for details.
+**Tip**: If your app requests these scopes to access the Facebook API and perform actions, make sure to enable **Store tokens for persistent API access** in MyEyesID Facebook connector. See the next section for details.
 
 ## Step 4: General settings
 
@@ -93,12 +93,12 @@ In the Facebook connector, you can set the policy for syncing profile informatio
 
 ### Store tokens to access Facebook APIs (Optional)
 
-If you want to access Facebook APIs and perform actions with user authorization (whether via social sign-in or account linking), Logto needs to get specific API scopes and store tokens.
+If you want to access Facebook APIs and perform actions with user authorization (whether via social sign-in or account linking), MyEyesID needs to get specific API scopes and store tokens.
 
 1. Add the required scopes following the tutorial above.
-2. Enable **Store tokens for persistent API access** in the Logto Facebook connector. Logto will securely [store Facebook access tokens](https://docs.logto.io/secret-vault/federated-token-set) in the Secret Vault.
+2. Enable **Store tokens for persistent API access** in the MyEyesID Facebook connector. MyEyesID will securely [store Facebook access tokens](https://docs.myeyesid.io/secret-vault/federated-token-set) in the Secret Vault.
 
-**Note**: Facebook doesn't provide refresh tokens. However, when token storage is enabled, Logto automatically requests a long-lived access token (60 days) upon user authentication. During this period, users can manually revoke access tokens, but otherwise won't need re-authorization to access Facebook APIs. Note: Don't add `offline_access` to the `Scope` field as this may cause errors.
+**Note**: Facebook doesn't provide refresh tokens. However, when token storage is enabled, MyEyesID automatically requests a long-lived access token (60 days) upon user authentication. During this period, users can manually revoke access tokens, but otherwise won't need re-authorization to access Facebook APIs. Note: Don't add `offline_access` to the `Scope` field as this may cause errors.
 
 ## Step 5: Test sign-in with Facebook's test users (Optional)
 
@@ -123,30 +123,30 @@ Once you've created a Facebook connector and connected it to Facebook, you can i
 
 ### Enable "Sign-in with Facebook"
 
-1. In Logto Console, go to [Sign-in experience > Sign-up and sign-in](https://cloud.logto.io/to/sign-in-experience/sign-up-and-sign-in).
+1. In MyEyesID Console, go to [Sign-in experience > Sign-up and sign-in](https://cloud.myeyesid.io/to/sign-in-experience/sign-up-and-sign-in).
 2. Add the Facebook connector under **Social sign-in** section to let users authenticate with Facebook.
 
-Learn more about [social sign-in experience](https://docs.logto.io/end-user-flows/sign-up-and-sign-in/social-sign-in).
+Learn more about [social sign-in experience](https://docs.myeyesid.io/end-user-flows/sign-up-and-sign-in/social-sign-in).
 
 ### Link or unlink a Facebook account
 
-Use the Account API to build a custom Account Center in your app that lets signed-in users link or unlink their Facebook account. [Follow the Account API tutorial](https://docs.logto.io/end-user-flows/account-settings/by-account-api#link-a-new-social-connection)
+Use the Account API to build a custom Account Center in your app that lets signed-in users link or unlink their Facebook account. [Follow the Account API tutorial](https://docs.myeyesid.io/end-user-flows/account-settings/by-account-api#link-a-new-social-connection)
 
 **Tip**: It's allowed to enable the Facebook connector only for account linking and API access, without enabling it for social sign-in.
 
 ### Access Facebook API and perform actions
 
-Your application can retrieve stored Facebook access tokens from the Secret Vault to call Facebook APIs and automate backend tasks (for example, publishing content or managing posts). [Refer to the guide](https://docs.logto.io/secret-vault/federated-token-set) on retrieving stored tokens for API access.
+Your application can retrieve stored Facebook access tokens from the Secret Vault to call Facebook APIs and automate backend tasks (for example, publishing content or managing posts). [Refer to the guide](https://docs.myeyesid.io/secret-vault/federated-token-set) on retrieving stored tokens for API access.
 
 ## Manage user's Facebook identity
 
-After a user links their Facebook account, admins can manage that connection in the Logto Console:
+After a user links their Facebook account, admins can manage that connection in the MyEyesID Console:
 
-1. Navigate to [Logto console > User management](https://cloud.logto.io/to/users) and open the user's profile.
+1. Navigate to [MyEyesID console > User management](https://cloud.myeyesid.io/to/users) and open the user's profile.
 2. Under **Social connections**, locate the Facebook item and click **Manage**.
-3. On this page, admins can manage the user's Facebook connection, see all profile information granted and synced from their Facebook account, and check the [access token status](https://docs.logto.io/secret-vault/federated-token-set#token-storage-status).
+3. On this page, admins can manage the user's Facebook connection, see all profile information granted and synced from their Facebook account, and check the [access token status](https://docs.myeyesid.io/secret-vault/federated-token-set#token-storage-status).
 
-**Note**: Facebook's access token response does not include the specific scope information, so Logto cannot directly display the list of permissions granted by the user. However, as long as the user has consented to the requested scopes during authorization, your application will have the corresponding permissions when accessing the Facebook API. It is recommended to accurately configure the required scopes in both the Facebook Developer Console and Logto to ensure your app has the necessary access.
+**Note**: Facebook's access token response does not include the specific scope information, so MyEyesID cannot directly display the list of permissions granted by the user. However, as long as the user has consented to the requested scopes during authorization, your application will have the corresponding permissions when accessing the Facebook API. It is recommended to accurately configure the required scopes in both the Facebook Developer Console and MyEyesID to ensure your app has the necessary access.
 
 ## Reference
 

@@ -1,5 +1,5 @@
-import { jsonObjectGuard, subjectTokenResponseGuard } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { jsonObjectGuard, subjectTokenResponseGuard } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { addSeconds } from 'date-fns';
 import { object, string } from 'zod';
 

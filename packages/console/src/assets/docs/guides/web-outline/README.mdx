@@ -2,7 +2,7 @@ import UriInputField from '@/mdx-components/UriInputField';
 import Steps from '@/mdx-components/Steps';
 import Step from '@/mdx-components/Step';
 
-import logtoSignInExperience from './assets/logto-sign-in-experience.png';
+import myeyesidSignInExperience from './assets/myeyesid-sign-in-experience.png';
 import outlineHome from './assets/outline-home.png';
 import outlineSignIn from './assets/outline-sign-in.png';
 import EnvironmentVariables from './components/EnvironmentVariables';
@@ -49,7 +49,7 @@ Here's another table containing additional variables:
 
 Since Outline requires user email to be provided, you need to configure email sign-in or a social sign-in that provides trustworthy email address, such as Google sign-in.
 
-See [Passwordless sign-in by adding connectors](https://docs.logto.io/docs/recipes/configure-connectors/email-connector/) to learn more about configuring passwordless sign-in in MyEyesID.
+See [Passwordless sign-in by adding connectors](https://docs.myeyesid.io/docs/recipes/configure-connectors/email-connector/) to learn more about configuring passwordless sign-in in MyEyesID.
 
 </Step>
 
@@ -61,7 +61,7 @@ Start the Outline instance and access its endpoint. You should see a button in t
 
 Click on the button, and you will be directed to the MyEyesID sign-in experience.
 
-<img alt="MyEyesID sign-in experience" src={logtoSignInExperience} width="360" style={{ borderRadius: '6px' }} />
+<img alt="MyEyesID sign-in experience" src={myeyesidSignInExperience} width="360" style={{ borderRadius: '6px' }} />
 
 If everything has been configured correctly, once you complete the sign-in or registration process in MyEyesID, you will be redirected back to Outline. You can then see your personal information displayed in the bottom left corner of the page.
 

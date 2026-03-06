@@ -16,7 +16,7 @@ describe('assertThat util', () => {
     }).toMatchError(error);
   });
 
-  it('should throw RequestError if logto errorcode is provided', () => {
+  it('should throw RequestError if myeyesid errorcode is provided', () => {
     expect(() => {
       assertThat(false, 'auth.unauthorized');
     }).toMatchError(new RequestError({ code: 'auth.unauthorized' }));

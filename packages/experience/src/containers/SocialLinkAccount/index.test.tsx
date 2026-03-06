@@ -1,9 +1,9 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { fireEvent, waitFor } from '@testing-library/react';
 
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings } from '@/__mocks__/myeyesid';
 import { bindSocialRelatedUser, registerWithVerifiedIdentifier } from '@/apis/experience';
 
 import SocialLinkAccount from '.';
@@ -21,7 +21,7 @@ jest.mock('@/apis/experience', () => ({
 }));
 
 describe('SocialLinkAccount', () => {
-  const relatedUser = Object.freeze({ type: 'email', value: 'foo@logto.io' });
+  const relatedUser = Object.freeze({ type: 'email', value: 'foo@myeyesid.io' });
   const verificationId = 'foo';
 
   afterEach(() => {

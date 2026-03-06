@@ -1,4 +1,4 @@
-import type { CustomProfileField, UserProfile } from '@logto/schemas';
+import type { CustomProfileField, UserProfile } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useCallback, useMemo } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';

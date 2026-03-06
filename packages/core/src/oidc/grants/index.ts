@@ -1,4 +1,4 @@
-import { GrantType } from '@logto/schemas';
+import { GrantType } from '@myeyesid/schemas';
 import type { Provider } from 'oidc-provider';
 import instance from 'oidc-provider/lib/helpers/weak_cache.js';
 

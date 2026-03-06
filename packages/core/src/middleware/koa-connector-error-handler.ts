@@ -1,4 +1,4 @@
-import { ConnectorError, ConnectorErrorCodes } from '@logto/connector-kit';
+import { ConnectorError, ConnectorErrorCodes } from '@myeyesid/connector-kit';
 import { trySafe } from '@silverhand/essentials';
 import type { Middleware } from 'koa';
 import { z } from 'zod';

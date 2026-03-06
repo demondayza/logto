@@ -1,5 +1,5 @@
-import { languages, languageTagGuard } from '@logto/language-kit';
-import { jsonGuard, jsonObjectGuard, translationGuard } from '@logto/schemas';
+import { languages, languageTagGuard } from '@myeyesid/language-kit';
+import { jsonGuard, jsonObjectGuard, translationGuard } from '@myeyesid/schemas';
 import type { ValuesOf } from '@silverhand/essentials';
 import { conditional, deduplicate } from '@silverhand/essentials';
 import type { OpenAPIV3 } from 'openapi-types';

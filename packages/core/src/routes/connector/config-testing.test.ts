@@ -1,22 +1,22 @@
-import type { ConnectorFactory } from '@logto/cli/lib/connector/index.js';
-import type router from '@logto/cloud/routes';
-import { TemplateType } from '@logto/connector-kit';
-import type { EmailConnector, SmsConnector } from '@logto/connector-kit';
-import { ConnectorType } from '@logto/schemas';
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+import type { ConnectorFactory } from '@myeyesid/cli/lib/connector/index.js';
+import type router from '@myeyesid/cloud/routes';
+import { TemplateType } from '@myeyesid/connector-kit';
+import type { EmailConnector, SmsConnector } from '@myeyesid/connector-kit';
+import { ConnectorType } from '@myeyesid/schemas';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockMetadata, mockConnectorFactory } from '#src/__mocks__/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
 import assertThat from '#src/utils/assert-that.js';
-import type { LogtoConnector } from '#src/utils/connectors/types.js';
+import type { MyEyesIDConnector } from '#src/utils/connectors/types.js';
 import { createRequester } from '#src/utils/test-utils.js';
 
 const { jest } = import.meta;
 const { mockEsmWithActual } = createMockUtils(jest);
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const getLogtoConnectors = jest.fn<Promise<LogtoConnector[]>, []>();
+const getMyEyesIDConnectors = jest.fn<Promise<MyEyesIDConnector[]>, []>();
 
 const { loadConnectorFactories } = await mockEsmWithActual(
   '#src/utils/connectors/index.js',
@@ -25,7 +25,7 @@ const { loadConnectorFactories } = await mockEsmWithActual(
   })
 );
 
-const { buildRawConnector } = await mockEsmWithActual('@logto/cli/lib/connector/index.js', () => ({
+const { buildRawConnector } = await mockEsmWithActual('@myeyesid/cli/lib/connector/index.js', () => ({
   buildRawConnector: jest.fn(),
 }));
 
@@ -33,9 +33,9 @@ const tenantContext = new MockTenant(
   undefined,
   {},
   {
-    getLogtoConnectors,
-    getLogtoConnectorById: async (connectorId: string) => {
-      const connectors = await getLogtoConnectors();
+    getMyEyesIDConnectors,
+    getMyEyesIDConnectorById: async (connectorId: string) => {
+      const connectors = await getMyEyesIDConnectors();
       const connector = connectors.find(({ dbEntry }) => dbEntry.id === connectorId);
       assertThat(
         connector,
@@ -127,7 +127,7 @@ describe('connector services route', () => {
     });
 
     it('should throw when sms connector is not found', async () => {
-      getLogtoConnectors.mockResolvedValueOnce([]);
+      getMyEyesIDConnectors.mockResolvedValueOnce([]);
       const response = await connectorRequest
         .post('/connectors/id/test')
         .send({ phone: '12345678901' });
@@ -135,7 +135,7 @@ describe('connector services route', () => {
     });
 
     it('should throw when email connector is not found', async () => {
-      getLogtoConnectors.mockResolvedValueOnce([]);
+      getMyEyesIDConnectors.mockResolvedValueOnce([]);
       const response = await connectorRequest
         .post('/connectors/id/test')
         .send({ email: 'test@email.com' });

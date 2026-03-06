@@ -18,7 +18,7 @@ type Props = {
 };
 
 /**
- * The body-2 font declared in @logto/core-kit/scss/fonts. It is referenced here to calculate the
+ * The body-2 font declared in @myeyesid/core-kit/scss/fonts. It is referenced here to calculate the
  * width of the placeholder text, which determines the minimum width of the search input field.
  */
 const fontBody2 =

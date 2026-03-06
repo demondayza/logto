@@ -4,7 +4,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 
-import { ConsoleLog } from '@logto/shared';
+import { ConsoleLog } from '@myeyesid/shared';
 import type { Optional } from '@silverhand/essentials';
 import { assert, conditional, conditionalString } from '@silverhand/essentials';
 import chalk from 'chalk';
@@ -189,7 +189,7 @@ const validatePath = async (value: string) => {
     .then(({ name }) => name)
     .catch(() => '');
 
-  if (packageName !== '@logto/core') {
+  if (packageName !== '@myeyesid/core') {
     return buildPathErrorMessage(value);
   }
 

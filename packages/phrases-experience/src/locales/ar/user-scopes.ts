@@ -6,11 +6,11 @@ const user_scopes = {
     profile: 'اسمك، اسم المستخدم، الصورة الرمزية ومعلومات الملف الشخصي الأخرى',
     roles: 'الأدوار الخاصة بك',
     identities: 'هوياتك الاجتماعية المرتبطة',
-    'urn:logto:scope:organizations': 'معلومات منظماتك',
-    'urn:logto:scope:organization_roles': 'أدوار المنظمة الخاصة بك',
+    'urn:myeyesid:scope:organizations': 'معلومات منظماتك',
+    'urn:myeyesid:scope:organization_roles': 'أدوار المنظمة الخاصة بك',
     address: 'عنوانك',
     /** UNTRANSLATED */
-    'urn:logto:scope:sessions': 'Your active sessions',
+    'urn:myeyesid:scope:sessions': 'Your active sessions',
   },
 };
 

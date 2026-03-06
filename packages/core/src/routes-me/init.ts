@@ -1,4 +1,4 @@
-import { adminTenantId, getManagementApiResourceIndicator } from '@logto/schemas';
+import { adminTenantId, getManagementApiResourceIndicator } from '@myeyesid/schemas';
 import Koa from 'koa';
 import Router from 'koa-router';
 

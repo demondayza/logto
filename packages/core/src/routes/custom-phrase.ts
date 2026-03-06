@@ -1,7 +1,7 @@
-import { languageTagGuard } from '@logto/language-kit';
-import resource from '@logto/phrases-experience';
-import type { Translation } from '@logto/schemas';
-import { CustomPhrases, translationGuard } from '@logto/schemas';
+import { languageTagGuard } from '@myeyesid/language-kit';
+import resource from '@myeyesid/phrases-experience';
+import type { Translation } from '@myeyesid/schemas';
+import { CustomPhrases, translationGuard } from '@myeyesid/schemas';
 import cleanDeep from 'clean-deep';
 import { object } from 'zod';
 

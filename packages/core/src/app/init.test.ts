@@ -1,6 +1,6 @@
 import { createServer } from 'node:http';
 
-import { pickDefault } from '@logto/shared/esm';
+import { pickDefault } from '@myeyesid/shared/esm';
 import Koa from 'koa';
 
 const { jest } = import.meta;

@@ -1,4 +1,4 @@
-import { LogResult, type Hook, type HookEvent } from '@logto/schemas';
+import { LogResult, type Hook, type HookEvent } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 
 import { getWebhookRecentLogs } from '#src/api/logs.js';

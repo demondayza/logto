@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { useEffect } from 'react';
 
 import useTheme from '@/hooks/use-theme';

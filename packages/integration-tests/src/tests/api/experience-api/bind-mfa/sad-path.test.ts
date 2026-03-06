@@ -1,4 +1,4 @@
-import { InteractionEvent, MfaFactor, SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, MfaFactor, SignInIdentifier } from '@myeyesid/schemas';
 
 import { createUserMfaVerification } from '#src/api/admin-user.js';
 import { initExperienceClient } from '#src/helpers/client.js';

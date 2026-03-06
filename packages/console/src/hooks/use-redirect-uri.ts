@@ -1,4 +1,4 @@
-import { ossConsolePath } from '@logto/schemas';
+import { ossConsolePath } from '@myeyesid/schemas';
 import { conditionalArray, joinPath } from '@silverhand/essentials';
 import { useMemo } from 'react';
 import { useHref } from 'react-router-dom';

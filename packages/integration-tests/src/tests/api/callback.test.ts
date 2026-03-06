@@ -1,10 +1,10 @@
 import ky from 'ky';
 
-import { logtoConsoleUrl } from '#src/constants.js';
+import { myeyesidConsoleUrl } from '#src/constants.js';
 
 describe('social connector form post callback', () => {
   const request = ky.extend({
-    prefixUrl: new URL(logtoConsoleUrl),
+    prefixUrl: new URL(myeyesidConsoleUrl),
   });
 
   it('should redirect to the same path with query string', async () => {

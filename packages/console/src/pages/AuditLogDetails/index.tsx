@@ -1,6 +1,6 @@
 /* eslint-disable complexity */
-import type { Application, Hook, Log, User } from '@logto/schemas';
-import { isBuiltInApplicationId } from '@logto/schemas';
+import type { Application, Hook, Log, User } from '@myeyesid/schemas';
+import { isBuiltInApplicationId } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useParams } from 'react-router-dom';

@@ -1,8 +1,8 @@
 # Baseline Capture
 
 Date: 2026-03-04
-Repo: /Users/andrewmargetts/Development/clientwork/myeyes/logto
-Branch: logto
+Repo: /Users/andrewmargetts/Development/clientwork/myeyes/myeyesid
+Branch: myeyesid
 
 ## Command outcomes
 
@@ -11,7 +11,7 @@ Branch: logto
 | `pnpm install` | 0 | 82 | Passed with warnings | `branding/.baseline-logs/pnpm_install.log` |
 | `pnpm -r build` | 0 | 82 | Passed with warnings | `branding/.baseline-logs/pnpm_-r_build.log` |
 | `pnpm ci:lint` | 0 | 187 | Passed with warnings | `branding/.baseline-logs/pnpm_ci_lint.log` |
-| `CI=true pnpm ci:test` | 1 | 24 | Failed (`@logto/core` test command exits with no tests) | `branding/.baseline-logs/pnpm_ci_test.log` |
+| `CI=true pnpm ci:test` | 1 | 24 | Failed (`@myeyesid/core` test command exits with no tests) | `branding/.baseline-logs/pnpm_ci_test.log` |
 
 ## Details
 
@@ -39,5 +39,5 @@ Branch: logto
 - Command terminates deterministically in CI mode.
 - Failure source:
   - `packages/core test:ci: No tests found, exiting with code 1`
-  - `ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL @logto/core@1.37.1 test:ci`
+  - `ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL @myeyesid/core@1.37.1 test:ci`
 - This is a baseline repo behavior in current environment, not a branding change regression.

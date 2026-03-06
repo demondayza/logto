@@ -4,23 +4,23 @@ export const mockedServerToken = 'serverToken';
 
 export const mockedConfig: PostmarkConfig = {
   serverToken: mockedServerToken,
-  fromEmail: 'noreply@logto.test.io',
+  fromEmail: 'noreply@myeyesid.test.io',
   templates: [
     {
       usageType: 'SignIn',
-      templateAlias: 'logto-sign-in',
+      templateAlias: 'myeyesid-sign-in',
     },
     {
       usageType: 'Register',
-      templateAlias: 'logto-register',
+      templateAlias: 'myeyesid-register',
     },
     {
       usageType: 'ForgotPassword',
-      templateAlias: 'logto-forgot-password',
+      templateAlias: 'myeyesid-forgot-password',
     },
     {
       usageType: 'Generic',
-      templateAlias: 'logto-generic',
+      templateAlias: 'myeyesid-generic',
     },
   ],
 };

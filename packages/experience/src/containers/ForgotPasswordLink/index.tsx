@@ -1,4 +1,4 @@
-import type { SignInIdentifier } from '@logto/schemas';
+import type { SignInIdentifier } from '@myeyesid/schemas';
 import { useContext } from 'react';
 
 import UserInteractionContext from '@/Providers/UserInteractionContextProvider/UserInteractionContext';

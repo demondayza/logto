@@ -1,4 +1,4 @@
-import { MfaFactor, type BindMfa, type BindWebAuthn, type BindBackupCode } from '@logto/schemas';
+import { MfaFactor, type BindMfa, type BindWebAuthn, type BindBackupCode } from '@myeyesid/schemas';
 
 export const mockTotpBind: BindMfa = {
   type: MfaFactor.TOTP,

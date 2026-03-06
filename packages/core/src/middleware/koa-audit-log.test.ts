@@ -1,6 +1,6 @@
-import type { LogKey } from '@logto/schemas';
-import { LogResult, VerificationType } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import type { LogKey } from '@myeyesid/schemas';
+import { LogResult, VerificationType } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import i18next from 'i18next';
 import type { Context } from 'koa';
 import Router, { type IRouterParamContext } from 'koa-router';
@@ -104,8 +104,8 @@ describe('koaAuditLog middleware', () => {
   it('should include sign-in context when mapped headers are present', async () => {
     const ctx: TestContext = createTestContext({
       'user-agent': userAgent,
-      'x-logto-cf-country': 'US',
-      'x-logto-cf-city': 'New York',
+      'x-myeyesid-cf-country': 'US',
+      'x-myeyesid-cf-city': 'New York',
     });
     ctx.request.ip = ip;
 
@@ -137,7 +137,7 @@ describe('koaAuditLog middleware', () => {
     getIsDevFeaturesEnabled.mockReturnValue(false);
     const ctx: TestContext = createTestContext({
       'user-agent': userAgent,
-      'x-logto-cf-country': 'US',
+      'x-myeyesid-cf-country': 'US',
     });
     ctx.request.ip = ip;
 

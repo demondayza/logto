@@ -1,5 +1,5 @@
-import type { VerificationCodeIdentifier } from '@logto/schemas';
-import { InteractionEvent, MfaFactor, VerificationType } from '@logto/schemas';
+import type { VerificationCodeIdentifier } from '@myeyesid/schemas';
+import { InteractionEvent, MfaFactor, VerificationType } from '@myeyesid/schemas';
 import { useCallback, useContext, useMemo } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { validate } from 'superstruct';

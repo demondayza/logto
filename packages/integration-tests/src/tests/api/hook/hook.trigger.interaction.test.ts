@@ -3,7 +3,7 @@ import {
   InteractionHookEvent,
   SignInIdentifier,
   hookEvents,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { authedAdminApi } from '#src/api/api.js';
 import { isDevFeaturesEnabled } from '#src/constants.js';

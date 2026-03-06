@@ -1,9 +1,9 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 import type {
   InteractionEvent,
   RequestVerificationCodePayload,
   VerifyVerificationCodePayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import type { PasscodeLibrary } from '#src/libraries/passcode.js';
 import type { LogContext } from '#src/middleware/koa-audit-log.js';

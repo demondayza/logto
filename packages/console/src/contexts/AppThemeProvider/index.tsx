@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { condArray, noop, trySafe } from '@silverhand/essentials';
 import type { ReactNode } from 'react';
 import { useEffect, useMemo, useState, createContext } from 'react';

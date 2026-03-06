@@ -7,7 +7,7 @@ const { default: koaResourceParam } = await import('./koa-resource-param.js');
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = async () => {};
 
-const endpoint = 'https://logto.io/oidc/auth';
+const endpoint = 'https://myeyesid.io/oidc/auth';
 
 describe('koaResourceParam() middleware', () => {
   it('should check and process comma separated resource params in the URL', async () => {

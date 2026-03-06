@@ -1,6 +1,6 @@
-import { isLocalhost, validateUriOrigin } from '@logto/core-kit';
-import { ApplicationType, type Application, type RequestErrorBody } from '@logto/schemas';
-import { isValidSubdomain } from '@logto/shared/universal';
+import { isLocalhost, validateUriOrigin } from '@myeyesid/core-kit';
+import { ApplicationType, type Application, type RequestErrorBody } from '@myeyesid/schemas';
+import { isValidSubdomain } from '@myeyesid/shared/universal';
 import { condString, conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { HTTPError } from 'ky';
@@ -145,7 +145,7 @@ function ProtectedAppForm({
                 <Trans
                   components={{
                     a: (
-                      <TextLink to="https://docs.logto.io/docs/recipes/protected-app/#local-development" />
+                      <TextLink to="https://docs.myeyesid.io/docs/recipes/protected-app/#local-development" />
                     ),
                   }}
                 >

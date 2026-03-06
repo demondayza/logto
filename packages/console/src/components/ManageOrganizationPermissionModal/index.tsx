@@ -1,4 +1,4 @@
-import { type OrganizationScope } from '@logto/schemas';
+import { type OrganizationScope } from '@myeyesid/schemas';
 import { cond, type Nullable } from '@silverhand/essentials';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

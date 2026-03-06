@@ -1,4 +1,4 @@
-import { CaptchaType, RecaptchaEnterpriseMode } from '@logto/schemas';
+import { CaptchaType, RecaptchaEnterpriseMode } from '@myeyesid/schemas';
 
 import { type SignInExperienceResponse } from '@/types';
 

@@ -5,8 +5,8 @@ import type {
   Color,
   SignUp,
   SignIn,
-} from '@logto/schemas';
-import { SignInMode, SignInIdentifier, MfaPolicy, AgreeToTermsPolicy } from '@logto/schemas';
+} from '@myeyesid/schemas';
+import { SignInMode, SignInIdentifier, MfaPolicy, AgreeToTermsPolicy } from '@myeyesid/schemas';
 
 export const mockColor: Color = {
   primaryColor: '#000',
@@ -52,9 +52,9 @@ export const mockSignInExperience: SignInExperience = {
     darkPrimaryColor: '#fff',
   },
   branding: {
-    logoUrl: 'http://logto.png',
+    logoUrl: 'http://myeyesid.png',
   },
-  hideLogtoBranding: false,
+  hideMyEyesIDBranding: false,
   termsOfUseUrl: mockTermsOfUseUrl,
   privacyPolicyUrl: mockPrivacyPolicyUrl,
   languageInfo: {

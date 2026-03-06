@@ -1,5 +1,5 @@
-import { Prompt } from '@logto/node';
-import { ApplicationType, InteractionEvent } from '@logto/schemas';
+import { Prompt } from '@myeyesid/node';
+import { ApplicationType, InteractionEvent } from '@myeyesid/schemas';
 
 import { createApplication, deleteApplication, putInteraction } from '#src/api/index.js';
 import MockClient from '#src/client/index.js';
@@ -57,7 +57,7 @@ describe('always issue Refresh Token config', () => {
   });
 
   it('cannot fetch Refresh Token for non-web apps', async () => {
-    const redirectUri = 'io.logto://callback';
+    const redirectUri = 'io.myeyesid://callback';
     const app = await createApplication('Integration test app', ApplicationType.Native, {
       oidcClientMetadata: { redirectUris: [redirectUri], postLogoutRedirectUris: [] },
       customClientMetadata: { alwaysIssueRefreshToken: true },

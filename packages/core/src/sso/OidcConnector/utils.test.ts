@@ -1,4 +1,4 @@
-import { createMockUtils } from '@logto/shared/esm';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import camelcaseKeys from 'camelcase-keys';
 import { type CamelCaseKeys } from 'camelcase-keys';
 

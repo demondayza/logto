@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared';
+import { generateStandardId } from '@myeyesid/shared';
 import type { DatabaseTransactionConnection } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 
@@ -27,15 +27,15 @@ type NewPrivateKeyData = {
  * "oidc.cookieKeys":  string[] -> PrivateKey[]
  * "oidc.privateKeys": string[] -> PrivateKey[]
  * @param configKey oidc.cookieKeys | oidc.privateKeys
- * @param logtoConfig existing private key data for a specific tenant
+ * @param myeyesidConfig existing private key data for a specific tenant
  * @param pool postgres database connection pool
  */
-const alterPrivateKeysInLogtoConfig = async (
+const alterPrivateKeysInMyEyesIDConfig = async (
   configKey: string,
-  logtoConfig: OldPrivateKeyData,
+  myeyesidConfig: OldPrivateKeyData,
   pool: DatabaseTransactionConnection
 ) => {
-  const { tenantId, value: oldPrivateKey } = logtoConfig;
+  const { tenantId, value: oldPrivateKey } = myeyesidConfig;
 
   // Use tenant creation time as `createdAt` timestamp for new private keys
   const tenantData = await pool.maybeOne<{ createdAt: number }>(
@@ -48,7 +48,7 @@ const alterPrivateKeysInLogtoConfig = async (
   }));
 
   await pool.query(
-    sql`update logto_configs set value = ${JSON.stringify(
+    sql`update myeyesid_configs set value = ${JSON.stringify(
       newPrivateKeyData
     )} where tenant_id = ${tenantId} and key = ${configKey}`
   );
@@ -59,20 +59,20 @@ const alterPrivateKeysInLogtoConfig = async (
  * "oidc.cookieKeys":  PrivateKey[] -> string[]
  * "oidc.privateKeys": PrivateKey[] -> string[]
  * @param configKey oidc.cookieKeys | oidc.privateKeys
- * @param logtoConfig new private key data for a specific tenant
+ * @param myeyesidConfig new private key data for a specific tenant
  * @param pool postgres database connection pool
  */
-const rollbackPrivateKeysInLogtoConfig = async (
+const rollbackPrivateKeysInMyEyesIDConfig = async (
   configKey: string,
-  logtoConfig: NewPrivateKeyData,
+  myeyesidConfig: NewPrivateKeyData,
   pool: DatabaseTransactionConnection
 ) => {
-  const { tenantId, value: newPrivateKeyData } = logtoConfig;
+  const { tenantId, value: newPrivateKeyData } = myeyesidConfig;
 
   const oldPrivateKeys = newPrivateKeyData.map(({ value }) => value);
 
   await pool.query(
-    sql`update logto_configs set value = ${JSON.stringify(
+    sql`update myeyesid_configs set value = ${JSON.stringify(
       oldPrivateKeys
     )} where tenant_id = ${tenantId} and key = ${configKey}`
   );
@@ -83,10 +83,10 @@ const alteration: AlterationScript = {
     await Promise.all(
       targetConfigKeys.map(async (configKey) => {
         const rows = await pool.many<OldPrivateKeyData>(
-          sql`select * from logto_configs where key = ${configKey}`
+          sql`select * from myeyesid_configs where key = ${configKey}`
         );
         await Promise.all(
-          rows.map(async (row) => alterPrivateKeysInLogtoConfig(configKey, row, pool))
+          rows.map(async (row) => alterPrivateKeysInMyEyesIDConfig(configKey, row, pool))
         );
       })
     );
@@ -95,10 +95,10 @@ const alteration: AlterationScript = {
     await Promise.all(
       targetConfigKeys.map(async (configKey) => {
         const rows = await pool.many<NewPrivateKeyData>(
-          sql`select * from logto_configs where key = ${configKey}`
+          sql`select * from myeyesid_configs where key = ${configKey}`
         );
         await Promise.all(
-          rows.map(async (row) => rollbackPrivateKeysInLogtoConfig(configKey, row, pool))
+          rows.map(async (row) => rollbackPrivateKeysInMyEyesIDConfig(configKey, row, pool))
         );
       })
     );

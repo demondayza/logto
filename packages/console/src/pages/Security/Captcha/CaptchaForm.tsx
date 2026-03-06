@@ -1,4 +1,4 @@
-import { type CaptchaProvider, type CaptchaPolicy, type SignInExperience } from '@logto/schemas';
+import { type CaptchaProvider, type CaptchaPolicy, type SignInExperience } from '@myeyesid/schemas';
 import { useContext, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

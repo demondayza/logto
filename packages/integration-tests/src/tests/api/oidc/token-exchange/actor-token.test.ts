@@ -1,5 +1,5 @@
-import { ApplicationType, GrantType, InteractionEvent, type Resource } from '@logto/schemas';
-import { formUrlEncodedHeaders } from '@logto/shared';
+import { ApplicationType, GrantType, InteractionEvent, type Resource } from '@myeyesid/schemas';
+import { formUrlEncodedHeaders } from '@myeyesid/shared';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { oidcApi } from '#src/api/api.js';
@@ -19,7 +19,7 @@ describe('Token Exchange (Actor Token)', () => {
 
   const testApiResourceInfo: Pick<Resource, 'name' | 'indicator'> = {
     name: 'test-actor-token-resource',
-    indicator: 'https://actor-token.logto.io/api',
+    indicator: 'https://actor-token.myeyesid.io/api',
   };
 
   /* eslint-disable @silverhand/fp/no-let */

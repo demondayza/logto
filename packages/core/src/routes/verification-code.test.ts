@@ -1,5 +1,5 @@
-import { TemplateType } from '@logto/connector-kit';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { TemplateType } from '@myeyesid/connector-kit';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 
 import { MockTenant } from '#src/test-utils/tenant.js';
 import { createRequester } from '#src/utils/test-utils.js';

@@ -1,4 +1,4 @@
-import type { AdminConsoleKey } from '@logto/phrases';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
 import classNames from 'classnames';
 import { useEffect, useMemo, useRef, useState, forwardRef } from 'react';
 import type { HTMLProps, ReactElement, ReactNode, ForwardedRef } from 'react';
@@ -112,7 +112,7 @@ type LinkProps = Omit<HTMLProps<HTMLAnchorElement>, 'type' | 'size' | 'title' | 
    * - When it's `true`, the `rel` attribute will be set to `noopener noreferrer`.
    * - When it's `noopener`, the `rel` attribute will be set to `noopener`.
    *
-   * Typically, when navigating to Logto's website (official site, blog, documentation, etc.), use 'noopener'.
+   * Typically, when navigating to MyEyesID's website (official site, blog, documentation, etc.), use 'noopener'.
    */
   readonly targetBlank?: boolean | 'noopener';
   readonly type?: ButtonType;

@@ -1,6 +1,6 @@
 # QQ社交连接器
 
-QQ社交登录 Logto 官方连接器 [English Documentation](https://github.com/logto-io/logto/tree/master/packages/connectors/connector-qq/README.md)
+QQ社交登录 MyEyesID 官方连接器 [English Documentation](https://github.com/myeyesid-io/myeyesid/tree/master/packages/connectors/connector-qq/README.md)
 
 **目录**
 
@@ -24,10 +24,10 @@ QQ是腾讯旗下的社交平台，拥有超过6亿用户。本连接器可以�
 1. 访问[应用管理](https://connect.qq.com/manage.html)
 2. 配置应用设置:
    - 打开要用于登录的应用，点击「应用信息」
-   - 添加「网站地址」: `logto_endpoint`
-   - 添加「网站回调域」: `${logto_endpoint}/callback/${connector_id}`
+   - 添加「网站地址」: `myeyesid_endpoint`
+   - 添加「网站回调域」: `${myeyesid_endpoint}/callback/${connector_id}`
 3. 从应用信息页获取 `APP ID` 和 `APP Key`
-4. 将第 3 步获取的值填入 Logto 管理控制台的 `clientId` 和 `clientSecret` 字段
+4. 将第 3 步获取的值填入 MyEyesID 管理控制台的 `clientId` 和 `clientSecret` 字段
 
 ## 权限要求
 
@@ -42,7 +42,7 @@ QQ是腾讯旗下的社交平台，拥有超过6亿用户。本连接器可以�
 
 ## 测试QQ连接器
 
-大功告成！别忘了在[登录体验](https://{logto_endpoint}/console/connectors/social)中启用该连接器。
+大功告成！别忘了在[登录体验](https://{myeyesid_endpoint}/console/connectors/social)中启用该连接器。
 
 ## 参考
 

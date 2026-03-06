@@ -3,7 +3,7 @@ import {
   type SnakeCaseOidcConfig,
   internalPrefix,
   hasSecrets,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { appendPath } from '@silverhand/essentials';
 import { useCallback, useContext, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
@@ -136,9 +136,9 @@ function EndpointsAndCredentials({
           onChange={setSelectedDomain}
         />
       )}
-      {/* Hide logto endpoint field in third-party application's form. */}
+      {/* Hide myeyesid endpoint field in third-party application's form. */}
       {tenantEndpoint && !isThirdParty && (
-        <FormField title="application_details.logto_endpoint">
+        <FormField title="application_details.myeyesid_endpoint">
           <CopyToClipboard
             displayType="block"
             value={applyDomain(tenantEndpoint.href, selectedDomain)}

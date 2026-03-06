@@ -8,7 +8,7 @@ import {
   SignInIdentifier,
   type SignInExperience,
   type SignIn,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useContext, useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

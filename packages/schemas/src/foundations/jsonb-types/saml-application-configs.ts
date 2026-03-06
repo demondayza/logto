@@ -1,5 +1,5 @@
-import { type ToZodObject } from '@logto/connector-kit';
-import { userClaimsList, type UserClaim } from '@logto/core-kit';
+import { type ToZodObject } from '@myeyesid/connector-kit';
+import { userClaimsList, type UserClaim } from '@myeyesid/core-kit';
 import { z } from 'zod';
 
 export type SamlAttributeMapping = Partial<Record<UserClaim | 'sub', string>>;

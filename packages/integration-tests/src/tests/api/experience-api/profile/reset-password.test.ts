@@ -3,7 +3,7 @@ import {
   ForgotPasswordMethod,
   InteractionEvent,
   SignInIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
 import { type ExperienceClient } from '#src/client/experience/index.js';

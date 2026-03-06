@@ -2,8 +2,8 @@ import {
   type UpdateCustomProfileFieldData,
   type CustomProfileFieldUnion,
   type UpdateCustomProfileFieldSieOrder,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import type Queries from '#src/tenants/Queries.js';

@@ -1,6 +1,6 @@
-import { getAvailableAlterations } from '@logto/cli/lib/commands/database/alteration/index.js';
-import { ServiceLogs, Systems } from '@logto/schemas';
-import { ConsoleLog, isKeyInObject } from '@logto/shared';
+import { getAvailableAlterations } from '@myeyesid/cli/lib/commands/database/alteration/index.js';
+import { ServiceLogs, Systems } from '@myeyesid/schemas';
+import { ConsoleLog, isKeyInObject } from '@myeyesid/shared';
 import { conditionalString } from '@silverhand/essentials';
 import { sql, type CommonQueryMethods, type DatabasePool } from '@silverhand/slonik';
 import chalk from 'chalk';
@@ -28,7 +28,7 @@ const checkRowLevelSecurity = async (client: CommonQueryMethods) => {
 
   if (rlsDisabled.length > 0) {
     throw new Error(
-      'Row-level security has to be enforced on EVERY business table when starting Logto.\n' +
+      'Row-level security has to be enforced on EVERY business table when starting MyEyesID.\n' +
         `Found following table(s) without RLS: ${rlsDisabled
           .map((row) => conditionalString(isKeyInObject(row, 'tablename') && String(row.tablename)))
           .join(', ')}\n\n` +
@@ -49,7 +49,7 @@ const checkAlterationState = async (pool: CommonQueryMethods) => {
       'npm run alteration deploy'
     )} command.\n\n` +
       ` See ${chalk.blue(
-        'https://docs.logto.io/docs/references/using-cli/database-alteration'
+        'https://docs.myeyesid.io/docs/references/using-cli/database-alteration'
       )} for reference.\n`
   );
 

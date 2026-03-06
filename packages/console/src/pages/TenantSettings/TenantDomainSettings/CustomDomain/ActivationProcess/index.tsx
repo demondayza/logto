@@ -1,4 +1,4 @@
-import { type CustomDomain } from '@logto/schemas';
+import { type CustomDomain } from '@myeyesid/schemas';
 
 import { customDomainSyncInterval } from '@/consts/custom-domain';
 import DynamicT from '@/ds-components/DynamicT';

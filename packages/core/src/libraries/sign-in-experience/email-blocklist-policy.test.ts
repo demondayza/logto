@@ -1,4 +1,4 @@
-import { type EmailBlocklistPolicy } from '@logto/schemas';
+import { type EmailBlocklistPolicy } from '@myeyesid/schemas';
 import { deduplicate } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

@@ -1,10 +1,10 @@
-import { ConnectorType, TemplateType } from '@logto/connector-kit';
+import { ConnectorType, TemplateType } from '@myeyesid/connector-kit';
 import {
   AlternativeSignUpIdentifier,
   InteractionEvent,
   SignInIdentifier,
   type VerificationCodeIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
@@ -29,7 +29,7 @@ describe('Verification code verification APIs', () => {
   const identifiers: VerificationCodeIdentifier[] = [
     {
       type: SignInIdentifier.Email,
-      value: 'foo@logto.io',
+      value: 'foo@myeyesid.io',
     },
     {
       type: SignInIdentifier.Phone,
@@ -145,7 +145,7 @@ describe('Verification code verification APIs', () => {
       });
 
       // Use a valid but different identifier to trigger the mismatch error
-      const differentValue = type === SignInIdentifier.Email ? 'different@logto.io' : '9876543210';
+      const differentValue = type === SignInIdentifier.Email ? 'different@myeyesid.io' : '9876543210';
 
       await expectRejects(
         client.verifyVerificationCode({

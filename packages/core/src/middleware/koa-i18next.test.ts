@@ -1,4 +1,4 @@
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 
 import { i18next } from '#src/utils/i18n.js';
 import { createContextWithRouteParameters } from '#src/utils/test-utils.js';

@@ -3,9 +3,9 @@ import path from 'node:path';
 import { Readable } from 'node:stream';
 import { fileURLToPath } from 'node:url';
 
-import { StorageProvider } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { StorageProvider } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 import AdmZip from 'adm-zip';
 import pRetry from 'p-retry';
 import { type Response } from 'supertest';
@@ -54,7 +54,7 @@ await mockEsmWithActual('p-retry', () => ({
 
 const mockedGenerateStandardId = jest.fn(generateStandardId);
 
-await mockEsmWithActual('@logto/shared', () => ({
+await mockEsmWithActual('@myeyesid/shared', () => ({
   generateStandardId: mockedGenerateStandardId,
 }));
 

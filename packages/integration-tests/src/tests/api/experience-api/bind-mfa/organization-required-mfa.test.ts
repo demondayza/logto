@@ -4,7 +4,7 @@ import {
   MfaPolicy,
   OrganizationRequiredMfaPolicy,
   SignInIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
 import { initExperienceClient, logoutClient, processSession } from '#src/helpers/client.js';

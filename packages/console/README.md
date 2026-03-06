@@ -1,6 +1,6 @@
-# @logto/console
+# @myeyesid/console
 
-The web admin console for Logto.
+The web admin console for MyEyesID.
 
 ## Docs
 

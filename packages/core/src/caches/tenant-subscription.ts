@@ -1,4 +1,4 @@
-import { SubscriptionRedisCacheKey } from '@logto/schemas';
+import { SubscriptionRedisCacheKey } from '@myeyesid/schemas';
 import { type ZodType } from 'zod';
 
 import { type Subscription, subscriptionCacheGuard } from '#src/utils/subscription/types.js';

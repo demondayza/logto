@@ -6,7 +6,7 @@ import {
   MfaFactor,
   type Mfa,
   type UserMfaVerificationResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';

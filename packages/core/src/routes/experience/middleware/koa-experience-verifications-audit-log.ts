@@ -1,5 +1,5 @@
-import { type VerificationType } from '@logto/schemas';
-import { type Action } from '@logto/schemas/lib/types/log/interaction.js';
+import { type VerificationType } from '@myeyesid/schemas';
+import { type Action } from '@myeyesid/schemas/lib/types/log/interaction.js';
 import { type MiddlewareType } from 'koa';
 import { type IRouterParamContext } from 'koa-router';
 

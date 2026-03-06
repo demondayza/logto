@@ -1,5 +1,5 @@
-import { type GoogleConnectorConfig } from '@logto/connector-kit';
-import { Theme } from '@logto/schemas';
+import { type GoogleConnectorConfig } from '@myeyesid/connector-kit';
+import { Theme } from '@myeyesid/schemas';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Trans, useTranslation } from 'react-i18next';
 

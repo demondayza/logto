@@ -1,11 +1,11 @@
 import { InkeepModalChat } from '@inkeep/cxkit-react';
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { type ReactNode, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import AskAiIconDark from '@/assets/icons/logto-ai-bot-dark.svg?react';
-import AskAiIcon from '@/assets/icons/logto-ai-bot.svg?react';
+import AskAiIconDark from '@/assets/icons/myeyesid-ai-bot-dark.svg?react';
+import AskAiIcon from '@/assets/icons/myeyesid-ai-bot.svg?react';
 import useInkeepConfigs from '@/hooks/use-inkeep-configs';
 import useTheme from '@/hooks/use-theme';
 import { onKeyDownHandler } from '@/utils/a11y';

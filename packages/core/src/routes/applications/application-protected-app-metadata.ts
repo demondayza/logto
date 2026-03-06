@@ -1,4 +1,4 @@
-import { customDomainsGuard } from '@logto/schemas';
+import { customDomainsGuard } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import { protectedAppSignInCallbackUrl } from '#src/constants/index.js';

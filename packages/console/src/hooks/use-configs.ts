@@ -1,12 +1,12 @@
-import { useLogto } from '@logto/react';
-import type { AdminConsoleData } from '@logto/schemas';
+import { useMyEyesID } from '@myeyesid/react';
+import type { AdminConsoleData } from '@myeyesid/schemas';
 import useSWR from 'swr';
 
 import type { RequestError } from './use-api';
 import useApi from './use-api';
 
 const useConfigs = () => {
-  const { isAuthenticated, error: authError } = useLogto();
+  const { isAuthenticated, error: authError } = useMyEyesID();
   const shouldFetch = isAuthenticated && !authError;
   const {
     data: configs,

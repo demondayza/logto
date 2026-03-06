@@ -1,8 +1,8 @@
 import crypto from 'node:crypto';
 
-import { PasswordPolicyChecker } from '@logto/core-kit';
-import { InteractionEvent, MissingProfile, SignInIdentifier } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { PasswordPolicyChecker } from '@myeyesid/core-kit';
+import { InteractionEvent, MissingProfile, SignInIdentifier } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 import type { Provider } from 'oidc-provider';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
@@ -86,7 +86,7 @@ describe('validateMandatoryUserProfile', () => {
           event: InteractionEvent.Register,
           profile: {
             username: 'foo',
-            connectorId: 'logto',
+            connectorId: 'myeyesid',
           },
         })
       ).resolves.not.toThrow();
@@ -142,7 +142,7 @@ describe('validateMandatoryUserProfile', () => {
           ...interaction,
           identifiers: [
             ...interaction.identifiers,
-            { key: 'social', userInfo: { email: 'email', id: 'foo' }, connectorId: 'logto' },
+            { key: 'social', userInfo: { email: 'email', id: 'foo' }, connectorId: 'myeyesid' },
           ],
         })
       ).rejects.toMatchError(
@@ -162,7 +162,7 @@ describe('validateMandatoryUserProfile', () => {
           event: InteractionEvent.Register,
           identifiers: [
             ...interaction.identifiers,
-            { key: 'social', userInfo: { email: 'email', id: 'foo' }, connectorId: 'logto' },
+            { key: 'social', userInfo: { email: 'email', id: 'foo' }, connectorId: 'myeyesid' },
           ],
         })
       ).rejects.toMatchError(
@@ -180,7 +180,7 @@ describe('validateMandatoryUserProfile', () => {
         ...interaction,
         identifiers: [
           ...interaction.identifiers,
-          { key: 'social', userInfo: { email: 'email', id: 'foo' }, connectorId: 'logto' },
+          { key: 'social', userInfo: { email: 'email', id: 'foo' }, connectorId: 'myeyesid' },
         ],
       });
 
@@ -237,7 +237,7 @@ describe('validateMandatoryUserProfile', () => {
           ...interaction,
           identifiers: [
             ...interaction.identifiers,
-            { key: 'social', userInfo: { phone: '123456', id: 'foo' }, connectorId: 'logto' },
+            { key: 'social', userInfo: { phone: '123456', id: 'foo' }, connectorId: 'myeyesid' },
           ],
         })
       ).rejects.toMatchError(
@@ -257,7 +257,7 @@ describe('validateMandatoryUserProfile', () => {
           event: InteractionEvent.Register,
           identifiers: [
             ...interaction.identifiers,
-            { key: 'social', userInfo: { phone: '123456', id: 'foo' }, connectorId: 'logto' },
+            { key: 'social', userInfo: { phone: '123456', id: 'foo' }, connectorId: 'myeyesid' },
           ],
         })
       ).rejects.toMatchError(
@@ -275,7 +275,7 @@ describe('validateMandatoryUserProfile', () => {
         ...interaction,
         identifiers: [
           ...interaction.identifiers,
-          { key: 'social', userInfo: { phone: '123456', id: 'foo' }, connectorId: 'logto' },
+          { key: 'social', userInfo: { phone: '123456', id: 'foo' }, connectorId: 'myeyesid' },
         ],
       });
 
@@ -328,7 +328,7 @@ describe('validateMandatoryUserProfile', () => {
         ...interaction,
         identifiers: [
           ...interaction.identifiers,
-          { key: 'social', userInfo: { email: 'email', id: 'foo' }, connectorId: 'logto' },
+          { key: 'social', userInfo: { email: 'email', id: 'foo' }, connectorId: 'myeyesid' },
         ],
       });
 
@@ -340,7 +340,7 @@ describe('validateMandatoryUserProfile', () => {
         ...interaction,
         identifiers: [
           ...interaction.identifiers,
-          { key: 'social', userInfo: { phone: '123456', id: 'foo' }, connectorId: 'logto' },
+          { key: 'social', userInfo: { phone: '123456', id: 'foo' }, connectorId: 'myeyesid' },
         ],
       });
 
@@ -392,7 +392,7 @@ describe('validateMandatoryUserProfile', () => {
     await expect(
       validateMandatoryUserProfile(users, ctx, {
         event: InteractionEvent.Register,
-        profile: { connectorId: 'logto' },
+        profile: { connectorId: 'myeyesid' },
       })
     ).resolves.not.toThrow();
   });

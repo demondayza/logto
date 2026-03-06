@@ -1,5 +1,5 @@
-import type { LogKey } from '@logto/schemas';
-import { LogResult, token } from '@logto/schemas';
+import type { LogKey } from '@myeyesid/schemas';
+import { LogResult, token } from '@myeyesid/schemas';
 
 import { createMockLogContext } from '#src/test-utils/koa-audit-log.js';
 import { stringifyError } from '#src/utils/format.js';

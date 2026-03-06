@@ -33,7 +33,7 @@ export default function koaSecurityHeaders<StateT, ContextT, ResponseBodyT>(
   const { isProduction, isCloud, urlSet, adminUrlSet, cloudUrlSet } = EnvSet.values;
 
   const tenantEndpointOrigin = getTenantEndpoint(tenantId, EnvSet.values).origin;
-  // Logto Cloud uses cloud service to serve the admin console; while Logto OSS uses a fixed path under the admin URL set.
+  // MyEyesID Cloud uses cloud service to serve the admin console; while MyEyesID OSS uses a fixed path under the admin URL set.
   const adminOrigins = isCloud ? cloudUrlSet.origins : adminUrlSet.origins;
   const coreOrigins = urlSet.origins;
   const developmentOrigins = isProduction
@@ -50,7 +50,7 @@ export default function koaSecurityHeaders<StateT, ContextT, ResponseBodyT>(
         'http://localhost:5173', // From local website
         'http://localhost:5174', // From local blog
       ];
-  const logtoOrigin = 'https://*.logto.io';
+  const myeyesidOrigin = 'https://*.myeyesid.io';
   /** Google Sign-In (GSI) origin for Google One Tap. */
   const gsiOrigin = 'https://accounts.google.com/gsi/';
 
@@ -184,7 +184,7 @@ export default function koaSecurityHeaders<StateT, ContextT, ResponseBodyT>(
           ...conditionalArray(!isProduction && ["'unsafe-eval'", "'unsafe-inline'"]),
           ...cdnSources,
         ],
-        connectSrc: ["'self'", logtoOrigin, ...adminOrigins, ...coreOrigins, ...developmentOrigins],
+        connectSrc: ["'self'", myeyesidOrigin, ...adminOrigins, ...coreOrigins, ...developmentOrigins],
         frameSrc: ["'self'", ...adminOrigins, ...coreOrigins],
       },
     },

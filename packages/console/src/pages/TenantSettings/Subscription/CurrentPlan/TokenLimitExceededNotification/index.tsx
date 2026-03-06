@@ -24,7 +24,7 @@ function TokenLimitExceededNotification({ periodicUsage, className }: Props) {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
 
   const {
-    logtoSkus,
+    myeyesidSkus,
     currentSubscriptionQuota,
     currentSubscription: { planId, isEnterprisePlan },
   } = useContext(SubscriptionDataContext);
@@ -33,7 +33,7 @@ function TokenLimitExceededNotification({ periodicUsage, className }: Props) {
   const { show } = useConfirmModal();
 
   const [isLoading, setIsLoading] = useState(false);
-  const proSku = useMemo(() => logtoSkus.find(({ id }) => id === latestProPlanId), [logtoSkus]);
+  const proSku = useMemo(() => myeyesidSkus.find(({ id }) => id === latestProPlanId), [myeyesidSkus]);
   const { tokenLimit } = currentSubscriptionQuota;
 
   const tokenUsagePercent = useMemo(() => {

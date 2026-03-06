@@ -1,5 +1,5 @@
-import type { CreateSignInExperience } from '@logto/schemas';
-import { SignInExperiences } from '@logto/schemas';
+import type { CreateSignInExperience } from '@myeyesid/schemas';
+import { SignInExperiences } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 
 import { type WellKnownCache } from '#src/caches/well-known.js';

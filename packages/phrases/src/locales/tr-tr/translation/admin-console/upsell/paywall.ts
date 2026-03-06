@@ -43,7 +43,7 @@ const paywall = {
     '{{count, number}} <planName/> rol başına izin sınırına ulaşıldı. İlave roller ve izinler eklemek için planı yükseltin. Yardım için ihtiyacınız olursa, <a>iletişime geçin</a>.',
   saml_applications_oss:
     'Ek SAML uygulaması, MyEyesID Enterprise planı ile mevcuttur. Yardıma ihtiyacınız olursa, bizimle iletişime geçin.',
-  logto_pricing_button_text: 'MyEyesID Bulut Fiyatlandırması',
+  myeyesid_pricing_button_text: 'MyEyesID Bulut Fiyatlandırması',
   saml_applications:
     'Ek SAML uygulaması, MyEyesID Enterprise planı ile mevcuttur. Yardım için bize ulaşın.',
   saml_applications_add_on:

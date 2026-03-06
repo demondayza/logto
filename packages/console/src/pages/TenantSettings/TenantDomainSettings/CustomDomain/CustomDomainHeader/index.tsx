@@ -1,4 +1,4 @@
-import { DomainStatus, type CustomDomain } from '@logto/schemas';
+import { DomainStatus, type CustomDomain } from '@myeyesid/schemas';
 import { toast } from 'react-hot-toast';
 import { Trans, useTranslation } from 'react-i18next';
 

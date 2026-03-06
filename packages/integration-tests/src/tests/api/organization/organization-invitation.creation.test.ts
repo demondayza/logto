@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 
-import { ConnectorType } from '@logto/connector-kit';
-import { generateStandardId } from '@logto/shared';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { generateStandardId } from '@myeyesid/shared';
 import { HTTPError } from 'ky';
 
 import { createUser } from '#src/api/admin-user.js';

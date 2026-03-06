@@ -1,5 +1,5 @@
-import type { ConnectorType } from '@logto/schemas';
-import { SignInIdentifier } from '@logto/schemas';
+import type { ConnectorType } from '@myeyesid/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';

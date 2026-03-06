@@ -1,4 +1,4 @@
-import { type UserProfileResponse } from '@logto/schemas';
+import { type UserProfileResponse } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import { type ProtectedAppMetadata } from '@logto/schemas';
+import { type ProtectedAppMetadata } from '@myeyesid/schemas';
 import { type Response } from 'got';
 import { type ZodType, z } from 'zod';
 
@@ -19,13 +19,13 @@ export type HandleResponse = {
 };
 
 export type SiteConfigs = ProtectedAppMetadata & {
-  /* The Logto SDK configuration */
+  /* The MyEyesID SDK configuration */
   sdkConfig: {
     /* The client ID of the application */
     appId: string;
     /* The client secret of the application */
     appSecret: string;
-    /* The Logto endpoint */
+    /* The MyEyesID endpoint */
     endpoint: string;
   };
 };

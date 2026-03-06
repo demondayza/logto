@@ -4,7 +4,7 @@ import {
   SsoConnectorIdpInitiatedAuthConfigs,
   type CreateSsoConnectorIdpInitiatedAuthConfig,
   type SsoConnectorIdpInitiatedAuthConfig,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, type DeepPartial } from '@silverhand/essentials';
 import { t } from 'i18next';
 import { toast } from 'react-hot-toast';

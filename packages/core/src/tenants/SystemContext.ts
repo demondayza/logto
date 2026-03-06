@@ -8,7 +8,7 @@ import {
   type SystemKey,
   type ProtectedAppConfigProviderData,
   protectedAppConfigProviderDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { type ZodType } from 'zod';
 

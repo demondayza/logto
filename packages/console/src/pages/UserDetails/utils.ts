@@ -1,5 +1,5 @@
-import type { UserProfileResponse } from '@logto/schemas';
-import { formatToInternationalPhoneNumber } from '@logto/shared/universal';
+import type { UserProfileResponse } from '@myeyesid/schemas';
+import { formatToInternationalPhoneNumber } from '@myeyesid/shared/universal';
 import { conditional } from '@silverhand/essentials';
 
 import type { UserDetailsForm } from './types';

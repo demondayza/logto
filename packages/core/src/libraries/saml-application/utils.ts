@@ -7,7 +7,7 @@ import {
   type SamlAcsUrl,
   BindingType,
   type CertificateFingerprints,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { appendPath } from '@silverhand/essentials';
 import { addYears } from 'date-fns';
 import forge from 'node-forge';
@@ -56,11 +56,11 @@ const createCertificate = (keypair: forge.pki.KeyPair, lifeSpanInYears: number) 
   const issuerAttributes: forge.pki.CertificateField[] = [
     {
       name: 'commonName',
-      value: 'logto.io',
+      value: 'myeyesid.io',
     },
     {
       name: 'organizationName',
-      value: 'Logto',
+      value: 'MyEyesID',
     },
     {
       name: 'countryName',

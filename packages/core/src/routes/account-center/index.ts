@@ -2,7 +2,7 @@ import {
   AccountCenters,
   accountCenterFieldControlGuard,
   webauthnRelatedOriginsGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { deduplicate } from '@silverhand/essentials';
 import { z } from 'zod';
 

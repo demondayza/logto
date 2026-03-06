@@ -1,4 +1,4 @@
-import { UsersPasswordEncryptionMethod } from '@logto/schemas';
+import { UsersPasswordEncryptionMethod } from '@myeyesid/schemas';
 
 import RequestError from '../errors/RequestError/index.js';
 

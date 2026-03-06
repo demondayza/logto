@@ -1,4 +1,4 @@
-import { AccountCenterControlValue, ConnectorType } from '@logto/schemas';
+import { AccountCenterControlValue, ConnectorType } from '@myeyesid/schemas';
 import { Trans, useTranslation } from 'react-i18next';
 
 import DynamicT from '@/ds-components/DynamicT';

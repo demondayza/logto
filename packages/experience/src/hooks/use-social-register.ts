@@ -1,4 +1,4 @@
-import { AgreeToTermsPolicy, experience, InteractionEvent } from '@logto/schemas';
+import { AgreeToTermsPolicy, experience, InteractionEvent } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 
 import { registerWithVerifiedIdentifier } from '@/apis/experience';

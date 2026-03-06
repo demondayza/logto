@@ -92,7 +92,7 @@ describe('OIDC getUserClaims()', () => {
       getAcceptedUserClaims({
         use: use.idToken,
         scope:
-          'openid profile roles urn:logto:scope:organizations urn:logto:scope:organization_roles',
+          'openid profile roles urn:myeyesid:scope:organizations urn:myeyesid:scope:organization_roles',
         rejected: [],
         enabledExtendedIdTokenClaims: [
           'roles',
@@ -135,7 +135,7 @@ describe('OIDC getUserClaims()', () => {
     expect(
       getAcceptedUserClaims({
         use: use.idToken,
-        scope: 'openid profile urn:logto:scope:sessions',
+        scope: 'openid profile urn:myeyesid:scope:sessions',
         rejected: [],
       })
     ).toEqual(profileExpectation);

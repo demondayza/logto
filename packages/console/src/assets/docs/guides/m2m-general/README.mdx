@@ -7,7 +7,7 @@ import ApplicationCredentials from '@/mdx-components/ApplicationCredentials';
 import AppIdentifierSrc from './assets/api-identifier.png';
 import AssignM2mRolesModalSrc from './assets/assign-m2m-roles-modal.png';
 import AssignM2mRolesPageSrc from './assets/assign-m2m-roles-page.png';
-import LogtoManagementApiSrc from './assets/logto-management-api.png';
+import MyEyesIDManagementApiSrc from './assets/myeyesid-management-api.png';
 
 <Steps>
 <Step title="Intro">
@@ -18,7 +18,7 @@ Since MyEyesID uses RBAC as its access control policy, assigning M2M roles to M2
 
 There are two common use cases of using machine-to-machine apps in MyEyesID:
 
-1. **Accessing Logto Management API**: In this case, you need to assign a M2M role that include the `all` permission from the built-in Logto Management API to your M2M app.
+1. **Accessing MyEyesID Management API**: In this case, you need to assign a M2M role that include the `all` permission from the built-in MyEyesID Management API to your M2M app.
 2. **Accessing your API resource**: In this case, you need to assign M2M roles that include permissions from your API resources to your M2M app.
 
 During the M2M app creation process, you'll be directed to a page where you can assign machine-to-machine (M2M) roles to your applications:
@@ -62,7 +62,7 @@ Authorization: Basic ${props.showAppSecret ? btoa(`${props.app.id}:${props.secre
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=client_credentials
-resource=https://${props.app.tenantId}.logto.app/api
+resource=https://${props.app.tenantId}.myeyesid.app/api
 scope=all`}
 </Code>
 
@@ -71,17 +71,17 @@ scope=all`}
 
 <Tabs>
 
-<TabItem value="Logto Management API" label="For Logto Management API">
+<TabItem value="MyEyesID Management API" label="For MyEyesID Management API">
 
-MyEyesID provides a built-in "Logto Management API" resource, it's a readonly resource with the `all` permission to access Logto Management API, you can see it from your API resource list.
-The resource API indicator is in the pattern of `https://[your-tenant-id].logto.app/api`, and this will be your resource value used in the access token request body.
+MyEyesID provides a built-in "MyEyesID Management API" resource, it's a readonly resource with the `all` permission to access MyEyesID Management API, you can see it from your API resource list.
+The resource API indicator is in the pattern of `https://[your-tenant-id].myeyesid.app/api`, and this will be your resource value used in the access token request body.
 
-<img alt="Logto Management API details" src={LogtoManagementApiSrc} width="600px" style={{ borderRadius: '6px' }}/>
+<img alt="MyEyesID Management API details" src={MyEyesIDManagementApiSrc} width="600px" style={{ borderRadius: '6px' }}/>
 
-Before accessing Logto Management API, make sure your M2M app has been assigned with M2M roles that include the `all` permission from this built-in "Logto Management API" resource.
+Before accessing MyEyesID Management API, make sure your M2M app has been assigned with M2M roles that include the `all` permission from this built-in "MyEyesID Management API" resource.
 
 <InlineNotification>
-MyEyesID also provides a pre-configured "Logto Management API access" M2M role for new created tenants, which the Logto Management API resource's all permission has already assigned to. You can use it directly without manually setting permissions. This pre-configured role can also be edited and deleted as needed.
+MyEyesID also provides a pre-configured "MyEyesID Management API access" M2M role for new created tenants, which the MyEyesID Management API resource's all permission has already assigned to. You can use it directly without manually setting permissions. This pre-configured role can also be edited and deleted as needed.
 </InlineNotification>
 
 Now, compose all we have and send the request:
@@ -90,7 +90,7 @@ Now, compose all we have and send the request:
 <TabItem value="Node.js" label="Node.js">
 
 <Code className="language-js">
-    {`const logtoEndpoint = '${props.endpoint}';
+    {`const myeyesidEndpoint = '${props.endpoint}';
 const tokenEndpoint = '${new URL('/oidc/token', props.endpoint).href}';
 const appId = '${props.app.id}';
 const appSecret = '${props.showAppSecret ? props.secrets[0].value : '*'.repeat(props.secrets[0].value.length)}';
@@ -105,7 +105,7 @@ const fetchAccessToken = async () => {
     },
     body: new URLSearchParams({
       grant_type: 'client_credentials',
-      resource: 'https://${props.app.tenantId}.logto.app/api',
+      resource: 'https://${props.app.tenantId}.myeyesid.app/api',
       scope: 'all',
     }).toString(),
   });
@@ -122,7 +122,7 @@ const fetchAccessToken = async () => {
   --header 'Authorization: Basic ${props.showAppSecret ? btoa(`${props.app.id}:${props.secrets[0].value}`) : '*'.repeat(btoa(`${props.app.id}:${props.secrets[0].value}`).length)}' \\
   --header 'Content-Type: application/x-www-form-urlencoded' \\
   --data-urlencode 'grant_type=client_credentials' \\
-  --data-urlencode 'resource=https://${props.app.tenantId}.logto.app/api' \\
+  --data-urlencode 'resource=https://${props.app.tenantId}.myeyesid.app/api' \\
   --data-urlencode 'scope=all'`}
 </Code>
 
@@ -139,7 +139,7 @@ A successful access token response body would be like:
   "access_token": "<granted-access-token>", // E.g. eyJhb...2g
   "expires_in": 3600, // Token expiration in seconds
   "token_type": "Bearer", // Auth type for your request when using the access token
-  "scope": "all" // scope `all` for Logto Management API
+  "scope": "all" // scope `all` for MyEyesID Management API
 }
 ```
 
@@ -166,7 +166,7 @@ Now, compose all we have and send the request:
 <TabItem value="Node.js" label="Node.js">
 
 <Code className="language-js">
-{`const logtoEndpoint = '${props.endpoint}';
+{`const myeyesidEndpoint = '${props.endpoint}';
 const tokenEndpoint = '${new URL('/oidc/token', props.endpoint).href}';
 const appId = '${props.app.id}';
 const appSecret = '${props.showAppSecret ? props.secrets[0].value : '*'.repeat(props.secrets[0].value.length)}';
@@ -228,18 +228,18 @@ A successful access token response body would be like:
 You may notice the token response has a `token_type` field, which it's fixed to `Bearer`. Thus you should put the access token in the `Authorization` field of HTTP headers with the Bearer format (`Bearer <your-access-token>`).
 
 <Tabs>
-<TabItem value="Logto Management API" label="Interact with Logto Management API">
+<TabItem value="MyEyesID Management API" label="Interact with MyEyesID Management API">
 
-Using the requested access token with the built-in Logto Management API endpoint (`https://[your-tenant-id].logto.app/api`) to get all applications in your MyEyesID tenant:
+Using the requested access token with the built-in MyEyesID Management API endpoint (`https://[your-tenant-id].myeyesid.app/api`) to get all applications in your MyEyesID tenant:
 
 <Tabs>
 <TabItem value="Node.js" label="Node.js">
 
 <Code className="language-js">
-{`const logtoEndpoint = '${props.endpoint}';
+{`const myeyesidEndpoint = '${props.endpoint}';
 const accessToken = 'eyJhb...2g'; // Your JWT access token
 
-const fetchLogtoApplications = async () => {
+const fetchMyEyesIDApplications = async () => {
   return await fetch('${new URL('/api/applications', props.endpoint).href}', {
     method: 'GET',
     headers: {

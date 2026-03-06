@@ -1,4 +1,4 @@
-import { type SamlApplicationSecretResponse } from '@logto/schemas';
+import { type SamlApplicationSecretResponse } from '@myeyesid/schemas';
 import { compareDesc } from 'date-fns';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

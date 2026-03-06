@@ -1,6 +1,6 @@
 import nock from 'nock';
 
-import { type EmailTemplateDetails, TemplateType } from '@logto/connector-kit';
+import { type EmailTemplateDetails, TemplateType } from '@myeyesid/connector-kit';
 
 import createMailgunConnector from './index.js';
 import { type MailgunConfig } from './types.js';

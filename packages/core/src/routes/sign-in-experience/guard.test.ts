@@ -1,5 +1,5 @@
-import type { CreateSignInExperience, SignInExperience } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import type { CreateSignInExperience, SignInExperience } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { mockLanguageInfo, mockSignInExperience } from '#src/__mocks__/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
@@ -53,7 +53,7 @@ beforeEach(() => {
 
 describe('terms of use url', () => {
   describe('termsOfUseUrl', () => {
-    test.each([undefined, null, '', 'http://silverhand.com/terms', 'https://logto.dev/terms'])(
+    test.each([undefined, null, '', 'http://silverhand.com/terms', 'https://myeyesid.dev/terms'])(
       '%p should success',
       async (termsOfUseUrl) => {
         const signInExperience = {
@@ -72,7 +72,7 @@ describe('terms of use url', () => {
 
 describe('privacy policy url', () => {
   describe('privacyPolicyUrl', () => {
-    test.each([undefined, null, '', 'http://silverhand.com/privacy', 'https://logto.dev/privacy'])(
+    test.each([undefined, null, '', 'http://silverhand.com/privacy', 'https://myeyesid.dev/privacy'])(
       '%p should success',
       async (privacyPolicyUrl) => {
         const signInExperience = {

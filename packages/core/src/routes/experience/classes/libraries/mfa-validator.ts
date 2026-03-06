@@ -6,7 +6,7 @@ import {
   userMfaDataKey,
   type Mfa,
   type User,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type Optional } from '@silverhand/essentials';
 
 import { getAllUserEnabledMfaVerifications } from '../helpers.js';
@@ -117,7 +117,7 @@ export class MfaValidator {
       return this.adaptiveMfaResult.requiresMfa && hasUserFactors;
     }
 
-    const mfaData = userMfaDataGuard.safeParse(this.user.logtoConfig[userMfaDataKey]);
+    const mfaData = userMfaDataGuard.safeParse(this.user.myeyesidConfig[userMfaDataKey]);
     const skipMfaOnSignIn = mfaData.success ? mfaData.data.skipMfaOnSignIn : undefined;
 
     if (skipMfaOnSignIn && this.mfaSettings.policy !== MfaPolicy.Mandatory) {

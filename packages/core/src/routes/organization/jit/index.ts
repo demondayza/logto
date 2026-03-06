@@ -1,4 +1,4 @@
-import { type OrganizationKeys, type CreateOrganization, type Organization } from '@logto/schemas';
+import { type OrganizationKeys, type CreateOrganization, type Organization } from '@myeyesid/schemas';
 
 import type OrganizationQueries from '#src/queries/organization/index.js';
 import type SchemaRouter from '#src/utils/SchemaRouter.js';

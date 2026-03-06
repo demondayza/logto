@@ -1,6 +1,6 @@
-import { ConnectorType, GoogleConnector } from '@logto/connector-kit';
-import { VerificationType, type SocialVerificationRecordData } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { ConnectorType, GoogleConnector } from '@myeyesid/connector-kit';
+import { VerificationType, type SocialVerificationRecordData } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockConnector } from '#src/__mocks__/connector.js';
 import RequestError from '#src/errors/RequestError/index.js';
@@ -15,7 +15,7 @@ const { mockEsmWithActual } = createMockUtils(jest);
 
 const isExternalGoogleOneTapChecker = jest.fn().mockReturnValue(false);
 
-await mockEsmWithActual('@logto/connector-kit', () => ({
+await mockEsmWithActual('@myeyesid/connector-kit', () => ({
   isExternalGoogleOneTap: isExternalGoogleOneTapChecker,
 }));
 
@@ -124,8 +124,8 @@ describe('SocialVerification', () => {
         ...createMockLogContext(),
         cookies: {
           get: jest.fn().mockImplementation((key) => {
-            // For external Google One Tap, return the credential value for the logto cookie
-            if (key === '_logto_google_one_tap_credential') {
+            // For external Google One Tap, return the credential value for the myeyesid cookie
+            if (key === '_myeyesid_google_one_tap_credential') {
               return 'credential';
             }
             return 'different_token';
@@ -216,8 +216,8 @@ describe('SocialVerification', () => {
         ...createMockLogContext(),
         cookies: {
           get: jest.fn().mockImplementation((key) => {
-            // For external Google One Tap, return the credential value for the logto cookie
-            if (key === '_logto_google_one_tap_credential') {
+            // For external Google One Tap, return the credential value for the myeyesid cookie
+            if (key === '_myeyesid_google_one_tap_credential') {
               return 'external_credential';
             }
             return 'different_token';

@@ -1,4 +1,4 @@
-import { SignInIdentifier, VerificationType } from '@logto/schemas';
+import { SignInIdentifier, VerificationType } from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';

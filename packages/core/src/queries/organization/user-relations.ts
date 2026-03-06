@@ -8,7 +8,7 @@ import {
   type UserWithOrganizationRoles,
   type FeaturedUser,
   userInfoSelectFields,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import { type SearchOptions, buildSearchSql, expandFields } from '#src/database/utils.js';

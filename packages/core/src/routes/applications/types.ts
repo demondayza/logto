@@ -1,7 +1,7 @@
 import {
   applicationCreateGuard as originalApplicationCreateGuard,
   applicationPatchGuard as originalApplicationPatchGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { z } from 'zod';
 
 export const applicationCreateGuard = originalApplicationCreateGuard

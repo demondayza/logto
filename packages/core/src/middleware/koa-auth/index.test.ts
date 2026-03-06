@@ -1,5 +1,5 @@
-import { defaultManagementApi } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { defaultManagementApi } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 import type { Context } from 'koa';
 import type { IRouterParamContext } from 'koa-router';
 import Sinon from 'sinon';

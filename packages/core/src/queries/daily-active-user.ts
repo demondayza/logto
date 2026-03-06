@@ -1,4 +1,4 @@
-import { DailyActiveUsers } from '@logto/schemas';
+import { DailyActiveUsers } from '@myeyesid/schemas';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import { buildInsertIntoWithPool } from '#src/database/insert-into.js';

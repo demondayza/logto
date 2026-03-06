@@ -1,5 +1,5 @@
-import { ConnectorType, GoogleConnector } from '@logto/connector-kit';
-import { createMockUtils } from '@logto/shared/esm';
+import { ConnectorType, GoogleConnector } from '@myeyesid/connector-kit';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockConnector } from '#src/__mocks__/connector.js';
 import type { WithLogContext } from '#src/middleware/koa-audit-log.js';
@@ -12,7 +12,7 @@ const { mockEsm, mockEsmWithActual } = createMockUtils(jest);
 
 const isExternalGoogleOneTap = jest.fn().mockReturnValue(false);
 
-await mockEsmWithActual('@logto/connector-kit', () => ({
+await mockEsmWithActual('@myeyesid/connector-kit', () => ({
   isExternalGoogleOneTap,
 }));
 
@@ -24,7 +24,7 @@ const tenant = new MockTenant(undefined, undefined, undefined, {
 });
 
 mockEsm('#src/libraries/connector.js', () => ({
-  getLogtoConnectorById: jest.fn().mockResolvedValue({
+  getMyEyesIDConnectorById: jest.fn().mockResolvedValue({
     metadata: {
       id: 'social',
     },
@@ -100,8 +100,8 @@ describe('verifySocialIdentity', () => {
       // @ts-expect-error test mock context
       cookies: {
         get: jest.fn().mockImplementation((key) => {
-          // For external Google One Tap, return the credential value for the logto cookie
-          if (key === '_logto_google_one_tap_credential') {
+          // For external Google One Tap, return the credential value for the myeyesid cookie
+          if (key === '_myeyesid_google_one_tap_credential') {
             return 'credential';
           }
           return 'different_token';

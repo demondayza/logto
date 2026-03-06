@@ -1,4 +1,4 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import classNames from 'classnames';
 import { type ReactNode } from 'react';
 import { toast } from 'react-hot-toast';

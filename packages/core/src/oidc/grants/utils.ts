@@ -1,4 +1,4 @@
-import { buildOrganizationUrn } from '@logto/core-kit';
+import { buildOrganizationUrn } from '@myeyesid/core-kit';
 import { cond } from '@silverhand/essentials';
 import { errors } from 'oidc-provider';
 import type { Provider, Account, KoaContextWithOIDC } from 'oidc-provider';

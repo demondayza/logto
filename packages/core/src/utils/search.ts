@@ -1,4 +1,4 @@
-import { SearchJointMode, SearchMatchMode } from '@logto/schemas';
+import { SearchJointMode, SearchMatchMode } from '@myeyesid/schemas';
 import type { Nullable, Optional } from '@silverhand/essentials';
 import { yes, conditionalString, cond } from '@silverhand/essentials';
 import { sql } from '@silverhand/slonik';

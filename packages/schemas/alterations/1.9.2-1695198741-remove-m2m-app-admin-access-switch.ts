@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import { deduplicate } from '@silverhand/essentials';
 import { sql } from '@silverhand/slonik';
 
@@ -17,7 +17,7 @@ enum PredefinedScope {
   All = 'all',
 }
 
-const getManagementApiResourceIndicator = (tenantId: string) => `https://${tenantId}.logto.app/api`;
+const getManagementApiResourceIndicator = (tenantId: string) => `https://${tenantId}.myeyesid.app/api`;
 
 const managementApiAccessRoleName = 'Management API access';
 const managementApiAccessRoleDescription = 'Management API access';
@@ -33,7 +33,7 @@ const alteration: AlterationScript = {
      * Each tenant has only one built-in management API resource and one attached internal admin role.
      * Each internal admin role has only one scope (`PredefinedScope.All`).
      *
-     * Can go to @logto/schemas/src/{utils,seeds}/* to find more details.
+     * Can go to @myeyesid/schemas/src/{utils,seeds}/* to find more details.
      *
      * Based on this setup, we can use the following query to get all internal admin roles.
      */
@@ -59,7 +59,7 @@ const alteration: AlterationScript = {
         and roles.type = ${RoleType.MachineToMachine}
         and scopes.name = ${PredefinedScope.All}
         and resources.indicator like ${getManagementApiResourceIndicator('%')}
-        and resources.name = 'Logto Management API'
+        and resources.name = 'MyEyesID Management API'
     `);
     // Can not directly use the result from the query unless we use subquery, separate the filter and subquery for easy understanding.
     const internalManagementApiRoles = internalManagementApiRolesCandidates.filter(
@@ -83,7 +83,7 @@ const alteration: AlterationScript = {
     /**
      * Step 3
      * Create new roles with only management API access for tenants (m2m apps with internal admin access should share the same role),
-     * we can not directly assign internal admin roles to m2m applications since it's "internal" and invisible to Logto users.
+     * we can not directly assign internal admin roles to m2m applications since it's "internal" and invisible to MyEyesID users.
      */
     /** A tenant can have multiple applications with internal admin role, hence need to `deduplicate()`. */
     const tenantsNeedManagementApiAccessRole = deduplicate(
@@ -176,7 +176,7 @@ const alteration: AlterationScript = {
      * Each tenant has only one built-in management API resource and one attached management API access role.
      * Each management API access role role has only one scope (`PredefinedScope.All`).
      *
-     * Can go to @logto/schemas/src/{utils,seeds}/* to find more details.
+     * Can go to @myeyesid/schemas/src/{utils,seeds}/* to find more details.
      *
      * Based on this setup, we can use the following query to get all internal admin roles.
      */
@@ -203,7 +203,7 @@ const alteration: AlterationScript = {
         and roles.type = ${RoleType.MachineToMachine}
         and scopes.name = ${PredefinedScope.All}
         and resources.indicator like ${getManagementApiResourceIndicator('%')}
-        and resources.name = 'Logto Management API';
+        and resources.name = 'MyEyesID Management API';
     `);
     // Can not directly use the result from the query unless we use subquery, separate the filter and subquery for easy understanding.
     const managementApiAccessRoles = managementApiAccessRolesCandidates.filter(

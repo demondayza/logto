@@ -1,5 +1,5 @@
-import { emailRegEx } from '@logto/core-kit';
-import { OrganizationInvitationStatus } from '@logto/schemas';
+import { emailRegEx } from '@myeyesid/core-kit';
+import { OrganizationInvitationStatus } from '@myeyesid/schemas';
 import { conditional, conditionalArray, conditionalString } from '@silverhand/essentials';
 import { useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -1,5 +1,5 @@
-import { generateDarkColor } from '@logto/core-kit';
-import { Theme } from '@logto/schemas';
+import { generateDarkColor } from '@myeyesid/core-kit';
+import { Theme } from '@myeyesid/schemas';
 import { useMemo, useCallback, useEffect, useContext } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -29,7 +29,7 @@ function BrandingForm() {
     formState: { errors, isDirty },
   } = useFormContext<SignInExperienceForm>();
   const { currentSubscriptionQuota } = useContext(SubscriptionDataContext);
-  const isHideLogtoBrandingEnabled = currentSubscriptionQuota.bringYourUiEnabled;
+  const isHideMyEyesIDBrandingEnabled = currentSubscriptionQuota.bringYourUiEnabled;
 
   const isDarkModeEnabled = watch('color.isDarkModeEnabled');
   const primaryColor = watch('color.primaryColor');
@@ -120,16 +120,16 @@ function BrandingForm() {
       )}
       {isCloud && (
         <FormField
-          title="sign_in_exp.branding.hide_logto_branding"
+          title="sign_in_exp.branding.hide_myeyesid_branding"
           featureTag={{
-            isVisible: !isHideLogtoBrandingEnabled,
+            isVisible: !isHideMyEyesIDBrandingEnabled,
             plan: latestProPlanId,
           }}
         >
           <Switch
-            label={t('sign_in_exp.branding.hide_logto_branding_description')}
-            {...register('hideLogtoBranding')}
-            disabled={!isHideLogtoBrandingEnabled}
+            label={t('sign_in_exp.branding.hide_myeyesid_branding_description')}
+            {...register('hideMyEyesIDBranding')}
+            disabled={!isHideMyEyesIDBrandingEnabled}
           />
         </FormField>
       )}

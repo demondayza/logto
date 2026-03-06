@@ -1,4 +1,4 @@
-import { type OrganizationWithRoles } from '@logto/schemas';
+import { type OrganizationWithRoles } from '@myeyesid/schemas';
 import { type ReactNode, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';

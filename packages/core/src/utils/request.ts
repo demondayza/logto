@@ -1,4 +1,4 @@
-import { type ExceptionTelemetry } from '@logto/app-insights/node';
+import { type ExceptionTelemetry } from '@myeyesid/app-insights/node';
 import { type ExtendableContext } from 'koa';
 
 // eslint-disable-next-line @typescript-eslint/ban-types

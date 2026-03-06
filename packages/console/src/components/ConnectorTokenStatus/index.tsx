@@ -1,7 +1,7 @@
 import {
   type DesensitizedEnterpriseSsoTokenSetSecret,
   type DesensitizedSocialTokenSetSecret,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import Tag, { type Props as TagProps } from '@/ds-components/Tag';

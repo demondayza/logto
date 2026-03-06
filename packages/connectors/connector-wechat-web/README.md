@@ -1,8 +1,8 @@
 # WeChat web connector
 
-The official Logto connector for WeChat social sign-in in web apps.
+The official MyEyesID connector for WeChat social sign-in in web apps.
 
-微信 web 应用社交登录官方 Logto 连接器 [中文文档](#微信网页连接器)
+微信 web 应用社交登录官方 MyEyesID 连接器 [中文文档](#微信网页连接器)
 
 **Table of contents**
 
@@ -29,11 +29,11 @@ The official Logto connector for WeChat social sign-in in web apps.
 
 ## Get started
 
-If you don't know the concept of the connector or don't know how to add this connector to your Sign-in experience, please see [Logto tutorial](https://docs.logto.io/docs/tutorials/get-started/enable-social-sign-in).
+If you don't know the concept of the connector or don't know how to add this connector to your Sign-in experience, please see [MyEyesID tutorial](https://docs.myeyesid.io/docs/tutorials/get-started/enable-social-sign-in).
 
 > **⚠️ Caution**
 > 
-> This connector is for web apps only. If you are looking for the method for signing in with WeChat in native apps, please see [WeChat native connector](https://github.com/logto-io/logto/tree/master/packages/connectors/connector-wechat-native).
+> This connector is for web apps only. If you are looking for the method for signing in with WeChat in native apps, please see [WeChat native connector](https://github.com/myeyesid-io/myeyesid/tree/master/packages/connectors/connector-wechat-native).
 
 ## Create a web app in the WeChat Open Platform
 
@@ -61,7 +61,7 @@ Most of them are pretty straightforward. After finishing the form, click "Next s
 
 #### Website info
 
-Fill "Authorization callback domain" (授权回调域) with your Logto domain. E.g., `logto.io`.
+Fill "Authorization callback domain" (授权回调域) with your MyEyesID domain. E.g., `myeyesid.io`.
 
 #### Waiting for the review result
 
@@ -77,7 +77,7 @@ Fill out the `scope` field with either 'snsapi_userinfo' or 'snsapi_base'. You c
 
 ### Test WeChat web connector
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 Once WeChat web connector is enabled, you can sign in to your app again to see if it works.
 
@@ -85,11 +85,11 @@ Once WeChat web connector is enabled, you can sign in to your app again to see i
 
 ## 开始上手
 
-如果你还不知道连接器的概念，或者还不知道如何将本连接器添加至你的「登录体验」，请先参见 [Logto 教程](https://docs.logto.io/zh-cn/docs/tutorials/get-started/enable-social-sign-in)。
+如果你还不知道连接器的概念，或者还不知道如何将本连接器添加至你的「登录体验」，请先参见 [MyEyesID 教程](https://docs.myeyesid.io/zh-cn/docs/tutorials/get-started/enable-social-sign-in)。
 
 > **⚠️ Caution**
 > 
-> 这个连接器只适用于网页应用。如果你在寻找移动端原生应用的微信登录解决方案，请移步 [微信原生连接器](https://github.com/logto-io/logto/tree/master/packages/connectors/connector-wechat-native)。
+> 这个连接器只适用于网页应用。如果你在寻找移动端原生应用的微信登录解决方案，请移步 [微信原生连接器](https://github.com/myeyesid-io/myeyesid/tree/master/packages/connectors/connector-wechat-native)。
 
 ## 在微信开放平台新建一个网页应用
 
@@ -117,7 +117,7 @@ Once WeChat web connector is enabled, you can sign in to your app again to see i
 
 #### 网站信息
 
-用你的 Logto 域名（例如 `logto.io`）填写「授权回调域」。
+用你的 MyEyesID 域名（例如 `myeyesid.io`）填写「授权回调域」。
 
 #### 等待审核结果
 
@@ -133,6 +133,6 @@ Once WeChat web connector is enabled, you can sign in to your app again to see i
 
 ### 测试微信网页连接器
 
-大功告成。别忘了 [在登录体验中启用本连接器](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
+大功告成。别忘了 [在登录体验中启用本连接器](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
 
 在微信原生连接器启用后，你可以构建并运行你的应用看看是否生效。

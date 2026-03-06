@@ -1,4 +1,4 @@
-import { InteractionEvent, type VerificationCodeIdentifier } from '@logto/schemas';
+import { InteractionEvent, type VerificationCodeIdentifier } from '@myeyesid/schemas';
 import { t } from 'i18next';
 import { useCallback, useContext, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';

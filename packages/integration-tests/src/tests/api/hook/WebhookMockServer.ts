@@ -1,7 +1,7 @@
 import { createHmac } from 'node:crypto';
 import { createServer, type RequestListener, type Server } from 'node:http';
 
-import { hookEventGuard } from '@logto/schemas';
+import { hookEventGuard } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 /**
@@ -37,7 +37,7 @@ class WebhookMockServer {
         const payload: unknown = JSON.parse(rawPayload);
 
         const body = JSON.stringify({
-          signature: request.headers['logto-signature-sha-256'],
+          signature: request.headers['myeyesid-signature-sha-256'],
           payload,
           rawPayload,
         });

@@ -15,14 +15,14 @@ const alteration: AlterationScript = {
     for (const { id: tenantId } of tenants) {
       // eslint-disable-next-line no-await-in-loop
       await pool.query(sql`
-        insert into logto_configs (tenant_id, key, value)
+        insert into myeyesid_configs (tenant_id, key, value)
           values (${tenantId}, ${idTokenConfigKey}, ${sql.jsonb(defaultIdTokenConfig)})
       `);
     }
   },
   down: async (pool) => {
     await pool.query(sql`
-      delete from logto_configs where key = ${idTokenConfigKey}
+      delete from myeyesid_configs where key = ${idTokenConfigKey}
     `);
   },
 };

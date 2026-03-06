@@ -1,4 +1,4 @@
-import { SupportedDateFormat } from '@logto/schemas';
+import { SupportedDateFormat } from '@myeyesid/schemas';
 import { render, fireEvent, act } from '@testing-library/react';
 import { useState } from 'react';
 

@@ -1,5 +1,5 @@
-import { DomainStatus } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { DomainStatus } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { mockCloudflareData, mockProtectedApplication } from '#src/__mocks__/index.js';
 import { mockIdGenerators } from '#src/test-utils/nanoid.js';

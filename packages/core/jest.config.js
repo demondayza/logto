@@ -12,7 +12,7 @@ const config = {
     '^#src/(.*)\\.js(x)?$': '<rootDir>/build/$1',
     '^(chalk|inquirer)$': '<rootDir>/../shared/lib/esm/module-proxy.js',
     // Map the connector-kit to the installed version rather than finding it from the `shared` package (which is the default behavior of `mockEsm` in the `shared` package)
-    '^@logto/connector-kit$': '<rootDir>/node_modules/@logto/connector-kit/lib/index.js',
+    '^@myeyesid/connector-kit$': '<rootDir>/node_modules/@myeyesid/connector-kit/lib/index.js',
   },
 };
 

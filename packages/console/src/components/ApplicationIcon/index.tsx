@@ -1,4 +1,4 @@
-import { ApplicationType, Theme } from '@logto/schemas';
+import { ApplicationType, Theme } from '@myeyesid/schemas';
 
 import {
   darkModeApplicationIconMap,

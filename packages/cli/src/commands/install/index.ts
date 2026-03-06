@@ -23,7 +23,7 @@ export type InstallArgs = {
   downloadUrl?: string;
 };
 
-const installLogto = async ({ path, skipSeed, downloadUrl, cloud }: InstallArgs) => {
+const installMyEyesID = async ({ path, skipSeed, downloadUrl, cloud }: InstallArgs) => {
   validateNodeVersion();
 
   // Get install location path
@@ -93,7 +93,7 @@ const install: CommandModule<
       },
     }),
   handler: async ({ p, ss, cloud, du }) => {
-    await installLogto({ path: p, skipSeed: ss, cloud, downloadUrl: du });
+    await installMyEyesID({ path: p, skipSeed: ss, cloud, downloadUrl: du });
   },
 };
 

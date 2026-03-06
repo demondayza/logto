@@ -3,7 +3,7 @@ import {
   ConnectorPlatform,
   VerificationType,
   type ExperienceSocialConnector,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, useContext } from 'react';
 
 import PageContext from '@/Providers/PageContextProvider/PageContext';
@@ -13,7 +13,7 @@ import useApi from '@/hooks/use-api';
 import useErrorHandler from '@/hooks/use-error-handler';
 import useGlobalRedirectTo from '@/hooks/use-global-redirect-to';
 import useTerms from '@/hooks/use-terms';
-import { getLogtoNativeSdk, isNativeWebview } from '@/utils/native-sdk';
+import { getMyEyesIDNativeSdk, isNativeWebview } from '@/utils/native-sdk';
 import { generateState, storeState, buildSocialLandingUri } from '@/utils/social-connectors';
 
 const useSocial = () => {
@@ -38,7 +38,7 @@ const useSocial = () => {
           ? buildSocialLandingUri(`/social/landing/${connectorId}`, redirectTo).toString()
           : redirectTo;
 
-      getLogtoNativeSdk()?.getPostMessage()({
+      getMyEyesIDNativeSdk()?.getPostMessage()({
         callbackUri: `${window.location.origin}/callback/social/${connectorId}`,
         redirectTo: redirectUri,
       });

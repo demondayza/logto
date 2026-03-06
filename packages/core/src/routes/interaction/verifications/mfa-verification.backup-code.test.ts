@@ -1,8 +1,8 @@
 import crypto from 'node:crypto';
 
-import { PasswordPolicyChecker } from '@logto/core-kit';
-import { InteractionEvent, MfaFactor, MfaPolicy } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { PasswordPolicyChecker } from '@myeyesid/core-kit';
+import { InteractionEvent, MfaFactor, MfaPolicy } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import type { Provider } from 'oidc-provider';
 
 import { mockBackupCodeBind, mockTotpBind } from '#src/__mocks__/mfa-verification.js';

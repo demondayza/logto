@@ -1,6 +1,6 @@
-import LogtoSignature from '@experience/shared/components/LogtoSignature';
-import { LogtoProvider, Prompt, ReservedScope, useLogto, UserScope } from '@logto/react';
-import { accountCenterApplicationId, SignInIdentifier } from '@logto/schemas';
+import MyEyesIDSignature from '@experience/shared/components/MyEyesIDSignature';
+import { MyEyesIDProvider, Prompt, ReservedScope, useMyEyesID, UserScope } from '@myeyesid/react';
+import { accountCenterApplicationId, SignInIdentifier } from '@myeyesid/schemas';
 import { useContext, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ import LoadingContextProvider from '@ac/Providers/LoadingContextProvider';
 import styles from './App.module.scss';
 import Callback from './Callback';
 import ErrorBoundary from './Providers/AppBoundary/ErrorBoundary';
-import LogtoErrorBoundary from './Providers/AppBoundary/LogtoErrorBoundary';
+import MyEyesIDErrorBoundary from './Providers/AppBoundary/MyEyesIDErrorBoundary';
 import PageContextProvider from './Providers/PageContextProvider';
 import PageContext from './Providers/PageContextProvider/PageContext';
 import GlobalLoading from './components/GlobalLoading';
@@ -56,7 +56,7 @@ const redirectUri = `${window.location.origin}${accountCenterBasePath}`;
 const Main = () => {
   const params = new URLSearchParams(window.location.search);
   const isInCallback = Boolean(params.get('code'));
-  const { isAuthenticated, isLoading, signIn } = useLogto();
+  const { isAuthenticated, isLoading, signIn } = useMyEyesID();
   const { isLoadingExperience, isLoadingUserInfo, userInfo, userInfoError } =
     useContext(PageContext);
   const isInitialAuthLoading = !isAuthenticated && isLoading;
@@ -141,7 +141,7 @@ const Main = () => {
 
 const Layout = () => {
   const { experienceSettings, theme } = useContext(PageContext);
-  const hideLogtoBranding = experienceSettings?.hideLogtoBranding === true;
+  const hideMyEyesIDBranding = experienceSettings?.hideMyEyesIDBranding === true;
 
   return (
     <div className={styles.app}>
@@ -149,11 +149,11 @@ const Layout = () => {
         <div className={styles.container}>
           <main className={styles.main}>
             <ErrorBoundary>
-              <LogtoErrorBoundary>
+              <MyEyesIDErrorBoundary>
                 <Main />
-              </LogtoErrorBoundary>
+              </MyEyesIDErrorBoundary>
             </ErrorBoundary>
-            {!hideLogtoBranding && <LogtoSignature className={styles.signature} theme={theme} />}
+            {!hideMyEyesIDBranding && <MyEyesIDSignature className={styles.signature} theme={theme} />}
           </main>
         </div>
       </div>
@@ -163,7 +163,7 @@ const Layout = () => {
 
 const App = () => (
   <BrowserRouter basename={accountCenterBasePath}>
-    <LogtoProvider
+    <MyEyesIDProvider
       config={{
         endpoint: window.location.origin,
         appId: accountCenterApplicationId,
@@ -184,7 +184,7 @@ const App = () => (
           </AppBoundary>
         </PageContextProvider>
       </LoadingContextProvider>
-    </LogtoProvider>
+    </MyEyesIDProvider>
   </BrowserRouter>
 );
 

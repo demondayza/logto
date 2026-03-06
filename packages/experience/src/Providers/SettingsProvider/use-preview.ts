@@ -1,4 +1,4 @@
-import { ConnectorPlatform } from '@logto/schemas';
+import { ConnectorPlatform } from '@myeyesid/schemas';
 import { useContext, useEffect, useState } from 'react';
 
 import PageContext from '@/Providers/PageContextProvider/PageContext';

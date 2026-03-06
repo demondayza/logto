@@ -1,4 +1,4 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 

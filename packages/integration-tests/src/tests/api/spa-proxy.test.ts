@@ -1,10 +1,10 @@
 import ky, { HTTPError } from 'ky';
 
-import { logtoConsoleUrl, logtoUrl } from '#src/constants.js';
+import { myeyesidConsoleUrl, myeyesidUrl } from '#src/constants.js';
 
 const apps = [
-  { name: 'experience', app: ky.extend({ prefixUrl: new URL(logtoUrl) }) },
-  { name: 'console', app: ky.extend({ prefixUrl: new URL(logtoConsoleUrl) }) },
+  { name: 'experience', app: ky.extend({ prefixUrl: new URL(myeyesidUrl) }) },
+  { name: 'console', app: ky.extend({ prefixUrl: new URL(myeyesidConsoleUrl) }) },
 ];
 
 describe.each(apps)('single page app: %s', ({ app }) => {

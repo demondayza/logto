@@ -1,4 +1,4 @@
-import { type CustomPhrase } from '@logto/schemas';
+import { type CustomPhrase } from '@myeyesid/schemas';
 
 import { mockId } from '#src/test-utils/nanoid.js';
 

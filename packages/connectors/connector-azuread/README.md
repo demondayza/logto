@@ -6,7 +6,7 @@ The Microsoft Azure AD connector provides a succinct way for your application to
 
 - [Microsoft Azure AD connector](#microsoft-azure-ad-connector)
   - [Set up Microsoft Azure AD in the Azure Portal](#set-up-microsoft-azure-ad-in-the-azure-portal)
-  - [Fill in the configuration in Logto](#fill-in-the-configuration-in-logto)
+  - [Fill in the configuration in MyEyesID](#fill-in-the-configuration-in-myeyesid)
     - [Client ID](#client-id)
     - [Client Secret](#client-secret)
     - [Cloud Instance](#cloud-instance)
@@ -19,11 +19,11 @@ The Microsoft Azure AD connector provides a succinct way for your application to
 
 - Visit the [Azure Portal](https://portal.azure.com/#home) and sign in with your Azure account. You need to have an active subscription to access Microsoft Azure AD.
 - Click the **Azure Active Directory** from the services they offer, and click the **App Registrations** from the left menu.
-- Click **New Registration** at the top, enter a description, select your **access type** and add your **Redirect URI**, which will redirect the user to the application after logging in. In our case, this will be `${your_logto_endpoint}/callback/${connector_id}`. e.g. `https://foo.logto.app/callback/${connector_id}`. (The `connector_id` can be also found on the top bar of the Logto Admin Console connector details page)
+- Click **New Registration** at the top, enter a description, select your **access type** and add your **Redirect URI**, which will redirect the user to the application after logging in. In our case, this will be `${your_myeyesid_endpoint}/callback/${connector_id}`. e.g. `https://foo.myeyesid.app/callback/${connector_id}`. (The `connector_id` can be also found on the top bar of the MyEyesID Admin Console connector details page)
   > You can copy the `Callback URI` in the configuration section.
 - Select Web as Platform.
 
-## Fill in the configuration in Logto
+## Fill in the configuration in MyEyesID
 
 | Name          | Type     |
 | ------------- | -------- |
@@ -42,7 +42,7 @@ You may find the **Application (client) ID** in the **Overview** section of your
 
 - In your newly created application, click the **Certificates & Secrets** to get a client secret, and click the **New client secret** from the top.
 - Enter a description and an expiration.
-- This will only show your client secret once. Fill the **value** to the Logto connector configuration and save it to a secure location.
+- This will only show your client secret once. Fill the **value** to the MyEyesID connector configuration and save it to a secure location.
 
 ### Cloud Instance
 
@@ -50,7 +50,7 @@ Usually, it is `https://login.microsoftonline.com/`. See [Azure AD authenticatio
 
 ### Tenant ID
 
-Logto will use this field to construct the authorization endpoints. This value is dependent on the **access type** you selected when creating the application in the Azure Portal.
+MyEyesID will use this field to construct the authorization endpoints. This value is dependent on the **access type** you selected when creating the application in the Azure Portal.
 
 - If you select **Accounts in this organizational directory only** for access type then you need to enter your **{TenantID}**. You can find the tenant ID in the **Overview** section of your Azure Active Directory.
 - If you select **Accounts in any organizational directory** for access type then you need to enter **organizations**.
@@ -66,7 +66,7 @@ The `prompts` field is an array of strings that specifies the type of user inter
 - `prompt=consent` triggers the OAuth consent dialog after the user signs in, asking the user to grant permissions to the app.
 - `prompt=select_account` interrupts single sign-on providing account selection experience listing all the accounts either in session or any remembered account or an option to choose to use a different account altogether.
 
-Logto will concatenate the prompts with a space as the value of `prompt` in the authorization URL.
+MyEyesID will concatenate the prompts with a space as the value of `prompt` in the authorization URL.
 
 ### Scopes
 

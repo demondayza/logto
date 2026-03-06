@@ -1,7 +1,7 @@
 import type { HTMLProps } from 'react';
 import { useRef, useState } from 'react';
 
-const githubRawUrlPrefix = 'https://raw.githubusercontent.com/logto-io/logto/master';
+const githubRawUrlPrefix = 'https://raw.githubusercontent.com/myeyesid-io/myeyesid/master';
 
 function GithubRawImage({ src, alt }: HTMLProps<HTMLImageElement>) {
   const imgRef = useRef<HTMLImageElement>(null);

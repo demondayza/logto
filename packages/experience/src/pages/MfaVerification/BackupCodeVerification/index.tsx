@@ -1,4 +1,4 @@
-import { MfaFactor } from '@logto/schemas';
+import { MfaFactor } from '@myeyesid/schemas';
 import { t } from 'i18next';
 import { useCallback, type FormEvent } from 'react';
 import { useForm } from 'react-hook-form';

@@ -1,4 +1,4 @@
-import { ApplicationType, type Application } from '@logto/schemas';
+import { ApplicationType, type Application } from '@myeyesid/schemas';
 import { type Nullable, joinPath, cond } from '@silverhand/essentials';
 import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +12,7 @@ import { type SelectedGuide } from '@/components/Guide/GuideCard';
 import ApplicationPreview from '@/components/ItemPreview/ApplicationPreview';
 import LearnMore from '@/components/LearnMore';
 import PageMeta from '@/components/PageMeta';
-import { integrateLogto } from '@/consts';
+import { integrateMyEyesID } from '@/consts';
 import Button from '@/ds-components/Button';
 import CardTitle from '@/ds-components/CardTitle';
 import CopyToClipboard from '@/ds-components/CopyToClipboard';
@@ -133,7 +133,7 @@ function Applications({ tab }: Props) {
           subtitle={
             <>
               <DynamicT forKey="applications.subtitle" />
-              <LearnMore isRelativeDocUrl href={integrateLogto} />
+              <LearnMore isRelativeDocUrl href={integrateMyEyesID} />
             </>
           }
         />

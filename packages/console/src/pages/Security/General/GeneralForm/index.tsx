@@ -1,4 +1,4 @@
-import { type SignInExperience } from '@logto/schemas';
+import { type SignInExperience } from '@myeyesid/schemas';
 import { useContext, useState, type ChangeEvent } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

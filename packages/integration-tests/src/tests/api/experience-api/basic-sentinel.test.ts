@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 import { authedAdminApi } from '#src/api/api.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';

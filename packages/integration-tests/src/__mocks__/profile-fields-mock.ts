@@ -7,7 +7,7 @@ import {
   type UrlProfileField,
   type AddressProfileField,
   type CheckboxProfileField,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export const nameData = {
   name: `name`,

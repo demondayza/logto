@@ -1,11 +1,11 @@
-import { VerificationType } from '@logto/schemas';
+import { VerificationType } from '@myeyesid/schemas';
 import { useCallback, useContext } from 'react';
 
 import UserInteractionContext from '@/Providers/UserInteractionContextProvider/UserInteractionContext';
 import { getSsoAuthorizationUrl } from '@/apis/experience';
 import useApi from '@/hooks/use-api';
 import useErrorHandler from '@/hooks/use-error-handler';
-import { getLogtoNativeSdk, isNativeWebview } from '@/utils/native-sdk';
+import { getMyEyesIDNativeSdk, isNativeWebview } from '@/utils/native-sdk';
 import { buildSocialLandingUri, generateState, storeState } from '@/utils/social-connectors';
 
 import useGlobalRedirectTo from './use-global-redirect-to';
@@ -33,7 +33,7 @@ const useSingleSignOn = () => {
       redirectTo
     ).toString();
 
-    getLogtoNativeSdk()?.getPostMessage()({
+    getMyEyesIDNativeSdk()?.getPostMessage()({
       callbackUri: `${window.location.origin}/callback/social/${connectorId}`,
       redirectTo: redirectUri,
     });

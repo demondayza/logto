@@ -1,4 +1,4 @@
-import { jsonObjectGuard } from '@logto/connector-kit';
+import { jsonObjectGuard } from '@myeyesid/connector-kit';
 import { z } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

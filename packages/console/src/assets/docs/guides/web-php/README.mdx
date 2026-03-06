@@ -19,21 +19,21 @@ This tutorial will show you how to integrate MyEyesID into your PHP web applicat
 </InlineNotification>
 
 ```bash
-composer require logto/sdk
+composer require myeyesid/sdk
 ```
 
 </Step>
 
-<Step title="Init LogtoClient">
+<Step title="Init MyEyesIDClient">
 
 Insert the following code into your PHP file:
 
 <Code title="index.php" className="language-php">
-{`use Logto\\Sdk\\LogtoClient;
-use Logto\\Sdk\\LogtoConfig;
+{`use MyEyesID\\Sdk\\MyEyesIDClient;
+use MyEyesID\\Sdk\\MyEyesIDConfig;
 
-$client = new LogtoClient(
-  new LogtoConfig(
+$client = new MyEyesIDClient(
+  new MyEyesIDConfig(
     endpoint: "${props.endpoint}",
     appId: "${props.app.id}",
     appSecret: "${props.secrets[0]?.value ?? props.app.secret}",
@@ -48,8 +48,8 @@ $client = new LogtoClient(
 By default, the SDK uses the built-in PHP session to store the MyEyesID data. If you want to use other storage, you can pass a custom storage object as the second parameter:
 
 <Code title="index.php" className="language-php">
-{`$client = new LogtoClient(
-  new LogtoConfig(
+{`$client = new MyEyesIDClient(
+  new MyEyesIDConfig(
     // ...
   ),
   new YourCustomStorage(),
@@ -169,13 +169,13 @@ Route::get('/userinfo', function () {
 });
 ```
 
-Our data models are based on [JsonModel](https://github.com/logto-io/php/blob/master/docs/api/classes/Logto/Sdk/Models/JsonModel.md), which is safe to accept undefined keys while encoding or decoding JSON.
+Our data models are based on [JsonModel](https://github.com/myeyesid-io/php/blob/master/docs/api/classes/MyEyesID/Sdk/Models/JsonModel.md), which is safe to accept undefined keys while encoding or decoding JSON.
 
 Note that a field (claim) with `null` value doesn't mean the field is set. The reason may be the related scope is not requested, or the user doesn't have the field.
 
 For example, if we didn't request the `email` scope when signing in, and the `email` field will be `null`. However, if we requested the `email` scope, the `email` field will be the user's email address if available.
 
-To learn more about scopes and claims, see [Get user information](https://docs.logto.io/quick-starts/php/#get-user-information).
+To learn more about scopes and claims, see [Get user information](https://docs.myeyesid.io/quick-starts/php/#get-user-information).
 
 </Step>
 

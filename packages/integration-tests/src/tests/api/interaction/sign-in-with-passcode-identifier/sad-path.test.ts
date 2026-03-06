@@ -1,5 +1,5 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { InteractionEvent, SignInMode } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { InteractionEvent, SignInMode } from '@myeyesid/schemas';
 
 import { suspendUser } from '#src/api/admin-user.js';
 import {

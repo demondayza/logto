@@ -3,8 +3,8 @@ import {
   VerificationType,
   type User,
   type PasswordVerificationRecordData,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import type Libraries from '#src/tenants/Libraries.js';
@@ -18,7 +18,7 @@ import { type IdentifierVerificationRecord } from './verification-record.js';
 export {
   type PasswordVerificationRecordData,
   passwordVerificationRecordDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export class PasswordVerification
   implements IdentifierVerificationRecord<VerificationType.Password>

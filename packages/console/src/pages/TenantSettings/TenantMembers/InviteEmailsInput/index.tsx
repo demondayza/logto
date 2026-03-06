@@ -1,5 +1,5 @@
-import { emailRegEx } from '@logto/core-kit';
-import { generateStandardShortId } from '@logto/shared/universal';
+import { emailRegEx } from '@myeyesid/core-kit';
+import { generateStandardShortId } from '@myeyesid/shared/universal';
 import { conditional, type Nullable } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useEffect, useRef, useState } from 'react';
@@ -32,7 +32,7 @@ type Props = {
 };
 
 /**
- * The body-2 font declared in @logto/core-kit/scss/fonts. It is referenced here to calculate
+ * The body-2 font declared in @myeyesid/core-kit/scss/fonts. It is referenced here to calculate
  * the width of the input text, which determines the minimum width of the input field.
  */
 const fontBody2 =

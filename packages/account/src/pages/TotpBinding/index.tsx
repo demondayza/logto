@@ -3,7 +3,7 @@ import DynamicT from '@experience/shared/components/DynamicT';
 import VerificationCodeInput, {
   defaultLength,
 } from '@experience/shared/components/VerificationCode';
-import { AccountCenterControlValue, MfaFactor, type Mfa } from '@logto/schemas';
+import { AccountCenterControlValue, MfaFactor, type Mfa } from '@myeyesid/schemas';
 import qrcode from 'qrcode';
 import { useCallback, useContext, useEffect, useState, type FormEvent } from 'react';
 import { isMobile } from 'react-device-detect';

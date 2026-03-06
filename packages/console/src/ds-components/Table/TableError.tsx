@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import RequestErrorDarkImage from '@/assets/images/request-error-dark.svg?react';

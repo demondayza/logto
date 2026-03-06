@@ -1,13 +1,13 @@
-import type router from '@logto/cloud/routes';
+import type router from '@myeyesid/cloud/routes';
 import Client from '@withtyped/client';
 
-import { type LogtoConfigLibrary } from '#src/libraries/logto-config.js';
+import { type MyEyesIDConfigLibrary } from '#src/libraries/myeyesid-config.js';
 
 import { type SsoConnectorLibrary } from '../libraries/sso-connector.js';
 
 const { jest } = import.meta;
 
-export const mockLogtoConfigsLibrary: jest.Mocked<LogtoConfigLibrary> = {
+export const mockMyEyesIDConfigsLibrary: jest.Mocked<MyEyesIDConfigLibrary> = {
   getCloudConnectionData: jest.fn(),
   getOidcConfigs: jest.fn(),
   upsertJwtCustomizer: jest.fn(),

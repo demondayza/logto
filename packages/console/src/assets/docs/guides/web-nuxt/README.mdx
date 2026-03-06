@@ -6,7 +6,7 @@ import Step from '@/mdx-components/Step';
 import CustomDomainEndpointNotice from '@/mdx-components/CustomDomainEndpointNotice';
 import Checkpoint from '../../fragments/_checkpoint.md';
 import RedirectUrisWeb from '../../fragments/_redirect-uris-web.mdx';
-import { generateStandardSecret } from '@logto/shared/universal';
+import { generateStandardSecret } from '@myeyesid/shared/universal';
 
 export const cookieEncryptionKey = generateStandardSecret();
 
@@ -21,7 +21,7 @@ export const cookieEncryptionKey = generateStandardSecret();
   MyEyesID Nuxt SDK only works with Nuxt 3.
 </InlineNotification>
 
-<NpmLikeInstallation packageName="@logto/nuxt" />
+<NpmLikeInstallation packageName="@myeyesid/nuxt" />
 
 </Step>
 
@@ -31,9 +31,9 @@ In your Nuxt config file, add the MyEyesID module and configure it:
 
 <Code title="nuxt.config.ts" className="language-tsx">
 {`export default defineNuxtConfig({
-  modules: ['@logto/nuxt'],
+  modules: ['@myeyesid/nuxt'],
   runtimeConfig: {
-    logto: {
+    myeyesid: {
       endpoint: '${props.endpoint}',
       appId: '${props.app.id}',
       appSecret: '${props.secrets[0]?.value ?? props.app.secret}',
@@ -69,16 +69,16 @@ See [runtime config](https://nuxt.com/docs/guide/going-further/runtime-config) f
 
 <RedirectUrisWeb />
 
-When registering `@logto/nuxt` module, it will do the following:
+When registering `@myeyesid/nuxt` module, it will do the following:
 
 - Add three routes for sign-in (`/sign-in`), sign-out (`/sign-out`), and callback (`/callback`).
-- Import two composables: `useLogtoClient` and `useLogtoUser`.
+- Import two composables: `useMyEyesIDClient` and `useMyEyesIDUser`.
 
-These routes are configurable via `logto.pathnames` in the module options, for example:
+These routes are configurable via `myeyesid.pathnames` in the module options, for example:
 
 ```ts title="nuxt.config.ts"
 export default defineNuxtConfig({
-  logto: {
+  myeyesid: {
     pathnames: {
       signIn: '/login',
       signOut: '/logout',
@@ -89,7 +89,7 @@ export default defineNuxtConfig({
 });
 ```
 
-Check out the [type definition file](https://github.com/logto-io/js/blob/HEAD/packages/nuxt/src/runtime/utils/types.ts) in the `@logto/nuxt` package for more information.
+Check out the [type definition file](https://github.com/myeyesid-io/js/blob/HEAD/packages/nuxt/src/runtime/utils/types.ts) in the `@myeyesid/nuxt` package for more information.
 
 <InlineNotification>
 If you configure the callback route to a different path, you need to update the redirect URI in MyEyesID accordingly.
@@ -99,12 +99,12 @@ If you configure the callback route to a different path, you need to update the 
 
 <Step title="Implement sign-in and sign-out">
 
-Since Nuxt pages will be hydrated and become a single-page application (SPA) after the initial load, we need to redirect the user to the sign-in or sign-out route when needed. To help with this, our SDK provides the `useLogtoUser()` composable, which can be used in both server and client side.
+Since Nuxt pages will be hydrated and become a single-page application (SPA) after the initial load, we need to redirect the user to the sign-in or sign-out route when needed. To help with this, our SDK provides the `useMyEyesIDUser()` composable, which can be used in both server and client side.
 
 ```html title="index.vue"
 <script setup lang="ts">
-  import { useLogtoUser } from '#imports'; // Add this line if auto-import is disabled
-  const user = useLogtoUser();
+  import { useMyEyesIDUser } from '#imports'; // Add this line if auto-import is disabled
+  const user = useMyEyesIDUser();
 </script>
 <template>
   <!-- Display user information when signed in -->

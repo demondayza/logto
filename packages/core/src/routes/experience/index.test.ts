@@ -1,13 +1,13 @@
 /* eslint-disable max-lines */
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 import {
   InteractionEvent,
   MfaFactor,
   SignInIdentifier,
   VerificationType,
   type Mfa,
-} from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+} from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 import type { Middleware } from 'koa';
 import type { IRouterParamContext } from 'koa-router';
 
@@ -148,9 +148,9 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'JP')
-      .set('x-logto-cf-latitude', '35.6762')
-      .set('x-logto-cf-longitude', '139.6503');
+      .set('x-myeyesid-cf-country', 'JP')
+      .set('x-myeyesid-cf-latitude', '35.6762')
+      .set('x-myeyesid-cf-longitude', '139.6503');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).not.toHaveBeenCalled();
@@ -163,9 +163,9 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'JP')
-      .set('x-logto-cf-latitude', '35.6762')
-      .set('x-logto-cf-longitude', '139.6503');
+      .set('x-myeyesid-cf-country', 'JP')
+      .set('x-myeyesid-cf-latitude', '35.6762')
+      .set('x-myeyesid-cf-longitude', '139.6503');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).toHaveBeenCalledWith(
@@ -182,11 +182,11 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'JP')
-      .set('x-logto-cf-latitude', '35.6762')
-      .set('x-logto-cf-longitude', '139.6503')
-      .set('x-logto-cf-bot-score', '42')
-      .set('x-logto-cf-bot-verified', 'true');
+      .set('x-myeyesid-cf-country', 'JP')
+      .set('x-myeyesid-cf-latitude', '35.6762')
+      .set('x-myeyesid-cf-longitude', '139.6503')
+      .set('x-myeyesid-cf-bot-score', '42')
+      .set('x-myeyesid-cf-bot-verified', 'true');
 
     expect(response.status).toBe(200);
     expect(mockAppend).toHaveBeenCalledWith(
@@ -210,7 +210,7 @@ describe('POST /experience/submit', () => {
     setDevFeaturesEnabled(true);
     const { requester, mockAppend } = createRequesterWithMocks({ adaptiveMfaEnabled: true });
 
-    const response = await requester.post('/experience/submit').set('x-logto-cf-bot-score', '10');
+    const response = await requester.post('/experience/submit').set('x-myeyesid-cf-bot-score', '10');
 
     expect(response.status).toBe(200);
     const adaptiveMfaResult = mockAppend.mock.calls
@@ -233,9 +233,9 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'JP')
-      .set('x-logto-cf-latitude', '0')
-      .set('x-logto-cf-longitude', '0');
+      .set('x-myeyesid-cf-country', 'JP')
+      .set('x-myeyesid-cf-latitude', '0')
+      .set('x-myeyesid-cf-longitude', '0');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).toHaveBeenCalledWith(mockUser.id, 0, 0);
@@ -247,9 +247,9 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'JP')
-      .set('x-logto-cf-latitude', 'abc')
-      .set('x-logto-cf-longitude', '181');
+      .set('x-myeyesid-cf-country', 'JP')
+      .set('x-myeyesid-cf-latitude', 'abc')
+      .set('x-myeyesid-cf-longitude', '181');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).not.toHaveBeenCalled();
@@ -262,9 +262,9 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'JP')
-      .set('x-logto-cf-latitude', '91')
-      .set('x-logto-cf-longitude', '10');
+      .set('x-myeyesid-cf-country', 'JP')
+      .set('x-myeyesid-cf-latitude', '91')
+      .set('x-myeyesid-cf-longitude', '10');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).not.toHaveBeenCalled();
@@ -281,9 +281,9 @@ describe('POST /experience/submit', () => {
       // eslint-disable-next-line no-await-in-loop
       const response = await requester
         .post('/experience/submit')
-        .set('x-logto-cf-country', country)
-        .set('x-logto-cf-latitude', '35.6762')
-        .set('x-logto-cf-longitude', '139.6503');
+        .set('x-myeyesid-cf-country', country)
+        .set('x-myeyesid-cf-latitude', '35.6762')
+        .set('x-myeyesid-cf-longitude', '139.6503');
 
       expect(response.status).toBe(200);
       expect(userGeoLocations.upsertUserGeoLocation).toHaveBeenCalledWith(
@@ -304,9 +304,9 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'jp')
-      .set('x-logto-cf-latitude', '35.6762')
-      .set('x-logto-cf-longitude', '139.6503');
+      .set('x-myeyesid-cf-country', 'jp')
+      .set('x-myeyesid-cf-latitude', '35.6762')
+      .set('x-myeyesid-cf-longitude', '139.6503');
 
     expect(response.status).toBe(200);
     expect(userSignInCountries.upsertUserSignInCountry).toHaveBeenCalledWith(mockUser.id, 'JP');
@@ -316,7 +316,7 @@ describe('POST /experience/submit', () => {
     setDevFeaturesEnabled(true);
     const { requester, userGeoLocations, userSignInCountries } = createRequesterWithMocks();
 
-    const response = await requester.post('/experience/submit').set('x-logto-cf-country', 'JP');
+    const response = await requester.post('/experience/submit').set('x-myeyesid-cf-country', 'JP');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).not.toHaveBeenCalled();
@@ -329,7 +329,7 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-latitude', '51.5074');
+      .set('x-myeyesid-cf-latitude', '51.5074');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).not.toHaveBeenCalled();
@@ -345,8 +345,8 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-latitude', '51.5074')
-      .set('x-logto-cf-longitude', '-0.1278');
+      .set('x-myeyesid-cf-latitude', '51.5074')
+      .set('x-myeyesid-cf-longitude', '-0.1278');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).toHaveBeenCalledWith(
@@ -379,9 +379,9 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'JP')
-      .set('x-logto-cf-latitude', '35.6762')
-      .set('x-logto-cf-longitude', '139.6503');
+      .set('x-myeyesid-cf-country', 'JP')
+      .set('x-myeyesid-cf-latitude', '35.6762')
+      .set('x-myeyesid-cf-longitude', '139.6503');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).toHaveBeenCalledWith(
@@ -400,9 +400,9 @@ describe('POST /experience/submit', () => {
 
     const response = await requester
       .post('/experience/submit')
-      .set('x-logto-cf-country', 'JP')
-      .set('x-logto-cf-latitude', '35.6762')
-      .set('x-logto-cf-longitude', '139.6503');
+      .set('x-myeyesid-cf-country', 'JP')
+      .set('x-myeyesid-cf-latitude', '35.6762')
+      .set('x-myeyesid-cf-longitude', '139.6503');
 
     expect(response.status).toBe(200);
     expect(userGeoLocations.upsertUserGeoLocation).toHaveBeenCalledWith(
@@ -419,8 +419,8 @@ describe('POST /experience/submit', () => {
       factor: MfaFactor.EmailVerificationCode,
       verificationType: VerificationType.EmailVerificationCode,
       identifierType: SignInIdentifier.Email,
-      identifierValue: 'bind-mfa@logto.dev',
-      updatePatch: { primaryEmail: 'bind-mfa@logto.dev' },
+      identifierValue: 'bind-mfa@myeyesid.dev',
+      updatePatch: { primaryEmail: 'bind-mfa@myeyesid.dev' },
     },
     {
       name: 'phone',
@@ -475,7 +475,7 @@ describe('POST /experience/submit', () => {
 
       const submitResponse = await requester
         .post('/experience/submit')
-        .set('x-logto-cf-bot-score', '10');
+        .set('x-myeyesid-cf-bot-score', '10');
       expect(submitResponse.status).toBe(200);
 
       expect(users.updateUserById).toHaveBeenCalledWith(

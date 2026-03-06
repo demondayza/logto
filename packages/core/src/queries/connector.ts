@@ -1,5 +1,5 @@
-import type { Connector } from '@logto/schemas';
-import { Connectors } from '@logto/schemas';
+import type { Connector } from '@myeyesid/schemas';
+import { Connectors } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

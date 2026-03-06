@@ -1,4 +1,4 @@
-import type { AdminConsoleKey } from '@logto/phrases';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
 import { conditionalString } from '@silverhand/essentials';
 import classNames from 'classnames';
 

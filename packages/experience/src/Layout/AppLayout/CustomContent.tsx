@@ -17,7 +17,7 @@ const CustomContent = ({ className }: Props) => {
   }
 
   try {
-    // Expected error; CustomContent content is load from Logto remote server
+    // Expected error; CustomContent content is load from MyEyesID remote server
     // eslint-disable-next-line react/no-danger
     return <div dangerouslySetInnerHTML={{ __html: customHtml }} className={className} />;
   } catch {

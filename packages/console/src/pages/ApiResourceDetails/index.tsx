@@ -1,5 +1,5 @@
-import type { Resource } from '@logto/schemas';
-import { isManagementApi, Theme } from '@logto/schemas';
+import type { Resource } from '@myeyesid/schemas';
+import { isManagementApi, Theme } from '@myeyesid/schemas';
 import { conditionalArray } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
@@ -52,8 +52,8 @@ function ApiResourceDetails() {
   const { ApiIcon, ManagementApiIcon } = icons[theme];
 
   const isOnPermissionPage = pathname.endsWith(ApiResourceDetailsTabs.Permissions);
-  const isLogtoManagementApiResource = isManagementApi(data?.indicator ?? '');
-  const Icon = isLogtoManagementApiResource ? ManagementApiIcon : ApiIcon;
+  const isMyEyesIDManagementApiResource = isManagementApi(data?.indicator ?? '');
+  const Icon = isMyEyesIDManagementApiResource ? ManagementApiIcon : ApiIcon;
 
   const [isGuideDrawerOpen, setIsGuideDrawerOpen] = useState(false);
   const [isDeleteFormOpen, setIsDeleteFormOpen] = useState(false);
@@ -108,7 +108,7 @@ function ApiResourceDetails() {
       onRetry={mutate}
     >
       <PageMeta titleKey="api_resource_details.page_title" />
-      {isLogtoManagementApiResource && <ManagementApiNotice />}
+      {isMyEyesIDManagementApiResource && <ManagementApiNotice />}
       {data && (
         <>
           <DetailsPageHeader
@@ -123,7 +123,7 @@ function ApiResourceDetails() {
               icon: <File />,
               title: 'application_details.check_guide',
               onClick: () => {
-                if (isLogtoManagementApiResource) {
+                if (isMyEyesIDManagementApiResource) {
                   window.open(
                     getDocumentationUrl('/docs/recipes/interact-with-management-api/'),
                     '_blank'
@@ -135,7 +135,7 @@ function ApiResourceDetails() {
             }}
             actionMenuItems={conditionalArray<MenuItem>(
               // Should not show delete button for management api resource.
-              !isLogtoManagementApiResource && {
+              !isMyEyesIDManagementApiResource && {
                 icon: <Delete />,
                 title: 'general.delete',
                 type: 'danger',
@@ -149,7 +149,7 @@ function ApiResourceDetails() {
             <GuideDrawer apiResource={data} onClose={onCloseDrawer} />
           </Drawer>
           {/* Can not delete management api resource. */}
-          {!isLogtoManagementApiResource && (
+          {!isMyEyesIDManagementApiResource && (
             <DeleteConfirmModal
               isOpen={isDeleteFormOpen}
               isLoading={isDeleting}
@@ -181,7 +181,7 @@ function ApiResourceDetails() {
               {
                 resource: data,
                 isDeleting,
-                isLogtoManagementApiResource,
+                isMyEyesIDManagementApiResource,
                 onResourceUpdated: mutate,
               } satisfies ApiResourceDetailsOutletContext
             }

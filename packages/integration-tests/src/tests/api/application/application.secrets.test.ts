@@ -1,4 +1,4 @@
-import { ApplicationType, hasSecrets, internalPrefix, type Application } from '@logto/schemas';
+import { ApplicationType, hasSecrets, internalPrefix, type Application } from '@myeyesid/schemas';
 import { cond, noop } from '@silverhand/essentials';
 import { HTTPError } from 'ky';
 

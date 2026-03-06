@@ -1,4 +1,4 @@
-import { NameIdFormat } from '@logto/schemas';
+import { NameIdFormat } from '@myeyesid/schemas';
 
 import { generateAutoSubmitForm, buildSamlAssertionNameId } from './utils.js';
 

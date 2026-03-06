@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
-import type { User, CreateUser } from '@logto/schemas';
-import { MfaFactor, Users } from '@logto/schemas';
-import { PhoneNumberParser } from '@logto/shared';
+import type { User, CreateUser } from '@myeyesid/schemas';
+import { MfaFactor, Users } from '@myeyesid/schemas';
+import { PhoneNumberParser } from '@myeyesid/shared';
 import { cond, conditionalArray, type Nullable, pick } from '@silverhand/essentials';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
@@ -100,7 +100,7 @@ export const createUserQueries = (pool: CommonQueryMethods) => {
    * In some countries, local phone numbers are often entered with a leading '0'.
    * However, in the international format that includes the country code, this leading '0' should be removed.
    * The previous implementation did not handle this correctly, causing the combination of country code + 0 + local number
-   *  to be treated as different from country code + local number in the Logto system.
+   *  to be treated as different from country code + local number in the MyEyesID system.
    * Both formats should be considered the same phone number.
    *
    * To address this, this function will:

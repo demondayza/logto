@@ -1,15 +1,15 @@
-import { logtoGoogleOneTapCookieKey } from '@logto/connector-kit';
-import { adminConsoleApplicationId, logtoCookieKey, logtoUiCookieGuard } from '@logto/schemas';
+import { myeyesidGoogleOneTapCookieKey } from '@myeyesid/connector-kit';
+import { adminConsoleApplicationId, myeyesidCookieKey, myeyesidUiCookieGuard } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import { getCookie } from 'tiny-cookie';
 
-export const logtoCookies =
-  trySafe(() => logtoUiCookieGuard.parse(getCookie(logtoCookieKey, JSON.parse))) ?? {};
+export const myeyesidCookies =
+  trySafe(() => myeyesidUiCookieGuard.parse(getCookie(myeyesidCookieKey, JSON.parse))) ?? {};
 
-export const shouldTrack = logtoCookies.appId === adminConsoleApplicationId;
+export const shouldTrack = myeyesidCookies.appId === adminConsoleApplicationId;
 
-export const logtoGoogleOneTapCookie =
+export const myeyesidGoogleOneTapCookie =
   trySafe(() => {
-    const cookieValue = getCookie(logtoGoogleOneTapCookieKey);
+    const cookieValue = getCookie(myeyesidGoogleOneTapCookieKey);
     return cookieValue ?? null;
   }) ?? null;

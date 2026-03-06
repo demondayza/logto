@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { useFormContext } from 'react-hook-form';
 
 import FormCard from '@/components/FormCard';

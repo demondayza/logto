@@ -1,5 +1,5 @@
-import { DemoConnector } from '@logto/connector-kit';
-import { PasswordPolicyChecker } from '@logto/core-kit';
+import { DemoConnector } from '@myeyesid/connector-kit';
+import { PasswordPolicyChecker } from '@myeyesid/core-kit';
 import {
   ConnectorType,
   SignInExperiences,
@@ -7,7 +7,7 @@ import {
   MfaPolicy,
   ProductEvent,
   type SignInExperience,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, type Optional, tryThat } from '@silverhand/essentials';
 import { literal, object, string, z } from 'zod';
 
@@ -49,7 +49,7 @@ export default function signInExperiencesRoutes<T extends ManagementApiRouter>(
     signInExperiences: { validateLanguageInfo },
     quota,
   } = libraries;
-  const { getLogtoConnectors } = connectors;
+  const { getMyEyesIDConnectors } = connectors;
 
   /**
    * As we only support single signInExperience settings for V1
@@ -109,7 +109,7 @@ export default function signInExperiencesRoutes<T extends ManagementApiRouter>(
         sentinelPolicy,
         captchaPolicy,
         forgotPasswordMethods,
-        hideLogtoBranding,
+        hideMyEyesIDBranding,
         passkeySignIn,
         // Guard omits adaptiveMfa when dev features are disabled; cast to handle both cases.
         // eslint-disable-next-line no-restricted-syntax
@@ -120,7 +120,7 @@ export default function signInExperiencesRoutes<T extends ManagementApiRouter>(
       }
 
       const [connectors, currentSettings] = await Promise.all([
-        getLogtoConnectors(),
+        getMyEyesIDConnectors(),
         findDefaultSignInExperience(),
       ]);
 
@@ -220,14 +220,14 @@ export default function signInExperiencesRoutes<T extends ManagementApiRouter>(
         );
       }
 
-      // Guard the quota for BYUI if the hideLogtoBranding is set to true
-      if (hideLogtoBranding) {
-        // Hide Logto branding is only available for Logto Cloud
+      // Guard the quota for BYUI if the hideMyEyesIDBranding is set to true
+      if (hideMyEyesIDBranding) {
+        // Hide MyEyesID branding is only available for MyEyesID Cloud
         assertThat(
           EnvSet.values.isCloud,
           new RequestError({
             code: 'request.invalid_input',
-            details: 'Hide Logto branding is not supported in this environment',
+            details: 'Hide MyEyesID branding is not supported in this environment',
           })
         );
         await quota.guardTenantUsageByKey('bringYourUiEnabled');

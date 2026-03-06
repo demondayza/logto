@@ -1,4 +1,4 @@
-import { hookTestErrorResponseDataGuard, type RequestErrorBody } from '@logto/schemas';
+import { hookTestErrorResponseDataGuard, type RequestErrorBody } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import dayjs from 'dayjs';
 import { HTTPError } from 'ky';

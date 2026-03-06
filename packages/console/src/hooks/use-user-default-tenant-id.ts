@@ -1,4 +1,4 @@
-import { defaultTenantIdKey, defaultTenantId as ossDefaultTenantId } from '@logto/schemas';
+import { defaultTenantIdKey, defaultTenantId as ossDefaultTenantId } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import { useCallback, useContext, useMemo } from 'react';
 import { z } from 'zod';

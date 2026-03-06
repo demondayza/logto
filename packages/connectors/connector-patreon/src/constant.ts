@@ -1,6 +1,6 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorPlatform } from '@logto/connector-kit';
-import { clientIdFormItem, clientSecretFormItem, scopeFormItem } from '@logto/connector-oauth';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorPlatform } from '@myeyesid/connector-kit';
+import { clientIdFormItem, clientSecretFormItem, scopeFormItem } from '@myeyesid/connector-oauth';
 
 export const authorizationEndpoint = 'https://www.patreon.com/oauth2/authorize';
 export const scope = 'identity identity[email]';

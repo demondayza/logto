@@ -1,10 +1,10 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { toastResponseError } from '@/cloud/hooks/use-cloud-api';
-import { type LogtoSkuResponse } from '@/cloud/types/router';
+import { type MyEyesIDSkuResponse } from '@/cloud/types/router';
 import SkuName from '@/components/SkuName';
 import { contactEmailLink } from '@/consts';
 import { subscriptionPage } from '@/consts/pages';
@@ -76,10 +76,10 @@ function SkuButton({
 
 type Props = {
   readonly currentSkuId: string;
-  readonly logtoSkus: LogtoSkuResponse[];
+  readonly myeyesidSkus: MyEyesIDSkuResponse[];
   readonly onSubscriptionUpdated: () => Promise<void>;
 };
-function SwitchPlanActionBar({ onSubscriptionUpdated, currentSkuId, logtoSkus }: Props) {
+function SwitchPlanActionBar({ onSubscriptionUpdated, currentSkuId, myeyesidSkus }: Props) {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console.subscription' });
   const { currentTenantId } = useContext(TenantsContext);
   const {
@@ -95,7 +95,7 @@ function SwitchPlanActionBar({ onSubscriptionUpdated, currentSkuId, logtoSkus }:
       return;
     }
 
-    const targetSku = logtoSkus.find(({ id }) => id === targetSkuId);
+    const targetSku = myeyesidSkus.find(({ id }) => id === targetSkuId);
 
     if (!targetSku) {
       return;
@@ -171,7 +171,7 @@ function SwitchPlanActionBar({ onSubscriptionUpdated, currentSkuId, logtoSkus }:
     <div className={styles.container}>
       <div className={styles.buttonPlaceholder} />
       {/** Public reserved plan buttons */}
-      {logtoSkus.map(({ id: skuId }) => {
+      {myeyesidSkus.map(({ id: skuId }) => {
         return (
           <SkuButton
             key={skuId}

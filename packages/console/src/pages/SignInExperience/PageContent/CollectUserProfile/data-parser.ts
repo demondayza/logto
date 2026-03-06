@@ -5,7 +5,7 @@ import {
   SupportedDateFormat,
   userProfileAddressKeys,
   type CustomProfileField,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { cond, type Optional } from '@silverhand/essentials';
 import cleanDeep from 'clean-deep';
 

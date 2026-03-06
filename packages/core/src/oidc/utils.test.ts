@@ -5,7 +5,7 @@ import {
   GrantType,
   InteractionMode,
   demoAppApplicationId,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { mockEnvSet } from '#src/test-utils/env-set.js';
 
@@ -78,9 +78,9 @@ describe('getConstantClientMetadata()', () => {
 
 describe('buildOidcClientMetadata()', () => {
   const metadata = {
-    redirectUris: ['logto.dev'],
-    postLogoutRedirectUris: ['logto.dev'],
-    logoUri: 'logto.pnf',
+    redirectUris: ['myeyesid.dev'],
+    postLogoutRedirectUris: ['myeyesid.dev'],
+    logoUri: 'myeyesid.pnf',
   };
   expect(buildOidcClientMetadata()).toEqual({ redirectUris: [], postLogoutRedirectUris: [] });
   expect(buildOidcClientMetadata(metadata)).toEqual(metadata);
@@ -98,14 +98,14 @@ describe('validateMetadata', () => {
       expect(() => {
         validateCustomClientMetadata('corsAllowedOrigins', [
           'http://localhost:3001',
-          'https://logto.dev',
+          'https://myeyesid.dev',
         ]);
       }).not.toThrow();
     });
 
     it('should throw when corsAllowedOrigins are not all valid', () => {
       expect(() => {
-        validateCustomClientMetadata('corsAllowedOrigins', ['', 'logto.dev']);
+        validateCustomClientMetadata('corsAllowedOrigins', ['', 'myeyesid.dev']);
       }).toThrow();
     });
   });
@@ -127,27 +127,27 @@ describe('validateMetadata', () => {
 
 describe('isOriginAllowed', () => {
   it('should return false if there is no corsAllowOrigins', () => {
-    expect(isOriginAllowed('https://logto.dev', {})).toBeFalsy();
+    expect(isOriginAllowed('https://myeyesid.dev', {})).toBeFalsy();
   });
 
   it('should return false if corsAllowOrigins is empty', () => {
     expect(
-      isOriginAllowed('https://logto.dev', { [CustomClientMetadataKey.CorsAllowedOrigins]: [] })
+      isOriginAllowed('https://myeyesid.dev', { [CustomClientMetadataKey.CorsAllowedOrigins]: [] })
     ).toBeFalsy();
   });
 
   it('should return false if corsAllowOrigins do not include the origin', () => {
     expect(
       isOriginAllowed('http://localhost:3001', {
-        [CustomClientMetadataKey.CorsAllowedOrigins]: ['https://logto.dev'],
+        [CustomClientMetadataKey.CorsAllowedOrigins]: ['https://myeyesid.dev'],
       })
     ).toBeFalsy();
   });
 
   it('should return true if corsAllowOrigins include the origin', () => {
     expect(
-      isOriginAllowed('https://logto.dev', {
-        [CustomClientMetadataKey.CorsAllowedOrigins]: ['https://logto.dev'],
+      isOriginAllowed('https://myeyesid.dev', {
+        [CustomClientMetadataKey.CorsAllowedOrigins]: ['https://myeyesid.dev'],
       })
     ).toBeTruthy();
   });
@@ -155,11 +155,11 @@ describe('isOriginAllowed', () => {
   it('should return true if redirectUris include the origin', () => {
     expect(
       isOriginAllowed(
-        'https://logto.dev',
+        'https://myeyesid.dev',
         {
           [CustomClientMetadataKey.CorsAllowedOrigins]: [],
         },
-        ['https://logto.dev/callback']
+        ['https://myeyesid.dev/callback']
       )
     ).toBeTruthy();
   });

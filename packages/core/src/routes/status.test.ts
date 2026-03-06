@@ -11,14 +11,14 @@ describe('status router', () => {
     const response = await requester.get('/status');
 
     expect(response.status).toBe(204);
-    expect(response.headers).not.toHaveProperty('logto-tenant-id');
+    expect(response.headers).not.toHaveProperty('myeyesid-tenant-id');
   });
 
   it('should not respond with tenant ID when no API key is set', async () => {
-    const response = await requester.get('/status').set('logto-status-api-key', 'any-key');
+    const response = await requester.get('/status').set('myeyesid-status-api-key', 'any-key');
 
     expect(response.status).toBe(204);
-    expect(response.headers).not.toHaveProperty('logto-tenant-id');
+    expect(response.headers).not.toHaveProperty('myeyesid-tenant-id');
   });
 });
 
@@ -44,16 +44,16 @@ describe('status router with API key set', () => {
   it('should respond with tenant ID when valid API key is provided', async () => {
     const requester = createRequester({ anonymousRoutes: statusRoutes });
 
-    const response = await requester.get('/status').set('logto-status-api-key', testApiKey);
-    expect(response.headers).toHaveProperty('logto-tenant-id', 'mock_id');
+    const response = await requester.get('/status').set('myeyesid-status-api-key', testApiKey);
+    expect(response.headers).toHaveProperty('myeyesid-tenant-id', 'mock_id');
   });
 
   it('should not respond with tenant ID when invalid API key is provided', async () => {
     const requester = createRequester({ anonymousRoutes: statusRoutes });
 
-    const response = await requester.get('/status').set('logto-status-api-key', 'invalid-api-key');
+    const response = await requester.get('/status').set('myeyesid-status-api-key', 'invalid-api-key');
 
     expect(response.status).toBe(204);
-    expect(response.headers).not.toHaveProperty('logto-tenant-id');
+    expect(response.headers).not.toHaveProperty('myeyesid-tenant-id');
   });
 });

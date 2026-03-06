@@ -21,13 +21,13 @@ Execute in the project root directory:
 
 ```bash
 # Install the core package for accessing predefined values and types
-go get github.com/logto-io/go/v2/core
+go get github.com/myeyesid-io/go/v2/core
 
 # Install the client package for interacting with MyEyesID
-go get github.com/logto-io/go/v2/client
+go get github.com/myeyesid-io/go/v2/client
 ```
 
-Add `github.com/logto-io/go/v2/core` and `github.com/logto-io/go/v2/client` packages to your application code:
+Add `github.com/myeyesid-io/go/v2/core` and `github.com/myeyesid-io/go/v2/client` packages to your application code:
 
 ```go title="main.go"
 package main
@@ -35,8 +35,8 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	// Add dependency
-	"github.com/logto-io/go/v2/core"
-	"github.com/logto-io/go/v2/client"
+	"github.com/myeyesid-io/go/v2/core"
+	"github.com/myeyesid-io/go/v2/client"
 )
 
 func main() {
@@ -84,7 +84,7 @@ import (
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/memstore"
 	"github.com/gin-gonic/gin"
-	"github.com/logto-io/go/v2/client"
+	"github.com/myeyesid-io/go/v2/client"
 )
 
 func main() {
@@ -92,7 +92,7 @@ func main() {
 
 	// We use memory-based session in this example
 	store := memstore.NewStore([]byte("your session secret"))
-	router.Use(sessions.Sessions("logto-session", store))
+	router.Use(sessions.Sessions("myeyesid-session", store))
 
 	router.GET("/", func(ctx *gin.Context) {
 		// Get user session
@@ -140,7 +140,7 @@ sessionStorage := &SessionStorage{session: session}
 
 </Step>
 
-<Step title="Init LogtoClient">
+<Step title="Init MyEyesIDClient">
 
 First, create a MyEyesID config:
 
@@ -148,7 +148,7 @@ First, create a MyEyesID config:
 {`func main() {
     // ...
 
-    logtoConfig := &client.LogtoConfig{
+    myeyesidConfig := &client.MyEyesIDConfig{
         Endpoint:           "${props.endpoint}",
         AppId:              "${props.app.id}",
         AppSecret:          "${props.secrets[0]?.value ?? props.app.secret}",
@@ -162,24 +162,24 @@ First, create a MyEyesID config:
 
 <CustomDomainEndpointNotice />
 
-Then, you can create a `LogtoClient` for each user request with the MyEyesID config above:
+Then, you can create a `MyEyesIDClient` for each user request with the MyEyesID config above:
 
 ```go title="main.go"
 func main() {
     // ...
 
     router.GET("/", func(ctx *gin.Context) {
-        // Init LogtoClient
+        // Init MyEyesIDClient
         session := sessions.Default(ctx)
-        logtoClient := client.NewLogtoClient(
-            logtoConfig,
+        myeyesidClient := client.NewMyEyesIDClient(
+            myeyesidConfig,
             &SessionStorage{session: session},
         )
 
         // Use MyEyesID to control the content of the home page
         authState := "You are not logged in to this website. :("
 
-        if logtoClient.IsAuthenticated() {
+        if myeyesidClient.IsAuthenticated() {
             authState = "You are logged in to this website! :)"
         }
 
@@ -223,14 +223,14 @@ After the redirect URI is configured, we add a `sign-in` route to handle the sig
     // Add a route for handling sign-in requests
     router.GET("/sign-in", func(ctx *gin.Context) {
         session := sessions.Default(ctx)
-        logtoClient := client.NewLogtoClient(
-            logtoConfig,
+        myeyesidClient := client.NewMyEyesIDClient(
+            myeyesidConfig,
             &SessionStorage{session: session},
         )
 
         // The sign-in request is handled by MyEyesID.
         // The user will be redirected to the Redirect URI on signed in.
-        signInUri, err := logtoClient.SignIn("${props.redirectUris[0] ?? '<your-redirect-uri>'}")
+        signInUri, err := myeyesidClient.SignIn("${props.redirectUris[0] ?? '<your-redirect-uri>'}")
         if err != nil {
             ctx.String(http.StatusInternalServerError, err.Error())
             return
@@ -261,13 +261,13 @@ func main() {
     // Add a route for handling sign-in callback requests
     router.GET("/callback", func(ctx *gin.Context) {
         session := sessions.Default(ctx)
-        logtoClient := client.NewLogtoClient(
-            logtoConfig,
+        myeyesidClient := client.NewMyEyesIDClient(
+            myeyesidConfig,
             &SessionStorage{session: session},
         )
 
         // The sign-in callback request is handled by MyEyesID
-        err := logtoClient.HandleSignInCallback(ctx.Request)
+        err := myeyesidClient.HandleSignInCallback(ctx.Request)
         if err != nil {
             ctx.String(http.StatusInternalServerError, err.Error())
             return
@@ -309,14 +309,14 @@ Now, let's add the `sign-out` route to handle the sign-out request and also add 
     // Add a route for handling signing out requests
     router.GET("/sign-out", func(ctx *gin.Context) {
         session := sessions.Default(ctx)
-        logtoClient := client.NewLogtoClient(
-            logtoConfig,
+        myeyesidClient := client.NewMyEyesIDClient(
+            myeyesidConfig,
             &SessionStorage{session: session},
         )
 
         // The sign-out request is handled by MyEyesID.
         // The user will be redirected to the Post Sign-out Redirect URI on signed out.
-        signOutUri, signOutErr := logtoClient.SignOut("${props.postLogoutRedirectUris[0] ?? '<your-post-sign-out-uri>'}")
+        signOutUri, signOutErr := myeyesidClient.SignOut("${props.postLogoutRedirectUris[0] ?? '<your-post-sign-out-uri>'}")
 
         if signOutErr != nil {
             ctx.String(http.StatusOK, signOutErr.Error())
@@ -350,9 +350,9 @@ func main() {
 
     router.GET("/user-id-token-claims", func(ctx *gin.Context) {
 		session := sessions.Default(ctx)
-		logtoClient := client.NewLogtoClient(logtoConfig, &SessionStorage{session: session})
+		myeyesidClient := client.NewMyEyesIDClient(myeyesidConfig, &SessionStorage{session: session})
 
-		idTokenClaims, err := logtoClient.GetIdTokenClaims()
+		idTokenClaims, err := myeyesidClient.GetIdTokenClaims()
 
 		if err != nil {
 			ctx.String(http.StatusOK, err.Error())

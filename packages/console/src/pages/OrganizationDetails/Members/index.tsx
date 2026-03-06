@@ -1,4 +1,4 @@
-import { type UserWithOrganizationRoles } from '@logto/schemas';
+import { type UserWithOrganizationRoles } from '@myeyesid/schemas';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useOutletContext } from 'react-router-dom';

@@ -1,12 +1,12 @@
-import { UserScope } from '@logto/core-kit';
-import { AccountCenterControlValue } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { AccountCenterControlValue } from '@myeyesid/schemas';
 
 import { enableAllAccountCenterFields, updateAccountCenter } from '#src/api/account-center.js';
 import {
   getMfaSettings,
-  getMyLogtoConfig,
+  getMyMyEyesIDConfig,
   updateMfaSettings,
-  updateMyLogtoConfig,
+  updateMyMyEyesIDConfig,
 } from '#src/api/my-account.js';
 import { createVerificationRecordByPassword } from '#src/api/verification-record.js';
 import { expectRejects } from '#src/helpers/index.js';
@@ -193,23 +193,23 @@ describe('my-account (mfa-settings)', () => {
     });
   });
 
-  describe('PATCH /api/my-account/logto-configs', () => {
+  describe('PATCH /api/my-account/myeyesid-configs', () => {
     it('should update MFA skip state successfully', async () => {
       const { user, username, password } = await createDefaultTenantUserWithPassword();
       const api = await signInAndGetUserApi(username, password, {
         scopes: [UserScope.Profile, UserScope.Identities],
       });
 
-      const response = await updateMyLogtoConfig(api, { mfa: { skipped: true } });
+      const response = await updateMyMyEyesIDConfig(api, { mfa: { skipped: true } });
       expect(response).toEqual({ mfa: { skipped: true } });
 
-      const updatedConfig = await getMyLogtoConfig(api);
+      const updatedConfig = await getMyMyEyesIDConfig(api);
       expect(updatedConfig.mfa.skipped).toBe(true);
 
-      const response2 = await updateMyLogtoConfig(api, { mfa: { skipped: false } });
+      const response2 = await updateMyMyEyesIDConfig(api, { mfa: { skipped: false } });
       expect(response2).toEqual({ mfa: { skipped: false } });
 
-      const updatedConfig2 = await getMyLogtoConfig(api);
+      const updatedConfig2 = await getMyMyEyesIDConfig(api);
       expect(updatedConfig2.mfa.skipped).toBe(false);
 
       await deleteDefaultTenantUser(user.id);
@@ -221,7 +221,7 @@ describe('my-account (mfa-settings)', () => {
         scopes: [UserScope.Profile],
       });
 
-      await expectRejects(updateMyLogtoConfig(api, { mfa: { skipped: true } }), {
+      await expectRejects(updateMyMyEyesIDConfig(api, { mfa: { skipped: true } }), {
         code: 'auth.unauthorized',
         status: 401,
       });
@@ -240,7 +240,7 @@ describe('my-account (mfa-settings)', () => {
         scopes: [UserScope.Profile, UserScope.Identities],
       });
 
-      await expectRejects(updateMyLogtoConfig(api, { mfa: { skipped: true } }), {
+      await expectRejects(updateMyMyEyesIDConfig(api, { mfa: { skipped: true } }), {
         code: 'account_center.field_not_editable',
         status: 400,
       });
@@ -260,7 +260,7 @@ describe('my-account (mfa-settings)', () => {
         scopes: [UserScope.Profile, UserScope.Identities],
       });
 
-      await expectRejects(updateMyLogtoConfig(api, { mfa: { skipped: true } }), {
+      await expectRejects(updateMyMyEyesIDConfig(api, { mfa: { skipped: true } }), {
         code: 'account_center.field_not_editable',
         status: 400,
       });

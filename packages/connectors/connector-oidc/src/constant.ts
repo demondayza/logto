@@ -1,5 +1,5 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
-import { ConnectorConfigFormItemType, ConnectorPlatform } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
+import { ConnectorConfigFormItemType, ConnectorPlatform } from '@myeyesid/connector-kit';
 import {
   tokenEndpointAuthOptionsFormItems,
   clientSecretFormItem,
@@ -7,7 +7,7 @@ import {
   tokenEndpointFormItem,
   authorizationEndpointFormItem,
   scopeFormItem,
-} from '@logto/connector-oauth';
+} from '@myeyesid/connector-oauth';
 
 export const defaultMetadata: ConnectorMetadata = {
   id: 'oidc',
@@ -55,7 +55,7 @@ export const defaultMetadata: ConnectorMetadata = {
       description:
         'Whether to trust the `email` claim even when `email_verified` is missing or false. Enable this only if you trust the provider to supply verified emails.',
       tooltip:
-        "Some OIDC identity providers don't return the `email_verified` claim, so emails may be unverified. Logto won’t sync unverified email to the user profile by default. Enable this only if you fully trust the identity provider's email validation.",
+        "Some OIDC identity providers don't return the `email_verified` claim, so emails may be unverified. MyEyesID won’t sync unverified email to the user profile by default. Enable this only if you fully trust the identity provider's email validation.",
       type: ConnectorConfigFormItemType.Switch,
       required: false,
       defaultValue: false,

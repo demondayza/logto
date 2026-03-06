@@ -1,4 +1,4 @@
-import { SsoProviderType, type SsoConnectorWithProviderConfig } from '@logto/schemas';
+import { SsoProviderType, type SsoConnectorWithProviderConfig } from '@myeyesid/schemas';
 
 import { type OidcSsoConnectorWithProviderConfig } from '../types/oidc';
 import { type SamlSsoConnectorWithProviderConfig } from '../types/saml';

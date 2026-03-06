@@ -26,8 +26,8 @@ describe('generateKeyPairAndCertificate', () => {
     // Verify certificate content
     const cert = forge.pki.certificateFromPem(result.certificate);
     expect(cert.subject.getField('CN').value).toBe('example.com');
-    expect(cert.issuer.getField('CN').value).toBe('logto.io');
-    expect(cert.issuer.getField('O').value).toBe('Logto');
+    expect(cert.issuer.getField('CN').value).toBe('myeyesid.io');
+    expect(cert.issuer.getField('O').value).toBe('MyEyesID');
     expect(cert.issuer.getField('C').value).toBe('US');
   });
 

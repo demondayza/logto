@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 
 const darkThemeWatchMedia = window.matchMedia('(prefers-color-scheme: dark)');
 

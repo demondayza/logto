@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared';
+import { generateStandardId } from '@myeyesid/shared';
 import { type Nullable } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

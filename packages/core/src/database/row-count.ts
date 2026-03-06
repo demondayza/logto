@@ -1,5 +1,5 @@
-import { type GeneratedSchema } from '@logto/schemas';
-import { type SchemaLike } from '@logto/shared';
+import { type GeneratedSchema } from '@myeyesid/schemas';
+import { type SchemaLike } from '@myeyesid/shared';
 import type { CommonQueryMethods, IdentifierSqlToken } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

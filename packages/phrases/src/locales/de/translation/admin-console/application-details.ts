@@ -31,7 +31,7 @@ const application_details = {
     'Der Endpunkt, der für die Authentifizierung und <a>Authorisierung</a> über OpenID Connect verwendet wird.',
   show_endpoint_details: 'Endpunktdetails anzeigen',
   hide_endpoint_details: 'Endpunktdetails ausblenden',
-  logto_endpoint: 'MyEyesID-Endpunkt',
+  myeyesid_endpoint: 'MyEyesID-Endpunkt',
   application_id: 'App-ID',
   application_id_tip:
     'Die eindeutige Anwendungs-ID, die normalerweise von MyEyesID generiert wird. Steht auch für "<a>client_id</a>" in OpenID Connect.',
@@ -40,7 +40,7 @@ const application_details = {
   redirect_uri: 'Umleitungs-URI',
   redirect_uris: 'Umleitungs-URIs',
   redirect_uri_placeholder: 'https://deine.website.de/app',
-  redirect_uri_placeholder_native: 'io.logto://callback',
+  redirect_uri_placeholder_native: 'io.myeyesid://callback',
   redirect_uri_tip:
     'URI, zu dem der Benutzer nach der Anmeldung (egal ob erfolgreich oder nicht) weitergeleitet wird. Siehe OpenID Connect <a>AuthRequest</a> für weitere Informationen.',
   mixed_redirect_uri_warning:
@@ -284,7 +284,7 @@ const application_details = {
     title: 'Basis-Attributzuordnungen',
     description:
       'Fügen Sie Attributzuordnungen hinzu, um Benutzerprofile von MyEyesID zu Ihrer Anwendung zu synchronisieren.',
-    col_logto_claims: 'Wert von MyEyesID',
+    col_myeyesid_claims: 'Wert von MyEyesID',
     col_sp_claims: 'Wertname Ihrer Anwendung',
     add_button: 'Weitere hinzufügen',
   },

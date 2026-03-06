@@ -1,6 +1,6 @@
-import { ServiceConnector } from '@logto/connector-kit';
-import { ConnectorType } from '@logto/schemas';
-import type { ConnectorFactoryResponse } from '@logto/schemas';
+import { ServiceConnector } from '@myeyesid/connector-kit';
+import { ConnectorType } from '@myeyesid/schemas';
+import type { ConnectorFactoryResponse } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useMemo } from 'react';

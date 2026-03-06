@@ -1,4 +1,4 @@
-import type { CustomClientMetadata } from '@logto/schemas';
+import type { CustomClientMetadata } from '@myeyesid/schemas';
 
 declare module 'oidc-provider' {
   export interface AllClientMetadata extends CustomClientMetadata {}

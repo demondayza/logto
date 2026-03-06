@@ -5,15 +5,15 @@ import {
   type VerificationCodeIdentifier,
   VerificationType,
   type Sentinel,
-} from '@logto/schemas';
-import { Action } from '@logto/schemas/lib/types/log/interaction.js';
+} from '@myeyesid/schemas';
+import { Action } from '@myeyesid/schemas/lib/types/log/interaction.js';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { type PasscodeLibrary } from '#src/libraries/passcode.js';
 import { type LogContext } from '#src/middleware/koa-audit-log.js';
 import type Libraries from '#src/tenants/Libraries.js';
 import type Queries from '#src/tenants/Queries.js';
-import { getLogtoCookie } from '#src/utils/cookie.js';
+import { getMyEyesIDCookie } from '#src/utils/cookie.js';
 
 import type ExperienceInteraction from '../classes/experience-interaction.js';
 import { withSentinel } from '../classes/libraries/sentinel-guard.js';
@@ -53,7 +53,7 @@ const buildVerificationCodeTemplateContext = async (
     return {};
   }
 
-  const { appId: applicationId, organizationId } = getLogtoCookie(ctx);
+  const { appId: applicationId, organizationId } = getMyEyesIDCookie(ctx);
 
   return passcodeLibrary.buildVerificationCodeContext(
     {

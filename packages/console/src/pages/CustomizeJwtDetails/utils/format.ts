@@ -1,4 +1,4 @@
-import { LogtoJwtTokenKeyType, type AccessTokenJwtCustomizer, type Json } from '@logto/schemas';
+import { MyEyesIDJwtTokenKeyType, type AccessTokenJwtCustomizer, type Json } from '@myeyesid/schemas';
 
 import type { JwtCustomizer, JwtCustomizerForm } from '../type';
 
@@ -57,19 +57,19 @@ const formatSampleCodeStringToJson = (sampleCode?: string) => {
 };
 
 const defaultValues = Object.freeze({
-  [LogtoJwtTokenKeyType.AccessToken]: {
+  [MyEyesIDJwtTokenKeyType.AccessToken]: {
     script: defaultAccessTokenJwtCustomizerCode,
     tokenSample: defaultAccessTokenPayload,
     contextSample: defaultUserTokenContextData,
   },
-  [LogtoJwtTokenKeyType.ClientCredentials]: {
+  [MyEyesIDJwtTokenKeyType.ClientCredentials]: {
     script: defaultClientCredentialsJwtCustomizerCode,
     tokenSample: defaultClientCredentialsPayload,
     contextSample: defaultM2mTokenContextData,
   },
 });
 
-export const formatResponseDataToFormData = <T extends LogtoJwtTokenKeyType>(
+export const formatResponseDataToFormData = <T extends MyEyesIDJwtTokenKeyType>(
   tokenType: T,
   data?: JwtCustomizer<T>
 ): JwtCustomizerForm => {

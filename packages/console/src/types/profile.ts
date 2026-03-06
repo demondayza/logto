@@ -1,4 +1,4 @@
-import { emailRegEx } from '@logto/core-kit';
+import { emailRegEx } from '@myeyesid/core-kit';
 import { z } from 'zod';
 
 export const locationStateGuard = z.object({

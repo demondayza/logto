@@ -1,5 +1,5 @@
-import type { SignInExperience, Profile, IdentifierPayload, MfaFactor } from '@logto/schemas';
-import { SignInMode, SignInIdentifier, InteractionEvent } from '@logto/schemas';
+import type { SignInExperience, Profile, IdentifierPayload, MfaFactor } from '@myeyesid/schemas';
+import { SignInMode, SignInIdentifier, InteractionEvent } from '@myeyesid/schemas';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import assertThat from '#src/utils/assert-that.js';

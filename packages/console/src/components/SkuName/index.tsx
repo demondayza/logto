@@ -1,4 +1,4 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { type TFuncKey } from 'i18next';
 import { useTranslation } from 'react-i18next';
 

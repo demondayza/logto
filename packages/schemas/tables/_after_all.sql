@@ -4,18 +4,18 @@
 grant select, insert, update, delete
   on all tables
   in schema public
-  to logto_tenant_${database};
+  to myeyesid_tenant_${database};
 
 ---- Security policies for tenants table ----
 
 revoke all privileges
   on table tenants
-  from logto_tenant_${database};
+  from myeyesid_tenant_${database};
 
 -- Allow limited select to perform the RLS policy query in `after_each` (using select ... from tenants ...)
 grant select (id, db_user, is_suspended, tag)
   on table tenants
-  to logto_tenant_${database};
+  to myeyesid_tenant_${database};
 
 alter table tenants enable row level security;
 
@@ -26,9 +26,9 @@ create policy tenants_tenant_id on tenants
 ---- Revoke all privileges on systems table for tenant roles ----
 revoke all privileges
   on table systems
-  from logto_tenant_${database};
+  from myeyesid_tenant_${database};
 
 ---- Revoke all privileges on service_logs table for tenant roles ----
 revoke all privileges
   on table service_logs
-  from logto_tenant_${database};
+  from myeyesid_tenant_${database};

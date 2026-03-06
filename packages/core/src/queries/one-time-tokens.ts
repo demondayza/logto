@@ -1,4 +1,4 @@
-import { OneTimeTokens, OneTimeTokenStatus, type OneTimeToken } from '@logto/schemas';
+import { OneTimeTokens, OneTimeTokenStatus, type OneTimeToken } from '@myeyesid/schemas';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 

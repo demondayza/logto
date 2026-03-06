@@ -8,7 +8,7 @@ import {
   type OrganizationWithRoles,
   type ProtectedAppMetadata,
   type Role,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import { authedAdminApi, oidcApi } from './api.js';

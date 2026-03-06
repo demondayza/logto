@@ -7,7 +7,7 @@ import {
   SsoConnectors,
   IdpInitiatedSamlSsoSessions,
   type IdpInitiatedSamlSsoSession,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import SchemaQueries from '#src/utils/SchemaQueries.js';

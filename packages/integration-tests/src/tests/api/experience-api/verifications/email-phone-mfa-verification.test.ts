@@ -1,9 +1,9 @@
-import { ConnectorType } from '@logto/connector-kit';
+import { ConnectorType } from '@myeyesid/connector-kit';
 import {
   InteractionEvent,
   SignInIdentifier,
   type VerificationCodeSignInIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { initExperienceClient, logoutClient, processSession } from '#src/helpers/client.js';
 import {

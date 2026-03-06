@@ -1,4 +1,4 @@
-import { type Application, type User } from '@logto/schemas';
+import { type Application, type User } from '@myeyesid/schemas';
 
 import ApplicationIcon from '@/components/ApplicationIcon';
 import UserAvatar from '@/components/UserAvatar';

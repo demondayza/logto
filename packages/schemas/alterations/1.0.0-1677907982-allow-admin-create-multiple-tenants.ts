@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import { sql } from '@silverhand/slonik';
 
 import type { AlterationScript } from '../lib/types/alteration.js';
@@ -11,7 +11,7 @@ const alteration: AlterationScript = {
     const { id: resourceId } = await pool.one<{ id: string }>(sql`
       select id from resources
       where tenant_id = ${adminTenantId}
-      and indicator = 'https://cloud.logto.io/api'
+      and indicator = 'https://cloud.myeyesid.io/api'
     `);
 
     await pool.query(sql`
@@ -47,7 +47,7 @@ const alteration: AlterationScript = {
         using resources
         where resources.id = scopes.resource_id
         and scopes.tenant_id = ${adminTenantId}
-        and resources.indicator = 'https://cloud.logto.io/api'
+        and resources.indicator = 'https://cloud.myeyesid.io/api'
         and scopes.name='manage:tenant';
     `);
   },

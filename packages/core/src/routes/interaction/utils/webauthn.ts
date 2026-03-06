@@ -7,8 +7,8 @@ import {
   type MfaVerifications,
   type WebAuthnVerificationPayload,
   type VerifyMfaResult,
-} from '@logto/schemas';
-import { getUserDisplayName } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { getUserDisplayName } from '@myeyesid/shared';
 import {
   type GenerateRegistrationOptionsOpts,
   generateRegistrationOptions,

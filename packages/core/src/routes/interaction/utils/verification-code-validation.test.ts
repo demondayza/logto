@@ -1,5 +1,5 @@
-import { TemplateType } from '@logto/connector-kit';
-import { InteractionEvent } from '@logto/schemas';
+import { TemplateType } from '@myeyesid/connector-kit';
+import { InteractionEvent } from '@myeyesid/schemas';
 
 import { createMockLogContext } from '#src/test-utils/koa-audit-log.js';
 

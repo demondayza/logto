@@ -1,5 +1,5 @@
-import type { User } from '@logto/schemas';
-import { getUserDisplayName, formatToInternationalPhoneNumber } from '@logto/shared/universal';
+import type { User } from '@myeyesid/schemas';
+import { getUserDisplayName, formatToInternationalPhoneNumber } from '@myeyesid/shared/universal';
 import { conditional } from '@silverhand/essentials';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';

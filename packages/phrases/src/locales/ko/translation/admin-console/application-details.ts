@@ -29,7 +29,7 @@ const application_details = {
     '인증 및 권한 부여를 진행할 엔드포인트입니다. OpenID Connect <a>인증</a>에서 사용되었던 값입니다.',
   show_endpoint_details: '엔드포인트 세부 정보 표시',
   hide_endpoint_details: '엔드포인트 세부 정보 숨기기',
-  logto_endpoint: '로그토 엔드포인트',
+  myeyesid_endpoint: '로그토 엔드포인트',
   application_id: '앱 ID',
   application_id_tip:
     '일반적으로 로그토에서 생성되는 고유한 애플리케이션 식별자입니다. OpenID Connect에서 "<a>client_id</a>"의 약어입니다.',
@@ -38,7 +38,7 @@ const application_details = {
   redirect_uri: '리디렉트 URI',
   redirect_uris: '리디렉트 URIs',
   redirect_uri_placeholder: 'https://your.website.com/app',
-  redirect_uri_placeholder_native: 'io.logto://callback',
+  redirect_uri_placeholder_native: 'io.myeyesid://callback',
   redirect_uri_tip:
     '사용자 로그인 후 리디렉트될 URI 경로입니다. 더 자세한 정보는 OpenID Connect <a>인증 요청</a>을 참조하세요.',
   mixed_redirect_uri_warning:
@@ -270,7 +270,7 @@ const application_details = {
     title: '기본 속성 매핑',
     description:
       'MyEyesID에서 애플리케이션으로 사용자 프로필을 동기화하기 위해 속성 매핑을 추가하세요.',
-    col_logto_claims: 'MyEyesID 값',
+    col_myeyesid_claims: 'MyEyesID 값',
     col_sp_claims: '애플리케이션의 값 이름',
     add_button: '다른 추가',
   },

@@ -1,4 +1,4 @@
-import { generateStandardId } from '@logto/shared/universal';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import { sql } from '@silverhand/slonik';
 
 import type { AlterationScript } from '../lib/types/alteration.js';
@@ -27,7 +27,7 @@ const alteration: AlterationScript = {
       where scopes.tenant_id = 'admin'
       and scopes.name = 'manage:tenant'
       and scopes.resource_id = resources.id
-      and resources.indicator = 'https://cloud.logto.io/api';
+      and resources.indicator = 'https://cloud.myeyesid.io/api';
     `);
   },
   down: async (pool) => {
@@ -35,14 +35,14 @@ const alteration: AlterationScript = {
     await pool.query(sql`
       insert into scopes (tenant_id, id, name, description, resource_id)
       values ('admin', 'manage:tenant', 'manage:tenant', 'Allow managing existing tenants, including create without limitation, update, and delete.', (
-        select id from resources where tenant_id = 'admin' and indicator = 'https://cloud.logto.io/api'
+        select id from resources where tenant_id = 'admin' and indicator = 'https://cloud.myeyesid.io/api'
       ));
     `);
 
     console.log('Update default role description');
     await pool.query(sql`
       update roles
-      set description = 'Admin tenant admin role for Logto tenant default.'
+      set description = 'Admin tenant admin role for MyEyesID tenant default.'
       where tenant_id = 'admin'
       and name = 'default:admin';
     `);
@@ -60,7 +60,7 @@ const alteration: AlterationScript = {
               'admin',
               ${`${tenant.id}:admin`},
               ${`${tenant.id}:admin`},
-              ${`Admin tenant admin role for Logto tenant ${tenant.id}.`}
+              ${`Admin tenant admin role for MyEyesID tenant ${tenant.id}.`}
             )
           `;
         }),
@@ -81,7 +81,7 @@ const alteration: AlterationScript = {
               (
                 select scopes.id from scopes
                 join resources on scopes.resource_id = resources.id
-                and resources.indicator = ${`https://${tenant.id}.logto.app/api`}
+                and resources.indicator = ${`https://${tenant.id}.myeyesid.app/api`}
                 where scopes.tenant_id = 'admin'
                 and scopes.name = 'all'
               )

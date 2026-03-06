@@ -1,35 +1,35 @@
-import type { LogtoConfig, SignInOptions } from '@logto/node';
-import LogtoClient from '@logto/node';
-import { demoAppApplicationId } from '@logto/schemas';
+import type { MyEyesIDConfig, SignInOptions } from '@myeyesid/node';
+import MyEyesIDClient from '@myeyesid/node';
+import { demoAppApplicationId } from '@myeyesid/schemas';
 import type { Nullable, Optional } from '@silverhand/essentials';
 import { assert } from '@silverhand/essentials';
 import ky, { type KyInstance } from 'ky';
 
 import { submitInteraction } from '#src/api/index.js';
-import { demoAppRedirectUri, logtoUrl } from '#src/constants.js';
+import { demoAppRedirectUri, myeyesidUrl } from '#src/constants.js';
 
 import { MemoryStorage } from './storage.js';
 
 export const defaultConfig = {
-  endpoint: logtoUrl,
+  endpoint: myeyesidUrl,
   appId: demoAppApplicationId,
   persistAccessToken: false,
 };
 export default class MockClient {
   public rawCookies: string[] = [];
-  protected readonly config: LogtoConfig;
+  protected readonly config: MyEyesIDConfig;
   protected readonly storage: MemoryStorage;
-  protected readonly logto: LogtoClient;
+  protected readonly myeyesid: MyEyesIDClient;
   protected readonly api: KyInstance;
 
   private navigateUrl?: string;
 
-  constructor(config?: Partial<LogtoConfig>, api?: KyInstance) {
+  constructor(config?: Partial<MyEyesIDConfig>, api?: KyInstance) {
     this.storage = new MemoryStorage();
     this.config = { ...defaultConfig, ...config };
     this.api = api ?? ky.extend({ prefixUrl: this.config.endpoint + '/api' });
 
-    this.logto = new LogtoClient(this.config, {
+    this.myeyesid = new MyEyesIDClient(this.config, {
       navigate: (url: string) => {
         this.navigateUrl = url;
       },
@@ -62,7 +62,7 @@ export default class MockClient {
     redirectUri = demoAppRedirectUri,
     options: Omit<SignInOptions, 'redirectUri'> = {}
   ) {
-    await this.logto.signIn({ redirectUri, ...options });
+    await this.myeyesid.signIn({ redirectUri, ...options });
 
     assert(this.navigateUrl, new Error('Unable to navigate to sign in uri'));
     assert(
@@ -110,7 +110,7 @@ export default class MockClient {
       throwHttpErrors: false,
     });
 
-    // Note: Should redirect to logto consent page
+    // Note: Should redirect to myeyesid consent page
     assert(
       authResponse.status === 303 &&
         authResponse.headers.get('location') === `/consent?app_id=${this.config.appId}`,
@@ -125,7 +125,7 @@ export default class MockClient {
     }
 
     const signInCallbackUri = await this.consent();
-    await this.logto.handleSignInCallback(signInCallbackUri);
+    await this.myeyesid.handleSignInCallback(signInCallbackUri);
   }
 
   public async manualConsent(redirectTo: string) {
@@ -142,32 +142,32 @@ export default class MockClient {
     const signInCallbackUri = authCodeResponse.headers.get('location');
     assert(signInCallbackUri, new Error('Get sign in callback uri failed'));
 
-    return this.logto.handleSignInCallback(signInCallbackUri);
+    return this.myeyesid.handleSignInCallback(signInCallbackUri);
   }
 
   public async getAccessToken(resource?: string, organizationId?: string) {
-    return this.logto.getAccessToken(resource, organizationId);
+    return this.myeyesid.getAccessToken(resource, organizationId);
   }
 
   public async getAccessTokenClaims(resource?: string) {
-    return this.logto.getAccessTokenClaims(resource);
+    return this.myeyesid.getAccessTokenClaims(resource);
   }
 
   public async getOrganizationTokenClaims(organizationId: string) {
-    return this.logto.getOrganizationTokenClaims(organizationId);
+    return this.myeyesid.getOrganizationTokenClaims(organizationId);
   }
 
   public async clearAccessToken() {
-    return this.logto.clearAccessToken();
+    return this.myeyesid.clearAccessToken();
   }
 
   public async getRefreshToken(): Promise<Nullable<string>> {
-    return this.logto.getRefreshToken();
+    return this.myeyesid.getRefreshToken();
   }
 
   public async signOut(postSignOutRedirectUri?: string) {
     this.navigateUrl = undefined;
-    await this.logto.signOut(postSignOutRedirectUri);
+    await this.myeyesid.signOut(postSignOutRedirectUri);
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!this.navigateUrl) {
       throw new Error('No navigate URL found for sign-out');
@@ -176,11 +176,11 @@ export default class MockClient {
   }
 
   public async isAuthenticated() {
-    return this.logto.isAuthenticated();
+    return this.myeyesid.isAuthenticated();
   }
 
   public async getIdTokenClaims() {
-    return this.logto.getIdTokenClaims();
+    return this.myeyesid.getIdTokenClaims();
   }
 
   public assignCookie(cookie: string) {

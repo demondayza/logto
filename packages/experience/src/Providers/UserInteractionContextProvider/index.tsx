@@ -1,4 +1,4 @@
-import { type SsoConnectorMetadata, type VerificationType } from '@logto/schemas';
+import { type SsoConnectorMetadata, type VerificationType } from '@myeyesid/schemas';
 import { type ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 
 import useSessionStorage, { StorageKeys } from '@/hooks/use-session-storages';

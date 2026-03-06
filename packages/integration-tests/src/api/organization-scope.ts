@@ -1,4 +1,4 @@
-import { type OrganizationScope } from '@logto/schemas';
+import { type OrganizationScope } from '@myeyesid/schemas';
 
 import { ApiFactory } from './factory.js';
 

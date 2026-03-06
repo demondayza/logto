@@ -17,20 +17,20 @@ This tutorial will show you how to integrate MyEyesID into your Python web appli
 </ul>
 
 ```bash
-pip install logto # or `poetry add logto` or whatever you use
+pip install myeyesid # or `poetry add myeyesid` or whatever you use
 ```
 
 </Step>
 
-<Step title="Init LogtoClient">
+<Step title="Init MyEyesIDClient">
 
 Insert the following code into your Python file:
 
 <Code title="main.py" className="language-python">
-{`from logto import LogtoClient, LogtoConfig
+{`from myeyesid import MyEyesIDClient, MyEyesIDConfig
 
-client = LogtoClient(
-    LogtoConfig(
+client = MyEyesIDClient(
+    MyEyesIDConfig(
         endpoint="${props.endpoint}",
         appId="${props.app.id}",
         appSecret="${props.secrets[0]?.value ?? props.app.secret}",
@@ -45,7 +45,7 @@ client = LogtoClient(
 Also replace the default memory storage with a persistent storage, for example:
 
 <Code title="main.py" className="language-python">
-{`from logto import LogtoClient, LogtoConfig, Storage
+{`from myeyesid import MyEyesIDClient, MyEyesIDConfig, Storage
 from flask import session
 from typing import Union
 
@@ -59,8 +59,8 @@ class SessionStorage(Storage):
     def delete(self, key: str) -> None:
         session.pop(key, None)
 
-client = LogtoClient(
-    LogtoConfig(...),
+client = MyEyesIDClient(
+    MyEyesIDConfig(...),
     storage=SessionStorage(),
 )`}
 </Code>
@@ -207,7 +207,7 @@ async def protectedUserinfo():
             + g.user.model_dump_json(indent=2, exclude_unset=True).replace("\n", "<br>")
             + navigationHtml
         )
-    except LogtoException as e:
+    except MyEyesIDException as e:
         return "<h2>Error</h2>" + str(e) + "<br>" + navigationHtml
 ```
 

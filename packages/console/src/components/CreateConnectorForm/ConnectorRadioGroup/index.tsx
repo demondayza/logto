@@ -1,4 +1,4 @@
-import { type ConnectorFactoryResponse } from '@logto/schemas';
+import { type ConnectorFactoryResponse } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import RadioGroup, { Radio } from '@/ds-components/RadioGroup';

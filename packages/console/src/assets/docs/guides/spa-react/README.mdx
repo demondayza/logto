@@ -15,26 +15,26 @@ import RedirectUrisWeb, { defaultRedirectUri, defaultPostSignOutUri } from '../.
   subtitle="Install MyEyesID SDK for your project"
 >
 
-<NpmLikeInstallation packageName="@logto/react" />
+<NpmLikeInstallation packageName="@myeyesid/react" />
 
 </Step>
 
 <Step title="Init MyEyesID provider">
 
-Import and use `LogtoProvider` to provide a MyEyesID context to your app:
+Import and use `MyEyesIDProvider` to provide a MyEyesID context to your app:
 
 <Code className="language-tsx" title="App.tsx">
-    {`import { LogtoProvider, type LogtoConfig } from '@logto/react';
+    {`import { MyEyesIDProvider, type MyEyesIDConfig } from '@myeyesid/react';
 
-const config: LogtoConfig = {
+const config: MyEyesIDConfig = {
   endpoint: '${props.endpoint}',
   appId: '${props.app.id}',
 };
 
 const App = () => (
-  <LogtoProvider config={config}>
+  <MyEyesIDProvider config={config}>
     <YourAppContent />
-  </LogtoProvider>
+  </MyEyesIDProvider>
 );`}
 </Code>
 
@@ -57,7 +57,7 @@ After the user signs in, MyEyesID will redirect the user back to the redirect UR
 First let's create a callback page:
 
 ```tsx title="pages/Callback/index.tsx"
-import { useHandleSignInCallback } from '@logto/react';
+import { useHandleSignInCallback } from '@myeyesid/react';
 
 const Callback = () => {
   const { isLoading } = useHandleSignInCallback(() => {
@@ -84,17 +84,17 @@ Then, insert the code below to create a `/callback` route which does NOT require
 
 <Step title="Implement sign-in and sign-out">
 
-We provide a hook `useLogto()` which can help you easily manage the authentication flow.
+We provide a hook `useMyEyesID()` which can help you easily manage the authentication flow.
 
 <InlineNotification>
   Before calling `.signIn()`, make sure you have correctly configured Redirect URI in Admin Console.
 </InlineNotification>
 
 <Code className="language-tsx" title="pages/Home/index.tsx">
-    {`import { useLogto } from '@logto/react';
+    {`import { useMyEyesID } from '@myeyesid/react';
 
 const Home = () => {
-  const { signIn, signOut, isAuthenticated } = useLogto();
+  const { signIn, signOut, isAuthenticated } = useMyEyesID();
 
   return isAuthenticated ? (
     <button onClick={() => signOut('${props.postLogoutRedirectUris[0] || defaultRedirectUri}')}>Sign Out</button>
@@ -121,11 +121,11 @@ Calling `.signOut()` will clear all the MyEyesID data in memory and localStorage
 To display the user's information, you can use the `getIdTokenClaims()` method. For example, in your Home page:
 
 ```tsx title="pages/Home/index.tsx"
-import { useLogto, type IdTokenClaims } from '@logto/react';
+import { useMyEyesID, type IdTokenClaims } from '@myeyesid/react';
 import { useEffect, useState } from 'react';
 
 const Home = () => {
-  const { isAuthenticated, getIdTokenClaims } = useLogto();
+  const { isAuthenticated, getIdTokenClaims } = useMyEyesID();
   const [user, setUser] = useState<IdTokenClaims>();
 
   useEffect(() => {

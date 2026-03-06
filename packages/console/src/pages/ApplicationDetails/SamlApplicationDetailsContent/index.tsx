@@ -2,7 +2,7 @@ import {
   type ApplicationResponse,
   ApplicationType,
   type SamlApplicationResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Trans, useTranslation } from 'react-i18next';

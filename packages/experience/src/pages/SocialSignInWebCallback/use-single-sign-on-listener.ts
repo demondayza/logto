@@ -1,4 +1,4 @@
-import { AgreeToTermsPolicy, SignInMode, VerificationType, experience } from '@logto/schemas';
+import { AgreeToTermsPolicy, SignInMode, VerificationType, experience } from '@myeyesid/schemas';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';

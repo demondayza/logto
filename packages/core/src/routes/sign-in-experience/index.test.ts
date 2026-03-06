@@ -3,8 +3,8 @@ import {
   MfaPolicy,
   type SignInExperience,
   type CreateSignInExperience,
-} from '@logto/schemas';
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+} from '@myeyesid/schemas';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 
 import {
   mockFacebookConnector,
@@ -28,7 +28,7 @@ import { createRequester } from '#src/utils/test-utils.js';
 const { jest } = import.meta;
 const { mockEsmWithActual } = createMockUtils(jest);
 
-const logtoConnectors = [
+const myeyesidConnectors = [
   mockFacebookConnector,
   mockGithubConnector,
   mockGoogleConnector,
@@ -56,7 +56,7 @@ const signInExperiences = {
 const { findDefaultSignInExperience } = signInExperiences;
 
 const validateLanguageInfo = jest.fn();
-const mockGetLogtoConnectors = jest.fn(async () => logtoConnectors);
+const mockGetMyEyesIDConnectors = jest.fn(async () => myeyesidConnectors);
 const mockDeleteConnectorById = jest.fn();
 
 const tenantContext = new MockTenant(
@@ -66,7 +66,7 @@ const tenantContext = new MockTenant(
     customPhrases: { findAllCustomLanguageTags: async () => [] },
     connectors: { deleteConnectorById: mockDeleteConnectorById },
   },
-  { getLogtoConnectors: mockGetLogtoConnectors },
+  { getMyEyesIDConnectors: mockGetMyEyesIDConnectors },
   { signInExperiences: { validateLanguageInfo } }
 );
 
@@ -106,7 +106,7 @@ const createDevFeaturesDisabledRequester = async () => {
       },
       customPhrases: { findAllCustomLanguageTags: async () => [] },
     },
-    { getLogtoConnectors: jest.fn().mockResolvedValue([]) },
+    { getMyEyesIDConnectors: jest.fn().mockResolvedValue([]) },
     { signInExperiences: { validateLanguageInfo: jest.fn() } }
   );
 
@@ -168,7 +168,7 @@ describe('PATCH /sign-in-exp', () => {
   });
 
   it('should remove unselected demo social connectors', async () => {
-    mockGetLogtoConnectors.mockResolvedValueOnce([...logtoConnectors, mockDemoSocialConnector]);
+    mockGetMyEyesIDConnectors.mockResolvedValueOnce([...myeyesidConnectors, mockDemoSocialConnector]);
     const socialSignInConnectorTargets = ['facebook', 'google'];
     const signInExperience = {
       socialSignInConnectorTargets,
@@ -180,7 +180,7 @@ describe('PATCH /sign-in-exp', () => {
   });
 
   it('should remove unselected demo social connectors when removeUnusedDemoSocialConnector is not set', async () => {
-    mockGetLogtoConnectors.mockResolvedValueOnce([...logtoConnectors, mockDemoSocialConnector]);
+    mockGetMyEyesIDConnectors.mockResolvedValueOnce([...myeyesidConnectors, mockDemoSocialConnector]);
     const socialSignInConnectorTargets = ['facebook', 'google'];
     const signInExperience = {
       socialSignInConnectorTargets,
@@ -190,7 +190,7 @@ describe('PATCH /sign-in-exp', () => {
   });
 
   it('should not remove selected demo social connectors', async () => {
-    mockGetLogtoConnectors.mockResolvedValueOnce([...logtoConnectors, mockDemoSocialConnector]);
+    mockGetMyEyesIDConnectors.mockResolvedValueOnce([...myeyesidConnectors, mockDemoSocialConnector]);
     const socialSignInConnectorTargets = ['github', 'facebook', 'google'];
     const signInExperience = {
       socialSignInConnectorTargets,
@@ -216,11 +216,11 @@ describe('PATCH /sign-in-exp', () => {
     });
 
     expect(validateLanguageInfo).toHaveBeenCalledWith(mockLanguageInfo);
-    expect(validateSignUp).toHaveBeenCalledWith(mockSignUp, logtoConnectors);
+    expect(validateSignUp).toHaveBeenCalledWith(mockSignUp, myeyesidConnectors);
     expect(validateSignIn).toHaveBeenCalledWith(
       mockSignIn,
       mockSignUp,
-      logtoConnectors,
+      myeyesidConnectors,
       mockSignInExperience.mfa
     );
 
@@ -348,7 +348,7 @@ describe('PATCH /sign-in-exp', () => {
       status: 400,
     });
 
-    const supportEmail = 'support@logto.io';
+    const supportEmail = 'support@myeyesid.io';
 
     const response = await signInExperienceRequester.patch('/sign-in-exp').send({
       supportEmail,
@@ -372,7 +372,7 @@ describe('PATCH /sign-in-exp', () => {
       status: 400,
     });
 
-    const supportWebsiteUrl = 'https://logto.io';
+    const supportWebsiteUrl = 'https://myeyesid.io';
 
     const response = await signInExperienceRequester.patch('/sign-in-exp').send({
       supportWebsiteUrl,
@@ -396,7 +396,7 @@ describe('PATCH /sign-in-exp', () => {
       status: 400,
     });
 
-    const unknownSessionRedirectUrl = 'https://logto.io';
+    const unknownSessionRedirectUrl = 'https://myeyesid.io';
 
     const response = await signInExperienceRequester.patch('/sign-in-exp').send({
       unknownSessionRedirectUrl,

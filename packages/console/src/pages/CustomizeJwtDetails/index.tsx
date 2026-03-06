@@ -1,4 +1,4 @@
-import { type LogtoJwtTokenKeyType } from '@logto/schemas';
+import { type MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ import { pageParamsGuard, type Action } from './type';
 import useDataFetch from './use-data-fetch';
 
 type Props = {
-  readonly tokenType: LogtoJwtTokenKeyType;
+  readonly tokenType: MyEyesIDJwtTokenKeyType;
   readonly action: Action;
 };
 

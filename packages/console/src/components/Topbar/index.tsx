@@ -36,11 +36,11 @@ type Props = {
 function Topbar({ className, hideTenantSelector, hideTitle }: Props) {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
   const { navigate } = useTenantPathname();
-  const LogtoLogo = isCloud ? CloudLogo : Logo;
+  const MyEyesIDLogo = isCloud ? CloudLogo : Logo;
 
   return (
     <div className={classNames(styles.topbar, className)}>
-      <LogtoLogo
+      <MyEyesIDLogo
         className={styles.logo}
         onClick={() => {
           navigate('/');
@@ -120,7 +120,7 @@ function VersionButton() {
   useEffect(() => {
     void trySafe(
       async () => {
-        const response = await fetch('https://numbers.logto.io/pull.json');
+        const response = await fetch('https://numbers.myeyesid.io/pull.json');
         const json = await response.json();
         if (
           !isKeyInObject(json, 'latestRelease') ||

@@ -39,8 +39,8 @@ const sign_in_exp = {
     app_logo_and_favicon: '应用 logo 和 favicon',
     company_logo_and_favicon: '公司 logo 和 favicon',
     organization_logo_and_favicon: '组织 logo 和 favicon',
-    hide_logto_branding: '隐藏 MyEyesID 品牌',
-    hide_logto_branding_description:
+    hide_myeyesid_branding: '隐藏 MyEyesID 品牌',
+    hide_myeyesid_branding_description:
       '移除“Powered by MyEyesID”。以干净、专业的登录体验专属呈现你的品牌。',
   },
   branding_uploads: {

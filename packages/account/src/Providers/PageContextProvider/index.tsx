@@ -1,5 +1,5 @@
-import { useLogto } from '@logto/react';
-import { Theme } from '@logto/schemas';
+import { useMyEyesID } from '@myeyesid/react';
+import { Theme } from '@myeyesid/schemas';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 
@@ -22,7 +22,7 @@ type Props = {
 };
 
 const PageContextProvider = ({ children }: Props) => {
-  const { isAuthenticated } = useLogto();
+  const { isAuthenticated } = useMyEyesID();
   const getUserInfoRequest = useApi(getUserInfo, { silent: true });
   const [theme, setTheme] = useState(Theme.Light);
   const [toast, setToast] = useState('');

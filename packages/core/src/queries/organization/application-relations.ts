@@ -7,7 +7,7 @@ import {
   OrganizationRoleApplicationRelations,
   type ApplicationWithOrganizationRoles,
   type OrganizationWithRoles,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type CommonQueryMethods, sql } from '@silverhand/slonik';
 
 import { type SearchOptions, buildSearchSql } from '#src/database/utils.js';

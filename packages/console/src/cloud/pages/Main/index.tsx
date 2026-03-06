@@ -1,4 +1,4 @@
-import { OrganizationInvitationStatus } from '@logto/schemas';
+import { OrganizationInvitationStatus } from '@myeyesid/schemas';
 import { Navigate } from 'react-router-dom';
 
 import AppLoading from '@/components/AppLoading';

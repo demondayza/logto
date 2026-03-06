@@ -42,8 +42,8 @@ const sign_in_exp = {
     app_logo_and_favicon: 'アプリロゴとファビコン',
     company_logo_and_favicon: '企業ロゴとファビコン',
     organization_logo_and_favicon: '組織のロゴとファビコン',
-    hide_logto_branding: 'MyEyesIDのブランディングを非表示にする',
-    hide_logto_branding_description:
+    hide_myeyesid_branding: 'MyEyesIDのブランディングを非表示にする',
+    hide_myeyesid_branding_description:
       '「Powered by MyEyesID」を削除します。クリーンでプロフェッショナルなサインイン体験で自社ブランドだけを際立たせましょう。',
   },
   branding_uploads: {

@@ -1,5 +1,5 @@
-import { type AdminConsoleKey } from '@logto/phrases';
-import { ConnectorType } from '@logto/schemas';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
+import { ConnectorType } from '@myeyesid/schemas';
 import { Trans, useTranslation } from 'react-i18next';
 
 import InlineNotification from '@/ds-components/InlineNotification';

@@ -4,7 +4,7 @@ import {
   SignInIdentifier,
   type UpdateProfileApiPayload,
   VerificationType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { pick, trySafe } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';

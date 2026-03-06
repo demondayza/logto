@@ -1,4 +1,4 @@
-import { CaptchaType, RecaptchaEnterpriseMode, Theme } from '@logto/schemas';
+import { CaptchaType, RecaptchaEnterpriseMode, Theme } from '@myeyesid/schemas';
 import { useMemo, useContext, useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 

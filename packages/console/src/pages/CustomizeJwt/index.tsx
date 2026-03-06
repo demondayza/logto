@@ -1,4 +1,4 @@
-import { LogtoJwtTokenKeyType, ReservedPlanId, type ExtendedIdTokenClaim } from '@logto/schemas';
+import { MyEyesIDJwtTokenKeyType, ReservedPlanId, type ExtendedIdTokenClaim } from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import { useCallback, useContext, useMemo, useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -35,9 +35,9 @@ function CustomizeJwt() {
 
   const showPaywall = planId === ReservedPlanId.Free;
 
-  const [deleteModalTokenType, setDeleteModalTokenType] = useState<LogtoJwtTokenKeyType>();
+  const [deleteModalTokenType, setDeleteModalTokenType] = useState<MyEyesIDJwtTokenKeyType>();
 
-  const onDeleteHandler = useCallback((tokenType: LogtoJwtTokenKeyType) => {
+  const onDeleteHandler = useCallback((tokenType: MyEyesIDJwtTokenKeyType) => {
     setDeleteModalTokenType(tokenType);
   }, []);
 
@@ -131,13 +131,13 @@ function CustomizeJwt() {
                 </div>
                 {accessTokenJwtCustomizer ? (
                   <CustomizerItem
-                    tokenType={LogtoJwtTokenKeyType.AccessToken}
+                    tokenType={MyEyesIDJwtTokenKeyType.AccessToken}
                     onDelete={onDeleteHandler}
                   />
                 ) : (
                   <CreateButton
                     isDisabled={showPaywall}
-                    tokenType={LogtoJwtTokenKeyType.AccessToken}
+                    tokenType={MyEyesIDJwtTokenKeyType.AccessToken}
                   />
                 )}
               </FormField>
@@ -147,13 +147,13 @@ function CustomizeJwt() {
                 </div>
                 {clientCredentialsJwtCustomizer ? (
                   <CustomizerItem
-                    tokenType={LogtoJwtTokenKeyType.ClientCredentials}
+                    tokenType={MyEyesIDJwtTokenKeyType.ClientCredentials}
                     onDelete={onDeleteHandler}
                   />
                 ) : (
                   <CreateButton
                     isDisabled={showPaywall}
-                    tokenType={LogtoJwtTokenKeyType.ClientCredentials}
+                    tokenType={MyEyesIDJwtTokenKeyType.ClientCredentials}
                   />
                 )}
               </FormField>

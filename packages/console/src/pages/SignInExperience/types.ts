@@ -6,7 +6,7 @@ import {
   type SignInIdentifier,
   type SignUpIdentifier as SignUpIdentifierMethod,
   type AccountCenterFieldControl,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditionalArray } from '@silverhand/essentials';
 
 import { isDevFeaturesEnabled } from '@/consts/env';

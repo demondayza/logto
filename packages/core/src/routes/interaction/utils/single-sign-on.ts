@@ -1,15 +1,15 @@
 /* eslint-disable max-lines -- will migrate this file to the latest experience APIs */
-import { appInsights } from '@logto/app-insights/node';
-import { ConnectorError } from '@logto/connector-kit';
-import { validateRedirectUrl } from '@logto/core-kit';
+import { appInsights } from '@myeyesid/app-insights/node';
+import { ConnectorError } from '@myeyesid/connector-kit';
+import { validateRedirectUrl } from '@myeyesid/core-kit';
 import {
   type EncryptedTokenSet,
   InteractionEvent,
   type SupportedSsoConnector,
   type User,
   type UserSsoIdentity,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { conditional, trySafe } from '@silverhand/essentials';
 import { z } from 'zod';
 
@@ -253,7 +253,7 @@ export const handleSsoAuthentication = async (
   const { userSsoIdentities: userSsoIdentitiesQueries, users: usersQueries } = queries;
   const { issuer, userInfo } = ssoAuthentication;
 
-  // Get logto user info
+  // Get myeyesid user info
   const userSsoIdentity = await userSsoIdentitiesQueries.findUserSsoIdentityBySsoIdentityId(
     issuer,
     userInfo.id

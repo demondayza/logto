@@ -1,4 +1,4 @@
-import type { SignInIdentifier } from '@logto/schemas';
+import type { SignInIdentifier } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 

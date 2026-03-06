@@ -67,7 +67,7 @@ const connectors = {
     callback_uri_description:
       "Redirect URI is where users are redirected after social authorization. Add this URI to your IdP's configuration.",
     callback_uri_custom_domain_description:
-      'If you use multiple <a>custom domains</a> in MyEyesID, be sure to add all corresponding callback URIs to your IdP to make social login work across every domain.\n\nThe default MyEyesID domain (*.logto.app) is always valid — include it only if you also wish to support logins under that domain.',
+      'If you use multiple <a>custom domains</a> in MyEyesID, be sure to add all corresponding callback URIs to your IdP to make social login work across every domain.\n\nThe default MyEyesID domain (*.myeyesid.app) is always valid — include it only if you also wish to support logins under that domain.',
     acs_url: 'Assertion consumer service URL',
   },
   platform: {

@@ -1,5 +1,5 @@
-import type { AccountCenter, SignInIdentifier } from '@logto/schemas';
-import { AccountCenterControlValue } from '@logto/schemas';
+import type { AccountCenter, SignInIdentifier } from '@myeyesid/schemas';
+import { AccountCenterControlValue } from '@myeyesid/schemas';
 import { type TFuncKey } from 'i18next';
 import { useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';

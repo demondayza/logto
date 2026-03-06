@@ -1,4 +1,4 @@
-import { type OrganizationInvitationStatus } from '@logto/schemas';
+import { type OrganizationInvitationStatus } from '@myeyesid/schemas';
 import { type Optional } from '@silverhand/essentials';
 import { useMemo } from 'react';
 import useSWR from 'swr';

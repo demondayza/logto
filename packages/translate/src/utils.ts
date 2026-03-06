@@ -5,8 +5,8 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 import { promisify } from 'node:util';
 
-import { type LanguageTag } from '@logto/language-kit';
-import { ConsoleLog } from '@logto/shared';
+import { type LanguageTag } from '@myeyesid/language-kit';
+import { ConsoleLog } from '@myeyesid/shared';
 import { assert, conditional } from '@silverhand/essentials';
 import chalk from 'chalk';
 import inquirer from 'inquirer';
@@ -44,7 +44,7 @@ export const getPathInModule = (moduleName: string, relativePath = '/') =>
 export const isTty = () => process.stdin.isTTY;
 
 const buildPathErrorMessage = (value: string) =>
-  `The path ${chalk.green(value)} does not contain a Logto instance. Please try another.`;
+  `The path ${chalk.green(value)} does not contain a MyEyesID instance. Please try another.`;
 
 const validatePath = async (value: string) => {
   const corePackageJsonPath = path.resolve(path.join(value, coreDirectory, 'package.json'));
@@ -60,7 +60,7 @@ const validatePath = async (value: string) => {
     .then(({ name }) => name)
     .catch(() => '');
 
-  if (packageName !== '@logto/core') {
+  if (packageName !== '@myeyesid/core') {
     return buildPathErrorMessage(value);
   }
 
@@ -82,7 +82,7 @@ export const inquireInstancePath = async (initialPath?: string, skipCoreCheck?: 
     const { instancePath } = await inquirer.prompt<{ instancePath: string }>(
       {
         name: 'instancePath',
-        message: 'Where is your Logto instance?',
+        message: 'Where is your MyEyesID instance?',
         type: 'input',
         default: defaultPath,
         filter: (value: string) => value.trim(),
@@ -110,7 +110,7 @@ export const inquireInstancePath = async (initialPath?: string, skipCoreCheck?: 
 const execPromise = promisify(execFile);
 
 export const lintLocaleFiles = async (
-  /** Logto instance path */
+  /** MyEyesID instance path */
   instancePath: string,
   /** Target package name, ignore to lint both `phrases` and `phrases-experience` packages */
   packageName?: string

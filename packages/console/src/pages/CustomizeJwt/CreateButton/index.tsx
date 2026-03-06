@@ -1,4 +1,4 @@
-import { type LogtoJwtTokenKeyType } from '@logto/schemas';
+import { type MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import { useCallback, useContext } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
@@ -12,7 +12,7 @@ import { getPagePath } from '@/pages/CustomizeJwt/utils/path';
 
 type Props = {
   readonly isDisabled: boolean;
-  readonly tokenType: LogtoJwtTokenKeyType;
+  readonly tokenType: MyEyesIDJwtTokenKeyType;
 };
 
 function CreateButton({ isDisabled, tokenType }: Props) {

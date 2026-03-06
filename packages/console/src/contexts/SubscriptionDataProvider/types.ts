@@ -1,5 +1,5 @@
 import {
-  type LogtoSkuResponse,
+  type MyEyesIDSkuResponse,
   type Subscription,
   type SubscriptionQuota,
   type SubscriptionCountBasedUsage,
@@ -20,8 +20,8 @@ export type SubscriptionUsageOptions<T extends keyof SubscriptionCountBasedUsage
 };
 
 type SubscriptionSupplementContext = {
-  logtoSkus: LogtoSkuResponse[];
-  currentSku: LogtoSkuResponse;
+  myeyesidSkus: MyEyesIDSkuResponse[];
+  currentSku: MyEyesIDSkuResponse;
   currentSubscriptionQuota: SubscriptionQuota;
   currentSubscriptionBasicQuota: SubscriptionQuota;
   currentSubscriptionUsage: SubscriptionCountBasedUsage;

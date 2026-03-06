@@ -12,7 +12,7 @@ import {
   parseJson,
   validateConfig,
   ConnectorType,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import {
   authorizationEndpoint,

@@ -8,14 +8,14 @@ import type {
   GetTokenResponseAndUserInfo,
   GetUserInfo,
   SocialConnector,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
   ConnectorType,
   jsonGuard,
   tokenResponseGuard,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import { defaultMetadata } from './constant.js';
 import { mockSocialConfigGuard } from './types.js';

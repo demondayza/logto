@@ -1,4 +1,4 @@
-import { InteractionEvent, SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, SignInIdentifier } from '@myeyesid/schemas';
 import { fireEvent, waitFor, act } from '@testing-library/react';
 
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
@@ -26,7 +26,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('PasswordSignInForm', () => {
   const username = 'foo';
-  const email = 'foo@logto.io';
+  const email = 'foo@myeyesid.io';
   const phone = '18573333333';
   const password = '111222';
 

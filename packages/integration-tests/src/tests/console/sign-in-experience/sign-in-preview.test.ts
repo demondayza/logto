@@ -1,7 +1,7 @@
 import { type Nullable } from '@silverhand/essentials';
 import { type Page, type Target } from 'puppeteer';
 
-import { logtoConsoleUrl as logtoConsoleUrlString, logtoUrl } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString, myeyesidUrl } from '#src/constants.js';
 import { goToAdminConsole } from '#src/ui-helpers/index.js';
 import { expectNavigation, appendPathname } from '#src/utils.js';
 
@@ -10,7 +10,7 @@ import { expectToSelectPreviewLanguage, waitForFormCard } from './helpers.js';
 await page.setViewport({ width: 1920, height: 1080 });
 
 describe('sign-in experience: sign-in preview', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   beforeAll(async () => {
     await goToAdminConsole();
@@ -18,7 +18,7 @@ describe('sign-in experience: sign-in preview', () => {
 
   it('navigate to sign-in experience page', async () => {
     await expectNavigation(
-      page.goto(appendPathname('/console/sign-in-experience', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/sign-in-experience', myeyesidConsoleUrl).href)
     );
 
     await expect(page).toMatchElement(
@@ -29,7 +29,7 @@ describe('sign-in experience: sign-in preview', () => {
     );
 
     // Land on branding tab by default
-    expect(page.url()).toBe(new URL(`console/sign-in-experience/branding`, logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL(`console/sign-in-experience/branding`, myeyesidConsoleUrl).href);
 
     // Wait for the branding tab to load
     await waitForFormCard(page, 'BRANDING AREA');
@@ -104,7 +104,7 @@ describe('sign-in experience: sign-in preview', () => {
     });
 
     const livePreviewPage = await livePreviewPagePromise;
-    expect(livePreviewPage?.url()).toBe(appendPathname('/demo-app', new URL(logtoUrl)).href);
+    expect(livePreviewPage?.url()).toBe(appendPathname('/demo-app', new URL(myeyesidUrl)).href);
 
     await livePreviewPage?.close();
   });

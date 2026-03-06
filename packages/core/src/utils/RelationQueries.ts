@@ -1,4 +1,4 @@
-import { type SchemaLike, type Table } from '@logto/shared';
+import { type SchemaLike, type Table } from '@myeyesid/shared';
 import { type CamelCase, type KeysToCamelCase } from '@silverhand/essentials';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 import snakecaseKeys from 'snakecase-keys';
@@ -51,7 +51,7 @@ export type GetEntitiesOptions = {
  * ```
  *
  * `Users` and `Groups` are the schemas of the tables that satisfy the {@link TableInfo}
- * interface. The generated schemas in `@logto/schemas` satisfy this interface.
+ * interface. The generated schemas in `@myeyesid/schemas` satisfy this interface.
  *
  * To insert a new relation, we can use the {@link RelationQueries.insert} method:
  *

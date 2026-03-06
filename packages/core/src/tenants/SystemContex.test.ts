@@ -1,5 +1,5 @@
-import { CloudflareKey, StorageProviderKey } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { CloudflareKey, StorageProviderKey } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 import { createMockPool } from '@silverhand/slonik';
 
 import { mockHostnameProviderData, mockStorageProviderData } from '#src/__mocks__/system.js';

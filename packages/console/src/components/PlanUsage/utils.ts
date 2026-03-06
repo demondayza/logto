@@ -1,4 +1,4 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import { type TFuncKey } from 'i18next';
 
 import {
@@ -26,7 +26,7 @@ import { isProPlan } from '@/utils/subscription';
 export enum CustomUsageKey {
   /**
    * Unlike other usage keys,
-   * `rbacEnabled` add-on is not a part of the standard Logto SKU quota key,
+   * `rbacEnabled` add-on is not a part of the standard MyEyesID SKU quota key,
    * instead it is calculated based on the `userRolesLimit` and `machineToMachineRolesLimit`
    * two quotas.
    * So we need to manually define it here, and calculate the status based on the two quotas.
@@ -192,7 +192,7 @@ export const getUsageByKey = (
     const { userRolesLimit, machineToMachineRolesLimit } = countBasedUsage;
 
     // If the userRoles usage is greater than 0 or the machineToMachineRoles usage is greater than 1, then RBAC is enabled.
-    // Note: machineToMachineRolesLimit is always 1 for default Logto management API usage.
+    // Note: machineToMachineRolesLimit is always 1 for default MyEyesID management API usage.
     return userRolesLimit > 0 || machineToMachineRolesLimit > 1;
   }
 

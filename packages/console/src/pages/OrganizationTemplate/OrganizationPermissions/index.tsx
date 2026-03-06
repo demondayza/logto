@@ -1,4 +1,4 @@
-import { type OrganizationScope } from '@logto/schemas';
+import { type OrganizationScope } from '@myeyesid/schemas';
 import { type Nullable, cond } from '@silverhand/essentials';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -1,6 +1,6 @@
 import nock from 'nock';
 
-import { ConnectorError, ConnectorErrorCodes, type SocialUserInfo } from '@logto/connector-kit';
+import { ConnectorError, ConnectorErrorCodes, type SocialUserInfo } from '@myeyesid/connector-kit';
 
 import { authorizationEndpoint, tokenEndpoint, userInfoEndpoint } from './constant.js';
 import createConnector from './index.js';

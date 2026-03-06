@@ -3,7 +3,7 @@ import {
   OrganizationJitEmailDomains,
   type CreateOrganizationJitEmailDomain,
   OrganizationJitRoles,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type CommonQueryMethods, sql } from '@silverhand/slonik';
 
 import { buildInsertIntoWithPool } from '#src/database/insert-into.js';

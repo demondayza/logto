@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { createMockUtils } from '@logto/shared/esm';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import type { Provider } from 'oidc-provider';
 import Sinon from 'sinon';
 
@@ -129,7 +129,7 @@ describe('Single sign on util methods tests', () => {
   const mockIssuer = 'https://example.com';
   const mockSsoUserInfo = {
     id: 'identityId',
-    email: 'foo@logto.io',
+    email: 'foo@myeyesid.io',
     name: 'foo',
     avatar: 'https://example.com',
   };

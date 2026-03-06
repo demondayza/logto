@@ -39,9 +39,9 @@ const content = {
     subtitle:
       'Dostosuj produkt, dodając języki i tłumaczenia. Twój wkład może zostać ustawiony jako język domyślny.',
     add_language: 'Dodaj język',
-    logto_provided: 'Dostarczone przez MyEyesID',
+    myeyesid_provided: 'Dostarczone przez MyEyesID',
     key: 'Klucz',
-    logto_source_values: 'Wartości źródłowe MyEyesID',
+    myeyesid_source_values: 'Wartości źródłowe MyEyesID',
     custom_values: 'Wartości niestandardowe',
     clear_all_tip: 'Wyczyść wszystkie wartości',
     unsaved_description: 'Zmiany nie zostaną zapisane, jeśli opuścisz tę stronę bez zapisania.',

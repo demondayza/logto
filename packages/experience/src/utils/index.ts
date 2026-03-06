@@ -1,7 +1,7 @@
-import { GoogleConnector } from '@logto/connector-kit';
+import { GoogleConnector } from '@myeyesid/connector-kit';
 import { fromUint8Array } from 'js-base64';
 
-import { logtoGoogleOneTapCookie } from '@/utils/cookies';
+import { myeyesidGoogleOneTapCookie } from '@/utils/cookies';
 
 export const generateRandomString = (length = 8) =>
   fromUint8Array(crypto.getRandomValues(new Uint8Array(length)), true);
@@ -14,9 +14,9 @@ export const parseQueryParameters = (parameters: string | URLSearchParams) => {
     [...searchParameters.entries()].map(([key, value]) => [key, decodeURIComponent(value)])
   );
 
-  if (logtoGoogleOneTapCookie) {
+  if (myeyesidGoogleOneTapCookie) {
     // eslint-disable-next-line @silverhand/fp/no-mutation
-    result[GoogleConnector.oneTapParams.credential] = logtoGoogleOneTapCookie;
+    result[GoogleConnector.oneTapParams.credential] = myeyesidGoogleOneTapCookie;
   }
 
   return result;

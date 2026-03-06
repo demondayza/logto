@@ -1,4 +1,4 @@
-import { Organizations } from '@logto/schemas';
+import { Organizations } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';

@@ -1,5 +1,5 @@
-import type { MissingProfile } from '@logto/schemas';
-import { SignInIdentifier } from '@logto/schemas';
+import type { MissingProfile } from '@myeyesid/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import type { TFuncKey } from 'i18next';
 import { useContext } from 'react';
 

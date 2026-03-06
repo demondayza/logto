@@ -1,4 +1,4 @@
-import { TenantTag } from '@logto/schemas';
+import { TenantTag } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useMemo, type FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,7 @@ import { type RegionResponse as RegionType } from '@/cloud/types/router';
 import auFlag from './assets/au.svg?react';
 import euFlag from './assets/eu.svg?react';
 import jpFlag from './assets/jp.svg?react';
-import logtoFlag from './assets/logto.svg?react';
+import myeyesidFlag from './assets/myeyesid.svg?react';
 import ukFlag from './assets/uk.svg?react';
 import usFlag from './assets/us.svg?react';
 import styles from './index.module.scss';
@@ -37,7 +37,7 @@ const regionFlagMap: Readonly<Record<string, FunctionComponent<React.SVGProps<SV
     AU: auFlag,
     JP: jpFlag,
     UK: ukFlag,
-    LOGTO: logtoFlag,
+    LOGTO: myeyesidFlag,
   });
 
 type RegionFlagProps = {
@@ -87,16 +87,16 @@ export type InstanceDropdownItemProps = Pick<
 >;
 
 /**
- * The default public Logto instance dropdown item.
+ * The default public MyEyesID instance dropdown item.
  *
  * @remarks
- * This item is a placeholder for the public Logto instance and is used in the instance selection dropdown.
+ * This item is a placeholder for the public MyEyesID instance and is used in the instance selection dropdown.
  *
- * - When selected, it indicates that the user is choosing the public Logto instance, need to show the public region radio options below.
+ * - When selected, it indicates that the user is choosing the public MyEyesID instance, need to show the public region radio options below.
  * - When not selected, it indicates that the user is choosing a private instance, need to hide the public region radio options below.
  */
 export const publicInstancesDropdownItem: InstanceDropdownItemProps = {
-  name: 'logto',
+  name: 'myeyesid',
   displayName: 'MyEyesID Cloud (Public)',
   country: 'LOGTO',
   tags: Object.values(TenantTag),

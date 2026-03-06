@@ -1,4 +1,4 @@
-import { type SubjectToken } from '@logto/schemas';
+import { type SubjectToken } from '@myeyesid/schemas';
 import { type KoaContextWithOIDC, errors } from 'oidc-provider';
 import Sinon from 'sinon';
 
@@ -241,7 +241,7 @@ describe('token exchange', () => {
       expect(value).toMatchObject({
         accountId,
         clientId,
-        aud: 'urn:logto:organization:some_org_id',
+        aud: 'urn:myeyesid:organization:some_org_id',
       });
     });
   });

@@ -1,6 +1,6 @@
 import { type Page } from 'puppeteer';
 
-import { logtoConsoleUrl } from '#src/constants.js';
+import { myeyesidConsoleUrl } from '#src/constants.js';
 import {
   expectModalWithTitle,
   expectToClickModalAction,
@@ -89,7 +89,7 @@ export const createM2mRoleAndAssignPermissions = async (
 
   if (backToListingPage) {
     await expectNavigation(
-      page.goto(appendPathname('/console/roles', new URL(logtoConsoleUrl)).href)
+      page.goto(appendPathname('/console/roles', new URL(myeyesidConsoleUrl)).href)
     );
 
     await expect(page).toMatchElement(

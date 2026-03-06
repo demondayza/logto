@@ -1,5 +1,5 @@
-import type { AdminConsoleKey } from '@logto/phrases';
-import { ConnectorPlatform, ConnectorType } from '@logto/schemas';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
+import { ConnectorPlatform, ConnectorType } from '@myeyesid/schemas';
 
 import EmailConnector from '@/assets/icons/connector-email.svg?react';
 import SmsConnectorIcon from '@/assets/icons/connector-sms.svg?react';

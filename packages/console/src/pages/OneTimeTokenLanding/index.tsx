@@ -1,5 +1,5 @@
-import { useLogto } from '@logto/react';
-import { ExtraParamsKey } from '@logto/schemas';
+import { useMyEyesID } from '@myeyesid/react';
+import { ExtraParamsKey } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useContext, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -18,7 +18,7 @@ enum OneTimeTokenLandingSearchParams {
 /** The one-time token landing page for sign-in with one-time tokens. */
 function OneTimeTokenLanding() {
   const navigate = useNavigate();
-  const { isAuthenticated, signIn } = useLogto();
+  const { isAuthenticated, signIn } = useMyEyesID();
   const [searchParams] = useSearchParams();
   const { navigateTenant } = useContext(TenantsContext);
   const redirectUri = useRedirectUri();

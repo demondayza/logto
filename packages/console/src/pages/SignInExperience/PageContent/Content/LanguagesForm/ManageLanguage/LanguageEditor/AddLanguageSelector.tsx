@@ -1,5 +1,5 @@
-import type { LanguageTag } from '@logto/language-kit';
-import { languages as uiLanguageNameMapping } from '@logto/language-kit';
+import type { LanguageTag } from '@myeyesid/language-kit';
+import { languages as uiLanguageNameMapping } from '@myeyesid/language-kit';
 import type { ChangeEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';

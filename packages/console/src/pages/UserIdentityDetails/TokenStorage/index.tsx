@@ -4,7 +4,7 @@ import {
   type ConnectorResponse,
   type SsoConnectorWithProviderConfig,
   SsoProviderType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { format } from 'date-fns';
 import { useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';

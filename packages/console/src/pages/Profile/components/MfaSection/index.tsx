@@ -3,7 +3,7 @@ import {
   type SignInExperience,
   type UserMfaVerificationResponse,
   type UserProfileResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';

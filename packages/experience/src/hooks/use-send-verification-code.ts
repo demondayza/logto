@@ -1,6 +1,6 @@
 /* Replace legacy useSendVerificationCode hook with this one after the refactor */
 
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useCallback, useContext, useState } from 'react';
 

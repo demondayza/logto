@@ -7,7 +7,7 @@ const api_resource_details = {
   settings_description:
     'Ресурсы API, также известные как индикаторы ресурсов, указывают целевые службы или ресурсы, запрашиваемые обычно в виде переменной формата URI, представляющей идентификатор ресурса.',
   management_api_settings_description:
-    'Logto Management API - это комплексный набор API, который дает администраторам возможность управлять широким спектром задач, связанных с идентификацией, обеспечивать политику безопасности и соблюдать требования и стандарты.',
+    'MyEyesID Management API - это комплексный набор API, который дает администраторам возможность управлять широким спектром задач, связанных с идентификацией, обеспечивать политику безопасности и соблюдать требования и стандарты.',
   management_api_notice:
     "Bu API, MyEyesID varlığını temsil eder ve değiştirilemez veya silinemez. MyEyesID yönetim API'sini çağırmak için makineden makineye bir uygulama oluşturun. <a>Daha fazla bilgi edinin</a>",
   token_expiration_time_in_seconds: 'Время истечения токена (в секундах)',

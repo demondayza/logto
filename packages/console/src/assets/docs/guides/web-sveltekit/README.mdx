@@ -5,7 +5,7 @@ import Steps from '@/mdx-components/Steps';
 import Step from '@/mdx-components/Step';
 import Checkpoint from '../../fragments/_checkpoint.md';
 import RedirectUrisWeb from '../../fragments/_redirect-uris-web.mdx';
-import { generateStandardSecret } from '@logto/shared/universal';
+import { generateStandardSecret } from '@myeyesid/shared/universal';
 import CustomDomainEndpointNotice from '@/mdx-components/CustomDomainEndpointNotice';
 
 export const cookieEncryptionKey = generateStandardSecret();
@@ -18,7 +18,7 @@ export const cookieEncryptionKey = generateStandardSecret();
 
 Use your favorite package manager to install the MyEyesID SDK:
 
-<NpmLikeInstallation packageName="@logto/sveltekit" />
+<NpmLikeInstallation packageName="@myeyesid/sveltekit" />
 
 </Step>
 
@@ -35,9 +35,9 @@ Create a `hooks.server.ts` file in your project `src` root if you don't have one
 In your `hooks.server.ts` file, add the following code to inject the MyEyesID hook into your server:
 
 <Code className="language-tsx" title="src/hooks.server.ts">
-    {`import { handleLogto } from '@logto/sveltekit';
+    {`import { handleMyEyesID } from '@myeyesid/sveltekit';
 
-export const handle = handleLogto(
+export const handle = handleMyEyesID(
   {
     endpoint: '${props.endpoint}',
     appId: '${props.app.id}',
@@ -54,10 +54,10 @@ export const handle = handleLogto(
 Since these information are sensitive, it's recommended to use environment variables. For example:
 
 <Code className="language-ts" title="src/hooks.server.ts">
-    {`import { handleLogto } from '@logto/sveltekit';
+    {`import { handleMyEyesID } from '@myeyesid/sveltekit';
 import { env } from '$env/dynamic/private';
 
-export const handle = handleLogto(
+export const handle = handleMyEyesID(
   {
     endpoint: env.LOGTO_ENDPOINT,
     appId: env.LOGTO_APP_ID,
@@ -72,18 +72,18 @@ If you have multiple hooks, you can use [the sequence() helper function](https:/
 ```ts title="src/hooks.server.ts"
 import { sequence } from '@sveltejs/kit/hooks';
 
-export const handle = sequence(handleLogto, handleOtherHook);
+export const handle = sequence(handleMyEyesID, handleOtherHook);
 ```
 
 Now you can access the MyEyesID client in the `locals` object. For TypeScript, you can add the type to `app.d.ts`:
 
 ```ts title="src/app.d.ts"
-import type { LogtoClient, UserInfoResponse } from '@logto/sveltekit';
+import type { MyEyesIDClient, UserInfoResponse } from '@myeyesid/sveltekit';
 
 declare global {
   namespace App {
     interface Locals {
-      logtoClient: LogtoClient;
+      myeyesidClient: MyEyesIDClient;
       user?: UserInfoResponse;
     }
   }
@@ -102,10 +102,10 @@ In the page where you want to implement sign-in and sign-out, define the followi
 
 export const actions: Actions = {
   signIn: async ({ locals }) => {
-    await locals.logtoClient.signIn('${props.redirectUris[0] ?? 'http://localhost:3000/callback'}');
+    await locals.myeyesidClient.signIn('${props.redirectUris[0] ?? 'http://localhost:3000/callback'}');
   },
   signOut: async ({ locals }) => {
-    await locals.logtoClient.signOut('${
+    await locals.myeyesidClient.signOut('${
       props.postLogoutRedirectUris[0] ?? 'http://localhost:3000'
     }');
   },

@@ -1,4 +1,4 @@
-import { AccountCenterControlValue, type AccountCenter } from '@logto/schemas';
+import { AccountCenterControlValue, type AccountCenter } from '@myeyesid/schemas';
 import { type KyInstance } from 'ky';
 
 import { authedAdminApi } from './api.js';

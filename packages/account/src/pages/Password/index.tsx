@@ -1,6 +1,6 @@
 import usePasswordErrorMessage from '@experience/shared/hooks/use-password-error-message';
-import { PasswordPolicyChecker, passwordPolicyGuard } from '@logto/core-kit';
-import { AccountCenterControlValue } from '@logto/schemas';
+import { PasswordPolicyChecker, passwordPolicyGuard } from '@myeyesid/core-kit';
+import { AccountCenterControlValue } from '@myeyesid/schemas';
 import { condArray } from '@silverhand/essentials';
 import { useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';

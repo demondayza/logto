@@ -1,4 +1,4 @@
-import { AgreeToTermsPolicy } from '@logto/schemas';
+import { AgreeToTermsPolicy } from '@myeyesid/schemas';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

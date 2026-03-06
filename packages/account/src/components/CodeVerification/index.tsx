@@ -3,7 +3,7 @@ import SmartInputField from '@experience/shared/components/InputFields/SmartInpu
 import VerificationCodeInput, {
   defaultLength,
 } from '@experience/shared/components/VerificationCode';
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import type { TFuncKey } from 'i18next';
 import { useCallback, useContext, useEffect, useMemo, useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';

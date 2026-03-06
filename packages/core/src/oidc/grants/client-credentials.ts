@@ -8,7 +8,7 @@
  * For "RFC 0006"-related edited parts, we added comments with `=== RFC 0006 ===` and
  * `=== End RFC 0006 ===` to indicate the changes.
  *
- * @see {@link https://github.com/logto-io/rfcs | Logto RFCs} for more information about RFC 0006.
+ * @see {@link https://github.com/myeyesid-io/rfcs | MyEyesID RFCs} for more information about RFC 0006.
  * @see {@link https://github.com/panva/node-oidc-provider/blob/0c52469f08b0a4a1854d90a96546a3f7aa090e5e/lib/actions/grants/client_credentials.js | Original file}.
  *
  * @remarks

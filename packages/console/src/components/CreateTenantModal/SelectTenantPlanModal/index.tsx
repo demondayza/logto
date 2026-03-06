@@ -1,20 +1,20 @@
-import { ReservedPlanId } from '@logto/schemas';
+import { ReservedPlanId } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import Modal from 'react-modal';
 
 import { useCloudApi, toastResponseError } from '@/cloud/hooks/use-cloud-api';
-import { type TenantResponse, type LogtoSkuResponse } from '@/cloud/types/router';
+import { type TenantResponse, type MyEyesIDSkuResponse } from '@/cloud/types/router';
 import { GtagConversionId, reportToGoogle } from '@/components/Conversion/utils';
 import { pricingLink } from '@/consts';
 import DangerousRaw from '@/ds-components/DangerousRaw';
 import ModalLayout from '@/ds-components/ModalLayout';
 import TextLink from '@/ds-components/TextLink';
-import useLogtoSkus from '@/hooks/use-logto-skus';
+import useMyEyesIDSkus from '@/hooks/use-myeyesid-skus';
 import useSubscribe from '@/hooks/use-subscribe';
 import modalStyles from '@/scss/modal.module.scss';
-import { pickupFeaturedLogtoSkus } from '@/utils/subscription';
+import { pickupFeaturedMyEyesIDSkus } from '@/utils/subscription';
 
 import { type CreateTenantData } from '../types';
 
@@ -30,19 +30,19 @@ function SelectTenantPlanModal({ tenantData, onClose }: Props) {
   const [processingSkuId, setProcessingSkuId] = useState<string>();
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
 
-  const { data: logtoSkus } = useLogtoSkus();
+  const { data: myeyesidSkus } = useMyEyesIDSkus();
 
   const { subscribe } = useSubscribe();
   const cloudApi = useCloudApi({ hideErrorToast: true });
 
-  const reservedBasicLogtoSkus = conditional(pickupFeaturedLogtoSkus(logtoSkus));
+  const reservedBasicMyEyesIDSkus = conditional(pickupFeaturedMyEyesIDSkus(myeyesidSkus));
 
-  if (!reservedBasicLogtoSkus || !tenantData) {
+  if (!reservedBasicMyEyesIDSkus || !tenantData) {
     return null;
   }
 
-  const handleSelectSku = async (logtoSku: LogtoSkuResponse) => {
-    const { id: skuId } = logtoSku;
+  const handleSelectSku = async (myeyesidSku: MyEyesIDSkuResponse) => {
+    const { id: skuId } = myeyesidSku;
     try {
       setProcessingSkuId(skuId);
       if (skuId === ReservedPlanId.Free) {
@@ -85,16 +85,16 @@ function SelectTenantPlanModal({ tenantData, onClose }: Props) {
         onClose={onClose}
       >
         <div className={styles.container}>
-          {reservedBasicLogtoSkus.map((logtoSku) => (
+          {reservedBasicMyEyesIDSkus.map((myeyesidSku) => (
             <SkuCardItem
-              key={logtoSku.id}
-              sku={logtoSku}
+              key={myeyesidSku.id}
+              sku={myeyesidSku}
               buttonProps={{
-                isLoading: processingSkuId === logtoSku.id,
+                isLoading: processingSkuId === myeyesidSku.id,
                 disabled: Boolean(processingSkuId),
               }}
               onSelect={() => {
-                void handleSelectSku(logtoSku);
+                void handleSelectSku(myeyesidSku);
               }}
             />
           ))}

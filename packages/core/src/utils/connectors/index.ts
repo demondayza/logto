@@ -2,40 +2,40 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import type { ConnectorFactory } from '@logto/cli/lib/connector/index.js';
-import { loadConnectorFactories as _loadConnectorFactories } from '@logto/cli/lib/connector/index.js';
-import { connectorDirectory } from '@logto/cli/lib/constants.js';
-import { getConnectorPackagesFromDirectory } from '@logto/cli/lib/utils.js';
-import type router from '@logto/cloud/routes';
+import type { ConnectorFactory } from '@myeyesid/cli/lib/connector/index.js';
+import { loadConnectorFactories as _loadConnectorFactories } from '@myeyesid/cli/lib/connector/index.js';
+import { connectorDirectory } from '@myeyesid/cli/lib/constants.js';
+import { getConnectorPackagesFromDirectory } from '@myeyesid/cli/lib/utils.js';
+import type router from '@myeyesid/cloud/routes';
 import {
   demoConnectorIds,
   ConnectorType,
   type EmailConnector,
   type SmsConnector,
-} from '@logto/connector-kit';
-import type { ConnectorFactoryResponse, ConnectorResponse } from '@logto/schemas';
-import { findPackage } from '@logto/shared';
+} from '@myeyesid/connector-kit';
+import type { ConnectorFactoryResponse, ConnectorResponse } from '@myeyesid/schemas';
+import { findPackage } from '@myeyesid/shared';
 import { conditional, deduplicate, pick, trySafe } from '@silverhand/essentials';
 
 import { EnvSet } from '#src/env-set/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
 
-import { type LogtoConnector } from './types.js';
+import { type MyEyesIDConnector } from './types.js';
 
-const isPasswordlessLogtoConnector = (
-  connector: LogtoConnector
-): connector is LogtoConnector<EmailConnector | SmsConnector> =>
+const isPasswordlessMyEyesIDConnector = (
+  connector: MyEyesIDConnector
+): connector is MyEyesIDConnector<EmailConnector | SmsConnector> =>
   connector.type !== ConnectorType.Social;
 
 const isDemoConnector = (connectorId: string) => demoConnectorIds.includes(connectorId);
 
-export const transpileLogtoConnector = async (
-  connector: LogtoConnector,
+export const transpileMyEyesIDConnector = async (
+  connector: MyEyesIDConnector,
   extraInfo?: ConnectorResponse['extraInfo']
 ): Promise<ConnectorResponse> => {
   const usagePayload = conditional(
     /** Should do the check in advance since only passwordless connectors could have `getUsage` method. */
-    isPasswordlessLogtoConnector(connector) &&
+    isPasswordlessMyEyesIDConnector(connector) &&
       connector.getUsage && {
         usage: await trySafe(connector.getUsage(new Date(connector.dbEntry.createdAt))),
       }

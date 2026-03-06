@@ -7,8 +7,8 @@ import {
   GoogleConnector,
   isExternalGoogleOneTap as isExternalGoogleOneTapChecker,
   isGoogleOneTap as isGoogleOneTapChecker,
-  logtoGoogleOneTapCookieKey,
-} from '@logto/connector-kit';
+  myeyesidGoogleOneTapCookieKey,
+} from '@myeyesid/connector-kit';
 import {
   VerificationType,
   type JsonObject,
@@ -20,8 +20,8 @@ import {
   type SocialConnectorPayload,
   type EncryptedTokenSet,
   type SecretSocialConnectorRelationPayload,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { conditional } from '@silverhand/essentials';
 
 import RequestError from '#src/errors/RequestError/index.js';
@@ -34,7 +34,7 @@ import type Libraries from '#src/tenants/Libraries.js';
 import type Queries from '#src/tenants/Queries.js';
 import type TenantContext from '#src/tenants/TenantContext.js';
 import assertThat from '#src/utils/assert-that.js';
-import { type LogtoConnector } from '#src/utils/connectors/types.js';
+import { type MyEyesIDConnector } from '#src/utils/connectors/types.js';
 
 import type { InteractionProfile } from '../../types.js';
 
@@ -45,7 +45,7 @@ export {
   type SanitizedSocialVerificationRecordData,
   socialVerificationRecordDataGuard,
   sanitizedSocialVerificationRecordDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 type SocialAuthorizationSessionStorageType = 'interactionSession' | 'verificationRecord';
 
@@ -72,7 +72,7 @@ export class SocialVerification implements IdentifierVerificationRecord<Verifica
   public socialUserInfo?: SocialUserInfo;
   public encryptedTokenSet?: EncryptedTokenSet;
   public connectorSession: ConnectorSession;
-  private connectorDataCache?: LogtoConnector;
+  private connectorDataCache?: MyEyesIDConnector;
 
   constructor(
     private readonly libraries: Libraries,
@@ -352,7 +352,7 @@ export class SocialVerification implements IdentifierVerificationRecord<Verifica
     return socials.findSocialRelatedUser(this.socialUserInfo);
   }
 
-  private async getConnectorData(): Promise<LogtoConnector<SocialConnector>> {
+  private async getConnectorData(): Promise<MyEyesIDConnector<SocialConnector>> {
     const { getConnector } = this.libraries.socials;
 
     this.connectorDataCache ||= await getConnector(this.connectorId);
@@ -432,7 +432,7 @@ export class SocialVerification implements IdentifierVerificationRecord<Verifica
       if (isExternalGoogleOneTapChecker(connectorData)) {
         assertThat(
           connectorData[GoogleConnector.oneTapParams.credential] ===
-            ctx.cookies.get(logtoGoogleOneTapCookieKey),
+            ctx.cookies.get(myeyesidGoogleOneTapCookieKey),
           'session.google_one_tap.cookie_mismatch'
         );
       } else {

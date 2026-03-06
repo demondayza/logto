@@ -1,6 +1,6 @@
 # Yunpian SMS connector
 
-The official Logto connector for Yunpian SMS service. [中文文档](https://github.com/logto-io/logto/tree/master/packages/connectors/connector-yunpian-sms/README.zh-CN.md)
+The official MyEyesID connector for Yunpian SMS service. [中文文档](https://github.com/myeyesid-io/myeyesid/tree/master/packages/connectors/connector-yunpian-sms/README.zh-CN.md)
 
 **Table of contents**
 
@@ -10,13 +10,13 @@ The official Logto connector for Yunpian SMS service. [中文文档](https://git
     - [Create a Yunpian account](#create-a-yunpian-account)
     - [Get API KEY](#get-api-key)
     - [Configure SMS templates](#configure-sms-templates)
-  - [Configure in Logto](#configure-in-logto)
+  - [Configure in MyEyesID](#configure-in-myeyesid)
   - [Notes](#notes)
   - [References](#references)
 
 ## Get started
 
-Yunpian is a communication service provider offering various services including SMS. The Yunpian SMS Connector is a plugin provided by the Logto team to integrate with Yunpian's SMS service, enabling Logto end-users to register and sign in via SMS verification codes.
+Yunpian is a communication service provider offering various services including SMS. The Yunpian SMS Connector is a plugin provided by the MyEyesID team to integrate with Yunpian's SMS service, enabling MyEyesID end-users to register and sign in via SMS verification codes.
 
 ## Set up SMS service in Yunpian Console
 
@@ -39,9 +39,9 @@ Visit [Yunpian's website](https://www.yunpian.com/) to register an account and c
 5. Wait for template approval
 6. If you need to send international SMS, repeat the above steps but select "International SMS" -> "Template Filing"
 
-## Configure in Logto
+## Configure in MyEyesID
 
-1. In Logto Console, go to "Connectors"
+1. In MyEyesID Console, go to "Connectors"
 2. Find and click "Yunpian SMS Service"
 3. Fill in the configuration form:
    - API KEY: The API KEY obtained from Yunpian
@@ -57,4 +57,4 @@ Visit [Yunpian's website](https://www.yunpian.com/) to register an account and c
 ## References
 
 - [Yunpian Development Documentation](https://www.yunpian.com/official/document/sms/zh_CN/introduction_brief)
-- [Logto SMS Connector Guide](https://docs.logto.io/docs/recipes/configure-connectors/sms-connector/)
+- [MyEyesID SMS Connector Guide](https://docs.myeyesid.io/docs/recipes/configure-connectors/sms-connector/)

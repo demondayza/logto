@@ -1,6 +1,6 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { MfaFactor, MfaPolicy, SignInIdentifier, SignInMode } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { MfaFactor, MfaPolicy, SignInIdentifier, SignInMode } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import {
   createUserMfaVerification,

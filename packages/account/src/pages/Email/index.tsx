@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 import { updatePrimaryEmail } from '@ac/apis/account';
 import { sendEmailVerificationCode, verifyEmailVerificationCode } from '@ac/apis/verification';

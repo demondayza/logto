@@ -1,4 +1,4 @@
-import type { StorageProviderData } from '@logto/schemas';
+import type { StorageProviderData } from '@myeyesid/schemas';
 
 import { buildAzureStorage } from './azure-storage.js';
 import { buildGoogleStorage } from './google-storage.js';

@@ -1,4 +1,4 @@
-import { InteractionHookEvent, type Hook } from '@logto/schemas';
+import { InteractionHookEvent, type Hook } from '@myeyesid/schemas';
 
 import { authedAdminApi } from '#src/api/api.js';
 import { getHookCreationPayload } from '#src/helpers/hook.js';

@@ -2,7 +2,7 @@ import PageContext from '@/Providers/PageContextProvider/PageContext';
 import defaultAppleTouchLogo from '@experience/shared/assets/apple-touch-icon.png';
 import defaultFavicon from '@experience/shared/assets/favicon.png';
 import { type SignInExperienceResponse } from '@experience/shared/types';
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { conditionalString } from '@silverhand/essentials';
 import classNames from 'classnames';
 import i18next from 'i18next';

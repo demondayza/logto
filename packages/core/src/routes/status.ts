@@ -17,7 +17,7 @@ export default function statusRoutes<T extends AnonymousRouter>(
   router.get('/status', koaGuard({ status: 204 }), async (ctx, next) => {
     ctx.status = 204;
 
-    const statusApiKeyHeader = getSingleHeader(ctx.request.headers['logto-status-api-key']);
+    const statusApiKeyHeader = getSingleHeader(ctx.request.headers['myeyesid-status-api-key']);
     if (
       EnvSet.values.statusApiKey &&
       statusApiKeyHeader &&
@@ -25,7 +25,7 @@ export default function statusRoutes<T extends AnonymousRouter>(
         timingSafeEqual(Buffer.from(EnvSet.values.statusApiKey), Buffer.from(statusApiKeyHeader))
       )
     ) {
-      ctx.set('logto-tenant-id', tenant.id);
+      ctx.set('myeyesid-tenant-id', tenant.id);
     }
 
     return next();

@@ -1,4 +1,4 @@
-import { type Application } from '@logto/schemas';
+import { type Application } from '@myeyesid/schemas';
 
 import OidcPermissionsCard from './OidcPermissionsCard';
 import PermissionsCard from './PermissionsCard';

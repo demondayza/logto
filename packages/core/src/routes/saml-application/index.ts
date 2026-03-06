@@ -6,8 +6,8 @@ import {
   samlApplicationResponseGuard,
   samlApplicationSecretResponseGuard,
   SamlApplicationSecrets,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { removeUndefinedKeys } from '@silverhand/essentials';
 import { z } from 'zod';
 

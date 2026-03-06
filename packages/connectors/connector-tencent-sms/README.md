@@ -1,6 +1,6 @@
 # Tencent short message service connector
 
-The official Logto connector for Tencent short message service.
+The official MyEyesID connector for Tencent short message service.
 
 **Table of contents**
 
@@ -17,7 +17,7 @@ The official Logto connector for Tencent short message service.
 
 Tencent Cloud is a primary cloud service provider in Asia, offering various services, including SMS (short message service).
 
-Tencent Short Message Service connector is an official Logto integration that helps end-users register or sign in using SMS verification codes.
+Tencent Short Message Service connector is an official MyEyesID integration that helps end-users register or sign in using SMS verification codes.
 
 ## Set up a short message service in Tencent Cloud
 
@@ -52,7 +52,7 @@ For detailed guidance, click the “Getting Started Guide” (新手配置指引
   - `signName`: The signature name obtained in step 2. This applies to all templates.
   - Add multiple templates for different scenarios if needed. Example for a single template:
     - `templateCode`: Retrieved from the “Template Code” in step 2.
-    - `usageType`: Specify one of `Register`, `SignIn`, `ForgotPassword`, or `Generic` for different scenarios (Logto-specific property).
+    - `usageType`: Specify one of `Register`, `SignIn`, `ForgotPassword`, or `Generic` for different scenarios (MyEyesID-specific property).
     - Ensure templates are configured for all four scenarios to complete the flow.
   - `sdkAppId`: Found in “[Application Management](https://console.cloud.tencent.com/smsv2/app-manage)” (应用管理).
   - `region`: Specify the supported region from the “[Sending Documentation](https://cloud.tencent.com/document/api/382/52071#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)” (发送文档).

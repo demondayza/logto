@@ -46,7 +46,7 @@ export const getConnectorDirectory = (instancePath: string) =>
   path.join(instancePath, coreDirectory, connectorDirectory);
 
 export const isOfficialConnector = (packageName: string) =>
-  packageName.startsWith('@logto/connector-');
+  packageName.startsWith('@myeyesid/connector-');
 
 export const getConnectorPackagesFrom = async (instancePath?: string) => {
   const directory = getConnectorDirectory(await inquireInstancePath(instancePath));
@@ -140,14 +140,14 @@ export const addConnectors = async (instancePath: string, packageNames: string[]
   await addConnectorsToPath(cwd, packageNames);
 };
 
-const officialConnectorPrefix = '@logto/connector-';
+const officialConnectorPrefix = '@myeyesid/connector-';
 
 type PackageMeta = { name: string; scope: string; version: string };
 
 const maintainer = 'gaosun';
 
 /**
- * This function fetches the list of Logto official connectors from the NPM registry.
+ * This function fetches the list of MyEyesID official connectors from the NPM registry.
  *
  * @remarks
  * This fetching logic is based on the NPM registry API.
@@ -155,12 +155,12 @@ const maintainer = 'gaosun';
  *
  * @remarks
  * Known limitations of the NPM registry API:
- * 1. The `fetchList` API request performs a 'fuzzy' search using the `text` parameter with the package name prefix `@logto/connector-`, resulting in many irrelevant results (over 1000), making it difficult to filter all official connectors.
- * 2. The `scope:logto` search qualifier does not function as intended, failing to properly filter `@logto` scope packages.
+ * 1. The `fetchList` API request performs a 'fuzzy' search using the `text` parameter with the package name prefix `@myeyesid/connector-`, resulting in many irrelevant results (over 1000), making it difficult to filter all official connectors.
+ * 2. The `scope:myeyesid` search qualifier does not function as intended, failing to properly filter `@myeyesid` scope packages.
  *
  * To mitigate these limitations:
- * - We replace `scope:logto` with the `maintainer:gaosun` qualifier to reduce irrelevant results, which helps in filtering official connectors.
- * - In addition to the API search, we filter results by checking the package name prefix `@logto/connector-`.
+ * - We replace `scope:myeyesid` with the `maintainer:gaosun` qualifier to reduce irrelevant results, which helps in filtering official connectors.
+ * - In addition to the API search, we filter results by checking the package name prefix `@myeyesid/connector-`.
  * - We continue fetching pages from the registry search API until the last page, applying the above filtering logic to compile the final list of official connectors.
  */
 export const fetchOfficialConnectorList = async (includingCloudConnectors = false) => {
@@ -187,7 +187,7 @@ export const fetchOfficialConnectorList = async (includingCloudConnectors = fals
 
   const packages: PackageMeta[] = [];
 
-  const excludeList = ['mock', 'kit', ...conditionalArray(!includingCloudConnectors && 'logto')];
+  const excludeList = ['mock', 'kit', ...conditionalArray(!includingCloudConnectors && 'myeyesid')];
 
   // eslint-disable-next-line @silverhand/fp/no-let, @silverhand/fp/no-mutation
   for (let page = 0; ; ++page) {

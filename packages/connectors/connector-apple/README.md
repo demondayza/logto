@@ -1,6 +1,6 @@
 # Apple connector
 
-The official Logto connector for Apple social sign-in.
+The official MyEyesID connector for Apple social sign-in.
 
 **Table of contents**
 
@@ -14,7 +14,7 @@ The official Logto connector for Apple social sign-in.
 
 ## Get started
 
-If you don't know the concept of the connector or don't know how to add this connector to your Sign-in experience, please see [Logto tutorial](https://docs.logto.io/docs/tutorials/get-started/enable-social-sign-in).
+If you don't know the concept of the connector or don't know how to add this connector to your Sign-in experience, please see [MyEyesID tutorial](https://docs.myeyesid.io/docs/tutorials/get-started/enable-social-sign-in).
 
 > ℹ️ **Note**
 > 
@@ -39,7 +39,7 @@ See the "Enable an App ID" section in [Apple official docs](https://developer.ap
 
 1. Visit [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources/identifiers/list/serviceId), then click the "+" button next to "Identifier".
 2. In the "Register a new identifier" page, choose "Services IDs" and click "Continue".
-3. Fill out "Description" and "Identifier" (E.g., `Logto Test` and `io.logto.test`), then click "Continue".
+3. Fill out "Description" and "Identifier" (E.g., `MyEyesID Test` and `io.myeyesid.test`), then click "Continue".
 4. Double-check the info and click "Register".
 
 ### Enable Sign in with Apple for your identifier
@@ -50,7 +50,7 @@ Click the identifier you just created. Check "Sign in with Apple" on the details
 
 In the opening modal, select the App ID you just enabled Sign in with Apple.
 
-Enter the domain of your Logto instance without protocol and port, e.g., `your.logto.domain`; then enter the "Return URL" (i.e., Redirect URI), which is the Logto URL with `/callback/${connector_id}`, e.g., `https://your.logto.domain/callback/apple-universal`. You can get the randomly generated `connector_id` after creating Apple connector in Admin Console.
+Enter the domain of your MyEyesID instance without protocol and port, e.g., `your.myeyesid.domain`; then enter the "Return URL" (i.e., Redirect URI), which is the MyEyesID URL with `/callback/${connector_id}`, e.g., `https://your.myeyesid.domain/callback/apple-universal`. You can get the randomly generated `connector_id` after creating Apple connector in Admin Console.
 
 ![domain-and-url](/packages/connectors/connector-apple/docs/domain-and-url.png)
 
@@ -82,4 +82,4 @@ See developer discussion [here](https://forums.developer.apple.com/forums/thread
 
 ## Test Apple connector
 
-That's it. The Apple connector should be available in both web and native apps. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. The Apple connector should be available in both web and native apps. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).

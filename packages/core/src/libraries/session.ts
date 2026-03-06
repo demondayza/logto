@@ -2,7 +2,7 @@ import {
   jsonObjectGuard,
   jwtCustomizerUserInteractionContextGuard,
   oidcSessionInstancePayloadGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import type { Context } from 'koa';
 import type { InteractionResults, PromptDetail, Provider } from 'oidc-provider';

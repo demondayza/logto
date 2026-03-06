@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import type { ImgHTMLAttributes, ReactElement } from 'react';
 import { cloneElement, useState } from 'react';
 

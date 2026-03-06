@@ -1,5 +1,5 @@
-import { UserScope } from '@logto/core-kit';
-import { AccountCenterControlValue } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { AccountCenterControlValue } from '@myeyesid/schemas';
 
 import { mockSocialConnectorTarget } from '#src/__mocks__/connectors-mock.js';
 import { updateAccountCenter } from '#src/api/account-center.js';

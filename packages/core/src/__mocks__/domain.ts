@@ -3,7 +3,7 @@ import {
   type CloudflareData,
   type Domain,
   type DomainResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export const mockNanoIdForDomain = 'random_string';
 
@@ -13,7 +13,7 @@ export const mockTenantIdForHook = 'fake_tenant';
 
 export const mockDomainResponse: DomainResponse = {
   id: mockNanoIdForDomain,
-  domain: 'logto.example.com',
+  domain: 'myeyesid.example.com',
   status: DomainStatus.PendingVerification,
   errorMessage: null,
   dnsRecords: [],

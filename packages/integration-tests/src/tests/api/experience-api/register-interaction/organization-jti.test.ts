@@ -1,5 +1,5 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { SignInIdentifier } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 import { createUser, deleteUser, getUserOrganizations } from '#src/api/admin-user.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';

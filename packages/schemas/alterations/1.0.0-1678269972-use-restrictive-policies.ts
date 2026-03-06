@@ -9,7 +9,7 @@ const tables = [
   'connectors',
   'custom_phrases',
   'logs',
-  'logto_configs',
+  'myeyesid_configs',
   'oidc_model_instances',
   'passcodes',
   'resources',
@@ -56,7 +56,7 @@ const alteration: AlterationScript = {
     `);
   },
   down: async (pool) => {
-    const role = sql.identifier([`logto_tenant_${await getDatabaseName(pool)}`]);
+    const role = sql.identifier([`myeyesid_tenant_${await getDatabaseName(pool)}`]);
 
     await Promise.all(
       tables.map(async (tableRaw) => {

@@ -1,13 +1,13 @@
-import { demoAppApplicationId, type MfaFactor } from '@logto/schemas';
+import { demoAppApplicationId, type MfaFactor } from '@myeyesid/schemas';
 import { appendPath } from '@silverhand/essentials';
 
-import { logtoUrl, mockSocialAuthPageUrl } from '#src/constants.js';
+import { myeyesidUrl, mockSocialAuthPageUrl } from '#src/constants.js';
 import { readConnectorMessage } from '#src/helpers/index.js';
 import { dcls } from '#src/utils.js';
 
 import ExpectPage from './expect-page.js';
 
-const demoAppUrl = appendPath(new URL(logtoUrl), 'demo-app');
+const demoAppUrl = appendPath(new URL(myeyesidUrl), 'demo-app');
 
 /** Remove the query string together with the `?` from a URL string. */
 const stripQuery = (url: string) => url.split('?')[0];
@@ -68,14 +68,14 @@ export default class ExpectExperience extends ExpectPage {
   constructor(thePage = global.page, options: ExpectExperienceOptions = {}) {
     super(thePage);
     this.options = {
-      endpoint: new URL(logtoUrl),
+      endpoint: new URL(myeyesidUrl),
       forgotPassword: false,
       ...options,
     };
   }
 
   /**
-   * Start experience with the given initial URL. Expect the initial URL is protected by Logto, and
+   * Start experience with the given initial URL. Expect the initial URL is protected by MyEyesID, and
    * navigate to the experience sign-in page if unauthenticated.
    *
    * If the experience can be started, the instance will be marked as ongoing.
@@ -148,7 +148,7 @@ export default class ExpectExperience extends ExpectPage {
 
   /**
    * Assert the page is at the verification code page and fill the verification code inputs with the
-   * code from Logto database.
+   * code from MyEyesID database.
    *
    * @param type The type of experience to expect.
    */

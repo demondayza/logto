@@ -1,4 +1,4 @@
-import { type Hook, type CreateHook, type HookEvent, type HookConfig } from '@logto/schemas';
+import { type Hook, type CreateHook, type HookEvent, type HookConfig } from '@myeyesid/schemas';
 import { useContext } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { Trans, useTranslation } from 'react-i18next';

@@ -5,7 +5,7 @@ import {
   type EmailTemplateDetails,
   replaceSendMessageHandlebars,
   type SendMessagePayload,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import type { AwsSesConfig, Template } from './types.js';
 

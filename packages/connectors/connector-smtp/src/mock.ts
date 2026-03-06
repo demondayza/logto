@@ -7,25 +7,25 @@ export const mockedConfig = {
     {
       contentType: 'text/plain',
       content: 'This is for testing purposes only. Your verification code is {{    code }}.',
-      subject: 'Logto Test with SMTP',
+      subject: 'MyEyesID Test with SMTP',
       usageType: 'Generic',
     },
     {
       contentType: 'text/plain',
       content: 'This is for sign-in purposes only. Your verification code is {{ code  }}.',
-      subject: 'Logto sign-in with SMTP {{   code   }}',
+      subject: 'MyEyesID sign-in with SMTP {{   code   }}',
       usageType: 'SignIn',
     },
     {
       contentType: 'text/plain',
       content: 'This is for register purposes only. Your verification code is {{code}}.',
-      subject: 'Logto register with SMTP',
+      subject: 'MyEyesID register with SMTP',
       usageType: 'Register',
     },
     {
       contentType: 'text/plain',
       content: 'This is for resetting password purposes only. Your verification code is {{code}}.',
-      subject: 'Logto Forgot Password with SMTP',
+      subject: 'MyEyesID Forgot Password with SMTP',
       usageType: 'ForgotPassword',
     },
     {
@@ -39,7 +39,7 @@ export const mockedConfig = {
 };
 
 export const mockedOauth2AuthWithToken = {
-  user: '<user@logto.io>',
+  user: '<user@myeyesid.io>',
   type: 'oauth2',
   clientId: '<client-id>',
   clientSecret: '<client-secret>',
@@ -47,7 +47,7 @@ export const mockedOauth2AuthWithToken = {
 };
 
 export const mockedOauth2AuthWithKey = {
-  user: '<user@logto.io>',
+  user: '<user@myeyesid.io>',
   serviceClient: '<service-client>',
   privateKey: '<private-key>',
 };

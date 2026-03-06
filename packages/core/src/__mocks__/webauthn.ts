@@ -5,12 +5,12 @@ import {
   type WebAuthnRegistrationOptions,
   type BindWebAuthn,
   type WebAuthnVerificationPayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export const mockWebAuthnRegistrationOptions: WebAuthnRegistrationOptions = {
   rp: {
-    name: 'Logto',
-    id: 'logto.io',
+    name: 'MyEyesID',
+    id: 'myeyesid.io',
   },
   user: {
     id: 'id',
@@ -37,7 +37,7 @@ export const mockWebAuthnAuthenticationOptions: WebAuthnAuthenticationOptions = 
   ],
   userVerification: 'preferred',
   timeout: 60_000,
-  rpId: 'logto.io',
+  rpId: 'myeyesid.io',
 };
 
 export const mockBindWebAuthnPayload: BindWebAuthnPayload = {

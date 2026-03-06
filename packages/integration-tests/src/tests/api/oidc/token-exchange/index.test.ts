@@ -1,14 +1,14 @@
 /* eslint-disable max-lines */
-import { UserScope, buildOrganizationUrn } from '@logto/core-kit';
-import { decodeAccessToken } from '@logto/js';
+import { UserScope, buildOrganizationUrn } from '@myeyesid/core-kit';
+import { decodeAccessToken } from '@myeyesid/js';
 import {
   ApplicationType,
   GrantType,
   InteractionEvent,
   MfaFactor,
   type Resource,
-} from '@logto/schemas';
-import { formUrlEncodedHeaders } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { formUrlEncodedHeaders } from '@myeyesid/shared';
 
 import { createUserMfaVerification, deleteUser } from '#src/api/admin-user.js';
 import { oidcApi } from '#src/api/api.js';
@@ -19,7 +19,7 @@ import {
   updateApplication,
 } from '#src/api/application.js';
 import { putInteraction } from '#src/api/interaction.js';
-import { deleteJwtCustomizer, upsertJwtCustomizer } from '#src/api/logto-config.js';
+import { deleteJwtCustomizer, upsertJwtCustomizer } from '#src/api/myeyesid-config.js';
 import { createResource, deleteResource } from '#src/api/resource.js';
 import { createSubjectToken } from '#src/api/subject-token.js';
 import type MockClient from '#src/client/index.js';
@@ -35,7 +35,7 @@ import {
   generateUsername,
 } from '#src/utils.js';
 
-const impersonationTokenType = 'urn:logto:token-type:impersonation_token';
+const impersonationTokenType = 'urn:myeyesid:token-type:impersonation_token';
 const legacyAccessTokenType = 'urn:ietf:params:oauth:token-type:access_token';
 
 describe('Token Exchange', () => {
@@ -45,7 +45,7 @@ describe('Token Exchange', () => {
   // make it easy to check claims.
   const testApiResourceInfo: Pick<Resource, 'name' | 'indicator'> = {
     name: 'test-api-resource',
-    indicator: 'https://foo.logto.io/api',
+    indicator: 'https://foo.myeyesid.io/api',
   };
 
   /* eslint-disable @silverhand/fp/no-let */

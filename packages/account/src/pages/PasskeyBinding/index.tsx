@@ -1,6 +1,6 @@
 import Button from '@experience/shared/components/Button';
 import InputField from '@experience/shared/components/InputFields/InputField';
-import { AccountCenterControlValue, MfaFactor, type Mfa } from '@logto/schemas';
+import { AccountCenterControlValue, MfaFactor, type Mfa } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import { browserSupportsWebAuthn, startRegistration, WebAuthnError } from '@simplewebauthn/browser';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';

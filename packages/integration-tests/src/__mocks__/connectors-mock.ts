@@ -44,22 +44,22 @@ export const aliyunEmailConnectorId = 'aliyun-direct-mail';
 export const aliyunEmailConnectorConfig = {
   accessKeyId: 'your-access-key-id-value',
   accessKeySecret: 'your-access-key-secret-value',
-  accountName: 'noreply@logto.io',
+  accountName: 'noreply@myeyesid.io',
   fromAlias: 'from-alias-value',
   templates: [
     {
       subject: 'register-template-subject-value',
-      content: 'Logto: Your passcode is {{code}}. (regitser template)',
+      content: 'MyEyesID: Your passcode is {{code}}. (regitser template)',
       usageType: 'Register',
     },
     {
       subject: 'sign-in-template-subject-value',
-      content: 'Logto: Your passcode is {{code}}. (sign-in template)',
+      content: 'MyEyesID: Your passcode is {{code}}. (sign-in template)',
       usageType: 'SignIn',
     },
     {
       subject: 'test-template-subject-value',
-      content: 'Logto: Your passcode is {{code}}. (test template)',
+      content: 'MyEyesID: Your passcode is {{code}}. (test template)',
       usageType: 'Test',
     },
   ],
@@ -68,25 +68,25 @@ export const aliyunEmailConnectorConfig = {
 export const sendgridEmailConnectorId = 'sendgrid-email-service';
 export const sendgridEmailConnectorConfig = {
   apiKey: 'api-key-value',
-  fromEmail: 'noreply@logto.test.io',
+  fromEmail: 'noreply@myeyesid.test.io',
   fromName: 'from-name-value',
   templates: [
     {
       usageType: 'SignIn',
       type: 'text/plain',
-      subject: 'Logto SignIn Template',
+      subject: 'MyEyesID SignIn Template',
       content: 'This is for sign-in purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'Register',
       type: 'text/plain',
-      subject: 'Logto Register Template',
+      subject: 'MyEyesID Register Template',
       content: 'This is for registering purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'Test',
       type: 'text/plain',
-      subject: 'Logto Test Template',
+      subject: 'MyEyesID Test Template',
       content: 'This is for testing purposes only. Your passcode is {{code}}.',
     },
   ],
@@ -140,61 +140,61 @@ export const mockSmsConnectorConfig = {
 export const mockEmailConnectorId = 'mock-email-service';
 export const mockEmailConnectorConfig = {
   apiKey: 'api-key-value',
-  fromEmail: 'noreply@logto.test.io',
+  fromEmail: 'noreply@myeyesid.test.io',
   fromName: 'from-name-value',
   templates: [
     {
       usageType: 'SignIn',
       type: 'text/plain',
-      subject: 'Logto SignIn Template',
+      subject: 'MyEyesID SignIn Template',
       content: 'This is for sign-in purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'Register',
       type: 'text/plain',
-      subject: 'Logto Register Template',
+      subject: 'MyEyesID Register Template',
       content: 'This is for registering purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'ForgotPassword',
       type: 'text/plain',
-      subject: 'Logto Forgot Password Template',
+      subject: 'MyEyesID Forgot Password Template',
       content: 'This is for forgot-password purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'Generic',
       type: 'text/plain',
-      subject: 'Logto Generic Template',
+      subject: 'MyEyesID Generic Template',
       content: 'This is for Management API call only. Your passcode is {{code}}.',
     },
     {
       usageType: 'OrganizationInvitation',
       type: 'text/plain',
-      subject: 'Logto Organization Invitation Template',
+      subject: 'MyEyesID Organization Invitation Template',
       content: 'This is for organization invitation purposes only. Your link is {{link}}.',
     },
     {
       usageType: 'UserPermissionValidation',
       type: 'text/plain',
-      subject: 'Logto User Permission Validation Template',
+      subject: 'MyEyesID User Permission Validation Template',
       content: 'This is for user permission validation purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'BindNewIdentifier',
       type: 'text/plain',
-      subject: 'Logto Bind New Identifier Template',
+      subject: 'MyEyesID Bind New Identifier Template',
       content: 'This is for binding new identifier purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'MfaVerification',
       type: 'text/plain',
-      subject: 'Logto MFA Verification Template',
+      subject: 'MyEyesID MFA Verification Template',
       content: 'This is for MFA verification purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'BindMfa',
       type: 'text/plain',
-      subject: 'Logto Bind MFA Template',
+      subject: 'MyEyesID Bind MFA Template',
       content: 'This is for binding MFA purposes only. Your passcode is {{code}}.',
     },
   ],
@@ -203,31 +203,31 @@ export const mockEmailConnectorConfig = {
 export const mockAlternativeEmailConnectorId = 'mock-email-service-alternative';
 export const mockAlternativeEmailConnectorConfig = {
   apiKey: 'api-key-value',
-  fromEmail: 'noreply@logto.test.io',
+  fromEmail: 'noreply@myeyesid.test.io',
   fromName: 'from-name-value',
   templates: [
     {
       usageType: 'SignIn',
       type: 'text/plain',
-      subject: 'Logto SignIn Template',
+      subject: 'MyEyesID SignIn Template',
       content: 'This is for sign-in purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'Register',
       type: 'text/plain',
-      subject: 'Logto Register Template',
+      subject: 'MyEyesID Register Template',
       content: 'This is for registering purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'ForgotPassword',
       type: 'text/plain',
-      subject: 'Logto Forgot Password Template',
+      subject: 'MyEyesID Forgot Password Template',
       content: 'This is for forgot-password purposes only. Your passcode is {{code}}.',
     },
     {
       usageType: 'Generic',
       type: 'text/plain',
-      subject: 'Logto Generic Template',
+      subject: 'MyEyesID Generic Template',
       content: 'This is for generic purposes only. Your passcode is {{code}}.',
     },
   ],

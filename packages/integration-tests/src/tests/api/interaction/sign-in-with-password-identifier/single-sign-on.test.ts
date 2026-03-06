@@ -1,4 +1,4 @@
-import { ConnectorType, InteractionEvent } from '@logto/schemas';
+import { ConnectorType, InteractionEvent } from '@myeyesid/schemas';
 
 import { createUser, deleteUser } from '#src/api/admin-user.js';
 import { putInteraction } from '#src/api/interaction.js';

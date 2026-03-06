@@ -1,4 +1,4 @@
-import { customTenantIdMaxLength } from '@logto/core-kit';
+import { customTenantIdMaxLength } from '@myeyesid/core-kit';
 import { useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

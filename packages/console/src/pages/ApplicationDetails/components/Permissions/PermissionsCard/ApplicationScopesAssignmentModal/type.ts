@@ -1,9 +1,9 @@
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import {
   type JsonObject,
   type ApplicationUserConsentScopesResponse,
   type ApplicationUserConsentScopeType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { type Props as DataTransferBoxProps } from '@/ds-components/DataTransferBox';
 import { type DataEntry } from '@/ds-components/DataTransferBox/type';

@@ -1,4 +1,4 @@
-import { type SsoConnectorProviderDetail, Theme } from '@logto/schemas';
+import { type SsoConnectorProviderDetail, Theme } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import ImageWithErrorFallback from '@/ds-components/ImageWithErrorFallback';

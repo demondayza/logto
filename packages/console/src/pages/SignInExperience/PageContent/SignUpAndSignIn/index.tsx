@@ -1,4 +1,4 @@
-import type { SignInExperience } from '@logto/schemas';
+import type { SignInExperience } from '@myeyesid/schemas';
 
 import PageMeta from '@/components/PageMeta';
 import { isDevFeaturesEnabled } from '@/consts/env';

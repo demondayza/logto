@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { findPackage } from '@logto/shared';
+import { findPackage } from '@myeyesid/shared';
 
 import { getPathInModule } from '../../../utils.js';
 
@@ -43,7 +43,7 @@ export const getTimestampFromFilename = (filename: string) => {
   return Number(timestampPart);
 };
 
-export const getAlterationDirectory = () => getPathInModule('@logto/schemas', 'alterations-js');
+export const getAlterationDirectory = () => getPathInModule('@myeyesid/schemas', 'alterations-js');
 
 export const getAlterationFiles = async (): Promise<AlterationFile[]> => {
   const alterationDirectory = getAlterationDirectory();
@@ -51,7 +51,7 @@ export const getAlterationFiles = async (): Promise<AlterationFile[]> => {
   /**
    * We copy all alteration scripts to the CLI package root directory,
    * since they need a proper context that includes required dependencies (such as slonik) in `node_modules/`.
-   * While the original `@logto/schemas` may remove them in production.
+   * While the original `@myeyesid/schemas` may remove them in production.
    */
   const packageDirectory = await findPackage(currentDirname);
 

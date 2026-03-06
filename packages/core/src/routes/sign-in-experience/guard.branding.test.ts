@@ -1,5 +1,5 @@
-import type { CreateSignInExperience, SignInExperience } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import type { CreateSignInExperience, SignInExperience } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { mockBranding, mockSignInExperience } from '#src/__mocks__/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
@@ -36,7 +36,7 @@ describe('branding', () => {
   describe('logoUrl', () => {
     test.each([
       'http://silverhand.com/silverhand.png',
-      'https://logto.dev/logto.jpg',
+      'https://myeyesid.dev/myeyesid.jpg',
       '/logo-light.svg',
     ])('%p should success', async (logoUrl) => {
       const signInExperience = { branding: { ...mockBranding, logoUrl } };

@@ -1,12 +1,12 @@
-import type { RoleResponse } from '@logto/schemas';
+import type { RoleResponse } from '@myeyesid/schemas';
 import {
   ProductEvent,
   RoleType,
   Roles,
   featuredApplicationGuard,
   featuredUserGuard,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { pickState, trySafe, tryThat } from '@silverhand/essentials';
 import { number, object, string, z } from 'zod';
 

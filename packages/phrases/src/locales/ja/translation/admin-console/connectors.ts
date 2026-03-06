@@ -66,7 +66,7 @@ const connectors = {
     callback_uri_description:
       'Redirect URI は、ソーシャル認可の後にユーザーがリダイレクトされる場所です。この URI を IdP の設定に追加してください。',
     callback_uri_custom_domain_description:
-      'MyEyesID で複数の<a>カスタムドメイン</a>を使用する場合は、すべての対応するコールバック URI を IdP に追加し、各ドメインでソーシャルログインが機能するようにしてください。\n\nMyEyesID の既定ドメイン (*.logto.app) は常に有効です。そのドメインでのログインもサポートしたい場合にのみ含めてください。',
+      'MyEyesID で複数の<a>カスタムドメイン</a>を使用する場合は、すべての対応するコールバック URI を IdP に追加し、各ドメインでソーシャルログインが機能するようにしてください。\n\nMyEyesID の既定ドメイン (*.myeyesid.app) は常に有効です。そのドメインでのログインもサポートしたい場合にのみ含めてください。',
     acs_url: 'アサーションコンシューマーサービス URL',
   },
   platform: {

@@ -9,12 +9,12 @@ type InjectedHeaderMapping = Record<string, string>;
 type InjectedHeaderValues = Record<string, string>;
 
 export const defaultInjectedHeaderMapping: InjectedHeaderMapping = Object.freeze({
-  country: 'x-logto-cf-country',
-  city: 'x-logto-cf-city',
-  latitude: 'x-logto-cf-latitude',
-  longitude: 'x-logto-cf-longitude',
-  botScore: 'x-logto-cf-bot-score',
-  botVerified: 'x-logto-cf-bot-verified',
+  country: 'x-myeyesid-cf-country',
+  city: 'x-myeyesid-cf-city',
+  latitude: 'x-myeyesid-cf-latitude',
+  longitude: 'x-myeyesid-cf-longitude',
+  botScore: 'x-myeyesid-cf-bot-score',
+  botVerified: 'x-myeyesid-cf-bot-verified',
 });
 
 const normalizeHeaderName = (headerName: string) => headerName.trim().toLowerCase();

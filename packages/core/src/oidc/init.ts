@@ -4,18 +4,18 @@ import assert from 'node:assert';
 import { readFileSync } from 'node:fs';
 import querystring from 'node:querystring';
 
-import { logtoGoogleOneTapCookieKey } from '@logto/connector-kit';
-import { userClaims } from '@logto/core-kit';
-import type { I18nKey } from '@logto/phrases';
+import { myeyesidGoogleOneTapCookieKey } from '@myeyesid/connector-kit';
+import { userClaims } from '@myeyesid/core-kit';
+import type { I18nKey } from '@myeyesid/phrases';
 import {
   customClientMetadataDefault,
   CustomClientMetadataKey,
   extraParamsObjectGuard,
   inSeconds,
-  logtoCookieKey,
-  type LogtoUiCookie,
+  myeyesidCookieKey,
+  type MyEyesIDUiCookie,
   ExtraParamsKey,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { removeUndefinedKeys, trySafe, tryThat } from '@silverhand/essentials';
 import { type i18n } from 'i18next';
 import { type KoaContextWithOIDC, Provider, errors } from 'oidc-provider';
@@ -24,7 +24,7 @@ import snakecaseKeys from 'snakecase-keys';
 
 import { EnvSet } from '#src/env-set/index.js';
 import { addOidcEventListeners } from '#src/event-listeners/index.js';
-import { type LogtoConfigLibrary } from '#src/libraries/logto-config.js';
+import { type MyEyesIDConfigLibrary } from '#src/libraries/myeyesid-config.js';
 import koaAppSecretTranspilation from '#src/middleware/koa-app-secret-transpilation.js';
 import koaAuditLog, { type WithLogContext } from '#src/middleware/koa-audit-log.js';
 import koaBodyEtag from '#src/middleware/koa-body-etag.js';
@@ -67,7 +67,7 @@ export default function initOidc(
   envSet: EnvSet,
   queries: Queries,
   libraries: Libraries,
-  logtoConfigs: LogtoConfigLibrary,
+  myeyesidConfigs: MyEyesIDConfigLibrary,
   subscription: SubscriptionLibrary
 ): Provider {
   const {
@@ -213,20 +213,20 @@ export default function initOidc(
 
         // Cookies are required to apply the correct server-side rendering
         ctx.cookies.set(
-          logtoCookieKey,
+          myeyesidCookieKey,
           JSON.stringify(
             removeUndefinedKeys({
               appId: typeof appId === 'string' ? appId : undefined,
               organizationId: params.organization_id,
               uiLocales: params.ui_locales,
-            }) satisfies LogtoUiCookie
+            }) satisfies MyEyesIDUiCookie
           ),
           { sameSite: 'lax', overwrite: true, httpOnly: false }
         );
 
         if (params[ExtraParamsKey.GoogleOneTapCredential]) {
           ctx.cookies.set(
-            logtoGoogleOneTapCookieKey,
+            myeyesidGoogleOneTapCookieKey,
             params[ExtraParamsKey.GoogleOneTapCredential],
             {
               sameSite: 'lax',
@@ -266,7 +266,7 @@ export default function initOidc(
               envSet,
               queries,
               libraries,
-              logtoConfigs,
+              myeyesidConfigs,
             }
           ),
         ]);
@@ -316,7 +316,7 @@ export default function initOidc(
 
           // Get the ID token config to determine which extended claims are enabled
           const idTokenConfig =
-            use === 'id_token' ? await queries.logtoConfigs.getIdTokenConfig() : undefined;
+            use === 'id_token' ? await queries.myeyesidConfigs.getIdTokenConfig() : undefined;
 
           const acceptedClaims = getAcceptedUserClaims({
             use,

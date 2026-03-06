@@ -1,4 +1,4 @@
-import { CustomProfileFieldType, type FieldPart } from '@logto/schemas';
+import { CustomProfileFieldType, type FieldPart } from '@myeyesid/schemas';
 import { useContext, useMemo } from 'react';
 
 import SecondaryPageLayout from '@/Layout/SecondaryPageLayout';

@@ -3,7 +3,7 @@ import {
   type GetUserAllIdentitiesResponse,
   type DesensitizedEnterpriseSsoTokenSetSecret,
   SsoProviderType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import useSWR from 'swr';

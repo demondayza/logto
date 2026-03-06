@@ -1,4 +1,4 @@
-import { type LogtoJwtTokenKeyType } from '@logto/schemas';
+import { type MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +17,7 @@ import ScriptSection from './ScriptSection';
 import SettingsSection from './SettingsSection';
 import styles from './index.module.scss';
 
-type Props<T extends LogtoJwtTokenKeyType> = {
+type Props<T extends MyEyesIDJwtTokenKeyType> = {
   readonly className?: string;
   readonly token: T;
   readonly data?: JwtCustomizer<T>;
@@ -25,7 +25,7 @@ type Props<T extends LogtoJwtTokenKeyType> = {
   readonly action: Action;
 };
 
-function MainContent<T extends LogtoJwtTokenKeyType>({
+function MainContent<T extends MyEyesIDJwtTokenKeyType>({
   className,
   token,
   data,

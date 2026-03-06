@@ -1,9 +1,9 @@
-import { ConnectorType } from '@logto/connector-kit';
-import { demoAppApplicationId, SignInIdentifier, SignInMode } from '@logto/schemas';
+import { ConnectorType } from '@myeyesid/connector-kit';
+import { demoAppApplicationId, SignInIdentifier, SignInMode } from '@myeyesid/schemas';
 import { appendPath } from '@silverhand/essentials';
 
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';
-import { demoAppUrl, logtoUrl } from '#src/constants.js';
+import { demoAppUrl, myeyesidUrl } from '#src/constants.js';
 import { clearConnectorsByTypes, setEmailConnector } from '#src/helpers/connector.js';
 import ExpectExperience from '#src/ui-helpers/expect-experience.js';
 import { generateEmail } from '#src/utils.js';
@@ -55,7 +55,7 @@ describe('identifier input cache', () => {
   it('cached identifier(email) should not be apply to register form (only username is allowed)', async () => {
     await experience.toClick('a', 'Create account');
     experience.toMatchUrl(
-      appendPath(new URL(logtoUrl), `register?app_id=${demoAppApplicationId}`).href
+      appendPath(new URL(myeyesidUrl), `register?app_id=${demoAppApplicationId}`).href
     );
     // The input should be empty
     await experience.toMatchElement('input[name=identifier][value=""]');

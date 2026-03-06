@@ -6,8 +6,8 @@ import {
   createAdminTenantApplicationRole,
   createCloudConnectionConfig,
   AdminTenantRole,
-} from '@logto/schemas';
-import { GlobalValues } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { GlobalValues } from '@myeyesid/shared';
 import { appendPath } from '@silverhand/essentials';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
@@ -78,7 +78,7 @@ export const seedTenantCloudServiceApplication = async (
     )
   );
 
-  // Create Cloud Service M2M application logto_config
+  // Create Cloud Service M2M application myeyesid_config
   await pool.query(
     insertInto(
       createCloudConnectionConfig(
@@ -86,7 +86,7 @@ export const seedTenantCloudServiceApplication = async (
         cloudServiceApplication.id,
         cloudServiceApplication.secret
       ),
-      'logto_configs'
+      'myeyesid_configs'
     )
   );
 

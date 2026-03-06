@@ -7,7 +7,7 @@ import {
   userMfaDataKey,
   type JsonObject,
   type MfaVerification,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type Context } from 'koa';
 import type { Provider } from 'oidc-provider';
 
@@ -67,7 +67,7 @@ export const verifyMfa = async (
   } = ctx;
   const { accountId, verifiedMfa } = interaction;
 
-  const { mfaVerifications, logtoConfig } = await tenant.queries.users.findUserById(accountId);
+  const { mfaVerifications, myeyesidConfig } = await tenant.queries.users.findUserById(accountId);
   const availableUserVerifications = mfaVerifications
     .filter((verification) => {
       // Only allow MFA that is configured in sign-in experience
@@ -107,7 +107,7 @@ export const verifyMfa = async (
     });
 
   if (availableUserVerifications.length > 0) {
-    const mfaData = userMfaDataGuard.safeParse(logtoConfig[userMfaDataKey]);
+    const mfaData = userMfaDataGuard.safeParse(myeyesidConfig[userMfaDataKey]);
     const skipMfaOnSignIn = mfaData.success ? mfaData.data.skipMfaOnSignIn : undefined;
     const canSkipMfa = skipMfaOnSignIn && policy !== MfaPolicy.Mandatory;
 
@@ -131,8 +131,8 @@ export const verifyMfa = async (
 /**
  * Check if the user has skipped MFA binding
  */
-const isMfaSkipped = (logtoConfig: JsonObject): boolean => {
-  const parsed = userMfaDataGuard.safeParse(logtoConfig[userMfaDataKey]);
+const isMfaSkipped = (myeyesidConfig: JsonObject): boolean => {
+  const parsed = userMfaDataGuard.safeParse(myeyesidConfig[userMfaDataKey]);
   return parsed.success ? parsed.data.skipped === true : false;
 };
 
@@ -174,10 +174,10 @@ export const validateMandatoryBindMfa = async (
 
   if (event === InteractionEvent.SignIn) {
     const { accountId } = interaction;
-    const { mfaVerifications, logtoConfig } = await tenant.queries.users.findUserById(accountId);
+    const { mfaVerifications, myeyesidConfig } = await tenant.queries.users.findUserById(accountId);
 
     // If the policy is not mandatory and the user has skipped MFA (not in the current interaction), skip check
-    if (policy !== MfaPolicy.Mandatory && isMfaSkipped(logtoConfig)) {
+    if (policy !== MfaPolicy.Mandatory && isMfaSkipped(myeyesidConfig)) {
       return interaction;
     }
 

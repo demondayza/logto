@@ -114,7 +114,7 @@ const fetchDownloadUrl = async (url?: string) => {
     return url;
   }
 
-  const defaultUrl = `https://github.com/logto-io/logto/releases/download/v${packageJson.version}/logto.tar.gz`;
+  const defaultUrl = `https://github.com/myeyesid-io/myeyesid/releases/download/v${packageJson.version}/myeyesid.tar.gz`;
 
   try {
     await got.head(defaultUrl);
@@ -124,7 +124,7 @@ const fetchDownloadUrl = async (url?: string) => {
         `Current version "v${packageJson.version}" not found in GitHub Releases, fallback to "latest".\n` +
           'If you want to download the latest version, please wait a few moments and try again.'
       );
-      return 'https://github.com/logto-io/logto/releases/latest/download/logto.tar.gz';
+      return 'https://github.com/myeyesid-io/myeyesid/releases/latest/download/myeyesid.tar.gz';
     }
   }
 
@@ -132,7 +132,7 @@ const fetchDownloadUrl = async (url?: string) => {
 };
 
 export const downloadRelease = async (url?: string) => {
-  const tarFilePath = path.resolve(os.tmpdir(), './logto.tar.gz');
+  const tarFilePath = path.resolve(os.tmpdir(), './myeyesid.tar.gz');
   const from = await fetchDownloadUrl(url);
 
   consoleLog.info(`Download MyEyesID from ${from}`);

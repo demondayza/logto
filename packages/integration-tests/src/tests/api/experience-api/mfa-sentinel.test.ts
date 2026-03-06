@@ -1,4 +1,4 @@
-import { MfaFactor, type SignInExperience } from '@logto/schemas';
+import { MfaFactor, type SignInExperience } from '@myeyesid/schemas';
 import { type Optional } from '@silverhand/essentials';
 import { authenticator } from 'otplib';
 

@@ -7,14 +7,14 @@ import {
   type JwtCustomizerType,
   type JwtCustomizerUserContext,
   type JwtCustomizerApplicationContext,
-  type LogtoJwtTokenKey,
+  type MyEyesIDJwtTokenKey,
   type CustomJwtApiContext,
   type CustomJwtScriptPayload,
   jsonObjectGuard,
   isBuiltInApplicationId,
   buildBuiltInApplicationDataForTenant,
-} from '@logto/schemas';
-import { type ConsoleLog } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { type ConsoleLog } from '@myeyesid/shared';
 import {
   assert,
   deduplicate,
@@ -30,7 +30,7 @@ import { ZodError, z } from 'zod';
 
 import { EnvSet } from '#src/env-set/index.js';
 import RequestError from '#src/errors/RequestError/index.js';
-import type { LogtoConfigLibrary } from '#src/libraries/logto-config.js';
+import type { MyEyesIDConfigLibrary } from '#src/libraries/myeyesid-config.js';
 import { type ScopeLibrary } from '#src/libraries/scope.js';
 import { type UserLibrary } from '#src/libraries/user.js';
 import type Queries from '#src/tenants/Queries.js';
@@ -101,7 +101,7 @@ export class JwtCustomizerLibrary {
 
   constructor(
     private readonly queries: Queries,
-    private readonly logtoConfigs: LogtoConfigLibrary,
+    private readonly myeyesidConfigs: MyEyesIDConfigLibrary,
     private readonly cloudConnection: CloudConnectionLibrary,
     private readonly userLibrary: UserLibrary,
     private readonly scopeLibrary: ScopeLibrary
@@ -117,7 +117,7 @@ export class JwtCustomizerLibrary {
    * We does not include org roles' scopes for the following reason:
    * 1. The org scopes query method requires `limit` and `offset` parameters. Other management API get
    * these APIs from console setup while this library method is a backend used method.
-   * 2. Logto developers can get the org roles' id from this user context and hence query the org roles' scopes via management API.
+   * 2. MyEyesID developers can get the org roles' id from this user context and hence query the org roles' scopes via management API.
    */
   async getUserContext(userId: string): Promise<JwtCustomizerUserContext> {
     const user = await this.queries.users.findUserById(userId);
@@ -189,7 +189,7 @@ export class JwtCustomizerLibrary {
    * @params payload.value - JWT customizer value
    * @params payload.useCase - The use case of JWT customizer script, can be either `test` or `production`.
    */
-  async deployJwtCustomizerScript<T extends LogtoJwtTokenKey>(
+  async deployJwtCustomizerScript<T extends MyEyesIDJwtTokenKey>(
     consoleLog: ConsoleLog,
     payload: {
       key: T;
@@ -212,10 +212,10 @@ export class JwtCustomizerLibrary {
     }
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
-    // @ts-ignore TS2589: caused by router type growth from @logto/cloud
+    // @ts-ignore TS2589: caused by router type growth from @myeyesid/cloud
     const [client, jwtCustomizers] = await Promise.all([
       this.cloudConnection.getClient(),
-      this.logtoConfigs.getJwtCustomizers(consoleLog),
+      this.myeyesidConfigs.getJwtCustomizers(consoleLog),
     ]);
 
     const customizerScriptsFromDatabase = getJwtCustomizerScripts(jwtCustomizers);
@@ -241,7 +241,7 @@ export class JwtCustomizerLibrary {
     });
   }
 
-  async undeployJwtCustomizerScript<T extends LogtoJwtTokenKey>(consoleLog: ConsoleLog, key: T) {
+  async undeployJwtCustomizerScript<T extends MyEyesIDJwtTokenKey>(consoleLog: ConsoleLog, key: T) {
     if (!EnvSet.values.isCloud) {
       consoleLog.warn(
         'Early terminate `undeployJwtCustomizerScript` since we do not deploy the script to dedicated computing resource for OSS version.'
@@ -258,7 +258,7 @@ export class JwtCustomizerLibrary {
 
     const [client, jwtCustomizers] = await Promise.all([
       this.cloudConnection.getClient(),
-      this.logtoConfigs.getJwtCustomizers(consoleLog),
+      this.myeyesidConfigs.getJwtCustomizers(consoleLog),
     ]);
 
     assert(jwtCustomizers[key], new RequestError({ code: 'entity.not_exists', name: key }));
@@ -285,7 +285,7 @@ export class JwtCustomizerLibrary {
 
   /**
    * @remarks
-   * For Logto cloud use only. Run the custom JWT claims script remotely in an isolated environment.
+   * For MyEyesID cloud use only. Run the custom JWT claims script remotely in an isolated environment.
    * For OSS version, use @see JwtCustomizerLibrary.runScriptInLocalVm instead.
    *
    * @param payload - The custom JWT fetcher payload.

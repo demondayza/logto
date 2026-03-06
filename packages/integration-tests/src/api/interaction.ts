@@ -6,7 +6,7 @@ import type {
   BindMfaPayload,
   VerifyMfaPayload,
   ConsentInfoResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type KyInstance } from 'ky';
 
 import api from './api.js';

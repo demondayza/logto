@@ -7,7 +7,7 @@ import {
   SentinelActivityTargetType,
   SentinelDecision,
   SentinelActivityAction,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type Optional, isKeyInObject } from '@silverhand/essentials';
 import { sha256 } from 'hash-wasm';
 

@@ -1,4 +1,4 @@
-import { validateRedirectUrl } from '@logto/core-kit';
+import { validateRedirectUrl } from '@myeyesid/core-kit';
 import { z } from 'zod';
 
 import { type ToZodObject } from '../../utils/zod.js';
@@ -67,7 +67,7 @@ export enum CustomClientMetadataKey {
   RefreshTokenTtlInDays = 'refreshTokenTtlInDays',
   TenantId = 'tenantId',
   /**
-   * Enabling this configuration will allow Logto to always issue Refresh Tokens, regardless of whether `prompt=consent` is presented in the authentication request.
+   * Enabling this configuration will allow MyEyesID to always issue Refresh Tokens, regardless of whether `prompt=consent` is presented in the authentication request.
    *
    * It only works for web applications when the client allowed grant types includes `refresh_token`.
    *
@@ -75,7 +75,7 @@ export enum CustomClientMetadataKey {
    */
   AlwaysIssueRefreshToken = 'alwaysIssueRefreshToken',
   /**
-   * When enabled (default), Logto will issue a new Refresh Token for token requests when 70% of the original Time to Live (TTL) has passed.
+   * When enabled (default), MyEyesID will issue a new Refresh Token for token requests when 70% of the original Time to Live (TTL) has passed.
    *
    * It can be turned off for only traditional web apps for enhanced security.
    */

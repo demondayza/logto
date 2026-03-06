@@ -1,4 +1,4 @@
-import { type Application, ApplicationType } from '@logto/schemas';
+import { type Application, ApplicationType } from '@myeyesid/schemas';
 
 import {
   createApplication as createApplicationApi,

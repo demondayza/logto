@@ -1,5 +1,5 @@
-import { SignInIdentifier, ConnectorType } from '@logto/schemas';
-import type { SignInExperience, ConnectorResponse } from '@logto/schemas';
+import { SignInIdentifier, ConnectorType } from '@myeyesid/schemas';
+import type { SignInExperience, ConnectorResponse } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 import useSWR from 'swr';
 

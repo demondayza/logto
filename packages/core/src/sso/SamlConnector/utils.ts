@@ -1,7 +1,7 @@
 import { X509Certificate } from 'node:crypto';
 
 import * as validator from '@authenio/samlify-node-xmllint';
-import { ssoSamlAssertionContentGuard, type SsoSamlAssertionContent } from '@logto/schemas';
+import { ssoSamlAssertionContentGuard, type SsoSamlAssertionContent } from '@myeyesid/schemas';
 import { type Optional, appendPath, tryThat } from '@silverhand/essentials';
 import { conditional } from '@silverhand/essentials';
 import { HTTPError, got } from 'got';

@@ -12,7 +12,7 @@ describe('util methods', () => {
   });
 
   it('parseQueryParameters with encoded url', () => {
-    const url = 'http://logto.io';
+    const url = 'http://myeyesid.io';
     const parameters = parseQueryParameters(`?callback=${encodeURIComponent(url)}`);
     expect(parameters).toEqual({ callback: url });
   });

@@ -1,4 +1,4 @@
-import { RecaptchaEnterpriseMode } from '@logto/schemas';
+import { RecaptchaEnterpriseMode } from '@myeyesid/schemas';
 import { type UseFormRegister, type FieldErrors, Controller, type Control } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

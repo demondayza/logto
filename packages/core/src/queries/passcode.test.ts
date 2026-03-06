@@ -1,5 +1,5 @@
-import { TemplateType } from '@logto/connector-kit';
-import { Passcodes } from '@logto/schemas';
+import { TemplateType } from '@myeyesid/connector-kit';
+import { Passcodes } from '@myeyesid/schemas';
 import { createMockPool, createMockQueryResult, sql } from '@silverhand/slonik';
 import { snakeCase } from 'snake-case';
 

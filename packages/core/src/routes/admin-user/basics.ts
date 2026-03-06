@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { emailRegEx, phoneRegEx, usernameRegEx } from '@logto/core-kit';
+import { emailRegEx, phoneRegEx, usernameRegEx } from '@myeyesid/core-kit';
 import {
   ProductEvent,
   UsersPasswordEncryptionMethod,
@@ -11,7 +11,7 @@ import {
   userPasskeySignInDataKey,
   userProfileGuard,
   userProfileResponseGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, yes } from '@silverhand/essentials';
 import { boolean, literal, nativeEnum, object, string } from 'zod';
 
@@ -123,7 +123,7 @@ export default function adminUserBasicsRoutes<T extends ManagementApiRouter>(
   );
 
   router.get(
-    '/users/:userId/logto-configs',
+    '/users/:userId/myeyesid-configs',
     koaGuard({
       params: object({ userId: string() }),
       response: object({
@@ -143,9 +143,9 @@ export default function adminUserBasicsRoutes<T extends ManagementApiRouter>(
       } = ctx.guard;
 
       const user = await findUserById(userId);
-      const existingMfaData = userMfaDataGuard.safeParse(user.logtoConfig[userMfaDataKey]);
+      const existingMfaData = userMfaDataGuard.safeParse(user.myeyesidConfig[userMfaDataKey]);
       const existingPasskeySignInData = userPasskeySignInDataGuard.safeParse(
-        user.logtoConfig[userPasskeySignInDataKey]
+        user.myeyesidConfig[userPasskeySignInDataKey]
       );
 
       ctx.body = {
@@ -167,7 +167,7 @@ export default function adminUserBasicsRoutes<T extends ManagementApiRouter>(
   );
 
   router.patch(
-    '/users/:userId/logto-configs',
+    '/users/:userId/myeyesid-configs',
     koaGuard({
       params: object({ userId: string() }),
       body: object({
@@ -197,14 +197,14 @@ export default function adminUserBasicsRoutes<T extends ManagementApiRouter>(
       } = ctx.guard;
 
       const user = await findUserById(userId);
-      const existingMfaData = userMfaDataGuard.safeParse(user.logtoConfig[userMfaDataKey]);
+      const existingMfaData = userMfaDataGuard.safeParse(user.myeyesidConfig[userMfaDataKey]);
       const existingPasskeySignInData = userPasskeySignInDataGuard.safeParse(
-        user.logtoConfig[userPasskeySignInDataKey]
+        user.myeyesidConfig[userPasskeySignInDataKey]
       );
 
       const updatedUser = await updateUserById(userId, {
-        logtoConfig: {
-          ...user.logtoConfig,
+        myeyesidConfig: {
+          ...user.myeyesidConfig,
           [userMfaDataKey]: {
             ...(existingMfaData.success ? existingMfaData.data : {}),
             skipped: mfa.skipped,

@@ -1,5 +1,5 @@
-import { generateDarkColor } from '@logto/core-kit';
-import { Theme, type Organization } from '@logto/schemas';
+import { generateDarkColor } from '@myeyesid/core-kit';
+import { Theme, type Organization } from '@myeyesid/schemas';
 import { useCallback, useMemo } from 'react';
 import { useForm, FormProvider, Controller } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

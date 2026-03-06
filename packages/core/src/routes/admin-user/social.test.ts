@@ -1,11 +1,11 @@
-import { ConnectorType, type CreateUser, type User } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { ConnectorType, type CreateUser, type User } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 import { removeUndefinedKeys } from '@silverhand/essentials';
 
 import {
   mockConnector0,
-  mockLogtoConnector,
-  mockLogtoConnectorList,
+  mockMyEyesIDConnector,
+  mockMyEyesIDConnectorList,
   mockMetadata0,
 } from '#src/__mocks__/index.js';
 import { mockUser } from '#src/__mocks__/user.js';
@@ -58,11 +58,11 @@ const usersLibraries = {
   ),
 } satisfies Partial<Libraries['users']>;
 
-const mockGetLogtoConnectors = jest.fn(async () => mockLogtoConnectorList);
+const mockGetMyEyesIDConnectors = jest.fn(async () => mockMyEyesIDConnectorList);
 const mockedConnectors = {
-  getLogtoConnectors: mockGetLogtoConnectors,
-  getLogtoConnectorById: async (connectorId: string) => {
-    const connectors = await mockGetLogtoConnectors();
+  getMyEyesIDConnectors: mockGetMyEyesIDConnectors,
+  getMyEyesIDConnectorById: async (connectorId: string) => {
+    const connectors = await mockGetMyEyesIDConnectors();
     const connector = connectors.find(({ dbEntry }) => dbEntry.id === connectorId);
     assertThat(
       connector,
@@ -149,7 +149,7 @@ describe('Admin user social identities APIs', () => {
 
   describe('POST /users/:userId/identities', () => {
     it('should throw if user cannot be found', async () => {
-      // Mock connector with id 'id0' is declared in mockLogtoConnectorList
+      // Mock connector with id 'id0' is declared in mockMyEyesIDConnectorList
       await expect(
         userRequest
           .post(`/users/${notExistedUserId}/identities`)
@@ -169,7 +169,7 @@ describe('Admin user social identities APIs', () => {
     });
 
     it('should throw if connector type is not social', async () => {
-      // Mock connector with id 'id1' is declared in mockLogtoConnectorList, whose type is sms (not social)
+      // Mock connector with id 'id1' is declared in mockMyEyesIDConnectorList, whose type is sms (not social)
       await expect(
         userRequest
           .post(`/users/foo/identities`)
@@ -180,12 +180,12 @@ describe('Admin user social identities APIs', () => {
 
     it('should throw if user already has the social identity', async () => {
       mockHasUserWithIdentity.mockResolvedValueOnce(true);
-      mockGetLogtoConnectors.mockResolvedValueOnce([
+      mockGetMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: mockConnector0,
           metadata: { ...mockMetadata0 },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
           getAuthorizationUri: async () => 'http://example.com',
           getUserInfo: async () => ({ id: 'foo' }),
         },
@@ -193,7 +193,7 @@ describe('Admin user social identities APIs', () => {
       const mockedFindUserById = findUserById as jest.Mock;
       mockedFindUserById.mockImplementationOnce(() => ({
         ...mockUser,
-        identities: { connector_0: {} }, // This value 'connector_0' is declared in mockLogtoConnectorList
+        identities: { connector_0: {} }, // This value 'connector_0' is declared in mockMyEyesIDConnectorList
       }));
       await expect(
         userRequest
@@ -205,12 +205,12 @@ describe('Admin user social identities APIs', () => {
 
     it('should update user with new social identity', async () => {
       const mockedSocialUserInfo = { id: 'socialId' };
-      mockGetLogtoConnectors.mockResolvedValueOnce([
+      mockGetMyEyesIDConnectors.mockResolvedValueOnce([
         {
           dbEntry: mockConnector0,
           metadata: { ...mockMetadata0 },
           type: ConnectorType.Social,
-          ...mockLogtoConnector,
+          ...mockMyEyesIDConnector,
           getAuthorizationUri: async () => 'http://example.com',
           getUserInfo: async () => mockedSocialUserInfo,
         },

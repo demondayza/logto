@@ -1,6 +1,6 @@
 import nock from 'nock';
 
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 
 import createConnector from './index.js';
 import { mockedConfig } from './mock.js';
@@ -21,7 +21,7 @@ describe('HTTP email connector', () => {
     const mockPost = nock(url.origin)
       .post(url.pathname, (body) => {
         expect(body).toMatchObject({
-          to: 'foo@logto.io',
+          to: 'foo@myeyesid.io',
           type: TemplateType.SignIn,
           payload: {
             code: '123456',
@@ -35,7 +35,7 @@ describe('HTTP email connector', () => {
 
     const connector = await createConnector({ getConfig });
     await connector.sendMessage({
-      to: 'foo@logto.io',
+      to: 'foo@myeyesid.io',
       type: TemplateType.SignIn,
       payload: {
         code: '123456',
@@ -50,7 +50,7 @@ describe('HTTP email connector', () => {
     const mockPost = nock(url.origin)
       .post(url.pathname, (body) => {
         expect(body).toMatchObject({
-          to: 'foo@logto.io',
+          to: 'foo@myeyesid.io',
           type: TemplateType.SignIn,
           payload: {
             code: '123456',
@@ -65,7 +65,7 @@ describe('HTTP email connector', () => {
 
     const connector = await createConnector({ getConfig });
     await connector.sendMessage({
-      to: 'foo@logto.io',
+      to: 'foo@myeyesid.io',
       type: TemplateType.SignIn,
       payload: {
         code: '123456',
@@ -89,7 +89,7 @@ describe('HTTP email connector', () => {
 
     const connector = await createConnector({ getConfig });
     await connector.sendMessage({
-      to: 'foo@logto.io',
+      to: 'foo@myeyesid.io',
       type: TemplateType.SignIn,
       payload: {
         code: '123456',

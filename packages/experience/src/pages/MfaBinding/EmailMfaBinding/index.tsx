@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 
 import VerificationCodeMfaBinding from '../VerificationCodeMfaBinding';
 

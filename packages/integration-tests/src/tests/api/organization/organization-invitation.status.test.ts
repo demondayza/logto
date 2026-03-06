@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 
-import { OrganizationInvitationStatus } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { OrganizationInvitationStatus } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { HTTPError } from 'ky';
 
 import { OrganizationApiTest, OrganizationInvitationApiTest } from '#src/helpers/organization.js';

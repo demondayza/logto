@@ -1,4 +1,4 @@
-import type { UserAssetsServiceStatus } from '@logto/schemas';
+import type { UserAssetsServiceStatus } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useState } from 'react';
 

@@ -1,4 +1,4 @@
-import { SupportedDateFormat } from '@logto/schemas';
+import { SupportedDateFormat } from '@myeyesid/schemas';
 import { cond, condString } from '@silverhand/essentials';
 import classNames from 'classnames';
 import type { FormEventHandler, KeyboardEventHandler, ClipboardEventHandler } from 'react';

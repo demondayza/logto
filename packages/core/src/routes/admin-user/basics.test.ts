@@ -1,6 +1,6 @@
-import type { CreateUser, Role, SignInExperience, User } from '@logto/schemas';
-import { RoleType, UsersPasswordEncryptionMethod } from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import type { CreateUser, Role, SignInExperience, User } from '@myeyesid/schemas';
+import { RoleType, UsersPasswordEncryptionMethod } from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 import { removeUndefinedKeys } from '@silverhand/essentials';
 
 import { mockUser, mockUserResponse } from '#src/__mocks__/index.js';
@@ -116,7 +116,7 @@ describe('adminUserRoutes', () => {
   });
 
   it('POST /users', async () => {
-    const username = 'MJAtLogto';
+    const username = 'MJAtMyEyesID';
     const password = 'PASSWORD1234';
     const name = 'Michael';
     const { primaryEmail, primaryPhone } = mockUser;
@@ -134,7 +134,7 @@ describe('adminUserRoutes', () => {
   });
 
   it('POST /users should be ok with simple passwords', async () => {
-    const username = 'MJAtLogto';
+    const username = 'MJAtMyEyesID';
     const name = 'Michael';
 
     // Invalid input format
@@ -144,7 +144,7 @@ describe('adminUserRoutes', () => {
   });
 
   it('POST /users with password digest', async () => {
-    const username = 'MJAtLogto';
+    const username = 'MJAtMyEyesID';
     const name = 'Michael';
 
     await expect(
@@ -161,7 +161,7 @@ describe('adminUserRoutes', () => {
     const mockHasUser = hasUser as jest.Mock;
     mockHasUser.mockImplementationOnce(async () => true);
 
-    const username = 'MJAtLogto';
+    const username = 'MJAtMyEyesID';
     const password = 'PASSWORD1234';
     const name = 'Michael';
 
@@ -173,7 +173,7 @@ describe('adminUserRoutes', () => {
   it('PATCH /users/:userId', async () => {
     const name = 'Michael';
     const avatar = 'http://www.michael.png';
-    const primaryEmail = 'bar@logto.io';
+    const primaryEmail = 'bar@myeyesid.io';
     const primaryPhone = '222222';
     const username = 'bar';
 

@@ -1,5 +1,5 @@
-import { TemplateType } from '@logto/connector-kit';
-import { demoAppApplicationId, InteractionEvent } from '@logto/schemas';
+import { TemplateType } from '@myeyesid/connector-kit';
+import { demoAppApplicationId, InteractionEvent } from '@myeyesid/schemas';
 
 import { mockEmailConnectorConfig } from '#src/__mocks__/connectors-mock.js';
 import { type MockEmailTemplatePayload } from '#src/__mocks__/email-templates.js';

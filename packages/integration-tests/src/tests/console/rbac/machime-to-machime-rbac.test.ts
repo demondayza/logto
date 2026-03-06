@@ -1,4 +1,4 @@
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import {
   expectConfirmModalAndAct,
   expectModalWithTitle,
@@ -28,8 +28,8 @@ import { createM2mRoleAndAssignPermissions, expectToSelectPermissionAction } fro
 await page.setViewport({ width: 1920, height: 1080 });
 
 describe('M2M RBAC', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
-  const managementApiResourceName = 'Logto Management API';
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
+  const managementApiResourceName = 'MyEyesID Management API';
   const managementApiPermission = 'all';
   const apiResourceName = generateResourceName();
   const apiResourceIndicator = generateResourceIndicator();
@@ -50,7 +50,7 @@ describe('M2M RBAC', () => {
   describe('create api resource and permissions', () => {
     it('navigate to api resources page', async () => {
       await expectNavigation(
-        page.goto(appendPathname('/console/api-resources', logtoConsoleUrl).href)
+        page.goto(appendPathname('/console/api-resources', myeyesidConsoleUrl).href)
       );
 
       await expect(page).toMatchElement(
@@ -113,7 +113,7 @@ describe('M2M RBAC', () => {
   describe('create m2m app', () => {
     it('navigate to applications page', async () => {
       await expectNavigation(
-        page.goto(appendPathname('/console/applications', logtoConsoleUrl).href)
+        page.goto(appendPathname('/console/applications', myeyesidConsoleUrl).href)
       );
       await expect(page).toMatchElement(
         'div[class$=main] div[class$=headline] div[class$=titleEllipsis]',
@@ -138,7 +138,7 @@ describe('M2M RBAC', () => {
 
   describe('create m2m role', () => {
     it('navigate to roles page', async () => {
-      await expectNavigation(page.goto(appendPathname('/console/roles', logtoConsoleUrl).href));
+      await expectNavigation(page.goto(appendPathname('/console/roles', myeyesidConsoleUrl).href));
 
       await expect(page).toMatchElement(
         'div[class$=main] div[class$=headline] div[class$=titleEllipsis]',
@@ -290,7 +290,7 @@ describe('M2M RBAC', () => {
   describe('assign/remove a role to/from a m2m app (on m2m app details page)', () => {
     it('navigate to application page and enter m2m app details page', async () => {
       await expectNavigation(
-        page.goto(appendPathname('/console/applications', logtoConsoleUrl).href)
+        page.goto(appendPathname('/console/applications', myeyesidConsoleUrl).href)
       );
 
       await expect(page).toClick(['table', 'tbody', 'tr', 'td', `a${cls('title')}`].join(' '), {

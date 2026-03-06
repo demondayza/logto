@@ -1,7 +1,7 @@
-import type { LogtoErrorCode } from '@logto/phrases';
+import type { MyEyesIDErrorCode } from '@myeyesid/phrases';
 
 export type RequestErrorMetadata = Record<string, unknown> & {
-  code: LogtoErrorCode;
+  code: MyEyesIDErrorCode;
   status?: number;
   expose?: boolean;
 };
@@ -9,6 +9,6 @@ export type RequestErrorMetadata = Record<string, unknown> & {
 export type RequestErrorBody<T = unknown> = {
   message: string;
   data: T;
-  code: LogtoErrorCode;
+  code: MyEyesIDErrorCode;
   details?: string;
 };

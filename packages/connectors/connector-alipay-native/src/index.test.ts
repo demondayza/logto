@@ -1,6 +1,6 @@
 import nock from 'nock';
 
-import { ConnectorError, ConnectorErrorCodes } from '@logto/connector-kit';
+import { ConnectorError, ConnectorErrorCodes } from '@myeyesid/connector-kit';
 
 import { alipayEndpoint } from './constant.js';
 import createConnector, { getAccessToken } from './index.js';

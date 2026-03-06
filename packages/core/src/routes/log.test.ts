@@ -1,6 +1,6 @@
-import { LogResult, token, interaction, LogKeyUnknown, jwtCustomizer, saml } from '@logto/schemas';
-import type { Log } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { LogResult, token, interaction, LogKeyUnknown, jwtCustomizer, saml } from '@myeyesid/schemas';
+import type { Log } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import { MockTenant } from '#src/test-utils/tenant.js';
 import { createRequester } from '#src/utils/test-utils.js';

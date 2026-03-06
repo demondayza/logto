@@ -3,7 +3,7 @@ import {
   type PasswordVerificationPayload,
   SignInIdentifier,
   type VerificationCodeIdentifier,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { type ContinueFlowInteractionEvent } from '@/types';
 

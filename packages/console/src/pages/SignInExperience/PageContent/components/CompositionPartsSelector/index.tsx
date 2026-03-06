@@ -1,4 +1,4 @@
-import { CustomProfileFieldType } from '@logto/schemas';
+import { CustomProfileFieldType } from '@myeyesid/schemas';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

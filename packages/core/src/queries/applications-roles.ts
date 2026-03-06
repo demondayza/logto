@@ -1,5 +1,5 @@
-import type { ApplicationsRole, CreateApplicationsRole, Role } from '@logto/schemas';
-import { Roles, ApplicationsRoles, RolesScopes } from '@logto/schemas';
+import type { ApplicationsRole, CreateApplicationsRole, Role } from '@myeyesid/schemas';
+import { Roles, ApplicationsRoles, RolesScopes } from '@myeyesid/schemas';
 import { type Nullable } from '@silverhand/essentials';
 import type { CommonQueryMethods } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';

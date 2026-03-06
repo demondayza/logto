@@ -13,25 +13,25 @@ import TabNav, { TabNavItem } from '@/ds-components/TabNav';
 import styles from './index.module.scss';
 
 const buildEnterpriseSubscriptionPathname = (
-  logtoEnterpriseId: string,
+  myeyesidEnterpriseId: string,
   tag: EnterpriseSubscriptionTabs
-) => `${GlobalRoute.EnterpriseSubscription}/${logtoEnterpriseId}/${tag}`;
+) => `${GlobalRoute.EnterpriseSubscription}/${myeyesidEnterpriseId}/${tag}`;
 
 function EnterpriseSubscription() {
-  const { logtoEnterpriseId } = useParams();
+  const { myeyesidEnterpriseId } = useParams();
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  if (!logtoEnterpriseId) {
+  if (!myeyesidEnterpriseId) {
     return null;
   }
 
   const subscriptionPathname = buildEnterpriseSubscriptionPathname(
-    logtoEnterpriseId,
+    myeyesidEnterpriseId,
     EnterpriseSubscriptionTabs.Subscription
   );
   const billingHistoryPathname = buildEnterpriseSubscriptionPathname(
-    logtoEnterpriseId,
+    myeyesidEnterpriseId,
     EnterpriseSubscriptionTabs.BillingHistory
   );
 

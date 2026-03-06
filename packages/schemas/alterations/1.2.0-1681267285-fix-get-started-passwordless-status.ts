@@ -12,12 +12,12 @@ const alteration: AlterationScript = {
       tenantIds.map(async ({ id }) => {
         const { count } = await pool.one<{ count: number }>(sql`
           select count(*) from connectors
-            where tenant_id = ${id} and connector_id <> 'logto-sms' and connector_id <> 'logto-email' and connector_id <> 'logto-social-demo';
+            where tenant_id = ${id} and connector_id <> 'myeyesid-sms' and connector_id <> 'myeyesid-email' and connector_id <> 'myeyesid-social-demo';
         `);
 
         if (count > 0) {
           await pool.query(sql`
-            update logto_configs set value = jsonb_set(value, '{passwordlessConfigured}', 'true')
+            update myeyesid_configs set value = jsonb_set(value, '{passwordlessConfigured}', 'true')
               where tenant_id = ${id} and key = ${adminConsoleConfigKey};
           `);
         }

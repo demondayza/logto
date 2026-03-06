@@ -1,6 +1,6 @@
 # QQ social connector
 
-The official Logto connector for QQ social sign-in [中文文档](https://github.com/logto-io/logto/tree/master/packages/connectors/connector-qq/README.zh-CN.md)
+The official MyEyesID connector for QQ social sign-in [中文文档](https://github.com/myeyesid-io/myeyesid/tree/master/packages/connectors/connector-qq/README.zh-CN.md)
 
 **Table of Contents**
 
@@ -24,10 +24,10 @@ QQ is a social platform by Tencent with over 600 million users. This connector h
 1. Access the [Application Management](https://connect.qq.com/manage.html)
 2. Configure the OAuth settings:
    - Open the application you want to use for sign-in, and click on "Application Info"
-   - Add "Website Callback Domain": `logto_endpoint`
-   - Add "Website Callback URL" : `${logto_endpoint}/callback/${connector_id}`
+   - Add "Website Callback Domain": `myeyesid_endpoint`
+   - Add "Website Callback URL" : `${myeyesid_endpoint}/callback/${connector_id}`
 3. Get the `APP ID` and `APP Key` from the application info page
-4. Fill in the values from step 3 to the `clientId` and `clientSecret` fields in the Logto Admin Console
+4. Fill in the values from step 3 to the `clientId` and `clientSecret` fields in the MyEyesID Admin Console
 
 ## Permission requirements
 
@@ -42,7 +42,7 @@ To use this connector, you need to apply for the following permissions on the QQ
 
 ## Test QQ connector
 
-That's it! Don't forget to enable the connector in the [Sign-in Experience](https://{logto_endpoint}/console/connectors/social).
+That's it! Don't forget to enable the connector in the [Sign-in Experience](https://{myeyesid_endpoint}/console/connectors/social).
 
 ## References
 

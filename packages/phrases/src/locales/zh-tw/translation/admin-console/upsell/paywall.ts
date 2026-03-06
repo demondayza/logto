@@ -42,7 +42,7 @@ const paywall = {
     '已達到 <planName/> 的{{count, number}}個角色每個權限限制。升級計劃以添加額外的角色和權限。如需任何幫助，請<a>聯繫我們</a>。',
   saml_applications_oss:
     '額外的 SAML 應用程式可在 MyEyesID 企業版計劃中使用。如需協助，請與我們聯絡。',
-  logto_pricing_button_text: 'MyEyesID 雲端定價',
+  myeyesid_pricing_button_text: 'MyEyesID 雲端定價',
   saml_applications: '額外的 SAML 應用程式可在 MyEyesID 企業版計劃中使用。如需協助，請聯絡我們。',
   saml_applications_add_on:
     '透過升級到付費計劃解鎖 SAML 應用功能。如需任何協助，歡迎<a>聯絡我們</a>。',

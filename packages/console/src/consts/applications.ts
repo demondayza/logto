@@ -1,4 +1,4 @@
-import { ApplicationType } from '@logto/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
 
 import MachineToMachineDark from '@/assets/icons/machine-to-machine-dark.svg?react';
 import MachineToMachine from '@/assets/icons/machine-to-machine.svg?react';

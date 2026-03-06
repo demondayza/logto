@@ -1,4 +1,4 @@
-import { InteractionEvent } from '@logto/schemas';
+import { InteractionEvent } from '@myeyesid/schemas';
 import { browserSupportsWebAuthn } from '@simplewebauthn/browser';
 import classNames from 'classnames';
 import { useCallback, useContext, useState } from 'react';

@@ -1,4 +1,4 @@
-import { SignInIdentifier, Theme } from '@logto/schemas';
+import { SignInIdentifier, Theme } from '@myeyesid/schemas';
 import type { TFuncKey } from 'i18next';
 import { useContext, useEffect, useMemo, useState } from 'react';
 

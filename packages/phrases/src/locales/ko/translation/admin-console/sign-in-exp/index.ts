@@ -39,8 +39,8 @@ const sign_in_exp = {
     app_logo_and_favicon: '앱 로고 및 파비콘',
     company_logo_and_favicon: '회사 로고 및 파비콘',
     organization_logo_and_favicon: '조직 로고 및 파비콘',
-    hide_logto_branding: 'MyEyesID 브랜딩 숨기기',
-    hide_logto_branding_description:
+    hide_myeyesid_branding: 'MyEyesID 브랜딩 숨기기',
+    hide_myeyesid_branding_description:
       '"Powered by MyEyesID" 문구를 제거하고 깔끔하고 전문적인 로그인 경험에서 브랜드만 돋보이게 하세요.',
   },
   branding_uploads: {

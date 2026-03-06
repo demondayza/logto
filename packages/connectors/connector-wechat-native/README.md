@@ -1,8 +1,8 @@
 # WeChat native connector
 
-The official Logto connector for WeChat social sign-in in native apps (iOS and Android).
+The official MyEyesID connector for WeChat social sign-in in native apps (iOS and Android).
 
-微信原生应用社交登录 Logto 官方连接器（iOS 和 Android）[中文文档](#微信原生连接器)
+微信原生应用社交登录 MyEyesID 官方连接器（iOS 和 Android）[中文文档](#微信原生连接器)
 
 **Table of contents**
 
@@ -34,7 +34,7 @@ The official Logto connector for WeChat social sign-in in native apps (iOS and A
 
 ## Get started
 
-If you don't know the concept of the connector or don't know how to add this connector to your Sign-in experience, please see [Logto tutorial](https://docs.logto.io/docs/tutorials/get-started/enable-social-sign-in).
+If you don't know the concept of the connector or don't know how to add this connector to your Sign-in experience, please see [MyEyesID tutorial](https://docs.myeyesid.io/docs/tutorials/get-started/enable-social-sign-in).
 
 In native apps, you cannot use the web as a sign-in method of WeChat: navigation to the WeChat app is required, and it also requires using their SDK.
 
@@ -71,7 +71,7 @@ Click "Next step" to move on.
 
 #### Platform info
 
-You can configure one or both iOS and Android platforms to integrate Logto with WeChat native sign-in.
+You can configure one or both iOS and Android platforms to integrate MyEyesID with WeChat native sign-in.
 
 **iOS app**
 
@@ -123,7 +123,7 @@ We suspect the reviewer is allocated randomly on each submission since the stand
 
 ### iOS
 
-We assume you have integrated [Logto iOS SDK](https://docs.logto.io/docs/recipes/integrate-logto/ios) in your app. In this case, things are pretty simple, and you don't even need to read the WeChat SDK doc:
+We assume you have integrated [MyEyesID iOS SDK](https://docs.myeyesid.io/docs/recipes/integrate-myeyesid/ios) in your app. In this case, things are pretty simple, and you don't even need to read the WeChat SDK doc:
 
 **1. Configure universal link and URL scheme in your Xcode project**
 
@@ -143,7 +143,7 @@ Finally open your `Info.plist`, add `weixinULAPI` and `weixin` under `LSApplicat
 > 
 > We know these actions are not very reasonable, but this is the minimum workable solution we found. See the [magical official guide](https://developers.weixin.qq.com/doc/oplatform/en/Mobile_App/Access_Guide/iOS.html) for more info.
 
-**2. Add `LogtoSocialPluginWechat` to your Xcode project**
+**2. Add `MyEyesIDSocialPluginWechat` to your Xcode project**
 
 Add the framework:
 
@@ -157,12 +157,12 @@ And add `-ObjC` to your Build Settings > Linking > Other Linker Flags:
 > 
 > The plugin includes WeChat Open SDK 1.9.2. You can directly use `import WechatOpenSDK` once imported the plugin.
 
-**3. Add the plugin to your `LogtoClient` init options**
+**3. Add the plugin to your `MyEyesIDClient` init options**
 
 ```swift
-let logtoClient = LogtoClient(
+let myeyesidClient = MyEyesIDClient(
   useConfig: config,
-  socialPlugins: [LogtoSocialPluginWechat()]
+  socialPlugins: [MyEyesIDSocialPluginWechat()]
 )
 ```
 
@@ -170,24 +170,24 @@ let logtoClient = LogtoClient(
 
 > ℹ️ **Note**
 > 
-> The function `LogtoClient.handle(url:)` will handle all the native connectors you enabled. You only need to call it once.
+> The function `MyEyesIDClient.handle(url:)` will handle all the native connectors you enabled. You only need to call it once.
 
 ```swift
 // SwiftUI
 YourRootView()
   .onOpenURL { url in
-      LogtoClient.handle(url: url)
+      MyEyesIDClient.handle(url: url)
   }
 
 // or AppDelegate
 func application(_ app: UIApplication, open url: URL, options: /*...*/) -> Bool {
-  LogtoClient.handle(url: url)
+  MyEyesIDClient.handle(url: url)
 }
 ```
 
 ### Android
 
-We assume you have integrated [Logto Android SDK](https://docs.logto.io/docs/recipes/integrate-logto/android) in your app. In this case, things are pretty simple, and you don't even need to read the WeChat SDK doc:
+We assume you have integrated [MyEyesID Android SDK](https://docs.myeyesid.io/docs/recipes/integrate-myeyesid/android) in your app. In this case, things are pretty simple, and you don't even need to read the WeChat SDK doc:
 
 **1. Add `Wechat Open SDK` to your project**
 
@@ -219,7 +219,7 @@ Create a `wxapi` package under your package root and add the `WXEntryActivity` i
 // WXEntryActivity.kt
 package com.sample.app.wxapi
 
-import io.logto.sdk.android.auth.social.wechat.WechatSocialResultActivity
+import io.myeyesid.sdk.android.auth.social.wechat.WechatSocialResultActivity
 
 class WXEntryActivity: WechatSocialResultActivity()
 ```
@@ -228,7 +228,7 @@ class WXEntryActivity: WechatSocialResultActivity()
 // WXEntryActivity.java
 package com.sample.app.wxapi
 
-import io.logto.sdk.android.auth.social.wechat.WechatSocialResultActivity
+import io.myeyesid.sdk.android.auth.social.wechat.WechatSocialResultActivity
 
 public class WXEntryActivity extends WechatSocialResultActivity {}
 ```
@@ -258,19 +258,19 @@ Add the following line to your `AndroidManifest.xml`:
 
 ## Test WeChat native connector
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/).
 
 Once WeChat native connector is enabled, you can build and run your app to see if it works.
 
 > ⚠️ **Caution**
 > 
-> WeChat doesn't have a plan for those devices without the WeChat app installed. Logto will hide this connector during sign-in if so (which is the recommended way from the [official development guide](https://developers.weixin.qq.com/doc/oplatform/en/Mobile_App/WeChat_Login/Development_Guide.html)).
+> WeChat doesn't have a plan for those devices without the WeChat app installed. MyEyesID will hide this connector during sign-in if so (which is the recommended way from the [official development guide](https://developers.weixin.qq.com/doc/oplatform/en/Mobile_App/WeChat_Login/Development_Guide.html)).
 
 # 微信原生连接器
 
 ## 开始上手
 
-如果你还不知道连接器的概念，或者还不知道如何将本连接器添加至你的「登录体验」，请先参见 [Logto 教程](https://docs.logto.io/zh-cn/docs/tutorials/get-started/enable-social-sign-in)。
+如果你还不知道连接器的概念，或者还不知道如何将本连接器添加至你的「登录体验」，请先参见 [MyEyesID 教程](https://docs.myeyesid.io/zh-cn/docs/tutorials/get-started/enable-social-sign-in)。
 
 在原生应用中，你无法通过 web 进行微信登录：必须跳转至微信 app，并使用他们提供的 SDK 才能完成。
 
@@ -306,7 +306,7 @@ Once WeChat native connector is enabled, you can build and run your app to see i
 
 #### 平台信息
 
-你可以单独或同时配置 iOS 和 Android 平台，以在 Logto 中集成微信登录。
+你可以单独或同时配置 iOS 和 Android 平台，以在 MyEyesID 中集成微信登录。
 
 **iOS 应用**
 
@@ -358,7 +358,7 @@ Once WeChat native connector is enabled, you can build and run your app to see i
 
 ### iOS
 
-我们假设你已经在你的应用中集成了 [Logto iOS SDK](https://docs.logto.io/docs/recipes/integrate-logto/ios)。之后的流程很简单，你甚至不需要阅读微信 SDK 文档：
+我们假设你已经在你的应用中集成了 [MyEyesID iOS SDK](https://docs.myeyesid.io/docs/recipes/integrate-myeyesid/ios)。之后的流程很简单，你甚至不需要阅读微信 SDK 文档：
 
 **1. 在你的 Xcode 工程中配置 universal link 与 URL scheme**
 
@@ -378,7 +378,7 @@ Once WeChat native connector is enabled, you can build and run your app to see i
 > 
 > 我们知道这些操作不是特别合理，但是这是我们找到的最小可工作方案。欲知详情请见 [奇妙的微信官方文档](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/iOS.html)。
 
-**2. 添加 `LogtoSocialPluginWechat` 到你的 Xcode 工程**
+**2. 添加 `MyEyesIDSocialPluginWechat` 到你的 Xcode 工程**
 
 添加 framework：
 
@@ -392,12 +392,12 @@ Once WeChat native connector is enabled, you can build and run your app to see i
 > 
 > 该插件已包含 WeChat Open SDK 1.9.2。在引入插件后你可以直接使用 `import WechatOpenSDK`。
 
-**3. 将插件添加至 `LogtoClient` 的初始化项**
+**3. 将插件添加至 `MyEyesIDClient` 的初始化项**
 
 ```swift
-let logtoClient = LogtoClient(
+let myeyesidClient = MyEyesIDClient(
   useConfig: config,
-  socialPlugins: [LogtoSocialPluginWechat()]
+  socialPlugins: [MyEyesIDSocialPluginWechat()]
 )
 ```
 
@@ -405,24 +405,24 @@ let logtoClient = LogtoClient(
 
 > ℹ️ **Note**
 > 
-> `LogtoClient.handle(url:)` 这个函数将处理你启用的所有原生连接器。你只需要调用该函数一次即可。
+> `MyEyesIDClient.handle(url:)` 这个函数将处理你启用的所有原生连接器。你只需要调用该函数一次即可。
 
 ```swift
 // SwiftUI
 YourRootView()
   .onOpenURL { url in
-      LogtoClient.handle(url: url)
+      MyEyesIDClient.handle(url: url)
   }
 
 // or AppDelegate
 func application(_ app: UIApplication, open url: URL, options: /*...*/) -> Bool {
-  LogtoClient.handle(url: url)
+  MyEyesIDClient.handle(url: url)
 }
 ```
 
 ### Android
 
-我们假设你已经在你的应用中集成了 [Logto Android SDK](https://docs.logto.io/docs/recipes/integrate-logto/android)。之后的流程很简单，你甚至不需要阅读微信 SDK 文档：
+我们假设你已经在你的应用中集成了 [MyEyesID Android SDK](https://docs.myeyesid.io/docs/recipes/integrate-myeyesid/android)。之后的流程很简单，你甚至不需要阅读微信 SDK 文档：
 
 **1. 添加 `Wechat Open SDK` 到你的项目中**
 
@@ -455,7 +455,7 @@ dependencies {
 // WXEntryActivity.kt
 package com.sample.app.wxapi
 
-import io.logto.sdk.android.auth.social.wechat.WechatSocialResultActivity
+import io.myeyesid.sdk.android.auth.social.wechat.WechatSocialResultActivity
 
 class WXEntryActivity: WechatSocialResultActivity()
 ```
@@ -464,7 +464,7 @@ class WXEntryActivity: WechatSocialResultActivity()
 // WXEntryActivity.java
 package com.sample.app.wxapi
 
-import io.logto.sdk.android.auth.social.wechat.WechatSocialResultActivity
+import io.myeyesid.sdk.android.auth.social.wechat.WechatSocialResultActivity
 
 public class WXEntryActivity extends WechatSocialResultActivity {}
 ```
@@ -494,10 +494,10 @@ src/main/kotlin/com/sample/app/wxapi/WXEntryActivity.kt
 
 ## 测试微信原生连接器
 
-大功告成。别忘了 [在登录体验中启用本连接器](https://docs.logto.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
+大功告成。别忘了 [在登录体验中启用本连接器](https://docs.myeyesid.io/docs/recipes/configure-connectors/social-connector/enable-social-sign-in/)。
 
 在微信原生连接器启用后，你可以构建并运行你的应用看看是否生效。
 
 > ⚠️ **Caution**
 > 
-> 微信并不负责没装微信的设备。Logto 将在这些设备上隐藏本连接器（也是微信官方的 [推荐做法](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)）。
+> 微信并不负责没装微信的设备。MyEyesID 将在这些设备上隐藏本连接器（也是微信官方的 [推荐做法](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)）。

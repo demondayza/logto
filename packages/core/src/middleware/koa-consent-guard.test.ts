@@ -1,4 +1,4 @@
-import { OneTimeTokenStatus } from '@logto/schemas';
+import { OneTimeTokenStatus } from '@myeyesid/schemas';
 import { Provider } from 'oidc-provider';
 
 import RequestError from '#src/errors/RequestError/index.js';
@@ -10,7 +10,7 @@ import koaConsentGuard from './koa-consent-guard.js';
 const { jest } = import.meta;
 
 describe('koaConsentGuard middleware', () => {
-  const provider = new Provider('https://logto.test');
+  const provider = new Provider('https://myeyesid.test');
   const interactionDetails = jest.spyOn(provider, 'interactionDetails');
 
   const checkOneTimeToken = jest.fn().mockResolvedValue({

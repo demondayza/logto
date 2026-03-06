@@ -1,4 +1,4 @@
-import { SignInIdentifier, experience } from '@logto/schemas';
+import { SignInIdentifier, experience } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import { fireEvent, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
@@ -7,7 +7,7 @@ import SingleSignOnFormModeContextProvider from '@/Providers/SingleSignOnFormMod
 import UserInteractionContextProvider from '@/Providers/UserInteractionContextProvider';
 import renderWithPageContext from '@/__mocks__/RenderWithPageContext';
 import SettingsProvider from '@/__mocks__/RenderWithPageContext/SettingsProvider';
-import { mockSignInExperienceSettings, mockSsoConnectors } from '@/__mocks__/logto';
+import { mockSignInExperienceSettings, mockSsoConnectors } from '@/__mocks__/myeyesid';
 import { signInWithPasswordIdentifier } from '@/apis/experience';
 import type { SignInExperienceResponse } from '@/types';
 import { getDefaultCountryCallingCode } from '@/utils/country-code';
@@ -119,7 +119,7 @@ describe('UsernamePasswordSignInForm', () => {
 
   test.each([
     ['0username', 'username'],
-    ['foo@logto', 'foo@logto.io'],
+    ['foo@myeyesid', 'foo@myeyesid.io'],
     ['8573', '8573333333'],
   ])('Invalid input $p should throw error message', async (invalidInput, validInput) => {
     const { queryByText, getByText, container } = renderPasswordSignInForm();
@@ -153,7 +153,7 @@ describe('UsernamePasswordSignInForm', () => {
 
   test.each([
     ['username', SignInIdentifier.Username],
-    ['foo@logto.io', SignInIdentifier.Email],
+    ['foo@myeyesid.io', SignInIdentifier.Email],
     ['8573333333', SignInIdentifier.Phone],
   ])('submit form', async (identifier: string, type: SignInIdentifier) => {
     const { getByText, container } = renderPasswordSignInForm();
@@ -229,7 +229,7 @@ describe('UsernamePasswordSignInForm', () => {
     expect(getSingleSignOnConnectorsMock).not.toBeCalled();
 
     // Valid email with empty response
-    const email = 'foo@logto.io';
+    const email = 'foo@myeyesid.io';
     getSingleSignOnConnectorsMock.mockResolvedValueOnce({ connectorIds: [] });
     act(() => {
       fireEvent.change(identifierInput, { target: { value: email } });

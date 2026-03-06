@@ -1,6 +1,6 @@
-import { emailRegEx, usernameRegEx } from '@logto/core-kit';
-import type { User } from '@logto/schemas';
-import { parsePhoneNumber } from '@logto/shared/universal';
+import { emailRegEx, usernameRegEx } from '@myeyesid/core-kit';
+import type { User } from '@myeyesid/schemas';
+import { parsePhoneNumber } from '@myeyesid/shared/universal';
 import { conditionalString, trySafe } from '@silverhand/essentials';
 import { parsePhoneNumberWithError } from 'libphonenumber-js/mobile';
 import { useForm, useController } from 'react-hook-form';

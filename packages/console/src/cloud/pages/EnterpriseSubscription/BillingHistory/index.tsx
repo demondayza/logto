@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 
 import { useCloudApi } from '@/cloud/hooks/use-cloud-api';
-import { type LogtoEnterpriseSubscriptionInvoiceResponse } from '@/cloud/types/router';
+import { type MyEyesIDEnterpriseSubscriptionInvoiceResponse } from '@/cloud/types/router';
 import EmptyDataPlaceholder from '@/components/EmptyDataPlaceholder';
 import ItemPreview from '@/components/ItemPreview';
 import PageMeta from '@/components/PageMeta';
@@ -15,15 +15,15 @@ import InvoiceStatusTag from '@/pages/TenantSettings/BillingHistory/InvoiceStatu
 import { formatPeriod } from '@/utils/subscription';
 
 function BillingHistory() {
-  const { logtoEnterpriseId = '' } = useParams();
+  const { myeyesidEnterpriseId = '' } = useParams();
   const cloudApi = useCloudApi();
 
   const { data, isLoading } = useSWR<
-    { invoices: LogtoEnterpriseSubscriptionInvoiceResponse[] },
+    { invoices: MyEyesIDEnterpriseSubscriptionInvoiceResponse[] },
     ResponseError
-  >(logtoEnterpriseId && `/api/me/logto-enterprises/${logtoEnterpriseId}/invoices`, async () =>
-    cloudApi.get(`/api/me/logto-enterprises/:id/invoices`, {
-      params: { id: logtoEnterpriseId },
+  >(myeyesidEnterpriseId && `/api/me/myeyesid-enterprises/${myeyesidEnterpriseId}/invoices`, async () =>
+    cloudApi.get(`/api/me/myeyesid-enterprises/:id/invoices`, {
+      params: { id: myeyesidEnterpriseId },
     })
   );
 
@@ -36,15 +36,15 @@ function BillingHistory() {
   const openStripeHostedInvoicePage = useCallback(
     async (invoiceId: string) => {
       const { hostedInvoiceUrl } = await cloudApi.get(
-        '/api/me/logto-enterprises/:enterpriseId/invoices/:invoiceId/hosted-invoice-url',
+        '/api/me/myeyesid-enterprises/:enterpriseId/invoices/:invoiceId/hosted-invoice-url',
         {
-          params: { enterpriseId: logtoEnterpriseId, invoiceId },
+          params: { enterpriseId: myeyesidEnterpriseId, invoiceId },
         }
       );
 
       window.open(hostedInvoiceUrl, '_blank');
     },
-    [cloudApi, logtoEnterpriseId]
+    [cloudApi, myeyesidEnterpriseId]
   );
 
   return (

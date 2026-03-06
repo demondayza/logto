@@ -1,7 +1,7 @@
 export const layoutClassNames = Object.freeze({
-  pageContainer: 'logto_page-container',
-  mainContent: 'logto_main-content',
-  customContent: 'logto_custom-content',
-  signature: 'logto_signature',
-  brandingHeader: 'logto_branding-header',
+  pageContainer: 'myeyesid_page-container',
+  mainContent: 'myeyesid_main-content',
+  customContent: 'myeyesid_custom-content',
+  signature: 'myeyesid_signature',
+  brandingHeader: 'myeyesid_branding-header',
 });

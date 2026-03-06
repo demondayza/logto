@@ -1,6 +1,6 @@
-import { ServiceConnector, GoogleConnector } from '@logto/connector-kit';
-import { ConnectorType } from '@logto/schemas';
-import type { ConnectorResponse } from '@logto/schemas';
+import { ServiceConnector, GoogleConnector } from '@myeyesid/connector-kit';
+import { ConnectorType } from '@myeyesid/schemas';
+import type { ConnectorResponse } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useCallback, useMemo } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';

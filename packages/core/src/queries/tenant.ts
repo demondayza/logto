@@ -1,4 +1,4 @@
-import { Tenants, type TenantModel } from '@logto/schemas/models';
+import { Tenants, type TenantModel } from '@myeyesid/schemas/models';
 import { sql, type CommonQueryMethods } from '@silverhand/slonik';
 
 import { convertToIdentifiers } from '#src/utils/sql.js';

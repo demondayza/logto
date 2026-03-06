@@ -4,7 +4,7 @@ import {
   type SignInIdentifier,
   type WebAuthnAuthenticationOptions,
   type WebAuthnVerificationPayload,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import api from '../api';
 

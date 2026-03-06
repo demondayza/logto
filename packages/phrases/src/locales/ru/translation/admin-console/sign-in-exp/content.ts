@@ -39,9 +39,9 @@ const content = {
     subtitle:
       'Локализуйте продукт, добавляя языки и переводы. Ваш вклад можно назначить языком по умолчанию.',
     add_language: 'Добавить язык',
-    logto_provided: 'Предоставлено MyEyesID',
+    myeyesid_provided: 'Предоставлено MyEyesID',
     key: 'Ключ',
-    logto_source_values: 'Исходные значения MyEyesID',
+    myeyesid_source_values: 'Исходные значения MyEyesID',
     custom_values: 'Пользовательские значения',
     clear_all_tip: 'Очистить все значения',
     unsaved_description: 'Изменения не сохранятся, если вы покинете страницу без сохранения.',

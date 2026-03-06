@@ -2,20 +2,20 @@
  * Setup environment variables for unit test
  */
 
-import en from '@logto/phrases/lib/locales/en/index.js';
-import { createMockUtils } from '@logto/shared/esm';
+import en from '@myeyesid/phrases/lib/locales/en/index.js';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import { init } from 'i18next';
 
 const { jest } = import.meta;
 const { mockEsm, mockEsmDefault } = createMockUtils(jest);
 
 process.env.DB_URL = 'postgres://mock.db.url';
-process.env.ENDPOINT = 'https://logto.test';
+process.env.ENDPOINT = 'https://myeyesid.test';
 process.env.NODE_ENV = 'test';
 
 /* Mock for EnvSet */
-mockEsm('#src/libraries/logto-config.js', () => ({
-  createLogtoConfigLibrary: () => ({ getOidcConfigs: () => ({}) }),
+mockEsm('#src/libraries/myeyesid-config.js', () => ({
+  createMyEyesIDConfigLibrary: () => ({ getOidcConfigs: () => ({}) }),
 }));
 
 mockEsm('#src/env-set/preconditions.js', () => ({
@@ -24,7 +24,7 @@ mockEsm('#src/env-set/preconditions.js', () => ({
 
 // eslint-disable-next-line unicorn/consistent-function-scoping
 mockEsmDefault('#src/env-set/oidc.js', () => () => ({
-  issuer: 'https://logto.test/oidc',
+  issuer: 'https://myeyesid.test/oidc',
   cookieKeys: [],
   privateJwks: [],
   publicJwks: [],

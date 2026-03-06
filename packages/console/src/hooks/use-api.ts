@@ -3,15 +3,15 @@ import {
   getOrganizationIdFromUrn,
   httpCodeToMessage,
   organizationUrnPrefix,
-} from '@logto/core-kit';
-import { type LogtoErrorCode } from '@logto/phrases';
-import { useLogto } from '@logto/react';
+} from '@myeyesid/core-kit';
+import { type MyEyesIDErrorCode } from '@myeyesid/phrases';
+import { useMyEyesID } from '@myeyesid/react';
 import {
   getTenantOrganizationId,
   type RequestErrorBody,
   getManagementApiResourceIndicator,
   defaultTenantId,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { appendPath, conditionalArray } from '@silverhand/essentials';
 import ky from 'ky';
 import { type KyInstance } from 'node_modules/ky/distribution/types/ky';
@@ -42,13 +42,13 @@ export class RequestError extends Error {
 
 export type StaticApiProps = {
   prefixUrl?: URL;
-  hideErrorToast?: boolean | LogtoErrorCode[];
+  hideErrorToast?: boolean | MyEyesIDErrorCode[];
   resourceIndicator: string;
   timeout?: number;
   signal?: AbortSignal;
 };
 
-const useGlobalRequestErrorHandler = (toastDisabledErrorCodes?: LogtoErrorCode[]) => {
+const useGlobalRequestErrorHandler = (toastDisabledErrorCodes?: MyEyesIDErrorCode[]) => {
   const { signOut } = useSignOut();
   const { show } = useConfirmModal();
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
@@ -127,7 +127,7 @@ const useGlobalRequestErrorHandler = (toastDisabledErrorCodes?: LogtoErrorCode[]
  * @param {StaticApiProps} props
  * @param {URL} props.prefixUrl  The base URL for the API.
  * @param {boolean} props.hideErrorToast  Whether to disable the global error handling.
- * @param {string} props.resourceIndicator  The resource indicator for the API. Used by the Logto SDK to validate the access token.
+ * @param {string} props.resourceIndicator  The resource indicator for the API. Used by the MyEyesID SDK to validate the access token.
  *
  * @returns
  */
@@ -138,7 +138,7 @@ export const useStaticApi = ({
   timeout = requestTimeout,
   signal,
 }: StaticApiProps): KyInstance => {
-  const { isAuthenticated, getAccessToken, getOrganizationToken } = useLogto();
+  const { isAuthenticated, getAccessToken, getOrganizationToken } = useMyEyesID();
   const { i18n } = useTranslation(undefined, { keyPrefix: 'admin_console' });
   const { mutateSubscriptionQuotaAndUsages } = useContext(SubscriptionDataContext);
 

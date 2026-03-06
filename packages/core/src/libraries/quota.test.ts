@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
-import { ConnectorType, ReservedPlanId } from '@logto/schemas';
-import { createMockUtils } from '@logto/shared/esm';
+import { ConnectorType, ReservedPlanId } from '@myeyesid/schemas';
+import { createMockUtils } from '@myeyesid/shared/esm';
 
 import { mockSubscriptionData } from '#src/__mocks__/cloud-connection.js';
 
@@ -244,13 +244,13 @@ describe('guardTenantUsageByKey', () => {
       },
     });
 
-    const getLogtoConnectors = jest.fn().mockResolvedValue([
+    const getMyEyesIDConnectors = jest.fn().mockResolvedValue([
       { type: ConnectorType.Social, metadata: { target: 'google' } },
       { type: ConnectorType.Email, metadata: { target: 'email' } },
     ]);
 
     const { quotaLibrary } = createQuotaLibrary({
-      connectorsOverride: { getLogtoConnectors },
+      connectorsOverride: { getMyEyesIDConnectors },
       queriesOverride: {
         tenantUsage: { getSelfComputedUsageByKey: jest.fn() },
       },
@@ -258,7 +258,7 @@ describe('guardTenantUsageByKey', () => {
 
     await quotaLibrary.guardTenantUsageByKey('socialConnectorsLimit');
 
-    expect(getLogtoConnectors).toHaveBeenCalled();
+    expect(getMyEyesIDConnectors).toHaveBeenCalled();
   });
 
   it('passes entity context to tenant usage query', async () => {

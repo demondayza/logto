@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { appLogo } from '@/__mocks__/logto';
+import { appLogo } from '@/__mocks__/myeyesid';
 
 import BrandingHeader from '.';
 

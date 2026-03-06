@@ -6,7 +6,7 @@ import type {
   SendMessageFunction,
   SmsConnector,
   CreateConnector,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   ConnectorError,
   ConnectorErrorCodes,
@@ -14,7 +14,7 @@ import {
   ConnectorType,
   parseJson,
   getConfigTemplateByType,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import { defaultMetadata } from './constant.js';
 import { sendSms } from './single-send-text.js';

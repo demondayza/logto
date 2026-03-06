@@ -1,6 +1,6 @@
-import type { CreateUser, UserKeys } from '@logto/schemas';
-import { Users, Applications } from '@logto/schemas';
-import type { UpdateWhereData } from '@logto/shared';
+import type { CreateUser, UserKeys } from '@myeyesid/schemas';
+import { Users, Applications } from '@myeyesid/schemas';
+import type { UpdateWhereData } from '@myeyesid/shared';
 
 import { UpdateError } from '#src/errors/SlonikError/index.js';
 import { createTestPool } from '#src/utils/test-utils.js';

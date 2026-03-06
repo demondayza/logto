@@ -1,6 +1,6 @@
 # Mailgun email connector
 
-The official Logto connector for Mailgun email service.
+The official MyEyesID connector for Mailgun email service.
 
 **Table of contents**
 
@@ -81,13 +81,13 @@ The following is an example of the deliveries config:
   "Register": {
     "subject": "{{code}} is your verification code",
     "replyTo": "Foo <foo@bar.com>",
-    "html": "<h1>Welcome to Logto</h1><p>Your verification code is {{code}}.</p>",
-    "text": "Welcome to Logto. Your verification code is {{code}}."
+    "html": "<h1>Welcome to MyEyesID</h1><p>Your verification code is {{code}}.</p>",
+    "text": "Welcome to MyEyesID. Your verification code is {{code}}."
   },
   "SignIn": {
-    "subject": "Welcome back to Logto",
+    "subject": "Welcome back to MyEyesID",
     "replyTo": "Foo <foo@bar.com>",
-    "template": "logto-sign-in",
+    "template": "myeyesid-sign-in",
     "variables": {
       "bar": "baz"
     }
@@ -99,4 +99,4 @@ The following is an example of the deliveries config:
 
 You can type in an email address and click on "Send" to see whether the settings can work before "Save and Done".
 
-That's it. Don't forget to [Enable connector in sign-in experience](https://docs.logto.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/)
+That's it. Don't forget to [Enable connector in sign-in experience](https://docs.myeyesid.io/docs/recipes/configure-connectors/email-connector/enable-email-sign-in/)

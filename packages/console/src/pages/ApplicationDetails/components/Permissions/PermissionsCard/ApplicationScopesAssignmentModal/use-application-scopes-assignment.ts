@@ -1,7 +1,7 @@
 import {
   ApplicationUserConsentScopeType,
   type ApplicationUserConsentScopesResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useState, useCallback, useMemo } from 'react';
 import useSWR from 'swr';

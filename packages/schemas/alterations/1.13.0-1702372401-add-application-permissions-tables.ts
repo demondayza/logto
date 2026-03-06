@@ -11,7 +11,7 @@ const getDatabaseName = async (pool: CommonQueryMethods) => {
 };
 
 const enableRls = async (pool: CommonQueryMethods, database: string, table: string) => {
-  const baseRoleId = sql.identifier([`logto_tenant_${database}`]);
+  const baseRoleId = sql.identifier([`myeyesid_tenant_${database}`]);
 
   await pool.query(sql`
     create trigger set_tenant_id before insert on ${sql.identifier([table])}
@@ -73,7 +73,7 @@ const alteration: AlterationScript = {
         /** The globally unique identifier of the application. */
         application_id varchar(21) not null
           references applications (id) on update cascade on delete cascade,
-        /** The unique UserScope enum value @see (@logto/core-kit) for reference */
+        /** The unique UserScope enum value @see (@myeyesid/core-kit) for reference */
         user_scope varchar(64) not null,
         primary key (application_id, user_scope)
       );

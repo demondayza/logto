@@ -1,4 +1,4 @@
-import { mockSignInExperience } from '@/__mocks__/logto';
+import { mockSignInExperience } from '@/__mocks__/myeyesid';
 import { getSignInExperience } from '@/apis/settings';
 
 import { getSignInExperienceSettings } from './sign-in-experience';

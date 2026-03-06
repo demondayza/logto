@@ -1,4 +1,4 @@
-import type { Scope, CreateScope } from '@logto/schemas';
+import type { Scope, CreateScope } from '@myeyesid/schemas';
 import { type Options } from 'ky';
 
 import { generateScopeName } from '#src/utils.js';

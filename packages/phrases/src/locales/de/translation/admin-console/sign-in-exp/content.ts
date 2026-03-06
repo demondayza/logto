@@ -40,9 +40,9 @@ const content = {
     subtitle:
       'Lokalisiere die Produkterfahrung, indem du Sprachen und Übersetzungen hinzufügst. Dein Beitrag kann als Standardsprache festgelegt werden.',
     add_language: 'Sprache hinzufügen',
-    logto_provided: 'Von MyEyesID bereitgestellt',
+    myeyesid_provided: 'Von MyEyesID bereitgestellt',
     key: 'Schlüssel',
-    logto_source_values: 'MyEyesID-Quellwerte',
+    myeyesid_source_values: 'MyEyesID-Quellwerte',
     custom_values: 'Benutzerdefinierte Werte',
     clear_all_tip: 'Alle Werte löschen',
     unsaved_description: 'Änderungen gehen verloren, wenn du diese Seite ohne Speichern verlässt.',

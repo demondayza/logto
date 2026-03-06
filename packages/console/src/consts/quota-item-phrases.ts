@@ -1,10 +1,10 @@
 import { type TFuncKey } from 'i18next';
 
-import { type LogtoSkuQuota } from '@/types/skus';
+import { type MyEyesIDSkuQuota } from '@/types/skus';
 
 /* === for new pricing model === */
 export const skuQuotaItemPhrasesMap: Record<
-  keyof LogtoSkuQuota,
+  keyof MyEyesIDSkuQuota,
   TFuncKey<'translation', 'admin_console.subscription.quota_item'>
 > = {
   mauLimit: 'mau_limit.name',
@@ -37,7 +37,7 @@ export const skuQuotaItemPhrasesMap: Record<
 };
 
 export const skuQuotaItemUnlimitedPhrasesMap: Record<
-  keyof LogtoSkuQuota,
+  keyof MyEyesIDSkuQuota,
   TFuncKey<'translation', 'admin_console.subscription.quota_item'>
 > = {
   mauLimit: 'mau_limit.unlimited',
@@ -70,7 +70,7 @@ export const skuQuotaItemUnlimitedPhrasesMap: Record<
 };
 
 export const skuQuotaItemLimitedPhrasesMap: Record<
-  keyof LogtoSkuQuota,
+  keyof MyEyesIDSkuQuota,
   TFuncKey<'translation', 'admin_console.subscription.quota_item'>
 > = {
   mauLimit: 'mau_limit.limited',
@@ -103,7 +103,7 @@ export const skuQuotaItemLimitedPhrasesMap: Record<
 };
 
 export const skuQuotaItemNotEligiblePhrasesMap: Record<
-  keyof LogtoSkuQuota,
+  keyof MyEyesIDSkuQuota,
   TFuncKey<'translation', 'admin_console.subscription.quota_item'>
 > = {
   mauLimit: 'mau_limit.not_eligible',

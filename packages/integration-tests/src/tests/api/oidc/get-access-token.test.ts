@@ -1,13 +1,13 @@
 import path from 'node:path';
 
-import { fetchTokenByRefreshToken } from '@logto/js';
+import { fetchTokenByRefreshToken } from '@myeyesid/js';
 import {
   InteractionEvent,
   type Resource,
   RoleType,
   SignInIdentifier,
   VerificationType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 
@@ -26,7 +26,7 @@ import {
 import { assignUsersToRole, createRole, deleteRole } from '#src/api/role.js';
 import { createScope, deleteScope } from '#src/api/scope.js';
 import MockClient, { defaultConfig } from '#src/client/index.js';
-import { logtoUrl } from '#src/constants.js';
+import { myeyesidUrl } from '#src/constants.js';
 import { initExperienceClient, processSession } from '#src/helpers/client.js';
 import { createUserByAdmin } from '#src/helpers/index.js';
 import { enableAllPasswordSignInMethods } from '#src/helpers/sign-in-experience.js';
@@ -38,7 +38,7 @@ describe('get access token', () => {
   const guestUsername = generateUsername();
   const testApiResourceInfo: Pick<Resource, 'name' | 'indicator'> = {
     name: 'test-api-resource',
-    indicator: 'https://foo.logto.io/api',
+    indicator: 'https://foo.myeyesid.io/api',
   };
   const testApiScopeNames = ['read', 'write', 'delete', 'update'];
 
@@ -169,8 +169,8 @@ describe('get access token', () => {
     await processSession(client, redirectTo);
     const accessToken = await client.getAccessToken(testApiResourceInfo.indicator);
     await expect(
-      jwtVerify(accessToken, createRemoteJWKSet(new URL('/oidc/jwks', logtoUrl)), {
-        issuer: new URL('/oidc', logtoUrl).href,
+      jwtVerify(accessToken, createRemoteJWKSet(new URL('/oidc/jwks', myeyesidUrl)), {
+        issuer: new URL('/oidc', myeyesidUrl).href,
         audience: testApiResourceInfo.indicator,
         requiredClaims: ['scope', 'client_id'],
         subject: guestUserId,
@@ -200,7 +200,7 @@ describe('get access token', () => {
       fetchTokenByRefreshToken(
         {
           clientId: defaultConfig.appId,
-          tokenEndpoint: path.join(logtoUrl, '/oidc/token'),
+          tokenEndpoint: path.join(myeyesidUrl, '/oidc/token'),
           refreshToken,
           resource: testApiResourceInfo.indicator,
         },

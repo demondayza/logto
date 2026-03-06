@@ -1,4 +1,4 @@
-import { type PersonalAccessToken } from '@logto/schemas';
+import { type PersonalAccessToken } from '@myeyesid/schemas';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';

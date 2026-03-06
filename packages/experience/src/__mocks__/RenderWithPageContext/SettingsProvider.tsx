@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react';
 import PageContext from '@/Providers/PageContextProvider/PageContext';
 import type { SignInExperienceResponse } from '@/types';
 
-import { mockSignInExperienceSettings } from '../logto';
+import { mockSignInExperienceSettings } from '../myeyesid';
 
 type Props = {
   readonly settings?: SignInExperienceResponse;

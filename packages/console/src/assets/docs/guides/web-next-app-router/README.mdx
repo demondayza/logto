@@ -1,4 +1,4 @@
-import { generateStandardSecret } from '@logto/shared/universal';
+import { generateStandardSecret } from '@myeyesid/shared/universal';
 import NpmLikeInstallation from '@/mdx-components/NpmLikeInstallation';
 import Steps from '@/mdx-components/Steps';
 import Step from '@/mdx-components/Step';
@@ -13,7 +13,7 @@ import RedirectUrisWeb from '../../fragments/_redirect-uris-web.mdx';
   subtitle="Install MyEyesID SDK"
 >
 
-<NpmLikeInstallation packageName="@logto/next" />
+<NpmLikeInstallation packageName="@myeyesid/next" />
 
 </Step>
 
@@ -23,8 +23,8 @@ import RedirectUrisWeb from '../../fragments/_redirect-uris-web.mdx';
 
 Prepare configuration for the MyEyesID client:
 
-<Code title="app/logto.ts" className="language-ts">
-    {`export const logtoConfig = {
+<Code title="app/myeyesid.ts" className="language-ts">
+    {`export const myeyesidConfig = {
   endpoint: '${props.endpoint}',
   appId: '${props.app.id}',
   appSecret: '${props.secrets[0]?.value ?? props.app.secret}',
@@ -57,14 +57,14 @@ Prepare configuration for the MyEyesID client:
 Add a callback route to your app:
 
 ```tsx title="app/callback/route.ts"
-import { handleSignIn } from '@logto/next/server-actions';
+import { handleSignIn } from '@myeyesid/next/server-actions';
 import { redirect } from 'next/navigation';
 import { NextRequest } from 'next/server';
-import { logtoConfig } from '../logto';
+import { myeyesidConfig } from '../myeyesid';
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  await handleSignIn(logtoConfig, searchParams);
+  await handleSignIn(myeyesidConfig, searchParams);
 
   redirect('/');
 }
@@ -128,16 +128,16 @@ Remember to add `'use client'` to the top of the file to indicate that these com
 
 ### Add buttons to home page
 
-Now let's add the sign-in and sign-out buttons in your hoem page. We need to call the server actions in SDK when needed. To help with this, use `getLogtoContext` to fetch authentication status.
+Now let's add the sign-in and sign-out buttons in your hoem page. We need to call the server actions in SDK when needed. To help with this, use `getMyEyesIDContext` to fetch authentication status.
 
 ```tsx title="app/page.tsx"
-import { getLogtoContext, signIn, signOut } from '@logto/next/server-actions';
+import { getMyEyesIDContext, signIn, signOut } from '@myeyesid/next/server-actions';
 import SignIn from './sign-in';
 import SignOut from './sign-out';
-import { logtoConfig } from './logto';
+import { myeyesidConfig } from './myeyesid';
 
 const Home = () => {
-  const { isAuthenticated, claims } = await getLogtoContext(logtoConfig);
+  const { isAuthenticated, claims } = await getMyEyesIDContext(myeyesidConfig);
 
   return (
     <nav>
@@ -148,7 +148,7 @@ const Home = () => {
             onSignOut={async () => {
               'use server';
 
-              await signOut(logtoConfig);
+              await signOut(myeyesidConfig);
             }}
           />
         </p>
@@ -158,7 +158,7 @@ const Home = () => {
             onSignIn={async () => {
               'use server';
 
-              await signIn(logtoConfig);
+              await signIn(myeyesidConfig);
             }}
           />
         </p>

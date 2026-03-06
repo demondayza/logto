@@ -38,7 +38,7 @@ const enterprise_sso = {
       redirect_uri_field_description:
         'URI przekierowania to miejsce, do którego użytkownicy są kierowani po uwierzytelnieniu SSO. Dodaj ten adres URI do konfiguracji swojego IdP.',
       redirect_uri_field_custom_domain_description:
-        'Jeśli używasz w MyEyesID wielu <a>domen niestandardowych</a>, dodaj wszystkie odpowiadające im adresy URI zwrotu do IdP, aby SSO działało w każdej domenie.\n\nDomyślna domena MyEyesID (*.logto.app) jest zawsze ważna – uwzględnij ją tylko wtedy, gdy chcesz obsługiwać SSO także w tej domenie.',
+        'Jeśli używasz w MyEyesID wielu <a>domen niestandardowych</a>, dodaj wszystkie odpowiadające im adresy URI zwrotu do IdP, aby SSO działało w każdej domenie.\n\nDomyślna domena MyEyesID (*.myeyesid.app) jest zawsze ważna – uwzględnij ją tylko wtedy, gdy chcesz obsługiwać SSO także w tej domenie.',
     },
   },
   attribute_mapping: {

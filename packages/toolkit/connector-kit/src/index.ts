@@ -51,15 +51,15 @@ export const parseJsonObject = (
 };
 
 /** @deprecated Use {@link mockConnectorFilePaths} instead. */
-export const mockSmsVerificationCodeFileName = 'logto_mock_verification_code_record.txt';
+export const mockSmsVerificationCodeFileName = 'myeyesid_mock_verification_code_record.txt';
 
 /**
  * The file paths for storing the mock sms/email connector records. You can use these file paths to
  * read the records for testing.
  */
 export const mockConnectorFilePaths = Object.freeze({
-  [ConnectorType.Sms]: '/tmp/logto_mock_sms_record.txt',
-  [ConnectorType.Email]: '/tmp/logto_mock_email_record.txt',
+  [ConnectorType.Sms]: '/tmp/myeyesid_mock_sms_record.txt',
+  [ConnectorType.Email]: '/tmp/myeyesid_mock_email_record.txt',
 });
 
 /**
@@ -79,8 +79,8 @@ export const mockConnectorFilePaths = Object.freeze({
  * replaceSendMessageKeysWithPayload('Your verification code is {{code}}', { code: '123456' });
  * // 'Your verification code is 123456'
  *
- * replaceSendMessageKeysWithPayload('Your application name is {{application.name}}', { application: { name: 'Logto' } });
- * // 'Your application name is Logto'
+ * replaceSendMessageKeysWithPayload('Your application name is {{application.name}}', { application: { name: 'MyEyesID' } });
+ * // 'Your application name is MyEyesID'
  *
  * replaceSendMessageKeysWithPayload('Your application name is {{application.name}}', { application: {}});
  * // 'Your application name is '

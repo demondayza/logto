@@ -1,24 +1,24 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 import type {
   AdminConsoleData,
   Application,
   ApplicationsRole,
-  LogtoConfig,
+  MyEyesIDConfig,
   OidcConfigKey,
   Passcode,
   Resource,
   Role,
   Scope,
   UsersRole,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import {
   ApplicationType,
   DomainStatus,
   internalPrefix,
-  LogtoJwtTokenKey,
-  LogtoOidcConfigKey,
+  MyEyesIDJwtTokenKey,
+  MyEyesIDOidcConfigKey,
   RoleType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { protectedAppSignInCallbackUrl } from '#src/constants/index.js';
 import { mockId } from '#src/test-utils/nanoid.js';
@@ -45,7 +45,7 @@ export const mockApplication: Application = {
     postLogoutRedirectUris: [],
   },
   customClientMetadata: {
-    corsAllowedOrigins: ['http://localhost:3000', 'http://localhost:3001', 'https://logto.dev'],
+    corsAllowedOrigins: ['http://localhost:3000', 'http://localhost:3001', 'https://myeyesid.dev'],
     idTokenTtl: 5000,
     refreshTokenTtl: 6_000_000,
   },
@@ -69,7 +69,7 @@ export const mockProtectedApplication: Omit<Application, 'protectedAppMetadata'>
     postLogoutRedirectUris: ['https://mock.protected.dev'],
   },
   customClientMetadata: {
-    corsAllowedOrigins: ['http://localhost:3000', 'http://localhost:3001', 'https://logto.dev'],
+    corsAllowedOrigins: ['http://localhost:3000', 'http://localhost:3001', 'https://myeyesid.dev'],
     idTokenTtl: 5000,
     refreshTokenTtl: 6_000_000,
   },
@@ -100,9 +100,9 @@ export const mockCustomDomain = {
 
 export const mockResource: Resource = {
   tenantId: 'fake_tenant',
-  id: 'logto_api',
+  id: 'myeyesid_api',
   name: 'management api',
-  indicator: 'logto.dev/api',
+  indicator: 'myeyesid.dev/api',
   accessTokenTtl: 3600,
   isDefault: false,
 };
@@ -174,22 +174,22 @@ export const mockCookieKeys: OidcConfigKey[] = [
   { id: 'cookie', value: 'bar', createdAt: 987_654_321 },
 ];
 
-const mockLogtoConfigs: LogtoConfig[] = [
+const mockMyEyesIDConfigs: MyEyesIDConfig[] = [
   {
     tenantId: 'fake_tenant',
-    key: LogtoOidcConfigKey.PrivateKeys,
+    key: MyEyesIDOidcConfigKey.PrivateKeys,
     value: mockPrivateKeys,
   },
   {
     tenantId: 'fake_tenant',
-    key: LogtoOidcConfigKey.CookieKeys,
+    key: MyEyesIDOidcConfigKey.CookieKeys,
     value: mockCookieKeys,
   },
 ];
 
-export const mockLogtoConfigRows = {
-  rows: mockLogtoConfigs,
-  rowCount: mockLogtoConfigs.length,
+export const mockMyEyesIDConfigRows = {
+  rows: mockMyEyesIDConfigs,
+  rowCount: mockMyEyesIDConfigs.length,
   command: 'SELECT' as const,
   fields: [],
   notices: [],
@@ -200,7 +200,7 @@ export const mockPasscode: Passcode = {
   id: 'foo',
   interactionJti: 'jti',
   phone: '888 888 8888',
-  email: 'foo@logto.io',
+  email: 'foo@myeyesid.io',
   type: TemplateType.SignIn,
   code: 'asdfghjkl',
   consumed: false,
@@ -224,7 +224,7 @@ export const mockApplicationRole: ApplicationsRole = {
 
 export const mockJwtCustomizerConfigForAccessToken = {
   tenantId: 'fake_tenant',
-  key: LogtoJwtTokenKey.AccessToken,
+  key: MyEyesIDJwtTokenKey.AccessToken,
   value: {
     script: 'console.log("hello world");',
     environmentVariables: {
@@ -240,7 +240,7 @@ export const mockJwtCustomizerConfigForAccessToken = {
 
 export const mockJwtCustomizerConfigForClientCredentials = {
   tenantId: 'fake_tenant',
-  key: LogtoJwtTokenKey.ClientCredentials,
+  key: MyEyesIDJwtTokenKey.ClientCredentials,
   value: {
     script: 'console.log("hello world");',
     environmentVariables: {

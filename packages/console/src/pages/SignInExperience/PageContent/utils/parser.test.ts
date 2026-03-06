@@ -6,7 +6,7 @@ import {
   SignInIdentifier,
   SignInMode,
   type SignInExperience,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import { sieFormDataParser, signInExperienceToUpdatedDataParser } from './parser';
 
@@ -19,9 +19,9 @@ const mockSignInExperience: SignInExperience = {
     darkPrimaryColor: '#ffffff',
   },
   branding: {
-    logoUrl: 'https://logto.dev/logo.svg',
+    logoUrl: 'https://myeyesid.dev/logo.svg',
   },
-  hideLogtoBranding: false,
+  hideMyEyesIDBranding: false,
   termsOfUseUrl: null,
   privacyPolicyUrl: null,
   languageInfo: {

@@ -2,9 +2,9 @@ import {
   type CustomJwtErrorBody,
   customJwtErrorBodyGuard,
   CustomJwtErrorCode,
-  LogtoJwtTokenKey,
+  MyEyesIDJwtTokenKey,
   type JwtCustomizerType,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, trySafe } from '@silverhand/essentials';
 import { ResponseError } from '@withtyped/client';
 import { type HTTPError } from 'got';
@@ -20,7 +20,7 @@ export * from './local-vm.js';
 export const getJwtCustomizerScripts = (jwtCustomizers: Partial<JwtCustomizerType>) => {
   // eslint-disable-next-line no-restricted-syntax -- enable to infer the type using `Object.fromEntries`
   return Object.fromEntries(
-    Object.values(LogtoJwtTokenKey).map((key) => [key, { production: jwtCustomizers[key]?.script }])
+    Object.values(MyEyesIDJwtTokenKey).map((key) => [key, { production: jwtCustomizers[key]?.script }])
   ) as CustomJwtDeployRequestBody;
 };
 

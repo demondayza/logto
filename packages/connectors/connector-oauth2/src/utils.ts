@@ -1,6 +1,6 @@
 import { assert, getSafe } from '@silverhand/essentials';
 
-import { ConnectorError, ConnectorErrorCodes, parseJson } from '@logto/connector-kit';
+import { ConnectorError, ConnectorErrorCodes, parseJson } from '@myeyesid/connector-kit';
 import { type KyResponse } from 'ky';
 import qs from 'query-string';
 

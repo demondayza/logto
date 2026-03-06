@@ -1,1 +1,1 @@
-export { maskEmail, maskPhone } from '@logto/shared/universal';
+export { maskEmail, maskPhone } from '@myeyesid/shared/universal';

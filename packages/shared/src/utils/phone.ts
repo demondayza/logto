@@ -99,7 +99,7 @@ export class PhoneNumberParser {
    * - non-digit characters stripped.
    *
    * @remarks
-   * Logto use this format to store phone number in the database.
+   * MyEyesID use this format to store phone number in the database.
    *
    * @example
    * +1 (650) 253-0000 -> 16502530000
@@ -124,7 +124,7 @@ export class PhoneNumberParser {
    * However, in the international format that includes the country code, this leading '0' should be removed.
    *
    * The previous implementation did not handle this correctly, causing the combination of country code + 0 + local number
-   *  to be treated as different from country code + local number in the Logto system.
+   *  to be treated as different from country code + local number in the MyEyesID system.
    *
    * Both formats should be considered the same phone number.
    *

@@ -2,7 +2,7 @@ import {
   ConnectorType,
   type ConnectorFactoryResponse,
   type ConnectorResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import Modal from 'react-modal';

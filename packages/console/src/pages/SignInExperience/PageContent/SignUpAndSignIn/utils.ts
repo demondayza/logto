@@ -5,7 +5,7 @@ import {
   SignInIdentifier,
   MfaFactor,
   type SignUpIdentifier as SignUpIdentifierMethod,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export const createSignInMethod = (identifier: SignInIdentifier, mfaFactors: MfaFactor[] = []) => {
   // Check if the identifier is already used in MFA factors

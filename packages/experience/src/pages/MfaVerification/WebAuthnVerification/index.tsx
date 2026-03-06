@@ -1,4 +1,4 @@
-import { VerificationType } from '@logto/schemas';
+import { VerificationType } from '@myeyesid/schemas';
 import { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { validate } from 'superstruct';

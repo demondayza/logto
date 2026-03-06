@@ -1,7 +1,7 @@
-import { isLanguageTag } from '@logto/language-kit';
-import { ConnectorType } from '@logto/schemas';
-import type { ConnectorFactoryResponse, RequestErrorBody } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared/universal';
+import { isLanguageTag } from '@myeyesid/language-kit';
+import { ConnectorType } from '@myeyesid/schemas';
+import type { ConnectorFactoryResponse, RequestErrorBody } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared/universal';
 import { conditional } from '@silverhand/essentials';
 import i18next from 'i18next';
 import { HTTPError } from 'ky';

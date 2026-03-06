@@ -1,4 +1,4 @@
-import { Theme } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
 import { z } from 'zod';
 
 export enum DynamicAppearanceMode {

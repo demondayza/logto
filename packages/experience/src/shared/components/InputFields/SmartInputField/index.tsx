@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { animated, config, useSpring } from '@react-spring/web';
 import type { Nullable } from '@silverhand/essentials';
 import type { HTMLProps, Ref } from 'react';

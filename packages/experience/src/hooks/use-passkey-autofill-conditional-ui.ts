@@ -1,4 +1,4 @@
-import { InteractionEvent, MfaFactor, type WebAuthnAuthenticationOptions } from '@logto/schemas';
+import { InteractionEvent, MfaFactor, type WebAuthnAuthenticationOptions } from '@myeyesid/schemas';
 import { browserSupportsWebAuthnAutofill } from '@simplewebauthn/browser';
 import { useCallback, useContext, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -1,5 +1,5 @@
-import { Applications, ApplicationSecrets, internalPrefix } from '@logto/schemas';
-import { generateStandardSecret } from '@logto/shared';
+import { Applications, ApplicationSecrets, internalPrefix } from '@myeyesid/schemas';
+import { generateStandardSecret } from '@myeyesid/shared';
 import { z } from 'zod';
 
 import RequestError from '#src/errors/RequestError/index.js';

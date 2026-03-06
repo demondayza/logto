@@ -1,4 +1,4 @@
-import type { ConnectorMetadata } from '@logto/connector-kit';
+import type { ConnectorMetadata } from '@myeyesid/connector-kit';
 
 export const defaultMetadata: ConnectorMetadata = {
   id: 'mock-email-service-alternative',

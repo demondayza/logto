@@ -3,7 +3,7 @@ import {
   SignInIdentifier,
   MfaFactor,
   type SignInExperience,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 import { useCallback } from 'react';
 import { Controller, useFieldArray, useFormContext } from 'react-hook-form';

@@ -1,4 +1,4 @@
-import { type JsonObject, jsonObjectGuard } from '@logto/schemas';
+import { type JsonObject, jsonObjectGuard } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import cleanDeep from 'clean-deep';
 

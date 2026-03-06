@@ -18,7 +18,7 @@ import {
   Roles,
   type Role,
   UsersRoles,
-  LogtoConfigs,
+  MyEyesIDConfigs,
   SignInExperiences,
   Applications,
   OrganizationUserRelations,
@@ -27,14 +27,14 @@ import {
   OrganizationRoleUserRelations,
   TenantRole,
   AccountCenters,
-} from '@logto/schemas';
-import { getTenantRole } from '@logto/schemas';
+} from '@myeyesid/schemas';
+import { getTenantRole } from '@myeyesid/schemas';
 import {
   createDefaultAccountCenter,
   createAdminTenantAccountCenter,
-} from '@logto/schemas/lib/seeds/account-center.js';
-import { Tenants } from '@logto/schemas/models';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas/lib/seeds/account-center.js';
+import { Tenants } from '@myeyesid/schemas/models';
+import { generateStandardId } from '@myeyesid/shared';
 import type { DatabaseTransactionConnection } from '@silverhand/slonik';
 import { sql } from '@silverhand/slonik';
 
@@ -93,7 +93,7 @@ export const createTables = async (
   connection: DatabaseTransactionConnection,
   encryptBaseRole: boolean
 ): Promise<{ password: string }> => {
-  const tableDirectory = getPathInModule('@logto/schemas', 'tables');
+  const tableDirectory = getPathInModule('@myeyesid/schemas', 'tables');
   const directoryFiles = await readdir(tableDirectory);
   const tableFiles = directoryFiles.filter((file) => file.endsWith('.sql'));
   const queries = await Promise.all(
@@ -158,7 +158,7 @@ export const seedTables = async (
   await seedAdminData(connection, defaultManagementApi);
 
   /**
-   * Create a pre-configured role for the Logto Management API access
+   * Create a pre-configured role for the MyEyesID Management API access
    * in the default tenant (the default tenant is the only tenant for the OSS version, and the initial tenant for cloud).
    *
    * Called after the default tenant's Management API resource and the related all scope have been created.
@@ -197,13 +197,13 @@ export const seedTables = async (
     seedLegacyManagementApiUserRole(connection),
     seedTenantCloudServiceApplication(connection, defaultTenantId),
     connection.query(
-      insertInto(createDefaultAdminConsoleConfig(defaultTenantId), LogtoConfigs.table)
+      insertInto(createDefaultAdminConsoleConfig(defaultTenantId), MyEyesIDConfigs.table)
     ),
     connection.query(
-      insertInto(createDefaultAdminConsoleConfig(adminTenantId), LogtoConfigs.table)
+      insertInto(createDefaultAdminConsoleConfig(adminTenantId), MyEyesIDConfigs.table)
     ),
-    connection.query(insertInto(createDefaultIdTokenConfig(defaultTenantId), LogtoConfigs.table)),
-    connection.query(insertInto(createDefaultIdTokenConfig(adminTenantId), LogtoConfigs.table)),
+    connection.query(insertInto(createDefaultIdTokenConfig(defaultTenantId), MyEyesIDConfigs.table)),
+    connection.query(insertInto(createDefaultIdTokenConfig(adminTenantId), MyEyesIDConfigs.table)),
     connection.query(
       insertInto(createDefaultSignInExperience(defaultTenantId, isCloud), SignInExperiences.table)
     ),
@@ -213,7 +213,7 @@ export const seedTables = async (
     connection.query(insertInto(createAdminTenantAccountCenter(), AccountCenters.table)),
   ]);
 
-  // The below seed data is for the Logto Cloud only. We put it here for the sake of simplicity.
+  // The below seed data is for the MyEyesID Cloud only. We put it here for the sake of simplicity.
   // The data is not harmful for OSS, since they are all admin tenant data. OSS will not use them
   // and they cannot be seen by the Console.
   await Promise.all([

@@ -1,5 +1,5 @@
-import { emailTemplateDetailsGuard, EmailTemplates } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { emailTemplateDetailsGuard, EmailTemplates } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { z } from 'zod';
 
 import RequestError from '#src/errors/RequestError/index.js';

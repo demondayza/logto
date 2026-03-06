@@ -1,12 +1,12 @@
-import { UserScope } from '@logto/core-kit';
-import { MfaFactor } from '@logto/schemas';
+import { UserScope } from '@myeyesid/core-kit';
+import { MfaFactor } from '@myeyesid/schemas';
 
 import { enableAllAccountCenterFields } from '#src/api/account-center.js';
 import {
   createWebAuthnRegistrationOptions,
   verifyWebAuthnRegistration,
 } from '#src/api/verification-record.js';
-import { logtoUrl } from '#src/constants.js';
+import { myeyesidUrl } from '#src/constants.js';
 import { expectRejects } from '#src/helpers/index.js';
 import {
   createDefaultTenantUserWithPassword,
@@ -41,7 +41,7 @@ describe('my-account (mfa - WebAuthn)', () => {
         await createWebAuthnRegistrationOptions(api);
 
       expect(verificationRecordId).toBeTruthy();
-      expect(registrationOptions.rp.name).toBe(new URL(logtoUrl).hostname);
+      expect(registrationOptions.rp.name).toBe(new URL(myeyesidUrl).hostname);
       expect(registrationOptions.user.displayName).toBe(user.username);
 
       await deleteDefaultTenantUser(user.id);
@@ -61,7 +61,7 @@ describe('my-account (mfa - WebAuthn)', () => {
         },
       } = await createWebAuthnRegistrationOptions(api);
 
-      const expectedHost = new URL(logtoUrl).hostname;
+      const expectedHost = new URL(myeyesidUrl).hostname;
       const rawId = Buffer.from(rpId ?? expectedHost)
         .toString('base64')
         .replaceAll('+', '-')
@@ -80,7 +80,7 @@ describe('my-account (mfa - WebAuthn)', () => {
               JSON.stringify({
                 type: 'webauthn.create',
                 challenge,
-                origin: logtoUrl,
+                origin: myeyesidUrl,
                 crossOrigin: false,
               })
             ).toString('base64url'),

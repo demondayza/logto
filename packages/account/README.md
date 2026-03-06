@@ -1,6 +1,6 @@
 # Account Center
 
-The Logto account center app that allows users to manage their account settings, profile, and security options.
+The MyEyesID account center app that allows users to manage their account settings, profile, and security options.
 
 ## Authentication Behavior
 
@@ -20,7 +20,7 @@ on a temporary `userInfo` absence).
 
 ### Reserved Scopes and Refresh Token Policy
 
-The Logto client SDK automatically adds reserved scopes (`openid`, `offline_access`, `profile`) by
+The MyEyesID client SDK automatically adds reserved scopes (`openid`, `offline_access`, `profile`) by
 default. For Account Center we disable this behavior and explicitly include only the scopes we need:
 
 - `includeReservedScopes: false`
@@ -72,13 +72,13 @@ import useSendVerificationCode from '@experience/hooks/use-send-verification-cod
 
 If you need functionality from `@experience/utils/*` or other non-shared locations:
 
-1. **Use shared packages** - Check if `@logto/core-kit`, `@logto/schemas`, or `@logto/shared` has what you need
+1. **Use shared packages** - Check if `@myeyesid/core-kit`, `@myeyesid/schemas`, or `@myeyesid/shared` has what you need
 2. **Re-implement locally** - Simple utilities can be implemented in account-center
 3. **Move to shared** - If the utility is truly reusable, consider moving it to `@experience/shared/`
 
 ### Available Shared Packages
 
-- `@logto/core-kit` - Core utilities like `emailRegEx` for validation
-- `@logto/schemas` - TypeScript types and schemas
-- `@logto/phrases-experience` - i18n translations
-- `@logto/shared/universal` - Universal utilities (browser + Node.js compatible)
+- `@myeyesid/core-kit` - Core utilities like `emailRegEx` for validation
+- `@myeyesid/schemas` - TypeScript types and schemas
+- `@myeyesid/phrases-experience` - i18n translations
+- `@myeyesid/shared/universal` - Universal utilities (browser + Node.js compatible)

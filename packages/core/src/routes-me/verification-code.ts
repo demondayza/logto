@@ -1,5 +1,5 @@
-import { TemplateType } from '@logto/connector-kit';
-import { emailRegEx } from '@logto/core-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
+import { emailRegEx } from '@myeyesid/core-kit';
 import { object, string } from 'zod';
 
 import koaGuard from '#src/middleware/koa-guard.js';
@@ -7,7 +7,7 @@ import type { RouterInitArgs } from '#src/routes/types.js';
 
 import RequestError from '../errors/RequestError/index.js';
 import assertThat from '../utils/assert-that.js';
-import { getLogtoCookie } from '../utils/cookie.js';
+import { getMyEyesIDCookie } from '../utils/cookie.js';
 
 import type { AuthedMeRouter } from './types.js';
 
@@ -32,7 +32,7 @@ export default function verificationCodeRoutes<T extends AuthedMeRouter>(
     }),
     async (ctx, next) => {
       const code = await createPasscode(undefined, codeType, ctx.guard.body);
-      const { uiLocales } = getLogtoCookie(ctx);
+      const { uiLocales } = getMyEyesIDCookie(ctx);
       await sendPasscode(code, {
         locale: ctx.locale,
         ...(uiLocales && { uiLocales }),

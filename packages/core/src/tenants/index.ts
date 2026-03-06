@@ -1,4 +1,4 @@
-import { ConsoleLog } from '@logto/shared';
+import { ConsoleLog } from '@myeyesid/shared';
 import chalk from 'chalk';
 import { LRUCache } from 'lru-cache';
 

@@ -72,8 +72,8 @@ describe('getUserInfo', () => {
     getSession.mockResolvedValue({ extractedRawProfile: mockAttributes });
     const userInfo = await connector.getUserInfo(undefined, getSession);
     expect(userInfo).toEqual({
-      avatar: 'https://logto.io/logo.4667af9d.svg',
-      email: 'test@logto.io',
+      avatar: 'https://myeyesid.io/logo.4667af9d.svg',
+      email: 'test@myeyesid.io',
       id: 'google-oauth2|u98ewdsah9annkjsn',
       name: 'saml test',
     });

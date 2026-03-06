@@ -3,7 +3,7 @@ import { type TFuncKey } from 'i18next';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { type LogtoEnterpriseSubscriptionResponse } from '@/cloud/types/router';
+import { type MyEyesIDEnterpriseSubscriptionResponse } from '@/cloud/types/router';
 import {
   usageKeys,
   titleKeyMap,
@@ -13,16 +13,16 @@ import {
 } from '@/components/PlanUsage/utils';
 import CardTitle from '@/ds-components/CardTitle';
 import Table from '@/ds-components/Table';
-import { LogtoSkuType } from '@/types/skus';
+import { MyEyesIDSkuType } from '@/types/skus';
 
 import styles from './index.module.scss';
 
 type Props = {
   readonly skuItems: Exclude<
-    LogtoEnterpriseSubscriptionResponse['subscriptionSkuItems'],
+    MyEyesIDEnterpriseSubscriptionResponse['subscriptionSkuItems'],
     undefined
   >;
-  readonly quotaScope: LogtoEnterpriseSubscriptionResponse['quotaScope'];
+  readonly quotaScope: MyEyesIDEnterpriseSubscriptionResponse['quotaScope'];
 };
 
 type AddOnSkuTableItem = {
@@ -55,7 +55,7 @@ const findUsageKeyByAddOnItem = (
 
 const formatAddOnSkuTableItems = (addOnSkuItems: Props['skuItems']) => {
   return addOnSkuItems
-    .map(({ quota, logtoSkuId, count, unitPrice }) => {
+    .map(({ quota, myeyesidSkuId, count, unitPrice }) => {
       const supportedAddOnUsageKey = findUsageKeyByAddOnItem(quota);
 
       // Temporarily filter out unsupported add-on items
@@ -67,7 +67,7 @@ const formatAddOnSkuTableItems = (addOnSkuItems: Props['skuItems']) => {
       const price = unitPrice ? unitPrice / 100 : null;
 
       return {
-        id: logtoSkuId,
+        id: myeyesidSkuId,
         title: titleKeyMap[supportedAddOnUsageKey],
         usageKey: supportedAddOnUsageKey,
         unitPrice: price,
@@ -80,7 +80,7 @@ const formatAddOnSkuTableItems = (addOnSkuItems: Props['skuItems']) => {
 
 function AddOnTable({ skuItems, quotaScope }: Props) {
   const { t } = useTranslation(undefined, { keyPrefix: 'admin_console' });
-  const addOnSkuItems = skuItems.filter((item) => item.type === LogtoSkuType.AddOn);
+  const addOnSkuItems = skuItems.filter((item) => item.type === MyEyesIDSkuType.AddOn);
 
   const addOnSkuTableItems = useMemo(
     () => formatAddOnSkuTableItems(addOnSkuItems),

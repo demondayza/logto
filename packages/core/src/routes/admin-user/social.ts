@@ -1,11 +1,11 @@
-import { notImplemented } from '@logto/cli/lib/connector/consts.js';
+import { notImplemented } from '@myeyesid/cli/lib/connector/consts.js';
 import {
   ConnectorType,
   identityGuard,
   identitiesGuard,
   userProfileResponseGuard,
   getUserSocialIdentityResponseGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { conditional, has, yes } from '@silverhand/essentials';
 import { object, record, string, unknown } from 'zod';
 
@@ -25,7 +25,7 @@ export default function adminUserSocialRoutes<T extends ManagementApiRouter>(
       users: { findUserById, updateUserById, hasUserWithIdentity, deleteUserIdentity },
       secrets: secretQueries,
     },
-    connectors: { getLogtoConnectorById },
+    connectors: { getMyEyesIDConnectorById },
   } = tenant;
 
   router.put(
@@ -88,7 +88,7 @@ export default function adminUserSocialRoutes<T extends ManagementApiRouter>(
       } = ctx.guard;
 
       const [connector, user] = await Promise.all([
-        getLogtoConnectorById(connectorId),
+        getMyEyesIDConnectorById(connectorId),
         findUserById(userId),
       ]);
 

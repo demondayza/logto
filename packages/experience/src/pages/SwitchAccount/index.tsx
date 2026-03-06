@@ -1,4 +1,4 @@
-import { experience, type ConsentInfoResponse } from '@logto/schemas';
+import { experience, type ConsentInfoResponse } from '@myeyesid/schemas';
 import { useContext, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

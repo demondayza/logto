@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 
-import { PasswordPolicyChecker } from '@logto/core-kit';
-import { MfaPolicy, type SignInExperience } from '@logto/schemas';
+import { PasswordPolicyChecker } from '@myeyesid/core-kit';
+import { MfaPolicy, type SignInExperience } from '@myeyesid/schemas';
 import type { MiddlewareType } from 'koa';
 import { type IRouterParamContext } from 'koa-router';
 

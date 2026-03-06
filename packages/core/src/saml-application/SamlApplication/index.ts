@@ -1,15 +1,15 @@
 /* eslint-disable max-lines */
 // TODO: refactor this file to reduce LOC
-import { parseJson } from '@logto/connector-kit';
-import { userClaims, type UserClaim, UserScope, ReservedScope } from '@logto/core-kit';
-import { Prompt, QueryKey } from '@logto/js';
+import { parseJson } from '@myeyesid/connector-kit';
+import { userClaims, type UserClaim, UserScope, ReservedScope } from '@myeyesid/core-kit';
+import { Prompt, QueryKey } from '@myeyesid/js';
 import {
   type SamlAcsUrl,
   BindingType,
   NameIdFormat,
   type SamlAttributeMapping,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 import { cond, conditional, tryThat, type Nullable, type Optional } from '@silverhand/essentials';
 import camelcaseKeys, { type CamelCaseKeys } from 'camelcase-keys';
 import { XMLValidator } from 'fast-xml-parser';
@@ -70,7 +70,7 @@ class SamlApplicationConfig {
 
   /**
    * Apply custom domain to `entityId` or `redirectUri` when applicable,
-   * no need to apply custom domain for `acsUrl` since this is not a Logto hosted
+   * no need to apply custom domain for `acsUrl` since this is not a MyEyesID hosted
    * endpoint.
    */
   private normalizeUrlHost(url: string): string {
@@ -353,7 +353,7 @@ export class SamlApplication {
 
     // We reuse the fetchOidcConfig function from SSO connector to fetch the OIDC config.
     // userinfo endpoint is not required in the OIDC config.
-    // But it is mandatory in Logto OIDC flow. So we should always have a userinfo endpoint.
+    // But it is mandatory in MyEyesID OIDC flow. So we should always have a userinfo endpoint.
     assertThat(userinfoEndpoint, new Error('Userinfo endpoint is not available'));
 
     const body = await getRawUserInfoResponse(accessToken, userinfoEndpoint);

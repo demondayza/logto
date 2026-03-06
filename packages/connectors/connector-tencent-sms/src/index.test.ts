@@ -1,4 +1,4 @@
-import { TemplateType } from '@logto/connector-kit';
+import { TemplateType } from '@myeyesid/connector-kit';
 
 import { codeTest, mockedConnectorConfig, mockedTemplateCode, phoneTest } from './mock.js';
 

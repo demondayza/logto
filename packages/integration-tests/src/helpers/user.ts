@@ -1,4 +1,4 @@
-import { type UserProfileResponse } from '@logto/schemas';
+import { type UserProfileResponse } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 
 import { type CreateUserPayload, createUser, deleteUser } from '#src/api/index.js';

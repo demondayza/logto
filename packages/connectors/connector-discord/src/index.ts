@@ -12,7 +12,7 @@ import type {
   GetUserInfo,
   CreateConnector,
   SocialConnector,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 import {
   socialUserInfoGuard,
   validateConfig,
@@ -20,7 +20,7 @@ import {
   ConnectorErrorCodes,
   ConnectorType,
   parseJson,
-} from '@logto/connector-kit';
+} from '@myeyesid/connector-kit';
 
 import {
   defaultMetadata,

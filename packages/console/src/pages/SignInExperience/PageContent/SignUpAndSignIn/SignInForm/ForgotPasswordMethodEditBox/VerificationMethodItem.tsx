@@ -1,4 +1,4 @@
-import type { ConnectorType, ForgotPasswordMethod } from '@logto/schemas';
+import type { ConnectorType, ForgotPasswordMethod } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 

@@ -1,4 +1,4 @@
-import type { UserProfileResponse, User } from '@logto/schemas';
+import type { UserProfileResponse, User } from '@myeyesid/schemas';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';

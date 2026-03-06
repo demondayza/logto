@@ -1,4 +1,4 @@
-import { type UserInfo } from '@logto/schemas';
+import { type UserInfo } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import SuspendedTag from '@/pages/Users/components/SuspendedTag';

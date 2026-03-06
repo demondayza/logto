@@ -1,5 +1,5 @@
-import type { Profile, User } from '@logto/schemas';
-import { InteractionEvent, UsersPasswordEncryptionMethod } from '@logto/schemas';
+import type { Profile, User } from '@myeyesid/schemas';
+import { InteractionEvent, UsersPasswordEncryptionMethod } from '@myeyesid/schemas';
 import { argon2Verify } from 'hash-wasm';
 
 import RequestError from '#src/errors/RequestError/index.js';
@@ -98,7 +98,7 @@ const verifyProfileNotRegisteredByOtherUserAccount = async (
   if (connectorId) {
     const {
       metadata: { target },
-    } = await connectors.getLogtoConnectorById(connectorId);
+    } = await connectors.getMyEyesIDConnectorById(connectorId);
 
     const socialIdentifier = identifiers.find(
       (identifier): identifier is SocialIdentifier => identifier.key === 'social'

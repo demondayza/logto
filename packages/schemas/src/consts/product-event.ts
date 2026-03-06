@@ -1,5 +1,5 @@
 /**
- * The product events that Logto Cloud uses for analytics and auditing.
+ * The product events that MyEyesID Cloud uses for analytics and auditing.
  *
  * - All events should be in past tense, with the format of `<noun> <verb>`.
  * - Unless otherwise specified, all events should contain tenant ID as the
@@ -14,26 +14,26 @@ export enum ProductEvent {
   /** @cloud */
   TenantDeleted = 'tenant deleted',
   /**
-   * One or more collaborators have been invited to the Logto Cloud tenant.
+   * One or more collaborators have been invited to the MyEyesID Cloud tenant.
    *
    * @cloud
    */
   CollaboratorInvited = 'collaborator invited',
   /**
-   * The Logto Cloud tenant has subscribed to the Pro plan. It may be the first time subscribing,
+   * The MyEyesID Cloud tenant has subscribed to the Pro plan. It may be the first time subscribing,
    * switching from the Free plan, or converting from a dev tenant, etc.
    *
    * @cloud
    */
   ProPlanSubscribed = 'pro plan subscribed',
   /**
-   * The Logto Cloud tenant has canceled the Pro plan.
+   * The MyEyesID Cloud tenant has canceled the Pro plan.
    *
    * @cloud
    */
   ProPlanCanceled = 'pro plan canceled',
   /**
-   * The Logto Cloud tenant has subscribed to the Free plan. This may happen when a tenant
+   * The MyEyesID Cloud tenant has subscribed to the Free plan. This may happen when a tenant
    * newly created or downgrading from the Pro plan.
    *
    * @cloud
@@ -84,7 +84,7 @@ export enum EventGroup {
 export const tenantEventDistinctId = 'TENANT_EVENT';
 
 /**
- * The header that carries the cloud user ID in a request from Logto Cloud. This is useful for
+ * The header that carries the cloud user ID in a request from MyEyesID Cloud. This is useful for
  * identifying the user who initiated the Management API request proxied by the cloud service.
  */
-export const cloudUserIdHeader = 'logto-cloud-user-id';
+export const cloudUserIdHeader = 'myeyesid-cloud-user-id';

@@ -1,19 +1,19 @@
 /**
  * @fileoverview
- * Mapi (Management API) proxy is an endpoint in Logto Cloud that proxies the requests to the
+ * Mapi (Management API) proxy is an endpoint in MyEyesID Cloud that proxies the requests to the
  * corresponding Management API. It has the following benefits:
  *
  * - When we migrate the tenant management from API resources to tenant organizations, we can
  *   migrate Console to use the mapi proxy endpoint by changing only the base URL.
  * - It decouples the access control of Cloud user collaboration from the machine-to-machine access
  *   control of the Management API.
- * - The mapi proxy endpoint shares the same domain with Logto Cloud, so it can be used in the
+ * - The mapi proxy endpoint shares the same domain with MyEyesID Cloud, so it can be used in the
  *   browser without CORS.
  *
  * This module provides utilities to manage mapi proxy.
  */
 
-import { generateStandardSecret } from '@logto/shared/universal';
+import { generateStandardSecret } from '@myeyesid/shared/universal';
 
 import {
   RoleType,

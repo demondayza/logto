@@ -1,6 +1,6 @@
-import zhCN from '@logto/phrases-experience/lib/locales/zh-cn/index.js';
-import { type CustomPhrase, type SignInExperience } from '@logto/schemas';
-import { pickDefault, createMockUtils } from '@logto/shared/esm';
+import zhCN from '@myeyesid/phrases-experience/lib/locales/zh-cn/index.js';
+import { type CustomPhrase, type SignInExperience } from '@myeyesid/schemas';
+import { pickDefault, createMockUtils } from '@myeyesid/shared/esm';
 
 import { zhCnTag } from '#src/__mocks__/custom-phrase.js';
 import { mockSignInExperience } from '#src/__mocks__/index.js';

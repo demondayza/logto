@@ -1,4 +1,4 @@
-import { Roles } from '@logto/schemas';
+import { Roles } from '@myeyesid/schemas';
 import { createMockPool, createMockQueryResult, sql } from '@silverhand/slonik';
 
 import { mockAdminUserRole } from '#src/__mocks__/index.js';

@@ -1,5 +1,5 @@
-import { GoogleConnector } from '@logto/connector-kit';
-import { ExtraParamsKey } from '@logto/schemas';
+import { GoogleConnector } from '@myeyesid/connector-kit';
+import { ExtraParamsKey } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 /**

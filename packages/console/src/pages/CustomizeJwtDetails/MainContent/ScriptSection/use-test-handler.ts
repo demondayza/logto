@@ -1,4 +1,4 @@
-import { type JsonObject, type RequestErrorBody } from '@logto/schemas';
+import { type JsonObject, type RequestErrorBody } from '@myeyesid/schemas';
 import { trySafe } from '@silverhand/essentials';
 import { HTTPError } from 'ky';
 import { useCallback, useState } from 'react';

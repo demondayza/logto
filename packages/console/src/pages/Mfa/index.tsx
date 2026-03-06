@@ -1,4 +1,4 @@
-import { type SignInExperience } from '@logto/schemas';
+import { type SignInExperience } from '@myeyesid/schemas';
 import useSWR from 'swr';
 
 import RequestDataError from '@/components/RequestDataError';

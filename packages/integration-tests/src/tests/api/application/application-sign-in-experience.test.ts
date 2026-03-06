@@ -2,7 +2,7 @@ import {
   ApplicationType,
   type ApplicationSignInExperienceCreate,
   type Application,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import {
   getApplicationSignInExperience,
@@ -16,17 +16,17 @@ describe('application sign in experience', () => {
 
   const applicationSignInExperiences: ApplicationSignInExperienceCreate = {
     branding: {
-      logoUrl: 'https://logto.dev/logo.png',
-      darkLogoUrl: 'https://logto.dev/logo-dark.png',
+      logoUrl: 'https://myeyesid.dev/logo.png',
+      darkLogoUrl: 'https://myeyesid.dev/logo-dark.png',
     },
     color: {
       primaryColor: '#f00',
       darkPrimaryColor: '#0f0',
     },
-    customCss: '.logto_main-content { background-color: #f00 !important; }',
-    termsOfUseUrl: 'https://logto.dev/terms-of-use',
-    privacyPolicyUrl: 'https://logto.dev/privacy-policy',
-    displayName: 'Logto Demo',
+    customCss: '.myeyesid_main-content { background-color: #f00 !important; }',
+    termsOfUseUrl: 'https://myeyesid.dev/terms-of-use',
+    privacyPolicyUrl: 'https://myeyesid.dev/privacy-policy',
+    displayName: 'MyEyesID Demo',
   };
 
   beforeAll(async () => {

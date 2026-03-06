@@ -17,19 +17,19 @@ jobs:
         # Run the integration tests with and without dev features enabled
         dev-features-enabled: [true, false]
     # An error will occur if we use a newer version of Ubuntu in the CI environment, as it has restrictions on unprivileged user namespaces and sandbox usage, which prevents Chromium (used by Puppeteer) from launching properly during integration tests. So we lock the Ubuntu version to 22.04.
-    # See error record: https://github.com/logto-io/logto/actions/runs/12803809008/job/35697654974
+    # See error record: https://github.com/myeyesid-io/myeyesid/actions/runs/12803809008/job/35697654974
     runs-on: ubuntu-22.04
     env:
       INTEGRATION_TEST: true
       DEV_FEATURES_ENABLED: ${{ matrix.dev-features-enabled }}
 
     steps:
-      - uses: logto-io/actions-package-logto-artifact@v3
+      - uses: myeyesid-io/actions-package-myeyesid-artifact@v3
         with:
           artifact-name: integration-test-${{ github.sha }}-dev-features-${{ matrix.dev-features-enabled }}
           pnpm-version: 10
 
-  run-logto:
+  run-myeyesid:
     strategy:
       fail-fast: false
       matrix:
@@ -48,9 +48,9 @@ jobs:
       STATUS_API_KEY: test-status-api-key
 
     steps:
-      - uses: logto-io/actions-run-logto-integration-tests@v4.0.1
+      - uses: myeyesid-io/actions-run-myeyesid-integration-tests@v4.0.1
         with:
-          logto-artifact: integration-test-${{ github.sha }}-dev-features-${{ env.DEV_FEATURES_ENABLED }}
+          myeyesid-artifact: integration-test-${{ github.sha }}-dev-features-${{ env.DEV_FEATURES_ENABLED }}
           test-target: ${{ matrix.target }}
           pnpm-version: 10
           node-version: ^22.14.0
@@ -58,7 +58,7 @@ jobs:
   # Automatically rerun the workflow since the integration tests are moody
   # From this genius: https://github.com/orgs/community/discussions/67654#discussioncomment-8038649
   rerun-on-failure:
-    needs: run-logto
+    needs: run-myeyesid
     if: failure() && fromJSON(github.run_attempt) < 3
     runs-on: ubuntu-22.04
     steps:

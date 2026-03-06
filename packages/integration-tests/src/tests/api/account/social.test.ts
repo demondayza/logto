@@ -1,6 +1,6 @@
-import { UserScope } from '@logto/core-kit';
-import { ConnectorType } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { UserScope } from '@myeyesid/core-kit';
+import { ConnectorType } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import {
   mockEmailConnectorId,

@@ -1,7 +1,7 @@
 import Button from '@experience/shared/components/Button';
 import SmartInputField from '@experience/shared/components/InputFields/SmartInputField';
-import { emailRegEx } from '@logto/core-kit';
-import { SignInIdentifier, type SignInIdentifier as SignInIdentifierType } from '@logto/schemas';
+import { emailRegEx } from '@myeyesid/core-kit';
+import { SignInIdentifier, type SignInIdentifier as SignInIdentifierType } from '@myeyesid/schemas';
 import { type TFuncKey } from 'i18next';
 import { useCallback, useContext, useEffect, useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';

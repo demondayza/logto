@@ -1,4 +1,4 @@
-import { type SignInExperience, type EmailBlocklistPolicy } from '@logto/schemas';
+import { type SignInExperience, type EmailBlocklistPolicy } from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 

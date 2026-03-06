@@ -1,6 +1,6 @@
-import type router from '@logto/cloud/routes';
-import { cloudConnectionDataGuard, CloudScope } from '@logto/schemas';
-import { formUrlEncodedHeaders } from '@logto/shared';
+import type router from '@myeyesid/cloud/routes';
+import { cloudConnectionDataGuard, CloudScope } from '@myeyesid/schemas';
+import { formUrlEncodedHeaders } from '@myeyesid/shared';
 import { appendPath } from '@silverhand/essentials';
 import Client from '@withtyped/client';
 import ky from 'ky';
@@ -9,7 +9,7 @@ import { z } from 'zod';
 import { EnvSet } from '#src/env-set/index.js';
 import { safeParseJson } from '#src/utils/json.js';
 
-import { type LogtoConfigLibrary } from './logto-config.js';
+import { type MyEyesIDConfigLibrary } from './myeyesid-config.js';
 
 export const cloudConnectionGuard = cloudConnectionDataGuard.extend({
   tokenEndpoint: z.string(),
@@ -38,15 +38,15 @@ const scopes: string[] = [
 ];
 const accessTokenExpirationMargin = 60;
 
-/** The library for connecting to Logto Cloud service. */
+/** The library for connecting to MyEyesID Cloud service. */
 export class CloudConnectionLibrary {
   private client?: Client<typeof router>;
   private accessTokenCache?: { expiresAt: number; accessToken: string };
 
-  constructor(private readonly logtoConfigs: LogtoConfigLibrary) {}
+  constructor(private readonly myeyesidConfigs: MyEyesIDConfigLibrary) {}
 
   public getCloudConnectionData = async (): Promise<CloudConnection> => {
-    const { getCloudConnectionData: getCloudServiceM2mCredentials } = this.logtoConfigs;
+    const { getCloudConnectionData: getCloudServiceM2mCredentials } = this.myeyesidConfigs;
     const credentials = await getCloudServiceM2mCredentials();
     const { cloudUrlSet, adminUrlSet } = EnvSet.values;
     return {
@@ -107,7 +107,7 @@ export class CloudConnectionLibrary {
 
   /**
    * Get a withtyped client for the Cloud service. It is typed with the router
-   * defined in @logto/cloud/routes.
+   * defined in @myeyesid/cloud/routes.
    */
   public getClient = async (): Promise<Client<typeof router>> => {
     if (!this.client) {
@@ -126,6 +126,6 @@ export class CloudConnectionLibrary {
   };
 }
 
-export const createCloudConnectionLibrary = (logtoConfigs: LogtoConfigLibrary) => {
-  return new CloudConnectionLibrary(logtoConfigs);
+export const createCloudConnectionLibrary = (myeyesidConfigs: MyEyesIDConfigLibrary) => {
+  return new CloudConnectionLibrary(myeyesidConfigs);
 };

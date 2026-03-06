@@ -1,4 +1,4 @@
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 
 import {
   mockAliyunDmConnector,
@@ -34,7 +34,7 @@ const { MockTenant } = await import('#src/test-utils/tenant.js');
 const { createRequester } = await import('#src/utils/test-utils.js');
 
 const provider = createMockProvider();
-const getLogtoConnectors = jest.fn(async () => {
+const getMyEyesIDConnectors = jest.fn(async () => {
   return [
     mockAliyunDmConnector,
     mockAliyunSmsConnector,
@@ -54,7 +54,7 @@ const tenantContext = new MockTenant(
     ssoConnectors: { findAll: getSsoConnectors },
     captchaProviders: { findCaptchaProvider: jest.fn().mockResolvedValue(mockCaptchaProvider) },
   },
-  { getLogtoConnectors }
+  { getMyEyesIDConnectors }
 );
 
 describe('GET /.well-known/sign-in-exp', () => {
@@ -70,7 +70,7 @@ describe('GET /.well-known/sign-in-exp', () => {
   it('should return github and facebook connector instances', async () => {
     const response = await sessionRequest.get('/.well-known/sign-in-exp');
     expect(findDefaultSignInExperience).toHaveBeenCalledTimes(1);
-    expect(getLogtoConnectors).toHaveBeenCalledTimes(1);
+    expect(getMyEyesIDConnectors).toHaveBeenCalledTimes(1);
     expect(response.status).toEqual(200);
     const { forgotPasswordMethods, ...expectedSignInExperience } = mockSignInExperience;
     expect(response.body).toMatchObject({

@@ -2,7 +2,7 @@ import {
   SsoProviderType,
   type SignInExperience,
   type SsoConnectorWithProviderConfig,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { pick } from '@silverhand/essentials';
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';

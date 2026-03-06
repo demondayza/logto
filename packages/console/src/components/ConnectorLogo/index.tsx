@@ -1,5 +1,5 @@
-import { Theme } from '@logto/schemas';
-import type { ConnectorResponse } from '@logto/schemas';
+import { Theme } from '@myeyesid/schemas';
+import type { ConnectorResponse } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import ImageWithErrorFallback from '@/ds-components/ImageWithErrorFallback';

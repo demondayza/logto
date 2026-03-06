@@ -1,7 +1,7 @@
 import {
   type SsoConnectorWithProviderConfig,
   type GetUserSsoIdentityResponse,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 

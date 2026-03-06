@@ -1,10 +1,10 @@
-import { GlobalValues } from '@logto/shared';
-import { createMockUtils } from '@logto/shared/esm';
+import { GlobalValues } from '@myeyesid/shared';
+import { createMockUtils } from '@myeyesid/shared/esm';
 import nock from 'nock';
 
-import { mockLogtoConfigsLibrary } from '#src/test-utils/mock-libraries.js';
+import { mockMyEyesIDConfigsLibrary } from '#src/test-utils/mock-libraries.js';
 
-import { type LogtoConfigLibrary } from './logto-config.js';
+import { type MyEyesIDConfigLibrary } from './myeyesid-config.js';
 
 const { jest } = import.meta;
 const { mockEsmWithActual } = createMockUtils(jest);
@@ -29,8 +29,8 @@ await mockEsmWithActual('#src/env-set/index.js', () => ({
 
 const { createCloudConnectionLibrary } = await import('./cloud-connection.js');
 
-const logtoConfigs: LogtoConfigLibrary = {
-  ...mockLogtoConfigsLibrary,
+const myeyesidConfigs: MyEyesIDConfigLibrary = {
+  ...mockMyEyesIDConfigsLibrary,
   getCloudConnectionData: jest.fn().mockResolvedValue({
     appId: 'appId',
     appSecret: 'appSecret',
@@ -39,7 +39,7 @@ const logtoConfigs: LogtoConfigLibrary = {
 };
 
 describe('getAccessToken()', () => {
-  const { getAccessToken } = createCloudConnectionLibrary(logtoConfigs);
+  const { getAccessToken } = createCloudConnectionLibrary(myeyesidConfigs);
 
   it('should get access token and cached', async () => {
     nock(adminEndpoint).post('/oidc/token').reply(200, {

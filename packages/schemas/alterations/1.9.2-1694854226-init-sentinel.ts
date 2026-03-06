@@ -13,7 +13,7 @@ const getDatabaseName = async (pool: CommonQueryMethods) => {
 const alteration: AlterationScript = {
   up: async (pool) => {
     const database = await getDatabaseName(pool);
-    const baseRoleId = sql.identifier([`logto_tenant_${database}`]);
+    const baseRoleId = sql.identifier([`myeyesid_tenant_${database}`]);
 
     await pool.query(sql`
       create type sentinel_action_result as enum ('Success', 'Failed');

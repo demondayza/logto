@@ -42,8 +42,8 @@ const sign_in_exp = {
     app_logo_and_favicon: 'Uygulama logosu ve favicon',
     company_logo_and_favicon: 'Şirket logosu ve favicon',
     organization_logo_and_favicon: 'Organizasyon logosu ve favicon',
-    hide_logto_branding: 'MyEyesID markasını gizle',
-    hide_logto_branding_description:
+    hide_myeyesid_branding: 'MyEyesID markasını gizle',
+    hide_myeyesid_branding_description:
       '"Powered by MyEyesID" ibaresini kaldırın. Temiz ve profesyonel bir oturum açma deneyimiyle yalnızca kendi markanızı öne çıkarın.',
   },
   branding_uploads: {
@@ -97,7 +97,7 @@ const sign_in_exp = {
     description: "Hesap merkezi akışlarını MyEyesID API'leriyle özelleştirin.",
     enable_account_api: "Account API'yi etkinleştir",
     enable_account_api_description:
-      "Account API'yi etkinleştirerek özel bir hesap merkezi oluşturun ve Logto Management API'sini kullanmadan son kullanıcılara doğrudan API erişimi sağlayın.",
+      "Account API'yi etkinleştirerek özel bir hesap merkezi oluşturun ve MyEyesID Management API'sini kullanmadan son kullanıcılara doğrudan API erişimi sağlayın.",
     field_options: {
       off: 'Kapalı',
       edit: 'Düzenle',

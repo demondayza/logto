@@ -1,12 +1,12 @@
 /** The app (either frontend or backend) for a bunch of events. */
 export enum Component {
-  /** Logto core service. */
+  /** MyEyesID core service. */
   Core = 'core',
-  /** Logto Console. */
+  /** MyEyesID Console. */
   Console = 'console',
-  /** Logto blog. */
+  /** MyEyesID blog. */
   Blog = 'blog',
-  /** Logto official website. */
+  /** MyEyesID official website. */
   Website = 'website',
 }
 

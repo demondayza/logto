@@ -1,4 +1,4 @@
-import { type CaptchaType } from '@logto/schemas';
+import { type CaptchaType } from '@myeyesid/schemas';
 import { useState } from 'react';
 import Modal from 'react-modal';
 

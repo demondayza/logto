@@ -1,4 +1,4 @@
-import { isValidUrl } from '@logto/core-kit';
+import { isValidUrl } from '@myeyesid/core-kit';
 import chalk from 'chalk';
 import ora from 'ora';
 import type { CommandModule } from 'yargs';
@@ -6,22 +6,22 @@ import type { CommandModule } from 'yargs';
 import { consoleLog } from '../../utils.js';
 
 import { type DeployCommandArgs } from './types.js';
-import { checkExperienceAndZipPathInputs, deployToLogtoCloud } from './utils.js';
+import { checkExperienceAndZipPathInputs, deployToMyEyesIDCloud } from './utils.js';
 
 const tunnel: CommandModule<unknown, DeployCommandArgs> = {
   command: ['deploy'],
-  describe: 'Deploy your custom UI assets to Logto Cloud',
+  describe: 'Deploy your custom UI assets to MyEyesID Cloud',
   builder: (yargs) =>
     yargs
       .options({
         auth: {
           describe:
-            'Auth credentials of your Logto M2M application. E.g.: <app-id>:<app-secret> (Docs: https://docs.logto.io/docs/recipes/interact-with-management-api/#create-an-m2m-app)',
+            'Auth credentials of your MyEyesID M2M application. E.g.: <app-id>:<app-secret> (Docs: https://docs.myeyesid.io/docs/recipes/interact-with-management-api/#create-an-m2m-app)',
           type: 'string',
         },
         endpoint: {
           describe:
-            'Logto endpoint URI that points to your Logto Cloud instance. E.g.: https://<tenant-id>.logto.app/',
+            'MyEyesID endpoint URI that points to your MyEyesID Cloud instance. E.g.: https://<tenant-id>.myeyesid.app/',
           type: 'string',
         },
         path: {
@@ -31,7 +31,7 @@ const tunnel: CommandModule<unknown, DeployCommandArgs> = {
         },
         resource: {
           alias: ['management-api-resource'],
-          describe: 'Logto Management API resource indicator. Required if using custom domain.',
+          describe: 'MyEyesID Management API resource indicator. Required if using custom domain.',
           type: 'string',
         },
         verbose: {
@@ -47,7 +47,7 @@ const tunnel: CommandModule<unknown, DeployCommandArgs> = {
       })
       .epilog(
         `Refer to our documentation for more details:\n${chalk.blue(
-          'https://docs.logto.io/docs/references/tunnel-cli/deploy'
+          'https://docs.myeyesid.io/docs/references/tunnel-cli/deploy'
         )}`
       ),
   handler: async (options) => {
@@ -66,7 +66,7 @@ const tunnel: CommandModule<unknown, DeployCommandArgs> = {
     }
     if (!endpoint || !isValidUrl(endpoint)) {
       consoleLog.fatal(
-        'A valid Logto endpoint URI must be provided. E.g. `--endpoint https://<tenant-id>.logto.app/` or add `LOGTO_ENDPOINT` to your environment variables.'
+        'A valid MyEyesID endpoint URI must be provided. E.g. `--endpoint https://<tenant-id>.myeyesid.app/` or add `LOGTO_ENDPOINT` to your environment variables.'
       );
     }
 
@@ -79,10 +79,10 @@ const tunnel: CommandModule<unknown, DeployCommandArgs> = {
         `${chalk.bold('Starting deployment...')} ${chalk.gray('(with verbose output)')}`
       );
     } else {
-      spinner.start('Deploying your custom UI assets to Logto Cloud...');
+      spinner.start('Deploying your custom UI assets to MyEyesID Cloud...');
     }
 
-    await deployToLogtoCloud({
+    await deployToMyEyesIDCloud({
       auth,
       endpoint,
       experiencePath,
@@ -92,13 +92,13 @@ const tunnel: CommandModule<unknown, DeployCommandArgs> = {
     });
 
     if (!verbose) {
-      spinner.succeed('Deploying your custom UI assets to Logto Cloud... Done.');
+      spinner.succeed('Deploying your custom UI assets to MyEyesID Cloud... Done.');
     }
 
     const endpointUrl = new URL(endpoint);
     spinner.succeed(`🎉 ${chalk.bold(chalk.green('Deployment successful!'))}`);
-    consoleLog.plain(`${chalk.green('➜')} You can try your own sign-in UI on Logto Cloud now.`);
-    consoleLog.plain(`${chalk.green('➜')} Make sure the Logto endpoint URI in your app is set to:`);
+    consoleLog.plain(`${chalk.green('➜')} You can try your own sign-in UI on MyEyesID Cloud now.`);
+    consoleLog.plain(`${chalk.green('➜')} Make sure the MyEyesID endpoint URI in your app is set to:`);
     consoleLog.plain(`  ${chalk.blue(chalk.bold(endpointUrl.href))}`);
     consoleLog.plain(
       `${chalk.green(

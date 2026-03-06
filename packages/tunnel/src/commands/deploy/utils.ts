@@ -60,7 +60,7 @@ export const checkExperienceAndZipPathInputs = async (
   }
 };
 
-export const deployToLogtoCloud = async ({
+export const deployToMyEyesIDCloud = async ({
   auth,
   endpoint,
   experiencePath,
@@ -210,8 +210,8 @@ const getTenantIdFromEndpointUri = (endpoint: URL) => {
 const getManagementApiResourceFromEndpointUri = (endpoint: URL) => {
   const tenantId = getTenantIdFromEndpointUri(endpoint);
 
-  // This resource domain is fixed to `logto.app` for all environments (prod, staging, and dev)
-  return `https://${tenantId}.logto.app/api`;
+  // This resource domain is fixed to `myeyesid.app` for all environments (prod, staging, and dev)
+  return `https://${tenantId}.myeyesid.app/api`;
 };
 
 const isHiddenEntry = (entryName: string) => {

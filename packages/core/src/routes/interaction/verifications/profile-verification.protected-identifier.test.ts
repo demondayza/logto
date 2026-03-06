@@ -1,5 +1,5 @@
-import { InteractionEvent } from '@logto/schemas';
-import { pickDefault } from '@logto/shared/esm';
+import { InteractionEvent } from '@myeyesid/schemas';
+import { pickDefault } from '@myeyesid/shared/esm';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import { MockTenant } from '#src/test-utils/tenant.js';
@@ -19,8 +19,8 @@ const tenantContext = new MockTenant(
     },
   },
   {
-    getLogtoConnectorById: jest.fn().mockResolvedValue({
-      metadata: { target: 'logto' },
+    getMyEyesIDConnectorById: jest.fn().mockResolvedValue({
+      metadata: { target: 'myeyesid' },
     }),
   }
 );
@@ -121,7 +121,7 @@ describe('profile protected identifier verification', () => {
     });
 
     it('connectorId without a verified identifier should throw', async () => {
-      const identifiers: Identifier[] = [{ key: 'emailVerified', value: 'foo@logto.io' }];
+      const identifiers: Identifier[] = [{ key: 'emailVerified', value: 'foo@myeyesid.io' }];
       const interaction = {
         ...baseInteraction,
         identifiers,
@@ -143,7 +143,7 @@ describe('profile protected identifier verification', () => {
         ...baseInteraction,
         identifiers,
         profile: {
-          connectorId: 'logto',
+          connectorId: 'myeyesid',
         },
       };
 
@@ -155,14 +155,14 @@ describe('profile protected identifier verification', () => {
     it('connectorId with proper identifier should not throw', async () => {
       const identifiers: Identifier[] = [
         { key: 'accountId', value: 'foo' },
-        { key: 'social', connectorId: 'logto', userInfo: { id: 'foo' } },
+        { key: 'social', connectorId: 'myeyesid', userInfo: { id: 'foo' } },
       ];
 
       const interaction = {
         ...baseInteraction,
         identifiers,
         profile: {
-          connectorId: 'logto',
+          connectorId: 'myeyesid',
         },
       };
 

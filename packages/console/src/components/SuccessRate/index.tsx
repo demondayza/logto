@@ -1,4 +1,4 @@
-import { type HookResponse } from '@logto/schemas';
+import { type HookResponse } from '@myeyesid/schemas';
 import { useTranslation } from 'react-i18next';
 
 import Tag from '@/ds-components/Tag';

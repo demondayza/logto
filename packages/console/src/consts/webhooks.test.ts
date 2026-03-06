@@ -1,4 +1,4 @@
-import { InteractionHookEvent } from '@logto/schemas';
+import { InteractionHookEvent } from '@myeyesid/schemas';
 
 describe('webhook event visibility', () => {
   afterEach(() => {

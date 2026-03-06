@@ -1,5 +1,5 @@
 import type { SignInExperienceResponse, Platform } from '@experience/shared/types';
-import { Theme, type AccountCenter, type UserProfileResponse } from '@logto/schemas';
+import { Theme, type AccountCenter, type UserProfileResponse } from '@myeyesid/schemas';
 import { createContext } from 'react';
 import { isMobile } from 'react-device-detect';
 

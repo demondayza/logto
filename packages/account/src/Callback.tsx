@@ -1,11 +1,11 @@
-import { useHandleSignInCallback, useLogto } from '@logto/react';
+import { useHandleSignInCallback, useMyEyesID } from '@myeyesid/react';
 import { useEffect } from 'react';
 
 import { clearVerificationRecord } from './Providers/PageContextProvider/verification-storage';
 import GlobalLoading from './components/GlobalLoading';
 
 const Callback = () => {
-  const { clearAllTokens } = useLogto();
+  const { clearAllTokens } = useMyEyesID();
 
   useEffect(() => {
     void clearAllTokens();

@@ -1,4 +1,4 @@
-import { ConsoleLog } from '@logto/shared';
+import { ConsoleLog } from '@myeyesid/shared';
 import { noop } from '@silverhand/essentials';
 import chalk from 'chalk';
 

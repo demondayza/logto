@@ -10,7 +10,7 @@ import {
   Scopes,
   Resources,
   type Scope,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { type CommonQueryMethods, sql } from '@silverhand/slonik';
 
 import RelationQueries from '#src/utils/RelationQueries.js';

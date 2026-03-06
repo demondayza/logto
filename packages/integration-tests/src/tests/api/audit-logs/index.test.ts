@@ -1,4 +1,4 @@
-import { InteractionEvent, interaction, SignInIdentifier } from '@logto/schemas';
+import { InteractionEvent, interaction, SignInIdentifier } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 
 import { deleteUser } from '#src/api/admin-user.js';

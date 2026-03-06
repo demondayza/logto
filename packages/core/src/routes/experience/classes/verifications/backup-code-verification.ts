@@ -5,8 +5,8 @@ import {
   type MfaVerificationBackupCode,
   type BackupCodeVerificationRecordData,
   type SanitizedBackupCodeVerificationRecordData,
-} from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+} from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import { generateBackupCodes } from '#src/routes/interaction/utils/backup-code-validation.js';
 import type Libraries from '#src/tenants/Libraries.js';
@@ -20,7 +20,7 @@ export {
   type SanitizedBackupCodeVerificationRecordData,
   backupCodeVerificationRecordDataGuard,
   sanitizedBackupCodeVerificationRecordDataGuard,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 export class BackupCodeVerification implements MfaVerificationRecord<VerificationType.BackupCode> {
   /**

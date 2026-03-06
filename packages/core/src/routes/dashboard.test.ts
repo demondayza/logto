@@ -1,6 +1,6 @@
 // The FP version works better for `format()`
 /* eslint-disable import/no-duplicates */
-import { pickDefault } from '@logto/shared/esm';
+import { pickDefault } from '@myeyesid/shared/esm';
 import { endOfDay, subDays } from 'date-fns';
 import { format } from 'date-fns/fp';
 

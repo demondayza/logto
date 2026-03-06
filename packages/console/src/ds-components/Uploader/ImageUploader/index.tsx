@@ -1,4 +1,4 @@
-import type { AllowedUploadMimeType } from '@logto/schemas';
+import type { AllowedUploadMimeType } from '@myeyesid/schemas';
 import classNames from 'classnames';
 
 import Delete from '@/assets/icons/delete.svg?react';

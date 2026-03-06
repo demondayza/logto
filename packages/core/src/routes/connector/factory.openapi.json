@@ -9,7 +9,7 @@
     "/api/connector-factories": {
       "get": {
         "summary": "Get connector factories",
-        "description": "Get all connector factories data available in Logto.",
+        "description": "Get all connector factories data available in MyEyesID.",
         "responses": {
           "200": {
             "description": "An array of connector factories."

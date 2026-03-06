@@ -7,8 +7,8 @@ import {
   VerificationType,
   type User,
   userMfaDataKey,
-} from '@logto/schemas';
-import { createMockUtils, pickDefault } from '@logto/shared/esm';
+} from '@myeyesid/schemas';
+import { createMockUtils, pickDefault } from '@myeyesid/shared/esm';
 import { type Optional } from '@silverhand/essentials';
 
 import { mockSignInExperience } from '#src/__mocks__/sign-in-experience.js';
@@ -142,7 +142,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       const user: User = {
         ...mockUserWithMfaVerifications,
         mfaVerifications: hasMfa ? mockUserWithMfaVerifications.mfaVerifications : [],
-        logtoConfig: skipMfaOnSignIn ? { mfa: { skipMfaOnSignIn: true } } : {},
+        myeyesidConfig: skipMfaOnSignIn ? { mfa: { skipMfaOnSignIn: true } } : {},
       };
       const mfaValidator = new MfaValidator(mfaSettings, user, adaptiveMfaResult);
       expect(mfaValidator.isMfaRequired).toBe(expected);
@@ -152,7 +152,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
   it('requires MFA even when skipMfaOnSignIn is true if adaptive MFA triggers', async () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
-      logtoConfig: {
+      myeyesidConfig: {
         mfa: {
           skipMfaOnSignIn: true,
         },
@@ -167,7 +167,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -211,7 +211,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
       mfaVerifications: [],
-      logtoConfig: {},
+      myeyesidConfig: {},
     };
 
     users.findUserById.mockResolvedValueOnce(user);
@@ -222,7 +222,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -246,7 +246,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
   it('assigns adaptive MFA hook result even when log is not provided', async () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
-      logtoConfig: {
+      myeyesidConfig: {
         mfa: {
           skipMfaOnSignIn: true,
         },
@@ -261,7 +261,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -296,7 +296,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
   it('allows sign-in when adaptive MFA does not trigger and skipMfaOnSignIn is true', async () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
-      logtoConfig: {
+      myeyesidConfig: {
         mfa: {
           skipMfaOnSignIn: true,
         },
@@ -312,7 +312,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '99',
+          'x-myeyesid-cf-bot-score': '99',
         },
       }),
       ...createMockLogContext(),
@@ -333,7 +333,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
   it('allows sign-in when adaptive MFA does not trigger even if skipMfaOnSignIn is false', async () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
-      logtoConfig: {},
+      myeyesidConfig: {},
       lastSignInAt: Date.now(),
     };
 
@@ -345,7 +345,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '99',
+          'x-myeyesid-cf-bot-score': '99',
         },
       }),
       ...createMockLogContext(),
@@ -373,7 +373,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
           codes: [{ code: 'mock-backup-code' }],
         },
       ],
-      logtoConfig: {},
+      myeyesidConfig: {},
     };
 
     users.findUserById.mockResolvedValueOnce(user);
@@ -384,7 +384,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -406,7 +406,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
       mfaVerifications: [],
-      logtoConfig: {
+      myeyesidConfig: {
         [userMfaDataKey]: {
           skipped: true,
         },
@@ -421,7 +421,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -449,7 +449,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
           codes: [{ code: 'mock-backup-code' }],
         },
       ],
-      logtoConfig: {
+      myeyesidConfig: {
         [userMfaDataKey]: {
           skipped: true,
         },
@@ -465,7 +465,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -486,7 +486,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
       mfaVerifications: [],
-      logtoConfig: {
+      myeyesidConfig: {
         [userMfaDataKey]: {
           skipped: true,
         },
@@ -502,7 +502,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -529,7 +529,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
     {
       name: 'email',
       factor: MfaFactor.EmailVerificationCode,
-      profile: { primaryEmail: 'bound@logto.dev', primaryPhone: null },
+      profile: { primaryEmail: 'bound@myeyesid.dev', primaryPhone: null },
     },
     {
       name: 'phone',
@@ -559,7 +559,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
         mfaVerifications: [],
         primaryEmail: null,
         primaryPhone: null,
-        logtoConfig: {
+        myeyesidConfig: {
           [userMfaDataKey]: {
             skipped: true,
           },
@@ -575,7 +575,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
         appendDataHookContext: jest.fn(),
         ...createContextWithRouteParameters({
           headers: {
-            'x-logto-cf-bot-score': '10',
+            'x-myeyesid-cf-bot-score': '10',
           },
         }),
         ...createMockLogContext(),
@@ -598,7 +598,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
       mfaVerifications: [],
-      logtoConfig: {
+      myeyesidConfig: {
         [userMfaDataKey]: {
           skipped: true,
         },
@@ -614,7 +614,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -653,7 +653,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
       mfaVerifications: [],
-      logtoConfig: {
+      myeyesidConfig: {
         [userMfaDataKey]: {
           skipped: true,
         },
@@ -669,7 +669,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -692,7 +692,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
     const user: User = {
       ...mockUserWithMfaVerifications,
       mfaVerifications: [],
-      logtoConfig: {
+      myeyesidConfig: {
         [userMfaDataKey]: {
           skipped: true,
         },
@@ -708,7 +708,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -737,7 +737,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
 
     const user: User = {
       ...mockUserWithMfaVerifications,
-      logtoConfig: {
+      myeyesidConfig: {
         mfa: {
           skipMfaOnSignIn: true,
         },
@@ -752,7 +752,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -781,7 +781,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
 
     const user: User = {
       ...mockUserWithMfaVerifications,
-      logtoConfig: {},
+      myeyesidConfig: {},
     };
 
     users.findUserById.mockResolvedValueOnce(user);
@@ -792,7 +792,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '99',
+          'x-myeyesid-cf-bot-score': '99',
         },
       }),
       ...createMockLogContext(),
@@ -831,7 +831,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
 
     const user: User = {
       ...mockUserWithMfaVerifications,
-      logtoConfig: {},
+      myeyesidConfig: {},
     };
 
     users.findUserById.mockResolvedValueOnce(user);
@@ -842,7 +842,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),
@@ -883,7 +883,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
 
     const user: User = {
       ...mockUserWithMfaVerifications,
-      logtoConfig: {
+      myeyesidConfig: {
         mfa: {
           skipMfaOnSignIn: true,
         },
@@ -898,7 +898,7 @@ describe('ExperienceInteraction adaptive MFA', () => {
       appendDataHookContext: jest.fn(),
       ...createContextWithRouteParameters({
         headers: {
-          'x-logto-cf-bot-score': '10',
+          'x-myeyesid-cf-bot-score': '10',
         },
       }),
       ...createMockLogContext(),

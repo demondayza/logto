@@ -1,7 +1,7 @@
-import { ApplicationType } from '@logto/schemas';
+import { ApplicationType } from '@myeyesid/schemas';
 
 import { generateM2mLog } from '#src/api/application.js';
-import { logtoConsoleUrl as logtoConsoleUrlString } from '#src/constants.js';
+import { myeyesidConsoleUrl as myeyesidConsoleUrlString } from '#src/constants.js';
 import {
   expectConfirmModalAndAct,
   expectModalWithTitle,
@@ -34,7 +34,7 @@ import {
 await page.setViewport({ width: 1920, height: 1080 });
 
 describe('applications', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   beforeAll(async () => {
     await goToAdminConsole();
@@ -42,10 +42,10 @@ describe('applications', () => {
 
   it('navigate to applications page', async () => {
     await expectNavigation(
-      page.goto(appendPathname('/console/applications', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/applications', myeyesidConsoleUrl).href)
     );
 
-    expect(page.url()).toBe(new URL('/console/applications', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('/console/applications', myeyesidConsoleUrl).href);
   });
 
   it('the table placeholder should be rendered correctly', async () => {
@@ -76,7 +76,7 @@ describe('applications', () => {
       })
     );
 
-    expect(page.url()).toBe(new URL('/console/applications', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('/console/applications', myeyesidConsoleUrl).href);
 
     /**
      * Note:
@@ -90,7 +90,7 @@ describe('applications', () => {
     });
   });
 
-  it('can open the logto github repo issue page when click on the framework not found button', async () => {
+  it('can open the myeyesid github repo issue page when click on the framework not found button', async () => {
     await expect(page).toClick('div[class$=main] div[class$=headline] button span', {
       text: 'Create application',
     });
@@ -102,14 +102,14 @@ describe('applications', () => {
       '.ReactModalPortal div[class$=header] button[class$=requestSdkButton]'
     );
 
-    await expectToOpenNewPage(browser, 'https://github.com/logto-io/logto/issues');
+    await expectToOpenNewPage(browser, 'https://github.com/myeyesid-io/myeyesid/issues');
 
     // Return to the application list page
     await expectNavigation(
       expect(page).toClick('.ReactModalPortal div[class$=header] button:has(svg[class$=closeIcon])')
     );
 
-    expect(page.url()).toBe(new URL('/console/applications', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('/console/applications', myeyesidConsoleUrl).href);
   });
 
   it('can create an application by framework from the app creation modal and modify its data', async () => {
@@ -220,7 +220,7 @@ describe('applications', () => {
 
     await expectToProceedAppDeletion(page, testApp.name);
 
-    expect(page.url()).toBe(new URL('/console/applications', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('/console/applications', myeyesidConsoleUrl).href);
   });
 
   it.each(applicationTypesMetadata)(
@@ -259,7 +259,7 @@ describe('applications', () => {
         await expect(page).toClick(
           '.ReactModalPortal div[class$=rolesTransfer] div[class$=item] div',
           {
-            text: 'Logto Management API access',
+            text: 'MyEyesID Management API access',
           }
         );
 
@@ -326,7 +326,7 @@ describe('applications', () => {
 
       await expectToProceedAppDeletion(page, app.name);
 
-      expect(page.url()).toBe(new URL('/console/applications', logtoConsoleUrl).href);
+      expect(page.url()).toBe(new URL('/console/applications', myeyesidConsoleUrl).href);
     }
   );
 
@@ -364,13 +364,13 @@ describe('applications', () => {
     await expectToProceedAppDeletion(page, thirdPartyApp.name);
 
     expect(page.url()).toBe(
-      new URL('/console/applications/third-party-applications', logtoConsoleUrl).href
+      new URL('/console/applications/third-party-applications', myeyesidConsoleUrl).href
     );
   });
 
   it('delete the initial application', async () => {
     await expectNavigation(
-      page.goto(appendPathname('/console/applications', logtoConsoleUrl).href)
+      page.goto(appendPathname('/console/applications', myeyesidConsoleUrl).href)
     );
 
     await expect(page).toClick(`table tbody tr td div[class$=item] a${cls('title')}`, {
@@ -383,6 +383,6 @@ describe('applications', () => {
 
     await expectToProceedAppDeletion(page, initialApp.name);
 
-    expect(page.url()).toBe(new URL('/console/applications', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('/console/applications', myeyesidConsoleUrl).href);
   });
 });

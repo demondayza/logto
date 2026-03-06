@@ -1,10 +1,10 @@
 /* eslint-disable max-lines */
-import { type AdminConsoleKey } from '@logto/phrases';
+import { type AdminConsoleKey } from '@myeyesid/phrases';
 import {
   type SamlApplicationSecretResponse,
   type SamlApplicationResponse,
   NameIdFormat,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { appendPath, type Nullable } from '@silverhand/essentials';
 import { useCallback, useContext, useMemo, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';

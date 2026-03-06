@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 
-import { RoleType } from '@logto/schemas';
+import { RoleType } from '@myeyesid/schemas';
 import { HTTPError } from 'ky';
 
 import { OrganizationApiTest } from '#src/helpers/organization.js';

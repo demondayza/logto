@@ -2,7 +2,7 @@ import {
   webAuthnRegistrationOptionsGuard,
   webAuthnAuthenticationOptionsGuard,
   type WebAuthnAuthenticationOptions,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { cond } from '@silverhand/essentials';
 import { base64URLStringToBuffer, bufferToBase64URLString } from '@simplewebauthn/browser';
 import { type AuthenticationResponseJSON } from '@simplewebauthn/types';

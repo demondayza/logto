@@ -1,6 +1,6 @@
-import { defaultConnectorMethods } from '@logto/cli/lib/connector/index.js';
-import { ConnectorType, TemplateType } from '@logto/connector-kit';
-import { type Passcode } from '@logto/schemas';
+import { defaultConnectorMethods } from '@myeyesid/cli/lib/connector/index.js';
+import { ConnectorType, TemplateType } from '@myeyesid/connector-kit';
+import { type Passcode } from '@myeyesid/schemas';
 import { any } from 'zod';
 
 import { mockConnector, mockMetadata, mockUser } from '#src/__mocks__/index.js';

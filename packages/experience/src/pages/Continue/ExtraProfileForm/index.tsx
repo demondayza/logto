@@ -1,4 +1,4 @@
-import { CustomProfileFieldType, type CustomProfileField } from '@logto/schemas';
+import { CustomProfileFieldType, type CustomProfileField } from '@myeyesid/schemas';
 import { condString } from '@silverhand/essentials';
 import { Controller, FormProvider, useForm } from 'react-hook-form';
 import * as s from 'superstruct';

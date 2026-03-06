@@ -1,5 +1,5 @@
-import { generateDarkColor } from '@logto/core-kit';
-import { defaultPrimaryColor, type Organization } from '@logto/schemas';
+import { generateDarkColor } from '@myeyesid/core-kit';
+import { defaultPrimaryColor, type Organization } from '@myeyesid/schemas';
 
 import { type Option } from '@/ds-components/Select/MultiSelect';
 import { emptyBranding } from '@/types/sign-in-experience';

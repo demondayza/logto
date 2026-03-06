@@ -1,3 +1,3 @@
-# @logto/experience
+# @myeyesid/experience
 
 The register and sign-in experience for end-users.

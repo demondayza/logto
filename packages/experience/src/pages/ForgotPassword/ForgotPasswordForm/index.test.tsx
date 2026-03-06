@@ -1,4 +1,4 @@
-import { SignInIdentifier } from '@logto/schemas';
+import { SignInIdentifier } from '@myeyesid/schemas';
 import { assert } from '@silverhand/essentials';
 import { act, fireEvent, waitFor } from '@testing-library/react';
 
@@ -26,7 +26,7 @@ jest.mock('@/apis/utils', () => ({
 }));
 
 describe('ForgotPasswordForm', () => {
-  const email = 'foo@logto.io';
+  const email = 'foo@myeyesid.io';
   const countryCode = '86';
   const phone = '13911111111';
   const originalLocation = window.location;

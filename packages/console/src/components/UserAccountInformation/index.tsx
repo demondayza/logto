@@ -1,5 +1,5 @@
-import type { AdminConsoleKey } from '@logto/phrases';
-import type { UserProfileResponse } from '@logto/schemas';
+import type { AdminConsoleKey } from '@myeyesid/phrases';
+import type { UserProfileResponse } from '@myeyesid/schemas';
 import { conditionalArray } from '@silverhand/essentials';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';

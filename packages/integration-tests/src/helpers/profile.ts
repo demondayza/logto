@@ -1,9 +1,9 @@
-import { type LogtoConfig } from '@logto/node';
-import { demoAppApplicationId, InteractionEvent, type User } from '@logto/schemas';
+import { type MyEyesIDConfig } from '@myeyesid/node';
+import { demoAppApplicationId, InteractionEvent, type User } from '@myeyesid/schemas';
 import { conditional } from '@silverhand/essentials';
 
 import { type InteractionPayload } from '#src/api/interaction.js';
-import { demoAppRedirectUri, logtoUrl } from '#src/constants.js';
+import { demoAppRedirectUri, myeyesidUrl } from '#src/constants.js';
 import { generatePassword, generateUsername } from '#src/utils.js';
 
 import api, { baseApi, authedAdminApi } from '../api/api.js';
@@ -45,11 +45,11 @@ export const putInteraction = async (cookie: string, payload: InteractionPayload
 export const initClientAndSignInForDefaultTenant = async (
   username: string,
   password: string,
-  config?: Partial<LogtoConfig>
+  config?: Partial<MyEyesIDConfig>
 ) => {
   const client = await initClient(
     {
-      endpoint: logtoUrl,
+      endpoint: myeyesidUrl,
       appId: demoAppApplicationId,
       ...config,
     },
@@ -71,7 +71,7 @@ export const initClientAndSignInForDefaultTenant = async (
 export const signInAndGetUserApi = async (
   username: string,
   password: string,
-  config?: Partial<LogtoConfig>,
+  config?: Partial<MyEyesIDConfig>,
   /**
    * The Accept-Language header value.
    */

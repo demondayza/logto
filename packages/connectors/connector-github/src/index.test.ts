@@ -1,6 +1,6 @@
 import nock from 'nock';
 
-import { ConnectorError, ConnectorErrorCodes } from '@logto/connector-kit';
+import { ConnectorError, ConnectorErrorCodes } from '@myeyesid/connector-kit';
 
 import {
   accessTokenEndpoint,
@@ -137,13 +137,13 @@ describe('getUserInfo', () => {
       .get('')
       .reply(200, [
         {
-          email: 'foo@logto.io',
+          email: 'foo@myeyesid.io',
           verified: true,
           primary: true,
           visibility: 'public',
         },
         {
-          email: 'foo1@logto.io',
+          email: 'foo1@myeyesid.io',
           verified: true,
           primary: false,
           visibility: null,
@@ -155,7 +155,7 @@ describe('getUserInfo', () => {
       id: '1',
       avatar: 'https://github.com/images/error/octocat_happy.gif',
       name: 'monalisa octocat',
-      email: 'foo@logto.io',
+      email: 'foo@myeyesid.io',
       rawData: {
         userInfo: {
           id: 1,
@@ -165,13 +165,13 @@ describe('getUserInfo', () => {
         },
         userEmails: [
           {
-            email: 'foo@logto.io',
+            email: 'foo@myeyesid.io',
             verified: true,
             primary: true,
             visibility: 'public',
           },
           {
-            email: 'foo1@logto.io',
+            email: 'foo1@myeyesid.io',
             verified: true,
             primary: false,
             visibility: null,

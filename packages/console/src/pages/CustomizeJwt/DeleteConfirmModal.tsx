@@ -1,4 +1,4 @@
-import { type LogtoJwtTokenKeyType } from '@logto/schemas';
+import { type MyEyesIDJwtTokenKeyType } from '@myeyesid/schemas';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSWRConfig } from 'swr';
@@ -9,7 +9,7 @@ import { getApiPath } from '@/pages/CustomizeJwt/utils/path';
 
 type Props = {
   readonly isOpen: boolean;
-  readonly tokenType?: LogtoJwtTokenKeyType;
+  readonly tokenType?: MyEyesIDJwtTokenKeyType;
   readonly onCancel: () => void;
 };
 

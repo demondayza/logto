@@ -1,8 +1,8 @@
-import { useHandleSignInCallback, useLogto } from '@logto/react';
+import { useHandleSignInCallback, useMyEyesID } from '@myeyesid/react';
 import { useEffect } from 'react';
 
 const Callback = () => {
-  const { clearAllTokens } = useLogto();
+  const { clearAllTokens } = useMyEyesID();
 
   useEffect(() => {
     void clearAllTokens();

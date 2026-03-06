@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 import { oidcSessionInstancePayloadGuard } from '../foundations/index.js';
 
-import { jwtCustomizerUserInteractionContextGuard } from './logto-config/jwt-customizer.js';
+import { jwtCustomizerUserInteractionContextGuard } from './myeyesid-config/jwt-customizer.js';
 
 export const userSessionSignInContextGuard = z
   .object({

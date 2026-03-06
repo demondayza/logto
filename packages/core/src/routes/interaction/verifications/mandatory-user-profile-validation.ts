@@ -1,5 +1,5 @@
-import type { Profile, SignInExperience, User } from '@logto/schemas';
-import { InteractionEvent, MissingProfile, SignInIdentifier } from '@logto/schemas';
+import type { Profile, SignInExperience, User } from '@myeyesid/schemas';
+import { InteractionEvent, MissingProfile, SignInIdentifier } from '@myeyesid/schemas';
 import type { Nullable } from '@silverhand/essentials';
 import { conditional } from '@silverhand/essentials';
 

@@ -1,5 +1,5 @@
-import { type CloudflareData, type Domain, DomainStatus } from '@logto/schemas';
-import { generateStandardId } from '@logto/shared';
+import { type CloudflareData, type Domain, DomainStatus } from '@myeyesid/schemas';
+import { generateStandardId } from '@myeyesid/shared';
 
 import RequestError from '#src/errors/RequestError/index.js';
 import type Queries from '#src/tenants/Queries.js';

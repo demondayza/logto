@@ -1,19 +1,19 @@
 import { z } from 'zod';
 
-/** Scopes that reserved by Logto, which will be added to the auth request automatically. */
+/** Scopes that reserved by MyEyesID, which will be added to the auth request automatically. */
 export enum ReservedScope {
   OpenId = 'openid',
   OfflineAccess = 'offline_access',
 }
 
-/** Resources that reserved by Logto, which cannot be defined by users. */
+/** Resources that reserved by MyEyesID, which cannot be defined by users. */
 export enum ReservedResource {
   /**
    * The resource for organization template per RFC 0001.
    *
-   * @see {@link https://github.com/logto-io/rfcs | RFC 0001} for more details.
+   * @see {@link https://github.com/myeyesid-io/rfcs | RFC 0001} for more details.
    */
-  Organization = 'urn:logto:resource:organizations',
+  Organization = 'urn:myeyesid:resource:organizations',
 }
 
 /**
@@ -126,24 +126,24 @@ export enum UserScope {
    */
   Roles = 'roles',
   /**
-   * Scope for user's organization IDs and perform organization token grant per [RFC 0001](https://github.com/logto-io/rfcs).
+   * Scope for user's organization IDs and perform organization token grant per [RFC 0001](https://github.com/myeyesid-io/rfcs).
    *
    * See {@link userClaims} for mapped claims.
    */
-  Organizations = 'urn:logto:scope:organizations',
+  Organizations = 'urn:myeyesid:scope:organizations',
   /**
-   * Scope for user's organization roles per [RFC 0001](https://github.com/logto-io/rfcs).
+   * Scope for user's organization roles per [RFC 0001](https://github.com/myeyesid-io/rfcs).
    *
    * See {@link userClaims} for mapped claims.
    */
-  OrganizationRoles = 'urn:logto:scope:organization_roles',
+  OrganizationRoles = 'urn:myeyesid:scope:organization_roles',
   /**
    * Scope for user's sessions.
    *
    * Only used for session management via account API.
    * Not included in user claims, even when the scope is requested, as it's not meant for ID token or userinfo endpoint.
    */
-  Sessions = 'urn:logto:scope:sessions',
+  Sessions = 'urn:myeyesid:scope:sessions',
 }
 
 /**
@@ -232,32 +232,32 @@ export const userClaims: Readonly<Record<UserScope, UserClaim[]>> = Object.freez
 );
 
 /**
- * The prefix of the URN (Uniform Resource Name) for the organization in Logto.
+ * The prefix of the URN (Uniform Resource Name) for the organization in MyEyesID.
  *
  * @example
  * ```
- * urn:logto:organization:123 // organization with ID 123
+ * urn:myeyesid:organization:123 // organization with ID 123
  * ```
  * @see {@link https://en.wikipedia.org/wiki/Uniform_Resource_Name | Uniform Resource Name}
  */
-export const organizationUrnPrefix = 'urn:logto:organization:';
+export const organizationUrnPrefix = 'urn:myeyesid:organization:';
 
 /**
- * Build the URN (Uniform Resource Name) for the organization in Logto.
+ * Build the URN (Uniform Resource Name) for the organization in MyEyesID.
  *
  * @param organizationId The ID of the organization.
  * @returns The URN for the organization.
  * @see {@link organizationUrnPrefix} for the prefix of the URN.
  * @example
  * ```ts
- * buildOrganizationUrn('1') // returns 'urn:logto:organization:1'
+ * buildOrganizationUrn('1') // returns 'urn:myeyesid:organization:1'
  * ```
  */
 export const buildOrganizationUrn = (organizationId: string): string =>
   `${organizationUrnPrefix}${organizationId}`;
 
 /**
- * Get the organization ID from the URN (Uniform Resource Name) for the organization in Logto.
+ * Get the organization ID from the URN (Uniform Resource Name) for the organization in MyEyesID.
  *
  * @param urn The URN for the organization. Must start with {@link organizationUrnPrefix}.
  * @returns The ID of the organization.
@@ -265,7 +265,7 @@ export const buildOrganizationUrn = (organizationId: string): string =>
  * @example
  * ```ts
  * getOrganizationIdFromUrn('1') // throws TypeError
- * getOrganizationIdFromUrn('urn:logto:organization:1') // returns '1'
+ * getOrganizationIdFromUrn('urn:myeyesid:organization:1') // returns '1'
  * ```
  */
 export const getOrganizationIdFromUrn = (urn: string): string => {

@@ -25,7 +25,7 @@ Thanks for your interest in contributing to MyEyesID. We respect the time of com
 
 We ensure MyEyesID runs correctly with core unit tests, integration tests, and bug bash meetings. However, there's still a chance of missing or getting wrong on something.
 
-If something doesn't work as expected, search in [Issues](https://github.com/demondayza/logto/issues) to see if someone has reported the issue.
+If something doesn't work as expected, search in [Issues](https://github.com/demondayza/myeyesid/issues) to see if someone has reported the issue.
 
 - If an issue already exists, comment to say you're willing to take it.
 - If not, create one before continuing. It'll be great to let other people know you found it and will fix it.
@@ -38,15 +38,15 @@ Usually, we'll confirm the details in the issue thread, and you can work on the 
 
 ### Connectors
 
-Connector is the standard way in MyEyesID to connect third-party services like SMS, email, and social identity providers. See [Connectors](https://docs.logto.io/docs/references/connectors/) if you don't know the concept yet.
+Connector is the standard way in MyEyesID to connect third-party services like SMS, email, and social identity providers. See [Connectors](https://docs.myeyesid.io/docs/references/connectors/) if you don't know the concept yet.
 
 > **Note**
 >
-> You can find all official connectors [here](https://github.com/demondayza/logto/tree/master/packages/connectors).
+> You can find all official connectors [here](https://github.com/demondayza/myeyesid/tree/master/packages/connectors).
 
 Before starting the work, join our [Discord channel](https://discord.gg/cyWnux4cH6) or [email us](mailto:support@myeyes.com) to double-check if there's an ongoing project for your desired connector. We'll confirm with you your need and the status quo.
 
-You can read this [documentation](https://docs.logto.io/docs/recipes/create-your-connector/) which describes how to implement and test a connector through concrete examples.
+You can read this [documentation](https://docs.myeyesid.io/docs/recipes/create-your-connector/) which describes how to implement and test a connector through concrete examples.
 
 ### Core features
 
@@ -70,7 +70,7 @@ You'll need these installed to proceed:
 
 ### Clone and install dependencies
 
-Clone the repo https://github.com/demondayza/logto in the way you like, then execute the command below in the project root:
+Clone the repo https://github.com/demondayza/myeyesid in the way you like, then execute the command below in the project root:
 
 ```bash
 pnpm i && pnpm prepack
@@ -83,7 +83,7 @@ pnpm i && pnpm prepack
 Create a `.env` file with the following content in the project root, or set the environment variable directly:
 
 ```env
-DB_URL=postgresql://your-postgres-dsn/logto # Replace with your own
+DB_URL=postgresql://your-postgres-dsn/myeyesid # Replace with your own
 ```
 
 Then run `pnpm cli db seed` to seed data into your database.
@@ -92,15 +92,15 @@ Then run `pnpm cli db seed` to seed data into your database.
 
 If you are upgrading your dev environment from an older version, or facing the `Found undeployed database alterations...` error when starting MyEyesID, you need to deploy the database alteration first.
 
-Run `pnpm alteration deploy` and start MyEyesID again. See [Database alteration](https://docs.logto.io/docs/tutorials/using-cli/database-alteration) for reference of this command.
+Run `pnpm alteration deploy` and start MyEyesID again. See [Database alteration](https://docs.myeyesid.io/docs/tutorials/using-cli/database-alteration) for reference of this command.
 
-If you are developing something with database alterations, see [packages/schemas/alteration](https://github.com/demondayza/logto/tree/master/packages/schemas/alterations) to learn more.
+If you are developing something with database alterations, see [packages/schemas/alteration](https://github.com/demondayza/myeyesid/tree/master/packages/schemas/alterations) to learn more.
 
 ### Add connectors (optional)
 
-Run `logto connector link -p .` to link all local connectors. You can also use `logto connector add <name> -p .` to install connector from NPM.
+Run `myeyesid connector link -p .` to link all local connectors. You can also use `myeyesid connector add <name> -p .` to install connector from NPM.
 
-See [Manage connectors](https://docs.logto.io/docs/references/using-cli/manage-connectors) for details about managing connectors via CLI.
+See [Manage connectors](https://docs.myeyesid.io/docs/references/using-cli/manage-connectors) for details about managing connectors via CLI.
 
 ## Start dev
 
@@ -120,7 +120,7 @@ By default, MyEyesID runs in `http://localhost:3001`, which will redirect you to
 
 **I updated some code, but it doesn't work.**
 
-Please [report a bug](https://github.com/demondayza/logto/issues) in issues.
+Please [report a bug](https://github.com/demondayza/myeyesid/issues) in issues.
 
 ## Commit and create pull request
 

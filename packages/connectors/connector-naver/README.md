@@ -29,18 +29,18 @@ from `API 설정(API Setting)` from your application project setting.
 - For `로그인 오픈 API 서비스 환경(Sign in Open API Service Environment)`, add two environment `PC웹(PC Web)` and `모바일웹(Mobile Web)`.
 
 #### PC Web (PC 웹)
-- For `서비스 URL(Service URL)`, type `http(s)://YOUR_URL` (ex. https://logto.io)
-- For `네이버 로그인(Naver Login) Callback URL`, type `http(s)://YOUR_URL/callback/${connector_id}`  (e.g. https://logto.io/callback/${connector_id})
+- For `서비스 URL(Service URL)`, type `http(s)://YOUR_URL` (ex. https://myeyesid.io)
+- For `네이버 로그인(Naver Login) Callback URL`, type `http(s)://YOUR_URL/callback/${connector_id}`  (e.g. https://myeyesid.io/callback/${connector_id})
 
 #### Mobile Web (Mobile 웹)
-- For `서비스 URL(Service URL)`, type `http(s)://YOUR_URL` (ex. https://logto.io)
-- For `네이버 로그인(Naver Login) Callback URL`, type `http(s)://YOUR_URL/callback/${connector_id}`  (e.g. https://logto.io/callback/${connector_id})
+- For `서비스 URL(Service URL)`, type `http(s)://YOUR_URL` (ex. https://myeyesid.io)
+- For `네이버 로그인(Naver Login) Callback URL`, type `http(s)://YOUR_URL/callback/${connector_id}`  (e.g. https://myeyesid.io/callback/${connector_id})
 
 > ⚠️ **Caution**
 > 
-> The `connector_id` can be found on the top bar of the Logto Admin Console connector details page.
+> The `connector_id` can be found on the top bar of the MyEyesID Admin Console connector details page.
 
-## Configure Logto
+## Configure MyEyesID
 
 ### Config types
 

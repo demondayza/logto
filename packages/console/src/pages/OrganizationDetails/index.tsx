@@ -3,7 +3,7 @@ import {
   type Organization,
   type OrganizationRole,
   type SsoConnector,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Outlet, useParams } from 'react-router-dom';

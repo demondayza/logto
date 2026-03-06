@@ -1,4 +1,4 @@
-import { ConnectorType, SignInIdentifier } from '@logto/schemas';
+import { ConnectorType, SignInIdentifier } from '@myeyesid/schemas';
 
 import { deleteUser } from '#src/api/admin-user.js';
 import { updateSignInExperience } from '#src/api/sign-in-experience.js';

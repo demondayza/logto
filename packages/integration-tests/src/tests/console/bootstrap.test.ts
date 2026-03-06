@@ -1,4 +1,4 @@
-import { adminConsoleApplicationId, type User } from '@logto/schemas';
+import { adminConsoleApplicationId, type User } from '@myeyesid/schemas';
 import { appendPath } from '@silverhand/essentials';
 
 import { authedAdminTenantApi } from '#src/api/api.js';
@@ -6,7 +6,7 @@ import {
   consolePassword,
   consoleUsername,
   isDevFeaturesEnabled,
-  logtoConsoleUrl as logtoConsoleUrlString,
+  myeyesidConsoleUrl as myeyesidConsoleUrlString,
 } from '#src/constants.js';
 import { switchToLanguage } from '#src/ui-helpers/switch-language.js';
 import { appendPathname, cls, dcls, expectNavigation, waitFor } from '#src/utils.js';
@@ -18,7 +18,7 @@ import { appendPathname, cls, dcls, expectNavigation, waitFor } from '#src/utils
 // Tip: See https://github.com/argos-ci/jest-puppeteer/blob/main/packages/expect-puppeteer/README.md
 // for convenient expect methods
 describe('smoke testing for console admin account creation and sign-in', () => {
-  const logtoConsoleUrl = new URL(logtoConsoleUrlString);
+  const myeyesidConsoleUrl = new URL(myeyesidConsoleUrlString);
 
   it('should not navigate to welcome page if admin tenant user table is not empty', async () => {
     // Create a admin user
@@ -28,10 +28,10 @@ describe('smoke testing for console admin account creation and sign-in', () => {
       })
       .json<User>();
 
-    await expectNavigation(page.goto(logtoConsoleUrl.href));
+    await expectNavigation(page.goto(myeyesidConsoleUrl.href));
 
     await expect(page).toMatchElement('#app');
-    expect(page.url()).not.toBe(new URL('console/welcome', logtoConsoleUrl).href);
+    expect(page.url()).not.toBe(new URL('console/welcome', myeyesidConsoleUrl).href);
 
     // Clean up
     await authedAdminTenantApi.delete(`users/${id}`);
@@ -47,32 +47,32 @@ describe('smoke testing for console admin account creation and sign-in', () => {
 
     await authedAdminTenantApi.patch(`users/${id}/is-suspended`, { json: { isSuspended: true } });
 
-    await expectNavigation(page.goto(logtoConsoleUrl.href));
+    await expectNavigation(page.goto(myeyesidConsoleUrl.href));
 
     await expect(page).toMatchElement('#app');
-    expect(page.url()).toBe(new URL('console/welcome', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('console/welcome', myeyesidConsoleUrl).href);
 
     // Clean up
     await authedAdminTenantApi.delete(`users/${id}`);
   });
 
   it('can open with app element and navigate to welcome page', async () => {
-    await expectNavigation(page.goto(logtoConsoleUrl.href));
+    await expectNavigation(page.goto(myeyesidConsoleUrl.href));
 
     await expect(page).toMatchElement('#app');
-    expect(page.url()).toBe(new URL('console/welcome', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('console/welcome', myeyesidConsoleUrl).href);
   });
 
   it('can register a new admin account and automatically sign in', async () => {
     await expectNavigation(expect(page).toClick('button', { text: 'Create account' }));
 
-    expect(page.url()).toBe(new URL('register', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('register', myeyesidConsoleUrl).href);
 
     await expect(page).toFill('input[name=identifier]', consoleUsername);
     await expectNavigation(expect(page).toClick('button[name=submit]'));
 
     expect(page.url()).toBe(
-      appendPathname(`/register/password?app_id=${adminConsoleApplicationId}`, logtoConsoleUrl).href
+      appendPathname(`/register/password?app_id=${adminConsoleApplicationId}`, myeyesidConsoleUrl).href
     );
 
     await expect(page).toFillForm('form', {
@@ -82,7 +82,7 @@ describe('smoke testing for console admin account creation and sign-in', () => {
 
     await expectNavigation(expect(page).toClick('button[name=submit]'));
 
-    expect(page.url()).toBe(new URL('console/get-started', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('console/get-started', myeyesidConsoleUrl).href);
   });
 
   it('should have html attributes "lang=en" and "dir=ltr" by default', async () => {
@@ -110,11 +110,11 @@ describe('smoke testing for console admin account creation and sign-in', () => {
       )
     );
 
-    expect(page.url()).toBe(new URL('sign-in?app_id=admin-console', logtoConsoleUrl).href);
+    expect(page.url()).toBe(new URL('sign-in?app_id=admin-console', myeyesidConsoleUrl).href);
   });
 
   it('can sign in to admin console again', async () => {
-    const initialHref = appendPath(logtoConsoleUrl, 'console', 'applications').href;
+    const initialHref = appendPath(myeyesidConsoleUrl, 'console', 'applications').href;
     // Should be able to redirect back after sign-in
     await expectNavigation(page.goto(initialHref));
     await expect(page).toFillForm('form', {

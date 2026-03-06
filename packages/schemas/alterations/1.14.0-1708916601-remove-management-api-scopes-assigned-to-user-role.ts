@@ -6,7 +6,7 @@ enum RoleType {
   User = 'User',
 }
 
-const getManagementApiResourceIndicator = (tenantId: string) => `https://${tenantId}.logto.app/api`;
+const getManagementApiResourceIndicator = (tenantId: string) => `https://${tenantId}.myeyesid.app/api`;
 
 // Remove management API scopes assigned to user roles, in case they were assigned by management API and bypassed the constraints in admin console.
 const alteration: AlterationScript = {

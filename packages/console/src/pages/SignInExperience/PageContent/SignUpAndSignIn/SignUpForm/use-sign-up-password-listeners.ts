@@ -1,4 +1,4 @@
-import { MfaFactor, type SignInExperience, SignInIdentifier } from '@logto/schemas';
+import { MfaFactor, type SignInExperience, SignInIdentifier } from '@myeyesid/schemas';
 import { useEffect, useRef } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 

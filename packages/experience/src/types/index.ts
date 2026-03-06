@@ -4,7 +4,7 @@ import type {
   WebAuthnRegistrationOptions,
   WebAuthnAuthenticationOptions,
   InteractionEvent,
-} from '@logto/schemas';
+} from '@myeyesid/schemas';
 
 import type { SignInExperienceResponse, Platform } from '../shared/types';
 
