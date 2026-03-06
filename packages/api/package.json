@@ -1,7 +1,7 @@
 {
   "name": "@logto/api",
   "version": "1.37.1",
-  "description": "Logto API types and clients.",
+  "description": "MyEyesID API types and clients.",
   "author": "Silverhand Inc. <contact@silverhand.io>",
   "homepage": "https://github.com/demondayza/logto#readme",
   "license": "MPL-2.0",

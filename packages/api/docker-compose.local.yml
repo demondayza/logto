@@ -1,8 +1,12 @@
-version: "3.9"
 services:
   app:
-    container_name: app # Specify a container name for easier health check
+    container_name: log2-api-local # Avoid collisions with generic "app" containers
     build:
-      context: .
+      context: ../..
       dockerfile: Dockerfile
-    image: svhd/logto:local
+      args:
+        dev_features_enabled: ${DEV_FEATURES_ENABLED-}
+        applicationinsights_connection_string: ${APPLICATIONINSIGHTS_CONNECTION_STRING-}
+        additional_connector_args: ${ADDITIONAL_CONNECTOR_ARGS-}
+    image: ${LOCAL_IMAGE_NAME-myeyesid/log2}:${LOCAL_IMAGE_TAG-local}
+    pull_policy: never

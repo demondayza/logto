@@ -1,10 +1,10 @@
-# (Draft) Contribute to Logto monorepo
+# (Draft) Contribute to MyEyesID monorepo
 
-Thanks for your interest in contributing to Logto. We respect the time of community contributors, so it'll be great if we can go through this guide which provides the necessary contribution information before starting your work.
+Thanks for your interest in contributing to MyEyesID. We respect the time of community contributors, so it'll be great if we can go through this guide which provides the necessary contribution information before starting your work.
 
 **Table of contents**
 
-- [(Draft) Contribute to Logto monorepo](#draft-contribute-to-logto-monorepo)
+- [(Draft) Contribute to MyEyesID monorepo](#draft-contribute-to-myeyesid-monorepo)
   - [Contribution Type](#contribution-type)
     - [Bug fixes](#bug-fixes)
     - [Connectors](#connectors)
@@ -23,7 +23,7 @@ Thanks for your interest in contributing to Logto. We respect the time of commun
 
 ### Bug fixes
 
-We ensure Logto runs correctly with core unit tests, integration tests, and bug bash meetings. However, there's still a chance of missing or getting wrong on something.
+We ensure MyEyesID runs correctly with core unit tests, integration tests, and bug bash meetings. However, there's still a chance of missing or getting wrong on something.
 
 If something doesn't work as expected, search in [Issues](https://github.com/demondayza/logto/issues) to see if someone has reported the issue.
 
@@ -38,7 +38,7 @@ Usually, we'll confirm the details in the issue thread, and you can work on the 
 
 ### Connectors
 
-Connector is the standard way in Logto to connect third-party services like SMS, email, and social identity providers. See [Connectors](https://docs.logto.io/docs/references/connectors/) if you don't know the concept yet.
+Connector is the standard way in MyEyesID to connect third-party services like SMS, email, and social identity providers. See [Connectors](https://docs.logto.io/docs/references/connectors/) if you don't know the concept yet.
 
 > **Note**
 >
@@ -52,7 +52,7 @@ You can read this [documentation](https://docs.logto.io/docs/recipes/create-your
 
 If you find some feature is related to customer identity and doesn't belong to a specific connector, then most likely, it's a core feature.
 
-Since Logto is still in the early stage, it may already be in [our roadmap](https://silverhand.notion.site/Logto-Public-Roadmap-d6a1ad19039946b7b1139811aed82dcc). You can also join our [Discord channel](https://discord.gg/vRvwuwgpVX) or [email us](mailto:support@myeyes.com) to get the details.
+Since MyEyesID is still in the early stage, it may already be in [our roadmap](https://silverhand.notion.site/Logto-Public-Roadmap-d6a1ad19039946b7b1139811aed82dcc). You can also join our [Discord channel](https://discord.gg/vRvwuwgpVX) or [email us](mailto:support@myeyes.com) to get the details.
 
 The concept of feature varies by the situation, so we'll work with you to figure out the best way to contribute before starting.
 
@@ -60,7 +60,7 @@ The concept of feature varies by the situation, so we'll work with you to figure
 
 ### Prerequisites
 
-We use the monorepo approach for development. Since pnpm supports monorepo naturally, it's the package manager for Logto.
+We use the monorepo approach for development. Since pnpm supports monorepo naturally, it's the package manager for MyEyesID.
 
 You'll need these installed to proceed:
 
@@ -90,9 +90,9 @@ Then run `pnpm cli db seed` to seed data into your database.
 
 ### Database alteration
 
-If you are upgrading your dev environment from an older version, or facing the `Found undeployed database alterations...` error when starting Logto, you need to deploy the database alteration first.
+If you are upgrading your dev environment from an older version, or facing the `Found undeployed database alterations...` error when starting MyEyesID, you need to deploy the database alteration first.
 
-Run `pnpm alteration deploy` and start Logto again. See [Database alteration](https://docs.logto.io/docs/tutorials/using-cli/database-alteration) for reference of this command.
+Run `pnpm alteration deploy` and start MyEyesID again. See [Database alteration](https://docs.logto.io/docs/tutorials/using-cli/database-alteration) for reference of this command.
 
 If you are developing something with database alterations, see [packages/schemas/alteration](https://github.com/demondayza/logto/tree/master/packages/schemas/alterations) to learn more.
 
@@ -114,7 +114,7 @@ The command will watch the changes in most of the packages and restart services 
 
 ## Make changes
 
-By default, Logto runs in `http://localhost:3001`, which will redirect you to the Admin Console.
+By default, MyEyesID runs in `http://localhost:3001`, which will redirect you to the Admin Console.
 
 `packages/console` holds the source code of Admin Console frontend (SPA). Start to make changes and see if the page reloads automatically.
 

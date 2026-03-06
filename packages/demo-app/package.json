@@ -1,7 +1,7 @@
 {
   "name": "@logto/demo-app",
   "version": "1.5.0",
-  "description": "Logto demo app.",
+  "description": "MyEyesID demo app.",
   "author": "Silverhand Inc. <contact@silverhand.io>",
   "license": "MPL-2.0",
   "private": true,

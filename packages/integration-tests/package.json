@@ -1,7 +1,7 @@
 {
   "name": "@logto/integration-tests",
   "version": "1.19.0",
-  "description": "Integration tests for Logto.",
+  "description": "Integration tests for MyEyesID.",
   "author": "Silverhand Inc. <contact@silverhand.io>",
   "license": "MPL-2.0",
   "private": true,
