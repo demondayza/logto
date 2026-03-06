@@ -52,7 +52,7 @@ You can read this [documentation](https://docs.logto.io/docs/recipes/create-your
 
 If you find some feature is related to customer identity and doesn't belong to a specific connector, then most likely, it's a core feature.
 
-Since MyEyesID is still in the early stage, it may already be in [our roadmap](https://silverhand.notion.site/Logto-Public-Roadmap-d6a1ad19039946b7b1139811aed82dcc). You can also join our [Discord channel](https://discord.gg/vRvwuwgpVX) or [email us](mailto:support@myeyes.com) to get the details.
+Since MyEyesID is still in the early stage, it may already be in our internal roadmap. You can also join our [Discord channel](https://discord.gg/vRvwuwgpVX) or [email us](mailto:support@myeyes.com) to get the details.
 
 The concept of feature varies by the situation, so we'll work with you to figure out the best way to contribute before starting.
 
